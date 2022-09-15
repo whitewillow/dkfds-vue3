@@ -14,6 +14,36 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    // Airbnb with a couple of minor tweaks
+    'object-shorthand': ['error', 'always'],
+    'linebreak-style': 'off',
+    'eol-last': ['error', 'never'],
+    'max-len': ['error', {
+      code: 450,
+      ignoreTemplateLiterals: true,
+      ignoreStrings: true,
+      ignorePattern: 'd="([\\s\\S]*?)"',
+    }],
+    'prefer-regex-literals': 'off',
+    'space-before-function-paren': ['error', 'always'],
+    'vue/html-indent': ['error', 2, {
+      attribute: 1,
+      closeBracket: 0,
+      alignAttributesVertically: true,
+      ignores: [],
+    }],
+    'vue/html-closing-bracket-newline': ['error', {
+      singleline: 'never',
+      multiline: 'never',
+    }],
+    'vue/multi-word-component-names': 'off',
+    'vuejs-accessibility/form-control-has-label': 'off',
+    'vuejs-accessibility/label-has-for': 'off',
+    // These are weird inconsistencies between eslint and typescript eslint integration. Need to make some GitHub issues.
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn'],
   },
   overrides: [
     {

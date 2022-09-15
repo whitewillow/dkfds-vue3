@@ -1,21 +1,29 @@
 {
   "name": "dkfds-vue3",
   "version": "0.1.0",
+  "main": "dist/dkfds-vue3.esm.js",
+  "types": "dist/main.d.ts",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build ./src/main_dev.ts",
+    "build-vite": "vite build ./src/main.ts && npm run type-gen",
+    "type-gen": "vue-tsc --declaration --emitDeclarationOnly",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
+  "peerDependencies": {
     "core-js": "^3.8.3",
+    "dkfds": "^8.0.1",
+    "uuid": "^9.0.0",
     "vue": "^3.2.13"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vitejs/plugin-vue": "^3.1.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
@@ -26,6 +34,8 @@
     "@vue/test-utils": "^2.0.0-0",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "babel-jest": "^27.0.6",
+    "core-js": "^3.8.3",
+    "dkfds": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-vue": "^8.0.3",
@@ -34,6 +44,8 @@
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "ts-jest": "^27.0.4",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.13"
   }
 }
