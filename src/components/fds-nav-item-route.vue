@@ -1,7 +1,6 @@
 <template>
   <router-link
     :to="{ name: toName }"
-    role="menuitem"
     custom
     v-slot="{ href, navigate, isActive }">
     <li
@@ -13,14 +12,14 @@
         class="nav-link"
         role="menuitem"
         :title="linkTitle"
-        @click="navigate"
-        v-tooltip.bottom="{ content: getTooltip, html: true }">
-        <slot />
+        @click="navigate">
+        <span>
+          <slot />
+        </span>
       </a>
       <div
         v-else
-        class="nav-link nav-link-disabled disabled"
-        v-tooltip.bottom="{ content: getTooltip, html: true }">
+        class="nav-link nav-link-disabled disabled">
         <slot />
       </div>
     </li>

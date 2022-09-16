@@ -10,9 +10,33 @@ npm link dkfds-vue3
 npm run serve
 ```
 
+## Udvikling
+Man kan nøjes med at udvikle på root
+
+```npm run serve```
+
+denne spinner pt main.ts & app.ts op
+
+Dette burde nok laves om så foldere som:
+
+- dev_components
+- dev_views
+- router
+  
+Ikke fylder op - bruges ikke af modulet.
+overvej pnpm ?
+
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Overvejelser
+- Dansk navngivning af komponenter
+- Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
+- Skal vi benytte FDS JS e.g - eller lave egen
+ ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
+
 
 ## Overordnet oversigt
 
@@ -99,3 +123,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] fds-button-sure
 - [ ] fds-progress
 - [ ] navitems
+
+## TODO
+- Header, mangler række 4 og 5 https://designsystem.dk/komponenter/headers/
+- Header lidt bøvlet brug
