@@ -73,24 +73,25 @@
 
       <fds-error-list :list="fejlOpsummering" show></fds-error-list>
 
-      <fds-button>Gå til næste</fds-button>
+      <p>
+        <fds-button>Gå til næste</fds-button>
+      </p>
 
-      <fds-button variant="secondary">Gå til næste</fds-button>
+      <p><fds-button variant="secondary">Variant secondary</fds-button></p>
 
-      <fds-button :variant="FdsVariantEnum.tertiary">Gå til næste</fds-button>
+      <p><fds-button :variant="FdsVariantEnum.tertiary">Variant {{FdsVariantEnum.tertiary}} </fds-button></p>
 
-      <fds-button :variant="FdsVariantEnum.error">Gå til næste</fds-button>
+      <p><fds-button :variant="FdsVariantEnum.error">Variant {{FdsVariantEnum.error}} </fds-button></p>
 
-      <fds-button :variant="FdsVariantEnum.info">Gå til næste</fds-button>
+      <p><fds-button :variant="FdsVariantEnum.info">Variant {{FdsVariantEnum.info}} </fds-button></p>
 
-      <fds-button :variant="FdsVariantEnum.success">Gå til næste</fds-button>
+      <p><fds-button :variant="FdsVariantEnum.success">Variant {{FdsVariantEnum.success}} </fds-button></p>
 
-      <fds-button variant="warning">Gå til næste</fds-button>
+      <p><fds-button :variant="FdsVariantEnum.warning">Variant {{FdsVariantEnum.warning}} </fds-button></p>
 
-      <fds-button-icon icon="refresh" variant="primary">Genopfrisk</fds-button-icon>
+      <p><fds-button-icon icon="refresh" variant="primary">Genopfrisk</fds-button-icon></p>
 
-      <fds-button-icon icon="coronavirus" right variant="primary">Genopfrisk</fds-button-icon>
-      asdasd
+      <p><fds-button-icon icon="coronavirus" right variant="primary">Genopfrisk</fds-button-icon></p>
     </div>
   </div>
 </template>

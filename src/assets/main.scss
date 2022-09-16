@@ -14,25 +14,25 @@ header .navbar .search-form {
   align-self: center;
 }
 
-// .button-warning {
-//   color: #ffffff;
-//   background-color: darken($theme-color-warning, 10%);
-//   border-color: darken($theme-$color-warning, 20%);
-// }
-// .button-error {
-//   color: #ffffff;
-//   background-color: $theme-$color-error;
-//   border-color: darken($theme-$color-error, 20%);
-// }
+.button-warning {
+  color: #ffffff;
+  background-color: darken($color-warning, 10%);
+  border-color: darken($color-warning, 20%);
+}
+.button-error {
+  color: #ffffff;
+  background-color: $color-error;
+  border-color: darken($color-error, 20%);
+}
 
-// .button-info {
-//   color: #ffffff;
-//   background-color: $theme-$color-info;
-//   border-color: darken($theme-$color-info, 20%);
-// }
+.button-info {
+  color: #ffffff;
+  background-color: $color-info;
+  border-color: darken($color-info, 20%);
+}
 
-// .button-success {
-//   color: #ffffff;
-//   background-color: $theme-$color-success;
-//   border-color: darken($theme-$color-success, 20%);
-// }
+.button-success {
+  color: #ffffff;
+  background-color: $color-success;
+  border-color: darken($color-success, 20%);
+}
