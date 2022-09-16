@@ -40,7 +40,22 @@ function install (app: App): void {
 }
 
 export {
-  FdsAlert, FdsHint, FdsInput, FdsCheckbox, FdsRadio, FdsDropdown, FdsLabel, FdsValidate, FdsFormgroup, FdsErrorMessage, FdsErrorList, FdsFormInput, FdsFormTextarea, FdsButton, FdsButtonIcon, FdsIconCollection,
+  FdsAlert,
+  FdsHint,
+  FdsInput,
+  FdsCheckbox,
+  FdsRadio,
+  FdsDropdown,
+  FdsLabel,
+  FdsValidate,
+  FdsFormgroup,
+  FdsErrorMessage,
+  FdsErrorList,
+  FdsFormInput,
+  FdsFormTextarea,
+  FdsButton,
+  FdsButtonIcon,
+  FdsIconCollection,
 };
 export default install as unknown as Plugin;
 

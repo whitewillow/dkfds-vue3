@@ -9,8 +9,14 @@
     @change="handleInput"
     @blur="handleInput"
     @focus="$emit('dirty')">
-    <option value v-if="!noHeader">{{ optionHeader }}</option>
-    <option v-for="(o, i) in options" :value="o.value" :key="i" :selected="o.value === value">{{
+    <option
+      value
+      v-if="!noHeader">{{ optionHeader }}</option>
+    <option
+      v-for="(o, i) in options"
+      :value="o.value"
+      :key="i"
+      :selected="o.value === value">{{
       o.title
     }}</option>
   </select>

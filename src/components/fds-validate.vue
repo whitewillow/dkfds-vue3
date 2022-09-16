@@ -1,5 +1,7 @@
 <template>
-  <div><slot :isValid="isValid" :errorMessage="errorMessage" /></div>
+  <div><slot
+    :isValid="isValid"
+    :errorMessage="errorMessage" /></div>
 </template>
 
 <script setup lang="ts">

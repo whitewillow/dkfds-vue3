@@ -4,11 +4,19 @@
     :class="[{ disabled: disabled }, `button-${variant}`]"
     @click="$emit('click')"
     :disabled="disabled">
-    <svg class="icon-svg" focusable="false" aria-hidden="true" v-if="!right && icon">
+    <svg
+      class="icon-svg"
+      focusable="false"
+      aria-hidden="true"
+      v-if="!right && icon">
       <use v-bind="{'xlink:href':`#${icon}`}" />
     </svg>
     <slot />
-    <svg class="icon-svg rightside-icon" focusable="false" aria-hidden="true" v-if="right">
+    <svg
+      class="icon-svg rightside-icon"
+      focusable="false"
+      aria-hidden="true"
+      v-if="right">
       <use v-bind="{'xlink:href':`#${icon}`}" />
     </svg>
   </button>

@@ -9,8 +9,13 @@
     :closeable="false">
     <div>
       <ul class="alert-text nobullet-list">
-        <li v-for="(e, i) in list" :key="i">
-          <a :href="`#${e.anchor}`" class="function-link" @click="$emit('click', e.target)">
+        <li
+          v-for="(e, i) in list"
+          :key="i">
+          <a
+            :href="`#${e.anchor}`"
+            class="function-link"
+            @click="$emit('logout', e.target)">
             {{ e.text }}
           </a>
         </li>

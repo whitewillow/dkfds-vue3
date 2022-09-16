@@ -1,5 +1,8 @@
 <template>
-  <div class="form-group" :key="formid" :class="{ 'form-error': isValid === false }">
+  <div
+    class="form-group"
+    :key="formid"
+    :class="{ 'form-error': isValid === false }">
     <slot :formid="formid" />
   </div>
 </template>

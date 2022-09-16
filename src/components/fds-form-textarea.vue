@@ -5,7 +5,10 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup class="mt-4" :is-valid="isValid" #default="{ formid }">
+    <fds-formgroup
+      class="mt-4"
+      :is-valid="isValid"
+      #default="{ formid }">
       <fds-label :id="formid">{{ label }}</fds-label>
       <fds-error-message v-if="!isValid">{{ errorMessage }}</fds-error-message>
       <fds-hint>{{ hint }}</fds-hint>

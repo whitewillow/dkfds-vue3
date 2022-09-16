@@ -9,9 +9,13 @@
       @change="handleInput"
       @focus="$emit('dirty')"
       :disabled="disabled"/>
-    <label :for="formId" class="hand">
+    <label
+      :for="formId"
+      class="hand">
       <section class="pl-2 hand">
-        <slot v-bind:id="formId" class="hand"></slot>
+        <slot
+          v-bind:id="formId"
+          class="hand"></slot>
       </section>
     </label>
   </fieldset>

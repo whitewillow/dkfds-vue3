@@ -2,7 +2,9 @@
   <fieldset>
     <legend class="h5">{{ header }}</legend>
     <ul class="nobullet-list">
-      <li v-for="(radio, index) of list" :key="index">
+      <li
+        v-for="(radio, index) of list"
+        :key="index">
         <input
           :id="'radio-' + formId + '-' + index"
           type="radio"

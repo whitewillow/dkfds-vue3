@@ -1,5 +1,7 @@
 <template>
-  <label class="form-label" :for="id"> <slot /> </label>
+  <label
+    class="form-label"
+    :for="id"> <slot /> </label>
 </template>
 
 <script setup lang="ts">

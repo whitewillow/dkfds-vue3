@@ -1,12 +1,21 @@
 <template>
   <transition name="fade">
-    <div v-if="show" class="alert has-close" :class="[{ 'alert--show-icon': showIcon }, `alert-${level}`, `${styleClass}`]">
+    <div
+      v-if="show"
+      class="alert has-close"
+      :class="[{ 'alert--show-icon': showIcon }, `alert-${level}`, `${styleClass}`]">
       <div class="alert-body align-text-left">
-        <p class="alert-heading pr-7" v-if="header">{{ header }}</p>
+        <p
+          class="alert-heading pr-7"
+          v-if="header">{{ header }}</p>
         <div class="alert-text pt-2">
           <slot />
         </div>
-        <a href="javascript:void(0);" class="alert-close" v-if="closeable" @click="show = !show"> <i class="icon icon-close"></i>Luk </a>
+        <a
+          href="javascript:void(0);"
+          class="alert-close"
+          v-if="closeable"
+          @click="show = !show"> <i class="icon icon-close"></i>Luk </a>
       </div>
     </div>
   </transition>
