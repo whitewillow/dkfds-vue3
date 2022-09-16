@@ -85,6 +85,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] fds-input
 - [x] fds-textarea
 - [x] fds-checkbox
+- [x] fds-radio
 - [x] fds-dropdown
 - [ ] fds-number currency
 
@@ -97,6 +98,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ## Form
+Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, validering
 - [x] fds-form-group
 - [x] fds-form-input
 - [x] fds-form-textarea
