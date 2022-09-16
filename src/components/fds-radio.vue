@@ -1,6 +1,8 @@
 <template>
   <fieldset>
-    <legend class="h5">{{ header }}</legend>
+    <legend class="h5">
+      {{ header }}
+    </legend>
     <ul class="nobullet-list">
       <li
         v-for="(radio, index) of list"
@@ -14,7 +16,9 @@
           :checked="value === radio.value.toString()"
           @change="handleInput"
           class="form-radio radio-large"/>
-        <label :for="'radio-' + formId + '-' + index">{{ radio.title }}</label>
+        <label :for="'radio-' + formId + '-' + index">
+          {{ radio.title }}
+        </label>
       </li>
     </ul>
   </fieldset>

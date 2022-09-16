@@ -3,7 +3,7 @@
  * @param functions an array of validation methods
  * @returns string = error | null = no errors
  */
-export function validateAllErrorMessage (...functions: Array<(x:string) => string | null>) {
+export function validateAllErrorMessage (...functions: Array<(x: string) => string | null>) {
   return (x: string) => {
     const messages = functions.map((f) => f(x)).filter((msg) => msg);
 
@@ -22,7 +22,10 @@ export function charactersMinLength (length: number): (args: string) => string |
   return (x: string) => (x.length >= length ? null : `Feltet må ikke være kortere end ${length} tegn.`);
 }
 
-export function charactersEqualsLength (length: number, type = 'tegn'): (args: string) => string | null {
+export function charactersEqualsLength (
+  length: number,
+  type = 'tegn',
+): (args: string) => string | null {
   return (x) => (x.length === length ? null : `Feltet skal være nøjagtigt ${length} ${type}.`);
 }
 
@@ -34,6 +37,7 @@ export function validCVR (x: string): string | null {
 }
 
 export function validCPR (x: string): string | null {
+  // eslint-disable-next-line max-len
   const CPR_REGEXP = /((?:(?:31(?:0[13578]|1[02])|(?:30|29)(?:0[13-9]|1[0-2])|(?:0[1-9]|1[0-9]|2[0-8])(?:0[1-9]|1[0-2]))[0-9]{2}|2902(?:[02468][048]|[13579][26])))-?[0-9]{4}/;
   const isValid = CPR_REGEXP.test(x);
 
@@ -41,7 +45,10 @@ export function validCPR (x: string): string | null {
 }
 
 export function validSagsnummer (x: string): string | null {
-  const regex = RegExp(/^[AXB][0-9]{2}-[A-Z]{2}-[0-9]{2}-[A-Z]{2}(-[0-9]{2}$|-[0-9]{2}-[A-Z]{2})*$/, 'g');
+  const regex = RegExp(
+    /^[AXB][0-9]{2}-[A-Z]{2}-[0-9]{2}-[A-Z]{2}(-[0-9]{2}$|-[0-9]{2}-[A-Z]{2})*$/,
+    'g',
+  );
   const isValid = regex.test(x.toUpperCase());
 
   return isValid ? null : 'Sagsnummer ikke korrekt angivet';

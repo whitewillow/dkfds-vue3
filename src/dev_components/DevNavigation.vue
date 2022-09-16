@@ -62,16 +62,24 @@
                 aria-hidden="true">
                 <ul class="overflow-list">
                   <li class="active">
-                    <a href="#">Subsektion med en meget lang titel som går i flere linier</a>
+                    <a href="#">
+                      Subsektion med en meget lang titel som går i flere linier
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Subsektion title</a>
+                    <a href="#">
+                      Subsektion title
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Subsektion title</a>
+                    <a href="#">
+                      Subsektion title
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Subsektion title som også er forholdsvis lang</a>
+                    <a href="#">
+                      Subsektion title som også er forholdsvis lang
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -98,9 +106,15 @@
                 id="headeroverflow2"
                 aria-hidden="true">
                 <ul class="overflow-list">
-                  <li><a href="#">Menupunkt 1</a></li>
-                  <li><a href="#">Et menupunkt 2</a></li>
-                  <li><a href="#">Tredje menupunkt 3</a></li>
+                  <li><a href="#">
+                    Menupunkt 1
+                  </a></li>
+                  <li><a href="#">
+                    Et menupunkt 2
+                  </a></li>
+                  <li><a href="#">
+                    Tredje menupunkt 3
+                  </a></li>
                 </ul>
               </div>
             </div>
@@ -115,7 +129,9 @@
     <div class="navbar">
       <div class="navbar-inner container">
         <div class="nav-secondary">
-          <p class="nav-secondary-heading">Ekstra menu- og funktionslinje</p>
+          <p class="nav-secondary-heading">
+            Ekstra menu- og funktionslinje
+          </p>
           <ul class="unstyled-list nav-actions">
             <li>
               <div class="overflow-menu overflow-menu--open-right">
@@ -134,9 +150,15 @@
                   id="headeroverflow3"
                   aria-hidden="true">
                   <ul class="overflow-list">
-                    <li><a href="#">Menupunkt 1</a></li>
-                    <li><a href="#">Et menupunkt 2</a></li>
-                    <li><a href="#">Tredje menupunkt 3</a></li>
+                    <li><a href="#">
+                      Menupunkt 1
+                    </a></li>
+                    <li><a href="#">
+                      Et menupunkt 2
+                    </a></li>
+                    <li><a href="#">
+                      Tredje menupunkt 3
+                    </a></li>
                   </ul>
                 </div>
               </div>
@@ -185,7 +207,9 @@
     <!-- 5: Contextual actions end-->
 
     <div class="portal-info-mobile">
-      <p class="user">Christian Emil Vestergaard Christensen</p>
+      <p class="user">
+        Christian Emil Vestergaard Christensen
+      </p>
       <p>Københavns Urmager og Værksted v/Martin Elsig</p>
       <a
         href="#"
@@ -194,7 +218,9 @@
     </div>
 
     <div class="solution-info-mobile">
-      <p class="h5 authority-name">Myndighedsnavn</p>
+      <p class="h5 authority-name">
+        Myndighedsnavn
+      </p>
       <p>
         Support: 12 34 56 78 ·
         <a

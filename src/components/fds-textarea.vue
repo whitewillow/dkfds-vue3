@@ -15,7 +15,9 @@
     <p
       class="mt-1 form-hint"
       v-if="val && val.length >= getMaxLength * 0.9">
-      Antal tegn {{ val.length }} <span v-if="getMaxLength > -1">af {{ getMaxLength }}</span>
+      Antal tegn {{ val.length }} <span v-if="getMaxLength > -1">
+        af {{ getMaxLength }}
+      </span>
     </p>
   </div>
 </template>

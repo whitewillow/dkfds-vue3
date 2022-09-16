@@ -7,7 +7,9 @@
         <fds-formgroup
           class="mt-4"
           #default="{ formid }">
-          <fds-label :id="formid">Fornavn</fds-label>
+          <fds-label :id="formid">
+            Fornavn
+          </fds-label>
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-input
             v-model="txtFornavn"
@@ -22,8 +24,12 @@
             class="my-4"
             :is-valid="isValid"
             #default="{ formid }">
-            <fds-label :id="formid">Efternavn</fds-label>
-            <fds-error-message v-if="!isValid">{{ errorMessage }}</fds-error-message>
+            <fds-label :id="formid">
+              Efternavn
+            </fds-label>
+            <fds-error-message v-if="!isValid">
+              {{ errorMessage }}
+            </fds-error-message>
             <fds-hint>Indtast efternavn</fds-hint>
             <fds-input
               v-model="txtEfternavn"
@@ -41,7 +47,7 @@
           label="Adresse"
           hint="Angiv gyldig adresse"
           v-model="txtAdresse"
-          :validations="[hasContent, charactersMinLength(10)]" />
+          :validations="[hasContent, charactersMinLength(10)]"/>
 
         <fds-form-input
           label="Mobil nr."
@@ -51,11 +57,13 @@
         <fds-form-textarea
           label="Tekst område"
           v-model="txtBeskrivelse"
-          :validations="[hasContent, charactersMinLength(10)]" />
+          :validations="[hasContent, charactersMinLength(10)]"/>
 
         <fds-formgroup class="mt-4">
           <fds-label>Vælg en checkbox</fds-label>
-          <fds-checkbox v-model:checked="oneChecked">Første valg</fds-checkbox>
+          <fds-checkbox v-model:checked="oneChecked">
+            Første valg
+          </fds-checkbox>
         </fds-formgroup>
 
         <fds-formgroup class="my-4">
@@ -102,8 +110,10 @@
         level="warning"
         header="Overskrift"
         closeable>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
-        molestiae natus, hic eius ab architecto dolorum placeat.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus
+        voluptatum corrupti architecto? Accusantium obcaecati aliquam totam
+        voluptas perspiciatis. Voluptate animi quas molestiae natus, hic eius ab
+        architecto dolorum placeat.
       </fds-alert>
 
       <fds-error-list
@@ -114,36 +124,52 @@
         <fds-button>Gå til næste</fds-button>
       </p>
 
-      <p><fds-button variant="secondary">Variant secondary</fds-button></p>
+      <p><fds-button variant="secondary">
+        Variant secondary
+      </fds-button></p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.tertiary">Variant {{ FdsVariantEnum.tertiary }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.tertiary">
+          Variant {{ FdsVariantEnum.tertiary }}
+        </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.error">Variant {{ FdsVariantEnum.error }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.error">
+          Variant {{ FdsVariantEnum.error }}
+        </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.info">Variant {{ FdsVariantEnum.info }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.info">
+          Variant {{ FdsVariantEnum.info }}
+        </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.success">Variant {{ FdsVariantEnum.success }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.success">
+          Variant {{ FdsVariantEnum.success }}
+        </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.warning">Variant {{ FdsVariantEnum.warning }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.warning">
+          Variant {{ FdsVariantEnum.warning }}
+        </fds-button>
       </p>
 
-      <p><fds-button-icon
-        icon="refresh"
-        variant="primary">Genopfrisk</fds-button-icon></p>
+      <p>
+        <fds-button-icon
+          icon="refresh"
+          variant="primary">Genopfrisk</fds-button-icon>
+      </p>
 
-      <p><fds-button-icon
-        icon="coronavirus"
-        right
-        variant="primary">Genopfrisk</fds-button-icon></p>
+      <p>
+        <fds-button-icon
+          icon="coronavirus"
+          right
+          variant="primary">Genopfrisk</fds-button-icon>
+      </p>
     </div>
   </div>
 </template>
@@ -152,7 +178,10 @@
 import { ref } from 'vue';
 
 import {
-  FdsErrorListItem, FdsOptionItem, FdsRadioItem, FdsVariantEnum,
+  FdsErrorListItem,
+  FdsOptionItem,
+  FdsRadioItem,
+  FdsVariantEnum,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 

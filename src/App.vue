@@ -5,18 +5,28 @@
       <fds-header-portal
         portalNavn="Virk"
         :portalTo="{ name: 'forside' }"
-        @logout="clickLogout"> Anders Andersens, Forsikringens Forsikringsfirma </fds-header-portal>
+        @logout="clickLogout">
+        Anders Andersens, Forsikringens Forsikringsfirma
+      </fds-header-portal>
       <dev-header-solution>
-        <a href="#">En langt langt længere løsningstitel</a>
+        <a href="#">
+          En langt langt længere løsningstitel
+        </a>
         <template #myndighed>
           Support: 12 34 56 78
           <span class="d-print-none">·
             <a
               href="#"
-              class="icon-link function-link alert-leave">Kontakt<svg
-              class="icon-svg"
-              aria-hidden="true"
-              focusable="false"><use xlink:href="#open-in-new"></use></svg></a></span>
+              class="icon-link function-link alert-leave">
+              Kontakt
+              <svg
+                class="icon-svg"
+                aria-hidden="true"
+                focusable="false">
+                <use xlink:href="#open-in-new"></use>
+              </svg>
+            </a>
+          </span>
         </template>
       </dev-header-solution>
       <dev-navigation></dev-navigation>

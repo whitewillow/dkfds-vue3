@@ -9,8 +9,12 @@
       class="mt-4"
       :is-valid="isValid"
       #default="{ formid }">
-      <fds-label :id="formid">{{ label }}</fds-label>
-      <fds-error-message v-if="!isValid">{{ errorMessage }}</fds-error-message>
+      <fds-label :id="formid">
+        {{ label }}
+      </fds-label>
+      <fds-error-message v-if="!isValid">
+        {{ errorMessage }}
+      </fds-error-message>
       <fds-hint>{{ hint }}</fds-hint>
       <fds-textarea
         v-model="value"

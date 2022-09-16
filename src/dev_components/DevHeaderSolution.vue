@@ -7,7 +7,9 @@
 
       <!--2B: Solution header: Authority name + text -->
       <div class="solution-info">
-        <p class="h5 authority-name">Myndighedsnavn</p>
+        <p class="h5 authority-name">
+          Myndighedsnavn
+        </p>
         <p>
           <slot name="myndighed" />
         </p>

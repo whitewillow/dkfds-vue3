@@ -6,7 +6,9 @@
         href="#"
         aria-label="Portalnavn"
         class="logo">
-        <span class="d-none d-print-block">Portalnavn</span>
+        <span class="d-none d-print-block">
+          Portalnavn
+        </span>
       </a>
       <!-- Slut: Portallogo -->
 

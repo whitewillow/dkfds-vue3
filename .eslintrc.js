@@ -17,14 +17,21 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 200,
+        code: 100,
         ignoreTemplateLiterals: true,
         ignoreStrings: true,
         ignorePattern: 'd="([\\s\\S]*?)"',
       },
     ],
-    'prefer-regex-literals': 'off',
     'space-before-function-paren': ['error', 'always'],
+    'prefer-regex-literals': 'off',
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'never',
+      },
+    ],
     'vue/html-indent': [
       'error',
       2,
@@ -36,17 +43,16 @@ module.exports = {
         ignores: [],
       },
     ],
-    'vue/html-closing-bracket-newline': [
+    'vue/singleline-html-element-content-newline': [
       'error',
       {
-        singleline: 'never',
-        multiline: 'never',
+        ignoreWhenNoAttributes: true,
+        ignoreWhenEmpty: true,
+        ignores: ['pre', 'textarea'],
       },
     ],
-    'vue/block-tag-newline': [
-      'error',
-      { singleline: 'always', multiline: 'always' },
-    ],
+
+    'vue/block-tag-newline': ['error', { singleline: 'always', multiline: 'always' }],
     'vue/first-attribute-linebreak': [
       'error',
       {
@@ -68,7 +74,8 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vuejs-accessibility/form-control-has-label': 'off',
     'vuejs-accessibility/label-has-for': 'off',
-    // These are weird inconsistencies between eslint and typescript eslint integration. Need to make some GitHub issues.
+    // These are weird inconsistencies between eslint and typescript eslint integration.
+    // Need to make some GitHub issues.
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     'no-unused-vars': 'off',
