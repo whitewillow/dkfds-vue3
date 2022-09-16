@@ -34,6 +34,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Overvejelser
 - Dansk navngivning af komponenter
 - Bedre folder struktur under components
+- Giver det mening at lave komponenter til layout ? - header m.m., eller er det nok med hjælpe komp. som Navigation
+- Hvilke komponenter skal være ren render
 - Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
 - Skal vi benytte FDS JS e.g - eller lave egen
  ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
@@ -132,3 +134,5 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 ## TODO
 - Header, mangler række 4 og 5 https://designsystem.dk/komponenter/headers/
 - Header lidt bøvlet brug
+- Gennemgå aria/a11y etc for hvert komponent
+- Virk/borger tema

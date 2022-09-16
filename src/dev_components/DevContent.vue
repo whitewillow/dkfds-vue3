@@ -95,8 +95,7 @@
             v-model="dropdownVal" />
         </fds-formgroup>
 
-        <fds-toggle-switch v-model="toggleswitch">
-        </fds-toggle-switch>
+        <fds-toggle-switch v-model="toggleswitch" />
         <div>
           {{ toggleswitch }}
         </div>
