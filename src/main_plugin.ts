@@ -4,6 +4,7 @@ import FdsIconCollection from './components/fds-icon-collection.vue';
 import FdsHint from './components/fds-hint.vue';
 import FdsInput from './components/fds-input.vue';
 import FdsCheckbox from './components/fds-checkbox.vue';
+import FdsToggleSwitch from './components/fds-toggle-switch.vue';
 import FdsRadio from './components/fds-radio.vue';
 import FdsDropdown from './components/fds-dropdown.vue';
 import FdsLabel from './components/fds-label.vue';
@@ -37,6 +38,7 @@ function install (app: App): void {
   app.component('fds-form-textarea', FdsFormTextarea);
   app.component('fds-button', FdsButton);
   app.component('fds-button-icon', FdsButtonIcon);
+  app.component('fds-toggle-switch', FdsToggleSwitch);
 }
 
 export {
@@ -56,6 +58,7 @@ export {
   FdsButton,
   FdsButtonIcon,
   FdsIconCollection,
+  FdsToggleSwitch,
 };
 export default install as unknown as Plugin;
 

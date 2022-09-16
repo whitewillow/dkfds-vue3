@@ -59,6 +59,8 @@
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
+        <h2>Valg</h2>
+
         <fds-formgroup class="my-4">
           <fds-label>Vælg en checkbox</fds-label>
           <fds-checkbox v-model:checked="oneChecked">
@@ -92,6 +94,12 @@
             :options="dropdownOptions"
             v-model="dropdownVal" />
         </fds-formgroup>
+
+        <fds-toggle-switch v-model="toggleswitch">
+        </fds-toggle-switch>
+        <div>
+          {{ toggleswitch }}
+        </div>
       </div>
 
       <hr class="my-6" />
@@ -202,6 +210,7 @@ const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
 const twoChecked = ref(false);
 const radioVal = ref('');
+const toggleswitch = ref(false);
 const radioOptions = ref<FdsRadioItem[]>([
   {
     title: 'Banan',

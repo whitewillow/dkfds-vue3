@@ -75,7 +75,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] Tags
 - [ ] Tekstområde
 - [ ] Tjekboks
-- [ ] Toggle switch
+- [x] Toggle switch
 - [ ] Tooltip
 - [ ] Trinindikatorer
 - [ ] Vedhæft fil (Upload)
