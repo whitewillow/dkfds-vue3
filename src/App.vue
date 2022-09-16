@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import DKFDS from 'dkfds';
 import DevHeader from '@/dev_components/DevHeader.vue';
 import DevNavigation from '@/dev_components/DevNavigation.vue';

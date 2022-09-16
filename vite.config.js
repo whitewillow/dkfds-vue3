@@ -7,8 +7,12 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   build: {
     outDir: 'dist',
+    resolve: {
+      dedupe: ['vue'],
+      preserveSymlinks: false,
+    },
     lib: {
-      entry: path.resolve(__dirname, 'src/main.ts'),
+      entry: path.resolve(__dirname, 'src/main_plugin.ts'),
       name: 'dkfds-vue3',
       fileName: (format) => `dkfds-vue3.${format}.js`,
     },
@@ -16,7 +20,6 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['vue'],
-
       output: [
         {
           format: 'esm',
