@@ -111,7 +111,9 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [ ] fds-form-dropdown
 
 ## Knapper og Link
-- [ ] fds-button
+- [x] fds-button
+- [x] fds-button-icon
+- [x] fds-button-spinner
 - [ ] fds-link
 - [ ] fds-function-link
 

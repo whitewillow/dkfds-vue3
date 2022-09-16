@@ -151,6 +151,46 @@
       </p>
 
       <p>
+        <fds-button-spinner
+          icon="search"
+          variant="secondary"
+          spinnerText="Søger">
+          Søg
+        </fds-button-spinner>
+        <fds-button-spinner
+          icon="search"
+          variant="secondary"
+          :showSpinner="true"
+          spinnerText="...Søger">
+          Søg
+        </fds-button-spinner>
+        <fds-button-spinner
+          icon="search"
+          variant="primary"
+          :showSpinner="true"
+          spinnerText="...Søger">
+          Søg
+        </fds-button-spinner>
+      </p>
+
+      <p>
+        <fds-button-icon
+          icon="refresh"
+          variant="primary">
+          Genopfrisk
+        </fds-button-icon>
+      </p>
+
+      <p>
+        <fds-button-icon
+          icon="coronavirus"
+          right
+          variant="primary">
+          Genopfrisk
+        </fds-button-icon>
+      </p>
+
+      <p>
         <fds-button :variant="FdsVariantEnum.error">
           Variant {{ FdsVariantEnum.error }}
         </fds-button>
@@ -172,23 +212,6 @@
         <fds-button :variant="FdsVariantEnum.warning">
           Variant {{ FdsVariantEnum.warning }}
         </fds-button>
-      </p>
-
-      <p>
-        <fds-button-icon
-          icon="refresh"
-          variant="primary">
-          Genopfrisk
-        </fds-button-icon>
-      </p>
-
-      <p>
-        <fds-button-icon
-          icon="coronavirus"
-          right
-          variant="primary">
-          Genopfrisk
-        </fds-button-icon>
       </p>
     </div>
   </div>
