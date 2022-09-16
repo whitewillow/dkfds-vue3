@@ -59,7 +59,7 @@
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
-        <fds-formgroup class="mt-4">
+        <fds-formgroup class="my-4">
           <fds-label>Vælg en checkbox</fds-label>
           <fds-checkbox v-model:checked="oneChecked">
             Første valg
@@ -70,13 +70,22 @@
           <fds-label>Vælg en mindre checkbox</fds-label>
           <fds-checkbox
             v-model:checked="twoChecked"
-            small>Andet valg</fds-checkbox>
+            small>
+            Andet valg
+          </fds-checkbox>
         </fds-formgroup>
 
         <fds-radio
           header="Pick one"
           :list="radioOptions"
-          v-model="radioVal" />
+          v-model="radioVal">
+          <template #hint>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </template>
+          <template v-slot:[`melon`]>
+            <p>Det er muligt at benytte radio til mere indhold</p>
+          </template>
+        </fds-radio>
 
         <fds-formgroup class="mt-4">
           <fds-dropdown
@@ -110,10 +119,9 @@
         level="warning"
         header="Overskrift"
         closeable>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus
-        voluptatum corrupti architecto? Accusantium obcaecati aliquam totam
-        voluptas perspiciatis. Voluptate animi quas molestiae natus, hic eius ab
-        architecto dolorum placeat.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
+        architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
+        molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
 
       <fds-error-list
@@ -161,14 +169,18 @@
       <p>
         <fds-button-icon
           icon="refresh"
-          variant="primary">Genopfrisk</fds-button-icon>
+          variant="primary">
+          Genopfrisk
+        </fds-button-icon>
       </p>
 
       <p>
         <fds-button-icon
           icon="coronavirus"
           right
-          variant="primary">Genopfrisk</fds-button-icon>
+          variant="primary">
+          Genopfrisk
+        </fds-button-icon>
       </p>
     </div>
   </div>
@@ -178,10 +190,7 @@
 import { ref } from 'vue';
 
 import {
-  FdsErrorListItem,
-  FdsOptionItem,
-  FdsRadioItem,
-  FdsVariantEnum,
+  FdsErrorListItem, FdsOptionItem, FdsRadioItem, FdsVariantEnum,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 
