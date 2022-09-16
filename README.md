@@ -33,6 +33,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Overvejelser
 - Dansk navngivning af komponenter
+- Bedre folder struktur under components
 - Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
 - Skal vi benytte FDS JS e.g - eller lave egen
  ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
