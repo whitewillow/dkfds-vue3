@@ -19,11 +19,7 @@
       <fds-input
         v-model="value"
         :id="formid"
-        :placeholder="placeholder"
-        :inputType="inputType"
-        :inputClass="inputClass"
-        :disabled="disabled"
-        :readonly="readonly"
+        v-bind="{ placeholder, inputType, inputClass, disabled, readonly, suffix, prefix }"
         @update:modelValue="handleInput"
         @dirty="touchedEvent"></fds-input>
     </fds-formgroup>
@@ -55,6 +51,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  suffix: {
+    type: String,
+    default: null,
+  },
+  prefix: {
+    type: String,
+    default: null,
+  },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
@@ -72,5 +76,4 @@ const validEvent = (isValid: boolean) => {
 const handleInput = () => emit('update:modelValue', value.value);
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -95,11 +95,11 @@ Forslag til hvordan layout kunne laves?
 - [ ] Datoangivelse
 - [ ] Datovælger
 - [ ] Detaljer
-- [ ] Dropdown-menu
+- [x] Dropdown-menu
 - [ ] Faneblade
-- [ ] Fejlmeddelelser
-- [ ] Fejlopsummering
-- [ ] Felter
+- [x] Fejlmeddelelser
+- [x] Fejlopsummering
+- [x] Felter
 - [ ] Footers
 - [ ] Formular
 - [ ] Funktionslink

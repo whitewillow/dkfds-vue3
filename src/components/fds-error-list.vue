@@ -48,12 +48,6 @@ const props = defineProps({
     default: 'w-percent-lg-80',
   },
 });
-
-// const emit = defineEmits(['click']);
-
-// const validEvent = (isValid: boolean) => {
-//   emit('click', isValid);
-// };
 </script>
 
 <style scoped lang="scss"></style>

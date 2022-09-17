@@ -50,6 +50,16 @@
           :validations="[hasContent, charactersMinLength(10)]"/>
 
         <fds-form-input
+          label="Antal kasser"
+          v-model="kasser"
+          prefix="stk" />
+
+        <fds-form-input
+          label="Antal kasser"
+          v-model="kasser"
+          suffix="stk" />
+
+        <fds-form-input
           label="Mobil nr."
           :modelValue="txtMobil"
           disabled />
@@ -482,6 +492,7 @@ import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 const txtFornavn = ref('');
 const txtEfternavn = ref('');
 const txtAdresse = ref('');
+const kasser = ref('');
 const txtMobil = ref('23232323');
 const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
