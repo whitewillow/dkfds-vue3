@@ -47,7 +47,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Badges
 - [x] Beskeder
 - [ ] Brødkrumme
-- [ ] Cards
+- [x] Cards
 - [ ] Cookiemeddelelse
 - [ ] Datoangivelse
 - [ ] Datovælger

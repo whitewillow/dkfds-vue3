@@ -1,4 +1,5 @@
 import { App, Plugin } from 'vue';
+
 import FdsAlert from './components/fds-alert.vue';
 import FdsIconCollection from './components/fds-icon-collection.vue';
 import FdsHint from './components/fds-hint.vue';
@@ -21,6 +22,7 @@ import FdsAccordion from './components/fds-accordion.vue';
 import FdsAccordionGroup from './components/fds-accordion-group.vue';
 import FdsAccordionItem from './components/fds-accordion-item.vue';
 import FdsBadge from './components/fds-badge.vue';
+import FdsCard from './components/fds-card.vue';
 
 export * from './model/fds.model';
 export * from './utils/validate-utils';
@@ -30,6 +32,7 @@ function install (app: App): void {
   app.component('fds-alert', FdsAlert);
   app.component('fds-hint', FdsHint);
   app.component('fds-badge', FdsBadge);
+  app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
@@ -55,6 +58,7 @@ export {
   FdsAlert,
   FdsHint,
   FdsBadge,
+  FdsCard,
   FdsInput,
   FdsCheckbox,
   FdsRadio,
