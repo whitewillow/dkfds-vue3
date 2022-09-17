@@ -9,6 +9,7 @@ import FdsCheckbox from './components/fds-checkbox.vue';
 import FdsCheckboxList from './components/fds-checkbox-list.vue';
 import FdsToggleSwitch from './components/fds-toggle-switch.vue';
 import FdsRadio from './components/fds-radio.vue';
+import FdsRadioToggle from './components/fds-radio-toggle.vue';
 import FdsDropdown from './components/fds-dropdown.vue';
 import FdsLabel from './components/fds-label.vue';
 import FdsValidate from './components/fds-validate.vue';
@@ -41,6 +42,7 @@ function install (app: App): void {
   app.component('fds-checkbox', FdsCheckbox);
   app.component('fds-checkbox-list', FdsCheckboxList);
   app.component('fds-radio', FdsRadio);
+  app.component('fds-radio-toggle', FdsRadioToggle);
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
   app.component('fds-validate', FdsValidate);
@@ -68,6 +70,7 @@ export {
   FdsCheckbox,
   FdsCheckboxList,
   FdsRadio,
+  FdsRadioToggle,
   FdsDropdown,
   FdsLabel,
   FdsValidate,

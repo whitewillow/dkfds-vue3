@@ -108,6 +108,20 @@
         </fds-formgroup>
 
         <fds-formgroup>
+          <fds-label>Vælg radio toggle</fds-label>
+
+          <fds-radio-toggle v-model="toggleRadio">
+            <template #hint>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </template>
+            <template v-slot:[`true`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </fds-radio-toggle>
+        </fds-formgroup>
+        {{ toggleRadio }}
+
+        <fds-formgroup>
           <fds-dropdown
             :options="dropdownOptions"
             v-model="dropdownVal" />
@@ -511,6 +525,7 @@ const oneChecked = ref(false);
 const twoChecked = ref(false);
 const radioVal = ref('');
 const toggleswitch = ref(false);
+const toggleRadio = ref(null);
 const radioOptions = ref<FdsRadioItem[]>([
   {
     title: 'Banan',
