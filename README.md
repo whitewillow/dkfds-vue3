@@ -34,11 +34,54 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Overvejelser
 - Dansk navngivning af komponenter
 - Bedre folder struktur under components
+- Hjælpe klasser til bg og color - https://designsystem.dk/design/farver/
 - Giver det mening at lave komponenter til layout ? - header m.m., eller er det nok med hjælpe komp. som Navigation
 - Hvilke komponenter skal være ren render
 - Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
 - Skal vi benytte FDS JS e.g - eller lave egen
  ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
+  
+
+## Layout
+Forslag til hvordan layout kunne laves?
+
+```html
+
+<fds theme="virk/borger">
+    <fds-headers>
+        // Indsætter auto skip link til main
+        // 2 obligatoriske headers
+        // 3 valgfri
+        ...
+        <fds-header-1>
+            // logo og logud knap (portal info)
+        </fds-header-1>
+        <fds-header-2>
+            // titel og myndighed (solution info)
+        </fds-header-2>
+        <fds-header-navigation>
+            // Auto gen af responsive menu
+            <fds-nav-item-route
+                toName="forside"
+                linkTitle="Link title">
+                Forside
+            </fds-nav-item-route>
+            <fds-nav-item-route
+                toName="side2"
+                linkTitle="Side 2 Link title">
+                Side 2
+            </fds-nav-item-route>
+        <fds-header-navigation>
+    </fds-headers>
+    <main />
+    <fds-footer>
+    ...
+    </fds-footer>
+    <fds-cookies />
+<fds>
+
+
+```
 
 
 ## Overordnet oversigt
