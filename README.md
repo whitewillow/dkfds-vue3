@@ -43,7 +43,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Overordnet oversigt
 
-- [ ] Accordions
+- [x] Accordions
 - [ ] Badges
 - [ ] Beskeder
 - [ ] Brødkrumme
