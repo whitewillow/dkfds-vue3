@@ -43,7 +43,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   
 
 ## Layout
-Forslag til hvordan layout kunne laves?
+Forslag til hvordan layout/implementering kunne laves?
 
 ```html
 
@@ -109,7 +109,7 @@ Forslag til hvordan layout kunne laves?
 - [ ] Notifikation
 - [ ] Overflow menu
 - [ ] Paginering
-- [ ] Radioknap
+- [x] Radioknap
 - [ ] Sidenavigation
 - [ ] Skip-link
 - [ ] Spinner
