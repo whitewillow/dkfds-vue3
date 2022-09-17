@@ -1,10 +1,12 @@
 import { App, Plugin } from 'vue';
 
 import FdsAlert from './components/fds-alert.vue';
+import FdsPre from './components/fds-pre.vue';
 import FdsIconCollection from './components/fds-icon-collection.vue';
 import FdsHint from './components/fds-hint.vue';
 import FdsInput from './components/fds-input.vue';
 import FdsCheckbox from './components/fds-checkbox.vue';
+import FdsCheckboxList from './components/fds-checkbox-list.vue';
 import FdsToggleSwitch from './components/fds-toggle-switch.vue';
 import FdsRadio from './components/fds-radio.vue';
 import FdsDropdown from './components/fds-dropdown.vue';
@@ -30,12 +32,14 @@ export * from './utils/file-utils';
 
 function install (app: App): void {
   app.component('fds-alert', FdsAlert);
+  app.component('fds-pre', FdsPre);
   app.component('fds-hint', FdsHint);
   app.component('fds-badge', FdsBadge);
   app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
+  app.component('fds-checkbox-list', FdsCheckboxList);
   app.component('fds-radio', FdsRadio);
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
@@ -57,10 +61,12 @@ function install (app: App): void {
 export {
   FdsAlert,
   FdsHint,
+  FdsPre,
   FdsBadge,
   FdsCard,
   FdsInput,
   FdsCheckbox,
+  FdsCheckboxList,
   FdsRadio,
   FdsDropdown,
   FdsLabel,

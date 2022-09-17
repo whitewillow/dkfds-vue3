@@ -1,43 +1,30 @@
 <template>
-  <fieldset>
-    <legend class="h5">
-      {{ header }}
-    </legend>
-    <p v-if="$slots.text">
-      <slot name="text" />
-    </p>
-    <span
-      class="form-hint"
-      v-if="$slots.hint">
-      <slot name="hint" />
-    </span>
-    <ul class="nobullet-list">
-      <li
-        v-for="(radio, index) of list"
-        :key="index">
-        <input
-          :id="'radio-' + formId + '-' + index"
-          type="radio"
-          :name="'radio' + formId"
-          :value="radio.value"
-          :disabled="radio.disabled"
-          :checked="value === radio.value.toString()"
-          @change="handleInput"
-          class="form-radio radio-large"/>
-        <label :for="'radio-' + formId + '-' + index">
-          {{ radio.title }}
-        </label>
+  <ul class="nobullet-list">
+    <li
+      v-for="(radio, index) of list"
+      :key="index">
+      <input
+        :id="'radio-' + formId + '-' + index"
+        type="radio"
+        :name="'radio' + formId"
+        :value="radio.value"
+        :disabled="radio.disabled"
+        :checked="value === radio.value.toString()"
+        @change="handleInput"
+        class="form-radio radio-large"/>
+      <label :for="'radio-' + formId + '-' + index">
+        {{ radio.title }}
+      </label>
 
-        <div
-          class="radio-content mt-2 ml-4 py-4"
-          v-if="$slots[radio.value] && modelValue === radio.value.toString()">
-          <slot
-            :name="radio.value"
-            v-bind:radiovalue="value" />
-        </div>
-      </li>
-    </ul>
-  </fieldset>
+      <div
+        class="radio-content mt-2 ml-4 py-4"
+        v-if="$slots[radio.value] && modelValue === radio.value.toString()">
+        <slot
+          :name="radio.value"
+          v-bind:radiovalue="value" />
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script setup lang="ts">
@@ -49,9 +36,6 @@ import { FdsRadioItem } from '@/model/fds.model';
 
 const props = defineProps({
   modelValue: {
-    type: String,
-  },
-  header: {
     type: String,
   },
   list: {

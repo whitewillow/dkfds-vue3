@@ -1,7 +1,7 @@
 <template>
-  <div><slot
+  <slot
     :isValid="isValid"
-    :errorMessage="errorMessage" /></div>
+    :errorMessage="errorMessage" />
 </template>
 
 <script setup lang="ts">
@@ -66,7 +66,6 @@ watch(
   },
 );
 </script>
-d
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

@@ -18,6 +18,12 @@ export interface FdsRadioItem {
   value: string;
   disabled?: boolean;
 }
+export interface FdsCheckboxItem {
+  title: string;
+  value: string;
+  checked?: boolean;
+  disabled?: boolean;
+}
 
 export interface FdsErrorListItem {
   anchor: string;

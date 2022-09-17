@@ -3,7 +3,14 @@
     class="form-group"
     :key="formid"
     :class="{ 'form-error': isValid === false }">
-    <slot :formid="formid" />
+    <fieldset>
+      <legend
+        class="form-label"
+        v-if="label">
+        {{ label }}
+      </legend>
+      <slot :formid="formid" />
+    </fieldset>
   </div>
 </template>
 
@@ -19,6 +26,10 @@ const props = defineProps({
   isValid: {
     type: Boolean,
     default: true,
+  },
+  label: {
+    type: String,
+    default: null,
   },
 });
 

@@ -6,7 +6,7 @@
       :checked="value"
       class="form-checkbox"
       :class="{ 'checkbox-large': !small }"
-      @change="handleInput"
+      @input="handleInput"
       @focus="$emit('dirty')"
       :disabled="disabled"/>
     <label
@@ -23,10 +23,7 @@
 
 <script setup lang="ts">
 import {
-  defineProps,
-  defineEmits,
-  ref,
-  computed,
+  defineProps, defineEmits, ref, computed, watch,
 } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -35,7 +32,7 @@ const props = defineProps({
     type: String,
     default: null,
   },
-  checked: {
+  modelValue: {
     type: Boolean,
     default: false,
   },
@@ -49,14 +46,23 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['update:checked', 'dirty']);
+const emit = defineEmits(['update:modelValue', 'dirty']);
 
-const value = ref(props.checked);
+const value = ref(props.modelValue);
 
-const handleInput = (event: Event) => emit('update:checked', (event?.target as HTMLInputElement).checked);
+const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
 const formId = computed(() => props.id ?? uuidv4());
+
+watch(
+  () => [props.modelValue],
+  () => {
+    value.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

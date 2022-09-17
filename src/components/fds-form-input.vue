@@ -6,12 +6,9 @@
     :dirty="dirty"
     @valid="validEvent">
     <fds-formgroup
-      class="mt-4"
       :is-valid="isValid"
+      :label="label"
       #default="{ formid }">
-      <fds-label :id="formid">
-        {{ label }}
-      </fds-label>
       <fds-error-message v-if="!isValid">
         {{ errorMessage }}
       </fds-error-message>
@@ -31,7 +28,6 @@ import { defineEmits, defineProps, ref } from 'vue';
 
 import FdsHint from '@/components/fds-hint.vue';
 import FdsInput from '@/components/fds-input.vue';
-import FdsLabel from '@/components/fds-label.vue';
 import FdsValidate from '@/components/fds-validate.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsErrorMessage from '@/components/fds-error-message.vue';

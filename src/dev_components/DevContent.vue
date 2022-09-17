@@ -4,9 +4,7 @@
       <h1>Home</h1>
       <div>
         <h2>Eksempel på advanceret brug</h2>
-        <fds-formgroup
-          class="mt-4"
-          #default="{ formid }">
+        <fds-formgroup #default="{ formid }">
           <fds-label :id="formid">
             Fornavn
           </fds-label>
@@ -21,7 +19,6 @@
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
           <fds-formgroup
-            class="my-4"
             :is-valid="isValid"
             #default="{ formid }">
             <fds-label :id="formid">
@@ -71,35 +68,46 @@
 
         <h2>Valg</h2>
 
-        <fds-formgroup class="my-4">
-          <fds-label>Vælg en checkbox</fds-label>
-          <fds-checkbox v-model:checked="oneChecked">
-            Første valg
-          </fds-checkbox>
+        <fds-formgroup label="Vælg en checkbox">
+          <fds-checkbox-list v-model="checkboxList">
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </fds-checkbox-list>
         </fds-formgroup>
 
-        <fds-formgroup class="my-4">
-          <fds-label>Vælg en mindre checkbox</fds-label>
+        <fds-pre :json="checkboxList" />
+
+        <fds-formgroup label="Single Checkbox">
           <fds-checkbox
-            v-model:checked="twoChecked"
-            small>
+            v-model="twoChecked"
+            class="mt-2">
             Andet valg
           </fds-checkbox>
+          <fds-checkbox
+            v-model="twoChecked"
+            small>
+            Andet valg - small
+          </fds-checkbox>
         </fds-formgroup>
 
-        <fds-radio
-          header="Pick one"
-          :list="radioOptions"
-          v-model="radioVal">
-          <template #hint>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </template>
-          <template v-slot:[`melon`]>
-            <p>Det er muligt at benytte radio til mere indhold</p>
-          </template>
-        </fds-radio>
+        <fds-formgroup>
+          <fds-label>Vælg radio</fds-label>
 
-        <fds-formgroup class="mt-4">
+          <fds-radio
+            header="Pick one"
+            :list="radioOptions"
+            v-model="radioVal">
+            <template #hint>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </template>
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </fds-radio>
+        </fds-formgroup>
+
+        <fds-formgroup>
           <fds-dropdown
             :options="dropdownOptions"
             v-model="dropdownVal" />
@@ -485,7 +493,11 @@
 import { ref } from 'vue';
 
 import {
-  FdsErrorListItem, FdsOptionItem, FdsRadioItem, FdsVariantEnum,
+  FdsErrorListItem,
+  FdsOptionItem,
+  FdsRadioItem,
+  FdsVariantEnum,
+  FdsCheckboxItem,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 
@@ -500,6 +512,20 @@ const twoChecked = ref(false);
 const radioVal = ref('');
 const toggleswitch = ref(false);
 const radioOptions = ref<FdsRadioItem[]>([
+  {
+    title: 'Banan',
+    value: 'banan',
+  },
+  {
+    title: 'Melon',
+    value: 'melon',
+  },
+  {
+    title: 'Æble',
+    value: 'æble',
+  },
+]);
+const checkboxList = ref<FdsCheckboxItem[]>([
   {
     title: 'Banan',
     value: 'banan',
