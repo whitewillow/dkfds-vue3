@@ -203,6 +203,39 @@
       </fds-accordion>
 
       <hr />
+      <h3>Typography</h3>
+      <p>
+        <fds-badge class="mr-4">
+          Normal
+        </fds-badge>
+        <fds-badge small>
+          Normal small
+        </fds-badge>
+      </p>
+      <p>
+        <fds-badge
+          class="mr-4"
+          variant="success">
+          success
+        </fds-badge>
+        <fds-badge
+          class="mx-4"
+          variant="info">
+          success
+        </fds-badge>
+        <fds-badge
+          class="mx-4"
+          variant="warning">
+          warning
+        </fds-badge>
+        <fds-badge
+          class="mx-4"
+          variant="error">
+          error
+        </fds-badge>
+      </p>
+
+      <hr />
       <h3>Ikoner</h3>
 
       <i class="icon icon-coronavirus"></i>
