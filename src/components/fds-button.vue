@@ -13,7 +13,7 @@ import { FdsVariantEnum } from '@/model/fds.model';
 
 const props = defineProps({
   variant: {
-    type: String as PropType<FdsVariantEnum|string>,
+    type: String as PropType<FdsVariantEnum | string>,
     default: () => FdsVariantEnum.primary,
   },
   disabled: {

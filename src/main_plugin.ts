@@ -29,6 +29,10 @@ import FdsCard from './components/fds-card.vue';
 import FdsFileUpload from './components/fds-file-upload.vue';
 import FdsFileList from './components/fds-file-list.vue';
 
+import FdsFunktionslink from './components/fds-funktionslink.vue';
+
+import FdsNavItemRoute from './components/fds-nav-item-route.vue';
+
 export * from './model/fds.model';
 export * from './utils/validate-utils';
 export * from './utils/file-utils';
@@ -62,6 +66,8 @@ function install (app: App): void {
   app.component('fds-accordion-item', FdsAccordionItem);
   app.component('fds-file-upload', FdsFileUpload);
   app.component('fds-file-list', FdsFileList);
+  app.component('fds-nav-item-route', FdsNavItemRoute);
+  app.component('fds-funktionslink', FdsFunktionslink);
 }
 
 export {

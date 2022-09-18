@@ -4,7 +4,292 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view />
+  <header class="header">
+    <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
+    <!-- Start: Portal header -->
+    <div class="portal-header portal-header-compact">
+      <div class="container portal-header-inner">
+        <!-- Start: Portallogo -->
+        <a href="#" aria-label="Portalnavn" class="logo"
+          ><span class="d-none d-print-block">Portalnavn</span></a
+        >
+        <!-- Slut: Portallogo -->
+
+        <button
+          class="function-link button-menu-open js-menu-open ml-auto d-print-none"
+          aria-haspopup="menu"
+          title="Åben mobil menu"
+        >
+          <svg class="icon-svg" focusable="false" aria-hidden="true">
+            <use xlink:href="#menu"></use></svg
+          >Menu
+        </button>
+
+        <!-- Start: Persondetaljer -->
+        <div class="portal-info">
+          <p class="user">Anders Andersen, Forsikringens Forsikringsfirma</p>
+          <button href="#" class="button button-secondary d-print-none">Log af</button>
+        </div>
+        <!-- Slut: Persondetaljer -->
+      </div>
+    </div>
+    <!-- Slut: Portal header -->
+
+    <!-- Start: Løsningsheader -->
+    <div class="solution-header">
+      <div class="container solution-header-inner">
+        <div class="solution-heading">
+          <a href="#">En langt langt længere løsningstitel</a>
+        </div>
+
+        <!--2B: Solution header: Authority name + text -->
+        <div class="solution-info">
+          <p class="h5 authority-name">Myndighedsnavn</p>
+          <p>
+            Support: 12 34 56 78
+            <span class="d-print-none"
+              >·
+              <a href="#" class="icon-link function-link alert-leave"
+                >Kontakt<svg class="icon-svg" aria-hidden="true" focusable="false">
+                  <use xlink:href="#open-in-new"></use></svg></a
+            ></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Slut: Løsningsheader -->
+
+    <!-- Start: Navigation -->
+    <div class="overlay"></div>
+    <nav class="nav">
+      <button class="function-link button-menu-close js-menu-close" title="Luk mobil menu">
+        <svg class="icon-svg" aria-hidden="true"><use xlink:href="#close"></use></svg>Luk
+      </button>
+
+      <!-- Start: Hovedmenu -->
+      <div class="navbar navbar-primary">
+        <div class="navbar-inner container">
+          <ul class="nav-primary">
+            <fds-nav-item-route
+              toName="home"
+              :current-route-name="$route.name?.toString()"
+              linkTitle="Link title"
+            >
+              Forside
+            </fds-nav-item-route>
+            <fds-nav-item-route
+              toName="about"
+              :current-route-name="$route.name?.toString()"
+              linkTitle="Link title"
+            >
+              Om os
+            </fds-nav-item-route>
+          </ul>
+
+          <!-- Start: Overflow menu i navigation -->
+          <ul class="unstyled-list nav-actions">
+            <li>
+              <div class="overflow-menu overflow-menu--open-left">
+                <button
+                  class="button-overflow-menu js-dropdown js-dropdown--responsive-collapse"
+                  data-js-target="headeroverflow2"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Overflow menu
+                  <svg class="icon-svg" aria-hidden="true">
+                    <use xlink:href="#arrow-drop-down"></use>
+                  </svg>
+                </button>
+                <div class="overflow-menu-inner" id="headeroverflow2" aria-hidden="true">
+                  <ul class="overflow-list">
+                    <li><a href="#">Menupunkt 1</a></li>
+                    <li><a href="#">Et menupunkt 2</a></li>
+                    <li><a href="#">Tredje menupunkt 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- Slut: Overflow menu i navigation -->
+        </div>
+      </div>
+      <!-- Slut: Hovedmenu -->
+
+      <!-- 4: Secondary navigation-->
+      <div class="navbar">
+        <div class="navbar-inner container">
+          <div class="nav-secondary">
+            <p class="nav-secondary-heading">Ekstra menu- og funktionslinje</p>
+            <ul class="unstyled-list nav-actions">
+              <li>
+                <div class="overflow-menu overflow-menu--open-right">
+                  <button
+                    class="button-overflow-menu js-dropdown js-dropdown--responsive-collapse"
+                    data-js-target="headeroverflow3"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Overflow menu
+                    <svg class="icon-svg" aria-hidden="true">
+                      <use xlink:href="#arrow-drop-down"></use>
+                    </svg>
+                  </button>
+                  <div class="overflow-menu-inner" id="headeroverflow3" aria-hidden="true">
+                    <ul class="overflow-list">
+                      <li><a href="#">Menupunkt 1</a></li>
+                      <li><a href="#">Et menupunkt 2</a></li>
+                      <li><a href="#">Tredje menupunkt 3</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="unstyled-list nav-actions">
+            <li>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
+            </li>
+            <li>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
+            </li>
+            <li>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 4: Secondary header end-->
+
+      <!-- 5: Contextual actions-->
+      <div class="navbar">
+        <div class="navbar-inner container navbar-context-actions">
+          <div class="nav-actions">
+            <a href="" class="function-link"
+              ><svg class="icon-svg" aria-hidden="true"><use xlink:href="#print"></use></svg
+              >Funktionsikon</a
+            >
+            <a href="" class="function-link"
+              ><svg class="icon-svg" aria-hidden="true"><use xlink:href="#save"></use></svg
+              >Funktionsikon</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 5: Contextual actions end-->
+
+      <div class="portal-info-mobile">
+        <p class="user">Christian Emil Vestergaard Christensen</p>
+        <p>Københavns Urmager og Værksted v/Martin Elsig</p>
+        <a href="#" class="button button-secondary alert-leave" role="button"> Log af </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p class="h5 authority-name">Myndighedsnavn</p>
+        <p>
+          Support: 12 34 56 78 ·
+          <a href="#" class="icon-link function-link alert-leave"
+            >Kontakt<svg class="icon-svg" aria-hidden="true" focusable="false">
+              <use xlink:href="#open-in-new"></use></svg
+          ></a>
+        </p>
+      </div>
+    </nav>
+    <!-- Slut: Navigation -->
+  </header>
+  <main>
+    <router-view />
+  </main>
+  <footer>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-3 footer-col">
+            <section>
+              <div class="align-text-left">
+                <h2 class="h5 mb-4">Ansvarlig myndighed</h2>
+
+                <ul class="unstyled-list">
+                  <li class="">
+                    <img
+                      src="https://via.placeholder.com/150x100"
+                      class="logo"
+                      alt="Logostyrelsen"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-sm-12 col-md-3 footer-col">
+            <section>
+              <div class="align-text-left">
+                <h2 class="h5 mb-4">Kontakt</h2>
+
+                <ul class="mt-0 nobullet-list">
+                  <li class="">
+                    <a class="function-link" href="mailto:support@myndighed.dk"
+                      >support@myndighed.dk</a
+                    >
+                  </li>
+
+                  <li class="">
+                    <a class="function-link" href="tel:004512345678">(+45) 12 34 56 78</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-sm-12 col-md-3 footer-col d-print-none">
+            <section>
+              <div class="align-text-left">
+                <h2 class="h5 mb-4">Links</h2>
+
+                <ul class="mt-0 nobullet-list">
+                  <li class=""><a class="function-link" href="#">Læs lidt om dit</a></li>
+
+                  <li class=""><a class="function-link" href="#">Her er også lidt om dat</a></li>
+
+                  <li class="">
+                    <a class="function-link icon-link" href="#"
+                      >Eller måske er du interesseret i noget helt andet, som tager mange linjer at
+                      forklare<svg class="icon-svg" focusable="&gt;false" aria-hidden="true">
+                        <use xlink:href="#open-in-new"></use></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-sm-12 col-md-3 footer-col d-print-none">
+            <section>
+              <div class="align-text-left">
+                <h2 class="h5 mb-4">Webtilgængelighed og cookies</h2>
+
+                <ul class="mt-0 nobullet-list">
+                  <li class="">
+                    <a href="#" class="function-link icon-link"
+                      >Tilgængelighedserklæring<svg
+                        class="icon-svg"
+                        focusable="&gt;false"
+                        aria-hidden="true"
+                      >
+                        <use xlink:href="#open-in-new"></use></svg
+                    ></a>
+                  </li>
+
+                  <li class="">
+                    <a class="function-link" href="#">Privatlivspolitik (cookies)</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts">

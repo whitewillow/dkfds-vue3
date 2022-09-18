@@ -2,7 +2,7 @@
   <button
     class="button mr-4"
     :class="[`button-${variant}`, { disabled: disabled }]"
-    @click="$emit('click')"
+    @click="emit('click', $event)"
     :disabled="showSpinner || disabled">
     <div
       :class="{ 'inner-spinner-white': variant === 'primary' }"
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, PropType } from 'vue';
+import { defineProps, PropType, defineEmits } from 'vue';
 import { FdsVariantEnum } from '@/model/fds.model';
 
 const props = defineProps({
@@ -56,47 +56,7 @@ const props = defineProps({
     default: false,
   },
 });
+const emit = defineEmits(['click']);
 </script>
 
-<style scoped lang="scss">
-.spinneroverlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  opacity: 0.2;
-  z-index: 9999999;
-}
-.rightside-icon {
-  margin-left: 4px;
-  margin-right: 0;
-}
-.inner-spinner {
-  margin: 0 8px 0 16px;
-  font-size: 4px;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-animation: spinner 1.1s infinite ease;
-  animation: spinner 1.1s infinite ease;
-  transform: translateZ(0);
-  display: inline-block;
-}
-
-.inner-spinner-white {
-  font-size: 4px;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-animation: spinner-white 1.1s infinite ease;
-  animation: spinner-white 1.1s infinite ease;
-  transform: translateZ(0);
-  display: inline-block;
-}
-</style>
+<style lang="scss"></style>

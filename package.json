@@ -8,6 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build ./src/main.ts",
     "build-vite": "vite build && npm run type-gen && npm link",
+    "build-vite-link": "npm run build-vite && cd example && npm link dkfds-vue3",
     "type-gen": "vue-tsc --declaration --emitDeclarationOnly",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",

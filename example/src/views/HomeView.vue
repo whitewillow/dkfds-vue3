@@ -247,11 +247,29 @@
       </p>
 
       <hr />
+      <h2>Links</h2>
+
+      <p>
+        <fds-funktionslink title="Klik for event" @click="klikEvent">
+          Funktionslink
+        </fds-funktionslink>
+      </p>
+      <div>
+        <fds-funktionslink
+          :to="{ name: 'about' }"
+          icon="contact-support"
+          title="Klik for at gå til om os"
+        >
+          Funktionslink med ikon - Om os
+        </fds-funktionslink>
+      </div>
+
+      <hr />
       <h3>Ikoner</h3>
 
       <i class="icon icon-coronavirus"></i>
 
-      <i class="icon icon-alert-outline"></i>
+      <i class="icon icon-home"></i>
 
       <hr />
 
@@ -367,19 +385,24 @@
       <fds-error-list :list="fejlOpsummering" show></fds-error-list>
 
       <p>
-        <fds-button>Gå til næste</fds-button>
+        <fds-button @click="klikEvent"> Gå til næste </fds-button>
       </p>
 
-      <p><fds-button variant="secondary"> Variant secondary </fds-button></p>
+      <p><fds-button variant="secondary" @click="klikEvent"> Variant secondary </fds-button></p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.tertiary">
+        <fds-button :variant="FdsVariantEnum.tertiary" @click="klikEvent">
           Variant {{ FdsVariantEnum.tertiary }}
         </fds-button>
       </p>
 
       <p>
-        <fds-button-spinner icon="search" variant="secondary" spinnerText="Søger">
+        <fds-button-spinner
+          @click="klikEvent"
+          icon="search"
+          variant="secondary"
+          spinnerText="Søger"
+        >
           Søg
         </fds-button-spinner>
         <fds-button-spinner
@@ -401,31 +424,39 @@
       </p>
 
       <p>
-        <fds-button-icon icon="refresh" variant="primary"> Genopfrisk </fds-button-icon>
+        <fds-button-icon @click="klikEvent" icon="refresh" variant="primary">
+          Genopfrisk
+        </fds-button-icon>
       </p>
 
       <p>
-        <fds-button-icon icon="coronavirus" right variant="primary"> Genopfrisk </fds-button-icon>
+        <fds-button-icon @click="klikEvent" icon="coronavirus" right variant="primary">
+          Genopfrisk
+        </fds-button-icon>
       </p>
 
+      <h3>Skal de med?</h3>
+
       <p>
-        <fds-button :variant="FdsVariantEnum.error">
+        <fds-button :variant="FdsVariantEnum.error" @click="klikEvent">
           Variant {{ FdsVariantEnum.error }}
         </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.info"> Variant {{ FdsVariantEnum.info }} </fds-button>
+        <fds-button :variant="FdsVariantEnum.info" @click="klikEvent">
+          Variant {{ FdsVariantEnum.info }}
+        </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.success">
+        <fds-button :variant="FdsVariantEnum.success" @click="klikEvent">
           Variant {{ FdsVariantEnum.success }}
         </fds-button>
       </p>
 
       <p>
-        <fds-button :variant="FdsVariantEnum.warning">
+        <fds-button :variant="FdsVariantEnum.warning" @click="klikEvent">
           Variant {{ FdsVariantEnum.warning }}
         </fds-button>
       </p>
@@ -540,5 +571,6 @@ const filListe = ref<FdsFileModel[]>([
 ]);
 const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
+const klikEvent = () => window.confirm('KLIK');
 </script>
 <style lang="scss" scoped></style>

@@ -2,14 +2,13 @@
   <button
     class="button"
     :class="[{ disabled: disabled }, `button-${variant}`]"
-    @click="$emit('click')"
     :disabled="disabled">
     <svg
       class="icon-svg"
       focusable="false"
       aria-hidden="true"
       v-if="!right && icon">
-      <use v-bind="{'xlink:href':`#${icon}`}" />
+      <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
     <slot />
     <svg
@@ -17,7 +16,7 @@
       focusable="false"
       aria-hidden="true"
       v-if="right">
-      <use v-bind="{'xlink:href':`#${icon}`}" />
+      <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
   </button>
 </template>
