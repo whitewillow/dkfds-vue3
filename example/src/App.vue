@@ -1,9 +1,6 @@
 <template>
   <fds-icon-collection />
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+
   <header class="header">
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
     <!-- Start: Portal header -->
