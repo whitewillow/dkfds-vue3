@@ -2,6 +2,10 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    redirect: { name: 'forside' },
+  },
+  {
     path: '/forside',
     name: 'forside',
     // route level code-splitting
