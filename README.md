@@ -40,7 +40,59 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
 - Skal vi benytte FDS JS e.g - eller lave egen
  ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
-  
+- Patterns https://designsystem.dk/eksempler/patterns/session-udloeber/
+- 
+
+
+## Udvikling faser
+
+### Fase 1
+
+- Størstedelen af delkomponenter laves
+- Generel navngivning og struktur
+- Folder struktur
+
+
+### Fase 2
+
+Dokumentation ? 
+- https://histoire.dev/ ?
+- Test
+
+### Fase 3
+
+Layout komponenter
+
+### Fase 4
+
+**Hjælpe klasser**
+- Alle farver får en logisk opbygges hjælpe css class til color og background `https://designsystem.dk/design/farver/`
+
+**Hjælpe metoder**
+- Validering
+- Fil utils
+- m.m.
+
+### Fase 5 
+
+Cookie og evt andre manglende komponenter laves
+
+Overvej ekstra komponenter som 
+- jumbotron - se top https://designsystem.dk/
+- component-preview - se hvordan input er præsenteret https://designsystem.dk/komponenter/fejlmeddelelser/
+
+### Fase 6
+
+Finpudsning
+
+### Fase 7
+
+Vite create template e.g:
+```
+npm create vite@latest my-vue-app -- --template vue-ts-dkfds
+```
+
+
 
 ## Layout
 Forslag til hvordan layout/implementering kunne laves?
@@ -104,7 +156,7 @@ Forslag til hvordan layout/implementering kunne laves?
 - [ ] Formular
 - [ ] Funktionslink
 - [ ] Headers
-- [ ] Knapper
+- [x] Knapper
 - [ ] Modalvindue
 - [ ] Notifikation
 - [ ] Overflow menu
@@ -124,7 +176,7 @@ Forslag til hvordan layout/implementering kunne laves?
 - [x] Toggle switch
 - [ ] Tooltip
 - [ ] Trinindikatorer
-- [ ] Vedhæft fil (Upload)
+- [x] Vedhæft fil (Upload)
 
 ## Felter
 
@@ -167,12 +219,13 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 
 ## Ikke kategoriseret endnu
 - [ ] fds-trin
-- [ ] fds-alert
-- [ ] fds-accordian
+- [x] fds-alert
+- [x] fds-accordian
 - [ ] fds-modal
 - [ ] fds-button-sure
 - [ ] fds-progress
-- [ ] navitems
+- [ ] fds-icon
+- [x] navitems
 
 ## TODO
 - Header, mangler række 4 og 5 https://designsystem.dk/komponenter/headers/
