@@ -80,6 +80,8 @@ Cookie og evt andre manglende komponenter laves
 Overvej ekstra komponenter som 
 - jumbotron - se top https://designsystem.dk/
 - component-preview - se hvordan input er præsenteret https://designsystem.dk/komponenter/fejlmeddelelser/
+- Off-canvas
+- 
 
 ### Fase 6
 
