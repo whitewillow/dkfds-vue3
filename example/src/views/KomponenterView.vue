@@ -27,6 +27,9 @@
           <div v-if="currentKey === 'knapper'">
             <knapper-example />
           </div>
+          <div v-if="currentKey === 'fejlsummering'">
+            <fejlsummering-example />
+          </div>
         </template>
       </fds-sidenavigation-tabs>
     </div>
@@ -43,6 +46,7 @@ import FormExample from '../components/FormExample.vue';
 import FilerExample from '../components/FilerExample.vue';
 import LinksExample from '../components/LinksExample.vue';
 import KnapperExample from '../components/KnapperExample.vue';
+import FejlsummeringExample from '../components/FejlsummeringExample.vue';
 
 const sideTabs = [
   {
@@ -91,6 +95,12 @@ const sideTabs = [
     order: 7,
     key: 'knapper',
     title: 'Knapper',
+    help: '',
+  },
+  {
+    order: 7,
+    key: 'fejlsummering',
+    title: 'Fejlsummering',
     help: '',
   },
 ] as FdsNavigationStep[];

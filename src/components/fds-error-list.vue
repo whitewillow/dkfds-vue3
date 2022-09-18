@@ -12,12 +12,9 @@
         <li
           v-for="(e, i) in list"
           :key="i">
-          <a
-            :href="`#${e.anchor}`"
-            class="function-link"
-            @click="$emit('logout', e.target)">
+          <fds-funktionslink @click="clickError($event, e)">
             {{ e.text }}
-          </a>
+          </fds-funktionslink>
         </li>
       </ul>
       <slot />
@@ -26,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 import FdsAlert from '@/components/fds-alert.vue';
 import { FdsErrorListItem } from '@/model/fds.model';
 
@@ -48,6 +45,17 @@ const props = defineProps({
     default: 'w-percent-lg-80',
   },
 });
+
+const emit = defineEmits(['fejlklik']);
+
+const clickError = (event: Event, fejl: FdsErrorListItem) => {
+  emit('fejlklik', fejl);
+
+  const el = document.getElementById(fejl.anchor);
+  if (el) {
+    el.scrollIntoView();
+  }
+};
 </script>
 
 <style scoped lang="scss"></style>
