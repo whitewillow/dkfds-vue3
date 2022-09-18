@@ -44,7 +44,7 @@
         :collapsed="groupcollapse"
         header="Accordion header med advarsel"
         variant="warning"
-        variant-text="Advar</section>sel"
+        variant-text="Advarsel"
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
