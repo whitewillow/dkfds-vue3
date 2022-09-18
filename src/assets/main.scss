@@ -110,6 +110,17 @@ fieldset.code {
   display: inline-block;
 }
 
+// Alert
+.alert-close {
+  > i {
+    margin-right: 4px;
+    width: 1.6rem;
+    height: 1.6rem;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+
 @keyframes spinner-white {
   0%,
   100% {

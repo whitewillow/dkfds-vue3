@@ -33,6 +33,8 @@ import FdsFunktionslink from './components/fds-funktionslink.vue';
 
 import FdsNavItemRoute from './components/fds-nav-item-route.vue';
 
+import FdsSidenavigationTabs from './components/fds-sidenavigation-tabs.vue';
+
 export * from './model/fds.model';
 export * from './utils/validate-utils';
 export * from './utils/file-utils';
@@ -68,6 +70,7 @@ function install (app: App): void {
   app.component('fds-file-list', FdsFileList);
   app.component('fds-nav-item-route', FdsNavItemRoute);
   app.component('fds-funktionslink', FdsFunktionslink);
+  app.component('fds-sidenavigation-tabs', FdsSidenavigationTabs);
 }
 
 export {

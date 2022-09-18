@@ -14,10 +14,16 @@
       class="code">
     <slot />
   </pre>
+
+    <span
+      v-if="json && JSON.stringify(json, undefined, 2).length > 65535"
+      class="pl-4 pb-0 small-text">
+      JSON indeholder elementer over 65535 tegn og noget data vil ikke blive vist
+    </span>
   </fieldset>
 </template>
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, onMounted } from 'vue';
 
 const props = defineProps({
   json: {

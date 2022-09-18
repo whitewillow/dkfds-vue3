@@ -332,6 +332,35 @@
 
       <hr />
 
+      <h2>Side tabs</h2>
+
+      <fds-sidenavigation-tabs :list="sideTabs">
+        <template #default="{ currentKey }">
+          <div v-if="currentKey === 'suppe'">
+            <h3 class="mt-0">
+              Supper
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit a rerum et mollitia
+              quam quo necessitatibus corrupti laboriosam laudantium autem nihil ut voluptas
+              eligendi atque itaque, fuga accusamus alias vero!
+            </p>
+          </div>
+          <div v-if="currentKey === 'dessert'">
+            <h3 class="mt-0">
+              Dessert
+            </h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam facere
+              deleniti? Molestias deleniti, cupiditate quisquam repellendus suscipit exercitationem
+              quasi atque nobis! Provident quibusdam, maxime non dignissimos quod beatae iste.
+            </p>
+          </div>
+        </template>
+      </fds-sidenavigation-tabs>
+
+      <hr />
+
       <h2>Cards</h2>
 
       <div class="row">
@@ -589,6 +618,7 @@ import {
   FdsCheckboxItem,
   FdsFileInputModel,
   FdsFileModel,
+  FdsNavigationStep,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 
@@ -686,5 +716,20 @@ const filListe = ref<FdsFileModel[]>([
 const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 const klikEvent = () => window.confirm('KLIK');
+
+const sideTabs = [
+  {
+    order: 0,
+    key: 'suppe',
+    title: 'Supper',
+    help: '',
+  },
+  {
+    order: 1,
+    key: 'dessert',
+    title: 'Dessert',
+    help: '',
+  },
+] as FdsNavigationStep[];
 </script>
 <style lang="scss" scoped></style>

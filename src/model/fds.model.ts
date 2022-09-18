@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { RouteLocationRaw } from 'vue-router';
+
 export enum FdsVariantEnum {
   primary = 'primary',
   secondary = 'secondary',
@@ -42,4 +45,16 @@ export interface FdsFileInputModel {
   type: string;
   size: number;
   data: string;
+}
+
+export interface FdsNavigationStep {
+  order: number;
+  key: string;
+  title: string;
+  help: string;
+  done: boolean;
+  active: boolean;
+  disabled?: boolean;
+  ignore?: boolean;
+  to?: RouteLocationRaw;
 }

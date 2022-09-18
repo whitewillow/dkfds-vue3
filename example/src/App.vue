@@ -68,12 +68,20 @@
         <div class="navbar-inner container">
           <ul class="nav-primary">
             <fds-nav-item-route
-              toName="home"
+              toName="forside"
               :current-route-name="$route.name?.toString()"
               linkTitle="Link title"
             >
               Forside
             </fds-nav-item-route>
+            <fds-nav-item-route
+              toName="komponenter"
+              :current-route-name="$route.name?.toString()"
+              linkTitle="Link title"
+            >
+              Komponenter
+            </fds-nav-item-route>
+
             <fds-nav-item-route
               toName="about"
               :current-route-name="$route.name?.toString()"
@@ -112,69 +120,6 @@
         </div>
       </div>
       <!-- Slut: Hovedmenu -->
-
-      <!-- 4: Secondary navigation-->
-      <div class="navbar">
-        <div class="navbar-inner container">
-          <div class="nav-secondary">
-            <p class="nav-secondary-heading">Ekstra menu- og funktionslinje</p>
-            <ul class="unstyled-list nav-actions">
-              <li>
-                <div class="overflow-menu overflow-menu--open-right">
-                  <button
-                    class="button-overflow-menu js-dropdown js-dropdown--responsive-collapse"
-                    data-js-target="headeroverflow3"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Overflow menu
-                    <svg class="icon-svg" aria-hidden="true">
-                      <use xlink:href="#arrow-drop-down"></use>
-                    </svg>
-                  </button>
-                  <div class="overflow-menu-inner" id="headeroverflow3" aria-hidden="true">
-                    <ul class="overflow-list">
-                      <li><a href="#">Menupunkt 1</a></li>
-                      <li><a href="#">Et menupunkt 2</a></li>
-                      <li><a href="#">Tredje menupunkt 3</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="unstyled-list nav-actions">
-            <li>
-              <a href="#" class="button button-tertiary">Tertiærknap</a>
-            </li>
-            <li>
-              <a href="#" class="button button-tertiary">Tertiærknap</a>
-            </li>
-            <li>
-              <a href="#" class="button button-tertiary">Tertiærknap</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- 4: Secondary header end-->
-
-      <!-- 5: Contextual actions-->
-      <div class="navbar">
-        <div class="navbar-inner container navbar-context-actions">
-          <div class="nav-actions">
-            <a href="" class="function-link"
-              ><svg class="icon-svg" aria-hidden="true"><use xlink:href="#print"></use></svg
-              >Funktionsikon</a
-            >
-            <a href="" class="function-link"
-              ><svg class="icon-svg" aria-hidden="true"><use xlink:href="#save"></use></svg
-              >Funktionsikon</a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- 5: Contextual actions end-->
 
       <div class="portal-info-mobile">
         <p class="user">Christian Emil Vestergaard Christensen</p>

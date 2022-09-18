@@ -7,7 +7,9 @@
       <div class="alert-body align-text-left">
         <p
           class="alert-heading pr-7"
-          v-if="header">{{ header }}</p>
+          v-if="header">
+          {{ header }}
+        </p>
         <div class="alert-text pt-2">
           <slot />
         </div>
@@ -15,7 +17,9 @@
           href="javascript:void(0);"
           class="alert-close"
           v-if="closeable"
-          @click="show = !show"> <i class="icon icon-close"></i>Luk </a>
+          @click="show = !show">
+          <i class="icon icon-close"></i>Luk
+        </a>
       </div>
     </div>
   </transition>
@@ -49,7 +53,7 @@ const props = defineProps({
   },
   styleClass: {
     type: String,
-    default: 'w-percent-lg-60',
+    default: 'w-percent-lg-80',
   },
 });
 
