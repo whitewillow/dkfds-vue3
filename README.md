@@ -3,10 +3,18 @@
 ## Project setup
 ```
 npm install
-npm run build-vite
-
+npm run build-vite-link
+```
+Herefter kan man køre `example` siden:
+```
 cd example
-npm link dkfds-vue3
+npm run serve
+```
+
+Efterfølgende, under udvikling, kan man kører fra `/`
+```
+npm run build-vite-link
+cd example
 npm run serve
 ```
 
