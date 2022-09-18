@@ -240,7 +240,37 @@
       <h2>Filer</h2>
 
       <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
-      <fds-pre :json="fileInput" />
+      <fds-pre
+        header="Upload event JSON"
+        :json="fileInput" />
+
+      <label class="form-label">
+        Vedhæftet filer
+      </label>
+
+      <fds-file-list
+        :list="filListe"
+        @download="filToDownload = $event"
+        @delete="filToDelete = $event">
+      </fds-file-list>
+
+      <p>Eller med embedded header</p>
+
+      <fds-file-list
+        :list="filListe"
+        @download="filToDownload = $event"
+        @delete="filToDelete = $event">
+        <label class="form-label">
+          Vedhæftet filer
+        </label>
+      </fds-file-list>
+
+      <fds-pre
+        header="Download JSON"
+        :json="filToDownload" />
+      <fds-pre
+        header="Delete JSON"
+        :json="filToDelete" />
 
       <hr />
       <h3>Typography</h3>
@@ -521,6 +551,7 @@ import {
   FdsVariantEnum,
   FdsCheckboxItem,
   FdsFileInputModel,
+  FdsFileModel,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 
@@ -592,5 +623,30 @@ const fejlOpsummering = ref<FdsErrorListItem[]>([
     target: 'asdasda',
   },
 ]);
+
+const filListe = ref<FdsFileModel[]>([
+  {
+    id: 'a',
+    filnavn: 'Banankage.jpg',
+    type: 'image/jpg',
+  },
+  {
+    id: 'b',
+    filnavn: 'Opskrift.pdf',
+    type: 'pdf',
+  },
+  {
+    id: 'c',
+    filnavn: 'Regnskab.xls',
+    type: 'xls',
+  },
+  {
+    id: 'd',
+    filnavn: 'KodeFil.json',
+    type: 'json',
+  },
+]);
+const filToDownload = ref<FdsFileModel | null>(null);
+const filToDelete = ref<FdsFileModel | null>(null);
 </script>
 <style lang="scss" scoped></style>
