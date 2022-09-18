@@ -51,6 +51,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Størstedelen af delkomponenter laves
 - Generel navngivning og struktur
 - Folder struktur
+- example Project gøres pænere til at kunne præsentere komponenter
 
 
 ### Fase 2

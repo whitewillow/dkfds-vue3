@@ -1,4 +1,5 @@
 <template>
+  <fds-icon-collection />
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
@@ -23,5 +24,5 @@ $image-path: '~dkfds/src/img';
 $site-image-path: '~dkfds/src/img';
 $icons-folder-path: '~dkfds/src/img/svg-icons';
 @import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
-
+@import '../node_modules/dkfds-vue3/src/assets/main.scss';
 </style>
