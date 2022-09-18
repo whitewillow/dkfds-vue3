@@ -66,6 +66,8 @@
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
+        <hr />
+
         <h2>Valg</h2>
 
         <fds-formgroup label="Vælg en checkbox">
@@ -233,6 +235,12 @@
           ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
       </fds-accordion>
+
+      <hr />
+      <h2>Filer</h2>
+
+      <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
+      <fds-pre :json="fileInput" />
 
       <hr />
       <h3>Typography</h3>
@@ -512,9 +520,11 @@ import {
   FdsRadioItem,
   FdsVariantEnum,
   FdsCheckboxItem,
+  FdsFileInputModel,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
 
+const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
 const txtEfternavn = ref('');
 const txtAdresse = ref('');

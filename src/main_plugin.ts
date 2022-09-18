@@ -26,6 +26,7 @@ import FdsAccordionGroup from './components/fds-accordion-group.vue';
 import FdsAccordionItem from './components/fds-accordion-item.vue';
 import FdsBadge from './components/fds-badge.vue';
 import FdsCard from './components/fds-card.vue';
+import FdsFileUpload from './components/fds-file-upload.vue';
 
 export * from './model/fds.model';
 export * from './utils/validate-utils';
@@ -58,6 +59,7 @@ function install (app: App): void {
   app.component('fds-accordion', FdsAccordion);
   app.component('fds-accordion-group', FdsAccordionGroup);
   app.component('fds-accordion-item', FdsAccordionItem);
+  app.component('fds-file-upload', FdsFileUpload);
 }
 
 export {
@@ -87,6 +89,7 @@ export {
   FdsAccordion,
   FdsAccordionGroup,
   FdsAccordionItem,
+  FdsFileUpload,
 };
 export default install as unknown as Plugin;
 
