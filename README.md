@@ -78,10 +78,13 @@ Layout komponenter
 Cookie og evt andre manglende komponenter laves
 
 Overvej ekstra komponenter som 
+- fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
+  ![Drag and drop eksempel](./dokumentation/drag&drop.png)
+
 - jumbotron - se top https://designsystem.dk/
 - component-preview - se hvordan input er præsenteret https://designsystem.dk/komponenter/fejlmeddelelser/
 - Off-canvas
-- 
+- etc.
 
 ### Fase 6
 
