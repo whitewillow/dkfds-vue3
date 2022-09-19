@@ -184,6 +184,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - fds-strukturerede-liste
 - fds-trinindikatorer
 - fds-spinner - Variationer ?
+- fds-number currency!
 - fds-soegefelt / <fds-input knap prop?>
 - fds-tilbage-link - af-art af Funktionslink
 - fds-tooltip refak - https://designsystem.dk/kode/komponenter/tooltip/
@@ -207,8 +208,8 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Fejlopsummering
 - [x] Felter
 - [ ] Footers
-- [ ] Formular
-- [ ] Funktionslink
+- [x] Formular
+- [x] Funktionslink
 - [ ] Headers
 - [x] Knapper
 - [ ] Modalvindue <mark>Overvej eget komponent</mark>
@@ -225,8 +226,8 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [ ] Tilbage link
 - [ ] Tabeller
 - [ ] Tags
-- [ ] Tekstområde
-- [ ] Tjekboks
+- [x] Tekstområde
+- [x] Tjekboks
 - [x] Toggle switch
 - [ ] Tooltip
 - [ ] Trinindikatorer
