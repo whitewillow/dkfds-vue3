@@ -48,6 +48,16 @@ $icons-folder-path: '~dkfds/src/img/svg-icons';
 </style>
 ```
 
+## Beskrivelse
+
+Vue 3 komponent bibliotek lavet på baggrund af https://designsystem.dk/
+
+TODO: bedre beskrivelse
+
+## Hvad er det Ikke
+
+TODO: Forventningsafstemmelse information
+
 # Example Project
 
 <mark>MODUL ikke udgivet endnu</mark>
@@ -93,11 +103,17 @@ Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumen
 
 ### Følgende komponenter laves i en senere fase:
 
+- Tabel - for kompleks - lav selv HTML
+
+- Tags - ikke optimal - UI mangler tag luk funktion ?
+
 - Datoangivelse
 - Datovælger
+- Overflow Menu
 - Modalvindue
 - Notifikation
 
+- Skip link
 - Headers
 - Footers
 ### Følgende laves ikke
@@ -118,9 +134,11 @@ Komponenter
 - Toaster
 - Datovælger
 - Datoangivelse
+- Overflow Menu
 
 Layout komponenter
 - Header
+- Skip link
 - Footer
 
 ## Fase 4
@@ -157,6 +175,20 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 # Oversigt
 
+## TODO
+
+- fds-detaljer
+- fds-faneblade - se fds-sidenavigation-tabs
+- fds-sidenavigation - fds-sidenavigation-tabs med :to="routelocation"
+- fds-sprogvaelger
+- fds-strukturerede-liste
+- fds-trinindikatorer
+- fds-spinner - Variationer ?
+- fds-soegefelt / <fds-input knap prop?>
+- fds-tilbage-link - af-art af Funktionslink
+- fds-tooltip refak - https://designsystem.dk/kode/komponenter/tooltip/
+- fds-fil-upload/list refak
+  
 ## Overordnet oversigt
 
 - [x] Accordions
