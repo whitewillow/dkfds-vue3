@@ -35,9 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defineProps, defineEmits, ref, computed,
-} from 'vue';
+import { defineProps, defineEmits, ref } from 'vue';
 
 import { removeBrowserFileContentHeaders } from '@/utils/file-utils';
 import { FdsFileInputModel } from '@/model/fds.model';

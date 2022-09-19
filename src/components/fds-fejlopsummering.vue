@@ -1,8 +1,6 @@
 <template>
   <fds-alert
-    v-if="show"
     class="top-space"
-    :styleClass="styleClass"
     level="error"
     showIcon
     :header="header"
@@ -35,14 +33,6 @@ const props = defineProps({
   header: {
     type: String,
     default: 'Fejlopsummering',
-  },
-  show: {
-    type: Boolean,
-    default: false,
-  },
-  styleClass: {
-    type: String,
-    default: 'w-percent-lg-80',
   },
 });
 

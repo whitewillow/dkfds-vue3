@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, computed } from 'vue';
+import { defineProps } from 'vue';
 
 const props = defineProps({
   header: {
@@ -22,17 +22,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  contentClass: {
-    type: String,
-    default: '',
-  },
   collapsed: {
     type: Boolean,
     default: true,
-  },
-  showFooter: {
-    type: Boolean,
-    default: false,
   },
   disabled: {
     type: Boolean,
@@ -47,9 +39,4 @@ const props = defineProps({
     default: 'Fejl',
   },
 });
-
-const collapse = ref(props.collapsed);
-const variantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
 </script>
-
-<style scoped lang="scss"></style>

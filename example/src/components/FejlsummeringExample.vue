@@ -1,7 +1,10 @@
 <template>
   <section>
     <h2 class="mt-0">Fejlsummering</h2>
-    <fds-error-list :list="fejlOpsummering" show @fejlklik="fejlKlik = $event"></fds-error-list>
+    <fds-fejlopsummering
+      :list="fejlOpsummering"
+      @fejlklik="fejlKlik = $event"
+    ></fds-fejlopsummering>
     <fds-pre header="Fejl Liste klik" :json="fejlKlik" />
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, inventore natus dolorem

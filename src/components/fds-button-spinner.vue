@@ -51,6 +51,7 @@ const props = defineProps({
     type: String,
     default: null,
   },
+  // Add overlay when showSpinner, not possible to clik anywhere when active
   useoverlay: {
     type: Boolean,
     default: false,

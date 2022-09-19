@@ -8,6 +8,9 @@
           <fds-label :id="formid">
             Fornavn
           </fds-label>
+          <fds-tooltip
+            class="ml-2"
+            text="Hjælpende <b>tekst</b>" />
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-input
             v-model="txtFornavn"
@@ -24,9 +27,9 @@
             <fds-label :id="formid">
               Efternavn
             </fds-label>
-            <fds-error-message v-if="!isValid">
+            <fds-fejlmeddelelse v-if="!isValid">
               {{ errorMessage }}
-            </fds-error-message>
+            </fds-fejlmeddelelse>
             <fds-hint>Indtast efternavn</fds-hint>
             <fds-input
               v-model="txtEfternavn"
@@ -43,6 +46,7 @@
         <fds-form-input
           label="Adresse"
           hint="Angiv gyldig adresse"
+          tooltip="Input tooltip"
           v-model="txtAdresse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
@@ -382,7 +386,7 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
           <fds-card
             overskrift="Overskrift"
-            align-height>
+            class="card-align-height">
             <template #content>
               <div class="align-text-center bg-info-light p-6">
                 <h2 class="h5 mb-5">
@@ -435,7 +439,7 @@
           </fds-card>
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card align-height>
+          <fds-card class="card-align-height">
             <template #custom>
               <div class="card-content">
                 <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
@@ -497,15 +501,16 @@
       <fds-alert
         level="warning"
         header="Overskrift"
+        class="w-percent-lg-80"
         closeable>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
 
-      <fds-error-list
-        :list="fejlOpsummering"
-        show></fds-error-list>
+      <fds-fejlopsummering
+        class="w-percent-lg-80"
+        :list="fejlOpsummering"></fds-fejlopsummering>
 
       <p>
         <fds-button @click="klikEvent">

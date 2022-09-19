@@ -1,7 +1,6 @@
 <template>
   <div>
     <button
-      v-if="!hideButton"
       class="accordion-bulk-button"
       :data-accordion-bulk-expand="collapse"
       @click="toggle">
@@ -14,14 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
-
-const props = defineProps({
-  hideButton: {
-    type: Boolean,
-    default: false,
-  },
-});
+import { ref } from 'vue';
 
 const collapse = ref(true);
 
@@ -29,5 +21,3 @@ const toggle = () => {
   collapse.value = !collapse.value;
 };
 </script>
-
-<style scoped lang="scss"></style>

@@ -8,10 +8,11 @@
     <fds-formgroup
       :is-valid="isValid"
       :label="label"
+      :tooltip="tooltip"
       #default="{ formid }">
-      <fds-error-message v-if="!isValid">
+      <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
-      </fds-error-message>
+      </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
       <fds-input
         v-model="value"
@@ -30,8 +31,8 @@ import FdsHint from '@/components/fds-hint.vue';
 import FdsInput from '@/components/fds-input.vue';
 import FdsValidate from '@/components/fds-validate.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
-import FdsErrorMessage from '@/components/fds-error-message.vue';
 import fdsInputProps from '@/props/fds-input.props';
+import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 
 const props = defineProps({
   ...fdsInputProps,
@@ -46,6 +47,10 @@ const props = defineProps({
   hint: {
     type: String,
     default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
   },
   suffix: {
     type: String,

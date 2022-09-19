@@ -34,7 +34,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { RouteLocation, RouteLocationRaw } from 'vue-router';
+import { RouteLocationRaw } from 'vue-router';
 
 const props = defineProps({
   icon: {

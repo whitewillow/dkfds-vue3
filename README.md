@@ -89,6 +89,7 @@ Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumen
 - Generel navngivning og struktur
 - Folder struktur
 - example Project gøres pænere til at kunne præsentere komponenter
+- Dirty event ?
 
 ### Følgende komponenter laves i en senere fase:
 
@@ -210,8 +211,8 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 ## Fejl og Validering
 - [x] fds-validate
-- [x] fds-error-list
-- [x] fds-error-message
+- [x] fds-fejlopsummering
+- [x] fds-fejlmeddelelse
 
 
 

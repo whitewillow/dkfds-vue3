@@ -9,9 +9,9 @@
       :is-valid="isValid"
       :label="label"
       #default="{ formid }">
-      <fds-error-message v-if="!isValid">
+      <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
-      </fds-error-message>
+      </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
       <fds-textarea
         v-model="value"
@@ -36,8 +36,8 @@ import FdsHint from '@/components/fds-hint.vue';
 import FdsTextarea from '@/components/fds-textarea.vue';
 import FdsValidate from '@/components/fds-validate.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
-import FdsErrorMessage from '@/components/fds-error-message.vue';
 import fdsTextareaProps from '@/props/fds-texarea.props';
+import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 
 const props = defineProps({
   ...fdsTextareaProps,

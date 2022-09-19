@@ -5,9 +5,13 @@
     :class="{ 'form-error': isValid === false }">
     <fieldset>
       <legend
-        class="form-label"
+        class="form-label d-flex"
         v-if="label">
         {{ label }}
+        <fds-tooltip
+          v-if="tooltip"
+          class="ml-2"
+          :text="tooltip" />
       </legend>
       <slot :formid="formid" />
     </fieldset>
@@ -28,6 +32,10 @@ const props = defineProps({
     default: true,
   },
   label: {
+    type: String,
+    default: null,
+  },
+  tooltip: {
     type: String,
     default: null,
   },

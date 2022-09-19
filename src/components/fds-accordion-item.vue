@@ -40,14 +40,8 @@
     <div
       id="a1"
       :aria-hidden="`${collapse ? 'true' : 'false'}`"
-      class="accordion-content"
-      :class="contentClass">
+      class="accordion-content">
       <slot />
-    </div>
-    <div
-      v-if="$slots.footer && showFooter"
-      class="accordion-footer">
-      <slot name="footer" />
     </div>
   </li>
 </template>
@@ -65,17 +59,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  contentClass: {
-    type: String,
-    default: '',
-  },
   collapsed: {
     type: Boolean,
     default: true,
-  },
-  showFooter: {
-    type: Boolean,
-    default: false,
   },
   disabled: {
     type: Boolean,
@@ -109,5 +95,3 @@ watch(
   },
 );
 </script>
-
-<style scoped lang="scss"></style>

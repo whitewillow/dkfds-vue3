@@ -204,8 +204,8 @@ Forslag til hvordan layout/implementering kunne laves?
 
 ## Fejl og Validering
 - [x] fds-validate
-- [x] fds-error-list
-- [x] fds-error-message
+- [x] fds-fejlopsummering
+- [x] fds-fejlmeddelelse
 
 
 

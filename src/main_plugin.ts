@@ -14,8 +14,8 @@ import FdsDropdown from './components/fds-dropdown.vue';
 import FdsLabel from './components/fds-label.vue';
 import FdsValidate from './components/fds-validate.vue';
 import FdsFormgroup from './components/fds-formgroup.vue';
-import FdsErrorMessage from './components/fds-error-message.vue';
-import FdsErrorList from './components/fds-error-list.vue';
+import FdsFejlmeddelelse from './components/fds-fejlmeddelelse.vue';
+import FdsFejlopsummering from './components/fds-fejlopsummering.vue';
 import FdsFormInput from './components/fds-form-input.vue';
 import FdsFormTextarea from './components/fds-form-textarea.vue';
 import FdsButton from './components/fds-button.vue';
@@ -26,6 +26,7 @@ import FdsAccordionGroup from './components/fds-accordion-group.vue';
 import FdsAccordionItem from './components/fds-accordion-item.vue';
 import FdsBadge from './components/fds-badge.vue';
 import FdsCard from './components/fds-card.vue';
+import FdsTooltip from './components/fds-tooltip.vue';
 import FdsFileUpload from './components/fds-file-upload.vue';
 import FdsFileList from './components/fds-file-list.vue';
 
@@ -55,8 +56,8 @@ function install (app: App): void {
   app.component('fds-label', FdsLabel);
   app.component('fds-validate', FdsValidate);
   app.component('fds-formgroup', FdsFormgroup);
-  app.component('fds-error-message', FdsErrorMessage);
-  app.component('fds-error-list', FdsErrorList);
+  app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
+  app.component('fds-fejlopsummering', FdsFejlopsummering);
   app.component('fds-form-input', FdsFormInput);
   app.component('fds-form-textarea', FdsFormTextarea);
   app.component('fds-button', FdsButton);
@@ -71,6 +72,7 @@ function install (app: App): void {
   app.component('fds-nav-item-route', FdsNavItemRoute);
   app.component('fds-funktionslink', FdsFunktionslink);
   app.component('fds-sidenavigation-tabs', FdsSidenavigationTabs);
+  app.component('fds-tooltip', FdsTooltip);
 }
 
 export {
@@ -87,9 +89,10 @@ export {
   FdsDropdown,
   FdsLabel,
   FdsValidate,
+  FdsTooltip,
   FdsFormgroup,
-  FdsErrorMessage,
-  FdsErrorList,
+  FdsFejlmeddelelse,
+  FdsFejlopsummering,
   FdsFormInput,
   FdsFormTextarea,
   FdsButton,

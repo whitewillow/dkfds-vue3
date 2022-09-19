@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="card"
-    :class="{ 'card-align-height': alignHeight }">
+  <div class="card">
     <slot name="custom" />
     <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
 
@@ -34,15 +32,9 @@
 </template>
 
 <script setup lang="ts">
-import {
-  computed, defineProps, ref, watch,
-} from 'vue';
+import { defineProps } from 'vue';
 
 const props = defineProps({
-  alignHeight: {
-    type: Boolean,
-    default: false,
-  },
   overskrift: {
     type: String,
     default: null,
@@ -53,6 +45,3 @@ const props = defineProps({
   },
 });
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>

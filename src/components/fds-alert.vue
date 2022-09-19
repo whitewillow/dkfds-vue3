@@ -3,7 +3,7 @@
     <div
       v-if="show"
       class="alert has-close"
-      :class="[{ 'alert--show-icon': showIcon }, `alert-${level}`, `${styleClass}`]">
+      :class="[{ 'alert--show-icon': showIcon }, `alert-${level}`]">
       <div class="alert-body align-text-left">
         <p
           class="alert-heading pr-7"
@@ -50,10 +50,6 @@ const props = defineProps({
   timeout: {
     type: Boolean,
     default: false,
-  },
-  styleClass: {
-    type: String,
-    default: 'w-percent-lg-80',
   },
 });
 

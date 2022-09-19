@@ -16,9 +16,9 @@
       >
         <fds-formgroup :is-valid="isValid" #default="{ formid }">
           <fds-label :id="formid"> Efternavn </fds-label>
-          <fds-error-message v-if="!isValid">
+          <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
-          </fds-error-message>
+          </fds-fejlmeddelelse>
           <fds-hint>Indtast efternavn</fds-hint>
           <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
         </fds-formgroup>
