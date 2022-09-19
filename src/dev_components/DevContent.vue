@@ -3,9 +3,6 @@
     <div class="container pb-6">
       <h1>Home</h1>
       <div>
-        <fds-button @click="$domScrollToElement('bottom')">
-          Scroll til bunden
-        </fds-button>
         <h2>Eksempel på advanceret brug</h2>
         <fds-formgroup #default="{ formid }">
           <fds-label :id="formid">

@@ -1,64 +1,6 @@
 # dkfds-vue3
 
-```
-npm install [Modul ikke udgivet] -S
-```
-
-
-```typescript
-// main.ts
-import { createApp } from 'vue';
-import dkfdsvue3 from 'dkfds-vue3';
-import App from './App.vue';
-import router from './router';
-
-...
-
-createApp(App)
-  .use(router)
-  .use(dkfdsvue3 as any)
-  .mount('#app');
-```
-
-
-```html
-// app.ts
-<template>
-  <fds-icon-collection />
-  ...
-</template>
-<script lang="ts">
-import { defineComponent } from 'vue';
-import DKFDS from 'dkfds';
-
-DKFDS.init();
-
-export default defineComponent({
-  name: 'App',
-});
-</script>
-
-<style lang="scss">
-$font-path: '~dkfds/src/fonts/IBMPlexSans/';
-$image-path: '~dkfds/src/img';
-$site-image-path: '~dkfds/src/img';
-$icons-folder-path: '~dkfds/src/img/svg-icons';
-@import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
-@import '../node_modules/dkfds-vue3/src/assets/main.scss';
-</style>
-```
-
-# Example Project
-
-clone /example
-```
-cd example
-npm run serve
-```
-
-
-
-# Project setup
+## Project setup
 ```
 npm install
 npm run build-vite-link
@@ -76,51 +18,61 @@ cd example
 npm run serve
 ```
 
-Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumentation/UdviklingsGuide.md)
+## Udvikling
+Man kan nøjes med at udvikle på root
+
+```npm run serve```
+
+denne spinner pt main.ts & app.ts op
+
+Dette burde nok laves om så foldere som:
+
+- dev_components
+- dev_views
+- router
+  
+Ikke fylder op - bruges ikke af modulet.
+overvej pnpm ?
 
 
-# Udvikling faser
 
-## Fase 1
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Overvejelser
+- Dansk navngivning af komponenter
+- Bedre folder struktur under components
+- Hjælpe klasser til bg og color - https://designsystem.dk/design/farver/
+- Giver det mening at lave komponenter til layout ? - header m.m., eller er det nok med hjælpe komp. som Navigation
+- Hvilke komponenter skal være ren render
+- Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
+- Skal vi benytte FDS JS e.g - eller lave egen
+ ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
+- Patterns https://designsystem.dk/eksempler/patterns/session-udloeber/
+- 
+
+
+## Udvikling faser
+
+### Fase 1
 
 - Størstedelen af delkomponenter laves
 - Generel navngivning og struktur
 - Folder struktur
 - example Project gøres pænere til at kunne præsentere komponenter
 
-### Følgende komponenter laves i en senere fase:
 
-- Datoangivelse
-- Datovælger
-- Modalvindue
-- Notifikation
+### Fase 2
 
-- Headers
-- Footers
-### Følgende laves ikke
-
-- Cookiemeddelelse - Bedst af bruge egen komponent
-
-## Fase 2
-
-Dokumentation via:
+Dokumentation ? 
 - https://histoire.dev/ ?
 - Test
 
-
-## Fase 3
-
-Komponenter
-- Modal
-- Toaster
-- Datovælger
-- Datoangivelse
+### Fase 3
 
 Layout komponenter
-- Header
-- Footer
 
-## Fase 4
+### Fase 4
 
 **Hjælpe klasser**
 - Alle farver får en logisk opbygges hjælpe css class til color og background `https://designsystem.dk/design/farver/`
@@ -130,11 +82,9 @@ Layout komponenter
 - Fil utils
 - m.m.
 
-## Fase 5
+### Fase 5 
 
-Finpudsning
-
-## Fase 6 
+Cookie og evt andre manglende komponenter laves
 
 Overvej ekstra komponenter som 
 - fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
@@ -145,6 +95,10 @@ Overvej ekstra komponenter som
 - Off-canvas
 - etc.
 
+### Fase 6
+
+Finpudsning
+
 ### Fase 7
 
 Vite create template e.g:
@@ -152,7 +106,49 @@ Vite create template e.g:
 npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 ```
 
-# Oversigt
+
+
+## Layout
+Forslag til hvordan layout/implementering kunne laves?
+
+```html
+
+<fds theme="virk/borger">
+    <fds-headers>
+        // Indsætter auto skip link til main
+        // 2 obligatoriske headers
+        // 3 valgfri
+        ...
+        <fds-header-1>
+            // logo og logud knap (portal info)
+        </fds-header-1>
+        <fds-header-2>
+            // titel og myndighed (solution info)
+        </fds-header-2>
+        <fds-header-navigation>
+            // Auto gen af responsive menu
+            <fds-nav-item-route
+                toName="forside"
+                linkTitle="Link title">
+                Forside
+            </fds-nav-item-route>
+            <fds-nav-item-route
+                toName="side2"
+                linkTitle="Side 2 Link title">
+                Side 2
+            </fds-nav-item-route>
+        <fds-header-navigation>
+    </fds-headers>
+    <main />
+    <fds-footer>
+    ...
+    </fds-footer>
+    <fds-cookies />
+<fds>
+
+
+```
+
 
 ## Overordnet oversigt
 
@@ -161,9 +157,9 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Beskeder
 - [ ] Brødkrumme
 - [x] Cards
-- [ ] Cookiemeddelelse <mark>TBD</mark>
-- [ ] Datoangivelse <mark>Overvej eget komponent</mark>
-- [ ] Datovælger <mark>Overvej eget komponent</mark>
+- [ ] Cookiemeddelelse
+- [ ] Datoangivelse
+- [ ] Datovælger
 - [ ] Detaljer
 - [x] Dropdown-menu
 - [ ] Faneblade
@@ -175,8 +171,8 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [ ] Funktionslink
 - [ ] Headers
 - [x] Knapper
-- [ ] Modalvindue <mark>Overvej eget komponent</mark>
-- [ ] Notifikation <mark>Overvej eget komponent</mark>
+- [ ] Modalvindue
+- [ ] Notifikation
 - [ ] Overflow menu
 - [ ] Paginering
 - [x] Radioknap
@@ -245,3 +241,8 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [ ] fds-icon
 - [x] navitems
 
+## TODO
+- Header, mangler række 4 og 5 https://designsystem.dk/komponenter/headers/
+- Header lidt bøvlet brug
+- Gennemgå aria/a11y etc for hvert komponent
+- Virk/borger tema
