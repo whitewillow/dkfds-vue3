@@ -188,6 +188,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - fds-tilbage-link - af-art af Funktionslink
 - fds-tooltip refak - https://designsystem.dk/kode/komponenter/tooltip/
 - fds-fil-upload/list refak
+- Overvej knapper variants ?
   
 ## Overordnet oversigt
 

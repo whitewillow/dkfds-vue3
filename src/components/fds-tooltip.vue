@@ -17,7 +17,7 @@
 </template>
 <script setup lang="ts">
 // eslint-disable-next-line import/no-extraneous-dependencies
-import DKFDS from 'dkfds';
+// import DKFDS from 'dkfds';
 import { defineProps, onMounted, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -31,7 +31,8 @@ const props = defineProps({
 const formId = ref(uuidv4());
 
 onMounted(() => {
-  new DKFDS.Tooltip(document.getElementById(formId.value)).init();
+  // TODO: Se Tooltip JS
+  // new DKFDS.Tooltip(document.getElementById(formId.value)).init();
 });
 </script>
 
