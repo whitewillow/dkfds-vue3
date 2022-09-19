@@ -81,7 +81,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import DKFDS from 'dkfds';
 import DevHeader from '@/dev_components/DevHeader.vue';
@@ -91,7 +90,6 @@ import FdsHeaderSolutionMobil from '@/dev_components/fds-header-solution-mobil.v
 import FdsHeaderSolution from '@/dev_components/fds-header-solution.vue';
 import FdsHeaderNavigation from '@/dev_components/fds-header-navigation.vue';
 import FdsNavItemRoute from '@/components/fds-nav-item-route.vue';
-import DevContent from '@/dev_components/DevContent.vue';
 
 DKFDS.init();
 
