@@ -50,6 +50,8 @@ $icons-folder-path: '~dkfds/src/img/svg-icons';
 
 # Example Project
 
+<mark>MODUL ikke udgivet endnu</mark>
+
 clone /example
 ```
 cd example
