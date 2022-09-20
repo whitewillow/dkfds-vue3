@@ -30,6 +30,8 @@ import FdsTooltip from './components/fds-tooltip.vue';
 import FdsFileUpload from './components/fds-file-upload.vue';
 import FdsFileList from './components/fds-file-list.vue';
 
+import FdsDetaljer from './components/fds-detaljer.vue';
+
 import FdsFunktionslink from './components/fds-funktionslink.vue';
 
 import FdsNavItemRoute from './components/fds-nav-item-route.vue';
@@ -73,11 +75,13 @@ function install (app: App): void {
   app.component('fds-funktionslink', FdsFunktionslink);
   app.component('fds-sidenavigation-tabs', FdsSidenavigationTabs);
   app.component('fds-tooltip', FdsTooltip);
+  app.component('fds-detaljer', FdsDetaljer);
 }
 
 export {
   FdsAlert,
   FdsHint,
+  FdsDetaljer,
   FdsPre,
   FdsBadge,
   FdsCard,

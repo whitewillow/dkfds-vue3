@@ -327,6 +327,21 @@
           Funktionslink med ikon - Om os
         </fds-funktionslink>
       </div>
+
+      <hr />
+      <h2>Detaljer</h2>
+      <fds-detaljer header="Mine detaljer">
+        <p>
+          Pellentesque nulla mi, pulvinar id blandit eu, volutpat at libero. Integer euismod augue
+          leo.
+        </p>
+        <p>
+          Morbi faucibus nunc tortor, condimentum vulputate urna sollicitudin non. Nam commodo nulla
+          metus. Phasellus varius eu dolor nec ultricies. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Mauris ac leo finibus, blandit velit nec, consequat est. Nulla facilisi.
+        </p>
+      </fds-detaljer>
+
       <hr />
       <h3>Ikoner</h3>
 
@@ -722,19 +737,34 @@ const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 const klikEvent = () => window.confirm('KLIK');
 
-const sideTabs = [
+const sideTabs: FdsNavigationStep[] = [
   {
     order: 0,
     key: 'suppe',
     title: 'Supper',
     help: '',
+    done: true,
   },
   {
     order: 1,
     key: 'dessert',
     title: 'Dessert',
+    help: 'Hjælpetekst',
+    active: true,
+  },
+  {
+    order: 2,
+    key: 'kod',
+    title: 'Kød',
     help: '',
   },
-] as FdsNavigationStep[];
+  {
+    order: 3,
+    key: 'fisk',
+    title: 'Fisk',
+    help: '',
+    disabled: true,
+  },
+] as unknown as FdsNavigationStep[];
 </script>
 <style lang="scss" scoped></style>

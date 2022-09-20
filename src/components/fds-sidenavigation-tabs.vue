@@ -8,7 +8,7 @@
           <li
             v-for="(item, index) of tabsList"
             :key="item.key"
-            :class="{ 'active current': item.active }">
+            :class="[{ 'active current': item.active }, { disabled: item.disabled }]">
             <a
               href="javascript:void(0);"
               class="d-block menuitem hand"
@@ -44,7 +44,7 @@
 <script setup lang="ts">
 import { FdsNavigationStep } from '@/model/fds.model';
 import {
-  computed, defineProps, ref, defineEmits, onMounted,
+  defineProps, ref, defineEmits, onMounted,
 } from 'vue';
 
 const props = defineProps({
@@ -55,7 +55,7 @@ const props = defineProps({
 });
 
 const currentKey = ref('');
-const tabsList = ref<Array<FdsNavigationStep>>(props.list);
+const tabsList = ref<Array<FdsNavigationStep>>(props.list.filter((f) => !f.ignore));
 const emit = defineEmits(['navigate']);
 
 const navigate = (item: FdsNavigationStep) => {
@@ -67,16 +67,9 @@ const navigate = (item: FdsNavigationStep) => {
   emit('navigate', currentKey);
 };
 
-// TODO: bestem sortering
-// return sortby(
-//   props.list.filter(f => !f.ignore),
-//   ['order']
-// );
-const orderedList = computed<FdsNavigationStep[]>(() => []);
-
 onMounted(() => {
-  // tabsList.value = orderedList;
-  const first = tabsList.value.find((f) => !f.disabled);
+  const firstActive = tabsList.value.find((f) => !f.disabled && f.active);
+  const first = firstActive ?? tabsList.value.find((f) => !f.disabled);
   if (first) {
     navigate(first);
   }
