@@ -83,6 +83,19 @@ fieldset.code {
   margin-left: 4px;
   margin-right: 0;
 }
+
+.spinner-small {
+  margin: 10px auto;
+  font-size: 4px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: spinner 1.1s infinite ease;
+  animation: spinner 1.1s infinite ease;
+  transform: translateZ(0);
+}
 .inner-spinner {
   margin: 0 8px 0 16px;
   font-size: 4px;

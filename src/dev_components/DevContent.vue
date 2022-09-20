@@ -357,6 +357,20 @@
       </fds-tilbage-link>
 
       <hr />
+      <h3>Spinner</h3>
+
+      <div class="row">
+        <div class="col">
+          <fds-spinner></fds-spinner>
+        </div>
+      </div>
+
+      <h4>Eller med tekst</h4>
+      <div class="col">
+        <fds-spinner>Arbejder</fds-spinner>
+      </div>
+
+      <hr />
       <h3>Ikoner</h3>
 
       <i class="icon icon-coronavirus"></i>

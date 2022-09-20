@@ -43,6 +43,7 @@ import FdsFaneblade from './components/fds-faneblade.vue';
 import FdsFanebladItem from './components/fds-faneblad-item.vue';
 import FdsFanebladeList from './components/fds-faneblade-list.vue';
 import FdsTilbageLink from './components/fds-tilbage-link.vue';
+import FdsSpinner from './components/fds-spinner.vue';
 
 export * from './model/fds.model';
 export * from './utils/validate-utils';
@@ -52,6 +53,7 @@ function install (app: App): void {
   app.component('fds-trinindikator', FdsTrinindikator);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-alert', FdsAlert);
+  app.component('fds-spinner', FdsSpinner);
   app.component('fds-faneblad-item', FdsFanebladItem);
   app.component('fds-faneblade', FdsFaneblade);
   app.component('fds-faneblade-list', FdsFanebladeList);
@@ -92,6 +94,7 @@ function install (app: App): void {
 
 export {
   FdsAlert,
+  FdsSpinner,
   FdsTrinindikator,
   FdsTilbageLink,
   FdsFanebladItem,
