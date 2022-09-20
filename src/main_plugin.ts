@@ -38,12 +38,19 @@ import FdsNavItemRoute from './components/fds-nav-item-route.vue';
 
 import FdsSidenavigationTabs from './components/fds-sidenavigation-tabs.vue';
 
+import FdsFaneblade from './components/fds-faneblade.vue';
+import FdsFanebladItem from './components/fds-faneblad-item.vue';
+import FdsFanebladeList from './components/fds-faneblade-list.vue';
+
 export * from './model/fds.model';
 export * from './utils/validate-utils';
 export * from './utils/file-utils';
 
 function install (app: App): void {
   app.component('fds-alert', FdsAlert);
+  app.component('fds-faneblad-item', FdsFanebladItem);
+  app.component('fds-faneblade', FdsFaneblade);
+  app.component('fds-faneblade-list', FdsFanebladeList);
   app.component('fds-pre', FdsPre);
   app.component('fds-hint', FdsHint);
   app.component('fds-badge', FdsBadge);
@@ -80,6 +87,9 @@ function install (app: App): void {
 
 export {
   FdsAlert,
+  FdsFanebladItem,
+  FdsFaneblade,
+  FdsFanebladeList,
   FdsHint,
   FdsDetaljer,
   FdsPre,
