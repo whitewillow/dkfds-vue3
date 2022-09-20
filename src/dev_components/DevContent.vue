@@ -582,6 +582,46 @@
         </div>
       </div>
 
+      <hr />
+
+      <h2>Strukturerede lister</h2>
+
+      <div class="w-percent-60">
+        <fds-strukturerede-liste header="Navn">
+          Kirsten Mønster Jensen
+        </fds-strukturerede-liste>
+        <fds-strukturerede-liste header="E-mail">
+          kirstenjensen@eksempel.dk
+        </fds-strukturerede-liste>
+      </div>
+
+      <h4>med rediger</h4>
+
+      <div class="w-percent-60">
+        <fds-strukturerede-liste header="Navn">
+          Kirsten Mønster Jensen
+          <template #button>
+            <a href="#">
+              Redigér<span class="sr-only">
+                Kirsten Mønster Jensen
+              </span>
+            </a>
+          </template>
+        </fds-strukturerede-liste>
+        <fds-strukturerede-liste header="E-mail">
+          kirstenjensen@eksempel.dk
+          <template #button>
+            <a href="#">
+              Redigér<span class="sr-only">
+                Kirsten Mønster Jensen
+              </span>
+            </a>
+          </template>
+        </fds-strukturerede-liste>
+      </div>
+
+      <hr class="my-8" />
+
       <fds-alert
         level="warning"
         header="Overskrift"

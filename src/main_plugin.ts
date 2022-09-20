@@ -1,5 +1,6 @@
 import { App, Plugin } from 'vue';
 
+import FdsStruktureredeListe from '@/components/fds-strukturerede-liste.vue';
 import FdsAlert from './components/fds-alert.vue';
 import FdsPre from './components/fds-pre.vue';
 import FdsIconCollection from './components/fds-icon-collection.vue';
@@ -47,6 +48,7 @@ export * from './utils/validate-utils';
 export * from './utils/file-utils';
 
 function install (app: App): void {
+  app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-alert', FdsAlert);
   app.component('fds-faneblad-item', FdsFanebladItem);
   app.component('fds-faneblade', FdsFaneblade);
@@ -88,6 +90,7 @@ function install (app: App): void {
 export {
   FdsAlert,
   FdsFanebladItem,
+  FdsStruktureredeListe,
   FdsFaneblade,
   FdsFanebladeList,
   FdsHint,
