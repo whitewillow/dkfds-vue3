@@ -38,16 +38,18 @@ import FdsFunktionslink from './components/fds-funktionslink.vue';
 import FdsNavItemRoute from './components/fds-nav-item-route.vue';
 
 import FdsSidenavigationTabs from './components/fds-sidenavigation-tabs.vue';
-
+import FdsTrinindikator from './components/fds-trinindikator.vue';
 import FdsFaneblade from './components/fds-faneblade.vue';
 import FdsFanebladItem from './components/fds-faneblad-item.vue';
 import FdsFanebladeList from './components/fds-faneblade-list.vue';
+import FdsTilbageLink from './components/fds-tilbage-link.vue';
 
 export * from './model/fds.model';
 export * from './utils/validate-utils';
 export * from './utils/file-utils';
 
 function install (app: App): void {
+  app.component('fds-trinindikator', FdsTrinindikator);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-alert', FdsAlert);
   app.component('fds-faneblad-item', FdsFanebladItem);
@@ -85,10 +87,13 @@ function install (app: App): void {
   app.component('fds-sidenavigation-tabs', FdsSidenavigationTabs);
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
+  app.component('fds-tilbage-link', FdsTilbageLink);
 }
 
 export {
   FdsAlert,
+  FdsTrinindikator,
+  FdsTilbageLink,
   FdsFanebladItem,
   FdsStruktureredeListe,
   FdsFaneblade,

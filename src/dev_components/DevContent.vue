@@ -343,6 +343,20 @@
       </fds-detaljer>
 
       <hr />
+      <h2>Trinindikator</h2>
+
+      <p>Afventer</p>
+      <fds-trinindikator></fds-trinindikator>
+      <hr />
+
+      <h2>Tilbage link</h2>
+      <fds-tilbage-link @click="klikEvent" />
+      <br />
+      <fds-tilbage-link @click="klikEvent">
+        Egen tekst
+      </fds-tilbage-link>
+
+      <hr />
       <h3>Ikoner</h3>
 
       <i class="icon icon-coronavirus"></i>
@@ -750,6 +764,7 @@ import {
   FdsNavigationStep,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent } from '@/utils/validate-utils';
+import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
