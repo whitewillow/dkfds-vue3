@@ -1,7 +1,7 @@
 <template>
   <div
     class="spinner"
-    v-bind="$attr"></div>
+    v-bind="attrs"></div>
   <div
     class="spinner-status"
     role="status"
@@ -11,11 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from '@/model/fds.model';
-import {
-  computed, defineProps, ref, useSlots,
-} from 'vue';
+import { defineProps, useAttrs } from 'vue';
 
+const attrs = useAttrs();
 const props = defineProps({
   variant: {
     type: String,
