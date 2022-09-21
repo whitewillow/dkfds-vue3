@@ -2,10 +2,6 @@
  * Comon props for FDS Textarea
  */
 const fdsInputProps = {
-  modelValue: {
-    type: String,
-    default: '',
-  },
   id: {
     type: String,
     default: null,
@@ -15,6 +11,10 @@ const fdsInputProps = {
     default: '',
   },
   inputType: {
+    type: String,
+    default: 'text',
+  },
+  autocomplete: {
     type: String,
     default: 'text',
   },

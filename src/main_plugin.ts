@@ -14,6 +14,7 @@ import FdsRadioToggle from './components/fds-radio-toggle.vue';
 import FdsDropdown from './components/fds-dropdown.vue';
 import FdsLabel from './components/fds-label.vue';
 import FdsValidate from './components/fds-validate.vue';
+import FdsValidateNumber from './components/fds-validate-number.vue';
 import FdsFormgroup from './components/fds-formgroup.vue';
 import FdsFejlmeddelelse from './components/fds-fejlmeddelelse.vue';
 import FdsFejlopsummering from './components/fds-fejlopsummering.vue';
@@ -44,6 +45,7 @@ import FdsFanebladItem from './components/fds-faneblad-item.vue';
 import FdsFanebladeList from './components/fds-faneblade-list.vue';
 import FdsTilbageLink from './components/fds-tilbage-link.vue';
 import FdsSpinner from './components/fds-spinner.vue';
+import FdsInputNumber from './components/fds-input-number.vue';
 
 export * from './model/fds.model';
 export * from './utils/validate-utils';
@@ -62,6 +64,7 @@ function install (app: App): void {
   app.component('fds-badge', FdsBadge);
   app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
+  app.component('fds-input-number', FdsInputNumber);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
   app.component('fds-checkbox-list', FdsCheckboxList);
@@ -70,6 +73,7 @@ function install (app: App): void {
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
   app.component('fds-validate', FdsValidate);
+  app.component('fds-validate-number', FdsValidateNumber);
   app.component('fds-formgroup', FdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
@@ -97,6 +101,8 @@ export {
   FdsSpinner,
   FdsTrinindikator,
   FdsTilbageLink,
+  FdsInputNumber,
+  FdsValidateNumber,
   FdsFanebladItem,
   FdsStruktureredeListe,
   FdsFaneblade,

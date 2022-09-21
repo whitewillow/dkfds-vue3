@@ -17,7 +17,16 @@
       <fds-input
         v-model="value"
         :id="formid"
-        v-bind="{ placeholder, inputType, inputClass, disabled, readonly, suffix, prefix }"
+        v-bind="{
+          placeholder,
+          autocomplete,
+          inputType,
+          inputClass,
+          disabled,
+          readonly,
+          suffix,
+          prefix,
+        }"
         @update:modelValue="handleInput"
         @dirty="touchedEvent"></fds-input>
     </fds-formgroup>
@@ -36,6 +45,10 @@ import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 
 const props = defineProps({
   ...fdsInputProps,
+  modelValue: {
+    type: String,
+    default: '',
+  },
   validations: {
     type: Array as () => Array<(input: string) => string | null>,
     default: null,

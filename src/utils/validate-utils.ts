@@ -3,8 +3,8 @@
  * @param functions an array of validation methods
  * @returns string = error | null = no errors
  */
-export function validateAllErrorMessage (...functions: Array<(x: string) => string | null>) {
-  return (x: string) => {
+export function validateAllErrorMessage (...functions: Array<(x?: unknown) => string | null>) {
+  return (x: unknown) => {
     const messages = functions.map((f) => f(x)).filter((msg) => msg);
 
     if (messages && messages.length > 0) {
@@ -12,6 +12,13 @@ export function validateAllErrorMessage (...functions: Array<(x: string) => stri
     }
     return null;
   };
+}
+
+export function numberMax (max: number): (args: number) => string | null {
+  return (x: number) => (x <= max ? null : `Feltet må overstige ${max}.`);
+}
+export function numberMin (min: number): (args: number) => string | null {
+  return (x: number) => (x > min ? null : `Feltet må kommer under ${min}.`);
 }
 
 export function charactersMaxLength (length: number): (args: string) => string | null {

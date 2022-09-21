@@ -125,6 +125,7 @@ Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumen
 Dokumentation via:
 - https://histoire.dev/ ?
 - Test
+- Test Aria/A11y/Tilgængelighed - https://designsystem.dk/design/tilgaengelighed/
 
 
 ## Fase 3
@@ -167,9 +168,7 @@ Overvej ekstra komponenter som
 - etc.
 
 ### Fase 7
-
-Vite create template e.g:
-```
+https://designsystem.dk/design/tilgaengelighed/
 npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 ```
 

@@ -36,6 +36,27 @@
               :id="formid"></fds-input>
           </fds-formgroup>
         </fds-validate>
+
+        <fds-validate-number
+          :modelValue="noBeloeb"
+          :validations="[numberMax(500)]"
+          #default="{ isValid, errorMessage }">
+          <fds-formgroup
+            :is-valid="isValid"
+            #default="{ formid }">
+            <fds-label :id="formid">
+              Beløb i kr.
+            </fds-label>
+            <fds-fejlmeddelelse v-if="!isValid">
+              {{ errorMessage }}
+            </fds-fejlmeddelelse>
+            <fds-hint>Indtast efternavn</fds-hint>
+            <fds-input-number
+              v-model="noBeloeb"
+              suffix="kr."
+              :id="formid"></fds-input-number>
+          </fds-formgroup>
+        </fds-validate-number>
       </div>
 
       <hr class="my-6" />
@@ -65,6 +86,11 @@
           :modelValue="txtMobil"
           disabled />
 
+        <fds-form-input
+          label="Mobil nr."
+          :modelValue="txtMobil"
+          input-type="tel"
+          autocomplete="tel"/>
         <fds-form-textarea
           label="Tekst område"
           v-model="txtBeskrivelse"
@@ -803,12 +829,13 @@ import {
   FdsFileModel,
   FdsNavigationStep,
 } from '@/main_plugin';
-import { charactersMinLength, hasContent } from '@/utils/validate-utils';
+import { charactersMinLength, hasContent, numberMax } from '@/utils/validate-utils';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
 const txtEfternavn = ref('');
+const noBeloeb = ref(0);
 const txtAdresse = ref('');
 const kasser = ref('');
 const txtMobil = ref('23232323');

@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, ref, watch, computed, PropType,
 } from 'vue';
 import { validateAllErrorMessage } from '@/utils/validate-utils';
 
@@ -14,8 +14,7 @@ const isValid = ref(true);
 const errorMessage = ref('');
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: '',
+    default: 0,
   },
   validateFlow: {
     type: String,
@@ -26,19 +25,14 @@ const props = defineProps({
     default: false,
   },
   validations: {
-    type: Array as () => Array<(input: string) => string | null>,
-    default: () => [
-      (input: string) => {
-        if (!input || input.trim().length === 0) {
-          return 'Indtast data';
-        }
-        return null;
-      },
-    ],
+    type: Array as () => Array<(input?: number) => string | null>,
+    default: () => [() => null],
   },
 });
 
 const emit = defineEmits(['valid']);
+
+const val = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
 
 const isFormValid = () => {
   if (props.validations) {
@@ -46,9 +40,8 @@ const isFormValid = () => {
 
     const result: string | null = validateAllErrorMessage(
       ...(vals as Array<(x?: unknown) => string | null>),
-    )(props.modelValue);
+    )(val.value);
     isValid.value = true;
-
     if (result) {
       errorMessage.value = result;
       isValid.value = false;
@@ -61,10 +54,11 @@ const isFormValid = () => {
 watch(
   () => [props.modelValue, props.dirty],
   () => {
+    val.value = Number.isNaN(props.modelValue) ? 0 : props.modelValue;
     isFormValid();
   },
   {
-    immediate: props.validateFlow === 'immediate' || props.modelValue.length > 0 || props.dirty,
+    immediate: props.validateFlow === 'immediate',
   },
 );
 </script>

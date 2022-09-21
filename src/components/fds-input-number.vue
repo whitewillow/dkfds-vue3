@@ -15,10 +15,12 @@
       :id="id"
       :placeholder="placeholder"
       :type="inputType"
-      :autocomplete="autocomplete"
       :disabled="disabled"
       @input="handleInput"
-      @focus="$emit('dirty')"/>
+      @focus="
+        ($event.target as any).select();
+        $emit('dirty');
+      "/>
     <div
       v-if="suffix"
       class="form-input-suffix"
@@ -37,8 +39,11 @@ import fdsInputProps from '@/props/fds-input.props';
 const props = defineProps({
   ...fdsInputProps,
   modelValue: {
+    default: 0,
+  },
+  inputType: {
     type: String,
-    default: '',
+    default: 'number',
   },
   suffix: {
     type: String,
@@ -52,7 +57,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
-const value = ref(props.modelValue);
+const value = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
 
 const cssClass = computed((): string => {
   if (props.suffix) {
