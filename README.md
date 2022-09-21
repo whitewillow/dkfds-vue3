@@ -176,19 +176,12 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 ## TODO
 
-- fds-detaljer
-- fds-faneblade - se fds-sidenavigation-tabs
-- fds-sidenavigation - fds-sidenavigation-tabs med :to="routelocation"
-- fds-sprogvaelger
-- fds-strukturerede-liste
-- fds-trinindikatorer
-- fds-spinner - Variationer ?
-- fds-number currency!
 - fds-soegefelt / <fds-input knap prop?>
-- fds-tilbage-link - af-art af Funktionslink
-- fds-tooltip refak - https://designsystem.dk/kode/komponenter/tooltip/
-- fds-fil-upload/list refak
+- fds-link
 - fds-icon
+- fds-sprogvaelger
+- fds-trinindikatorer
+- fds-fil-upload/list refak
 - fds-typegrafy / fds-t
 - fds-progress ?
 - Overvej knapper variants ?
@@ -203,9 +196,9 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [ ] Cookiemeddelelse <mark>TBD</mark>
 - [ ] Datoangivelse <mark>Overvej eget komponent</mark>
 - [ ] Datovælger <mark>Overvej eget komponent</mark>
-- [ ] Detaljer
+- [x] Detaljer
 - [x] Dropdown-menu
-- [ ] Faneblade
+- [x] Faneblade
 - [x] Fejlmeddelelser
 - [x] Fejlopsummering
 - [x] Felter
@@ -221,17 +214,17 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Radioknap
 - [ ] Sidenavigation
 - [ ] Skip-link
-- [ ] Spinner
+- [x] Spinner
 - [ ] Sprogvælger
-- [ ] Strukturerede lister
+- [x] Strukturerede lister
 - [ ] Søgefelt
-- [ ] Tilbage link
+- [x] Tilbage link
 - [ ] Tabeller
 - [ ] Tags
 - [x] Tekstområde
 - [x] Tjekboks
 - [x] Toggle switch
-- [ ] Tooltip
+- [x] Tooltip
 - [ ] Trinindikatorer
 - [x] Vedhæft fil (Upload)
 
@@ -242,7 +235,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] fds-checkbox
 - [x] fds-radio
 - [x] fds-dropdown
-- [ ] fds-number currency
+- [x] fds-number
 
 
 ## Fejl og Validering
@@ -269,7 +262,7 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [x] fds-button-icon
 - [x] fds-button-spinner
 - [ ] fds-link
-- [ ] fds-function-link
+- [x] fds-function-link
 
 ## Layout - Header, Navigation og Footer
 
