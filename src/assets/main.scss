@@ -10,6 +10,33 @@ body {
   flex-direction: column;
 }
 
+.component-preview {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  >.component-link {
+    border-bottom: 1px solid #dcdcdc;
+  } 
+  >.component-example {
+    border-top: 1px solid #dcdcdc;
+  }
+  >.component-code {
+    border-top: 1px solid #dcdcdc;
+    background-color: #f4f4f4;
+    font-size: 0.8em;
+    border-left: 3px solid #d63384;
+    color: #d63384;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    page-break-inside: avoid;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+  }
+}
+
+
+
+
 header .navbar .search-form {
   align-self: center;
 }

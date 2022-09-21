@@ -13,7 +13,10 @@
               href="javascript:void(0);"
               class="d-block menuitem hand"
               @click="navigate(item)">
-              {{ index + 1 + `. ` }} {{ item.title }}
+              <span v-if="showIndex">
+                {{ index + 1 + `. ` }}
+              </span>
+              {{ item.title }}
               <p
                 v-if="item.help && item.help.length > 0"
                 class="sidenav-information">
@@ -36,9 +39,7 @@
     </aside>
 
     <div class="col-12 col-lg-9">
-      <slot
-        v-bind:currentKey="currentKey"
-        :name="currentKey" />
+      <slot :name="currentKey" />
     </div>
   </div>
 </template>
@@ -53,6 +54,10 @@ const props = defineProps({
   list: {
     type: Array as () => Array<FdsNavigationStep>,
     required: true,
+  },
+  showIndex: {
+    type: Boolean,
+    default: false,
   },
 });
 

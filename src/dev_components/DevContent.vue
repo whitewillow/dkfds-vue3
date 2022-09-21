@@ -267,6 +267,14 @@
       </fds-accordion>
 
       <hr />
+
+      <h2>Component preview</h2>
+
+      <fds-component-preview header="asdasd">
+        asdasdasd
+      </fds-component-preview>
+
+      <hr />
       <h2>Filer</h2>
 
       <fds-file-upload @upload="fileInput = $event"></fds-file-upload>

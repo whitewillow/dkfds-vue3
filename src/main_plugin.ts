@@ -1,55 +1,56 @@
 import { App, Plugin } from 'vue';
 
 import FdsStruktureredeListe from '@/components/fds-strukturerede-liste.vue';
-import FdsAlert from './components/fds-alert.vue';
-import FdsPre from './components/fds-pre.vue';
-import FdsIconCollection from './components/fds-icon-collection.vue';
-import FdsHint from './components/fds-hint.vue';
-import FdsInput from './components/fds-input.vue';
-import FdsCheckbox from './components/fds-checkbox.vue';
-import FdsCheckboxList from './components/fds-checkbox-list.vue';
-import FdsToggleSwitch from './components/fds-toggle-switch.vue';
-import FdsRadio from './components/fds-radio.vue';
-import FdsRadioToggle from './components/fds-radio-toggle.vue';
-import FdsDropdown from './components/fds-dropdown.vue';
-import FdsLabel from './components/fds-label.vue';
-import FdsValidate from './components/fds-validate.vue';
-import FdsValidateNumber from './components/fds-validate-number.vue';
-import FdsFormgroup from './components/fds-formgroup.vue';
-import FdsFejlmeddelelse from './components/fds-fejlmeddelelse.vue';
-import FdsFejlopsummering from './components/fds-fejlopsummering.vue';
-import FdsFormInput from './components/fds-form-input.vue';
-import FdsFormTextarea from './components/fds-form-textarea.vue';
-import FdsButton from './components/fds-button.vue';
-import FdsButtonIcon from './components/fds-button-icon.vue';
-import FdsButtonSpinner from './components/fds-button-spinner.vue';
-import FdsAccordion from './components/fds-accordion.vue';
-import FdsAccordionGroup from './components/fds-accordion-group.vue';
-import FdsAccordionItem from './components/fds-accordion-item.vue';
-import FdsBadge from './components/fds-badge.vue';
-import FdsCard from './components/fds-card.vue';
-import FdsTooltip from './components/fds-tooltip.vue';
-import FdsFileUpload from './components/fds-file-upload.vue';
-import FdsFileList from './components/fds-file-list.vue';
+import FdsAlert from '@/components/fds-alert.vue';
+import FdsPre from '@/components/fds-pre.vue';
+import FdsIconCollection from '@/components/fds-icon-collection.vue';
+import FdsHint from '@/components/fds-hint.vue';
+import FdsInput from '@/components/fds-input.vue';
+import FdsCheckbox from '@/components/fds-checkbox.vue';
+import FdsCheckboxList from '@/components/fds-checkbox-list.vue';
+import FdsToggleSwitch from '@/components/fds-toggle-switch.vue';
+import FdsRadio from '@/components/fds-radio.vue';
+import FdsRadioToggle from '@/components/fds-radio-toggle.vue';
+import FdsDropdown from '@/components/fds-dropdown.vue';
+import FdsLabel from '@/components/fds-label.vue';
+import FdsValidate from '@/components/fds-validate.vue';
+import FdsValidateNumber from '@/components/fds-validate-number.vue';
+import FdsFormgroup from '@/components/fds-formgroup.vue';
+import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
+import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
+import FdsFormInput from '@/components/fds-form-input.vue';
+import FdsFormTextarea from '@/components/fds-form-textarea.vue';
+import FdsButton from '@/components/fds-button.vue';
+import FdsButtonIcon from '@/components/fds-button-icon.vue';
+import FdsButtonSpinner from '@/components/fds-button-spinner.vue';
+import FdsAccordion from '@/components/fds-accordion.vue';
+import FdsAccordionGroup from '@/components/fds-accordion-group.vue';
+import FdsAccordionItem from '@/components/fds-accordion-item.vue';
+import FdsBadge from '@/components/fds-badge.vue';
+import FdsCard from '@/components/fds-card.vue';
+import FdsTooltip from '@/components/fds-tooltip.vue';
+import FdsFileUpload from '@/components/fds-file-upload.vue';
+import FdsFileList from '@/components/fds-file-list.vue';
 
-import FdsDetaljer from './components/fds-detaljer.vue';
+import FdsDetaljer from '@/components/fds-detaljer.vue';
 
-import FdsFunktionslink from './components/fds-funktionslink.vue';
+import FdsFunktionslink from '@/components/fds-funktionslink.vue';
 
-import FdsNavItemRoute from './components/fds-nav-item-route.vue';
+import FdsNavItemRoute from '@/components/fds-nav-item-route.vue';
 
-import FdsSidenavigationTabs from './components/fds-sidenavigation-tabs.vue';
-import FdsTrinindikator from './components/fds-trinindikator.vue';
-import FdsFaneblade from './components/fds-faneblade.vue';
-import FdsFanebladItem from './components/fds-faneblad-item.vue';
-import FdsFanebladeList from './components/fds-faneblade-list.vue';
-import FdsTilbageLink from './components/fds-tilbage-link.vue';
-import FdsSpinner from './components/fds-spinner.vue';
-import FdsInputNumber from './components/fds-input-number.vue';
+import FdsSidenavigationTabs from '@/components/fds-sidenavigation-tabs.vue';
+import FdsTrinindikator from '@/components/fds-trinindikator.vue';
+import FdsFaneblade from '@/components/fds-faneblade.vue';
+import FdsFanebladItem from '@/components/fds-faneblad-item.vue';
+import FdsFanebladeList from '@/components/fds-faneblade-list.vue';
+import FdsTilbageLink from '@/components/fds-tilbage-link.vue';
+import FdsSpinner from '@/components/fds-spinner.vue';
+import FdsInputNumber from '@/components/fds-input-number.vue';
+import FdsComponentPreview from '@/components/fds-component-preview.vue';
 
-export * from './model/fds.model';
-export * from './utils/validate-utils';
-export * from './utils/file-utils';
+export * from '@/model/fds.model';
+export * from '@/utils/validate-utils';
+export * from '@/utils/file-utils';
 
 function install (app: App): void {
   app.component('fds-trinindikator', FdsTrinindikator);
@@ -94,11 +95,13 @@ function install (app: App): void {
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
+  app.component('fds-component-preview', FdsComponentPreview);
 }
 
 export {
   FdsAlert,
   FdsSpinner,
+  FdsComponentPreview,
   FdsTrinindikator,
   FdsTilbageLink,
   FdsInputNumber,
