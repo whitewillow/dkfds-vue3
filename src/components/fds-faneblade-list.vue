@@ -24,8 +24,8 @@
         :id="`tabpanel_${item.key}`"
         :aria-labelledby="`tab_${item.key}`">
         <slot
-          :name="currentKey"
-          v-bind:radiovalue="currentKey" />
+          v-bind:currentKey="currentKey"
+          :name="currentKey" />
       </section>
     </template>
   </div>

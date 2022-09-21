@@ -36,7 +36,9 @@
     </aside>
 
     <div class="col-12 col-lg-9">
-      <slot v-bind:currentKey="currentKey" />
+      <slot
+        v-bind:currentKey="currentKey"
+        :name="currentKey" />
     </div>
   </div>
 </template>
