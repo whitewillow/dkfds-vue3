@@ -212,7 +212,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [ ] Overflow menu
 - [ ] Paginering
 - [x] Radioknap
-- [ ] Sidenavigation
+- [x] Sidenavigation
 - [ ] Skip-link
 - [x] Spinner
 - [ ] Sprogvælger
