@@ -421,7 +421,7 @@
 
       <h2>Side tabs</h2>
 
-      <h3>Manuel</h3>
+      <h3>Manuel sidenavigation</h3>
       <div class="row">
         <div class="col-4">
           <fds-sidenavigation
@@ -434,7 +434,11 @@
         </div>
       </div>
 
-      <fds-sidenavigation-tabs :list="sideTabs">
+      <hr class="my-6" />
+      <h3>Sidenavigation automatiseret</h3>
+      <fds-sidenavigation-list
+        v-model="sideTabs"
+        showIndex>
         <template
           v-slot:[tab.key]
           v-for="tab of sideTabs"
@@ -448,9 +452,12 @@
             velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
           </p>
         </template>
-      </fds-sidenavigation-tabs>
+      </fds-sidenavigation-list>
 
-      <fds-sidenavigation-tabs :list="sideTabs">
+      <hr class="my-6" />
+
+      <h3>Sidenavigation automatiseret</h3>
+      <fds-sidenavigation-list v-model="sideTabs">
         <template v-slot:[`suppe`]>
           <h2>Suppe</h2>
           <p>
@@ -493,14 +500,17 @@
             velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
           </p>
         </template>
-      </fds-sidenavigation-tabs>
+      </fds-sidenavigation-list>
+      <hr class="my-6" />
 
       <h2>Faneblade</h2>
 
+      <h3>Faneblade - Manuel</h3>
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
           :active="true"
+          @click="fanebladManueltId = $event"
           id="1">
           <h2>Fane 1</h2>
           <p>Manuel styret faneblade</p>
@@ -508,6 +518,7 @@
 
         <fds-faneblad-item
           header="Fane 2"
+          @click="fanebladManueltId = $event"
           id="2">
           <h2>Fane 1</h2>
           <p>
@@ -519,6 +530,11 @@
           </p>
         </fds-faneblad-item>
       </fds-faneblade>
+
+      <fds-pre :json="{ fanebladManueltId }" />
+
+      <hr class="my-6" />
+      <h3>Faneblade - automatiseret</h3>
 
       <fds-faneblade-list :list="faneBlade">
         <template v-slot:[`suppe`]>
@@ -564,7 +580,7 @@
           </p>
         </template>
       </fds-faneblade-list>
-      <hr />
+      <hr class="my-6" />
 
       <h2>Cards</h2>
 
@@ -1055,6 +1071,7 @@ const sideTabs: FdsNavigationItem[] = [
   },
 ] as unknown as FdsNavigationItem[];
 
+const fanebladManueltId = ref('');
 const faneBlade: FdsNavigationStep[] = [
   {
     order: 0,

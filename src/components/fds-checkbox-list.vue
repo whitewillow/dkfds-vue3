@@ -48,16 +48,6 @@ const value = ref(props.modelValue);
 const handleInput = (event: Event) => emit('update:modelValue', value);
 
 const formId = computed(() => uuidv4());
-
-watch(
-  () => [props.modelValue],
-  () => {
-    value.value = props.modelValue;
-  },
-  {
-    immediate: true,
-  },
-);
 </script>
 
 <style scoped lang="scss"></style>

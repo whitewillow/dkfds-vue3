@@ -1,13 +1,13 @@
 <template>
   <section>
     <div class="container page-container">
-      <fds-sidenavigation-tabs :list="sideTabs">
+      <fds-sidenavigation-list :list="sideTabs">
         <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
           <div class="subheading">Komponenter</div>
           <h1>{{ tab.title }}</h1>
           <component :is="`${tab.key}-example`" />
         </template>
-      </fds-sidenavigation-tabs>
+      </fds-sidenavigation-list>
     </div>
   </section>
 </template>

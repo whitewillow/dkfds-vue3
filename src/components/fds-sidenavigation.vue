@@ -56,44 +56,31 @@ const props = defineProps({
   },
 });
 
-const currentKey = ref('');
-// const val = ref(props.modelValue);
-const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
 const emit = defineEmits(['update:modelValue', 'navigate']);
+
+const currentKey = ref('');
+const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
 
 const subnavigation = (key: string) => {
   emit('navigate', sidenavigationService.resolveKey(key, props.modelValue));
-};
-
-const clearChildren = (
-  children: Array<FdsNavigationItem> | undefined,
-): Array<FdsNavigationItem> | undefined => {
-  if (!children) {
-    return children;
-  }
-
-  return children.map((m) => ({ ...m, active: false, children: clearChildren(m.children) }));
 };
 
 const navigate = (item: FdsNavigationItem) => {
   if (item.disabled) {
     return;
   }
-  tabsList.value = tabsList.value.map((f) => ({
-    ...f,
-    active: f.key === item.key,
-    children: clearChildren(f.children),
-  }));
+
+  tabsList.value = sidenavigationService.setActive(tabsList.value, item);
   currentKey.value = item.key;
+
   emit('update:modelValue', tabsList.value);
-  emit('navigate', currentKey);
+  emit('navigate', currentKey.value);
 };
 
 onMounted(() => {
-  const firstActive = tabsList.value.find((f) => !f.disabled && f.active);
-  const first = firstActive ?? tabsList.value.find((f) => !f.disabled);
-  if (first) {
-    navigate(first);
+  const item = sidenavigationService.findFirstActiveItem(tabsList.value);
+  if (item) {
+    navigate(item);
   }
 });
 </script>

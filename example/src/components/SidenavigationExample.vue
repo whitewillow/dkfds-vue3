@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2 class="mt-0">Sidenavigation</h2>
-    <fds-sidenavigation-tabs :list="sideTabs">
+    <fds-sidenavigation-list :list="sideTabs">
       <template v-slot:[`suppe`]>
         <h2>Suppe</h2>
         <p>
@@ -43,7 +43,7 @@
           velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
         </p>
       </template>
-    </fds-sidenavigation-tabs>
+    </fds-sidenavigation-list>
   </section>
 </template>
 

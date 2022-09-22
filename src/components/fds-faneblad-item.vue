@@ -2,9 +2,9 @@
   <button
     :aria-controls="`tabpanel_${formId}`"
     :id="`tab_${formId}`"
+    @click="handleEvent"
     class="tabnav-item"
     role="tab"
-    @click="$emit('click', id)"
     :aria-selected="active">
     <span>{{ header }}</span>
   </button>
@@ -20,8 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from '@/model/fds.model';
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({
@@ -38,6 +37,12 @@ const props = defineProps({
     required: true,
   },
 });
+const emit = defineEmits(['click', 'navigate']);
+
+const handleEvent = () => {
+  emit('click', props.id);
+  emit('navigate', props.id);
+};
 
 const formId = ref(uuidv4());
 </script>
