@@ -6,6 +6,7 @@ import FdsPre from '@/components/fds-pre.vue';
 import FdsIconCollection from '@/components/fds-icon-collection.vue';
 import FdsHint from '@/components/fds-hint.vue';
 import FdsInput from '@/components/fds-input.vue';
+import FdsTextarea from '@/components/fds-textarea.vue';
 import FdsCheckbox from '@/components/fds-checkbox.vue';
 import FdsCheckboxList from '@/components/fds-checkbox-list.vue';
 import FdsToggleSwitch from '@/components/fds-toggle-switch.vue';
@@ -68,6 +69,7 @@ function install (app: App): void {
   app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
   app.component('fds-input-number', FdsInputNumber);
+  app.component('fds-textarea', FdsTextarea);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
   app.component('fds-checkbox-list', FdsCheckboxList);
@@ -108,6 +110,7 @@ export {
   FdsComponentPreview,
   FdsTrinindikator,
   FdsTilbageLink,
+  FdsTextarea,
   FdsInputNumber,
   FdsValidateNumber,
   FdsFanebladItem,

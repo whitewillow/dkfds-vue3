@@ -1,13 +1,19 @@
 <template>
   <section>
     <div>
-      <h2>Form group</h2>
+      <h2>Enkeltstående komponenter</h2>
       <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Fornavn </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
-        <fds-input v-model="txtFornavn" :id="formid"></fds-input>
+        <fds-input
+          v-model="txtFornavn"
+          input-type="name"
+          autocomplete="name"
+          :id="formid"
+        ></fds-input>
       </fds-formgroup>
+      <p class="italic">Understøtter autocomplete patterns, som name, tel m.m.</p>
 
       <h2>Validering</h2>
       <fds-validate
@@ -40,6 +46,15 @@
           <fds-input-number v-model="noBeloeb" suffix="kr." :id="formid"></fds-input-number>
         </fds-formgroup>
       </fds-validate-number>
+
+      <h2>Samlet komponent</h2>
+      <p class="font-lead">Samlet komponent, med validering</p>
+      <fds-form-input
+        label="Mobil nr."
+        :modelValue="txtMobil"
+        input-type="tel"
+        autocomplete="tel"
+      />
     </div>
   </section>
 </template>
