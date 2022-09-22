@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from '@/model/fds.model';
 import { defineProps, defineEmits } from 'vue';
+import { FdsNavigationItem } from '@/model/fds.model';
 import sidenavigationService from '@/service/sidenavigation.service';
 
 const props = defineProps({

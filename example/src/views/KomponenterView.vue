@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container page-container">
-      <fds-sidenavigation-list :list="sideTabs">
+      <fds-sidenavigation-list v-model="sideTabs">
         <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
           <div class="subheading">Komponenter</div>
           <h1>{{ tab.title }}</h1>

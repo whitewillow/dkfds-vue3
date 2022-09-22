@@ -1,14 +1,13 @@
 <template>
   <section>
-    <h2>Faneblade</h2>
-
+    <h3>Faneblade - Manuel</h3>
     <fds-faneblade>
-      <fds-faneblad-item header="Fane 1" :active="true" id="1">
+      <fds-faneblad-item header="Fane 1" :active="true" @click="fanebladManueltId = $event" id="1">
         <h2>Fane 1</h2>
         <p>Manuel styret faneblade</p>
       </fds-faneblad-item>
 
-      <fds-faneblad-item header="Fane 2" id="2">
+      <fds-faneblad-item header="Fane 2" @click="fanebladManueltId = $event" id="2">
         <h2>Fane 1</h2>
         <p>
           Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
@@ -19,6 +18,11 @@
         </p>
       </fds-faneblad-item>
     </fds-faneblade>
+
+    <fds-pre :json="{ fanebladManueltId }" />
+
+    <hr class="my-6" />
+    <h3>Faneblade - automatiseret</h3>
 
     <fds-faneblade-list :list="faneBlade">
       <template v-slot:[`suppe`]>
@@ -68,8 +72,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { FdsNavigationStep, FdsOptionItem } from 'dkfds-vue3/src/model/fds.model';
+import { FdsNavigationStep } from 'dkfds-vue3/src/model/fds.model';
 
+const fanebladManueltId = ref('');
 const faneBlade: FdsNavigationStep[] = [
   {
     order: 0,

@@ -1,7 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Accordions</h2>
-
     <fds-accordion-group #default="{ groupcollapse }">
       <fds-accordion-item
         :collapsed="groupcollapse"
