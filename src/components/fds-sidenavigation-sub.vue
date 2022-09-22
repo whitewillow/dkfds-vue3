@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from '@/model/fds.model';
 import { defineProps, defineEmits } from 'vue';
+import sidenavigationService from '@/service/sidenavigation.service';
 
 const props = defineProps({
   modelValue: {
@@ -34,14 +35,8 @@ const props = defineProps({
 });
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
-const daddy = (key: string) => props.modelValue.find((f) => f.children?.some((s) => s.key === key));
 const navigateup = (key: string) => {
-  const d = daddy(key);
-  if (d) {
-    emit('navigate', `${d.key}/${key}`);
-    return;
-  }
-  emit('navigate', `${key}`);
+  emit('navigate', sidenavigationService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {

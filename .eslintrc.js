@@ -14,6 +14,7 @@ module.exports = {
     'object-shorthand': ['error', 'always'],
     'linebreak-style': 'off',
     'eol-last': ['error', 'never'],
+    'arrow-body-style': 'off',
     'max-len': [
       'error',
       {

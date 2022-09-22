@@ -40,6 +40,7 @@
 
 <script setup lang="ts">
 import { FdsNavigationItem } from '@/model/fds.model';
+import sidenavigationService from '@/service/sidenavigation.service';
 import {
   defineProps, ref, defineEmits, onMounted,
 } from 'vue';
@@ -60,15 +61,8 @@ const currentKey = ref('');
 const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
-const daddy = (key: string) => props.modelValue.find((f) => f.children?.some((s) => s.key === key));
-
-const subnavigation = (key: any) => {
-  const d = daddy(key.split('/')[0]);
-  if (d) {
-    emit('navigate', `${d.key}/${key}`);
-    return;
-  }
-  emit('navigate', `${key}`);
+const subnavigation = (key: string) => {
+  emit('navigate', sidenavigationService.resolveKey(key, props.modelValue));
 };
 
 const clearChildren = (
