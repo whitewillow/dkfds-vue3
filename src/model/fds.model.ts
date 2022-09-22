@@ -47,12 +47,24 @@ export interface FdsFileInputModel {
   data: string;
 }
 
+export interface FdsNavigationItem {
+  key: string;
+  title: string;
+  hint: string;
+  icon?: string; // shows icon if any
+  active: boolean; // currently selected
+  disabled?: boolean; // not clickable
+  ignore?: boolean;
+  to?: RouteLocationRaw;
+  children?: Array<FdsNavigationItem>;
+}
+
 export interface FdsNavigationStep {
   order: number;
   key: string;
   title: string;
   help: string;
-  done: boolean;
+  done: boolean; // if true shows icon
   active: boolean;
   disabled?: boolean;
   ignore?: boolean;

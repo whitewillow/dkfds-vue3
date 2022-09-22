@@ -421,6 +421,35 @@
 
       <h2>Side tabs</h2>
 
+      <h3>Manuel</h3>
+      <div class="row">
+        <div class="col-4">
+          <fds-sidenavigation
+            v-model="manuelSideNavList"
+            @navigate="manuelSideNavKey = $event" />
+        </div>
+        <div class="col">
+          <fds-pre :json="{ currentKey: manuelSideNavKey }" />
+          <fds-pre :json="manuelSideNavList" />
+        </div>
+      </div>
+
+      <fds-sidenavigation-tabs :list="sideTabs">
+        <template
+          v-slot:[tab.key]
+          v-for="tab of sideTabs"
+          :key="tab.key">
+          <h2>{{ tab.title }}</h2>
+          <p>
+            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
+            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
+            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
+            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
+            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
+          </p>
+        </template>
+      </fds-sidenavigation-tabs>
+
       <fds-sidenavigation-tabs :list="sideTabs">
         <template v-slot:[`suppe`]>
           <h2>Suppe</h2>
@@ -836,6 +865,7 @@ import {
   FdsFileInputModel,
   FdsFileModel,
   FdsNavigationStep,
+  FdsNavigationItem,
 } from '@/main_plugin';
 import { charactersMinLength, hasContent, numberMax } from '@/utils/validate-utils';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
@@ -936,35 +966,94 @@ const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 const klikEvent = () => window.confirm('KLIK');
 
-const sideTabs: FdsNavigationStep[] = [
+const manuelSideNavKey = '';
+const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   {
-    order: 0,
     key: 'suppe',
     title: 'Supper',
-    help: '',
-    done: true,
+    hint: '',
+    icon: 'done',
   },
   {
-    order: 1,
     key: 'dessert',
     title: 'Dessert',
-    help: 'Hjælpetekst',
+    hint: 'Hjælpetekst',
+    active: true,
+    children: [
+      {
+        key: 'bananasplit',
+        title: 'Bananasplit',
+        hint: '',
+      },
+      {
+        key: 'cheesecake',
+        title: 'Cheesecake',
+        hint: '',
+        children: [
+          {
+            key: 'cheesechili',
+            title: 'Cheese Chili',
+            hint: '',
+          },
+          {
+            key: 'cheeseapple',
+            title: 'Cheese Apple',
+            hint: '',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: 'kod',
+    title: 'Kød',
+    hint: '',
+    children: [
+      {
+        key: 'chicken',
+        title: 'Chicken',
+        hint: '',
+      },
+      {
+        key: 'beef',
+        title: 'Beef',
+        hint: '',
+      },
+    ],
+  },
+  {
+    key: 'fisk',
+    title: 'Fisk',
+    hint: '',
+    disabled: true,
+  },
+] as unknown as FdsNavigationItem[]);
+
+const sideTabs: FdsNavigationItem[] = [
+  {
+    key: 'suppe',
+    title: 'Supper',
+    hint: '',
+    icon: 'done',
+  },
+  {
+    key: 'dessert',
+    title: 'Dessert',
+    hint: 'Hjælpetekst',
     active: true,
   },
   {
-    order: 2,
     key: 'kod',
     title: 'Kød',
-    help: '',
+    hint: '',
   },
   {
-    order: 3,
     key: 'fisk',
     title: 'Fisk',
-    help: '',
+    hint: '',
     disabled: true,
   },
-] as unknown as FdsNavigationStep[];
+] as unknown as FdsNavigationItem[];
 
 const faneBlade: FdsNavigationStep[] = [
   {

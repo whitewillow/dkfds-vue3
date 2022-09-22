@@ -18,18 +18,18 @@
               </span>
               {{ item.title }}
               <p
-                v-if="item.help && item.help.length > 0"
+                v-if="item.hint && item.hint.length > 0"
                 class="sidenav-information">
-                {{ item.help }}
+                {{ item.hint }}
               </p>
               <span
                 class="sidenav-icon"
-                v-if="item.done">
+                v-if="item.icon">
                 <svg
                   class="icon-svg"
                   focusable="false"
                   aria-hidden="true">
-                  <use xlink:href="#done" />
+                  <use :xlink:href="`#${item.icon}`" />
                 </svg>
               </span>
             </a>
@@ -45,14 +45,14 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from '@/model/fds.model';
+import { FdsNavigationItem } from '@/model/fds.model';
 import {
   defineProps, ref, defineEmits, onMounted,
 } from 'vue';
 
 const props = defineProps({
   list: {
-    type: Array as () => Array<FdsNavigationStep>,
+    type: Array as () => Array<FdsNavigationItem>,
     required: true,
   },
   showIndex: {
@@ -62,10 +62,10 @@ const props = defineProps({
 });
 
 const currentKey = ref('');
-const tabsList = ref<Array<FdsNavigationStep>>(props.list.filter((f) => !f.ignore));
+const tabsList = ref<Array<FdsNavigationItem>>(props.list.filter((f) => !f.ignore));
 const emit = defineEmits(['navigate']);
 
-const navigate = (item: FdsNavigationStep) => {
+const navigate = (item: FdsNavigationItem) => {
   if (item.disabled) {
     return;
   }

@@ -38,7 +38,9 @@ import FdsFunktionslink from '@/components/fds-funktionslink.vue';
 
 import FdsNavItemRoute from '@/components/fds-nav-item-route.vue';
 
+import FdsSidenavigation from '@/components/fds-sidenavigation.vue';
 import FdsSidenavigationTabs from '@/components/fds-sidenavigation-tabs.vue';
+import FdsSidenavigationSub from '@/components/fds-sidenavigation-sub.vue';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 import FdsFaneblade from '@/components/fds-faneblade.vue';
 import FdsFanebladItem from '@/components/fds-faneblad-item.vue';
@@ -92,6 +94,8 @@ function install (app: App): void {
   app.component('fds-nav-item-route', FdsNavItemRoute);
   app.component('fds-funktionslink', FdsFunktionslink);
   app.component('fds-sidenavigation-tabs', FdsSidenavigationTabs);
+  app.component('fds-sidenavigation-sub', FdsSidenavigationSub);
+  app.component('fds-sidenavigation', FdsSidenavigation);
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
@@ -110,6 +114,9 @@ export {
   FdsStruktureredeListe,
   FdsFaneblade,
   FdsFanebladeList,
+  FdsSidenavigationTabs,
+  FdsSidenavigationSub,
+  FdsSidenavigation,
   FdsHint,
   FdsDetaljer,
   FdsPre,
