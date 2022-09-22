@@ -14,11 +14,7 @@
           {{ index + 1 + `. ` }}
         </span>
         {{ item.title }}
-        <p
-          v-if="item.hint && item.hint.length > 0"
-          class="sidenav-information">
-          {{ item.hint }}
-        </p>
+
         <span
           class="sidenav-icon"
           v-if="item.icon">
@@ -29,6 +25,11 @@
             <use :xlink:href="`#${item.icon}`" />
           </svg>
         </span>
+        <p
+          v-if="item.hint && item.hint.length > 0"
+          class="sidenav-information">
+          {{ item.hint }}
+        </p>
       </a>
       <fds-sidenavigation-sub
         v-if="item.active && item.children && item.children.length > 0"

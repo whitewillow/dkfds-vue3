@@ -4,7 +4,7 @@
       class="accordion-bulk-button"
       :data-accordion-bulk-expand="collapse"
       @click="toggle">
-      Åbn alle
+      {{ `${collapse ? openText : closeText}` }}
     </button>
     <ul class="accordion">
       <slot :groupcollapse="collapse" />
@@ -13,7 +13,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
+
+const props = defineProps({
+  openText: {
+    type: String,
+    default: 'Åbn alle',
+  },
+  closeText: {
+    type: String,
+    default: 'Luk alle',
+  },
+});
 
 const collapse = ref(true);
 

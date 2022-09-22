@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h1 class="mt-0">Tooltip</h1>
     <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
   </section>
 </template>

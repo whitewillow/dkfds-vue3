@@ -1,10 +1,31 @@
 <template>
   <section>
-    <h2 class="mt-0">Strukturerede lister</h2>
+    <h3>Simpel brug</h3>
+
+    <div class="w-percent-60">
+      <fds-strukturerede-liste header="Navn"> Kirsten Mønster Jensen </fds-strukturerede-liste>
+      <fds-strukturerede-liste header="E-mail"> kirstenjensen@eksempel.dk </fds-strukturerede-liste>
+    </div>
+
+    <h3>med rediger</h3>
+
+    <div class="w-percent-60">
+      <fds-strukturerede-liste header="Navn">
+        Kirsten Mønster Jensen
+        <template #button>
+          <a href="#"> Redigér<span class="sr-only"> Kirsten Mønster Jensen </span> </a>
+        </template>
+      </fds-strukturerede-liste>
+      <fds-strukturerede-liste header="E-mail">
+        kirstenjensen@eksempel.dk
+        <template #button>
+          <a href="#"> Redigér<span class="sr-only"> Kirsten Mønster Jensen </span> </a>
+        </template>
+      </fds-strukturerede-liste>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FdsFileInputModel, FdsFileModel, FdsNavigationStep } from 'dkfds-vue3/src/model/fds.model';
 import { ref } from 'vue';
 </script>

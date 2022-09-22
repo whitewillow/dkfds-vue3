@@ -1045,7 +1045,7 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   },
 ] as unknown as FdsNavigationItem[]);
 
-const sideTabs: FdsNavigationItem[] = [
+const sideTabs = ref<FdsNavigationItem[]>([
   {
     key: 'suppe',
     title: 'Supper',
@@ -1056,6 +1056,8 @@ const sideTabs: FdsNavigationItem[] = [
     key: 'dessert',
     title: 'Dessert',
     hint: 'Hjælpetekst',
+    icon: 'home',
+
     active: true,
   },
   {
@@ -1069,7 +1071,7 @@ const sideTabs: FdsNavigationItem[] = [
     hint: '',
     disabled: true,
   },
-] as unknown as FdsNavigationItem[];
+] as unknown as FdsNavigationItem[]);
 
 const fanebladManueltId = ref('');
 const faneBlade: FdsNavigationStep[] = [
