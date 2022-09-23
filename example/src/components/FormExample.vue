@@ -117,7 +117,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { charactersMinLength, hasContent } from 'dkfds-vue3/src/utils/validate-utils';
-import { FdsOptionItem, FdsRadioItem, FdsCheckboxItem } from 'dkfds-vue3/src/model/fds.model';
+import { FdsOptionItem, FdsCheckboxItem } from 'dkfds-vue3/src/model/fds.model';
 
 const txtFornavn = ref('');
 const txtEfternavn = ref('');
@@ -130,7 +130,7 @@ const twoChecked = ref(false);
 const radioVal = ref('');
 const toggleswitch = ref(false);
 const toggleRadio = ref(null);
-const radioOptions = ref<FdsRadioItem[]>([
+const radioOptions = ref<FdsOptionItem[]>([
   {
     title: 'Banan',
     value: 'banan',

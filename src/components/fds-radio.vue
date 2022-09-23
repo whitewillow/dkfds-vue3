@@ -35,14 +35,14 @@ import {
   defineProps, defineEmits, ref, computed, PropType,
 } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-import { FdsRadioItem } from '@/model/fds.model';
+import { FdsOptionItem } from '@/model/fds.model';
 
 const props = defineProps({
   modelValue: {
     type: String,
   },
   list: {
-    type: Array as PropType<Array<FdsRadioItem>>,
+    type: Array as PropType<Array<FdsOptionItem>>,
     required: true,
     default: () => [],
   },

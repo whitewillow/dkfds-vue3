@@ -14,13 +14,9 @@ export enum FdsVariantEnum {
 export interface FdsOptionItem {
   title: string;
   value: string;
-}
-
-export interface FdsRadioItem {
-  title: string;
-  value: string;
   disabled?: boolean;
 }
+
 export interface FdsCheckboxItem {
   title: string;
   value: string;

@@ -14,14 +14,12 @@
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-radio
+      <fds-dropdown
         :id="formid"
-        :list="options"
+        :options="options"
         v-model="value"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent">
-        <slot />
-      </fds-radio>
+        @dirty="touchedEvent"/>
     </fds-formgroup>
   </fds-validate>
 </template>

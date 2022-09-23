@@ -19,9 +19,5 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { charactersMinLength, hasContent } from 'dkfds-vue3/src/utils/validate-utils';
-import { FdsOptionItem, FdsRadioItem, FdsCheckboxItem } from 'dkfds-vue3/src/model/fds.model';
-
 const klikEvent = () => window.confirm('KLIK');
 </script>

@@ -27,13 +27,13 @@
 </template>
 
 <script setup lang="ts">
-import { FdsRadioItem } from 'dkfds-vue3/src/model/fds.model';
+import { FdsOptionItem } from 'dkfds-vue3/src/model/fds.model';
 import { ref } from 'vue';
 
 const radioVal = ref('');
 
 const toggleRadio = ref(null);
-const radioOptions = ref<FdsRadioItem[]>([
+const radioOptions = ref<FdsOptionItem[]>([
   {
     title: 'Banan',
     value: 'banan',

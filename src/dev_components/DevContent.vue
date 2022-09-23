@@ -110,6 +110,16 @@
           v-model="radioValForm">
         </fds-form-radio>
         <fds-pre :json="{ radioValForm }" />
+
+        <fds-form-dropdown
+          label="Dropdown form"
+          :validations="[hasContent]"
+          :options="dropdownOptions"
+          v-model="dropdownValForm">
+        </fds-form-dropdown>
+
+        <fds-pre :json="{ dropdownValForm }" />
+
         <hr />
 
         <h2>Tekstfelt med knap</h2>
@@ -975,7 +985,6 @@ import { ref } from 'vue';
 import {
   FdsErrorListItem,
   FdsOptionItem,
-  FdsRadioItem,
   FdsVariantEnum,
   FdsCheckboxItem,
   FdsFileInputModel,
@@ -992,6 +1001,7 @@ import {
 } from '@/utils/validate-utils';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
+import FdsFormDropdown from '@/components/fds-form-dropdown.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
@@ -1008,7 +1018,7 @@ const radioVal = ref('');
 const radioValForm = ref('');
 const toggleswitch = ref(false);
 const toggleRadio = ref(null);
-const radioOptions = ref<FdsRadioItem[]>([
+const radioOptions = ref<FdsOptionItem[]>([
   {
     title: 'Banan',
     value: 'banan',
@@ -1050,6 +1060,7 @@ const checkboxListForm = ref<FdsCheckboxItem[]>([
     value: 'æble',
   },
 ]);
+const dropdownValForm = ref('');
 const dropdownVal = ref('');
 const dropdownOptions = ref<FdsOptionItem[]>([
   {

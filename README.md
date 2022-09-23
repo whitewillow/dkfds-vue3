@@ -176,7 +176,6 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 ## TODO
 
-- fds-soegefelt / <fds-input knap prop?>
 - fds-link
 - fds-icon
 - fds-sprogvaelger
@@ -217,7 +216,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Spinner
 - [ ] Sprogvælger
 - [x] Strukturerede lister
-- [ ] Søgefelt
+- [x] Søgefelt - samme som input med slot
 - [x] Tilbage link
 - [ ] Tabeller
 - [ ] Tags
@@ -253,9 +252,9 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [x] fds-form-number
 - [x] fds-form-radio
 - [x] fds-form-checkboxes
+- [x] fds-form-dropdown
 - [ ] fds-form-email
 - [ ] fds-form-checkbox
-- [ ] fds-form-dropdown
 
 ## Knapper og Link
 - [x] fds-button

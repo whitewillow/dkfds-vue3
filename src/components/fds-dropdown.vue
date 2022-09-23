@@ -6,8 +6,7 @@
     :id="id"
     v-bind="value"
     @change="handleInput"
-    @blur="handleInput"
-    @focus="$emit('dirty')">
+    @blur="$emit('dirty')">
     <option
       value
       v-if="!noHeader">
