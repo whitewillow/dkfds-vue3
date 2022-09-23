@@ -103,20 +103,21 @@
           :validations="[arrayHasItems]"
           v-model="checkboxListForm"/>
 
-        <fds-form-radio
-          label="Radio form"
-          :validations="[hasContent]"
-          :options="radioOptions"
-          v-model="radioValForm">
-        </fds-form-radio>
-        <fds-pre :json="{ radioValForm }" />
-
         <fds-form-dropdown
           label="Dropdown form"
           :validations="[hasContent]"
           :options="dropdownOptions"
           v-model="dropdownValForm">
         </fds-form-dropdown>
+
+        <fds-form-radio
+          label="Radio form"
+          :validations="[hasContent]"
+          :options="radioOptions"
+          v-model="radioValForm">
+        </fds-form-radio>
+
+        <fds-pre :json="{ radioValForm }" />
 
         <fds-pre :json="{ dropdownValForm }" />
 
@@ -999,9 +1000,6 @@ import {
   numberMax,
   numberMin,
 } from '@/utils/validate-utils';
-import FdsTrinindikator from '@/components/fds-trinindikator.vue';
-import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
-import FdsFormDropdown from '@/components/fds-form-dropdown.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
