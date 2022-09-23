@@ -30,7 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref } from 'vue';
+import {
+  defineEmits, defineProps, ref, watch,
+} from 'vue';
 
 import FdsHint from '@/components/fds-hint.vue';
 import FdsTextarea from '@/components/fds-textarea.vue';
@@ -58,6 +60,16 @@ const validEvent = (isValid: boolean) => {
 };
 
 const handleInput = () => emit('update:modelValue', value.value);
+
+watch(
+  () => [props.modelValue],
+  () => {
+    value.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

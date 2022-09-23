@@ -89,9 +89,9 @@
 
         <fds-form-input
           label="Mobil nr."
-          :modelValue="txtMobil"
+          v-model="txtMobil"
           input-type="tel"
-          autocomplete="tel"/>
+          autocomplete="tel" />
 
         <fds-form-textarea
           label="Tekst område"
@@ -110,6 +110,40 @@
           v-model="radioValForm">
         </fds-form-radio>
         <fds-pre :json="{ radioValForm }" />
+        <hr />
+
+        <h2>Tekstfelt med knap</h2>
+
+        <fds-formgroup #default="{ formid }">
+          <fds-input
+            v-model="txtSearch"
+            placeholder="Søg efter..."
+            :id="formid">
+            <template #button>
+              <button class="button button-search">
+                <svg
+                  class="icon-svg m-0"
+                  aria-hidden="true">
+                  <use xlink:href="#search"></use></svg><span class="sr-only">
+                  Søg
+                </span>
+              </button>
+            </template>
+          </fds-input>
+        </fds-formgroup>
+
+        <fds-formgroup #default="{ formid }">
+          <fds-input
+            v-model="txtSearch"
+            placeholder="Søg efter..."
+            :id="formid">
+            <template #button>
+              <button class="button button-search">
+                Søg
+              </button>
+            </template>
+          </fds-input>
+        </fds-formgroup>
 
         <hr />
 
@@ -961,6 +995,7 @@ import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
+const txtSearch = ref('');
 const txtEfternavn = ref('');
 const noBeloeb = ref(0);
 const txtAdresse = ref('');

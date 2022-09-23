@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed,
+  defineProps, defineEmits, ref, computed, watch,
 } from 'vue';
 import fdsTextareaProps from '@/props/fds-texarea.props';
 
@@ -48,6 +48,16 @@ const getRows = computed(() => {
 });
 
 const getMaxLength = computed(() => props.maxLength ?? 4000);
+
+watch(
+  () => [props.modelValue],
+  () => {
+    val.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>

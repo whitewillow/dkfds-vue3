@@ -25,12 +25,13 @@
       aria-hidden="true">
       {{ suffix }}
     </div>
+    <slot name="button" />
   </div>
 </template>
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed,
+  defineProps, defineEmits, ref, computed, useSlots, watch,
 } from 'vue';
 import fdsInputProps from '@/props/fds-input.props';
 
@@ -51,7 +52,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
-
+const slots = useSlots();
 const value = ref(props.modelValue);
 
 const cssClass = computed((): string => {
@@ -61,10 +62,23 @@ const cssClass = computed((): string => {
   if (props.prefix) {
     return 'form-input-wrapper form-input-wrapper--prefix';
   }
+  if (slots.button) {
+    return 'search';
+  }
   return 'flex-items-center';
 });
 
 const handleInput = () => emit('update:modelValue', value.value);
+
+watch(
+  () => [props.modelValue],
+  () => {
+    value.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>
