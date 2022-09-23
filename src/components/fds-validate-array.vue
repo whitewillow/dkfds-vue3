@@ -6,16 +6,18 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, nextTick, PropType, ref, watch,
 } from 'vue';
+// eslint-disable-next-line import/no-cycle
 import { validateAllErrorMessage } from '@/utils/validate-utils';
+import { FdsCheckboxItem } from '@/model/fds.model';
 
 const isValid = ref(true);
 const errorMessage = ref('');
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: '',
+    type: Array,
+    default: () => [],
   },
   validateFlow: {
     type: String,
@@ -28,9 +30,9 @@ const props = defineProps({
   validations: {
     type: Array as () => Array<(x?: unknown) => string | null>,
     default: () => [
-      (input: string) => {
-        if (!input || input.trim().length === 0) {
-          return 'Indtast data';
+      (input: Array<unknown>) => {
+        if (!input || input.length === 0) {
+          return 'Ingen valgt';
         }
         return null;
       },
@@ -58,11 +60,12 @@ const isFormValid = () => {
 
 watch(
   () => [props.modelValue, props.dirty],
-  () => {
+  async () => {
     isFormValid();
   },
   {
-    immediate: props.validateFlow === 'immediate' || props.modelValue.length > 0 || props.dirty,
+    immediate: props.validateFlow === 'immediate',
+    deep: true,
   },
 );
 </script>

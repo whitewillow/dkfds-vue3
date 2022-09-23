@@ -1,5 +1,7 @@
 <template>
-  <ul class="nobullet-list">
+  <ul
+    class="nobullet-list"
+    :id="formId">
     <li
       v-for="(checkbox, index) of value"
       :key="index">
@@ -10,6 +12,7 @@
         v-model="checkbox.checked"
         :disabled="checkbox.disabled"
         @change="handleInput"
+        @blur="handleDirty"
         class="form-checkbox checkbox-large"/>
       <label :for="'checkbox-' + formId + '-' + index">
         {{ checkbox.title }}
@@ -28,16 +31,16 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed, PropType, watch,
+  defineProps, defineEmits, ref, computed,
 } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-import { FdsCheckboxItem } from '@/model/fds.model';
+import fdsCheckboxProps from '@/props/fds-checkbox.props';
 
 const props = defineProps({
-  modelValue: {
-    type: Array as PropType<Array<FdsCheckboxItem>>,
-    required: true,
-    default: () => [],
+  ...fdsCheckboxProps,
+  id: {
+    type: String,
+    default: null,
   },
 });
 
@@ -45,7 +48,13 @@ const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const value = ref(props.modelValue);
 
-const handleInput = (event: Event) => emit('update:modelValue', value);
+const handleDirty = (event: Event) => {
+  emit('dirty', true);
+};
+
+const handleInput = (event: Event) => {
+  emit('update:modelValue', value.value);
+};
 
 const formId = computed(() => uuidv4());
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <fds-validate-array
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -8,39 +8,33 @@
     <fds-formgroup
       :is-valid="isValid"
       :label="label"
+      :tooltip="tooltip"
       #default="{ formid }">
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-textarea
+      <fds-checkbox-list
         v-model="value"
-        :id="formid"
-        :placeholder="placeholder"
-        :max-length="maxLength"
-        :inputClass="inputClass"
-        :rowlength="rowlength"
-        :rows="rows"
-        :disabled="disabled"
-        :readonly="readonly"
+        @dirty="touchedEvent"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"></fds-textarea>
+        :id="formid">
+        <slot />
+      </fds-checkbox-list>
     </fds-formgroup>
-  </fds-validate>
+  </fds-validate-array>
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref } from 'vue';
+import {
+  defineEmits, defineProps, ref, watch,
+} from 'vue';
 
-import FdsHint from '@/components/fds-hint.vue';
-import FdsTextarea from '@/components/fds-textarea.vue';
-import FdsValidate from '@/components/fds-validate.vue';
-import FdsFormgroup from '@/components/fds-formgroup.vue';
-import fdsTextareaProps from '@/props/fds-texarea.props';
-import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
+import fdsCheckboxProps from '@/props/fds-checkbox.props';
+import { FdsCheckboxItem } from '@/model/fds.model';
 
 const props = defineProps({
-  ...fdsTextareaProps,
+  ...fdsCheckboxProps,
   validations: {
     type: Array as () => Array<(x?: unknown) => string | null>,
     default: null,
@@ -52,6 +46,18 @@ const props = defineProps({
   hint: {
     type: String,
     default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
+  },
+  suffix: {
+    type: String,
+    default: null,
+  },
+  prefix: {
+    type: String,
+    default: null,
   },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
@@ -67,8 +73,10 @@ const validEvent = (isValid: boolean) => {
   emit('valid', isValid);
 };
 
-const handleInput = () => emit('update:modelValue', value.value);
+const handleInput = (event: Array<FdsCheckboxItem>) => {
+  value.value = event;
+  emit('update:modelValue', value.value);
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

@@ -1,3 +1,5 @@
+import { FdsCheckboxItem } from '@/model/fds.model';
+
 /**
  * Loop through functions, first returning a string will be returned otherwise null if no errors
  * @param functions an array of validation methods
@@ -78,4 +80,12 @@ export function noSpace (x: string): string | null {
 
 export function notEmpty (...arg: string[]): boolean {
   return arg.every((e) => e.trim().length > 0);
+}
+
+export function arrayHasItems (x: unknown): string | null {
+  if (!Array.isArray(x)) {
+    return 'Ukendt indhold';
+  }
+  const a: Array<FdsCheckboxItem> = x as Array<FdsCheckboxItem>;
+  return a.some((s) => s.checked === true) ? null : 'Angiv venligst et valg';
 }

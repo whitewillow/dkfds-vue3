@@ -50,7 +50,7 @@ const props = defineProps({
     default: '',
   },
   validations: {
-    type: Array as () => Array<(input: string) => string | null>,
+    type: Array as () => Array<(x?: unknown) => string | null>,
     default: null,
   },
   label: {

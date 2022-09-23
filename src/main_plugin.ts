@@ -16,11 +16,13 @@ import FdsDropdown from '@/components/fds-dropdown.vue';
 import FdsLabel from '@/components/fds-label.vue';
 import FdsValidate from '@/components/fds-validate.vue';
 import FdsValidateNumber from '@/components/fds-validate-number.vue';
+import FdsValidateArray from '@/components/fds-validate-array.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
 import FdsFormInput from '@/components/fds-form-input.vue';
 import FdsFormTextarea from '@/components/fds-form-textarea.vue';
+import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
 import FdsButton from '@/components/fds-button.vue';
 import FdsButtonIcon from '@/components/fds-button-icon.vue';
 import FdsButtonSpinner from '@/components/fds-button-spinner.vue';
@@ -79,11 +81,13 @@ function install (app: App): void {
   app.component('fds-label', FdsLabel);
   app.component('fds-validate', FdsValidate);
   app.component('fds-validate-number', FdsValidateNumber);
+  app.component('fds-validate-array', FdsValidateArray);
   app.component('fds-formgroup', FdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
   app.component('fds-form-input', FdsFormInput);
   app.component('fds-form-textarea', FdsFormTextarea);
+  app.component('fds-form-checkbox-list', FdsFormCheckboxList);
   app.component('fds-button', FdsButton);
   app.component('fds-button-icon', FdsButtonIcon);
   app.component('fds-button-spinner', FdsButtonSpinner);
@@ -113,6 +117,7 @@ export {
   FdsTextarea,
   FdsInputNumber,
   FdsValidateNumber,
+  FdsValidateArray,
   FdsFanebladItem,
   FdsStruktureredeListe,
   FdsFaneblade,
@@ -139,6 +144,7 @@ export {
   FdsFejlopsummering,
   FdsFormInput,
   FdsFormTextarea,
+  FdsFormCheckboxList,
   FdsButton,
   FdsButtonIcon,
   FdsIconCollection,

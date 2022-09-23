@@ -7,7 +7,7 @@
       class="form-checkbox"
       :class="{ 'checkbox-large': !small }"
       @input="handleInput"
-      @focus="$emit('dirty')"
+      @blur="$emit('dirty')"
       :disabled="disabled"/>
     <label
       :for="formId"

@@ -62,7 +62,7 @@
       <hr class="my-6" />
 
       <div>
-        <h2>Eksempel på simpel brug</h2>
+        <h2>Eksempel på Form komponent (simpel brug)</h2>
 
         <fds-form-input
           label="Adresse"
@@ -91,17 +91,27 @@
           :modelValue="txtMobil"
           input-type="tel"
           autocomplete="tel"/>
+
         <fds-form-textarea
           label="Tekst område"
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
+        <fds-form-checkbox-list
+          label="Checkbox form"
+          :validations="[arrayHasItems]"
+          v-model="checkboxListForm"/>
+
         <hr />
 
         <h2>Valg</h2>
 
-        <fds-formgroup label="Vælg en checkbox">
-          <fds-checkbox-list v-model="checkboxList">
+        <fds-formgroup
+          label="Vælg en checkbox"
+          #default="{ formid }">
+          <fds-checkbox-list
+            v-model="checkboxList"
+            :id="formid">
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
@@ -929,9 +939,12 @@ import {
   FdsFileModel,
   FdsNavigationStep,
   FdsNavigationItem,
-} from '@/main_plugin';
-import { charactersMinLength, hasContent, numberMax } from '@/utils/validate-utils';
+} from '@/model/fds.model';
+import {
+  arrayHasItems, charactersMinLength, hasContent, numberMax,
+} from '@/utils/validate-utils';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
+import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
@@ -961,6 +974,20 @@ const radioOptions = ref<FdsRadioItem[]>([
   },
 ]);
 const checkboxList = ref<FdsCheckboxItem[]>([
+  {
+    title: 'Banan',
+    value: 'banan',
+  },
+  {
+    title: 'Melon',
+    value: 'melon',
+  },
+  {
+    title: 'Æble',
+    value: 'æble',
+  },
+]);
+const checkboxListForm = ref<FdsCheckboxItem[]>([
   {
     title: 'Banan',
     value: 'banan',

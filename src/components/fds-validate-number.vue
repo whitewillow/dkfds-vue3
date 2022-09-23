@@ -25,7 +25,7 @@ const props = defineProps({
     default: false,
   },
   validations: {
-    type: Array as () => Array<(input?: number) => string | null>,
+    type: Array as () => Array<(x?: unknown) => string | null>,
     default: () => [() => null],
   },
 });
@@ -38,9 +38,7 @@ const isFormValid = () => {
   if (props.validations) {
     const vals = [...props.validations];
 
-    const result: string | null = validateAllErrorMessage(
-      ...(vals as Array<(x?: unknown) => string | null>),
-    )(val.value);
+    const result: string | null = validateAllErrorMessage(...vals)(val.value);
     isValid.value = true;
     if (result) {
       errorMessage.value = result;
