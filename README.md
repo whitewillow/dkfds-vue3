@@ -250,30 +250,30 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [x] fds-form-group
 - [x] fds-form-input
 - [x] fds-form-textarea
-- [ ] fds-form-number
+- [x] fds-form-number
+- [x] fds-form-radio
+- [x] fds-form-checkboxes
 - [ ] fds-form-email
-- [ ] fds-form-radio
 - [ ] fds-form-checkbox
-- [ ] fds-form-checkboxes
 - [ ] fds-form-dropdown
 
 ## Knapper og Link
 - [x] fds-button
 - [x] fds-button-icon
 - [x] fds-button-spinner
-- [ ] fds-link
 - [x] fds-function-link
+- [ ] fds-link
 
 ## Layout - Header, Navigation og Footer
 
 
 ## Ikke kategoriseret endnu
-- [ ] fds-trin
 - [x] fds-alert
 - [x] fds-accordian
+- [x] navitems
+- [ ] fds-trin
 - [ ] fds-modal
 - [ ] fds-button-sure
 - [ ] fds-progress
 - [ ] fds-icon
-- [x] navitems
 
