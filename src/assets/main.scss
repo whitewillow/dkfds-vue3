@@ -11,16 +11,18 @@ body {
 }
 
 .component-preview {
-  border: 1px solid #bfbfbf;
+  border: 1px solid #747474;
   border-radius: 5px;
   >.component-link {
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid #747474;
     font-weight: 500;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: #f4f4f4;
+    padding: 1em 1.5em;
   } 
   >.component-example {
-    border-top: 1px solid #dcdcdc;
-    padding: 1em 1.5em;
+    padding: 1.5em 1.5em 2em;
   }
   >.component-description {
     border-top: 2px dashed #dcdcdc;
@@ -38,6 +40,8 @@ body {
     padding: 0em 1.5em;
     display: block;
     word-wrap: break-word;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 
