@@ -71,15 +71,16 @@
           v-model="txtAdresse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
-        <fds-form-input
+        <fds-form-input-number
           label="Antal kasser"
           v-model="kasser"
           prefix="stk" />
 
-        <fds-form-input
+        <fds-form-input-number
           label="Antal kasser"
           v-model="kasser"
-          suffix="stk" />
+          suffix="stk"
+          :validations="[numberMin(2)]"/>
 
         <fds-form-input
           label="Mobil nr."
@@ -941,7 +942,11 @@ import {
   FdsNavigationItem,
 } from '@/model/fds.model';
 import {
-  arrayHasItems, charactersMinLength, hasContent, numberMax,
+  arrayHasItems,
+  charactersMinLength,
+  hasContent,
+  numberMax,
+  numberMin,
 } from '@/utils/validate-utils';
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
@@ -951,7 +956,7 @@ const txtFornavn = ref('');
 const txtEfternavn = ref('');
 const noBeloeb = ref(0);
 const txtAdresse = ref('');
-const kasser = ref('');
+const kasser = ref(0);
 const txtMobil = ref('23232323');
 const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
