@@ -37,31 +37,17 @@
 import { defineEmits, defineProps, ref } from 'vue';
 
 import fdsInputProps from '@/props/fds-input.props';
+import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsInputProps,
+  ...fdsFormProps,
   modelValue: {
     default: 0,
   },
   inputType: {
     type: String,
     default: 'number',
-  },
-  validations: {
-    type: Array as () => Array<(x?: unknown) => string | null>,
-    default: null,
-  },
-  label: {
-    type: String,
-    default: '',
-  },
-  hint: {
-    type: String,
-    default: '',
-  },
-  tooltip: {
-    type: String,
-    default: null,
   },
   suffix: {
     type: String,

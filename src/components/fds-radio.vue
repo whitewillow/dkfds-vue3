@@ -1,5 +1,7 @@
 <template>
-  <ul class="nobullet-list">
+  <ul
+    class="nobullet-list"
+    :id="formId">
     <li
       v-for="(radio, index) of list"
       :key="index">
@@ -11,6 +13,7 @@
         :disabled="radio.disabled"
         :checked="value === radio.value.toString()"
         @change="handleInput"
+        @blur="$emit('dirty', true)"
         class="form-radio radio-large"/>
       <label :for="'radio-' + formId + '-' + index">
         {{ radio.title }}
@@ -42,6 +45,10 @@ const props = defineProps({
     type: Array as PropType<Array<FdsRadioItem>>,
     required: true,
     default: () => [],
+  },
+  id: {
+    type: String,
+    default: null,
   },
 });
 

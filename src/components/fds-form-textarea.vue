@@ -38,21 +38,11 @@ import FdsValidate from '@/components/fds-validate.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
 import fdsTextareaProps from '@/props/fds-texarea.props';
 import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
+import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsTextareaProps,
-  validations: {
-    type: Array as () => Array<(x?: unknown) => string | null>,
-    default: null,
-  },
-  label: {
-    type: String,
-    default: '',
-  },
-  hint: {
-    type: String,
-    default: '',
-  },
+  ...fdsFormProps,
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 

@@ -103,6 +103,14 @@
           :validations="[arrayHasItems]"
           v-model="checkboxListForm"/>
 
+        <fds-form-radio
+          label="Radio form"
+          :validations="[hasContent]"
+          :options="radioOptions"
+          v-model="radioValForm">
+        </fds-form-radio>
+        <fds-pre :json="{ radioValForm }" />
+
         <hr />
 
         <h2>Valg</h2>
@@ -138,7 +146,6 @@
           <fds-label>Vælg radio</fds-label>
 
           <fds-radio
-            header="Pick one"
             :list="radioOptions"
             v-model="radioVal">
             <template #hint>
@@ -149,6 +156,8 @@
             </template>
           </fds-radio>
         </fds-formgroup>
+
+        <fds-pre :json="{ radioVal }" />
 
         <fds-formgroup>
           <fds-label>Vælg radio toggle</fds-label>
@@ -162,18 +171,17 @@
             </template>
           </fds-radio-toggle>
         </fds-formgroup>
-        {{ toggleRadio }}
+        <fds-pre :json="{ toggleRadio }" />
 
         <fds-formgroup>
           <fds-dropdown
             :options="dropdownOptions"
             v-model="dropdownVal" />
         </fds-formgroup>
+        <fds-pre :json="{ dropdownVal }" />
 
         <fds-toggle-switch v-model="toggleswitch" />
-        <div>
-          {{ toggleswitch }}
-        </div>
+        <fds-pre :json="{ toggleswitch }" />
       </div>
 
       <hr class="my-6" />
@@ -962,6 +970,7 @@ const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
 const twoChecked = ref(false);
 const radioVal = ref('');
+const radioValForm = ref('');
 const toggleswitch = ref(false);
 const toggleRadio = ref(null);
 const radioOptions = ref<FdsRadioItem[]>([

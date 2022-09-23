@@ -14,35 +14,25 @@
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-input
-        v-model="value"
+      <fds-radio
         :id="formid"
-        v-bind="{
-          placeholder,
-          autocomplete,
-          inputType,
-          inputClass,
-          disabled,
-          readonly,
-          suffix,
-          prefix,
-        }"
+        :list="options"
+        v-model="value"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"></fds-input>
+        @dirty="touchedEvent">
+        <slot />
+      </fds-radio>
     </fds-formgroup>
   </fds-validate>
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref } from 'vue';
-
-import FdsHint from '@/components/fds-hint.vue';
-import FdsInput from '@/components/fds-input.vue';
-import FdsValidate from '@/components/fds-validate.vue';
-import FdsFormgroup from '@/components/fds-formgroup.vue';
-import fdsInputProps from '@/props/fds-input.props';
-import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
+import {
+  defineEmits, defineProps, PropType, ref,
+} from 'vue';
 import fdsFormProps from '@/props/fds-form.props';
+import fdsInputProps from '@/props/fds-input.props';
+import { FdsRadioItem } from '@/model/fds.model';
 
 const props = defineProps({
   ...fdsInputProps,
@@ -51,13 +41,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  suffix: {
-    type: String,
-    default: null,
-  },
-  prefix: {
-    type: String,
-    default: null,
+  options: {
+    type: Array as PropType<FdsRadioItem[]>,
+    default: () => [],
   },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);

@@ -21,6 +21,7 @@ import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
 import FdsFormInput from '@/components/fds-form-input.vue';
+import FdsFormRadio from '@/components/fds-form-radio.vue';
 import FdsFormInputNumber from '@/components/fds-form-input-number.vue';
 import FdsFormTextarea from '@/components/fds-form-textarea.vue';
 import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
@@ -89,6 +90,7 @@ function install (app: App): void {
   app.component('fds-form-input', FdsFormInput);
   app.component('fds-form-input-number', FdsFormInputNumber);
   app.component('fds-form-textarea', FdsFormTextarea);
+  app.component('fds-form-radio', FdsFormRadio);
   app.component('fds-form-checkbox-list', FdsFormCheckboxList);
   app.component('fds-button', FdsButton);
   app.component('fds-button-icon', FdsButtonIcon);
@@ -146,6 +148,7 @@ export {
   FdsFejlopsummering,
   FdsFormInput,
   FdsFormInputNumber,
+  FdsFormRadio,
   FdsFormTextarea,
   FdsFormCheckboxList,
   FdsButton,

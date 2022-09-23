@@ -32,25 +32,11 @@ import {
 
 import fdsCheckboxProps from '@/props/fds-checkbox.props';
 import { FdsCheckboxItem } from '@/model/fds.model';
+import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsCheckboxProps,
-  validations: {
-    type: Array as () => Array<(x?: unknown) => string | null>,
-    default: null,
-  },
-  label: {
-    type: String,
-    default: '',
-  },
-  hint: {
-    type: String,
-    default: '',
-  },
-  tooltip: {
-    type: String,
-    default: null,
-  },
+  ...fdsFormProps,
   suffix: {
     type: String,
     default: null,
