@@ -270,8 +270,55 @@
 
       <h2>Component preview</h2>
 
-      <fds-component-preview header="asdasd">
-        asdasdasd
+      <fds-component-preview header="Eksempel">
+        <fds-validate
+          :modelValue="txtEfternavn"
+          :validations="[hasContent, charactersMinLength(10)]"
+          #default="{ isValid, errorMessage }">
+          <fds-formgroup
+            :is-valid="isValid"
+            #default="{ formid }">
+            <fds-label :id="formid">
+              Efternavn
+            </fds-label>
+            <fds-tooltip
+              class="ml-2"
+              text="Hjælpende <b>tekst</b>" />
+            <fds-hint>Indtast efternavn</fds-hint>
+            <fds-fejlmeddelelse v-if="!isValid">
+              {{ errorMessage }}
+            </fds-fejlmeddelelse>
+
+            <fds-input
+              v-model="txtEfternavn"
+              :id="formid"></fds-input>
+          </fds-formgroup>
+        </fds-validate>
+        <template #description>
+          <p class="italic">
+            Dette eksempel viser hvordan man kan sammenkæde enkeltstående komponenter til en samlet
+            "komponent" der validere input for et tekstfelt.
+          </p>
+          <p class="italic">
+            Alle komponenter kan bruges enkeltstående - dvs du kunne eksempelvis udbytte
+            <code>fds-validate</code> til egen komponent
+          </p>
+          <p class="italic">
+            Følgende komponenter er i brug:
+          </p>
+          <ul>
+            <li><code>fds-validate</code></li>
+            <li><code>fds-formgroup</code></li>
+            <li><code>fds-label</code></li>
+            <li><code>fds-fejlmeddelelse</code></li>
+            <li><code>fds-hint</code></li>
+            <li><code>fds-input</code></li>
+            <li><code>fds-tooltip</code></li>
+          </ul>
+        </template>
+        <template #code>
+          <pre v-text="codeExample" />
+        </template>
       </fds-component-preview>
 
       <hr />
@@ -1103,5 +1150,29 @@ const faneBlade: FdsNavigationStep[] = [
     disabled: true,
   },
 ] as unknown as FdsNavigationStep[];
+
+const codeExample = `
+<fds-validate
+  :modelValue="txtEfternavn"
+  :validations="[hasContent, charactersMinLength(10)]"
+  #default="{ isValid, errorMessage }">
+  <fds-formgroup
+    :is-valid="isValid"
+    #default="{ formid }">
+    <fds-label :id="formid">
+      Efternavn
+    </fds-label>
+    <fds-tooltip
+      class="ml-2"
+      text="Hjælpende <b>tekst</b>" />
+    <fds-hint>Indtast efternavn</fds-hint>
+    <fds-fejlmeddelelse v-if="!isValid">
+      {{ errorMessage }}
+    </fds-fejlmeddelelse>
+    <fds-input
+      v-model="txtEfternavn"
+      :id="formid"></fds-input>
+  </fds-formgroup>
+</fds-validate>`;
 </script>
 <style lang="scss" scoped></style>

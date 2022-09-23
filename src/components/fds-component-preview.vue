@@ -10,8 +10,13 @@
       aria-label="Eksempel">
       <slot />
     </div>
+    <div
+      class="component-description px-4"
+      v-if="$slots.description">
+      <slot name="description" />
+    </div>
 
-    <div class="component-code px-4 py-4">
+    <div class="component-code px-4">
       <slot name="code" />
     </div>
   </div>

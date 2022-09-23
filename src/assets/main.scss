@@ -15,23 +15,35 @@ body {
   border-radius: 5px;
   >.component-link {
     border-bottom: 1px solid #dcdcdc;
+    font-weight: 500;
+    background-color: #f4f4f4;
   } 
   >.component-example {
     border-top: 1px solid #dcdcdc;
+    padding: 1em 1.5em;
+  }
+  >.component-description {
+    border-top: 2px dashed #dcdcdc;
+    padding: 1em 1.5em;
   }
   >.component-code {
     border-top: 1px solid #dcdcdc;
     background-color: #f4f4f4;
     font-size: 0.8em;
-    border-left: 3px solid #d63384;
+    border-top: 3px solid #d63384;
     color: #d63384;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     page-break-inside: avoid;
     overflow: auto;
-    padding: 1em 1.5em;
+    padding: 0em 1.5em;
     display: block;
     word-wrap: break-word;
   }
+}
+
+code {
+  color: #d63384;
+  background-color: #f4f4f4;
 }
 
 

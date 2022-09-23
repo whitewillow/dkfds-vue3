@@ -10,6 +10,10 @@
       v-if="json"
       v-text="JSON.stringify(json, undefined, 2)" />
     <pre
+      class="code"
+      v-else-if="code"
+      v-text="code" />
+    <pre
       v-else
       class="code">
     <slot />
@@ -28,6 +32,10 @@ import { defineProps, onMounted } from 'vue';
 const props = defineProps({
   json: {
     type: Object,
+    default: null,
+  },
+  code: {
+    type: String,
     default: null,
   },
   header: {
