@@ -18,6 +18,12 @@ import { FdsNavigationStep } from 'dkfds-vue3/src/model/fds.model';
 const sideTabs = [
   {
     order: 0,
+    key: 'komponenter',
+    title: 'Komponenter',
+    help: '',
+  },
+  {
+    order: 0,
     key: 'accordions',
     title: 'Accordions',
     help: '',

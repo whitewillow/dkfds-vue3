@@ -1,8 +1,10 @@
 <template>
   <div class="row row-bordered no-gutters">
-    <div class="col-12 col-md-4 weight-semibold">
+    <div class="col-12 col-md-4">
       <slot name="header">
-        {{ header }}
+        <span class="weight-semibold">
+          {{ header }}
+        </span>
       </slot>
     </div>
     <div

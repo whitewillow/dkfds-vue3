@@ -30,9 +30,15 @@ class SidenavigationService {
     }));
   };
 
-  findFirstActiveItem = (list: Array<FdsNavigationItem>) => {
+  findFirstActiveItem = (list: Array<FdsNavigationItem>, navigateFirst = false) => {
     const firstActive = list.find((f) => !f.disabled && f.active);
-    return firstActive ?? list.find((f) => !f.disabled);
+    if (firstActive) {
+      return firstActive;
+    }
+    if (navigateFirst) {
+      return list.find((f) => !f.disabled);
+    }
+    return undefined;
   };
 }
 const sidenavigationService = new SidenavigationService();

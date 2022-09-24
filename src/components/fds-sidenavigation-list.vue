@@ -4,13 +4,16 @@
       <nav>
         <fds-sidenavigation
           :showIndex="showIndex"
+          :navigateFirst="navigateFirst"
           v-model="tabsList"
-          @navigate="navigate" />
+          @navigate="navigate"/>
       </nav>
     </aside>
 
     <div class="col-12 col-lg-9">
-      <slot :name="currentKey" />
+      <slot
+        :name="currentKey"
+        :currentKey="currentKey" />
     </div>
   </div>
 </template>
@@ -27,6 +30,10 @@ const props = defineProps({
   showIndex: {
     type: Boolean,
     default: false,
+  },
+  navigateFirst: {
+    type: Boolean,
+    default: true,
   },
 });
 

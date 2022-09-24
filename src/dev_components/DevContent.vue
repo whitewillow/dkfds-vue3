@@ -1146,7 +1146,6 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
     key: 'dessert',
     title: 'Dessert',
     hint: 'Hjælpetekst',
-    active: true,
     children: [
       {
         key: 'bananasplit',

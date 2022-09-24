@@ -55,6 +55,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  navigateFirst: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
@@ -79,7 +83,7 @@ const navigate = (item: FdsNavigationItem) => {
 };
 
 onMounted(() => {
-  const item = sidenavigationService.findFirstActiveItem(tabsList.value);
+  const item = sidenavigationService.findFirstActiveItem(tabsList.value, props.navigateFirst);
   if (item) {
     navigate(item);
   }

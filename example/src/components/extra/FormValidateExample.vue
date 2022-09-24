@@ -22,13 +22,24 @@
       <h2>Validering komponent</h2>
       <div class="col-10">
         <fds-strukturerede-liste header="modelValue">
+          <template #header>
+            <fds-label class="d-block">modelValue</fds-label>
+            <code>string, number, array</code>
+          </template>
           tager imod <code>string, number, array</code>
         </fds-strukturerede-liste>
         <fds-strukturerede-liste header="validations">
+          <template #header>
+            <fds-label class="d-block">validations</fds-label>
+            <code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code>
+          </template>
           et array af valideringsmetoder
-          <code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code>
         </fds-strukturerede-liste>
         <fds-strukturerede-liste header="dirty">
+          <template #header>
+            <fds-label class="d-block">dirty</fds-label>
+            <code>Boolean</code>
+          </template>
           Om feltet er blevet berørt
         </fds-strukturerede-liste>
         <fds-strukturerede-liste header='#default="{ isValid, errorMessage }"'>

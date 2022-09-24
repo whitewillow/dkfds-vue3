@@ -5,6 +5,7 @@ import router from './router';
 import store from './store';
 
 import AccordionsExample from './components/AccordionsExample.vue';
+import KomponenterExample from './components/KomponenterExample.vue';
 import BadgesExample from './components/BadgesExample.vue';
 import BeskederExample from './components/BeskederExample.vue';
 import BroedkrummeExample from './components/BroedkrummeExample.vue';
@@ -72,6 +73,7 @@ app
   .component('form-textarea-example', FormTextareaExample)
   .component('form-validate-example', FormValidateExample)
   .component('accordions-example', AccordionsExample)
+  .component('komponenter-example', KomponenterExample)
   .component('badges-example', BadgesExample)
   .component('beskeder-example', BeskederExample)
   .component('broedkrumme-example', BroedkrummeExample)

@@ -3,7 +3,7 @@
     <div class="container page-container">
       <fds-sidenavigation-list v-model="sideTabs">
         <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
-          <div class="subheading">Komponenter</div>
+          <div class="subheading">Ektra Komponenter</div>
           <h1>{{ tab.title }}</h1>
           <component :is="`form-${tab.key}-example`" />
         </template>
