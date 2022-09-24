@@ -22,21 +22,41 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+/**
+ *
+ * Komponent for knap med icon
+ * https://designsystem.dk/komponenter/knapper/
+ *
+ * */
+
+import { FdsVariantEnum } from '@/model/fds.model';
+import { defineProps, PropType } from 'vue';
 
 defineProps({
+  /**
+   * Visnings variant
+   * */
   variant: {
-    type: String,
-    default: 'secondary', // primary|secondary|
+    type: String as PropType<FdsVariantEnum | string>,
+    default: 'secondary',
   },
+  /**
+   * Ikon som string
+   * */
   icon: {
     type: String,
     default: 'pencil',
   },
+  /**
+   * disabled
+   * */
   disabled: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Højre stillet ikon
+   * */
   right: {
     type: Boolean,
     default: false,

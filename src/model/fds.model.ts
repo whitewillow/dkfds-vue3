@@ -5,6 +5,7 @@ export enum FdsVariantEnum {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
+  quaternary = 'quaternary',
   info = 'info',
   success = 'success',
   warning = 'warning',

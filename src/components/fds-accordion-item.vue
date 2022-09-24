@@ -68,7 +68,7 @@ const props = defineProps({
     default: false,
   },
   variant: {
-    type: String,
+    type: String as () => string | 'success' | 'warning' | 'error',
     default: null,
   },
   variantText: {

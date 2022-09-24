@@ -1,7 +1,6 @@
 <template>
   <div class="card">
     <slot name="custom" />
-    <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
 
     <div class="card-content">
       <slot name="content" />
@@ -32,6 +31,12 @@
 </template>
 
 <script setup lang="ts">
+/**
+ *
+ * Komponent for card
+ * https://designsystem.dk/komponenter/cards/
+ *
+ * */
 import { defineProps } from 'vue';
 
 defineProps({

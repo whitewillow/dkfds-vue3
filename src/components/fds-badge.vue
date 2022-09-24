@@ -7,15 +7,27 @@
 </template>
 
 <script setup lang="ts">
+/**
+ *
+ * Komponent til Badge
+ * https://designsystem.dk/komponenter/badges/
+ *
+ * */
 import { defineProps, computed } from 'vue';
 
 const props = defineProps({
+  /**
+   * Som lille badge
+   * */
   small: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Variant 'success' | 'info' | 'warning' | 'error'
+   * */
   variant: {
-    type: String,
+    type: String as () => 'success' | 'info' | 'warning' | 'error',
     default: null,
   },
 });

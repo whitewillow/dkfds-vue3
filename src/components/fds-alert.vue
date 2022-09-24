@@ -17,7 +17,7 @@
           href="javascript:void(0);"
           class="alert-close"
           v-if="closeable"
-          @click="show = !show">
+          @click="handleClose">
           <i class="icon icon-close"></i>Luk
         </a>
       </div>
@@ -26,25 +26,46 @@
 </template>
 
 <script setup lang="ts">
+/**
+ *
+ * Komponent til Besked
+ * https://designsystem.dk/komponenter/beskeder/
+ *
+ * */
 import { defineProps, ref, watch } from 'vue';
 
 const props = defineProps({
   level: {
-    type: String,
-    default: 'info', // info|success|warning|error
+    /**
+     * Type af besked
+     * */
+    type: String as () => 'info' | 'success' | 'warning' | 'error',
+    default: 'info',
   },
+  /**
+   * Vis venstrestillet ikon
+   * */
   showIcon: {
     type: Boolean,
     default: true,
   },
+  /**
+   *  Klik for at lukke/fjerne besked
+   * */
   closeable: {
     type: Boolean,
     default: false,
   },
+  /**
+   *  Overskrift
+   * */
   header: {
     type: String,
     default: null,
   },
+  /**
+   *  Hvis sand - lukkes beskeden efter 10 sek
+   * */
   timeout: {
     type: Boolean,
     default: false,
@@ -52,7 +73,12 @@ const props = defineProps({
 });
 
 const show = ref(true);
-
+// eslint-disable-next-line no-undef
+const emit = defineEmits(['close']);
+const handleClose = () => {
+  show.value = !show.value;
+  emit('close', true);
+};
 watch(
   () => [props.timeout],
   () => {

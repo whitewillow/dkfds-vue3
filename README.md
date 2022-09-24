@@ -60,7 +60,11 @@ TODO: Forventningsafstemmelse information
 
 # Example Project
 
-<mark>MODUL ikke udgivet endnu</mark>
+Bedste måde at se hvad der er muligt er at køre example projektet, indtil der kommer noget rigtig dokumentation.
+
+Dog er `example projektet` opsat som dokumentation for projektet.
+
+<mark>MODUL ikke udgivet endnu - Kør det fulde Project setup istedet</mark>
 
 clone /example
 ```
@@ -246,15 +250,14 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 ## Form
 Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, validering
-- [x] fds-form-group
-- [x] fds-form-input
-- [x] fds-form-textarea
-- [x] fds-form-number
-- [x] fds-form-radio
-- [x] fds-form-checkboxes
-- [x] fds-form-dropdown
+- [x] xfds-form-group
+- [x] xfds-form-input
+- [x] xfds-form-textarea
+- [x] xfds-form-number
+- [x] xfds-form-radio
+- [x] xfds-form-checkboxlist
+- [x] xfds-form-dropdown
 - [ ] fds-form-email
-- [ ] fds-form-checkbox
 
 ## Knapper og Link
 - [x] fds-button

@@ -27,31 +27,55 @@
 </template>
 
 <script setup lang="ts">
+/**
+ *
+ * Komponent for knap med spinner
+ * Umiddelbart ikke en del FDS
+ * https://designsystem.dk/komponenter/knapper/
+ *
+ * */
 import { defineProps, PropType, defineEmits } from 'vue';
 import { FdsVariantEnum } from '@/model/fds.model';
 
 defineProps({
+  /**
+   * Visnings variant
+   * */
   variant: {
     type: String as PropType<FdsVariantEnum | string>,
     default: () => FdsVariantEnum.secondary,
   },
+  /**
+   * disabled
+   * */
   disabled: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Vis spinner
+   * */
   showSpinner: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Spinner tekst - erstatter alm tekst
+   * */
   spinnerText: {
     type: String,
     default: null,
   },
+  /**
+   * Ikon som string
+   * */
   icon: {
     type: String,
     default: null,
   },
-  // Add overlay when showSpinner, not possible to clik anywhere when active
+  /**
+   * Tilføjer overlay når showSpinner, ikke muligt at klikke andre steder imens
+   * */
   useoverlay: {
     type: Boolean,
     default: false,

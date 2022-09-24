@@ -427,8 +427,8 @@
         <fds-badge class="mr-4">
           Normal
         </fds-badge>
-        <fds-badge small>
-          Normal small
+        <fds-badge class="badge-small">
+          small
         </fds-badge>
       </p>
       <p>
