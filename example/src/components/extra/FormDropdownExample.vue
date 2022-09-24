@@ -12,7 +12,7 @@
 
       <template #description>
         <p class="italic">
-          Komponented <code>xfds-form-dropdown</code> er en samling af komponenter der giver en
+          Komponenten <code>xfds-form-dropdown</code> er en samling af komponenter der giver en
           samlet funktionalitet.
         </p>
         <p class="italic">Understøtter simpel validering, m.m.</p>

@@ -11,13 +11,13 @@
       <fds-pre :json="user" />
 
       <template #description>
-        <p class="italic">Komponented <code>xfds-formgroup</code> er en wrapper. se koden</p>
+        <p class="italic">Komponenten <code>xfds-formgroup</code> er en wrapper. se koden</p>
         <p class="italic">
           Kan evt bruge til at lave egne komponenter der wrapper eksempelvis ovenstående i sin egen
           validarings-komponent
         </p>
         <p class="italic">
-          Komponented <code>fds-input</code> kan udskiftes med egne komponenter eller eg:
+          Komponenten <code>fds-input</code> kan udskiftes med egne komponenter eller eg:
           <code>fds-input-number</code> m.m.
         </p>
       </template>

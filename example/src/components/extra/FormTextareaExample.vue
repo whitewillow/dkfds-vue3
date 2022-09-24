@@ -13,7 +13,7 @@
 
       <template #description>
         <p class="italic">
-          Komponented <code>xfds-form-textarea</code> er en samling af komponenter der giver en
+          Komponenten <code>xfds-form-textarea</code> er en samling af komponenter der giver en
           samlet funktionalitet.
         </p>
         <p class="italic">Understøtter simpel validering, m.m.</p>

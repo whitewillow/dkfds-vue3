@@ -1,0 +1,13 @@
+
+.progress-enter-active {
+    transition: opacity 0.5s;
+  }
+  .progress-leave-active {
+    animation-name: progress-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.8s;
+    
+  }
+  .progress-enter, .progress-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }

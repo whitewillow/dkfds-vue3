@@ -1,4 +1,7 @@
 @import "_variables";
+@import "_animations";
+@import "_code";
+@import "_progress";
 
 html {
   scroll-behavior: smooth;
@@ -79,37 +82,6 @@ header .navbar .search-form {
   color: #ffffff;
   background-color: $color-success;
   border-color: darken($color-success, 20%);
-}
-
-fieldset.code {
-  margin-top: 24px;
-  margin-bottom: 1.6em;
-
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  border-left: 3px solid #d63384;
-  > legend {
-    background-color: #d63384;
-    color: #fff;
-    padding: 4px 6px 2px 6px;
-    margin-left: 24px;
-    font-size: 0.8em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  > pre {
-    font-size: 0.8em;
-    color: #d63384;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-      monospace;
-
-    page-break-inside: avoid;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
-  }
 }
 
 // spinner button

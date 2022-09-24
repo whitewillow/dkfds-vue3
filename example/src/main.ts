@@ -57,6 +57,7 @@ import FormNumberExample from './components/extra/FormNumberExample.vue';
 import FormRadioExample from './components/extra/FormRadioExample.vue';
 import FormTextareaExample from './components/extra/FormTextareaExample.vue';
 import FormValidateExample from './components/extra/FormValidateExample.vue';
+import ProgressbarExample from './components/extra/ProgressbarExample.vue';
 
 const app = createApp(App);
 
@@ -71,6 +72,7 @@ app
   .component('form-number-example', FormNumberExample)
   .component('form-radio-example', FormRadioExample)
   .component('form-textarea-example', FormTextareaExample)
+  .component('progressbar-example', ProgressbarExample)
   .component('form-validate-example', FormValidateExample)
   .component('accordions-example', AccordionsExample)
   .component('komponenter-example', KomponenterExample)

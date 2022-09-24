@@ -866,6 +866,54 @@
 
       <hr class="my-8" />
 
+      <h2>Progress</h2>
+
+      <xfds-form-input-number
+        label="Angiv progress"
+        v-model="progress"
+        suffix="%" />
+
+      <xfds-progressbar
+        :procent="progress"
+        :showProgress="false"
+        style="height: 2px"
+        variant="primary">
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        variant="primary">
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        style="height: 50px"
+        variant="primary">
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        variant="info">
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        variant="success">
+        På vej mod success - {{ progress }}%
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        variant="warning">
+      </xfds-progressbar>
+
+      <xfds-progressbar
+        :procent="progress"
+        variant="error">
+      </xfds-progressbar>
+
+      <hr class="my-8" />
+
       <fds-alert
         level="warning"
         header="Overskrift"
@@ -1001,6 +1049,7 @@ import {
   numberMin,
 } from '@/utils/validate-utils';
 
+const progress = ref(46);
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
 const txtSearch = ref('');
