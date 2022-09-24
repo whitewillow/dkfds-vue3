@@ -20,8 +20,10 @@
 // import DKFDS from 'dkfds';
 import { defineProps, onMounted, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import DKFDS from 'dkfds';
 
-const props = defineProps({
+defineProps({
   text: {
     type: String,
     required: true,
@@ -31,8 +33,7 @@ const props = defineProps({
 const formId = ref(uuidv4());
 
 onMounted(() => {
-  // TODO: Se Tooltip JS
-  // new DKFDS.Tooltip(document.getElementById(formId.value)).init();
+  new DKFDS.Tooltip(document.getElementById(formId.value)).init();
 });
 </script>
 
