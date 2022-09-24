@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <xfds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -23,7 +23,7 @@
         <slot />
       </fds-radio>
     </fds-formgroup>
-  </fds-validate>
+  </xfds-validate>
 </template>
 
 <script setup lang="ts">

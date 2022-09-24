@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <xfds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -8,41 +8,38 @@
     <fds-formgroup
       :is-valid="isValid"
       :label="label"
-      :tooltip="tooltip"
       #default="{ formid }">
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-dropdown
-        :id="formid"
-        :options="options"
+      <fds-textarea
         v-model="value"
+        :id="formid"
+        :placeholder="placeholder"
+        :max-length="maxLength"
+        :inputClass="inputClass"
+        :rowlength="rowlength"
+        :rows="rows"
+        :disabled="disabled"
+        :readonly="readonly"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"/>
+        @dirty="touchedEvent"></fds-textarea>
     </fds-formgroup>
-  </fds-validate>
+  </xfds-validate>
 </template>
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, PropType, ref, watch,
+  defineEmits, defineProps, ref, watch,
 } from 'vue';
+
+import fdsTextareaProps from '@/props/fds-texarea.props';
 import fdsFormProps from '@/props/fds-form.props';
-import fdsInputProps from '@/props/fds-input.props';
-import { FdsOptionItem } from '@/model/fds.model';
 
 const props = defineProps({
-  ...fdsInputProps,
+  ...fdsTextareaProps,
   ...fdsFormProps,
-  modelValue: {
-    type: String,
-    default: '',
-  },
-  options: {
-    type: Array as PropType<FdsOptionItem[]>,
-    default: () => [],
-  },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
@@ -70,4 +67,5 @@ watch(
 );
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

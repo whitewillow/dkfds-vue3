@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <xfds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -14,41 +14,29 @@
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-input-number
+      <fds-checkbox-list
         v-model="value"
-        :id="formid"
-        v-bind="{
-          placeholder,
-          autocomplete,
-          inputType,
-          inputClass,
-          disabled,
-          readonly,
-          suffix,
-          prefix,
-        }"
+        @dirty="touchedEvent"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"/>
+        :id="formid">
+        <slot />
+      </fds-checkbox-list>
     </fds-formgroup>
-  </fds-validate>
+  </xfds-validate>
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref } from 'vue';
+import {
+  defineEmits, defineProps, ref, watch,
+} from 'vue';
 
-import fdsInputProps from '@/props/fds-input.props';
+import fdsCheckboxProps from '@/props/fds-checkbox.props';
+import { FdsCheckboxItem } from '@/model/fds.model';
 import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({
-  ...fdsInputProps,
+  ...fdsCheckboxProps,
   ...fdsFormProps,
-  modelValue: {
-    default: 0,
-  },
-  inputType: {
-    type: String,
-    default: 'number',
-  },
   suffix: {
     type: String,
     default: null,
@@ -71,7 +59,20 @@ const validEvent = (isValid: boolean) => {
   emit('valid', isValid);
 };
 
-const handleInput = () => emit('update:modelValue', value.value);
+const handleInput = (event: Array<FdsCheckboxItem>) => {
+  value.value = event;
+  emit('update:modelValue', value.value);
+};
+
+watch(
+  () => [props.modelValue],
+  () => {
+    value.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>

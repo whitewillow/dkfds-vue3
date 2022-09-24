@@ -40,7 +40,7 @@ Komponent skal begrænses til minimum og evt deles fornuftigt op således slutbr
 
 eks:
 ```html
-<fds-validate
+<xfds-validate
     :modelValue="txtEfternavn"
     :validations="[hasContent, charactersMinLength(10)]"
     #default="{ isValid, errorMessage }">
@@ -58,7 +58,7 @@ eks:
             v-model="txtEfternavn"
             :id="formid" />
     </fds-formgroup>
-</fds-validate>
+</xfds-validate>
 ```
 
 Dertil er det op til brugeren PT. selv at sortere evt lister m.m.
@@ -70,8 +70,8 @@ I kontekst med opdelte komponenter er der nogle der giver mening af samle som fo
 
 
 ```html
-<fds-form-input />
-<fds-form-textarea />
+<xfds-form-input />
+<xfds-form-textarea />
 ```
 
 Dog er disse kun hjælpe komponenter der er "nice 2 have" og der fokuseret på enkeltstående komponenter først
@@ -93,14 +93,14 @@ list: Array<fejlsummering>
 Selvfølgelig er der undtagelser, der giver en bedre kontekst med fornuftig navngivning eg `validations`:
 
 ```html
-<fds-form-input
+<xfds-form-input
     label="Adresse"
     hint="Angiv gyldig adresse"
     placeholder="HC Andersens blv. 12"
     v-model="txtAdresse"
     :validations="[hasContent, charactersMinLength(10)]"/>
 
-<fds-form-input
+<xfds-form-input
     label="Antal kasser"
     v-model="kasser"
     suffix="stk" />
@@ -138,12 +138,12 @@ BAD
 Biblioteket kommer med minimum validering.
 
 ```html
-<fds-validate
+<xfds-validate
     :modelValue="txtEfternavn"
     :validations="[hasContent, charactersMinLength(10)]"
     #default="{ isValid, errorMessage }">
     ...
-</fds-validate>
+</xfds-validate>
 ```
 
 Hvor validerings metode er `(x: string) => string | null` hvor `null` er VALID og `string` er fejlbeskeden.

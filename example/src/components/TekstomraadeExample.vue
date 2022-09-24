@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Enkeltstående komponenter</h2>
-    <fds-validate
+    <xfds-validate
       :modelValue="txtAfgorelse"
       :validations="[hasContent, charactersMinLength(10)]"
       #default="{ isValid, errorMessage }"
@@ -14,10 +14,10 @@
         <fds-hint>Angive gyldig afgørelse</fds-hint>
         <fds-textarea v-model="txtAfgorelse" :id="formid"></fds-textarea>
       </fds-formgroup>
-    </fds-validate>
+    </xfds-validate>
 
     <h2>Samlet komponent</h2>
-    <fds-form-textarea
+    <xfds-form-textarea
       label="Tekst område"
       v-model="txtBeskrivelse"
       :validations="[hasContent, charactersMinLength(10)]"

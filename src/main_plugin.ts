@@ -14,16 +14,8 @@ import FdsRadio from '@/components/fds-radio.vue';
 import FdsRadioToggle from '@/components/fds-radio-toggle.vue';
 import FdsDropdown from '@/components/fds-dropdown.vue';
 import FdsLabel from '@/components/fds-label.vue';
-import FdsValidate from '@/components/fds-validate.vue';
-import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
-import FdsFormInput from '@/components/fds-form-input.vue';
-import FdsFormRadio from '@/components/fds-form-radio.vue';
-import FdsFormDropdown from '@/components/fds-form-dropdown.vue';
-import FdsFormInputNumber from '@/components/fds-form-input-number.vue';
-import FdsFormTextarea from '@/components/fds-form-textarea.vue';
-import FdsFormCheckboxList from '@/components/fds-form-checkbox-list.vue';
 import FdsButton from '@/components/fds-button.vue';
 import FdsButtonIcon from '@/components/fds-button-icon.vue';
 import FdsButtonSpinner from '@/components/fds-button-spinner.vue';
@@ -53,6 +45,15 @@ import FdsTilbageLink from '@/components/fds-tilbage-link.vue';
 import FdsSpinner from '@/components/fds-spinner.vue';
 import FdsInputNumber from '@/components/fds-input-number.vue';
 import FdsComponentPreview from '@/components/fds-component-preview.vue';
+import FdsFormgroup from '@/components/fds-formgroup.vue';
+
+import XFdsFormInput from '@/components/extra/xfds-form-input.vue';
+import XFdsFormRadio from '@/components/extra/xfds-form-radio.vue';
+import XFdsFormDropdown from '@/components/extra/xfds-form-dropdown.vue';
+import XFdsFormInputNumber from '@/components/extra/xfds-form-input-number.vue';
+import XFdsFormTextarea from '@/components/extra/xfds-form-textarea.vue';
+import XFdsFormCheckboxList from '@/components/extra/xfds-form-checkbox-list.vue';
+import XFdsValidate from '@/components/extra/xfds-validate.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -80,16 +81,9 @@ function install (app: App): void {
   app.component('fds-radio-toggle', FdsRadioToggle);
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
-  app.component('fds-validate', FdsValidate);
   app.component('fds-formgroup', FdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
-  app.component('fds-form-input', FdsFormInput);
-  app.component('fds-form-input-number', FdsFormInputNumber);
-  app.component('fds-form-textarea', FdsFormTextarea);
-  app.component('fds-form-radio', FdsFormRadio);
-  app.component('fds-form-dropdown', FdsFormDropdown);
-  app.component('fds-form-checkbox-list', FdsFormCheckboxList);
   app.component('fds-button', FdsButton);
   app.component('fds-button-icon', FdsButtonIcon);
   app.component('fds-button-spinner', FdsButtonSpinner);
@@ -108,6 +102,14 @@ function install (app: App): void {
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
   app.component('fds-component-preview', FdsComponentPreview);
+
+  app.component('xfds-validate', XFdsValidate);
+  app.component('xfds-form-input', XFdsFormInput);
+  app.component('xfds-form-input-number', XFdsFormInputNumber);
+  app.component('xfds-form-textarea', XFdsFormTextarea);
+  app.component('xfds-form-radio', XFdsFormRadio);
+  app.component('xfds-form-dropdown', XFdsFormDropdown);
+  app.component('xfds-form-checkbox-list', XFdsFormCheckboxList);
 }
 
 export {
@@ -137,17 +139,17 @@ export {
   FdsRadioToggle,
   FdsDropdown,
   FdsLabel,
-  FdsValidate,
   FdsTooltip,
   FdsFormgroup,
   FdsFejlmeddelelse,
   FdsFejlopsummering,
-  FdsFormInput,
-  FdsFormInputNumber,
-  FdsFormRadio,
-  FdsFormDropdown,
-  FdsFormTextarea,
-  FdsFormCheckboxList,
+  XFdsValidate,
+  XFdsFormInput,
+  XFdsFormInputNumber,
+  XFdsFormRadio,
+  XFdsFormDropdown,
+  XFdsFormTextarea,
+  XFdsFormCheckboxList,
   FdsButton,
   FdsButtonIcon,
   FdsIconCollection,

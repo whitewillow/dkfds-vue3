@@ -16,12 +16,10 @@
   </button>
 </template>
 <script setup lang="ts">
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import DKFDS from 'dkfds';
-import { defineProps, onMounted, ref } from 'vue';
+import { defineProps, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import DKFDS from 'dkfds';
+// import { Tooltip } from 'dkfds';
 
 defineProps({
   text: {
@@ -32,9 +30,11 @@ defineProps({
 
 const formId = ref(uuidv4());
 
-onMounted(() => {
-  new DKFDS.Tooltip(document.getElementById(formId.value)).init();
-});
+// onMounted(() => {
+//   // Fails when vite build
+//   // TODO: possible error from https://github.com/vitejs/vite/issues/6859
+//   new Tooltip(document.getElementById(formId.value)).init();
+// });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

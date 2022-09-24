@@ -16,7 +16,7 @@
       <p class="italic">Understøtter autocomplete patterns, som name, tel m.m.</p>
 
       <h2>Validering</h2>
-      <fds-validate
+      <xfds-validate
         :modelValue="txtEfternavn"
         validateFlow="immediate"
         :validations="[hasContent, charactersMinLength(10)]"
@@ -30,9 +30,9 @@
           <fds-hint>Indtast efternavn - må ikke være tomt og min 10 karaktere</fds-hint>
           <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
         </fds-formgroup>
-      </fds-validate>
+      </xfds-validate>
 
-      <fds-validate
+      <xfds-validate
         :modelValue="noBeloeb"
         :validations="[numberMax(500)]"
         #default="{ isValid, errorMessage }"
@@ -45,11 +45,11 @@
           <fds-hint>Indtast beløb - må ikke overstige 500</fds-hint>
           <fds-input-number v-model="noBeloeb" suffix="kr." :id="formid"></fds-input-number>
         </fds-formgroup>
-      </fds-validate>
+      </xfds-validate>
 
       <h2>Samlet komponent</h2>
       <p class="font-lead">Samlet komponent, med validering</p>
-      <fds-form-input
+      <xfds-form-input
         label="Mobil nr."
         :modelValue="txtMobil"
         input-type="tel"

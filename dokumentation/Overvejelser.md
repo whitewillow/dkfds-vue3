@@ -203,7 +203,7 @@ Forslag til hvordan layout/implementering kunne laves?
 
 
 ## Fejl og Validering
-- [x] fds-validate
+- [x] xfds-validate
 - [x] fds-fejlopsummering
 - [x] fds-fejlmeddelelse
 

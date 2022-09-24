@@ -17,7 +17,7 @@
             :id="formid"></fds-input>
         </fds-formgroup>
 
-        <fds-validate
+        <xfds-validate
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
@@ -35,9 +35,9 @@
               v-model="txtEfternavn"
               :id="formid"></fds-input>
           </fds-formgroup>
-        </fds-validate>
+        </xfds-validate>
 
-        <fds-validate
+        <xfds-validate
           :modelValue="noBeloeb"
           :validations="[numberMax(500)]"
           #default="{ isValid, errorMessage }">
@@ -56,7 +56,7 @@
               suffix="kr."
               :id="formid"></fds-input-number>
           </fds-formgroup>
-        </fds-validate>
+        </xfds-validate>
       </div>
 
       <hr class="my-6" />
@@ -64,58 +64,58 @@
       <div>
         <h2>Eksempel på Form komponent (simpel brug)</h2>
 
-        <fds-form-input
+        <xfds-form-input
           label="Adresse"
           hint="Angiv gyldig adresse"
           tooltip="Input tooltip"
           v-model="txtAdresse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
-        <fds-form-input-number
+        <xfds-form-input-number
           label="Antal kasser"
           v-model="kasser"
           prefix="stk" />
 
-        <fds-form-input-number
+        <xfds-form-input-number
           label="Antal kasser"
           v-model="kasser"
           suffix="stk"
           :validations="[numberMin(2)]"/>
 
-        <fds-form-input
+        <xfds-form-input
           label="Mobil nr."
           :modelValue="txtMobil"
           disabled />
 
-        <fds-form-input
+        <xfds-form-input
           label="Mobil nr."
           v-model="txtMobil"
           input-type="tel"
           autocomplete="tel" />
 
-        <fds-form-textarea
+        <xfds-form-textarea
           label="Tekst område"
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
-        <fds-form-checkbox-list
+        <xfds-form-checkbox-list
           label="Checkbox form"
           :validations="[arrayHasItems]"
           v-model="checkboxListForm"/>
 
-        <fds-form-dropdown
+        <xfds-form-dropdown
           label="Dropdown form"
           :validations="[hasContent]"
           :options="dropdownOptions"
           v-model="dropdownValForm">
-        </fds-form-dropdown>
+        </xfds-form-dropdown>
 
-        <fds-form-radio
+        <xfds-form-radio
           label="Radio form"
           :validations="[hasContent]"
           :options="radioOptions"
           v-model="radioValForm">
-        </fds-form-radio>
+        </xfds-form-radio>
 
         <fds-pre :json="{ radioValForm }" />
 
@@ -335,7 +335,7 @@
       <h2>Component preview</h2>
 
       <fds-component-preview header="Eksempel">
-        <fds-validate
+        <xfds-validate
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
@@ -357,7 +357,7 @@
               v-model="txtEfternavn"
               :id="formid"></fds-input>
           </fds-formgroup>
-        </fds-validate>
+        </xfds-validate>
         <template #description>
           <p class="italic">
             Dette eksempel viser hvordan man kan sammenkæde enkeltstående komponenter til en samlet
@@ -365,13 +365,13 @@
           </p>
           <p class="italic">
             Alle komponenter kan bruges enkeltstående - dvs du kunne eksempelvis udbytte
-            <code>fds-validate</code> til egen komponent
+            <code>xfds-validate</code> til egen komponent
           </p>
           <p class="italic">
             Følgende komponenter er i brug:
           </p>
           <ul>
-            <li><code>fds-validate</code></li>
+            <li><code>xfds-validate</code></li>
             <li><code>fds-formgroup</code></li>
             <li><code>fds-label</code></li>
             <li><code>fds-fejlmeddelelse</code></li>
@@ -1237,7 +1237,7 @@ const faneBlade: FdsNavigationStep[] = [
 ] as unknown as FdsNavigationStep[];
 
 const codeExample = `
-<fds-validate
+<xfds-validate
   :modelValue="txtEfternavn"
   :validations="[hasContent, charactersMinLength(10)]"
   #default="{ isValid, errorMessage }">
@@ -1258,6 +1258,6 @@ const codeExample = `
       v-model="txtEfternavn"
       :id="formid"></fds-input>
   </fds-formgroup>
-</fds-validate>`;
+</xfds-validate>`;
 </script>
 <style lang="scss" scoped></style>

@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <xfds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -8,43 +8,55 @@
     <fds-formgroup
       :is-valid="isValid"
       :label="label"
+      :tooltip="tooltip"
       #default="{ formid }">
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-textarea
+      <fds-input-number
         v-model="value"
         :id="formid"
-        :placeholder="placeholder"
-        :max-length="maxLength"
-        :inputClass="inputClass"
-        :rowlength="rowlength"
-        :rows="rows"
-        :disabled="disabled"
-        :readonly="readonly"
+        v-bind="{
+          placeholder,
+          autocomplete,
+          inputType,
+          inputClass,
+          disabled,
+          readonly,
+          suffix,
+          prefix,
+        }"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"></fds-textarea>
+        @dirty="touchedEvent"/>
     </fds-formgroup>
-  </fds-validate>
+  </xfds-validate>
 </template>
 
 <script setup lang="ts">
-import {
-  defineEmits, defineProps, ref, watch,
-} from 'vue';
+import { defineEmits, defineProps, ref } from 'vue';
 
-import FdsHint from '@/components/fds-hint.vue';
-import FdsTextarea from '@/components/fds-textarea.vue';
-import FdsValidate from '@/components/fds-validate.vue';
-import FdsFormgroup from '@/components/fds-formgroup.vue';
-import fdsTextareaProps from '@/props/fds-texarea.props';
-import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
+import fdsInputProps from '@/props/fds-input.props';
 import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({
-  ...fdsTextareaProps,
+  ...fdsInputProps,
   ...fdsFormProps,
+  modelValue: {
+    default: 0,
+  },
+  inputType: {
+    type: String,
+    default: 'number',
+  },
+  suffix: {
+    type: String,
+    default: null,
+  },
+  prefix: {
+    type: String,
+    default: null,
+  },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
@@ -60,17 +72,6 @@ const validEvent = (isValid: boolean) => {
 };
 
 const handleInput = () => emit('update:modelValue', value.value);
-
-watch(
-  () => [props.modelValue],
-  () => {
-    value.value = props.modelValue;
-  },
-  {
-    immediate: true,
-  },
-);
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

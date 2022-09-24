@@ -238,7 +238,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 
 ## Fejl og Validering
-- [x] fds-validate
+- [x] xfds-validate
 - [x] fds-fejlopsummering
 - [x] fds-fejlmeddelelse
 

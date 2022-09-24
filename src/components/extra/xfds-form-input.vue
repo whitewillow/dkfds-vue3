@@ -1,5 +1,5 @@
 <template>
-  <fds-validate
+  <xfds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -30,7 +30,7 @@
         @update:modelValue="handleInput"
         @dirty="touchedEvent"></fds-input>
     </fds-formgroup>
-  </fds-validate>
+  </xfds-validate>
 </template>
 
 <script setup lang="ts">
@@ -38,12 +38,7 @@ import {
   defineEmits, defineProps, ref, watch,
 } from 'vue';
 
-import FdsHint from '@/components/fds-hint.vue';
-import FdsInput from '@/components/fds-input.vue';
-import FdsValidate from '@/components/fds-validate.vue';
-import FdsFormgroup from '@/components/fds-formgroup.vue';
 import fdsInputProps from '@/props/fds-input.props';
-import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 import fdsFormProps from '@/props/fds-form.props';
 
 const props = defineProps({

@@ -9,7 +9,7 @@
         <fds-input v-model="txtFornavn" :id="formid"></fds-input>
       </fds-formgroup>
 
-      <fds-validate
+      <xfds-validate
         :modelValue="txtEfternavn"
         :validations="[hasContent, charactersMinLength(10)]"
         #default="{ isValid, errorMessage }"
@@ -22,26 +22,26 @@
           <fds-hint>Indtast efternavn</fds-hint>
           <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
         </fds-formgroup>
-      </fds-validate>
+      </xfds-validate>
     </div>
     <hr />
     <div>
       <h3>Eksempel på simpel brug</h3>
 
-      <fds-form-input
+      <xfds-form-input
         label="Adresse"
         hint="Angiv gyldig adresse"
         v-model="txtAdresse"
         :validations="[hasContent, charactersMinLength(10)]"
       />
 
-      <fds-form-input label="Antal kasser" v-model="kasser" prefix="stk" />
+      <xfds-form-input label="Antal kasser" v-model="kasser" prefix="stk" />
 
-      <fds-form-input label="Antal kasser" v-model="kasser" suffix="stk" />
+      <xfds-form-input label="Antal kasser" v-model="kasser" suffix="stk" />
 
-      <fds-form-input label="Mobil nr." :modelValue="txtMobil" disabled />
+      <xfds-form-input label="Mobil nr." :modelValue="txtMobil" disabled />
 
-      <fds-form-textarea
+      <xfds-form-textarea
         label="Tekst område"
         v-model="txtBeskrivelse"
         :validations="[hasContent, charactersMinLength(10)]"
