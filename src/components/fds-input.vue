@@ -18,7 +18,7 @@
       :autocomplete="autocomplete"
       :disabled="disabled"
       @input="handleInput"
-      @blur="$emit('dirty')"/>
+      @blur="$emit('dirty', true)"/>
     <div
       v-if="suffix"
       class="form-input-suffix"

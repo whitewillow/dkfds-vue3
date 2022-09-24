@@ -3,25 +3,25 @@
     <h2 class="mt-0">Form</h2>
     <div>
       <h3>Eksempel på advanceret brug</h3>
-      <fds-formgroup #default="{ formid }">
+      <xfds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Fornavn </fds-label>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="txtFornavn" :id="formid"></fds-input>
-      </fds-formgroup>
+      </xfds-formgroup>
 
       <xfds-validate
         :modelValue="txtEfternavn"
         :validations="[hasContent, charactersMinLength(10)]"
         #default="{ isValid, errorMessage }"
       >
-        <fds-formgroup :is-valid="isValid" #default="{ formid }">
+        <xfds-formgroup :is-valid="isValid" #default="{ formid }">
           <fds-label :id="formid"> Efternavn </fds-label>
           <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
           </fds-fejlmeddelelse>
           <fds-hint>Indtast efternavn</fds-hint>
           <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
-        </fds-formgroup>
+        </xfds-formgroup>
       </xfds-validate>
     </div>
     <hr />
@@ -51,22 +51,22 @@
 
       <h3>Valg</h3>
 
-      <fds-formgroup label="Vælg en checkbox">
+      <xfds-formgroup label="Vælg en checkbox">
         <fds-checkbox-list v-model="checkboxList">
           <template v-slot:[`melon`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </fds-checkbox-list>
-      </fds-formgroup>
+      </xfds-formgroup>
 
       <fds-pre :json="checkboxList" />
 
-      <fds-formgroup label="Single Checkbox">
+      <xfds-formgroup label="Single Checkbox">
         <fds-checkbox v-model="twoChecked" class="mt-2"> Andet valg </fds-checkbox>
         <fds-checkbox v-model="twoChecked" small> Andet valg - small </fds-checkbox>
-      </fds-formgroup>
+      </xfds-formgroup>
 
-      <fds-formgroup>
+      <xfds-formgroup>
         <fds-label>Vælg radio</fds-label>
 
         <fds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
@@ -75,9 +75,9 @@
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </fds-radio>
-      </fds-formgroup>
+      </xfds-formgroup>
 
-      <fds-formgroup>
+      <xfds-formgroup>
         <fds-label>Vælg radio toggle</fds-label>
 
         <fds-radio-toggle v-model="toggleRadio">
@@ -86,12 +86,12 @@
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </fds-radio-toggle>
-      </fds-formgroup>
+      </xfds-formgroup>
       {{ toggleRadio }}
 
-      <fds-formgroup>
+      <xfds-formgroup>
         <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
-      </fds-formgroup>
+      </xfds-formgroup>
 
       <fds-toggle-switch v-model="toggleswitch" />
       <div>

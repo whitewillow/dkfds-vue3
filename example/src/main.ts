@@ -48,12 +48,29 @@ import LinksExample from './components/LinksExample.vue';
 import KnapperExample from './components/KnapperExample.vue';
 import FejlsummeringExample from './components/FejlsummeringExample.vue';
 
+import FormCheckboxlistExample from './components/extra/FormCheckboxlistExample.vue';
+import FormDropdownExample from './components/extra/FormDropdownExample.vue';
+import FormgroupExample from './components/extra/FormgroupExample.vue';
+import FormInputExample from './components/extra/FormInputExample.vue';
+import FormNumberExample from './components/extra/FormNumberExample.vue';
+import FormRadioExample from './components/extra/FormRadioExample.vue';
+import FormTextareaExample from './components/extra/FormTextareaExample.vue';
+import FormValidateExample from './components/extra/FormValidateExample.vue';
+
 const app = createApp(App);
 
 app
   .use(store)
   .use(router)
   .use(dkfdsvue3 as any)
+  .component('form-checkboxlist-example', FormCheckboxlistExample)
+  .component('form-dropdown-example', FormDropdownExample)
+  .component('form-group-example', FormgroupExample)
+  .component('form-input-example', FormInputExample)
+  .component('form-number-example', FormNumberExample)
+  .component('form-radio-example', FormRadioExample)
+  .component('form-textarea-example', FormTextareaExample)
+  .component('form-validate-example', FormValidateExample)
   .component('accordions-example', AccordionsExample)
   .component('badges-example', BadgesExample)
   .component('beskeder-example', BeskederExample)

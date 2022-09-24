@@ -6,7 +6,7 @@
     :id="id"
     v-bind="value"
     @change="handleInput"
-    @blur="$emit('dirty')">
+    @blur="$emit('dirty', true)">
     <option
       value
       v-if="!noHeader">
@@ -16,6 +16,7 @@
       v-for="(o, i) in options"
       :value="o.value"
       :key="i"
+      :disabled="o.disabled"
       :selected="o.value === value">
       {{ o.title }}
     </option>

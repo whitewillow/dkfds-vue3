@@ -8,18 +8,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/forside',
     name: 'forside',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ForsideView.vue'),
+    component: () => import(/* webpackChunkName: "forside" */ '../views/ForsideView.vue'),
   },
   {
     path: '/komponenter',
     name: 'komponenter',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/KomponenterView.vue'),
+    component: () => import(/* webpackChunkName: "komponenter" */ '../views/KomponenterView.vue'),
+  },
+  {
+    path: '/ekstrakomponenter',
+    name: 'xtrakomponenter',
+    component: () => import(/* webpackChunkName: "xtrakomponenter" */ '../views/EkstraKomponenterView.vue'),
   },
   {
     path: '/about',

@@ -1,9 +1,9 @@
 <template>
   <section>
     <h2>Dropdown-menu</h2>
-    <fds-formgroup>
+    <xfds-formgroup>
       <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
-    </fds-formgroup>
+    </xfds-formgroup>
   </section>
 </template>
 

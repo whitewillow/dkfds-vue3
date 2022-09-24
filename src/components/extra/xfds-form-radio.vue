@@ -5,7 +5,7 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
+    <xfds-formgroup
       :is-valid="isValid"
       :label="label"
       :tooltip="tooltip"
@@ -22,7 +22,7 @@
         @dirty="touchedEvent">
         <slot />
       </fds-radio>
-    </fds-formgroup>
+    </xfds-formgroup>
   </xfds-validate>
 </template>
 

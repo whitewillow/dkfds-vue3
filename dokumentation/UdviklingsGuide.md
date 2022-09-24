@@ -44,7 +44,7 @@ eks:
     :modelValue="txtEfternavn"
     :validations="[hasContent, charactersMinLength(10)]"
     #default="{ isValid, errorMessage }">
-    <fds-formgroup
+    <xfds-formgroup
     :is-valid="isValid"
     #default="{ formid }">
         <fds-label :id="formid">
@@ -57,7 +57,7 @@ eks:
         <fds-input
             v-model="txtEfternavn"
             :id="formid" />
-    </fds-formgroup>
+    </xfds-formgroup>
 </xfds-validate>
 ```
 

@@ -1,21 +1,21 @@
 <template>
   <section>
-    <fds-formgroup label="Vælg en checkbox">
+    <xfds-formgroup label="Vælg en checkbox">
       <fds-checkbox-list v-model="checkboxList">
         <template v-slot:[`melon`]>
           <p>Det er muligt at benytte radio til mere indhold</p>
         </template>
       </fds-checkbox-list>
-    </fds-formgroup>
+    </xfds-formgroup>
 
     <fds-pre :json="checkboxList" />
 
-    <fds-formgroup label="Single Checkbox">
+    <xfds-formgroup label="Single Checkbox">
       <fds-checkbox v-model="oneChecked" class="mt-2"> Et valg </fds-checkbox>
       <fds-checkbox v-model="twoChecked" small> Andet valg - small </fds-checkbox>
 
       <fds-pre :json="{ oneChecked, twoChecked }" />
-    </fds-formgroup>
+    </xfds-formgroup>
   </section>
 </template>
 

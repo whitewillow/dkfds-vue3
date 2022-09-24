@@ -5,7 +5,7 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
+    <xfds-formgroup
       :is-valid="isValid"
       :label="label"
       :tooltip="tooltip"
@@ -21,7 +21,7 @@
         :id="formid">
         <slot />
       </fds-checkbox-list>
-    </fds-formgroup>
+    </xfds-formgroup>
   </xfds-validate>
 </template>
 

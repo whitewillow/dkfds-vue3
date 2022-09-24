@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-formgroup>
+    <xfds-formgroup>
       <fds-label>Vælg radio</fds-label>
 
       <fds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
@@ -9,9 +9,9 @@
           <p>Det er muligt at benytte radio til mere indhold</p>
         </template>
       </fds-radio>
-    </fds-formgroup>
+    </xfds-formgroup>
 
-    <fds-formgroup>
+    <xfds-formgroup>
       <fds-label>Vælg radio toggle</fds-label>
 
       <fds-radio-toggle v-model="toggleRadio">
@@ -20,7 +20,7 @@
           <p>Det er muligt at benytte radio til mere indhold</p>
         </template>
       </fds-radio-toggle>
-    </fds-formgroup>
+    </xfds-formgroup>
 
     <fds-pre :json="{ radioVal, toggleRadio }" />
   </section>

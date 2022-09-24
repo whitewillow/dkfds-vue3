@@ -83,6 +83,14 @@
             </fds-nav-item-route>
 
             <fds-nav-item-route
+              toName="xtrakomponenter"
+              :current-route-name="$route.name?.toString()"
+              linkTitle="Link title"
+            >
+              Ekstra Komponenter
+            </fds-nav-item-route>
+
+            <fds-nav-item-route
               toName="about"
               :current-route-name="$route.name?.toString()"
               linkTitle="Link title"

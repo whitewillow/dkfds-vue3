@@ -10,7 +10,7 @@
       :id="id"
       :placeholder="placeholder"
       @input="handleInput"
-      @blur="$emit('dirty')"
+      @blur="$emit('dirty', true)"
       :disabled="disabled"></textarea>
     <p
       class="mt-1 form-hint"

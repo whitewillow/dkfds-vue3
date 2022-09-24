@@ -5,7 +5,7 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
+    <xfds-formgroup
       :is-valid="isValid"
       :label="label"
       :tooltip="tooltip"
@@ -28,8 +28,14 @@
           prefix,
         }"
         @update:modelValue="handleInput"
-        @dirty="touchedEvent"></fds-input>
-    </fds-formgroup>
+        @dirty="touchedEvent">
+        <template
+          #button
+          v-if="$slots.button">
+          <slot name="button" />
+        </template>
+      </fds-input>
+    </xfds-formgroup>
   </xfds-validate>
 </template>
 
