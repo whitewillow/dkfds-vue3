@@ -36,7 +36,7 @@
     <div class="solution-header">
       <div class="container solution-header-inner">
         <div class="solution-heading">
-          <a href="#">En langt langt længere løsningstitel</a>
+          <a href="#">Det Fælles Designsystem Vue 3</a>
         </div>
 
         <!--2B: Solution header: Authority name + text -->
