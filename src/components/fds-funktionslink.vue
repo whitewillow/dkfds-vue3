@@ -36,7 +36,7 @@ import { defineProps } from 'vue';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { RouteLocationRaw } from 'vue-router';
 
-const props = defineProps({
+defineProps({
   icon: {
     type: String,
     default: '',

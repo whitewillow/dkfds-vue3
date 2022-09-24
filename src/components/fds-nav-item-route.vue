@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed } from 'vue';
+import { defineProps } from 'vue';
 
 const props = defineProps({
   toName: {
@@ -51,12 +51,12 @@ const props = defineProps({
   },
 });
 
-const getTooltip = computed(() => {
-  if (props.tooltip) {
-    return `<p>${props.tooltip}</p>`;
-  }
-  return null;
-});
+// const getTooltip = computed(() => {
+//   if (props.tooltip) {
+//     return `<p>${props.tooltip}</p>`;
+//   }
+//   return null;
+// });
 
 const isPartOfMenu = (name: string): boolean => {
   if (props.currentRouteName) {

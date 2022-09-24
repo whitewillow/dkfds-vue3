@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   variant: {
     type: String,
     default: 'secondary', // primary|secondary|

@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   skipNavigationsTekst: {
     type: String,
     default: 'Gå til sidens indhold', // primary|secondary|

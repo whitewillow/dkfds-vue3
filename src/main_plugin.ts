@@ -15,8 +15,6 @@ import FdsRadioToggle from '@/components/fds-radio-toggle.vue';
 import FdsDropdown from '@/components/fds-dropdown.vue';
 import FdsLabel from '@/components/fds-label.vue';
 import FdsValidate from '@/components/fds-validate.vue';
-import FdsValidateNumber from '@/components/fds-validate-number.vue';
-import FdsValidateArray from '@/components/fds-validate-array.vue';
 import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsFejlmeddelelse from '@/components/fds-fejlmeddelelse.vue';
 import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
@@ -83,8 +81,6 @@ function install (app: App): void {
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
   app.component('fds-validate', FdsValidate);
-  app.component('fds-validate-number', FdsValidateNumber);
-  app.component('fds-validate-array', FdsValidateArray);
   app.component('fds-formgroup', FdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
@@ -122,8 +118,6 @@ export {
   FdsTilbageLink,
   FdsTextarea,
   FdsInputNumber,
-  FdsValidateNumber,
-  FdsValidateArray,
   FdsFanebladItem,
   FdsStruktureredeListe,
   FdsFaneblade,

@@ -25,7 +25,7 @@ import { defineProps, defineEmits } from 'vue';
 import FdsAlert from '@/components/fds-alert.vue';
 import { FdsErrorListItem } from '@/model/fds.model';
 
-const props = defineProps({
+defineProps({
   list: {
     type: Array as () => FdsErrorListItem[],
     default: () => [],

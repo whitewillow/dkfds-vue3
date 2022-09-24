@@ -32,7 +32,7 @@
         </fds-formgroup>
       </fds-validate>
 
-      <fds-validate-number
+      <fds-validate
         :modelValue="noBeloeb"
         :validations="[numberMax(500)]"
         #default="{ isValid, errorMessage }"
@@ -45,7 +45,7 @@
           <fds-hint>Indtast beløb - må ikke overstige 500</fds-hint>
           <fds-input-number v-model="noBeloeb" suffix="kr." :id="formid"></fds-input-number>
         </fds-formgroup>
-      </fds-validate-number>
+      </fds-validate>
 
       <h2>Samlet komponent</h2>
       <p class="font-lead">Samlet komponent, med validering</p>

@@ -17,10 +17,8 @@
       :type="inputType"
       :disabled="disabled"
       @input="handleInput"
-      @focus="
-        ($event.target as any).select();
-        $emit('dirty');
-      "/>
+      @blur="$emit('dirty')"
+      @focus="($event.target as any).select()"/>
     <div
       v-if="suffix"
       class="form-input-suffix"

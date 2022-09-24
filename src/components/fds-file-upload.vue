@@ -40,7 +40,7 @@ import { defineProps, defineEmits, ref } from 'vue';
 import { removeBrowserFileContentHeaders } from '@/utils/file-utils';
 import { FdsFileInputModel } from '@/model/fds.model';
 
-const props = defineProps({
+defineProps({
   header: {
     type: String,
     default: 'Vedhæft fil',

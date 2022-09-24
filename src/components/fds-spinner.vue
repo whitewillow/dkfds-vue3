@@ -14,7 +14,7 @@
 import { defineProps, useAttrs } from 'vue';
 
 const attrs = useAttrs();
-const props = defineProps({
+defineProps({
   variant: {
     type: String,
     default: null,

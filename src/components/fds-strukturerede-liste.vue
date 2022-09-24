@@ -19,12 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from '@/model/fds.model';
-import {
-  computed, defineProps, ref, useSlots,
-} from 'vue';
+import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   header: {
     type: String,
     required: true,

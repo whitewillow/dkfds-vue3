@@ -1,5 +1,5 @@
 <template>
-  <fds-validate-array
+  <fds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -22,7 +22,7 @@
         <slot />
       </fds-checkbox-list>
     </fds-formgroup>
-  </fds-validate-array>
+  </fds-validate>
 </template>
 
 <script setup lang="ts">
@@ -63,6 +63,16 @@ const handleInput = (event: Array<FdsCheckboxItem>) => {
   value.value = event;
   emit('update:modelValue', value.value);
 };
+
+watch(
+  () => [props.modelValue],
+  () => {
+    value.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>

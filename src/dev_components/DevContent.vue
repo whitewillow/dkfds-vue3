@@ -37,7 +37,7 @@
           </fds-formgroup>
         </fds-validate>
 
-        <fds-validate-number
+        <fds-validate
           :modelValue="noBeloeb"
           :validations="[numberMax(500)]"
           #default="{ isValid, errorMessage }">
@@ -56,7 +56,7 @@
               suffix="kr."
               :id="formid"></fds-input-number>
           </fds-formgroup>
-        </fds-validate-number>
+        </fds-validate>
       </div>
 
       <hr class="my-6" />

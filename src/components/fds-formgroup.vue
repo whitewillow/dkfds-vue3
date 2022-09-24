@@ -22,7 +22,7 @@
 import { computed, defineProps } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     default: null,

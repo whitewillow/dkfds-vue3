@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { ref, defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   openText: {
     type: String,
     default: 'Åbn alle',

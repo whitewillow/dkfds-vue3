@@ -22,9 +22,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps, onMounted } from 'vue';
+import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   header: {
     type: String,
     default: null,

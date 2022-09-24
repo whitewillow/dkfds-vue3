@@ -1,13 +1,15 @@
 <template>
   <label
     class="form-label"
-    :for="id"> <slot /> </label>
+    :for="id">
+    <slot />
+  </label>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     default: '',

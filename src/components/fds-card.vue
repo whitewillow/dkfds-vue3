@@ -34,7 +34,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   overskrift: {
     type: String,
     default: null,

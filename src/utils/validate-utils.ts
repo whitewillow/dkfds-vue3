@@ -20,7 +20,7 @@ export function numberMax (max: number): (args: number) => string | null {
   return (x: number) => (x <= max ? null : `Feltet må overstige ${max}.`);
 }
 export function numberMin (min: number): (args: number) => string | null {
-  return (x: number) => (x > min ? null : `Feltet må kommer under ${min}.`);
+  return (x: number) => (x > min ? null : `Feltet må ikke være mindre end ${min}.`);
 }
 
 export function charactersMaxLength (length: number): (args: string) => string | null {

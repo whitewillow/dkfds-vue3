@@ -14,8 +14,8 @@ const isValid = ref(true);
 const errorMessage = ref('');
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: '',
+    type: [String, Number, Array],
+    default: null,
   },
   validateFlow: {
     type: String,
@@ -28,8 +28,8 @@ const props = defineProps({
   validations: {
     type: Array as () => Array<(x?: unknown) => string | null>,
     default: () => [
-      (input: string) => {
-        if (!input || input.trim().length === 0) {
+      (input: unknown) => {
+        if (!input) {
           return 'Indtast data';
         }
         return null;
@@ -39,6 +39,16 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['valid']);
+
+const hasValue = (): boolean => {
+  if (typeof props.modelValue === 'string') {
+    return props.modelValue.length > 0;
+  }
+  if (Array.isArray(props.modelValue)) {
+    return false;
+  }
+  return false;
+};
 
 const isFormValid = () => {
   if (props.validations) {
@@ -62,7 +72,8 @@ watch(
     isFormValid();
   },
   {
-    immediate: props.validateFlow === 'immediate' || props.modelValue.length > 0 || props.dirty,
+    immediate: props.validateFlow === 'immediate' || hasValue() || props.dirty,
+    deep: true,
   },
 );
 </script>

@@ -22,9 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defineProps, defineEmits, ref, computed,
-} from 'vue';
+import { defineProps, defineEmits, computed } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({

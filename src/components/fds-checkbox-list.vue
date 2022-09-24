@@ -48,11 +48,11 @@ const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const value = ref(props.modelValue);
 
-const handleDirty = (event: Event) => {
+const handleDirty = () => {
   emit('dirty', true);
 };
 
-const handleInput = (event: Event) => {
+const handleInput = () => {
   emit('update:modelValue', value.value);
 };
 

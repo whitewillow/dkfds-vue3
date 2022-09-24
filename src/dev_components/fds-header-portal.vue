@@ -19,7 +19,8 @@
         <svg
           class="icon-svg"
           focusable="false"
-          aria-hidden="true"><use xlink:href="#menu"></use></svg>Menu
+          aria-hidden="true">
+          <use xlink:href="#menu"></use></svg>Menu
       </button>
 
       <!-- Start: Persondetaljer -->
@@ -31,7 +32,9 @@
           <button
             href="#"
             @click="$emit('logout', $event.target)"
-            class="button button-secondary d-print-none">Log af</button>
+            class="button button-secondary d-print-none">
+            Log af
+          </button>
         </slot>
       </div>
       <!-- Slut: Persondetaljer -->
@@ -42,7 +45,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   skipNavigationsTekst: {
     type: String,
     default: 'Gå til sidens indhold', // primary|secondary|

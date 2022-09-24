@@ -19,8 +19,5 @@
 </template>
 
 <script setup lang="ts">
-import { FdsFileInputModel, FdsFileModel } from 'dkfds-vue3/src/model/fds.model';
-import { ref } from 'vue';
-
 const klikEvent = () => window.confirm('KLIK');
 </script>

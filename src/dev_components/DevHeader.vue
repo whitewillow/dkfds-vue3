@@ -2,7 +2,9 @@
   <header class="header">
     <a
       class="skipnav"
-      href="#main-content">{{ skipNavigationsTekst }}</a>
+      href="#main-content">
+      {{ skipNavigationsTekst }}
+    </a>
     <slot />
   </header>
 </template>
@@ -10,7 +12,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
   skipNavigationsTekst: {
     type: String,
     default: 'Gå til sidens indhold', // primary|secondary|

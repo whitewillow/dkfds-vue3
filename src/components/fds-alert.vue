@@ -26,9 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  computed, defineProps, ref, watch,
-} from 'vue';
+import { defineProps, ref, watch } from 'vue';
 
 const props = defineProps({
   level: {

@@ -1,5 +1,5 @@
 <template>
-  <fds-validate-number
+  <fds-validate
     :modelValue="value"
     :validations="validations"
     #default="{ isValid, errorMessage }"
@@ -30,7 +30,7 @@
         @update:modelValue="handleInput"
         @dirty="touchedEvent"/>
     </fds-formgroup>
-  </fds-validate-number>
+  </fds-validate>
 </template>
 
 <script setup lang="ts">
