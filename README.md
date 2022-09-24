@@ -186,7 +186,6 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - fds-trinindikatorer
 - fds-fil-upload/list refak
 - fds-typegrafy / fds-t
-- fds-progress ?
 - Overvej knapper variants ?
   
 ## Overordnet oversigt
@@ -276,6 +275,6 @@ Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, val
 - [ ] fds-trin
 - [ ] fds-modal
 - [ ] fds-button-sure
-- [ ] fds-progress
+- [x] xfds-progress
 - [ ] fds-icon
 
