@@ -67,22 +67,32 @@
       <div class="navbar navbar-primary">
         <div class="navbar-inner container">
           <ul class="nav-primary">
-            <fds-nav-item-route toName="forside" linkTitle="Link title">
-              Forside
-            </fds-nav-item-route>
-            <fds-nav-item-route toName="komponentforside" linkTitle="Link title">
-              Komponenter
-            </fds-nav-item-route>
+            <li role="none" :class="[{ current: isPartOfMenu('forside') }]">
+              <fds-nav-link @click="router.push({ name: 'forside' })" title="Link title">
+                Forside
+              </fds-nav-link>
+            </li>
+            <li role="none" :class="[{ current: isPartOfMenu('komponentforside') }]">
+              <fds-nav-link @click="router.push({ name: 'komponentforside' })" title="Link title">
+                Komponenter
+              </fds-nav-link>
+            </li>
+            <li role="none" :class="[{ current: isPartOfMenu('ekstrakomponenter') }]">
+              <fds-nav-link @click="router.push({ name: 'ekstrakomponenter' })" title="Link title">
+                Ekstra Komponenter
+              </fds-nav-link>
+            </li>
 
-            <fds-nav-item-route toName="ekstrakomponenter" linkTitle="Link title">
-              Ekstra Komponenter
-            </fds-nav-item-route>
-
-            <fds-nav-item-route toName="tips" linkTitle="Link title">
-              Anbefalinger
-            </fds-nav-item-route>
-
-            <fds-nav-item-route toName="about" linkTitle="Link title"> Om os </fds-nav-item-route>
+            <li role="none" :class="[{ current: isPartOfMenu('tips') }]">
+              <fds-nav-link @click="router.push({ name: 'tips' })" title="Link title">
+                Anbefalinger
+              </fds-nav-link>
+            </li>
+            <li role="none" :class="[{ current: isPartOfMenu('about') }]">
+              <fds-nav-link @click="router.push({ name: 'about' })" title="Link title">
+                Om os
+              </fds-nav-link>
+            </li>
           </ul>
 
           <!-- Start: Overflow menu i navigation -->
@@ -228,15 +238,28 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import DKFDS from 'dkfds';
+import { useRoute, useRouter } from 'vue-router';
 
 DKFDS.init();
+const route = useRoute();
+const router = useRouter();
+const isPartOfMenu = (name: string): boolean => {
+  if (route) {
+    const [parent] = route.matched;
+    console.log(parent);
 
-export default defineComponent({
-  name: 'App',
-});
+    if (parent && parent.name === name) {
+      return true;
+    }
+    if (route.name) {
+      return route.name === name;
+    }
+  }
+
+  return false;
+};
 </script>
 
 <style lang="scss">
