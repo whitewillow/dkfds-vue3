@@ -44,19 +44,19 @@ import { ref } from 'vue';
 
 const progress = ref(46);
 const code = `
-<xfds-progressbar :procent="45" />
-
-<xfds-progressbar
-  :procent="progress"
-  :showProgress="false"
-  style="height: 2px"
-  variant="primary"
-/>
-
-<xfds-progressbar
-  :procent="progress"
-  variant="success">
-  På vej mod success - {{ progress }}%
-</xfds-progressbar>
-`;
+  <xfds-progressbar :procent="45" />
+  
+  <xfds-progressbar
+    :procent="progress"
+    :showProgress="false"
+    style="height: 2px"
+    variant="primary"
+  />
+  
+  <xfds-progressbar
+    :procent="progress"
+    variant="success">
+    På vej mod success - {{ progress }}%
+  </xfds-progressbar>
+  `;
 </script>

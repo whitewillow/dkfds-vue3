@@ -52,29 +52,29 @@ const product = ref({
   type: '',
 });
 const code = `
-<xfds-form-checkbox-list
-  label="Checkbox form"
-  :validations="[arrayHasItems]"
-  v-model="checkboxListForm"
-/>
-
-const checkboxListForm = ref<FdsCheckboxItem[]>([
-  {
-    title: 'Banan',
-    value: 'banan',
-  },
-  {
-    title: 'Melon',
-    value: 'melon',
-  },
-  {
-    title: 'Æble',
-    value: 'æble',
-  },
-  {
-    title: 'Tomat',
-    value: 'tomat',
-    disabled: true,
-  },
-]);`;
+  <xfds-form-checkbox-list
+    label="Checkbox form"
+    :validations="[arrayHasItems]"
+    v-model="checkboxListForm"
+  />
+  
+  const checkboxListForm = ref<FdsCheckboxItem[]>([
+    {
+      title: 'Banan',
+      value: 'banan',
+    },
+    {
+      title: 'Melon',
+      value: 'melon',
+    },
+    {
+      title: 'Æble',
+      value: 'æble',
+    },
+    {
+      title: 'Tomat',
+      value: 'tomat',
+      disabled: true,
+    },
+  ]);`;
 </script>

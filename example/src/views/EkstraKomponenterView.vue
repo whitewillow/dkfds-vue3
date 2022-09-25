@@ -1,57 +1,86 @@
 <template>
   <section>
     <div class="container page-container">
-      <fds-sidenavigation-list v-model="sideTabs">
-        <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
-          <div class="subheading">Ektra Komponenter</div>
-          <h1>{{ tab.title }}</h1>
-          <component :is="`${tab.key}-example`" />
-        </template>
-      </fds-sidenavigation-list>
+      <div class="row">
+        <aside class="col-12 col-lg-3 sidebar-col">
+          <nav>
+            <fds-sidenavigation v-model="navigationList" @navigate="handleNavigation" />
+          </nav>
+        </aside>
+        <div class="col-12 col-lg-9">
+          <router-view />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
-// <component :is="`${tab.key}-example`" />
-const sideTabs = [
+import sidenavigationService from 'dkfds-vue3/src/service/sidenavigation.service';
+import { ref, watch } from 'vue';
+
+import { useRouter, useRoute } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+
+const currentNavigationKey = ref('');
+const navigationList = ref<Array<FdsNavigationItem>>([
   {
-    key: 'form-input',
+    key: 'ekstratekstfelt',
     title: 'Tekstfelt',
   },
   {
-    key: 'form-number',
+    key: 'ekstranummerfelt',
     title: 'Nummer',
   },
   {
-    key: 'form-textarea',
+    key: 'ekstratekstomraade',
     title: 'Tekstområde',
   },
   {
-    key: 'form-dropdown',
+    key: 'ekstradropdownmenu',
     title: 'Dropdown-menu',
   },
   {
-    key: 'form-radio',
+    key: 'ekstraradio',
     title: 'Radio',
   },
   {
-    key: 'form-checkboxlist',
+    key: 'ekstratjekboksliste',
     title: 'Tjekbox liste',
   },
   {
-    key: 'form-group',
+    key: 'ekstraformgruppe',
     title: 'Form gruppe',
   },
   {
-    key: 'form-validate',
+    key: 'ekstraformvalidering',
     title: 'Validate',
   },
   {
-    key: 'progressbar',
+    key: 'ekstraprogressbar',
     title: 'Progressbar',
   },
-] as FdsNavigationItem[];
+] as FdsNavigationItem[]);
+
+watch(
+  () => route.name,
+  () => {
+    navigationList.value = sidenavigationService.setActive(
+      navigationList.value,
+      route.name?.toString() ?? '',
+    );
+  },
+  {
+    immediate: true,
+  },
+);
+
+const handleNavigation = (key: string) => {
+  currentNavigationKey.value = key;
+  router.push({ name: sidenavigationService.resolveActiveKey(key) });
+};
 </script>
 <style lang="scss" scoped></style>

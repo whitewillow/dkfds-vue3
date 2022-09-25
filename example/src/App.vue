@@ -67,36 +67,22 @@
       <div class="navbar navbar-primary">
         <div class="navbar-inner container">
           <ul class="nav-primary">
-            <fds-nav-item-route
-              toName="forside"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
+            <fds-nav-item-route toName="forside" linkTitle="Link title">
               Forside
             </fds-nav-item-route>
-            <fds-nav-item-route
-              toName="komponenter"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
+            <fds-nav-item-route toName="komponentforside" linkTitle="Link title">
               Komponenter
             </fds-nav-item-route>
 
-            <fds-nav-item-route
-              toName="xtrakomponenter"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
+            <fds-nav-item-route toName="ekstrakomponenter" linkTitle="Link title">
               Ekstra Komponenter
             </fds-nav-item-route>
 
-            <fds-nav-item-route
-              toName="about"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
-              Om os
+            <fds-nav-item-route toName="tips" linkTitle="Link title">
+              Anbefalinger
             </fds-nav-item-route>
+
+            <fds-nav-item-route toName="about" linkTitle="Link title"> Om os </fds-nav-item-route>
           </ul>
 
           <!-- Start: Overflow menu i navigation -->

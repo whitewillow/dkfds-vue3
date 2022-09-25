@@ -5,6 +5,12 @@ class SidenavigationService {
     return list.find((f) => f.children?.some((s) => s.key === key));
   };
 
+  /**
+   * gets key eg: "y/z", find parent "x" and add it to key e.g. "x/y/z"
+   * @param key
+   * @param list
+   * @returns "x/y/z"
+   */
   resolveKey = (key: string, list: Array<FdsNavigationItem>) => {
     const [firstKey] = key.split('/');
 
@@ -12,6 +18,22 @@ class SidenavigationService {
     return parent ? `${parent.key}/${key}` : key;
   };
 
+  /**
+   * If key x/y/z splits and finds the last key = active key
+   * @param e.g: "x/y/z"
+   * @param list
+   * @returns z
+   */
+  resolveActiveKey = (key: string) => {
+    const [firstKey] = key.split('/').reverse();
+    return firstKey;
+  };
+
+  /**
+   * Clears active chilred recursively
+   * @param children
+   * @returns
+   */
   clearChildren = (
     children: Array<FdsNavigationItem> | undefined,
   ): Array<FdsNavigationItem> | undefined => {
@@ -22,14 +44,26 @@ class SidenavigationService {
     return children.map((m) => ({ ...m, active: false, children: this.clearChildren(m.children) }));
   };
 
-  setActive = (list: Array<FdsNavigationItem>, activeItem: FdsNavigationItem) => {
+  /**
+   * Set item active
+   * @param list
+   * @param activeItem
+   * @returns
+   */
+  setActive = (list: Array<FdsNavigationItem>, key: string): Array<FdsNavigationItem> => {
     return list.map((f) => ({
       ...f,
-      active: f.key === activeItem.key,
+      active: f.key === key,
       children: this.clearChildren(f.children),
     }));
   };
 
+  /**
+   * Finds first active item, if none - then if navigateFirst - the first item thats not disabled
+   * @param list
+   * @param navigateFirst
+   * @returns
+   */
   findFirstActiveItem = (list: Array<FdsNavigationItem>, navigateFirst = false) => {
     const firstActive = list.find((f) => !f.disabled && f.active);
     if (firstActive) {

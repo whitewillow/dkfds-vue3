@@ -88,42 +88,42 @@ const user = ref({
 const dirty = ref(false);
 
 const codeVal1 = `
-export function charactersMinLength (length: number): (args: string) => string | null {
-  return (x: string) => 
-    (x.length >= length ? null : \`Feltet må ikke være kortere end \${length} tegn.\`);
-}`;
+  export function charactersMinLength (length: number): (args: string) => string | null {
+    return (x: string) => 
+      (x.length >= length ? null : \`Feltet må ikke være kortere end \${length} tegn.\`);
+  }`;
 
 const codeVal2 = `
-export function hasContent (x: string): string | null {
-  return x !== null && x.replace(/\\s+/g, '').length > 0 ? null : 'Feltet må ikke være tomt.';
-}`;
+  export function hasContent (x: string): string | null {
+    return x !== null && x.replace(/\\s+/g, '').length > 0 ? null : 'Feltet må ikke være tomt.';
+  }`;
 
 const codeValidate = `
-<xfds-validate
-  :modelValue="user.name"
-  :dirty="dirty"
-  :validations="[hasContent, charactersMinLength(10)]"
-  #default="{ isValid, errorMessage }"
->
-...
-</xfds-validate>
-`;
+  <xfds-validate
+    :modelValue="user.name"
+    :dirty="dirty"
+    :validations="[hasContent, charactersMinLength(10)]"
+    #default="{ isValid, errorMessage }"
+  >
+  ...
+  </xfds-validate>
+  `;
 
 const code = `
-<xfds-validate
-  :modelValue="user.name"
-  :dirty="dirty"
-  :validations="[hasContent, charactersMinLength(10)]"
-  #default="{ isValid, errorMessage }"
->
-  <xfds-formgroup :is-valid="isValid" #default="{ formid }">
-    <fds-label :id="formid"> Navn </fds-label>
-    <fds-fejlmeddelelse v-if="!isValid">
-      {{ errorMessage }}
-    </fds-fejlmeddelelse>
-    <fds-hint>Indtast navn</fds-hint>
-    <fds-input v-model="user.name" :id="formid" @dirty="dirty = $event"></fds-input>
-  </xfds-formgroup>
-</xfds-validate>
-`;
+  <xfds-validate
+    :modelValue="user.name"
+    :dirty="dirty"
+    :validations="[hasContent, charactersMinLength(10)]"
+    #default="{ isValid, errorMessage }"
+  >
+    <xfds-formgroup :is-valid="isValid" #default="{ formid }">
+      <fds-label :id="formid"> Navn </fds-label>
+      <fds-fejlmeddelelse v-if="!isValid">
+        {{ errorMessage }}
+      </fds-fejlmeddelelse>
+      <fds-hint>Indtast navn</fds-hint>
+      <fds-input v-model="user.name" :id="formid" @dirty="dirty = $event"></fds-input>
+    </xfds-formgroup>
+  </xfds-validate>
+  `;
 </script>

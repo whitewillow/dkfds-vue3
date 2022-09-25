@@ -30,6 +30,15 @@
         </template>
       </fds-header-solution>
       <fds-header-navigation>
+        <li
+          role="none"
+          class="current">
+          <fds-nav-link
+            href="/forside"
+            title="Link title">
+            Forside
+          </fds-nav-link>
+        </li>
         <fds-nav-item-route
           toName="home"
           :current-route-name="$route.name?.toString()"
@@ -38,6 +47,13 @@
         </fds-nav-item-route>
         <fds-nav-item-route
           toName="about"
+          :current-route-name="$route.name?.toString()"
+          linkTitle="Link title">
+          Om os
+        </fds-nav-item-route>
+        <fds-nav-item-route
+          toName="about"
+          disabled
           :current-route-name="$route.name?.toString()"
           linkTitle="Link title">
           Om os

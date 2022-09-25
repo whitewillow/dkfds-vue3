@@ -33,6 +33,7 @@ import FdsDetaljer from '@/components/fds-detaljer.vue';
 import FdsFunktionslink from '@/components/fds-funktionslink.vue';
 
 import FdsNavItemRoute from '@/components/fds-nav-item-route.vue';
+import FdsNavLink from '@/components/fds-nav-link.vue';
 
 import FdsSidenavigation from '@/components/fds-sidenavigation.vue';
 import FdsSidenavigationList from '@/components/fds-sidenavigation-list.vue';
@@ -94,6 +95,8 @@ function install (app: App): void {
   app.component('fds-accordion-item', FdsAccordionItem);
   app.component('fds-file-upload', FdsFileUpload);
   app.component('fds-file-list', FdsFileList);
+
+  app.component('fds-nav-link', FdsNavLink);
   app.component('fds-nav-item-route', FdsNavItemRoute);
   app.component('fds-funktionslink', FdsFunktionslink);
   app.component('fds-sidenavigation-list', FdsSidenavigationList);
@@ -119,6 +122,7 @@ export {
   FdsSpinner,
   FdsComponentPreview,
   FdsTrinindikator,
+  FdsNavItemRoute,
   FdsTilbageLink,
   FdsTextarea,
   FdsInputNumber,

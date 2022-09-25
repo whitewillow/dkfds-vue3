@@ -75,7 +75,7 @@ const navigate = (item: FdsNavigationItem) => {
     return;
   }
 
-  tabsList.value = sidenavigationService.setActive(tabsList.value, item);
+  tabsList.value = sidenavigationService.setActive(tabsList.value, item.key);
   currentKey.value = item.key;
 
   emit('update:modelValue', tabsList.value);

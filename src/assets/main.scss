@@ -13,9 +13,26 @@ body {
   flex-direction: column;
 }
 
+.disabled {
+  position: relative;
+}
+
+.disabled::after {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  width: 100%;
+  content: '';
+  // z-index: 5; /* Make sure this value is higher than the z-index of the  .form class  */
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
 .component-preview {
   border: 1px solid #747474;
   border-radius: 5px;
+
   >.component-link {
     border-bottom: 1px solid #747474;
     font-weight: 500;
@@ -23,14 +40,17 @@ body {
     border-top-right-radius: 5px;
     background-color: #f4f4f4;
     padding: 1em 1.5em;
-  } 
+  }
+
   >.component-example {
     padding: 1.5em 1.5em 2em;
   }
+
   >.component-description {
     border-top: 2px dashed #dcdcdc;
     padding: 1em 1.5em;
   }
+
   >.component-code {
     border-top: 1px solid #dcdcdc;
     background-color: #f4f4f4;
@@ -66,6 +86,7 @@ header .navbar .search-form {
   background-color: darken($color-warning, 10%);
   border-color: darken($color-warning, 20%);
 }
+
 .button-error {
   color: #ffffff;
   background-color: $color-error;
@@ -95,6 +116,7 @@ header .navbar .search-form {
   opacity: 0.2;
   z-index: 9999999;
 }
+
 .rightside-icon {
   margin-left: 4px;
   margin-right: 0;
@@ -112,6 +134,7 @@ header .navbar .search-form {
   animation: spinner 1.1s infinite ease;
   transform: translateZ(0);
 }
+
 .inner-spinner {
   margin: 0 8px 0 16px;
   font-size: 4px;
@@ -141,7 +164,7 @@ header .navbar .search-form {
 
 // Alert
 .alert-close {
-  > i {
+  >i {
     margin-right: 4px;
     width: 1.6rem;
     height: 1.6rem;
@@ -151,6 +174,7 @@ header .navbar .search-form {
 }
 
 @keyframes spinner-white {
+
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em $color-gray-600, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
@@ -158,12 +182,14 @@ header .navbar .search-form {
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
   }
+
   12.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em $color-gray-600,
       2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
   }
+
   25% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em $color-gray-600,
@@ -171,6 +197,7 @@ header .navbar .search-form {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   37.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7),
@@ -178,6 +205,7 @@ header .navbar .search-form {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   50% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
@@ -185,6 +213,7 @@ header .navbar .search-form {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   62.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
@@ -192,6 +221,7 @@ header .navbar .search-form {
       -1.8em 1.8em 0 0em $color-gray-600, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   75% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
@@ -199,6 +229,7 @@ header .navbar .search-form {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em $color-gray-600,
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   87.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),

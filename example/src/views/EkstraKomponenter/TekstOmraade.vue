@@ -27,17 +27,17 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { numberMin, hasContent, charactersMinLength } from 'dkfds-vue3/src/utils/validate-utils';
+import { hasContent, charactersMinLength } from 'dkfds-vue3/src/utils/validate-utils';
 
 const product = ref({
   beskrivelse: '',
 });
 const code = `
-<xfds-form-textarea
-  label="Beskrivelse"
-  hint="Angiv beskrivelse af produktet"
-  placeholder="...Produktet er består af xxx"
-  v-model="product.beskrivelse"
-  :validations="[hasContent, charactersMinLength(10)]"
-/>`;
+  <xfds-form-textarea
+    label="Beskrivelse"
+    hint="Angiv beskrivelse af produktet"
+    placeholder="...Produktet er består af xxx"
+    v-model="product.beskrivelse"
+    :validations="[hasContent, charactersMinLength(10)]"
+  />`;
 </script>

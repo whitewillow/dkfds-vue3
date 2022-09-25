@@ -53,30 +53,30 @@ const product = ref({
   type: '',
 });
 const code = `
-<xfds-form-radio
-  label="Radio form"
-  :validations="[hasContent]"
-  :options="radioOptions"
-  v-model="product.type"
-/>
-
-const radioOptions = ref<FdsOptionItem[]>([
-  {
-    title: 'Banan',
-    value: 'banan',
-  },
-  {
-    title: 'Melon',
-    value: 'melon',
-  },
-  {
-    title: 'Æble',
-    value: 'æble',
-  },
-  {
-    title: 'Tomat',
-    value: 'tomat',
-    disabled: true,
-  },
-]);`;
+  <xfds-form-radio
+    label="Radio form"
+    :validations="[hasContent]"
+    :options="radioOptions"
+    v-model="product.type"
+  />
+  
+  const radioOptions = ref<FdsOptionItem[]>([
+    {
+      title: 'Banan',
+      value: 'banan',
+    },
+    {
+      title: 'Melon',
+      value: 'melon',
+    },
+    {
+      title: 'Æble',
+      value: 'æble',
+    },
+    {
+      title: 'Tomat',
+      value: 'tomat',
+      disabled: true,
+    },
+  ]);`;
 </script>

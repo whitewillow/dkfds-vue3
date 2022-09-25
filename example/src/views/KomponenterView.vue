@@ -1,261 +1,206 @@
 <template>
   <section>
     <div class="container page-container">
-      <fds-sidenavigation-list v-model="sideTabs">
-        <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
-          <div class="subheading">Komponenter</div>
-          <h1>{{ tab.title }}</h1>
-          <component :is="`${tab.key}-example`" />
-        </template>
-      </fds-sidenavigation-list>
+      <div class="row">
+        <aside class="col-12 col-lg-3 sidebar-col">
+          <nav>
+            <fds-sidenavigation v-model="navigationList" @navigate="handleNavigation" />
+          </nav>
+        </aside>
+        <div class="col-12 col-lg-9">
+          <router-view />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from 'dkfds-vue3/src/model/fds.model';
+import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
+import { ref, watch } from 'vue';
+import sidenavigationService from 'dkfds-vue3/src/service/sidenavigation.service';
+import { useRoute, useRouter } from 'vue-router';
 
-const sideTabs = [
+const route = useRoute();
+const router = useRouter();
+
+const currentNavigationKey = ref('');
+const navigationList = ref<Array<FdsNavigationItem>>([
   {
-    order: 0,
-    key: 'komponenter',
-    title: 'Komponenter',
-    help: '',
-  },
-  {
-    order: 0,
-    key: 'accordions',
+    key: 'komponentaccordions',
     title: 'Accordions',
-    help: '',
   },
   {
-    order: 1,
-    key: 'badges',
+    key: 'komponentbadges',
     title: 'Badges',
-    help: '',
   },
   {
-    order: 2,
-    key: 'beskeder',
+    key: 'komponentbeskeder',
     title: 'Beskeder',
-    help: '',
   },
   {
-    order: 3,
-    key: 'broedkrumme',
+    key: 'komponentbroedkrumme',
     title: 'Brødkrumme',
-    help: '',
   },
   {
-    order: 4,
-    key: 'cards',
+    key: 'komponentcards',
     title: 'Cards',
-    help: '',
   },
   {
-    order: 5,
-    key: 'cookie',
+    key: 'komponentcookie',
     title: 'Cookiemeddelelse',
-    help: '',
   },
   {
-    order: 6,
-    key: 'datoangivelse',
+    key: 'komponentdatoangivelse',
     title: 'Datoangivelse',
-    help: '',
   },
   {
-    order: 7,
-    key: 'datovaelger',
+    key: 'komponentdatovaelger',
     title: 'Datovælger',
-    help: '',
   },
   {
-    order: 8,
-    key: 'detaljer',
+    key: 'komponentdetaljer',
     title: 'Detaljer',
-    help: '',
   },
   {
-    order: 9,
-    key: 'dropdown',
+    key: 'komponentdropdown',
     title: 'Dropdown-menu',
-    help: '',
   },
   {
-    order: 10,
-    key: 'faneblade',
+    key: 'komponentfaneblade',
     title: 'Faneblade',
-    help: '',
   },
   {
-    order: 11,
-    key: 'fejlmeddelelser',
+    key: 'komponentfejlmeddelelser',
     title: 'Fejlmeddelelser',
-    help: '',
   },
   {
-    order: 12,
-    key: 'fejlopsummering',
+    key: 'komponentfejlopsummering',
     title: 'Fejlopsummering',
-    help: '',
   },
   {
-    order: 13,
-    key: 'felter',
+    key: 'komponentfelter',
     title: 'Felter',
-    help: '',
   },
   {
-    order: 14,
-    key: 'footers',
+    key: 'komponentfooters',
     title: 'Footers',
-    help: '',
   },
   {
-    order: 15,
-    key: 'formular',
+    key: 'komponentformular',
     title: 'Formular',
-    help: '',
   },
   {
-    order: 16,
-    key: 'funktionslink',
+    key: 'komponentfunktionslink',
     title: 'Funktionslink',
-    help: '',
   },
   {
-    order: 17,
-    key: 'headers',
+    key: 'komponentheaders',
     title: 'Headers',
-    help: '',
   },
   {
-    order: 18,
-    key: 'knapper',
+    key: 'komponentknapper',
     title: 'Knapper',
-    help: '',
   },
   {
-    order: 19,
-    key: 'modalvindue',
+    key: 'komponentmodalvindue',
     title: 'Modalvindue',
-    help: '',
   },
   {
-    order: 20,
-    key: 'notifikation',
+    key: 'komponentnotifikation',
     title: 'Notifikation (Toast)',
-    help: '',
   },
   {
-    order: 21,
-    key: 'overflow',
+    key: 'komponentoverflow',
     title: 'Overflow menu',
-    help: '',
   },
   {
-    order: 22,
-    key: 'paginering',
+    key: 'komponentpaginering',
     title: 'Paginering',
-    help: '',
   },
   {
-    order: 23,
-    key: 'radioknap',
+    key: 'komponentradioknap',
     title: 'Radioknap',
-    help: '',
   },
   {
-    order: 24,
-    key: 'sidenavigation',
+    key: 'komponentsidenavigation',
     title: 'Sidenavigation',
-    help: '',
   },
   {
-    order: 25,
-    key: 'skip',
+    key: 'komponentskip',
     title: 'Skip-link',
-    help: '',
   },
   {
-    order: 26,
-    key: 'spinner',
+    key: 'komponentspinner',
     title: 'Spinner',
-    help: '',
   },
   {
-    order: 27,
-    key: 'sprogvaelger',
+    key: 'komponentsprogvaelger',
     title: 'Sprogvælger',
-    help: '',
   },
   {
-    order: 28,
-    key: 'strukturerede',
+    key: 'komponentstrukturerede',
     title: 'Strukturerede lister',
-    help: '',
   },
   {
-    order: 29,
-    key: 'soegefelt',
+    key: 'komponentsoegefelt',
     title: 'Søgefelt',
-    help: '',
   },
   {
-    order: 30,
-    key: 'tilbage',
+    key: 'komponenttilbage',
     title: 'Tilbage link',
-    help: '',
   },
   {
-    order: 31,
-    key: 'tabeller',
+    key: 'komponenttabeller',
     title: 'Tabeller',
-    help: '',
   },
   {
-    order: 32,
-    key: 'tags',
+    key: 'komponenttags',
     title: 'Tags',
-    help: '',
   },
   {
-    order: 33,
-    key: 'tekstomraade',
+    key: 'komponenttekstomraade',
     title: 'Tekstområde',
-    help: '',
   },
   {
-    order: 34,
-    key: 'tjekboks',
+    key: 'komponenttjekboks',
     title: 'Tjekboks',
-    help: '',
   },
   {
-    order: 35,
-    key: 'toggle',
+    key: 'komponenttoggle',
     title: 'Toggle switch',
-    help: '',
   },
   {
-    order: 36,
-    key: 'tooltip',
+    key: 'komponenttooltip',
     title: 'Tooltip',
-    help: '',
   },
   {
-    order: 37,
-    key: 'trinindikatorer',
+    key: 'komponenttrinindikatorer',
     title: 'Trinindikatorer',
-    help: '',
   },
   {
-    order: 39,
-    key: 'vedhaeft',
+    key: 'komponentvedhaeft',
     title: 'Vedhæft fil',
-    help: '',
   },
-] as FdsNavigationStep[];
+] as FdsNavigationItem[]);
+
+watch(
+  () => route.name,
+  () => {
+    navigationList.value = sidenavigationService.setActive(
+      navigationList.value,
+      route.name?.toString() ?? '',
+    );
+  },
+  {
+    immediate: true,
+  },
+);
+
+const handleNavigation = (key: string) => {
+  console.log(route.matched);
+  currentNavigationKey.value = key;
+  router.push({ name: sidenavigationService.resolveActiveKey(key) });
+};
 </script>
 <style lang="scss" scoped></style>

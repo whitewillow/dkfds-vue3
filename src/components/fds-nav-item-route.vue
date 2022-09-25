@@ -6,29 +6,23 @@
     <li
       role="none"
       :class="[{ current: isActive || isPartOfMenu(toName) }]">
-      <a
-        v-if="!disabled"
+      <fds-nav-link
         :href="href"
-        class="nav-link"
-        role="menuitem"
         :title="linkTitle"
+        :disabled="disabled"
         @click="navigate">
-        <span>
-          <slot />
-        </span>
-      </a>
-      <div
-        v-else
-        class="nav-link nav-link-disabled disabled">
         <slot />
-      </div>
+      </fds-nav-link>
     </li>
   </router-link>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const props = defineProps({
   toName: {
     type: String,
@@ -51,14 +45,15 @@ const props = defineProps({
   },
 });
 
-// const getTooltip = computed(() => {
-//   if (props.tooltip) {
-//     return `<p>${props.tooltip}</p>`;
-//   }
-//   return null;
-// });
-
 const isPartOfMenu = (name: string): boolean => {
+  if (route) {
+    const [parent] = route.matched;
+    console.log(parent);
+
+    if (parent && parent.name === name) {
+      return true;
+    }
+  }
   if (props.currentRouteName) {
     return props.currentRouteName === name;
   }

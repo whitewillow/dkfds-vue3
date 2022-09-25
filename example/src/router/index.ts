@@ -1,4 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import ekstraKomponenterRoutes from './ekstrakomponenterRoutes';
+import komponenterRoutes from './KomponenterRoutes';
+
+function loadView(view: string) {
+  return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}`);
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,25 +14,27 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/forside',
     name: 'forside',
-    component: () => import(/* webpackChunkName: "forside" */ '../views/ForsideView.vue'),
+    component: loadView('ForsideView.vue'),
   },
   {
     path: '/komponenter',
     name: 'komponenter',
-    component: () => import(/* webpackChunkName: "komponenter" */ '../views/KomponenterView.vue'),
+    component: loadView('KomponenterView.vue'),
   },
   {
-    path: '/ekstrakomponenter',
-    name: 'xtrakomponenter',
-    component: () => import(/* webpackChunkName: "xtrakomponenter" */ '../views/EkstraKomponenterView.vue'),
+    path: '/tips',
+    name: 'tips',
+    component: loadView('TipsView.vue'),
   },
+  ...komponenterRoutes,
+  ...ekstraKomponenterRoutes,
   {
     path: '/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    component: loadView('AboutView.vue'),
   },
 ];
 

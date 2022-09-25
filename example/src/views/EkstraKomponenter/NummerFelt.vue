@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Tekstfelter">
+    <fds-component-preview header="Nummer felt">
       <xfds-form-input-number
         inputClass="input-width-xxs"
         label="Lager antal"

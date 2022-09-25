@@ -38,11 +38,11 @@ const user = ref({
   search: '',
 });
 const code = `
-<xfds-formgroup #default="{ formid }">
-  <fds-label :id="formid"> Navn </fds-label>
-  <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
-  <fds-hint>Indtast fornavn</fds-hint>
-  <fds-input v-model="user.name" :id="formid"></fds-input>
-</xfds-formgroup>
-`;
+  <xfds-formgroup #default="{ formid }">
+    <fds-label :id="formid"> Navn </fds-label>
+    <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+    <fds-hint>Indtast fornavn</fds-hint>
+    <fds-input v-model="user.name" :id="formid"></fds-input>
+  </xfds-formgroup>
+  `;
 </script>
