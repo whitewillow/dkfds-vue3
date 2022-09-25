@@ -248,8 +248,8 @@ const router = useRouter();
 const isPartOfMenu = (name: string): boolean => {
   if (route) {
     const [parent] = route.matched;
-    console.log(parent);
 
+    console.log('PARENT', parent, name);
     if (parent && parent.name === name) {
       return true;
     }

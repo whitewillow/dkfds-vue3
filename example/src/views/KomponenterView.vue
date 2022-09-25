@@ -198,8 +198,8 @@ watch(
 );
 
 const handleNavigation = (key: string) => {
-  console.log(route.matched);
   currentNavigationKey.value = key;
+  console.log(route.matched, key);
   router.push({ name: sidenavigationService.resolveActiveKey(key) });
 };
 </script>
