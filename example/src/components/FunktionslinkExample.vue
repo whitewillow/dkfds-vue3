@@ -8,7 +8,7 @@
     </p>
     <div>
       <fds-funktionslink
-        :to="{ name: 'about' }"
+        @click="$router.push({ name: 'about' })"
         icon="contact-support"
         title="Klik for at gå til om os"
       >
