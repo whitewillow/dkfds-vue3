@@ -51,12 +51,10 @@ const fejlOpsummering = ref<FdsErrorListItem[]>([
   {
     anchor: 'anchor1',
     text: 'Datoen for udløbsdato på dit pas bør inkludere årstal',
-    target: 'asdasda',
   },
   {
     anchor: 'anchor2',
     text: 'Indtast postnummer - fx 4000',
-    target: 'asdasda',
   },
 ]);
 const code = `
@@ -69,12 +67,10 @@ const fejlOpsummering = ref<FdsErrorListItem[]>([
   {
     anchor: 'anchor1',
     text: 'Datoen for udløbsdato på dit pas bør inkludere årstal',
-    target: 'asdasda',
   },
   {
     anchor: 'anchor2',
     text: 'Indtast postnummer - fx 4000',
-    target: 'asdasda',
   },
 ]);
 

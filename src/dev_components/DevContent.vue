@@ -1152,12 +1152,10 @@ const fejlOpsummering = ref<FdsErrorListItem[]>([
   {
     anchor: 'anchor',
     text: 'Datoen for udløbsdato på dit pas bør inkludere årstal',
-    target: 'asdasda',
   },
   {
     anchor: 'anchor',
     text: 'Indtast postnummer - fx 4000',
-    target: 'asdasda',
   },
 ]);
 

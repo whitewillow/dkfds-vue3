@@ -28,7 +28,6 @@ export interface FdsCheckboxItem extends FdsOptionItem {
 export interface FdsErrorListItem {
   anchor: string;
   text: string;
-  target: string; // hvad skal den
 }
 
 export interface FdsFileModel {
