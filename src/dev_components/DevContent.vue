@@ -1042,8 +1042,8 @@ import {
   FdsCheckboxItem,
   FdsFileInputModel,
   FdsFileModel,
-  FdsNavigationStep,
   FdsNavigationItem,
+  FdsTabItem,
 } from '@/model/fds.model';
 import {
   arrayHasItems,
@@ -1279,35 +1279,26 @@ const sideTabs = ref<FdsNavigationItem[]>([
 ] as unknown as FdsNavigationItem[]);
 
 const fanebladManueltId = ref('');
-const faneBlade: FdsNavigationStep[] = [
+const faneBlade: FdsTabItem[] = [
   {
-    order: 0,
     key: 'suppe',
     title: 'Supper',
-    help: '',
-    done: true,
   },
   {
-    order: 1,
     key: 'dessert',
     title: 'Dessert',
-    help: 'Hjælpetekst',
     active: true,
   },
   {
-    order: 2,
     key: 'kod',
     title: 'Kød',
-    help: '',
   },
   {
-    order: 3,
     key: 'fisk',
     title: 'Fisk',
-    help: '',
     disabled: true,
   },
-] as unknown as FdsNavigationStep[];
+] as unknown as FdsTabItem[];
 
 const codeExample = `
 <xfds-validate

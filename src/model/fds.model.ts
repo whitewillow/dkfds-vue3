@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { RouteLocationRaw } from 'vue-router';
-
 export enum FdsVariantEnum {
   primary = 'primary',
   secondary = 'secondary',
@@ -12,17 +9,20 @@ export enum FdsVariantEnum {
   error = 'error',
 }
 
+/**
+ * Used for radio, dropdowns
+ */
 export interface FdsOptionItem {
   title: string;
   value: string;
   disabled?: boolean;
 }
 
-export interface FdsCheckboxItem {
-  title: string;
-  value: string;
+/**
+ * Used for Checkbox
+ */
+export interface FdsCheckboxItem extends FdsOptionItem {
   checked?: boolean;
-  disabled?: boolean;
 }
 
 export interface FdsErrorListItem {
@@ -47,23 +47,19 @@ export interface FdsFileInputModel {
 export interface FdsNavigationItem {
   key: string;
   title: string;
-  hint: string;
-  icon?: string; // shows icon if any
   active: boolean; // currently selected
   disabled?: boolean; // not clickable
-  ignore?: boolean;
+  hint: string; // help text
+  icon?: string; // shows icon if any
+  ignore?: boolean; // item will be ignored (filtered out)
   href?: string;
   children?: Array<FdsNavigationItem>;
 }
 
-export interface FdsNavigationStep {
-  order: number;
+export interface FdsTabItem {
   key: string;
   title: string;
-  help: string;
-  done: boolean; // if true shows icon
   active: boolean;
   disabled?: boolean;
-  ignore?: boolean;
-  to?: RouteLocationRaw;
+  ignore?: boolean; // item will be ignored (filtered out)
 }

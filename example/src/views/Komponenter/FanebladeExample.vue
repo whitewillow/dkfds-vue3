@@ -99,10 +99,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { FdsNavigationStep } from 'dkfds-vue3/src/model/fds.model';
+import { FdsTabItem } from 'dkfds-vue3/src/model/fds.model';
 
 const fanebladManueltId = ref('');
-const faneBlade: FdsNavigationStep[] = [
+const faneBlade: FdsTabItem[] = [
   {
     order: 0,
     key: 'suppe',
@@ -130,7 +130,7 @@ const faneBlade: FdsNavigationStep[] = [
     help: '',
     disabled: true,
   },
-] as unknown as FdsNavigationStep[];
+] as unknown as FdsTabItem[];
 
 const code = `
 <fds-faneblad-item
@@ -188,7 +188,7 @@ const codeauto = `
   </template>
 </fds-faneblade-list>
 
-const faneBlade: FdsNavigationStep[] = [
+const faneBlade: FdsTabItem[] = [
   {
     order: 0,
     key: 'suppe',
@@ -216,6 +216,6 @@ const faneBlade: FdsNavigationStep[] = [
     help: '',
     disabled: true,
   },
-] as unknown as FdsNavigationStep[];
+] as unknown as FdsTabItem[];
 `;
 </script>

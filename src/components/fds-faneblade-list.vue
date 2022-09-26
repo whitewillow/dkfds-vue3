@@ -32,14 +32,14 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationStep } from '@/model/fds.model';
+import { FdsTabItem } from '@/model/fds.model';
 import {
   defineProps, ref, defineEmits, onMounted,
 } from 'vue';
 
 const props = defineProps({
   list: {
-    type: Array as () => Array<FdsNavigationStep>,
+    type: Array as () => Array<FdsTabItem>,
     required: true,
   },
 });
@@ -47,8 +47,8 @@ const props = defineProps({
 const emit = defineEmits(['navigate']);
 const currentKey = ref('');
 
-const tabsList = ref<Array<FdsNavigationStep>>(props.list.filter((f) => !f.ignore));
-const navigate = (item: FdsNavigationStep) => {
+const tabsList = ref<Array<FdsTabItem>>(props.list.filter((f) => !f.ignore));
+const navigate = (item: FdsTabItem) => {
   if (item.disabled) {
     return;
   }

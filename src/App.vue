@@ -39,25 +39,7 @@
             Forside
           </fds-nav-link>
         </li>
-        <fds-nav-item-route
-          toName="home"
-          :current-route-name="$route.name?.toString()"
-          linkTitle="Link title">
-          Forside
-        </fds-nav-item-route>
-        <fds-nav-item-route
-          toName="about"
-          :current-route-name="$route.name?.toString()"
-          linkTitle="Link title">
-          Om os
-        </fds-nav-item-route>
-        <fds-nav-item-route
-          toName="about"
-          disabled
-          :current-route-name="$route.name?.toString()"
-          linkTitle="Link title">
-          Om os
-        </fds-nav-item-route>
+
         <template #mobil>
           <fds-header-portal-mobil>
             <p class="user">

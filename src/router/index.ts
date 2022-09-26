@@ -1,7 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {
-  createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw,
-} from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from '../dev_views/HomeView.vue';
 
 const routes: Array<RouteRecordRaw> = [

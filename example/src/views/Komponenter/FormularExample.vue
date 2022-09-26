@@ -61,7 +61,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { FdsNavigationStep, FdsOptionItem } from 'dkfds-vue3/src/model/fds.model';
 import { charactersMinLength, hasContent, numberMax } from 'dkfds-vue3/src/utils/validate-utils';
 
 const txtFornavn = ref('');

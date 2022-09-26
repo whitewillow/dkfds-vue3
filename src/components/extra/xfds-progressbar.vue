@@ -18,7 +18,6 @@
 
 <script setup lang="ts">
 import { computed, defineProps } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({
   procent: {
@@ -34,8 +33,6 @@ const props = defineProps({
     default: true,
   },
 });
-
-const formid = computed(() => uuidv4());
 
 const progress = computed(() => {
   if (typeof props.procent === 'string') {
