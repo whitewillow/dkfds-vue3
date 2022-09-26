@@ -63,6 +63,13 @@ eks:
 
 Dertil er det op til brugeren PT. selv at sortere evt lister m.m.
 
+# Ingen ekstra npm moduler
+
+Undgå at introducere nye moduler. Brug hvad DKFDS allerede har (eg. popperjs m.m.).
+
+Dertil ingen vue-router - det er op til brugeren at selv håndtere dette.
+
+Dog kan man lave tips til evt brug.
 
 ## Form samling / Komponent gruppering
 

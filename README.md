@@ -165,17 +165,18 @@ Finpudsning
 ## Fase 6 
 
 Overvej ekstra komponenter som 
-- fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
+- Image viewer (hover fx og modal lign visning)
+- Fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
   ![Drag and drop eksempel](./dokumentation/drag&drop.png)
 
-- jumbotron - se top https://designsystem.dk/
-- component-preview - se hvordan input er præsenteret https://designsystem.dk/komponenter/fejlmeddelelser/
+- Jumbotron - se top https://designsystem.dk/
 - Off-canvas
 - etc.
 
 ### Fase 7
 https://designsystem.dk/design/tilgaengelighed/
 npm create vite@latest my-vue-app -- --template vue-ts-dkfds
+
 ```
 
 # Oversigt
