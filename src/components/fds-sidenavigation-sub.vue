@@ -8,7 +8,7 @@
       :key="child.key"
       :class="[{ active: child.active }, { disabled: child.disabled }]">
       <a
-        href="javascript:void(0);"
+        :href="`${child.href ? child.href : 'javascript:void(0);'}`"
         :title="child.title"
         @click="navigate(child)"
         role="menuitem">

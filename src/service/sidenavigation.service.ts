@@ -64,7 +64,10 @@ class SidenavigationService {
    * @param navigateFirst
    * @returns
    */
-  findFirstActiveItem = (list: Array<FdsNavigationItem>, navigateFirst = false) => {
+  findFirstActiveItem = (
+    list: Array<FdsNavigationItem>,
+    navigateFirst = false,
+  ): FdsNavigationItem | undefined => {
     const firstActive = list.find((f) => !f.disabled && f.active);
     if (firstActive) {
       return firstActive;

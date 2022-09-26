@@ -1,6 +1,8 @@
 <template>
   <section>
-    <h2 class="mt-0">Paginering</h2>
+    <fds-alert level="info" header="Under udvikling" closeable>
+      Dette komponent kommer snart
+    </fds-alert>
   </section>
 </template>
 

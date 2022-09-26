@@ -52,7 +52,7 @@ export interface FdsNavigationItem {
   active: boolean; // currently selected
   disabled?: boolean; // not clickable
   ignore?: boolean;
-  to?: RouteLocationRaw;
+  href?: string;
   children?: Array<FdsNavigationItem>;
 }
 

@@ -1,7 +1,8 @@
 <template>
   <section>
-    <h2>Footers</h2>
-    <p>Under udvikling</p>
+    <fds-alert level="info" header="Under udvikling" closeable>
+      Dette komponent kommer snart
+    </fds-alert>
   </section>
 </template>
 

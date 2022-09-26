@@ -83,8 +83,8 @@
               </fds-nav-link>
             </li>
 
-            <li role="none" :class="[{ current: isPartOfMenu('tips') }]">
-              <fds-nav-link @click="router.push({ name: 'tips' })" title="Link title">
+            <li role="none" :class="[{ current: isPartOfMenu('anbefalinger') }]">
+              <fds-nav-link @click="router.push({ name: 'anbefalinger' })" title="Link title">
                 Anbefalinger
               </fds-nav-link>
             </li>

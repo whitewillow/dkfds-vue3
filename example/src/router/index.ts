@@ -1,6 +1,7 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import ekstraKomponenterRoutes from './ekstrakomponenterRoutes';
 import komponenterRoutes from './KomponenterRoutes';
+import anbefalingerRoutes from './AnbefalingerRoutes';
 
 function loadView(view: string) {
   return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}`);
@@ -17,12 +18,13 @@ const routes: Array<RouteRecordRaw> = [
     component: loadView('ForsideView.vue'),
   },
   {
-    path: '/tips',
-    name: 'tips',
-    component: loadView('TipsView.vue'),
+    path: '/anbefalinger',
+    name: 'anbefalinger',
+    component: loadView('AnbefalingerView.vue'),
   },
   ...komponenterRoutes,
   ...ekstraKomponenterRoutes,
+  ...anbefalingerRoutes,
   {
     path: '/about',
     name: 'about',
@@ -31,8 +33,16 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+      };
+    }
+    return { top: 0 };
+  },
 });
 
 export default router;

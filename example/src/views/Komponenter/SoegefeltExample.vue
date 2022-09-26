@@ -1,7 +1,5 @@
 <template>
-  <section>
-    <h2 class="mt-0">Søgefelt</h2>
-  </section>
+  <section>Se felter</section>
 </template>
 
 <script setup lang="ts">

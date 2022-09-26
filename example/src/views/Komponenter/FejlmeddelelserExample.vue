@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2>Fejlmeddelelser</h2>
     <p>Se Formular</p>
   </section>
 </template>

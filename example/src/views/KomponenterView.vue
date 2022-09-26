@@ -8,6 +8,8 @@
           </nav>
         </aside>
         <div class="col-12 col-lg-9">
+          <div class="subheading">Komponenter</div>
+          <h1 v-if="currentItem" :id="currentItem.key">{{ currentItem.title }}</h1>
           <router-view />
         </div>
       </div>
@@ -25,6 +27,7 @@ const route = useRoute();
 const router = useRouter();
 
 const currentNavigationKey = ref('');
+const currentItem = ref<FdsNavigationItem | undefined>();
 const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentaccordions',
@@ -205,6 +208,7 @@ watch(
       navigationList.value,
       route.name?.toString() ?? '',
     );
+    currentItem.value = sidenavigationService.findFirstActiveItem(navigationList.value);
   },
   {
     immediate: true,

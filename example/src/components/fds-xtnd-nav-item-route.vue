@@ -1,16 +1,7 @@
 <template>
-  <router-link
-    :to="{ name: toName }"
-    custom
-    v-slot="{ href, navigate, isActive }">
-    <li
-      role="none"
-      :class="[{ current: isActive || isPartOfMenu(toName) }]">
-      <fds-nav-link
-        :href="href"
-        :title="linkTitle"
-        :disabled="disabled"
-        @click="navigate">
+  <router-link :to="{ name: toName }" custom v-slot="{ href, navigate, isActive }">
+    <li role="none" :class="[{ current: isActive || isPartOfMenu(toName) }]">
+      <fds-nav-link :href="href" :title="linkTitle" :disabled="disabled" @click="navigate">
         <slot />
       </fds-nav-link>
     </li>
@@ -19,7 +10,6 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -58,5 +48,3 @@ const isPartOfMenu = (name: string): boolean => {
   return false;
 };
 </script>
-
-<style scoped lang="scss"></style>

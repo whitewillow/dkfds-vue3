@@ -1,7 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Filer</h2>
-
     <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
     <fds-pre header="Upload event JSON" :json="fileInput" />
 

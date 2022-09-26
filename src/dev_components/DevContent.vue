@@ -567,7 +567,11 @@
 
       <hr class="my-6" />
 
-      <h3>Sidenavigation automatiseret</h3>
+      <h3
+        id="cheeseapple"
+        name="cheeseapple">
+        Sidenavigation automatiseret
+      </h3>
       <fds-sidenavigation-list v-model="sideTabs">
         <template v-slot:[`suppe`]>
           <h2>Suppe</h2>
@@ -1214,6 +1218,7 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
           {
             key: 'cheeseapple',
             title: 'Cheese Apple',
+            href: '#cheeseapple',
             hint: '',
           },
         ],

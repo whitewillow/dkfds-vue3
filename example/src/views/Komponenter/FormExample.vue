@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Form</h2>
     <div>
       <h3>Eksempel på advanceret brug</h3>
       <xfds-formgroup #default="{ formid }">

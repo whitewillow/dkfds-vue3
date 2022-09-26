@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Knapper</h2>
     <p>
       <fds-button @click="klikEvent"> Gå til næste </fds-button>
     </p>

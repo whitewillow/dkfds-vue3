@@ -119,6 +119,7 @@ Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumen
 
 - Skip link
 - Headers
+  - Inkl at sidenavigation kan blive en del af header i mobil visning
 - Footers
 ### Følgende laves ikke
 
@@ -143,6 +144,7 @@ Komponenter
 
 Layout komponenter
 - Header
+  - Inkl at sidenavigation kan blive en del af header i mobil visning
 - Skip link
 - Footer
 
@@ -181,7 +183,6 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 ## TODO
 
 - fjern: router fra modul - op til bruger selv at håndtere dette
-- tilføj: tips om brug af router
 - fds-link
 - fds-icon
 - fds-sprogvaelger

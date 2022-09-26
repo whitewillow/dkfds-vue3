@@ -1,6 +1,8 @@
 <template>
   <section>
-    <h1 class="mt-0">Trinindikatorer</h1>
+    <fds-alert level="info" header="Under udvikling" closeable>
+      Dette komponent kommer snart
+    </fds-alert>
   </section>
 </template>
 

@@ -7,7 +7,7 @@
       :key="item.key"
       :class="[{ 'active current': item.active }, { disabled: item.disabled }]">
       <a
-        href="javascript:void(0);"
+        :href="`${item.href ? item.href : 'javascript:void(0);'}`"
         class="d-block menuitem hand"
         @click="navigate(item)">
         <span v-if="showIndex">

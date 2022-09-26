@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Funktionslink</h2>
     <p>
       <fds-funktionslink title="Klik for event" @click="klikEvent">
         Funktionslink

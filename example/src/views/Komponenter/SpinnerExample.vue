@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2 class="mt-0">Spinner</h2>
     <div class="row">
       <div class="col">
         <fds-spinner></fds-spinner>
