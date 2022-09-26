@@ -466,7 +466,7 @@
       </p>
       <div>
         <fds-funktionslink
-          @click="$router.push({ name: 'about' })"
+          @click="klikEvent"
           icon="contact-support"
           title="Klik for at gå til om os">
           Funktionslink med ikon - Om os

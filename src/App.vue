@@ -73,7 +73,7 @@
     </dev-header>
 
     <div class="container page-container">
-      <router-view />
+      <dev-content />
     </div>
   </div>
 </template>
@@ -82,12 +82,12 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import DKFDS from 'dkfds';
 import DevHeader from '@/dev_components/DevHeader.vue';
+import DevContent from '@/dev_components/DevContent.vue';
 import FdsHeaderPortal from '@/dev_components/fds-header-portal.vue';
 import FdsHeaderPortalMobil from '@/dev_components/fds-header-portal-mobil.vue';
 import FdsHeaderSolutionMobil from '@/dev_components/fds-header-solution-mobil.vue';
 import FdsHeaderSolution from '@/dev_components/fds-header-solution.vue';
 import FdsHeaderNavigation from '@/dev_components/fds-header-navigation.vue';
-import FdsNavItemRoute from '@/components/fds-nav-item-route.vue';
 
 DKFDS.init();
 

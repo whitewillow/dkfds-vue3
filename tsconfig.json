@@ -35,6 +35,8 @@
     "src/**/*.vue",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/dev_components",
+    "src/App.vue"
   ]
 }
