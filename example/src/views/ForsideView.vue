@@ -60,15 +60,23 @@
             Komponenterne er byggeklodserne, som du kan bruge til at bygge den løsning dine brugere
             har behov for.
           </p>
-          <p><a href="/komponenter/" class="bold-link">Brug komponenterne</a></p>
+          <p>
+            <router-link :to="{ name: 'komponenter' }" class="bold-link">
+              Brug komponenterne
+            </router-link>
+          </p>
         </div>
         <div class="col-12 col-lg-4">
-          <h2 class="mt-0">Eksempler</h2>
+          <h2 class="mt-0">Ekstra komponenter</h2>
           <p>
-            Få inspiration til, hvordan designsystemet kan anvendes til at bygge
-            selvbetjenings-løsninger med.
+            Vi har lavet ekstra komponenter der udvider funktionalitet, der hjælper til brugen af
+            komponenent biblioteket
           </p>
-          <p><a href="/eksempler/" class="bold-link">Se eksemplerne</a></p>
+          <p>
+            <router-link :to="{ name: 'ekstrakomponenter' }" class="bold-link">
+              Brug Ekstra komponenter
+            </router-link>
+          </p>
         </div>
       </div>
     </div>

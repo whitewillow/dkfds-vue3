@@ -72,8 +72,8 @@
                 Forside
               </fds-nav-link>
             </li>
-            <li role="none" :class="[{ current: isPartOfMenu('komponentforside') }]">
-              <fds-nav-link @click="router.push({ name: 'komponentforside' })" title="Link title">
+            <li role="none" :class="[{ current: isPartOfMenu('komponenter') }]">
+              <fds-nav-link @click="router.push({ name: 'komponenter' })" title="Link title">
                 Komponenter
               </fds-nav-link>
             </li>
@@ -249,7 +249,6 @@ const isPartOfMenu = (name: string): boolean => {
   if (route) {
     const [parent] = route.matched;
 
-    console.log('PARENT', parent, name);
     if (parent && parent.name === name) {
       return true;
     }

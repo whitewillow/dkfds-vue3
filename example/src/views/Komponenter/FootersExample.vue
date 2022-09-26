@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Footers</h2>
-    <p>Ikke implementeret</p>
+    <p>Under udvikling</p>
   </section>
 </template>
 

@@ -1,9 +1,21 @@
 <template>
   <section>
-    <h2>Dropdown-menu</h2>
-    <xfds-formgroup>
+    <fds-component-preview header="Eksempel">
       <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
-    </xfds-formgroup>
+
+      <fds-pre :json="{ dropdownVal }" />
+      <template #description>
+        <p class="italic">
+          Anvend kun dropdown menuer, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren
+          skal vælge mellem 7 til 15 værdier på en begrænset plads.
+        </p>
+      </template>
+      <template #code>
+        <pre v-text="code"></pre>
+      </template>
+    </fds-component-preview>
+
+    <h2>Dropdown-menu</h2>
   </section>
 </template>
 
@@ -26,4 +38,24 @@ const dropdownOptions = ref<FdsOptionItem[]>([
     value: 'æble',
   },
 ]);
+
+const code = `
+<fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+
+const dropdownVal = ref('');
+const dropdownOptions = ref<FdsOptionItem[]>([
+  {
+    title: 'Banan',
+    value: 'banan',
+  },
+  {
+    title: 'Melon',
+    value: 'melon',
+  },
+  {
+    title: 'Æble',
+    value: 'æble',
+  },
+]);
+`;
 </script>

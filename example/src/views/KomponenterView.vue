@@ -41,6 +41,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentbroedkrumme',
     title: 'Brødkrumme',
+    icon: 'engineering',
   },
   {
     key: 'komponentcards',
@@ -49,14 +50,17 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentcookie',
     title: 'Cookiemeddelelse',
+    icon: 'feedback',
   },
   {
     key: 'komponentdatoangivelse',
     title: 'Datoangivelse',
+    icon: 'engineering',
   },
   {
     key: 'komponentdatovaelger',
     title: 'Datovælger',
+    icon: 'engineering',
   },
   {
     key: 'komponentdetaljer',
@@ -85,6 +89,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentfooters',
     title: 'Footers',
+    icon: 'engineering',
   },
   {
     key: 'komponentformular',
@@ -97,6 +102,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentheaders',
     title: 'Headers',
+    icon: 'engineering',
   },
   {
     key: 'komponentknapper',
@@ -105,18 +111,22 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentmodalvindue',
     title: 'Modalvindue',
+    icon: 'engineering',
   },
   {
     key: 'komponentnotifikation',
     title: 'Notifikation (Toast)',
+    icon: 'engineering',
   },
   {
     key: 'komponentoverflow',
     title: 'Overflow menu',
+    icon: 'engineering',
   },
   {
     key: 'komponentpaginering',
     title: 'Paginering',
+    icon: 'engineering',
   },
   {
     key: 'komponentradioknap',
@@ -129,6 +139,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentskip',
     title: 'Skip-link',
+    icon: 'engineering',
   },
   {
     key: 'komponentspinner',
@@ -137,6 +148,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentsprogvaelger',
     title: 'Sprogvælger',
+    icon: 'engineering',
   },
   {
     key: 'komponentstrukturerede',
@@ -157,6 +169,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponenttags',
     title: 'Tags',
+    icon: 'engineering',
   },
   {
     key: 'komponenttekstomraade',
@@ -177,6 +190,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponenttrinindikatorer',
     title: 'Trinindikatorer',
+    icon: 'engineering',
   },
   {
     key: 'komponentvedhaeft',
@@ -199,7 +213,6 @@ watch(
 
 const handleNavigation = (key: string) => {
   currentNavigationKey.value = key;
-  console.log(route.matched, key);
   router.push({ name: sidenavigationService.resolveActiveKey(key) });
 };
 </script>
