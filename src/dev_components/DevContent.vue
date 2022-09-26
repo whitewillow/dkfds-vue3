@@ -835,7 +835,6 @@
       <h2>Toast</h2>
 
       <fds-toast />
-      <fds-toast />
 
       <hr class="my-8" />
 
@@ -929,6 +928,21 @@
           </template>
         </fds-strukturerede-liste>
       </div>
+      <hr class="my-8" />
+
+      <h2>Overflow menu</h2>
+      <fds-overflow-menu
+        id="overflow1"
+        header="Overflow menu eks">
+        <ul class="overflow-list">
+          <li><button>Option 1</button></li>
+          <li><button>Option 2</button></li>
+          <li><a href="#">
+            Option 3 as link
+          </a></li>
+          <li><button>Option 4 is longer text</button></li>
+        </ul>
+      </fds-overflow-menu>
 
       <hr class="my-8" />
 

@@ -38,6 +38,7 @@ import FdsAccordionItem from '@/components/fds-accordion-item.vue';
 import FdsBadge from '@/components/fds-badge.vue';
 import FdsCard from '@/components/fds-card.vue';
 
+import FdsOverflowMenu from '@/components/fds-overflow-menu.vue';
 import FdsModal from '@/components/fds-modal.vue';
 import FdsToastContainer from '@/components/fds-toast-container.vue';
 import FdsToast from '@/components/fds-toast.vue';
@@ -84,6 +85,7 @@ export * from '@/utils/file-utils';
 function install (app: App): void {
   app.component('fds-trinindikator', FdsTrinindikator);
   app.component('fds-modal', FdsModal);
+  app.component('fds-overflow-menu', FdsOverflowMenu);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-dato-angivelse', FdsDatoAngivelse);
 
@@ -145,6 +147,7 @@ function install (app: App): void {
 export {
   FdsAlert,
   FdsModal,
+  FdsOverflowMenu,
   FdsToastContainer,
   FdsToast,
   FdsSpinner,
