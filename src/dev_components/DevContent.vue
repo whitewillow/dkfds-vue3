@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <fds-toast-container />
     <div class="container pb-6">
       <h1>Home</h1>
       <div>
@@ -829,6 +830,12 @@
           </fds-card>
         </div>
       </div>
+      <hr class="my-8" />
+
+      <h2>Toast</h2>
+
+      <fds-toast />
+      <fds-toast />
 
       <hr class="my-8" />
 
@@ -1117,6 +1124,7 @@ import {
   numberMin,
 } from '@/utils/validate-utils';
 
+const showToast = ref(false);
 const showModal = ref(false);
 const showModalCustomFooter = ref(false);
 const progress = ref(46);

@@ -39,6 +39,8 @@ import FdsBadge from '@/components/fds-badge.vue';
 import FdsCard from '@/components/fds-card.vue';
 
 import FdsModal from '@/components/fds-modal.vue';
+import FdsToastContainer from '@/components/fds-toast-container.vue';
+import FdsToast from '@/components/fds-toast.vue';
 
 import FdsDatoAngivelse from '@/components/fds-dato-angivelse.vue';
 
@@ -84,6 +86,9 @@ function install (app: App): void {
   app.component('fds-modal', FdsModal);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-dato-angivelse', FdsDatoAngivelse);
+
+  app.component('fds-toast-container', FdsToastContainer);
+  app.component('fds-toast', FdsToast);
 
   app.component('fds-alert', FdsAlert);
   app.component('fds-spinner', FdsSpinner);
@@ -140,6 +145,8 @@ function install (app: App): void {
 export {
   FdsAlert,
   FdsModal,
+  FdsToastContainer,
+  FdsToast,
   FdsSpinner,
   FdsComponentPreview,
   FdsTrinindikator,
