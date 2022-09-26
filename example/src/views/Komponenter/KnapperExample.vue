@@ -77,5 +77,6 @@
 <script setup lang="ts">
 import { FdsVariantEnum } from 'dkfds-vue3/src/model/fds.model';
 
+// eslint-disable-next-line no-alert
 const klikEvent = () => window.confirm('KLIK');
 </script>

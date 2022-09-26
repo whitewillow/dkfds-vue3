@@ -11,6 +11,7 @@ const app = createApp(App);
 app
   .use(store)
   .use(router)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .use(dkfdsvue3 as any)
   .component('fds-xtnd-nav-item-route', FdsXtndNavItemRoute)
   .mount('#app');

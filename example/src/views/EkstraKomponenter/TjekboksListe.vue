@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { arrayHasItems } from 'dkfds-vue3/src/utils/validate-utils';
-import { FdsCheckboxItem, FdsOptionItem } from 'dkfds-vue3/src/model/fds.model';
+import { FdsCheckboxItem } from 'dkfds-vue3/src/model/fds.model';
 
 const checkboxListForm = ref<FdsCheckboxItem[]>([
   {
@@ -48,9 +48,6 @@ const checkboxListForm = ref<FdsCheckboxItem[]>([
   },
 ]);
 
-const product = ref({
-  type: '',
-});
 const code = `
   <xfds-form-checkbox-list
     label="Checkbox form"

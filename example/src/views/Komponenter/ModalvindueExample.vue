@@ -62,14 +62,13 @@
         <p class="italic">Eksempel på et modal vindue med egen footer</p>
       </template>
       <template #code>
-        <pre v-text="code"></pre>
+        <pre v-text="codeFooter"></pre>
       </template>
     </fds-component-preview>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FdsFileInputModel, FdsFileModel } from 'dkfds-vue3/src/model/fds.model';
 import { ref } from 'vue';
 
 const showModal = ref(false);

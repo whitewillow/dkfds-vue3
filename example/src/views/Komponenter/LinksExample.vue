@@ -18,5 +18,6 @@
 </template>
 
 <script setup lang="ts">
+// eslint-disable-next-line no-alert
 const klikEvent = () => window.confirm('KLIK');
 </script>

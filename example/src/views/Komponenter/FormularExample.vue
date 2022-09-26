@@ -66,7 +66,5 @@ import { charactersMinLength, hasContent, numberMax } from 'dkfds-vue3/src/utils
 const txtFornavn = ref('');
 const txtEfternavn = ref('');
 const noBeloeb = ref(0);
-const txtAdresse = ref('');
 const txtMobil = ref('23232323');
-const txtBeskrivelse = ref('');
 </script>
