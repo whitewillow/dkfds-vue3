@@ -8,7 +8,7 @@
             <p class="font-lead">Vue 3 Komponent bibliotek til "Det Fælles Designsystem"</p>
             <ul class="nobullet-list">
               <li>
-                <a href="https://designsystem.dk/" class="icon-link bold-link"
+                <a href="https://designsystem.dk/" target="designsystem" class="icon-link bold-link"
                   >Det Fælles Designsystem<svg
                     class="icon-svg"
                     focusable="false"
@@ -20,9 +20,10 @@
               </li>
               <li>
                 <a
-                  href="https://github.com/detfaellesdesignsystem/dkfds-components/"
+                  href="https://github.com/whitewillow/dkfds-vue3"
+                  target="github"
                   class="icon-link bold-link"
-                  >DKFDS på Github<svg
+                  >DKFDS-Vue3 på Github<svg
                     class="icon-svg"
                     focusable="false"
                     aria-hidden="true"
