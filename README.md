@@ -1,7 +1,7 @@
 # dkfds-vue3
 
 ```
-npm install [Modul ikke udgivet] -S
+npm install -S dkfds-vue3
 ```
 
 
@@ -64,11 +64,10 @@ Bedste måde at se hvad der er muligt er at køre example projektet, indtil der 
 
 Dog er `example projektet` opsat som dokumentation for projektet.
 
-<mark>MODUL ikke udgivet endnu - Kør det fulde Project setup istedet</mark>
-
 clone /example
 ```
 cd example
+npm install
 npm run serve
 ```
 
