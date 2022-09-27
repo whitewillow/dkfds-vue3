@@ -254,5 +254,7 @@ $image-path: '~dkfds/src/img';
 $site-image-path: '~dkfds/src/img';
 $icons-folder-path: '~dkfds/src/img/svg-icons';
 @import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
+@import '../node_modules/dkfds-vue3/src/assets/bgs.scss';
 @import '../node_modules/dkfds-vue3/src/assets/main.scss';
+@import 'assets/main.scss';
 </style>

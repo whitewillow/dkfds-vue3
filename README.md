@@ -164,7 +164,7 @@ Overvej ekstra komponenter som
 - Image viewer (hover fx og modal lign visning)
 - Fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
   ![Drag and drop eksempel](./dokumentation/drag&drop.png)
-
+- Side/page load bar - progressbar
 - Jumbotron - se top https://designsystem.dk/
 - Off-canvas
 - etc.
