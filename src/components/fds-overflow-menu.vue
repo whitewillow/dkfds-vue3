@@ -2,11 +2,10 @@
   <div class="overflow-menu overflow-menu--open-right">
     <button
       class="button-overflow-menu js-dropdown"
-      @click="handleOverflowClick"
-      @blur="hideOverflow"
-      data-js-target="overflow1"
+      :id="`button_${formid}`"
+      :data-js-target="`#${formid}`"
       aria-haspopup="true"
-      :aria-expanded="showOverflow">
+      :aria-expanded="false">
       {{ header }}
       <svg
         class="icon-svg"
@@ -17,21 +16,26 @@
     </button>
     <div
       class="overflow-menu-inner"
-      :id="id"
-      :aria-hidden="!showOverflow">
+      :id="formid"
+      :aria-hidden="true">
       <slot />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {
+  defineProps, nextTick, onMounted, ref,
+} from 'vue';
+import { Dropdown } from 'dkfds';
+import { v4 as uuidv4 } from 'uuid';
+
 /**
  *
- * Komponent for Modal
- * https://designsystem.dk/komponenter/modal/
+ * Komponent for Overflowmenu
+ * https://designsystem.dk/komponenter/overflowmenu/
  *
  * */
-import { defineProps, ref } from 'vue';
 
 const props = defineProps({
   header: {
@@ -42,15 +46,11 @@ const props = defineProps({
   },
 });
 
-const showOverflow = ref(false);
+// const showOverflow = ref(false);
 
-const handleOverflowClick = () => {
-  showOverflow.value = !showOverflow.value;
-};
+const formid = ref(props.id ?? uuidv4());
 
-const hideOverflow = () => {
-  setTimeout(() => {
-    showOverflow.value = false;
-  }, 100);
-};
+onMounted(async () => {
+  new Dropdown(document.getElementById(`button_${formid.value}`)).init();
+});
 </script>

@@ -15,6 +15,7 @@
     "linux_rmrf": "echo ./example/nodemodules"
   },
   "peerDependencies": {
+    "dkfds": "^8.0.1",
     "uuid": "^9.0.0",
     "vue": "^3.2.39"
   },

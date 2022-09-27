@@ -932,7 +932,6 @@
 
       <h2>Overflow menu</h2>
       <fds-overflow-menu
-        id="overflow1"
         header="Overflow menu eks">
         <ul class="overflow-list">
           <li><button>Option 1</button></li>
