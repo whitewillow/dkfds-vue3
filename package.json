@@ -1,8 +1,12 @@
 {
   "name": "dkfds-vue3",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/dkfds-vue3.esm.js",
   "types": "dist/main.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitewillow/dkfds-vue3"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build ./src/main.ts",
