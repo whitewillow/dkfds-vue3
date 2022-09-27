@@ -11,7 +11,7 @@
         class="icon-svg"
         aria-hidden="true"
         focusable="false">
-        <use xlink:href="#more-vert"></use>
+        <use :xlink:href="`#${icon}`"></use>
       </svg>
     </button>
     <div
@@ -43,6 +43,10 @@ const props = defineProps({
   },
   id: {
     type: String,
+  },
+  icon: {
+    type: String,
+    default: 'more-vert',
   },
 });
 

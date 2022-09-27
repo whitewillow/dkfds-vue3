@@ -98,26 +98,13 @@
           <!-- Start: Overflow menu i navigation -->
           <ul class="unstyled-list nav-actions">
             <li>
-              <div class="overflow-menu overflow-menu--open-left">
-                <button
-                  class="button-overflow-menu js-dropdown js-dropdown--responsive-collapse"
-                  data-js-target="headeroverflow2"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Overflow menu
-                  <svg class="icon-svg" aria-hidden="true">
-                    <use xlink:href="#arrow-drop-down"></use>
-                  </svg>
-                </button>
-                <div class="overflow-menu-inner" id="headeroverflow2" aria-hidden="true">
-                  <ul class="overflow-list">
-                    <li><a href="#">Menupunkt 1</a></li>
-                    <li><a href="#">Et menupunkt 2</a></li>
-                    <li><a href="#">Tredje menupunkt 3</a></li>
-                  </ul>
-                </div>
-              </div>
+              <fds-overflow-menu header="Overflow menu" icon="arrow-drop-down">
+                <ul class="overflow-list">
+                  <li><a href="#">Menupunkt 1</a></li>
+                  <li><a href="#">Et menupunkt 2</a></li>
+                  <li><a href="#">Tredje menupunkt 3</a></li>
+                </ul>
+              </fds-overflow-menu>
             </li>
           </ul>
           <!-- Slut: Overflow menu i navigation -->

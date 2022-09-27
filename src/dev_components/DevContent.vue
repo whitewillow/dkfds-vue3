@@ -931,17 +931,37 @@
       <hr class="my-8" />
 
       <h2>Overflow menu</h2>
-      <fds-overflow-menu
-        header="Overflow menu eks">
-        <ul class="overflow-list">
-          <li><button>Option 1</button></li>
-          <li><button>Option 2</button></li>
-          <li><a href="#">
-            Option 3 as link
-          </a></li>
-          <li><button>Option 4 is longer text</button></li>
-        </ul>
-      </fds-overflow-menu>
+      <div class="row">
+        <div class="col">
+          <fds-overflow-menu header="Overflow menu eks">
+            <ul class="overflow-list">
+              <li><button>Option 1</button></li>
+              <li><button>Option 2</button></li>
+              <li><a href="#">
+                Option 3 as link
+              </a></li>
+              <li><button>Option 4 is longer text</button></li>
+            </ul>
+          </fds-overflow-menu>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-8">
+          <fds-overflow-menu
+            header="Overflow menu eks"
+            class="overflow-menu--open-left"
+            icon="arrow-drop-down">
+            <ul class="overflow-list">
+              <li><button>Option 1</button></li>
+              <li><button>Option 2</button></li>
+              <li><a href="#">
+                Option 3 as link
+              </a></li>
+              <li><button>Option 4 is longer text</button></li>
+            </ul>
+          </fds-overflow-menu>
+        </div>
+      </div>
 
       <hr class="my-8" />
 

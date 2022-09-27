@@ -123,7 +123,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentoverflow',
     title: 'Overflow menu',
-    icon: 'engineering',
   },
   {
     key: 'komponentpaginering',
