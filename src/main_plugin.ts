@@ -36,6 +36,7 @@ import FdsAccordionGroup from '@/components/fds-accordion-group.vue';
 import FdsAccordionItem from '@/components/fds-accordion-item.vue';
 
 import FdsBadge from '@/components/fds-badge.vue';
+import FdsTag from '@/components/fds-tag.vue';
 import FdsCard from '@/components/fds-card.vue';
 
 import FdsOverflowMenu from '@/components/fds-overflow-menu.vue';
@@ -44,6 +45,7 @@ import FdsToastContainer from '@/components/fds-toast-container.vue';
 import FdsToast from '@/components/fds-toast.vue';
 
 import FdsDatoAngivelse from '@/components/fds-dato-angivelse.vue';
+import FdsDatoVaelger from '@/components/fds-dato-vaelger.vue';
 
 import FdsFileUpload from '@/components/fds-file-upload.vue';
 import FdsFileList from '@/components/fds-file-list.vue';
@@ -88,6 +90,7 @@ function install (app: App): void {
   app.component('fds-overflow-menu', FdsOverflowMenu);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-dato-angivelse', FdsDatoAngivelse);
+  app.component('fds-dato-vaelger', FdsDatoVaelger);
 
   app.component('fds-toast-container', FdsToastContainer);
   app.component('fds-toast', FdsToast);
@@ -99,7 +102,10 @@ function install (app: App): void {
   app.component('fds-faneblade-list', FdsFanebladeList);
   app.component('fds-pre', FdsPre);
   app.component('fds-hint', FdsHint);
+
   app.component('fds-badge', FdsBadge);
+  app.component('fds-tag', FdsTag);
+
   app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
   app.component('fds-input-number', FdsInputNumber);
@@ -155,6 +161,7 @@ export {
   FdsTrinindikator,
   FdsTilbageLink,
   FdsDatoAngivelse,
+  FdsDatoVaelger,
   FdsTextarea,
   FdsInputNumber,
   FdsFanebladItem,
@@ -168,6 +175,7 @@ export {
   FdsDetaljer,
   FdsPre,
   FdsBadge,
+  FdsTag,
   FdsCard,
   FdsInput,
   FdsCheckbox,

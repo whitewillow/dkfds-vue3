@@ -109,12 +109,8 @@ Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumen
 
 - Tabel - for kompleks - lav selv HTML
 
-- Tags - ikke optimal - UI mangler tag luk funktion ?
-
 - Datoangivelse
 - Datovælger
-- Overflow Menu
-- Modalvindue
 - Notifikation
 
 - Skip link
@@ -136,11 +132,9 @@ Dokumentation via:
 ## Fase 3
 
 Komponenter
-- Modal
 - Toaster
 - Datovælger
 - Datoangivelse
-- Overflow Menu
 
 Layout komponenter
 - Header
@@ -213,9 +207,9 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Funktionslink
 - [ ] Headers
 - [x] Knapper
-- [ ] Modalvindue <mark>Overvej eget komponent</mark>
-- [ ] Notifikation <mark>Overvej eget komponent</mark>
-- [ ] Overflow menu
+- [x] Modalvindue
+- [ ] Notifikation
+- [x] Overflow menu
 - [ ] Paginering
 - [x] Radioknap
 - [x] Sidenavigation
@@ -226,7 +220,7 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Søgefelt - samme som input med slot
 - [x] Tilbage link
 - [ ] Tabeller
-- [ ] Tags
+- [x] Tags
 - [x] Tekstområde
 - [x] Tjekboks
 - [x] Toggle switch

@@ -24,18 +24,15 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defineProps, nextTick, onMounted, ref,
-} from 'vue';
-import { Dropdown } from 'dkfds';
-import { v4 as uuidv4 } from 'uuid';
-
 /**
  *
  * Komponent for Overflowmenu
  * https://designsystem.dk/komponenter/overflowmenu/
  *
  * */
+import { defineProps, onMounted, ref } from 'vue';
+import { Dropdown } from 'dkfds';
+import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({
   header: {
@@ -49,8 +46,6 @@ const props = defineProps({
     default: 'more-vert',
   },
 });
-
-// const showOverflow = ref(false);
 
 const formid = ref(props.id ?? uuidv4());
 

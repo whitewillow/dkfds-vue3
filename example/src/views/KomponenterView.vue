@@ -170,7 +170,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponenttags',
     title: 'Tags',
-    icon: 'engineering',
   },
   {
     key: 'komponenttekstomraade',

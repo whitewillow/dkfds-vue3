@@ -422,8 +422,12 @@
         header="Delete JSON"
         :json="filToDelete" />
 
-      <hr />
+      <hr class="my-8" />
+
       <h3>Typography</h3>
+
+      <h4>Badges</h4>
+
       <p>
         <fds-badge class="mr-4">
           Normal
@@ -454,8 +458,15 @@
           error
         </fds-badge>
       </p>
+      <hr class="my-8" />
+      <h4>Tags</h4>
 
-      <hr />
+      <fds-tag>Bornholm</fds-tag>
+      <fds-tag icon="highlight-off">
+        Bornholm
+      </fds-tag>
+
+      <hr class="my-8" />
       <h2>Links</h2>
 
       <p>
@@ -928,6 +939,7 @@
           </template>
         </fds-strukturerede-liste>
       </div>
+
       <hr class="my-8" />
 
       <h2>Overflow menu</h2>
@@ -970,6 +982,13 @@
       <fds-dato-angivelse />
       <p class="form-hint">
         Kun MOCK - ikke lavet endnu
+      </p>
+
+      <h3>Dato Vælger</h3>
+
+      <fds-dato-vaelger />
+      <p class="form-hint">
+        Kun MOCK - ikke lavet endnu - js reagere ikke som forventet
       </p>
 
       <hr class="my-8" />
