@@ -4,7 +4,11 @@
       <div class="row">
         <aside class="col-12 col-lg-3 sidebar-col">
           <nav>
-            <fds-sidenavigation v-model="navigationList" @navigate="handleNavigation" />
+            <fds-sidenavigation
+              class="discrete-icon"
+              v-model="navigationList"
+              @navigate="handleNavigation"
+            />
           </nav>
         </aside>
         <div class="col-12 col-lg-9">
@@ -217,4 +221,12 @@ const handleNavigation = (key: string) => {
   router.push({ name: sidenavigationService.resolveActiveKey(key) });
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss">
+.sidenav-list {
+  &.discrete-icon {
+    > li:not(.current, :hover) .icon-svg {
+      fill: #b5b5b5;
+    }
+  }
+}
+</style>

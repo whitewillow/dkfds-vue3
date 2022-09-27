@@ -1,0 +1,80 @@
+.button-warning {
+    color: #ffffff;
+    background-color: darken($color-warning, 10%);
+    border-color: darken($color-warning, 20%);
+}
+
+.button-error {
+    color: #ffffff;
+    background-color: $color-error;
+    border-color: darken($color-error, 20%);
+}
+
+.button-info {
+    color: #ffffff;
+    background-color: $color-info;
+    border-color: darken($color-info, 20%);
+}
+
+.button-success {
+    color: #ffffff;
+    background-color: $color-success;
+    border-color: darken($color-success, 20%);
+}
+
+// spinner button
+.spinneroverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.2;
+    z-index: 9999999;
+}
+
+.rightside-icon {
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+.spinner-small {
+    margin: 10px auto;
+    font-size: 4px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: spinner 1.1s infinite ease;
+    animation: spinner 1.1s infinite ease;
+    transform: translateZ(0);
+}
+
+.inner-spinner {
+    margin: 0 8px 0 16px;
+    font-size: 4px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: spinner 1.1s infinite ease;
+    animation: spinner 1.1s infinite ease;
+    transform: translateZ(0);
+    display: inline-block;
+}
+
+.inner-spinner-white {
+    font-size: 4px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: spinner-white 1.1s infinite ease;
+    animation: spinner-white 1.1s infinite ease;
+    transform: translateZ(0);
+    display: inline-block;
+}

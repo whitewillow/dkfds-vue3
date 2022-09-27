@@ -159,6 +159,8 @@ Finpudsning
 ## Fase 6 
 
 Overvej ekstra komponenter som 
+- Vis dato udskriv dato pænt med evt m. tid
+- Liste vis flere
 - Image viewer (hover fx og modal lign visning)
 - Fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
   ![Drag and drop eksempel](./dokumentation/drag&drop.png)
