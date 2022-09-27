@@ -1,9 +1,8 @@
 {
   "name": "dkfds-vue3",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/dkfds-vue3.esm.js",
   "types": "dist/main.d.ts",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build ./src/main.ts",
