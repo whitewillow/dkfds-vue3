@@ -845,7 +845,7 @@
 
       <h2>Toast</h2>
 
-      <fds-toast />
+      <!-- <fds-toast /> -->
 
       <hr class="my-8" />
 
@@ -991,6 +991,11 @@
         Kun MOCK - ikke lavet endnu - js reagere ikke som forventet
       </p>
 
+      <hr class="my-8" />
+
+      <h2>Tilbage til Top</h2>
+      <p>Se i bund til højre</p>
+      <fds-til-top />
       <hr class="my-8" />
 
       <h2>Progress</h2>

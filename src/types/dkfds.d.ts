@@ -34,6 +34,32 @@ declare module 'dkfds' {
 
     show(): void;
   }
+  class BackToTop {
+    constructor(backtotop: any);
+
+    init(): void;
+  }
+  class CharacterLimit {
+    constructor(containerElement: any);
+
+    charactersLeft(): any;
+
+    handleBlur(e: any): void;
+
+    handleFocus(e: any): void;
+
+    handleKeyUp(e: any): void;
+
+    init(): void;
+
+    resetScreenReaderMessage(): void;
+
+    updateMessages(e: any): void;
+
+    updateScreenReaderMessage(): void;
+
+    updateVisibleMessage(): void;
+  }
   class CheckboxToggleContent {
     constructor(checkboxElement: any);
 

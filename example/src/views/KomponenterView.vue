@@ -180,6 +180,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Tekstområde',
   },
   {
+    key: 'komponenttiltop',
+    title: 'Tilbage til toppen',
+  },
+  {
     key: 'komponenttjekboks',
     title: 'Tjekboks',
   },

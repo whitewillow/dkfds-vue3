@@ -195,6 +195,11 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('TekstomraadeExample.vue'),
       },
       {
+        path: 'tilbagetiltop',
+        name: 'komponenttiltop',
+        component: loadExtraView('TilTopExample.vue'),
+      },
+      {
         path: 'tjekboks',
         name: 'komponenttjekboks',
         component: loadExtraView('TjekboksExample.vue'),

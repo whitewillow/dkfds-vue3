@@ -135,6 +135,8 @@
     <router-view />
   </main>
   <footer>
+    <fds-til-top />
+
     <div class="footer">
       <div class="container">
         <div class="row">
