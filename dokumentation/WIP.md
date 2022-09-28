@@ -3,6 +3,7 @@
 
 ## Fase 1
 
+- sidenavigation omdøbes til venstremenu, med mere se:https://designsystem.dk/faellesskab/releases/#version-8-1-0
 - Størstedelen af delkomponenter laves
 - Generel navngivning og struktur
 - Folder struktur
