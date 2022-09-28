@@ -21,6 +21,11 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * TODO: omdøbes til Toastbesked
+ * Lav toast loader
+ *
+ * */
 import { defineProps } from 'vue';
 
 defineProps({
