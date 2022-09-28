@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Tekstfelter">
+    <fds-component-preview header="Eksempel">
       <xfds-form-checkbox-list
         label="Checkbox form"
         :validations="[arrayHasItems]"

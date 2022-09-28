@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Tekstfelter">
+    <fds-component-preview header="Eksempel">
       <xfds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Navn </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />

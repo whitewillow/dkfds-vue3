@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Tekstfelter">
+    <fds-component-preview header="Eksempel">
       <xfds-form-textarea
         label="Beskrivelse"
         hint="Angiv beskrivelse af produktet"

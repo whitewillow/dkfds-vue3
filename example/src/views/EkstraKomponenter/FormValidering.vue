@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Tekstfelter">
+    <fds-component-preview header="Eksempel">
       <xfds-validate
         :modelValue="user.name"
         :dirty="dirty"
