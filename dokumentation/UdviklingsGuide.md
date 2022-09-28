@@ -1,4 +1,4 @@
-# Udviklingsguide
+ # Udviklingsguide
 
 Kort beskrivelse af overvejelser for udvikling af komponenter
 
@@ -28,11 +28,26 @@ undtagelser:
 <fds-radio />
 ```
 
+## Ekstra funktionalitet:
+Standard komponenter burde allerede være lavet, så hovedfokus vil være at udvikle ekstra funktionalitet.
+
+Ektra komponenter navngives med `xfds`:
+```html
+<xfds-validate />
+<xfds-progressbar />
+<xfds-form-input />
+```
+
+Ekstra komponenter placeres under `src/components/extra/` og angives `src/main_plugin.ts`
+
+
 ## Overhold aria og Tilgængelighed
 
 se https://designsystem.dk/design/tilgaengelighed/
 
 Dertil benyttes for så vidt muligt original HTML udstillet af eks. for de enkelte komponenter https://designsystem.dk/komponenter/
+
+Og hvis muligt og det giver mening, DKFDS egen javascript - dkfds-vue3 har typedefinitions for DKFDS
 
 ## Ind til benet
 
@@ -65,7 +80,7 @@ Dertil er det op til brugeren PT. selv at sortere evt lister m.m.
 
 # Ingen ekstra npm moduler
 
-Undgå at introducere nye moduler. Brug hvad DKFDS allerede har (eg. popperjs m.m.).
+Undgå at introducere nye moduler. Brug hvad DKFDS allerede har.
 
 Dertil ingen vue-router - det er op til brugeren at selv håndtere dette.
 
