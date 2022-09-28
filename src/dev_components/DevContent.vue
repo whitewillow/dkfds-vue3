@@ -16,6 +16,9 @@
           <fds-input
             v-model="txtFornavn"
             :id="formid"></fds-input>
+          <fds-input-limit
+            :modelValue="txtFornavn"
+            :limit="10" />
         </xfds-formgroup>
 
         <xfds-validate

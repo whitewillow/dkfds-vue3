@@ -9,6 +9,7 @@ import FdsPre from '@/components/fds-pre.vue';
 
 import FdsTooltip from '@/components/fds-tooltip.vue';
 import FdsLabel from '@/components/fds-label.vue';
+import FdsInputLimit from '@/components/fds-input-limit.vue';
 import FdsHint from '@/components/fds-hint.vue';
 import FdsInput from '@/components/fds-input.vue';
 import FdsInputNumber from '@/components/fds-input-number.vue';
@@ -119,6 +120,7 @@ function install (app: App): void {
   app.component('fds-radio-toggle', FdsRadioToggle);
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
+  app.component('fds-input-limit', FdsInputLimit);
   app.component('xfds-formgroup', XFdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
@@ -187,6 +189,7 @@ export {
   FdsRadioToggle,
   FdsDropdown,
   FdsLabel,
+  FdsInputLimit,
   FdsTooltip,
   XFdsFormgroup,
   FdsFejlmeddelelse,
