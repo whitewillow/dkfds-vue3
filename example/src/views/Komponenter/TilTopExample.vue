@@ -20,12 +20,10 @@
 
 <script setup lang="ts">
 const code = `
-<fds-badge class="mr-4"> Normal </fds-badge>
-<fds-badge small> Normal small </fds-badge>
-<fds-badge variant="success"> success </fds-badge>
-<fds-badge variant="info"> success </fds-badge>
-<fds-badge variant="warning"> warning </fds-badge>
-<fds-badge variant="error"> error </fds-badge>
+<footer>
+  <fds-til-top />
+  ...
+</footer>
 
 `;
 </script>
