@@ -14,7 +14,7 @@ TODO: mere beskrivelse
     <img src="https://flat.badgen.net/npm/dt/dkfds-vue3" alt="npm downloads">
   </a>
   <a href="https://github.com/detfaellesdesignsystem/dkfds-components">
-    <img src="https://flat.badgen.net/badge/dkfds/8.0.1/563d7c" alt="DKFDS version">
+    <img src="https://flat.badgen.net/badge/dkfds/8.1.0/0059b3" alt="DKFDS version">
   </a>
   <a href="https://vuejs.org">
     <img src="https://flat.badgen.net/badge/vue.js/3.2.x/4fc08d" alt="Vue.js version">
