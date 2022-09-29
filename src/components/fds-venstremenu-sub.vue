@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
 import { FdsNavigationItem } from '@/model/fds.model';
-import venstremenuService from '@/service/venstremenu.service';
+import navigationService from '@/service/navigation.service';
 
 const props = defineProps({
   modelValue: {
@@ -36,7 +36,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const navigateup = (key: string) => {
-  emit('navigate', venstremenuService.resolveKey(key, props.modelValue));
+  emit('navigate', navigationService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {

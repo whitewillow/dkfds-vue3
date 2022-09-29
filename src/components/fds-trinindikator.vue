@@ -71,24 +71,15 @@ import { FdsNavigationItem } from '@/model/fds.model';
 import {
   defineProps, ref, defineEmits, onMounted,
 } from 'vue';
-import venstremenuService from '@/service/venstremenu.service';
+import navigationService from '@/service/navigation.service';
+
+import fdsNavigationProps from '@/props/fds-navigation.props';
 
 const props = defineProps({
-  modelValue: {
-    type: Array as () => Array<FdsNavigationItem>,
-    required: true,
-  },
-  showIndex: {
-    type: Boolean,
-    default: false,
-  },
+  ...fdsNavigationProps,
   header: {
     type: String,
     default: 'Trin', // TODO: overvej interpolation
-  },
-  navigateFirst: {
-    type: Boolean,
-    default: false,
   },
   id: {
     type: String,
@@ -112,7 +103,7 @@ const navigate = (item: FdsNavigationItem) => {
     return;
   }
 
-  tabsList.value = venstremenuService.setActive(tabsList.value, item.key);
+  tabsList.value = navigationService.setActive(tabsList.value, item.key);
   currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
   currentKey.value = item.key;
 
@@ -121,7 +112,7 @@ const navigate = (item: FdsNavigationItem) => {
 };
 
 onMounted(async () => {
-  const item = venstremenuService.findFirstActiveItem(tabsList.value, props.navigateFirst);
+  const item = navigationService.findFirstActiveItem(tabsList.value, props.navigateFirst);
   if (item) {
     navigate(item);
   }

@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
 import { ref, watch } from 'vue';
-import venstremenuService from 'dkfds-vue3/src/service/venstremenu.service';
+import navigationService from 'dkfds-vue3/src/service/navigation.service';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
@@ -209,11 +209,11 @@ const navigationList = ref<Array<FdsNavigationItem>>([
 watch(
   () => route.name,
   () => {
-    navigationList.value = venstremenuService.setActive(
+    navigationList.value = navigationService.setActive(
       navigationList.value,
       route.name?.toString() ?? '',
     );
-    currentItem.value = venstremenuService.findFirstActiveItem(navigationList.value);
+    currentItem.value = navigationService.findFirstActiveItem(navigationList.value);
   },
   {
     immediate: true,
@@ -222,7 +222,7 @@ watch(
 
 const handleNavigation = (key: string) => {
   currentNavigationKey.value = key;
-  router.push({ name: venstremenuService.resolveActiveKey(key) });
+  router.push({ name: navigationService.resolveActiveKey(key) });
 };
 </script>
 <style lang="scss">
