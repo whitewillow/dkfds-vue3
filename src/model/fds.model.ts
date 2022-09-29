@@ -49,7 +49,7 @@ export interface FdsNavigationItem {
   active: boolean; // currently selected
   disabled?: boolean; // not clickable
   hint: string; // help text
-  icon?: string; // shows icon if any
+  icon?: string; // shows icon if any, eg. done
   ignore?: boolean; // item will be ignored (filtered out)
   href?: string;
   children?: Array<FdsNavigationItem>;

@@ -506,7 +506,11 @@
       <h2>Trinindikator</h2>
 
       <p>Afventer</p>
-      <fds-trinindikator></fds-trinindikator>
+      <fds-trinindikator
+        v-model="trin"
+        @navigate="trinNavKey = $event"></fds-trinindikator>
+
+      <fds-pre :json="{trinNavKey}"></fds-pre>
       <hr />
 
       <h2>Tilbage link</h2>
@@ -1373,6 +1377,35 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
         hint: '',
       },
     ],
+  },
+  {
+    key: 'fisk',
+    title: 'Fisk',
+    hint: '',
+    disabled: true,
+  },
+] as unknown as FdsNavigationItem[]);
+
+const trinNavKey = '';
+const trin = ref<FdsNavigationItem[]>([
+  {
+    key: 'suppe',
+    title: 'Supper',
+    hint: '',
+    icon: 'done',
+  },
+  {
+    key: 'dessert',
+    title: 'Dessert',
+    hint: 'Hjælpetekst',
+    icon: 'home',
+
+    active: true,
+  },
+  {
+    key: 'kod',
+    title: 'Kød',
+    hint: '',
   },
   {
     key: 'fisk',

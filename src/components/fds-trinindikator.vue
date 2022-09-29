@@ -2,70 +2,55 @@
   <div class="overflow-menu overflow-menu--open-right">
     <button
       class="button-overflow-menu js-dropdown"
-      data-js-target="overflow5"
+      :id="`button_${formid}`"
+      :data-js-target="`#${formid}`"
       aria-haspopup="true"
       aria-expanded="false">
-      Trin 2 af 3
+      {{ header }} {{ currentStepIndex+1 }} af {{ modelValue.length }}
       <svg
         class="icon-svg"
         aria-hidden="true"
         focusable="false">
-        <use xlink:href="#arrow-drop-down"></use>
+        <use :xlink:href="`#${icon}`"></use>
       </svg>
     </button>
     <div
       class="overflow-menu-inner"
-      id="overflow5"
+      :id="formid"
       aria-hidden="true">
       <nav>
         <ul
           class="sidenav-list"
           role="menu">
-          <li role="none">
+          <li
+            role="none"
+            v-for="(item, index) of tabsList"
+            :key="item.key"
+            :class="[{ 'active current': item.active }, { disabled: item.disabled }]">
             <a
-              href="#"
-              role="menuitem">
+              :href="`${item.href ? item.href : 'javascript:void(0);'}`"
+              role="menuitem"
+              @click="navigate(item)">
               <span class="sidenav-number">
-                1.
+                {{ index + 1 + `. ` }}
               </span><span class="sidenav-title">
-                Lorem ipsum
+                {{ item.title }}
               </span>
-              <span class="sidenav-icon">
+              <span
+                class="sidenav-icon"
+                v-if="item.icon">
+
                 <svg
                   class="icon-svg"
-                  aria-hidden="true"
                   focusable="false"
+                  aria-hidden="true"
                   tabindex="-1">
-                  <use xlink:href="#done"></use>
+                  <use :xlink:href="`#${item.icon}`"></use>
                 </svg>
               </span>
             </a>
           </li>
-          <li
-            role="none"
-            class="active current">
-            <a
-              href="#"
-              role="menuitem"
-              aria-current="page">
-              <span class="sidenav-number">
-                2.
-              </span><span class="sidenav-title">
-                Dolor sit amet
-              </span>
-            </a>
-          </li>
-          <li role="none">
-            <a
-              href="#"
-              role="menuitem">
-              <span class="sidenav-number">
-                3.
-              </span><span class="sidenav-title">
-                Consectetur adipiscing elit
-              </span>
-            </a>
-          </li>
+
         </ul>
       </nav>
     </div>
@@ -73,7 +58,73 @@
 </template>
 
 <script setup lang="ts">
-// Afventer udvikling
-</script>
+/**
+   *
+   * Komponent for Trin indikator
+   * https://designsystem.dk/komponenter/trin/
+   *
+   * */
 
-<style scoped lang="scss"></style>
+import { Dropdown } from 'dkfds';
+import { v4 as uuidv4 } from 'uuid';
+import { FdsNavigationItem } from '@/model/fds.model';
+import {
+  defineProps, ref, defineEmits, onMounted,
+} from 'vue';
+import venstremenuService from '@/service/venstremenu.service';
+
+const props = defineProps({
+  modelValue: {
+    type: Array as () => Array<FdsNavigationItem>,
+    required: true,
+  },
+  showIndex: {
+    type: Boolean,
+    default: false,
+  },
+  header: {
+    type: String,
+    default: 'Trin', // TODO: overvej interpolation
+  },
+  navigateFirst: {
+    type: Boolean,
+    default: false,
+  },
+  id: {
+    type: String,
+  },
+  icon: {
+    type: String,
+    default: 'arrow-drop-down',
+  },
+});
+
+const emit = defineEmits(['update:modelValue', 'navigate']);
+
+const formid = ref(props.id ?? uuidv4());
+
+const currentKey = ref('');
+const currentStepIndex = ref(0);
+const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
+
+const navigate = (item: FdsNavigationItem) => {
+  if (item.disabled) {
+    return;
+  }
+
+  tabsList.value = venstremenuService.setActive(tabsList.value, item.key);
+  currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
+  currentKey.value = item.key;
+
+  emit('update:modelValue', tabsList.value);
+  emit('navigate', currentKey.value);
+};
+
+onMounted(async () => {
+  const item = venstremenuService.findFirstActiveItem(tabsList.value, props.navigateFirst);
+  if (item) {
+    navigate(item);
+  }
+  new Dropdown(document.getElementById(`button_${formid.value}`)).init();
+});
+</script>
