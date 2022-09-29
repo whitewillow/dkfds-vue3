@@ -14,7 +14,7 @@
         role="menuitem">
         {{ child.title }}
       </a>
-      <fds-sidenavigation-sub
+      <fds-venstremenu-sub
         @navigate="navigateup"
         v-if="child.active && child.children && child.children.length > 0"
         v-model="child.children"/>
@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
 import { FdsNavigationItem } from '@/model/fds.model';
-import sidenavigationService from '@/service/sidenavigation.service';
+import venstremenuService from '@/service/venstremenu.service';
 
 const props = defineProps({
   modelValue: {
@@ -36,7 +36,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const navigateup = (key: string) => {
-  emit('navigate', sidenavigationService.resolveKey(key, props.modelValue));
+  emit('navigate', venstremenuService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {

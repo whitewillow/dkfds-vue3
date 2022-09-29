@@ -3,7 +3,7 @@
     <div class="row">
       <aside class="col-12 col-lg-3 sidebar-col">
         <nav>
-          <fds-sidenavigation v-model="navigationList" @navigate="handleNavigation" />
+          <fds-venstremenu v-model="navigationList" @navigate="handleNavigation" />
         </nav>
       </aside>
       <div class="col-12 col-lg-9">
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
-import sidenavigationService from 'dkfds-vue3/src/service/sidenavigation.service';
+import venstremenuService from 'dkfds-vue3/src/service/venstremenu.service';
 import { ref, watch } from 'vue';
 
 import { useRouter, useRoute } from 'vue-router';
@@ -37,11 +37,11 @@ const navigationList = ref<Array<FdsNavigationItem>>([
 watch(
   () => route.name,
   () => {
-    navigationList.value = sidenavigationService.setActive(
+    navigationList.value = venstremenuService.setActive(
       navigationList.value,
       route.name?.toString() ?? '',
     );
-    currentItem.value = sidenavigationService.findFirstActiveItem(navigationList.value);
+    currentItem.value = venstremenuService.findFirstActiveItem(navigationList.value);
   },
   {
     immediate: true,
@@ -50,7 +50,7 @@ watch(
 
 const handleNavigation = (key: string) => {
   currentNavigationKey.value = key;
-  router.push({ name: sidenavigationService.resolveActiveKey(key) });
+  router.push({ name: venstremenuService.resolveActiveKey(key) });
 };
 </script>
 <style lang="scss" scoped></style>

@@ -4,7 +4,7 @@
       <div class="row">
         <aside class="col-12 col-lg-3 sidebar-col">
           <nav>
-            <fds-sidenavigation
+            <fds-venstremenu
               class="discrete-icon"
               v-model="navigationList"
               @navigate="handleNavigation"
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
 import { ref, watch } from 'vue';
-import sidenavigationService from 'dkfds-vue3/src/service/sidenavigation.service';
+import venstremenuService from 'dkfds-vue3/src/service/venstremenu.service';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
@@ -91,7 +91,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   },
   {
     key: 'komponentfelter',
-    title: 'Felter',
+    title: 'Inputfelter',
   },
   {
     key: 'komponentfooters',
@@ -138,8 +138,8 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Radioknap',
   },
   {
-    key: 'komponentsidenavigation',
-    title: 'Sidenavigation',
+    key: 'komponentvenstremenu',
+    title: 'Venstremenu',
   },
   {
     key: 'komponentskip',
@@ -209,11 +209,11 @@ const navigationList = ref<Array<FdsNavigationItem>>([
 watch(
   () => route.name,
   () => {
-    navigationList.value = sidenavigationService.setActive(
+    navigationList.value = venstremenuService.setActive(
       navigationList.value,
       route.name?.toString() ?? '',
     );
-    currentItem.value = sidenavigationService.findFirstActiveItem(navigationList.value);
+    currentItem.value = venstremenuService.findFirstActiveItem(navigationList.value);
   },
   {
     immediate: true,
@@ -222,7 +222,7 @@ watch(
 
 const handleNavigation = (key: string) => {
   currentNavigationKey.value = key;
-  router.push({ name: sidenavigationService.resolveActiveKey(key) });
+  router.push({ name: venstremenuService.resolveActiveKey(key) });
 };
 </script>
 <style lang="scss">

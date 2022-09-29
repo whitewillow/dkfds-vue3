@@ -2,7 +2,7 @@
   <div class="row">
     <aside class="col-12 col-lg-3 sidebar-col">
       <nav>
-        <fds-sidenavigation
+        <fds-venstremenu
           :showIndex="showIndex"
           :navigateFirst="navigateFirst"
           v-model="tabsList"

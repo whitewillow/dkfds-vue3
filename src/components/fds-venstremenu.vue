@@ -31,7 +31,7 @@
           {{ item.hint }}
         </p>
       </a>
-      <fds-sidenavigation-sub
+      <fds-venstremenu-sub
         v-if="item.active && item.children && item.children.length > 0"
         @navigate="subnavigation"
         v-model="item.children"/>
@@ -41,10 +41,10 @@
 
 <script setup lang="ts">
 import { FdsNavigationItem } from '@/model/fds.model';
-import sidenavigationService from '@/service/sidenavigation.service';
 import {
   defineProps, ref, defineEmits, onMounted,
 } from 'vue';
+import venstremenuService from '@/service/venstremenu.service';
 
 const props = defineProps({
   modelValue: {
@@ -67,7 +67,7 @@ const currentKey = ref('');
 const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
 
 const subnavigation = (key: string) => {
-  emit('navigate', sidenavigationService.resolveKey(key, props.modelValue));
+  emit('navigate', venstremenuService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {
@@ -75,7 +75,7 @@ const navigate = (item: FdsNavigationItem) => {
     return;
   }
 
-  tabsList.value = sidenavigationService.setActive(tabsList.value, item.key);
+  tabsList.value = venstremenuService.setActive(tabsList.value, item.key);
   currentKey.value = item.key;
 
   emit('update:modelValue', tabsList.value);
@@ -83,7 +83,7 @@ const navigate = (item: FdsNavigationItem) => {
 };
 
 onMounted(() => {
-  const item = sidenavigationService.findFirstActiveItem(tabsList.value, props.navigateFirst);
+  const item = venstremenuService.findFirstActiveItem(tabsList.value, props.navigateFirst);
   if (item) {
     navigate(item);
   }

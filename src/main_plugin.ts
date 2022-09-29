@@ -58,10 +58,6 @@ import FdsFunktionslink from '@/components/fds-funktionslink.vue';
 import FdsNavLink from '@/components/fds-nav-link.vue';
 import FdsTilbageLink from '@/components/fds-tilbage-link.vue';
 
-import FdsSidenavigation from '@/components/fds-sidenavigation.vue';
-import FdsSidenavigationList from '@/components/fds-sidenavigation-list.vue';
-import FdsSidenavigationSub from '@/components/fds-sidenavigation-sub.vue';
-
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 
 import FdsFaneblade from '@/components/fds-faneblade.vue';
@@ -81,6 +77,9 @@ import XFdsFormCheckboxList from '@/components/extra/xfds-form-checkbox-list.vue
 import XFdsValidate from '@/components/extra/xfds-validate.vue';
 import XFdsFormgroup from '@/components/extra/xfds-formgroup.vue';
 import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
+import FdsVenstremenuSub from '@/components/fds-venstremenu-sub.vue';
+import FdsVenstremenuList from '@/components/fds-venstremenu-list.vue';
+import FdsVenstremenu from '@/components/fds-venstremenu.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -136,9 +135,9 @@ function install (app: App): void {
 
   app.component('fds-nav-link', FdsNavLink);
   app.component('fds-funktionslink', FdsFunktionslink);
-  app.component('fds-sidenavigation-list', FdsSidenavigationList);
-  app.component('fds-sidenavigation-sub', FdsSidenavigationSub);
-  app.component('fds-sidenavigation', FdsSidenavigation);
+  app.component('fds-venstremenu-list', FdsVenstremenuList);
+  app.component('fds-venstremenu-sub', FdsVenstremenuSub);
+  app.component('fds-venstremenu', FdsVenstremenu);
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
@@ -172,9 +171,9 @@ export {
   FdsStruktureredeListe,
   FdsFaneblade,
   FdsFanebladeList,
-  FdsSidenavigationList,
-  FdsSidenavigationSub,
-  FdsSidenavigation,
+  FdsVenstremenuList,
+  FdsVenstremenuSub,
+  FdsVenstremenu,
   FdsHint,
   FdsDetaljer,
   FdsPre,

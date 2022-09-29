@@ -90,9 +90,9 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('FejlopsummeringExample.vue'),
       },
       {
-        path: 'felter',
+        path: 'inputfelter',
         name: 'komponentfelter',
-        component: loadExtraView('FelterExample.vue'),
+        component: loadExtraView('InputFeltExample.vue'),
       },
       {
         path: 'footers',
@@ -145,9 +145,9 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('RadioknapExample.vue'),
       },
       {
-        path: 'sidenavigation',
-        name: 'komponentsidenavigation',
-        component: loadExtraView('SidenavigationExample.vue'),
+        path: 'venstremenu',
+        name: 'komponentvenstremenu',
+        component: loadExtraView('VenstremenuExample.vue'),
       },
       {
         path: 'skip',

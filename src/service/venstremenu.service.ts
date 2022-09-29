@@ -1,6 +1,6 @@
 import { FdsNavigationItem } from '@/model/fds.model';
 
-class SidenavigationService {
+class VenstremenuService {
   getParent = (key: string, list: Array<FdsNavigationItem>): FdsNavigationItem | undefined => {
     return list.find((f) => f.children?.some((s) => s.key === key));
   };
@@ -78,5 +78,5 @@ class SidenavigationService {
     return undefined;
   };
 }
-const sidenavigationService = new SidenavigationService();
-export default sidenavigationService;
+const venstremenuService = new VenstremenuService();
+export default venstremenuService;

@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h3>Manuel sidenavigation</h3>
+    <h3>Manuel venstremenu</h3>
     <div class="row">
       <div class="col-4">
-        <fds-sidenavigation v-model="manuelSideNavList" @navigate="manuelSideNavKey = $event" />
+        <fds-venstremenu v-model="manuelSideNavList" @navigate="manuelSideNavKey = $event" />
       </div>
       <div class="col">
         <fds-pre :json="{ currentKey: manuelSideNavKey }" />
@@ -12,9 +12,9 @@
     </div>
 
     <hr class="my-6" />
-    <h3>Sidenavigation automatiseret</h3>
+    <h3>Venstremenu automatiseret</h3>
     <p class="font-lead">med for loop og dynamisk navngivning af slot name</p>
-    <fds-sidenavigation-list v-model="sideTabs" showIndex>
+    <fds-venstremenu-list v-model="sideTabs" showIndex>
       <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
         <h2>{{ tab.title }}</h2>
         <p>
@@ -25,12 +25,12 @@
           velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
         </p>
       </template>
-    </fds-sidenavigation-list>
+    </fds-venstremenu-list>
 
     <hr class="my-6" />
 
-    <h3>Sidenavigation automatiseret</h3>
-    <fds-sidenavigation-list v-model="sideTabs">
+    <h3>Venstremenu automatiseret</h3>
+    <fds-venstremenu-list v-model="sideTabs">
       <template v-slot:[`suppe`]>
         <h2>Suppe</h2>
         <p>
@@ -72,7 +72,7 @@
           velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
         </p>
       </template>
-    </fds-sidenavigation-list>
+    </fds-venstremenu-list>
   </section>
 </template>
 
