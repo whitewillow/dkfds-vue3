@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from '@/model/fds.model';
 import {
-  defineProps, ref, defineEmits, onMounted,
+  defineProps, ref, defineEmits, onMounted, computed,
 } from 'vue';
 import navigationService from '@/service/navigation.service';
 import fdsNavigationProps from '@/props/fds-navigation.props';
@@ -52,12 +52,13 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
+const mVal = computed(() => props.modelValue ?? []);
 
 const currentKey = ref('');
-const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
+const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
 
 const subnavigation = (key: string) => {
-  emit('navigate', navigationService.resolveKey(key, props.modelValue));
+  emit('navigate', navigationService.resolveKey(key, mVal.value));
 };
 
 const navigate = (item: FdsNavigationItem) => {

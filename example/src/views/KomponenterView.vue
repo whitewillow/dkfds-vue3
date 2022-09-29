@@ -198,7 +198,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponenttrinindikatorer',
     title: 'Trinindikatorer',
-    icon: 'engineering',
   },
   {
     key: 'komponentvedhaeft',

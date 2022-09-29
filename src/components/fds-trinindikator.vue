@@ -6,7 +6,7 @@
       :data-js-target="`#${formid}`"
       aria-haspopup="true"
       aria-expanded="false">
-      {{ header }} {{ currentStepIndex+1 }} af {{ modelValue.length }}
+      {{ header }} {{ currentStepIndex+1 }} af {{ mVal.length }}
       <svg
         class="icon-svg"
         aria-hidden="true"
@@ -69,7 +69,7 @@ import { Dropdown } from 'dkfds';
 import { v4 as uuidv4 } from 'uuid';
 import { FdsNavigationItem } from '@/model/fds.model';
 import {
-  defineProps, ref, defineEmits, onMounted,
+  defineProps, ref, defineEmits, onMounted, computed,
 } from 'vue';
 import navigationService from '@/service/navigation.service';
 
@@ -94,9 +94,10 @@ const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const formid = ref(props.id ?? uuidv4());
 
+const mVal = computed(() => props.modelValue ?? []);
 const currentKey = ref('');
 const currentStepIndex = ref(0);
-const tabsList = ref<Array<FdsNavigationItem>>(props.modelValue.filter((f) => !f.ignore));
+const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
 
 const navigate = (item: FdsNavigationItem) => {
   if (item.disabled) {

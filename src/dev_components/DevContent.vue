@@ -1323,7 +1323,7 @@ const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 const klikEvent = () => window.confirm('KLIK');
 
-const manuelSideNavKey = '';
+const manuelSideNavKey = ref('');
 const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   {
     key: 'suppe',
