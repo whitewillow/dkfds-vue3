@@ -35,7 +35,7 @@
         <p class="italic">Tekstfelt</p>
       </template>
       <template #code>
-        <pre v-text="code"></pre>
+        <pre v-text="codeLimit"></pre>
       </template>
     </fds-component-preview>
 
