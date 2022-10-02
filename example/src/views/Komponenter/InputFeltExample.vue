@@ -18,6 +18,27 @@
       </template>
     </fds-component-preview>
 
+    <fds-component-preview header="Karakterbegrænsning">
+      <div class="form-group">
+        <fds-label id="formid"> Efternavn </fds-label>
+        <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+        <fds-hint>Indtast fornavn</fds-hint>
+        <fds-input v-model="txtEfternavn" id="formid"></fds-input>
+        <fds-input-limit
+            :modelValue="txtEfternavn"
+            :limit="20" />
+      </div>
+
+      <fds-pre :json="{ txtEfternavn }" />
+
+      <template #description>
+        <p class="italic">Tekstfelt</p>
+      </template>
+      <template #code>
+        <pre v-text="code"></pre>
+      </template>
+    </fds-component-preview>
+
     <fds-component-preview header="Prefix og Suffix">
       <div class="form-group">
         <fds-label id="prefix"> Med prefix </fds-label>
@@ -66,6 +87,7 @@
 import { ref } from 'vue';
 
 const txtFornavn = ref('');
+const txtEfternavn = ref('');
 const txtPre = ref('');
 const txtSuffix = ref('');
 const noBeloeb = ref(0);
@@ -76,6 +98,18 @@ const code = `
   <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
   <fds-hint>Indtast fornavn</fds-hint>
   <fds-input v-model="txtFornavn" id="formid"></fds-input>
+</div>
+`;
+
+const codeLimit = `
+<div class="form-group">
+  <fds-label id="formid"> Efternavn </fds-label>
+  <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+  <fds-hint>Indtast fornavn</fds-hint>
+  <fds-input v-model="txtEfternavn" id="formid"></fds-input>
+  <fds-input-limit
+      :modelValue="txtEfternavn"
+      :limit="20" />
 </div>
 `;
 
