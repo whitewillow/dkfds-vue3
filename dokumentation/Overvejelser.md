@@ -1,5 +1,28 @@
 # dkfds-vue3 Overvejelser
 
+## Links
+
+fds-link autodetect extern link
+
+```html
+
+// local rute
+<fds-link @click="router.push(x)">
+Gå til Forside  
+</fds-link>
+
+// ekstern vindue
+<fds-link href="https://google.com">
+Gå til Forside  
+</fds-link>
+
+
+// valgfri ikon
+<fds-link href="https://google.com" icon="home">
+Gå til Forside  
+</fds-link>
+```
+
 ## Manuel tilgang - venstremenu og trin
 
 Overvej at, også, tilbyde en mere manuel tilgang til hhv venstremenu og trin m.fl.
@@ -37,9 +60,6 @@ Istedet for at give en liste med, give muligfor at direkte at skrive sit "a" tag
 ```
 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 ## Overvejelser
 - Dansk navngivning af komponenter
 - Bedre folder struktur under components
@@ -52,60 +72,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Patterns https://designsystem.dk/eksempler/patterns/session-udloeber/
 - 
 
-
-## Udvikling faser
-
-### Fase 1
-
-- Størstedelen af delkomponenter laves
-- Generel navngivning og struktur
-- Folder struktur
-- example Project gøres pænere til at kunne præsentere komponenter
-
-
-### Fase 2
-
-Dokumentation ? 
-- https://histoire.dev/ ?
-- Test
-
-### Fase 3
-
-Layout komponenter
-
-### Fase 4
-
-**Hjælpe klasser**
-- Alle farver får en logisk opbygges hjælpe css class til color og background `https://designsystem.dk/design/farver/`
-
-**Hjælpe metoder**
-- Validering
-- Fil utils
-- m.m.
-
-### Fase 5 
-
-Cookie og evt andre manglende komponenter laves
-
-Overvej ekstra komponenter som 
-- fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
-  ![Drag and drop eksempel](./dokumentation/drag&drop.png)
-
-- jumbotron - se top https://designsystem.dk/
-- component-preview - se hvordan input er præsenteret https://designsystem.dk/komponenter/fejlmeddelelser/
-- Off-canvas
-- etc.
-
-### Fase 6
-
-Finpudsning
-
-### Fase 7
-
-Vite create template e.g:
-```
-npm create vite@latest my-vue-app -- --template vue-ts-dkfds
-```
 
 
 
@@ -147,103 +113,3 @@ Forslag til hvordan layout/implementering kunne laves?
     <fds-cookies />
 <fds>
 
-
-```
-
-
-## Overordnet oversigt
-
-- [x] Accordions
-- [x] Badges
-- [x] Beskeder
-- [ ] Brødkrumme
-- [x] Cards
-- [ ] Cookiemeddelelse
-- [ ] Datoangivelse
-- [ ] Datovælger
-- [ ] Detaljer
-- [x] Dropdown-menu
-- [ ] Faneblade
-- [x] Fejlmeddelelser
-- [x] Fejlopsummering
-- [x] Felter
-- [ ] Footers
-- [ ] Formular
-- [ ] Funktionslink
-- [ ] Headers
-- [x] Knapper
-- [ ] Modalvindue
-- [ ] Notifikation
-- [ ] Overflow menu
-- [ ] Paginering
-- [x] Radioknap
-- [ ] Sidenavigation
-- [ ] Skip-link
-- [ ] Spinner
-- [ ] Sprogvælger
-- [ ] Strukturerede lister
-- [ ] Søgefelt
-- [ ] Tilbage link
-- [ ] Tabeller
-- [ ] Tags
-- [ ] Tekstområde
-- [ ] Tjekboks
-- [x] Toggle switch
-- [ ] Tooltip
-- [ ] Trinindikatorer
-- [x] Vedhæft fil (Upload)
-
-## Felter
-
-- [x] fds-input
-- [x] fds-textarea
-- [x] fds-checkbox
-- [x] fds-radio
-- [x] fds-dropdown
-- [ ] fds-number currency
-
-
-## Fejl og Validering
-- [x] xfds-validate
-- [x] fds-fejlopsummering
-- [x] fds-fejlmeddelelse
-
-
-
-## Form
-Form element indholder gruppering af, label, hint, hovedelement, fejlbesked, validering
-- [x] fds-form-group
-- [x] fds-form-input
-- [x] fds-form-textarea
-- [ ] fds-form-number
-- [ ] fds-form-email
-- [ ] fds-form-radio
-- [ ] fds-form-checkbox
-- [ ] fds-form-checkboxes
-- [ ] fds-form-dropdown
-
-## Knapper og Link
-- [x] fds-button
-- [x] fds-button-icon
-- [x] fds-button-spinner
-- [ ] fds-link
-- [ ] fds-function-link
-
-## Layout - Header, Navigation og Footer
-
-
-## Ikke kategoriseret endnu
-- [ ] fds-trin
-- [x] fds-alert
-- [x] fds-accordian
-- [ ] fds-modal
-- [ ] fds-button-sure
-- [ ] fds-progress
-- [ ] fds-icon
-- [x] navitems
-
-## TODO
-- Header, mangler række 4 og 5 https://designsystem.dk/komponenter/headers/
-- Header lidt bøvlet brug
-- Gennemgå aria/a11y etc for hvert komponent
-- Virk/borger tema

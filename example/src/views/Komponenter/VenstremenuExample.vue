@@ -14,7 +14,7 @@
     <hr class="my-6" />
     <h3>Venstremenu automatiseret</h3>
     <p class="font-lead">med for loop og dynamisk navngivning af slot name</p>
-    <fds-venstremenu-list v-model="sideTabs" showIndex>
+    <fds-venstremenu-side v-model="sideTabs" showIndex>
       <template v-slot:[tab.key] v-for="tab of sideTabs" :key="tab.key">
         <h2>{{ tab.title }}</h2>
         <p>
@@ -25,12 +25,12 @@
           velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
         </p>
       </template>
-    </fds-venstremenu-list>
+    </fds-venstremenu-side>
 
     <hr class="my-6" />
 
     <h3>Venstremenu automatiseret</h3>
-    <fds-venstremenu-list v-model="sideTabs">
+    <fds-venstremenu-side v-model="sideTabs">
       <template v-slot:[`suppe`]>
         <h2>Suppe</h2>
         <p>
@@ -72,7 +72,7 @@
           velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
         </p>
       </template>
-    </fds-venstremenu-list>
+    </fds-venstremenu-side>
   </section>
 </template>
 

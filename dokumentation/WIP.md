@@ -84,11 +84,9 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 
 ## TODO
 
-- fjern: router fra modul - op til bruger selv at håndtere dette
 - fds-link
 - fds-icon
 - fds-sprogvaelger
-- fds-trinindikatorer
 - fds-fil-upload/list refak
 - fds-typegrafy / fds-t
 - Overvej knapper variants ?

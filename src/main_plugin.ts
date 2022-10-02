@@ -78,7 +78,7 @@ import XFdsValidate from '@/components/extra/xfds-validate.vue';
 import XFdsFormgroup from '@/components/extra/xfds-formgroup.vue';
 import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
 import FdsVenstremenuSub from '@/components/fds-venstremenu-sub.vue';
-import FdsVenstremenuList from '@/components/fds-venstremenu-list.vue';
+import FdsVenstremenuSide from '@/components/fds-venstremenu-side.vue';
 import FdsVenstremenu from '@/components/fds-venstremenu.vue';
 
 export * from '@/model/fds.model';
@@ -135,7 +135,7 @@ function install (app: App): void {
 
   app.component('fds-nav-link', FdsNavLink);
   app.component('fds-funktionslink', FdsFunktionslink);
-  app.component('fds-venstremenu-list', FdsVenstremenuList);
+  app.component('fds-venstremenu-side', FdsVenstremenuSide);
   app.component('fds-venstremenu-sub', FdsVenstremenuSub);
   app.component('fds-venstremenu', FdsVenstremenu);
   app.component('fds-tooltip', FdsTooltip);
@@ -171,7 +171,7 @@ export {
   FdsStruktureredeListe,
   FdsFaneblade,
   FdsFanebladeList,
-  FdsVenstremenuList,
+  FdsVenstremenuSide,
   FdsVenstremenuSub,
   FdsVenstremenu,
   FdsHint,
