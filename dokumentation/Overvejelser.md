@@ -63,20 +63,6 @@ Istedet for at give en liste med, give muligfor at direkte at skrive sit "a" tag
 ```
 
 
-## Overvejelser
-- Dansk navngivning af komponenter
-- Bedre folder struktur under components
-- Hjælpe klasser til bg og color - https://designsystem.dk/design/farver/
-- Giver det mening at lave komponenter til layout ? - header m.m., eller er det nok med hjælpe komp. som Navigation
-- Hvilke komponenter skal være ren render
-- Skal route-link være en del af lib - pt bruges af `fds-nav-item-route`
-- Skal vi benytte FDS JS e.g - eller lave egen
- ``` new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();```
-- Patterns https://designsystem.dk/eksempler/patterns/session-udloeber/
-- 
-
-
-
 
 ## Layout
 Forslag til hvordan layout/implementering kunne laves?

@@ -24,9 +24,7 @@
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="txtEfternavn" id="formid"></fds-input>
-        <fds-input-limit
-            :modelValue="txtEfternavn"
-            :limit="20" />
+        <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
       </div>
 
       <fds-pre :json="{ txtEfternavn }" />
@@ -80,6 +78,36 @@
         <pre v-text="codePrefixSuffix"></pre>
       </template>
     </fds-component-preview>
+
+    <fds-component-preview header="Søg knap">
+      <div class="form-group">
+        <fds-label id="searchtxt">Input med knap ikon</fds-label>
+        <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchtxt">
+          <template #button>
+            <button class="button button-search">
+              <svg class="icon-svg m-0" aria-hidden="true">
+                <use xlink:href="#search"></use></svg
+              ><span class="sr-only"> Søg </span>
+            </button>
+          </template>
+        </fds-input>
+      </div>
+
+      <div class="form-group">
+        <fds-label id="searchbtn">Input med knap tekst</fds-label>
+        <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchbtn">
+          <template #button>
+            <button class="button button-search">Søg</button>
+          </template>
+        </fds-input>
+      </div>
+      <template #description>
+        <p class="italic">Det er muligt at tilknytte knap med ikon eller tekst til et inputfelt.</p>
+      </template>
+      <template #code>
+        <pre v-text="codeInputKnap"></pre>
+      </template>
+    </fds-component-preview>
   </section>
 </template>
 
@@ -90,6 +118,7 @@ const txtFornavn = ref('');
 const txtEfternavn = ref('');
 const txtPre = ref('');
 const txtSuffix = ref('');
+const txtSearch = ref('');
 const noBeloeb = ref(0);
 
 const code = `
@@ -118,5 +147,23 @@ const codePrefixSuffix = `
 
 <fds-input v-model="txtSuffix" suffix="suffix" id="txtSuffix"></fds-input>
 
+`;
+
+const codeInputKnap = `
+<fds-input v-model="txtSearch" placeholder="Søg efter..." id="search">
+  <template #button>
+    <button class="button button-search">
+      <svg class="icon-svg m-0" aria-hidden="true">
+        <use xlink:href="#search"></use></svg
+      ><span class="sr-only"> Søg </span>
+    </button>
+  </template>
+</fds-input>
+
+<fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchbtn">
+  <template #button>
+    <button class="button button-search">Søg</button>
+  </template>
+</fds-input>
 `;
 </script>

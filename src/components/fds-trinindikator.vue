@@ -6,7 +6,7 @@
       :data-js-target="`#${formid}`"
       aria-haspopup="true"
       aria-expanded="false">
-      {{ header }} {{ currentStepIndex+1 }} af {{ mVal.length }}
+      {{ header }} {{ currentStepIndex + 1 }} af {{ mVal.length }}
       <svg
         class="icon-svg"
         aria-hidden="true"
@@ -32,14 +32,12 @@
               role="menuitem"
               @click="navigate(item)">
               <span class="sidenav-number">
-                {{ index + 1 + `. ` }}
-              </span><span class="sidenav-title">
-                {{ item.title }}
-              </span>
+                {{ index + 1 + `. ` }} </span><span class="sidenav-title">
+                  {{ item.title }}
+                </span>
               <span
                 class="sidenav-icon"
                 v-if="item.icon">
-
                 <svg
                   class="icon-svg"
                   focusable="false"
@@ -50,7 +48,6 @@
               </span>
             </a>
           </li>
-
         </ul>
       </nav>
     </div>
@@ -59,11 +56,11 @@
 
 <script setup lang="ts">
 /**
-   *
-   * Komponent for Trin indikator
-   * https://designsystem.dk/komponenter/trin/
-   *
-   * */
+ *
+ * Komponent for Trin indikator
+ * https://designsystem.dk/komponenter/trin/
+ *
+ * */
 
 import { Dropdown } from 'dkfds';
 import { v4 as uuidv4 } from 'uuid';
@@ -96,8 +93,8 @@ const formid = ref(props.id ?? uuidv4());
 
 const mVal = computed(() => props.modelValue ?? []);
 const currentKey = ref('');
-const currentStepIndex = ref(0);
 const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
+const currentStepIndex = ref(0);
 
 const navigate = (item: FdsNavigationItem) => {
   if (item.disabled) {
@@ -105,8 +102,8 @@ const navigate = (item: FdsNavigationItem) => {
   }
 
   tabsList.value = navigationService.setActive(tabsList.value, item.key);
-  currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
   currentKey.value = item.key;
+  currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
 
   emit('update:modelValue', tabsList.value);
   emit('navigate', currentKey.value);

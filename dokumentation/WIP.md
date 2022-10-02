@@ -72,6 +72,7 @@ Overvej ekstra komponenter som
 - Side/page load bar - progressbar
 - Jumbotron - se top https://designsystem.dk/
 - Off-canvas
+- Slider
 - etc.
 
 ### Fase 7
