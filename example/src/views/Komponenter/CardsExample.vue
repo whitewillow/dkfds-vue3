@@ -77,7 +77,6 @@
           <fds-card class="card-align-height">
             <template #custom>
               <div class="card-content">
-                <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
                 <div class="row bg-success-light p-6">
                   <div class="col-12 align-text-left">
                     <h2 class="h3 mb-0">3 ofte stillede spørgsmål</h2>
@@ -126,10 +125,7 @@
       </div>
 
       <template #description>
-        <p class="italic">
-          Badges er grafiske markører, som du kan bruge til at gøre opmærksom på nyt eller vigtigt
-          indhold.
-        </p>
+        <p class="italic">Udvidet brug af cards</p>
       </template>
       <template #code>
         <pre v-text="props"></pre>
@@ -149,13 +145,52 @@ const code = `
 `;
 
 const props = `
-overskrift: {
-  type: String,
-  default: null,
-},
-subheader: {
-  type: String,
-  default: null,
-},
+<fds-card class="card-align-height">
+  <template #custom>
+    <div class="card-content">
+      <div class="row bg-success-light p-6">
+        <div class="col-12 align-text-left">
+          <h2 class="h3 mb-0">3 ofte stillede spørgsmål</h2>
+          <ul class="mt-0 noindent-list">
+            <li>In viverra faucibus lorem?</li>
+            <li>Phasellus posuere neque?</li>
+            <li>Nullam quis nunc dui?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-header">
+      <h2 class="header-title">Header</h2>
+      <p class="sub-header">Understøttende tekst</p>
+    </div>
+
+    <div class="card-footer card-action">
+      <div class="action-buttons">
+        <button class="button button-secondary">Sekundærknap</button
+        ><button class="button button-tertiary">Tertiærknap</button>
+      </div>
+      <div class="action-links">
+        <ul class="nobullet-list">
+          <li>
+            <a href="javascript:void(0);" class="default link state"
+              >Et link til et sted i løsningen</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="icon-link"
+              >Et link til et sted uden for løsningen<svg
+                class="icon-svg"
+                aria-hidden="true"
+                focusable="false"
+                tabindex="-1"
+              >
+                <use xlink:href="#open-in-new"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </template>
+</fds-card>
 `;
 </script>

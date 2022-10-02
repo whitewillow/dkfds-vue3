@@ -90,7 +90,7 @@
             </li>
             <li role="none" :class="[{ current: isPartOfMenu('about') }]">
               <fds-nav-link @click="router.push({ name: 'about' })" title="Link title">
-                Om os
+                Fællesskab
               </fds-nav-link>
             </li>
           </ul>

@@ -1,0 +1,7 @@
+.character-limit {
+  margin-top: 4px;
+
+  &.limit-exceeded {
+    color: #c00;
+  }
+}

@@ -60,11 +60,14 @@ defineProps({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+// TODO: scoped virker ikke
+/*
 .character-limit {
   margin-top: 4px;
   &.limit-exceeded {
     color: #c00;
   }
 }
+*/
 </style>

@@ -137,10 +137,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     key: 'komponentradioknap',
     title: 'Radioknap',
   },
-  {
-    key: 'komponentvenstremenu',
-    title: 'Venstremenu',
-  },
+
   {
     key: 'komponentskip',
     title: 'Skip-link',
@@ -202,6 +199,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentvedhaeft',
     title: 'Vedhæft fil',
+  },
+  {
+    key: 'komponentvenstremenu',
+    title: 'Venstremenu',
   },
 ] as FdsNavigationItem[]);
 
