@@ -2,7 +2,7 @@
   <a
     href="javascript:void(0);"
     class="function-link"
-    :class="[{ disabled: disabled }, { asLink: linkStyle }]">
+    :class="[{ disabled: disabled }]">
     <svg
       class="icon-svg"
       focusable="false"
@@ -23,10 +23,6 @@ defineProps({
     default: '',
   },
   disabled: {
-    type: Boolean,
-    default: false,
-  },
-  linkStyle: {
     type: Boolean,
     default: false,
   },
