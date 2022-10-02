@@ -1,39 +1,40 @@
-# dkfds-vue3
+# dkfds-vue3 Overvejelser
 
-## Project setup
+## Manuel tilgang - venstremenu og trin
+
+Overvej at, også, tilbyde en mere manuel tilgang til hhv venstremenu og trin m.fl.
+Istedet for at give en liste med, give muligfor at direkte at skrive sit "a" tag.
+
+```html
+
+<fds-trinindikator
+        @navigate="trinNavKey = $event">
+        
+  <template v-slot:[`0`]> 
+    <a href='#' role='menuitem'>
+      <span class='sidenav-number'>1.</span>
+      <span class='sidenav-title'>Lorem ipsum</span>
+      <span class='sidenav-icon'>
+        <svg class='icon-svg' aria-hidden='true' focusable='false' tabindex='-1'>
+          <use xlink:href='#done'></use>
+        </svg>
+      </span>
+    </a>
+  </template>
+  <template v-slot:[`1`]> 
+    <a href='#' role='menuitem'>
+      <span class='sidenav-number'>2.</span>
+      <span class='sidenav-title'>Lorem ipsum</span>
+      <span class='sidenav-icon'>
+        <svg class='icon-svg' aria-hidden='true' focusable='false' tabindex='-1'>
+          <use xlink:href='#done'></use>
+        </svg>
+      </span>
+    </a>
+  </template>
+</fds-trinindikator>
+
 ```
-npm install
-npm run build-vite-link
-```
-Herefter kan man køre `example` siden:
-```
-cd example
-npm run serve
-```
-
-Efterfølgende, under udvikling, kan man kører fra `/`
-```
-npm run build-vite-link
-cd example
-npm run serve
-```
-
-## Udvikling
-Man kan nøjes med at udvikle på root
-
-```npm run serve```
-
-denne spinner pt main.ts & app.ts op
-
-Dette burde nok laves om så foldere som:
-
-- dev_components
-- dev_views
-- router
-  
-Ikke fylder op - bruges ikke af modulet.
-overvej pnpm ?
-
 
 
 ### Customize configuration
@@ -112,8 +113,8 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 Forslag til hvordan layout/implementering kunne laves?
 
 ```html
-
-<fds theme="virk/borger">
+// ? Kan det lade sig gøre - eftersom det er op til bruger selv at importe virk eller borger
+<fds theme="virk/borger"> 
     <fds-headers>
         // Indsætter auto skip link til main
         // 2 obligatoriske headers

@@ -119,7 +119,6 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Overflow menu
 - [ ] Paginering
 - [x] Radioknap
-- [x] Sidenavigation
 - [ ] Skip-link
 - [x] Spinner
 - [ ] Sprogvælger
@@ -132,8 +131,9 @@ npm create vite@latest my-vue-app -- --template vue-ts-dkfds
 - [x] Tjekboks
 - [x] Toggle switch
 - [x] Tooltip
-- [ ] Trinindikatorer
+- [x] Trinindikatorer
 - [x] Vedhæft fil (Upload)
+- [x] Venstremenu
 
 ## Felter
 
