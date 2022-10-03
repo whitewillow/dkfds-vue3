@@ -27,7 +27,7 @@ TODO: mere beskrivelse
 
 
 
-Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example)
+Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig under udarbejdelse)
 
 # Brug det:
 
