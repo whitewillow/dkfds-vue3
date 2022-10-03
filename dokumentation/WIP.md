@@ -11,12 +11,14 @@ Eksempel side udstilles på Git Pages.
 - Datovælger
 
 ## v0.4
-Alle komponenter er lavet, undtagen:
-- Skip link
-- Toastbesked
-- Headers
-- Footers
-- Cookiemeddelelse - LAVES IKKE
+- Alle komponenter er lavet, undtagen:
+  - Skip link
+  - Toastbesked
+  - Headers
+  - Footers
+  - Cookiemeddelelse - LAVES IKKE
+- Gennemgang af komponent navngivning
+- Gennemgang af komponent properties
 
 ## v0.5
 Dokumentation via:
