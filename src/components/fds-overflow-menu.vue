@@ -1,21 +1,22 @@
 <template>
-  <div class="overflow-menu overflow-menu--open-right">
+  <div class="overflow-menu">
     <button
       class="button-overflow-menu js-dropdown"
       :id="`button_${formid}`"
       :data-js-target="`#${formid}`"
       aria-haspopup="true"
       :aria-expanded="false">
-      {{ header }}
-      <svg
-        class="icon-svg"
-        aria-hidden="true"
-        focusable="false">
-        <use :xlink:href="`#${icon}`"></use>
-      </svg>
+      <span>{{ header }}
+        <svg
+          class="icon-svg"
+          aria-hidden="true"
+          focusable="false">
+          <use :xlink:href="`#${icon}`"></use>
+        </svg>
+      </span>
     </button>
     <div
-      class="overflow-menu-inner"
+      class="overflow-menu-inner collapsed"
       :id="formid"
       :aria-hidden="true">
       <slot />

@@ -30,14 +30,38 @@
         </template>
       </fds-header-solution>
       <fds-header-navigation>
-        <li
-          role="none"
-          class="current">
+        <li role="none">
           <fds-nav-link
             href="/forside"
             title="Link title">
             Forside
           </fds-nav-link>
+        </li>
+        <li class="current">
+          <fds-overflow-menu header="Overflow menu eks">
+            <ul class="overflow-list">
+              <li class="active">
+                <a href="#">
+                  Subsektion med en meget lang titel som går i flere linier
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Subsektion title
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Subsektion title
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Subsektion title som også er forholdsvis lang
+                </a>
+              </li>
+            </ul>
+          </fds-overflow-menu>
         </li>
 
         <template #mobil>

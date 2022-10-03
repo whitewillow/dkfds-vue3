@@ -36,3 +36,53 @@ body {
 header .navbar .search-form {
   align-self: center;
 }
+
+
+
+/*
+
+Styling for at kunne bruge samme overflow komponent i menu
+
+*/
+
+.nav-primary .overflow-menu {
+
+  .icon-svg {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .nav-primary .overflow-menu {
+
+    .icon-svg {
+      display: inline-block;
+    }
+  }
+
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=false] {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=true] {
+    color: white;
+
+    .icon-svg {
+      fill: white;
+    }
+  }
+
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=true] {
+    background-image: none;
+    background-color: white;
+  }
+
+  .nav-primary .overflow-menu .button-overflow-menu span {
+    padding-right: 0px;
+  }
+
+
+}
