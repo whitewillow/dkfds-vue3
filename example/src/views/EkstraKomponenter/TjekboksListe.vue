@@ -7,7 +7,7 @@
         v-model="checkboxListForm"
       />
 
-      <fds-pre :json="checkboxListForm" />
+      <fds-pre header="v-model for checkbox liste" :json="checkboxListForm" />
 
       <template #description>
         <p class="italic">

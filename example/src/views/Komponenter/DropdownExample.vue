@@ -3,7 +3,7 @@
     <fds-component-preview header="Eksempel">
       <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
 
-      <fds-pre :json="{ dropdownVal }" />
+      <fds-pre header="v-model" :json="{ dropdownVal }" />
       <template #description>
         <p class="italic">
           Anvend kun dropdown menuer, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren

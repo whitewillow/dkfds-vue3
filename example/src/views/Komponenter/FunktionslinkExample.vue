@@ -4,7 +4,7 @@
       <fds-funktionslink title="Klik for event" @click="handleFunkClick">
         Funktionslink
       </fds-funktionslink>
-      <fds-pre :json="{ funktionsLinkClick }" />
+      <fds-pre header="Klik" :json="{ funktionsLinkClick }" />
 
       <template #description>
         <p class="italic">
@@ -16,7 +16,7 @@
       </template>
     </fds-component-preview>
 
-    <fds-component-preview header="Som link">
+    <fds-component-preview header="Med ikon og Som link">
       <fds-funktionslink
         @click="$router.push({ name: 'about' })"
         icon="contact-support"

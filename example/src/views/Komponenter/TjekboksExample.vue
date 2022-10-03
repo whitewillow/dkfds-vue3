@@ -8,13 +8,13 @@
       </fds-checkbox-list>
     </xfds-formgroup>
 
-    <fds-pre :json="checkboxList" />
+    <fds-pre header="v-model" :json="checkboxList" />
 
     <xfds-formgroup label="Single Checkbox">
       <fds-checkbox v-model="oneChecked" class="mt-2"> Et valg </fds-checkbox>
       <fds-checkbox v-model="twoChecked" small> Andet valg - small </fds-checkbox>
 
-      <fds-pre :json="{ oneChecked, twoChecked }" />
+      <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
     </xfds-formgroup>
   </section>
 </template>

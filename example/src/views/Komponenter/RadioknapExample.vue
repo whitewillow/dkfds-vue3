@@ -22,7 +22,7 @@
       </fds-radio-toggle>
     </xfds-formgroup>
 
-    <fds-pre :json="{ radioVal, toggleRadio }" />
+    <fds-pre header="v-model" :json="{ radioVal, toggleRadio }" />
   </section>
 </template>
 

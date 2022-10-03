@@ -8,7 +8,7 @@
         v-model="product.type"
       />
 
-      <fds-pre :json="product" />
+      <fds-pre header="v-model for radio" :json="product" />
 
       <template #description>
         <p class="italic">

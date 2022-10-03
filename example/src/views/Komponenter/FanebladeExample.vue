@@ -24,7 +24,7 @@
         </fds-faneblad-item>
       </fds-faneblade>
 
-      <fds-pre :json="{ fanebladManueltId }" />
+      <fds-pre header="Valgt fane" :json="{ fanebladManueltId }" />
 
       <template #description>
         <p class="italic">

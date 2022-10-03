@@ -2,7 +2,7 @@
   <section>
     <fds-toggle-switch v-model="toggleswitch" />
     <div>
-      <fds-pre :json="{ toggleswitch }" />
+      <fds-pre header="v-model" :json="{ toggleswitch }" />
     </div>
   </section>
 </template>

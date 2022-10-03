@@ -32,7 +32,7 @@
         </template>
       </xfds-form-input>
 
-      <fds-pre :json="user" />
+      <fds-pre header="Object data" :json="user" />
 
       <template #description>
         <p class="italic">

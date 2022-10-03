@@ -48,14 +48,6 @@
     <div class="container">
       <div class="row py-9">
         <div class="col-12 col-lg-4">
-          <h2 class="mt-0">Implementering</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto perspiciatis
-            praesentium et vero error molestiae, reiciendis id nulla tempore similique dicta.
-          </p>
-          <p><a href="/design/" class="bold-link">Følg designet</a></p>
-        </div>
-        <div class="col-12 col-lg-4">
           <h2 class="mt-0">Komponenter</h2>
           <p>
             Komponenterne er byggeklodserne, som du kan bruge til at bygge den løsning dine brugere
@@ -77,6 +69,19 @@
             <router-link :to="{ name: 'ekstrakomponenter' }" class="bold-link">
               Brug Ekstra komponenter
             </router-link>
+          </p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h2 class="mt-0">Implementering</h2>
+          <p>
+            Kom hurtigt igang med bruge komponentbiblioteket: <br />
+            <code>npm install -S dkfds-vue3</code> <br />
+            Læs mere på github
+          </p>
+          <p>
+            <a href="https://github.com/whitewillow/dkfds-vue3" class="bold-link"
+              >Github dkfds-vue3</a
+            >
           </p>
         </div>
       </div>

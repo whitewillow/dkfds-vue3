@@ -8,7 +8,7 @@
         <fds-input v-model="txtFornavn" id="formid"></fds-input>
       </div>
 
-      <fds-pre :json="{ txtFornavn }" />
+      <fds-pre header="v-model" :json="{ txtFornavn }" />
 
       <template #description>
         <p class="italic">Tekstfelt</p>
@@ -27,7 +27,7 @@
         <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
       </div>
 
-      <fds-pre :json="{ txtEfternavn }" />
+      <fds-pre header="v-model" :json="{ txtEfternavn }" />
 
       <template #description>
         <p class="italic">Tekstfelt</p>
@@ -69,7 +69,7 @@
         ></fds-input-number>
       </div>
       <div>
-        <fds-pre :json="{ noBeloeb }" />
+        <fds-pre header="v-model" :json="{ noBeloeb }" />
       </div>
       <template #description>
         <p class="italic">Nummer tekstfelt.</p>

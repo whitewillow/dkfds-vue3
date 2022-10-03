@@ -23,7 +23,7 @@
         v-model="lager.pris"
       />
 
-      <fds-pre :json="lager" />
+      <fds-pre header="Object data" :json="lager" />
 
       <template #description>
         <p class="italic">

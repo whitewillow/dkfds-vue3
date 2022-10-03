@@ -8,7 +8,7 @@
         v-model="dropdownVal"
       />
 
-      <fds-pre :json="{ dropdownVal }" />
+      <fds-pre header="v-model for dropdown" :json="{ dropdownVal }" />
 
       <template #description>
         <p class="italic">

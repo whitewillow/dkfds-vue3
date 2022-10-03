@@ -23,7 +23,7 @@
         Bornholm
       </fds-tag>
 
-      <fds-pre :json="{ antalIconClick, antalKnapClick }" />
+      <fds-pre header="Klik event" :json="{ antalIconClick, antalKnapClick }" />
 
       <template #description>
         <p class="italic">

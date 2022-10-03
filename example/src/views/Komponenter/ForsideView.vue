@@ -1,9 +1,11 @@
 <template>
   <h1>Komponenter</h1>
-  <p class="font-lead">Ekstra Komponenter der hjælper dig endnu mere på vej</p>
+  <p class="font-lead">
+    Genanvendelige standard komponenter, bygget over "Det fælles Designsystem". Komponenterne kan
+    sammensættes på mange forskellige måder og forskellig mønstre
+  </p>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat blanditiis facilis aliquid
-    voluptatibus accusamus corporis beatae sapiente obcaecati vitae ex quisquam impedit quas id
-    consequuntur quidem, atque laboriosam necessitatibus explicabo.
+    Oversigten til venstre viser listen over mulige standard komponenter. Klik ind på de enkelte for
+    at se eksempel og hvordan de bruges
   </p>
 </template>

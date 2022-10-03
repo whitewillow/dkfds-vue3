@@ -30,6 +30,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'about',
     component: loadView('AboutView.vue'),
   },
+  { path: '/:pathMatch(.*)*', redirect: { name: 'forside' } },
 ];
 
 const router = createRouter({

@@ -9,7 +9,7 @@
         :validations="[hasContent, charactersMinLength(10)]"
       />
 
-      <fds-pre :json="product" />
+      <fds-pre header="v-model" :json="product" />
 
       <template #description>
         <p class="italic">

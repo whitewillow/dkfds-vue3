@@ -17,7 +17,7 @@
         </xfds-formgroup>
       </xfds-validate>
 
-      <fds-pre :json="user" />
+      <fds-pre header="object data" :json="user" />
 
       <h2>Validering komponent</h2>
       <div class="col-10">
@@ -47,15 +47,15 @@
           fejlbesked <code>errorMessage</code>
         </fds-strukturerede-liste>
       </div>
-      <fds-pre :code="codeValidate" />
+      <fds-pre header="properties" :code="codeValidate" />
 
       <h2>Validerings metoder</h2>
 
       <p>Konceptet er at hvis der returneres en fejlbesked <code>string</code> så er der fejl</p>
       <p>returneres der <code>null</code> er modelValue valid</p>
 
-      <fds-pre :code="codeVal1" />
-      <fds-pre :code="codeVal2" />
+      <fds-pre header="eks på valideringsmetode" :code="codeVal1" />
+      <fds-pre header="eks på valideringsmetode" :code="codeVal2" />
 
       <template #description>
         <p class="italic">Komponenten <code>xfds-validate</code> er en valideringswrapper.</p>

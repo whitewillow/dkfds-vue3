@@ -8,7 +8,7 @@
         <fds-input v-model="user.name" :id="formid"></fds-input>
       </xfds-formgroup>
 
-      <fds-pre :json="user" />
+      <fds-pre header="object data" :json="user" />
 
       <template #description>
         <p class="italic">Komponenten <code>xfds-formgroup</code> er en wrapper. se koden</p>
