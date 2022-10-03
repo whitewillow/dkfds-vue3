@@ -110,6 +110,6 @@ npm run serve
 
 ## Faser og Mangler:
 
-Se [Work in progress](./dokumentation/WIP.md)
+Se [Roadmap](./dokumentation/WIP.md)
 
 Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumentation/UdviklingsGuide.md)
