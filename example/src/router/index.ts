@@ -33,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.NODE_ENV === 'production' ? '/dkfds-vue3-example/' : '/'),
   routes,
   scrollBehavior(to) {
     // , from, savedPosition
