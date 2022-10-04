@@ -6,7 +6,7 @@ Nedestående er Roadmap op til endelig release af DKDFS Vue 3.
 ## v0.2 - :heavy_check_mark:
 Eksempel side udstilles på Git Pages.
 
-## v0.3
+## v0.3 - igang
 - Datoangivelse
 - Datovælger
 - Paginering
