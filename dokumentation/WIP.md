@@ -3,12 +3,13 @@
 Nedestående er Roadmap op til endelig release af DKDFS Vue 3.
 
 
-## v0.2 - afventer
+## v0.2 - :white_check_mark:
 Eksempel side udstilles på Git Pages.
 
 ## v0.3
 - Datoangivelse
 - Datovælger
+- Paginering
 
 ## v0.4
 - Alle komponenter er lavet, undtagen:
@@ -17,6 +18,7 @@ Eksempel side udstilles på Git Pages.
   - Headers
   - Footers
   - Cookiemeddelelse - LAVES IKKE
+  - Tabeller - LAVES IKKE
 - Gennemgang af komponent navngivning
 - Gennemgang af komponent properties
 
