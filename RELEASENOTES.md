@@ -1,8 +1,10 @@
 
-# 0.1.8
+# 0.2.0
 
 - Brug fds-overflow-menu i primary nav (top menu)
-- WIP
+- Demo side oprettet i github
+- Datoangivelse WIP
+- Datovælger WIP
 
 
 
