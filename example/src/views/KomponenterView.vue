@@ -62,12 +62,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentdatoangivelse',
     title: 'Datoangivelse',
-    icon: 'engineering',
   },
   {
     key: 'komponentdatovaelger',
     title: 'Datovælger',
-    icon: 'engineering',
   },
   {
     key: 'komponentdetaljer',
@@ -167,6 +165,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponenttabeller',
     title: 'Tabeller',
+    icon: 'feedback',
   },
   {
     key: 'komponenttags',

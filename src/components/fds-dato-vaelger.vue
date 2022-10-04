@@ -1,22 +1,15 @@
 <template>
-  <div
-    class="date-picker"
-    :id="`datepicker_${formid}`">
-    <input
-      class="form-input"
-      @input="handleInput"
-      @blur="$emit('dirty', true)"
-      :id="formid"
-      :name="formid"
-      v-model="value"
-      type="text"/>
-  </div>
+  <input
+    type="date"
+    class="form-input form-input-date"
+    @input="handleInput"
+    @blur="$emit('dirty', true)"
+    :id="formid"
+    :name="formid"
+    v-model="value"/>
 </template>
 <script setup lang="ts">
-import {
-  defineProps, defineEmits, onMounted, ref,
-} from 'vue';
-import { datePicker } from 'dkfds';
+import { defineProps, defineEmits, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({
@@ -28,13 +21,19 @@ const props = defineProps({
     default: '',
   },
 });
-const emit = defineEmits(['update:modelValue', 'dirty']);
+const emit = defineEmits(['update:modelValue', 'dirty', 'valid']);
 const formid = ref(props.id ?? uuidv4());
 const value = ref(props.modelValue);
 
-const handleInput = () => emit('update:modelValue', value.value);
+const isDateValid = (dateString: string) => {
+  const date = Date.parse(dateString);
+  return !Number.isNaN(date);
+};
 
-onMounted(async () => {
-  datePicker.on(document);
-});
+const handleValid = () => emit('valid', isDateValid(value.value));
+
+const handleInput = () => {
+  handleValid();
+  emit('update:modelValue', value.value);
+};
 </script>
