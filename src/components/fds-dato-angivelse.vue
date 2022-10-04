@@ -8,8 +8,12 @@
       </label>
       <input
         class="form-input js-calendar-day-input"
-        id="date-day"
-        value=""
+        ref="day"
+        @input="handleNextTab($event, 'day')"
+        @blur="$emit('dirty', true)"
+        @focus="($event.target as any)?.select()"
+        :id="`day_${formId}`"
+        v-model="dateObj.day"
         type="tel"
         data-min="1"
         data-max="31"
@@ -17,7 +21,7 @@
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
         title="Indskriv dag på måneden som tal"
-        aria-describedby="example-date-field-hint"/>
+        aria-describedby="example-date-field-helptext"/>
     </div>
     <div class="form-group form-group-month">
       <label
@@ -27,8 +31,12 @@
       </label>
       <input
         class="form-input js-calendar-month-input"
-        id="date-month"
-        value=""
+        ref="month"
+        @input="handleNextTab($event, 'month')"
+        @blur="$emit('dirty', true)"
+        @focus="($event.target as any)?.select()"
+        :id="`month_${formId}`"
+        v-model="dateObj.month"
         type="tel"
         data-min="1"
         data-max="12"
@@ -36,7 +44,7 @@
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
         title="Indskriv månedens nummer"
-        aria-describedby="example-date-field-hint"/>
+        aria-describedby="example-date-field-helptext"/>
     </div>
     <div class="form-group form-group-year">
       <label
@@ -46,8 +54,12 @@
       </label>
       <input
         class="form-input js-calendar-year-input"
-        id="date-year"
-        value=""
+        @blur="$emit('dirty', true)"
+        @input="handleNextTab($event, 'year')"
+        @focus="($event.target as any)?.select()"
+        ref="year"
+        :id="`year_${formId}`"
+        v-model="dateObj.year"
         type="tel"
         data-min="1900"
         data-max="3000"
@@ -55,17 +67,73 @@
         pattern="^[0-9]{0,4}$"
         data-input-regex="^[0-9]{0,4}$"
         title="Indskriv årstal"
-        aria-describedby="example-date-field-hint"/>
+        aria-describedby="example-date-field-helptext"/>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
+import { v4 as uuidv4 } from 'uuid';
 
-// defineProps({
-//   modelValue: {
-//     type: String, // json date?
-//     required: true,
-//   },
-// });
+const day = ref<HTMLInputElement | null>(null);
+const month = ref<HTMLInputElement | null>(null);
+const year = ref<HTMLInputElement | null>(null);
+
+const props = defineProps({
+  id: {
+    type: String,
+  },
+  modelValue: {
+    type: String, // JSON Date
+    default: '',
+  },
+});
+
+const emit = defineEmits(['update:modelValue', 'dirty', 'valid']);
+
+const isDateValid = (dateString: string) => {
+  const date = Date.parse(dateString);
+  return !Number.isNaN(date);
+};
+
+const getModelDate = (dateString: string) => {
+  if (isDateValid(props.modelValue)) {
+    const date = new Date(dateString);
+    return {
+      day: date.getDate().toString(),
+      month: date.getMonth().toString(),
+      year: date.getFullYear().toString(),
+    };
+  }
+  return { day: '', month: '', year: '' };
+};
+
+const formId = ref(props.id ?? uuidv4());
+const dateObj = ref<{ day: string; month: string; year: string }>(getModelDate(props.modelValue));
+
+const handleInput = () => emit('update:modelValue', [dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-'));
+
+const handleValid = () => emit(
+  'valid',
+  isDateValid([dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-')),
+);
+
+const handleNextTab = (event: Event, source: string) => {
+  const inp = event.target as HTMLInputElement;
+  if (!inp.selectionEnd || inp.selectionEnd < 2) {
+    return;
+  }
+
+  if (source === 'day') {
+    const regExString: string = day.value?.dataset.inputRegex ?? '';
+    const r = new RegExp(regExString);
+    (month.value as HTMLInputElement).focus();
+  }
+
+  if (source === 'month') {
+    (year.value as HTMLInputElement).focus();
+  }
+  handleInput();
+  handleValid();
+};
 </script>

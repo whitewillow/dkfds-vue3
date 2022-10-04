@@ -510,7 +510,7 @@
         v-model="trin"
         @navigate="trinNavKey = $event"></fds-trinindikator>
 
-      <fds-pre :json="{trinNavKey}"></fds-pre>
+      <fds-pre :json="{ trinNavKey }"></fds-pre>
       <hr />
 
       <h2>Tilbage link</h2>
@@ -654,7 +654,7 @@
           header="Fane 2"
           @click="fanebladManueltId = $event"
           id="2">
-          <h2>Fane 1</h2>
+          <h2>Fane 2</h2>
           <p>
             Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
             dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
@@ -986,17 +986,32 @@
 
       <h2>Datoer</h2>
 
-      <fds-dato-angivelse />
-      <p class="form-hint">
-        Kun MOCK - ikke lavet endnu
-      </p>
+      <xfds-formgroup #default="{ formid }">
+        <fds-label :id="formid">
+          Indsendelsesfrist
+        </fds-label>
+        <fds-dato-angivelse
+          v-model="datoAngiv"
+          @valid="datoAngivValid = $event" />
+      </xfds-formgroup>
+      <fds-pre
+        :json="{ datoAngiv, datoAngivValid }"
+        header="JSON DATE format" />
 
       <h3>Dato Vælger</h3>
 
-      <fds-dato-vaelger />
-      <p class="form-hint">
-        Kun MOCK - ikke lavet endnu - js reagere ikke som forventet
-      </p>
+      <xfds-formgroup #default="{ formid }">
+        <fds-label :id="formid">
+          Fødselsdag
+        </fds-label>
+        <fds-dato-vaelger
+          v-model="datoValg"
+          @valid="datoValgValid = $event" />
+      </xfds-formgroup>
+
+      <fds-pre
+        :json="{ datoValg, datoValgValid }"
+        header="JSON DATE format" />
 
       <hr class="my-8" />
 
@@ -1189,6 +1204,10 @@ import {
 } from '@/utils/validate-utils';
 
 const showToast = ref(false);
+const datoValg = ref('2022-12-01');
+const datoValgValid = ref(true);
+const datoAngiv = ref('2022-12-01');
+const datoAngivValid = ref(true);
 const showModal = ref(false);
 const showModalCustomFooter = ref(false);
 const progress = ref(46);
