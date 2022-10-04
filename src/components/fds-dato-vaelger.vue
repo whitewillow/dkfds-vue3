@@ -4,15 +4,18 @@
     :id="`datepicker_${formid}`">
     <input
       class="form-input"
-      required
+      @input="handleInput"
+      @blur="$emit('dirty', true)"
       :id="formid"
-      value=""
       :name="formid"
-      type="text" />
+      v-model="value"
+      type="text"/>
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from 'vue';
+import {
+  defineProps, defineEmits, onMounted, ref,
+} from 'vue';
 import { datePicker } from 'dkfds';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -20,7 +23,18 @@ const props = defineProps({
   id: {
     type: String,
   },
+  modelValue: {
+    type: String, // JSON Date
+    default: '',
+  },
 });
+const emit = defineEmits(['update:modelValue', 'dirty']);
 const formid = ref(props.id ?? uuidv4());
-onMounted(() => datePicker.on(document.body));
+const value = ref(props.modelValue);
+
+const handleInput = () => emit('update:modelValue', value.value);
+
+onMounted(async () => {
+  datePicker.on(document);
+});
 </script>

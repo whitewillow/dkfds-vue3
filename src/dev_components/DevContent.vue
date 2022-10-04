@@ -510,7 +510,7 @@
         v-model="trin"
         @navigate="trinNavKey = $event"></fds-trinindikator>
 
-      <fds-pre :json="{trinNavKey}"></fds-pre>
+      <fds-pre :json="{ trinNavKey }"></fds-pre>
       <hr />
 
       <h2>Tilbage link</h2>
@@ -654,7 +654,7 @@
           header="Fane 2"
           @click="fanebladManueltId = $event"
           id="2">
-          <h2>Fane 1</h2>
+          <h2>Fane 2</h2>
           <p>
             Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
             dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
@@ -993,7 +993,8 @@
 
       <h3>Dato Vælger</h3>
 
-      <fds-dato-vaelger />
+      <fds-dato-vaelger v-model="datoValg" />
+      <fds-pre :json="{ datoValg }" />
       <p class="form-hint">
         Kun MOCK - ikke lavet endnu - js reagere ikke som forventet
       </p>
@@ -1189,6 +1190,7 @@ import {
 } from '@/utils/validate-utils';
 
 const showToast = ref(false);
+const datoValg = ref('');
 const showModal = ref(false);
 const showModalCustomFooter = ref(false);
 const progress = ref(46);
