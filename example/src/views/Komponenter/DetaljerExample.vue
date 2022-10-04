@@ -24,8 +24,6 @@
         <pre v-text="code"></pre>
       </template>
     </fds-component-preview>
-
-    <h2>Detaljer</h2>
   </section>
 </template>
 

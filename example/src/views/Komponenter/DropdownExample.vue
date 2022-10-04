@@ -14,8 +14,6 @@
         <pre v-text="code"></pre>
       </template>
     </fds-component-preview>
-
-    <h2>Dropdown-menu</h2>
   </section>
 </template>
 
