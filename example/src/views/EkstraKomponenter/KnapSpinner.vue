@@ -26,9 +26,9 @@
       </template>
     </fds-component-preview>
 
-    <hr class="my-8" />
+    <hr class="my-6" />
 
-    <fds-component-preview header="Eksempel">
+    <fds-component-preview header="Varianter">
       <div class="row">
         <div class="col">
           <xfds-button-spinner icon="search" variant="primary" spinnerText="Søger">

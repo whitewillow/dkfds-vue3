@@ -21,7 +21,7 @@
       </template>
     </fds-component-preview>
 
-    <hr class="my-8" />
+    <hr class="my-6" />
 
     <fds-component-preview header="Eksempel med ikon">
       <p>
