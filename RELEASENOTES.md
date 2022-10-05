@@ -11,6 +11,9 @@
 - Eksempelside opdateret med Skip link
 - Eksempelside opdateret med Sprogvælger
 - Eksempelside opdateret med Brødkrumme
+- Eksempelside opdateret med Tooltip
+- Eksempelside opdateret med ToggleSwitch
+- Eksempelside opdateret med Tjekboks
 
 
 # 0.2.0

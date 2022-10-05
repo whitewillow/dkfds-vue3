@@ -50,11 +50,6 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('TjekboksListe.vue'),
       },
       {
-        path: 'formgruppe',
-        name: 'ekstraformgruppe',
-        component: loadExtraView('FormGruppe.vue'),
-      },
-      {
         path: 'knapspinner',
         name: 'ekstraknapspinner',
         component: loadExtraView('KnapSpinner.vue'),

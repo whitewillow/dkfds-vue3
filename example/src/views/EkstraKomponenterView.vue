@@ -35,10 +35,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Dropdown-menu',
   },
   {
-    key: 'ekstraformgruppe',
-    title: 'Form gruppe',
-  },
-  {
     key: 'ekstraknapspinner',
     title: 'Knap spinner',
   },
