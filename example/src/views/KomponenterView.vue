@@ -77,7 +77,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   },
   {
     key: 'komponentfaneblade',
-    title: 'Faneblade',
+    title: 'Faneblade (Tabs)',
   },
   {
     key: 'komponentfejlmeddelelser',
@@ -87,10 +87,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     key: 'komponentfejlopsummering',
     title: 'Fejlopsummering',
   },
-  {
-    key: 'komponentfelter',
-    title: 'Inputfelter',
-  },
+
   {
     key: 'komponentfooters',
     title: 'Footers',
@@ -110,8 +107,16 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     icon: 'engineering',
   },
   {
+    key: 'komponentfelter',
+    title: 'Inputfelter',
+  },
+  {
     key: 'komponentknapper',
-    title: 'Knapper',
+    title: 'Knapper (Buttons)',
+  },
+  {
+    key: 'komponentspinner',
+    title: 'Loadin spinner',
   },
   {
     key: 'komponentmodalvindue',
@@ -142,13 +147,9 @@ const navigationList = ref<Array<FdsNavigationItem>>([
 
   {
     key: 'komponentskip',
-    title: 'Skip-link',
-    icon: 'engineering',
+    title: 'Gå til sidens indhold (Skip-link)',
   },
-  {
-    key: 'komponentspinner',
-    title: 'Spinner',
-  },
+
   {
     key: 'komponentsprogvaelger',
     title: 'Sprogvælger',
