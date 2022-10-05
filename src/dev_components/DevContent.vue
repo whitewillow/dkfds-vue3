@@ -229,7 +229,10 @@
         </fds-formgroup>
         <fds-pre :json="{ dropdownVal }" />
 
-        <fds-toggle-switch v-model="toggleswitch" />
+        <fds-toggle-switch
+          v-model="toggleswitch"
+          offText="Nej"
+          onText="Ja" />
         <fds-pre :json="{ toggleswitch }" />
       </div>
 

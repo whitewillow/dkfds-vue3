@@ -11,8 +11,8 @@
     <label
       :for="formId"
       class="form-toggle-label"
-      :data-toggle-off-text="toggleOffText"
-      :data-toggle-on-text="toggleOnText">
+      :data-toggle-off-text="offText"
+      :data-toggle-on-text="onText">
       <section class="pl-2 hand">
         <slot
           v-bind:id="formId"
@@ -38,11 +38,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  toggleOffText: {
+  offText: {
     type: String,
     default: 'Fra',
   },
-  toggleOnText: {
+  onText: {
     type: String,
     default: 'Til',
   },
@@ -55,4 +55,13 @@ const handleInput = (event: Event) => emit('update:modelValue', (event?.target a
 const formId = computed(() => props.id ?? uuidv4());
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped>
+// TODO: scoped virker ikke med npm publish
+input[type='checkbox'].form-toggle ~ .form-toggle-label:before {
+  content: attr(data-toggle-off-text);
+}
+input[type='checkbox'].form-toggle:checked ~ .form-toggle-label:before {
+  content: attr(data-toggle-on-text);
+  left: 27px;
+}
+</style>

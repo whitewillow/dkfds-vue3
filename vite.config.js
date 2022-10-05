@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
+    cssCodeSplit: false,
     outDir: 'dist',
     resolve: {
       dedupe: ['vue'],
