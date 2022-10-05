@@ -43,7 +43,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   },
   {
     key: 'komponentbeskeder',
-    title: 'Beskeder',
+    title: 'Beskeder (Alerts)',
   },
   {
     key: 'komponentbroedkrumme',
