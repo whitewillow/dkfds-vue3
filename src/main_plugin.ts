@@ -39,6 +39,7 @@ import FdsBadge from '@/components/fds-badge.vue';
 import FdsTag from '@/components/fds-tag.vue';
 import FdsCard from '@/components/fds-card.vue';
 import FdsTilTop from '@/components/fds-til-top.vue';
+import FdsSprogVaelger from '@/components/fds-sprogvaelger.vue';
 
 import FdsOverflowMenu from '@/components/fds-overflow-menu.vue';
 import FdsModal from '@/components/fds-modal.vue';
@@ -107,6 +108,7 @@ function install (app: App): void {
   app.component('fds-badge', FdsBadge);
   app.component('fds-tag', FdsTag);
   app.component('fds-til-top', FdsTilTop);
+  app.component('fds-sprogvaelger', FdsSprogVaelger);
 
   app.component('fds-card', FdsCard);
   app.component('fds-input', FdsInput);
@@ -179,6 +181,7 @@ export {
   FdsPre,
   FdsBadge,
   FdsTilTop,
+  FdsSprogVaelger,
   FdsTag,
   FdsCard,
   FdsInput,

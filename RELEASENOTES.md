@@ -3,7 +3,10 @@
 
 - Knap med spinner omdøbt til xfds-button-spinner
 - fds-alert luk knap fejl rettet
-- Eksempelside opdateret med navigation
+- fds-sprogvaelger tilføjet
+- Eksempelside opdateret med Navigation
+- Eksempelside opdateret med Skip link
+- Eksempelside opdateret med Sprogvælger
 
 
 # 0.2.0

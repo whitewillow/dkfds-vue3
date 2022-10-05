@@ -981,6 +981,19 @@
           </fds-overflow-menu>
         </div>
       </div>
+      <hr class="my-8" />
+
+      <h2>Sprogvælger</h2>
+
+      <div class="container page-container">
+        <fds-sprogvaelger
+          v-model="languages"
+          @lang="selectedLangauge = $event"></fds-sprogvaelger>
+      </div>
+
+      <fds-pre
+        :json="{ selectedLangauge, languages }"
+        header="Valgt sprog" />
 
       <hr class="my-8" />
 
@@ -1194,6 +1207,7 @@ import {
   FdsFileModel,
   FdsNavigationItem,
   FdsTabItem,
+  FdsLanguageItem,
 } from '@/model/fds.model';
 import {
   arrayHasItems,
@@ -1225,6 +1239,29 @@ const twoChecked = ref(false);
 const radioVal = ref('');
 const radioValForm = ref('');
 const toggleswitch = ref(false);
+
+const selectedLangauge = ref('');
+const languages = ref<FdsLanguageItem[]>([
+  {
+    title: 'Dansk',
+    active: true,
+    lang: 'da',
+    ariaLabel: 'Valgt sprog: Dansk',
+  },
+  {
+    title: 'English',
+    active: false,
+    lang: 'en',
+    ariaLabel: 'Selected language: English',
+  },
+  {
+    title: 'Deutsch',
+    active: false,
+    lang: 'de',
+    ariaLabel: 'Gewählte Sprache: Deutsch',
+  },
+]);
+
 const toggleRadio = ref(null);
 const radioOptions = ref<FdsOptionItem[]>([
   {

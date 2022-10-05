@@ -153,7 +153,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentsprogvaelger',
     title: 'Sprogvælger',
-    icon: 'engineering',
   },
   {
     key: 'komponentstrukturerede',

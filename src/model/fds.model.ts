@@ -62,3 +62,10 @@ export interface FdsTabItem {
   disabled?: boolean;
   ignore?: boolean; // item will be ignored (filtered out)
 }
+
+export interface FdsLanguageItem {
+  title: string;
+  active: boolean;
+  lang: string; // langauge key
+  ariaLabel: string; // Valgt sprog: Dansk
+}
