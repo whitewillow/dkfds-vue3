@@ -118,6 +118,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Modalvindue',
   },
   {
+    key: 'komponentnavigation',
+    title: 'Navigation',
+  },
+  {
     key: 'komponentnotifikation',
     title: 'Notifikation (Toast)',
     icon: 'engineering',

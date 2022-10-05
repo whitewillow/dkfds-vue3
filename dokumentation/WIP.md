@@ -58,7 +58,7 @@ Release
 - Image viewer (hover fx og modal lign visning)
 - Fil drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO
   ![Drag and drop eksempel](./drag&drop.png)
-- Side/page load bar - progressbar
+- Content scroll bar - ligesom dr.dk
 - Jumbotron - se top https://designsystem.dk/
 - Off-canvas
 - Slider

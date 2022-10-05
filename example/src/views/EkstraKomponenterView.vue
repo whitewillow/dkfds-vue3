@@ -31,40 +31,44 @@ const currentNavigationKey = ref('');
 const currentItem = ref<FdsNavigationItem | undefined>();
 const navigationList = ref<Array<FdsNavigationItem>>([
   {
-    key: 'ekstratekstfelt',
-    title: 'Tekstfelt',
-  },
-  {
-    key: 'ekstranummerfelt',
-    title: 'Nummer',
-  },
-  {
-    key: 'ekstratekstomraade',
-    title: 'Tekstområde',
-  },
-  {
     key: 'ekstradropdownmenu',
     title: 'Dropdown-menu',
-  },
-  {
-    key: 'ekstraradio',
-    title: 'Radio',
-  },
-  {
-    key: 'ekstratjekboksliste',
-    title: 'Tjekbox liste',
   },
   {
     key: 'ekstraformgruppe',
     title: 'Form gruppe',
   },
   {
-    key: 'ekstraformvalidering',
-    title: 'Validate',
+    key: 'ekstraknapspinner',
+    title: 'Knap spinner',
+  },
+  {
+    key: 'ekstranummerfelt',
+    title: 'Nummer',
   },
   {
     key: 'ekstraprogressbar',
     title: 'Progressbar',
+  },
+  {
+    key: 'ekstraradio',
+    title: 'Radio',
+  },
+  {
+    key: 'ekstratekstfelt',
+    title: 'Tekstfelt',
+  },
+  {
+    key: 'ekstratekstomraade',
+    title: 'Tekstområde',
+  },
+  {
+    key: 'ekstratjekboksliste',
+    title: 'Tjekbox liste',
+  },
+  {
+    key: 'ekstraformvalidering',
+    title: 'Validate',
   },
 ] as FdsNavigationItem[]);
 

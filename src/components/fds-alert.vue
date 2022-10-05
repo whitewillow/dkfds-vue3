@@ -13,13 +13,16 @@
         <div class="alert-text pt-2">
           <slot />
         </div>
-        <a
-          href="javascript:void(0);"
+        <button
           class="alert-close"
           v-if="closeable"
           @click="handleClose">
-          <i class="icon icon-close"></i>Luk
-        </a>
+          <svg
+            class="icon-svg"
+            aria-hidden="true"
+            focusable="false">
+            <use xlink:href="#close"></use></svg>Luk
+        </button>
       </div>
     </div>
   </transition>

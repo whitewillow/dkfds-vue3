@@ -30,7 +30,6 @@ import FdsFejlopsummering from '@/components/fds-fejlopsummering.vue';
 
 import FdsButton from '@/components/fds-button.vue';
 import FdsButtonIcon from '@/components/fds-button-icon.vue';
-import FdsButtonSpinner from '@/components/fds-button-spinner.vue';
 
 import FdsAccordion from '@/components/fds-accordion.vue';
 import FdsAccordionGroup from '@/components/fds-accordion-group.vue';
@@ -80,6 +79,7 @@ import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
 import FdsVenstremenuSub from '@/components/fds-venstremenu-sub.vue';
 import FdsVenstremenuSide from '@/components/fds-venstremenu-side.vue';
 import FdsVenstremenu from '@/components/fds-venstremenu.vue';
+import XFdsButtonSpinner from '@/components/extra/xfds-button-spinner.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -125,7 +125,6 @@ function install (app: App): void {
   app.component('fds-fejlopsummering', FdsFejlopsummering);
   app.component('fds-button', FdsButton);
   app.component('fds-button-icon', FdsButtonIcon);
-  app.component('fds-button-spinner', FdsButtonSpinner);
   app.component('fds-toggle-switch', FdsToggleSwitch);
   app.component('fds-accordion', FdsAccordion);
   app.component('fds-accordion-group', FdsAccordionGroup);
@@ -151,6 +150,7 @@ function install (app: App): void {
   app.component('xfds-form-dropdown', XFdsFormDropdown);
   app.component('xfds-form-checkbox-list', XFdsFormCheckboxList);
   app.component('xfds-progressbar', XFdsProgressbar);
+  app.component('xfds-button-spinner', XFdsButtonSpinner);
 }
 
 export {
@@ -205,7 +205,7 @@ export {
   FdsButtonIcon,
   FdsIconCollection,
   FdsToggleSwitch,
-  FdsButtonSpinner,
+  XFdsButtonSpinner,
   FdsAccordion,
   FdsAccordionGroup,
   FdsAccordionItem,

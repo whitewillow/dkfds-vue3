@@ -55,6 +55,11 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('FormGruppe.vue'),
       },
       {
+        path: 'knapspinner',
+        name: 'ekstraknapspinner',
+        component: loadExtraView('KnapSpinner.vue'),
+      },
+      {
         path: 'formvalidering',
         name: 'ekstraformvalidering',
         component: loadExtraView('FormValidering.vue'),

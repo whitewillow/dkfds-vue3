@@ -125,6 +125,11 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('ModalvindueExample.vue'),
       },
       {
+        path: 'navigation',
+        name: 'komponentnavigation',
+        component: loadExtraView('NavigationExample.vue'),
+      },
+      {
         path: 'notifikation',
         name: 'komponentnotifikation',
         component: loadExtraView('NotifikationExample.vue'),

@@ -1,4 +1,11 @@
 
+# 0.2.2
+
+- Knap med spinner omdøbt til xfds-button-spinner
+- fds-alert luk knap fejl rettet
+- Eksempelside opdateret med navigation
+
+
 # 0.2.0
 
 - Brug fds-overflow-menu i primary nav (top menu)

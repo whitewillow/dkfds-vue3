@@ -1103,27 +1103,27 @@
       </p>
 
       <p>
-        <fds-button-spinner
+        <xfds-button-spinner
           @click="klikEvent"
           icon="search"
           variant="secondary"
           spinnerText="Søger">
           Søg
-        </fds-button-spinner>
-        <fds-button-spinner
+        </xfds-button-spinner>
+        <xfds-button-spinner
           icon="search"
           variant="secondary"
           :showSpinner="true"
           spinnerText="...Søger">
           Søg
-        </fds-button-spinner>
-        <fds-button-spinner
+        </xfds-button-spinner>
+        <xfds-button-spinner
           icon="search"
           variant="primary"
           :showSpinner="true"
           spinnerText="...Søger">
           Søg
-        </fds-button-spinner>
+        </xfds-button-spinner>
       </p>
 
       <p>
