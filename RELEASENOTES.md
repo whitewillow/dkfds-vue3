@@ -14,6 +14,7 @@
 - Eksempelside opdateret med Tooltip
 - Eksempelside opdateret med ToggleSwitch
 - Eksempelside opdateret med Tjekboks
+- Diverse oprydning
 
 
 # 0.2.0
