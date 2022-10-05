@@ -48,7 +48,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentbroedkrumme',
     title: 'Brødkrumme',
-    icon: 'engineering',
   },
   {
     key: 'komponentcards',

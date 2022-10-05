@@ -7,6 +7,7 @@
 - Eksempelside opdateret med Navigation
 - Eksempelside opdateret med Skip link
 - Eksempelside opdateret med Sprogvælger
+- Eksempelside opdateret med Brødkrumme
 
 
 # 0.2.0

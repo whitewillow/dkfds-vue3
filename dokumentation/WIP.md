@@ -17,6 +17,7 @@ Eksempel side udstilles på Git Pages.
   - Toastbesked
   - Headers
   - Footers
+  - Brødkrumme
   - Cookiemeddelelse - LAVES IKKE
   - Tabeller - LAVES IKKE
 - Gennemgang af komponent navngivning
@@ -30,6 +31,11 @@ Dokumentation via:
 
 ## v.0.6
 - Toastbesked
+- Layout komponenter
+  - Headers 1-5
+  - Skiplink indgår i header
+  - Brødkrumme indgår i header som liste? skal placeres 2 steder(mobilvisning)
+  - Footer - kollonner?
 
 
 ## v.0.7
