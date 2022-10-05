@@ -5,7 +5,7 @@
       <h1>Home</h1>
       <div>
         <h2>Eksempel på advanceret brug</h2>
-        <xfds-formgroup #default="{ formid }">
+        <fds-formgroup #default="{ formid }">
           <fds-label :id="formid">
             Fornavn
           </fds-label>
@@ -19,13 +19,13 @@
           <fds-input-limit
             :modelValue="txtFornavn"
             :limit="10" />
-        </xfds-formgroup>
+        </fds-formgroup>
 
         <xfds-validate
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
-          <xfds-formgroup
+          <fds-formgroup
             :is-valid="isValid"
             #default="{ formid }">
             <fds-label :id="formid">
@@ -38,14 +38,14 @@
             <fds-input
               v-model="txtEfternavn"
               :id="formid"></fds-input>
-          </xfds-formgroup>
+          </fds-formgroup>
         </xfds-validate>
 
         <xfds-validate
           :modelValue="noBeloeb"
           :validations="[numberMax(500)]"
           #default="{ isValid, errorMessage }">
-          <xfds-formgroup
+          <fds-formgroup
             :is-valid="isValid"
             #default="{ formid }">
             <fds-label :id="formid">
@@ -59,7 +59,7 @@
               v-model="noBeloeb"
               suffix="kr."
               :id="formid"></fds-input-number>
-          </xfds-formgroup>
+          </fds-formgroup>
         </xfds-validate>
       </div>
 
@@ -129,7 +129,7 @@
 
         <h2>Tekstfelt med knap</h2>
 
-        <xfds-formgroup #default="{ formid }">
+        <fds-formgroup #default="{ formid }">
           <fds-input
             v-model="txtSearch"
             placeholder="Søg efter..."
@@ -145,9 +145,9 @@
               </button>
             </template>
           </fds-input>
-        </xfds-formgroup>
+        </fds-formgroup>
 
-        <xfds-formgroup #default="{ formid }">
+        <fds-formgroup #default="{ formid }">
           <fds-input
             v-model="txtSearch"
             placeholder="Søg efter..."
@@ -158,13 +158,13 @@
               </button>
             </template>
           </fds-input>
-        </xfds-formgroup>
+        </fds-formgroup>
 
         <hr />
 
         <h2>Valg</h2>
 
-        <xfds-formgroup
+        <fds-formgroup
           label="Vælg en checkbox"
           #default="{ formid }">
           <fds-checkbox-list
@@ -174,11 +174,11 @@
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
           </fds-checkbox-list>
-        </xfds-formgroup>
+        </fds-formgroup>
 
         <fds-pre :json="checkboxList" />
 
-        <xfds-formgroup label="Single Checkbox">
+        <fds-formgroup label="Single Checkbox">
           <fds-checkbox
             v-model="twoChecked"
             class="mt-2">
@@ -189,9 +189,9 @@
             small>
             Andet valg - small
           </fds-checkbox>
-        </xfds-formgroup>
+        </fds-formgroup>
 
-        <xfds-formgroup>
+        <fds-formgroup>
           <fds-label>Vælg radio</fds-label>
 
           <fds-radio
@@ -204,11 +204,11 @@
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
           </fds-radio>
-        </xfds-formgroup>
+        </fds-formgroup>
 
         <fds-pre :json="{ radioVal }" />
 
-        <xfds-formgroup>
+        <fds-formgroup>
           <fds-label>Vælg radio toggle</fds-label>
 
           <fds-radio-toggle v-model="toggleRadio">
@@ -219,14 +219,14 @@
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
           </fds-radio-toggle>
-        </xfds-formgroup>
+        </fds-formgroup>
         <fds-pre :json="{ toggleRadio }" />
 
-        <xfds-formgroup>
+        <fds-formgroup>
           <fds-dropdown
             :options="dropdownOptions"
             v-model="dropdownVal" />
-        </xfds-formgroup>
+        </fds-formgroup>
         <fds-pre :json="{ dropdownVal }" />
 
         <fds-toggle-switch v-model="toggleswitch" />
@@ -343,7 +343,7 @@
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
-          <xfds-formgroup
+          <fds-formgroup
             :is-valid="isValid"
             #default="{ formid }">
             <fds-label :id="formid">
@@ -360,7 +360,7 @@
             <fds-input
               v-model="txtEfternavn"
               :id="formid"></fds-input>
-          </xfds-formgroup>
+          </fds-formgroup>
         </xfds-validate>
         <template #description>
           <p class="italic">
@@ -376,7 +376,7 @@
           </p>
           <ul>
             <li><code>xfds-validate</code></li>
-            <li><code>xfds-formgroup</code></li>
+            <li><code>fds-formgroup</code></li>
             <li><code>fds-label</code></li>
             <li><code>fds-fejlmeddelelse</code></li>
             <li><code>fds-hint</code></li>
@@ -999,28 +999,28 @@
 
       <h2>Datoer</h2>
 
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid">
           Indsendelsesfrist
         </fds-label>
         <fds-dato-angivelse
           v-model="datoAngiv"
           @valid="datoAngivValid = $event" />
-      </xfds-formgroup>
+      </fds-formgroup>
       <fds-pre
         :json="{ datoAngiv, datoAngivValid }"
         header="JSON DATE format" />
 
       <h3>Dato Vælger</h3>
 
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid">
           Fødselsdag
         </fds-label>
         <fds-dato-vaelger
           v-model="datoValg"
           @valid="datoValgValid = $event" />
-      </xfds-formgroup>
+      </fds-formgroup>
 
       <fds-pre
         :json="{ datoValg, datoValgValid }"
@@ -1526,7 +1526,7 @@ const codeExample = `
   :modelValue="txtEfternavn"
   :validations="[hasContent, charactersMinLength(10)]"
   #default="{ isValid, errorMessage }">
-  <xfds-formgroup
+  <fds-formgroup
     :is-valid="isValid"
     #default="{ formid }">
     <fds-label :id="formid">
@@ -1542,7 +1542,7 @@ const codeExample = `
     <fds-input
       v-model="txtEfternavn"
       :id="formid"></fds-input>
-  </xfds-formgroup>
+  </fds-formgroup>
 </xfds-validate>`;
 </script>
 <style lang="scss" scoped></style>

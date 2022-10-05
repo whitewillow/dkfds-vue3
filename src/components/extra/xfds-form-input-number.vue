@@ -5,7 +5,7 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <xfds-formgroup
+    <fds-formgroup
       :is-valid="isValid"
       :label="label"
       :tooltip="tooltip"
@@ -29,7 +29,7 @@
         }"
         @update:modelValue="handleInput"
         @dirty="touchedEvent"/>
-    </xfds-formgroup>
+    </fds-formgroup>
   </xfds-validate>
 </template>
 

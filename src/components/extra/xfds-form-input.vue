@@ -5,7 +5,7 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <xfds-formgroup
+    <fds-formgroup
       :is-valid="isValid"
       :label="label"
       :tooltip="tooltip"
@@ -35,7 +35,7 @@
           <slot name="button" />
         </template>
       </fds-input>
-    </xfds-formgroup>
+    </fds-formgroup>
   </xfds-validate>
 </template>
 

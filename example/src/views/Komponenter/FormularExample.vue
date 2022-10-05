@@ -2,7 +2,7 @@
   <section>
     <div>
       <h2>Enkeltstående komponenter</h2>
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Fornavn </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
@@ -12,7 +12,7 @@
           autocomplete="name"
           :id="formid"
         ></fds-input>
-      </xfds-formgroup>
+      </fds-formgroup>
       <p class="italic">Understøtter autocomplete patterns, som name, tel m.m.</p>
 
       <h2>Validering</h2>
@@ -22,14 +22,14 @@
         :validations="[hasContent, charactersMinLength(10)]"
         #default="{ isValid, errorMessage }"
       >
-        <xfds-formgroup :is-valid="isValid" #default="{ formid }">
+        <fds-formgroup :is-valid="isValid" #default="{ formid }">
           <fds-label :id="formid"> Efternavn </fds-label>
           <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
           </fds-fejlmeddelelse>
           <fds-hint>Indtast efternavn - må ikke være tomt og min 10 karaktere</fds-hint>
           <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
-        </xfds-formgroup>
+        </fds-formgroup>
       </xfds-validate>
 
       <xfds-validate
@@ -37,14 +37,14 @@
         :validations="[numberMax(500)]"
         #default="{ isValid, errorMessage }"
       >
-        <xfds-formgroup :is-valid="isValid" #default="{ formid }">
+        <fds-formgroup :is-valid="isValid" #default="{ formid }">
           <fds-label :id="formid"> Beløb i kr. </fds-label>
           <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
           </fds-fejlmeddelelse>
           <fds-hint>Indtast beløb - må ikke overstige 500</fds-hint>
           <fds-input-number v-model="noBeloeb" suffix="kr." :id="formid"></fds-input-number>
-        </xfds-formgroup>
+        </fds-formgroup>
       </xfds-validate>
 
       <h2>Samlet komponent</h2>

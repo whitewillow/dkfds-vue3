@@ -11,7 +11,13 @@
       <fds-pre header="object data" :json="user" />
 
       <template #description>
-        <p class="italic">Komponenten <code>fds-formgroup</code> er en wrapper. se koden</p>
+        <p class="italic">
+          Komponenten <code>fds-formgroup</code> er et wrapper komponent, der omfavner input,
+          labels, m.fl elementer - se koden
+        </p>
+        <p class="italic">
+          Komponenten generer et id, der kan tilknyttes label og input element - se kode
+        </p>
         <p class="italic">
           Kan evt bruge til at lave egne komponenter der wrapper eksempelvis ovenstående i sin egen
           validarings-komponent

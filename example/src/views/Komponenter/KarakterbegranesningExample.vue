@@ -1,17 +1,17 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> CVR nr. </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="cvr" :id="formid"></fds-input>
         <fds-input-limit :modelValue="cvr" :limit="10" />
-      </xfds-formgroup>
+      </fds-formgroup>
       <template #description>
         <p class="italic">
-          <code>fds-input-limit</code> bruges sammen med et input felt.
-          Viser med tekst Karakterbegræsningen for angivet input.
+          <code>fds-input-limit</code> bruges sammen med et input felt. Viser med tekst
+          Karakterbegræsningen for angivet input.
         </p>
       </template>
       <template #code>

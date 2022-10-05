@@ -6,14 +6,14 @@
       :validations="[hasContent, charactersMinLength(10)]"
       #default="{ isValid, errorMessage }"
     >
-      <xfds-formgroup :is-valid="isValid" #default="{ formid }">
+      <fds-formgroup :is-valid="isValid" #default="{ formid }">
         <fds-label :id="formid"> Efternavn </fds-label>
         <fds-fejlmeddelelse v-if="!isValid">
           {{ errorMessage }}
         </fds-fejlmeddelelse>
         <fds-hint>Angive gyldig afgørelse</fds-hint>
         <fds-textarea v-model="txtAfgorelse" :id="formid"></fds-textarea>
-      </xfds-formgroup>
+      </fds-formgroup>
     </xfds-validate>
 
     <h2>Samlet komponent</h2>

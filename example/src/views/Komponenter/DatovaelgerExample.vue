@@ -5,10 +5,10 @@
     </fds-alert>
 
     <fds-component-preview header="Eksempel">
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Fødselsdag </fds-label>
         <fds-dato-vaelger v-model="datoValg" @valid="datoValgValid = $event" />
-      </xfds-formgroup>
+      </fds-formgroup>
 
       <fds-pre :json="{ datoValg, datoValgValid }" header="JSON DATE format" />
 

@@ -75,12 +75,12 @@ import XFdsFormInputNumber from '@/components/extra/xfds-form-input-number.vue';
 import XFdsFormTextarea from '@/components/extra/xfds-form-textarea.vue';
 import XFdsFormCheckboxList from '@/components/extra/xfds-form-checkbox-list.vue';
 import XFdsValidate from '@/components/extra/xfds-validate.vue';
-import XFdsFormgroup from '@/components/extra/xfds-formgroup.vue';
 import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
 import FdsVenstremenuSub from '@/components/fds-venstremenu-sub.vue';
 import FdsVenstremenuSide from '@/components/fds-venstremenu-side.vue';
 import FdsVenstremenu from '@/components/fds-venstremenu.vue';
 import XFdsButtonSpinner from '@/components/extra/xfds-button-spinner.vue';
+import FdsFormgroup from '@/components/fds-formgroup.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -122,7 +122,7 @@ function install (app: App): void {
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
   app.component('fds-input-limit', FdsInputLimit);
-  app.component('xfds-formgroup', XFdsFormgroup);
+  app.component('fds-formgroup', FdsFormgroup);
   app.component('fds-fejlmeddelelse', FdsFejlmeddelelse);
   app.component('fds-fejlopsummering', FdsFejlopsummering);
   app.component('fds-button', FdsButton);
@@ -193,7 +193,7 @@ export {
   FdsLabel,
   FdsInputLimit,
   FdsTooltip,
-  XFdsFormgroup,
+  FdsFormgroup,
   FdsFejlmeddelelse,
   FdsFejlopsummering,
   XFdsValidate,

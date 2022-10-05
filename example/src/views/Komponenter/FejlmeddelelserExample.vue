@@ -1,7 +1,7 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <xfds-formgroup #default="{ formid }" :is-valid="false">
+      <fds-formgroup #default="{ formid }" :is-valid="false">
         <fds-label :id="formid"> Fornavn </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
@@ -12,7 +12,7 @@
           autocomplete="name"
           :id="formid"
         ></fds-input>
-      </xfds-formgroup>
+      </fds-formgroup>
 
       <template #description>
         <p class="italic">
@@ -32,7 +32,7 @@ import { ref } from 'vue';
 
 const txtFornavn = ref('');
 const code = `
-<xfds-formgroup #default="{ formid }" :is-valid="false">
+<fds-formgroup #default="{ formid }" :is-valid="false">
   <fds-label :id="formid"> Fornavn </fds-label>
   <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
   <fds-hint>Indtast fornavn</fds-hint>
@@ -43,6 +43,6 @@ const code = `
     autocomplete="name"
     :id="formid"
   ></fds-input>
-</xfds-formgroup>
+</fds-formgroup>
 `;
 </script>

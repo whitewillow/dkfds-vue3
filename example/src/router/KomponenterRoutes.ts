@@ -100,6 +100,11 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('FootersExample.vue'),
       },
       {
+        path: 'formgruppe',
+        name: 'komponentformgruppe',
+        component: loadExtraView('FormgruppeExample.vue'),
+      },
+      {
         path: 'formular',
         name: 'komponentformular',
         component: loadExtraView('FormularExample.vue'),

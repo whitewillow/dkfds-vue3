@@ -4,7 +4,10 @@
 - Knap med spinner omdøbt til xfds-button-spinner
 - fds-alert luk knap fejl rettet
 - fds-sprogvaelger tilføjet
+- xfds-formgroup omdøbt til fds-formgroup - er et standard komponent
+- Eksempelside opdateret med Form gruppe
 - Eksempelside opdateret med Navigation
+- Eksempelside opdateret med Radioknap
 - Eksempelside opdateret med Skip link
 - Eksempelside opdateret med Sprogvælger
 - Eksempelside opdateret med Brødkrumme

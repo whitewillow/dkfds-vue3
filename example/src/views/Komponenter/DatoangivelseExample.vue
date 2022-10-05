@@ -4,10 +4,10 @@
       Komponenten er stadig under udvikling
     </fds-alert>
     <fds-component-preview header="Eksempel">
-      <xfds-formgroup #default="{ formid }">
+      <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Indsendelsesfrist </fds-label>
         <fds-dato-angivelse v-model="datoAngiv" @valid="datoAngivValid = $event" />
-      </xfds-formgroup>
+      </fds-formgroup>
       <fds-pre :json="{ datoAngiv, datoAngivValid }" header="JSON DATE format" />
 
       <template #description>
