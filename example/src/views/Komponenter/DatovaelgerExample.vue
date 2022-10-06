@@ -1,7 +1,8 @@
 <template>
   <section>
-    <fds-alert level="warning" header="Ikke fastlagt endnu" closeable class="mb-8">
-      Komponenten er stadig under udvikling
+    <fds-alert level="info" header="Info" closeable class="mb-8">
+      Komponenten benytter ikke DKFDS kalender, da DKFDS script laver om på elementer og ikke
+      generisk nok til at bruge i denne sammenhæng
     </fds-alert>
 
     <fds-component-preview header="Eksempel">

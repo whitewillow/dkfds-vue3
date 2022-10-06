@@ -141,7 +141,6 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentpaginering',
     title: 'Paginering',
-    icon: 'engineering',
   },
   {
     key: 'komponentradioknap',

@@ -2,8 +2,10 @@
 
 # 0.2.3 - igang
 
-- fds-paginering
-
+- fds-paginering tilføjet
+- Eksempelside paginering
+- Opdateret Datovælger
+- Opdateret Datoangivelse
 
 # 0.2.2
 

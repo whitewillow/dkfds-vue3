@@ -561,11 +561,11 @@
 
       <fds-pre
         header="filter list"
-        :json="skipPaging" />
+        :json="{ skipPaging }" />
 
       <fds-pre
         header="filter list"
-        :json="filteredPagingList" />
+        :json="{ filteredPagingList }" />
 
       <hr />
 

@@ -1,5 +1,6 @@
 <template>
   <nav
+    v-if="show"
     class="pagination"
     id="pagination-ID"
     aria-label="Pagineringseksempel med 12 sider">

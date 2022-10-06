@@ -1,8 +1,5 @@
 <template>
   <section>
-    <fds-alert level="warning" header="Ikke fastlagt endnu" closeable class="mb-8">
-      Komponenten er stadig under udvikling
-    </fds-alert>
     <fds-component-preview header="Eksempel">
       <fds-formgroup #default="{ formid }">
         <fds-label :id="formid"> Indsendelsesfrist </fds-label>
