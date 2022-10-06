@@ -69,3 +69,8 @@ export interface FdsLanguageItem {
   lang: string; // langauge key
   ariaLabel: string; // Valgt sprog: Dansk
 }
+
+export interface FdsPaging {
+  index: number;
+  dotted: boolean;
+}

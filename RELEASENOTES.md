@@ -1,4 +1,10 @@
 
+
+# 0.2.3 - igang
+
+- fds-paginering
+
+
 # 0.2.2
 
 - Knap med spinner omdøbt til xfds-button-spinner

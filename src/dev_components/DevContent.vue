@@ -552,6 +552,23 @@
 
       <hr />
 
+      <h2>Paginering</h2>
+
+      <fds-paginering
+        :list="genLargeArray"
+        @filteredPage="filteredPagingList = $event"
+        @skip="skipPaging = $event"/>
+
+      <fds-pre
+        header="filter list"
+        :json="skipPaging" />
+
+      <fds-pre
+        header="filter list"
+        :json="filteredPagingList" />
+
+      <hr />
+
       <h2>Side tabs</h2>
 
       <h3>Manuel venstremenu</h3>
@@ -1199,7 +1216,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import {
   FdsErrorListItem,
@@ -1219,6 +1236,16 @@ import {
   numberMax,
   numberMin,
 } from '@/utils/validate-utils';
+
+const filteredPagingList = ref<Array<{ id: string; indhold: string }>>([]);
+const skipPaging = ref(0);
+const genLargeArray = computed((): Array<{ id: string; indhold: string }> => {
+  const totalPages = 200;
+  return [...Array(totalPages).keys()].map((i) => ({
+    id: (i + 1).toString(),
+    indhold: `Data${i}`,
+  }));
+});
 
 const showToast = ref(false);
 const datoValg = ref('2022-12-01');

@@ -57,6 +57,7 @@ import FdsDetaljer from '@/components/fds-detaljer.vue';
 import FdsFunktionslink from '@/components/fds-funktionslink.vue';
 import FdsNavLink from '@/components/fds-nav-link.vue';
 import FdsTilbageLink from '@/components/fds-tilbage-link.vue';
+import FdsPaginering from '@/components/fds-paginering.vue';
 
 import FdsTrinindikator from '@/components/fds-trinindikator.vue';
 
@@ -142,6 +143,8 @@ function install (app: App): void {
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
+  app.component('fds-paginering', FdsPaginering);
+
   app.component('fds-component-preview', FdsComponentPreview);
 
   app.component('xfds-validate', XFdsValidate);
@@ -165,6 +168,7 @@ export {
   FdsComponentPreview,
   FdsTrinindikator,
   FdsTilbageLink,
+  FdsPaginering,
   FdsDatoAngivelse,
   FdsDatoVaelger,
   FdsTextarea,
