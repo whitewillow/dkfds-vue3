@@ -19,7 +19,6 @@
  * https://designsystem.dk/kode/komponenter/tilbage-til-top/
  *
  * */
-import { defineProps, computed } from 'vue';
 </script>
 
 <style scoped lang="scss"></style>

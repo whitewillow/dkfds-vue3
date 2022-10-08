@@ -16,10 +16,16 @@
 import { ref, defineProps } from 'vue';
 
 defineProps({
+  /**
+   * Tekst ved Lukket tilstand - Åbn alle
+   * */
   openText: {
     type: String,
     default: 'Åbn alle',
   },
+  /**
+   * Tekst ved Åben tilstand - Luk alle
+   * */
   closeText: {
     type: String,
     default: 'Luk alle',

@@ -35,9 +35,9 @@
  * https://designsystem.dk/komponenter/beskeder/
  *
  * */
-import { defineProps, ref, watch } from 'vue';
+import { defineProps, ref } from 'vue';
 
-const props = defineProps({
+defineProps({
   level: {
     /**
      * Type af besked
@@ -66,13 +66,6 @@ const props = defineProps({
     type: String,
     default: null,
   },
-  /**
-   *  Hvis sand - lukkes beskeden efter 10 sek
-   * */
-  timeout: {
-    type: Boolean,
-    default: false,
-  },
 });
 
 const show = ref(true);
@@ -82,16 +75,6 @@ const handleClose = () => {
   show.value = !show.value;
   emit('close', true);
 };
-watch(
-  () => [props.timeout],
-  () => {
-    if (props.timeout && props.closeable) {
-      setTimeout(() => {
-        show.value = false;
-      }, 10000);
-    }
-  },
-);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
