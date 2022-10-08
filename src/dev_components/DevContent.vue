@@ -252,20 +252,20 @@
 
       <h2>Accordions</h2>
 
-      <fds-accordion-group #default="{ groupcollapse }">
+      <fds-accordion-group #default="{ groupActive }">
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
-            {{ groupcollapse }}
+            {{ groupActive }}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </fds-accordion-item>
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -276,7 +276,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success">
@@ -288,10 +288,9 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med advarsel"
-          variant="warning"
-          variant-text="Advarsel">
+          variant="warning">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -300,9 +299,8 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med Fejl"
-          variant-text="Fejl"
           variant="error">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

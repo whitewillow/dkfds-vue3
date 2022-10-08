@@ -19,7 +19,7 @@
 
         <div
           class="radio-content mt-2 ml-4 py-4"
-          :class="{ disabled: disableSlots }"
+          :class="{ disabled: disabled }"
           v-if="
             isValueSet &&
               $slots[radio.value.toString()] &&
@@ -51,15 +51,7 @@ const props = defineProps({
     type: String,
     default: 'Nej',
   },
-  noLabels: {
-    type: Boolean,
-    default: false,
-  },
   disabled: {
-    type: Boolean,
-    default: false,
-  },
-  disableSlots: {
     type: Boolean,
     default: false,
   },

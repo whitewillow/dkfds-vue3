@@ -1,21 +1,21 @@
 <template>
   <section>
     <fds-component-preview header="Accordion gruppe">
-      <fds-accordion-group #default="{ groupcollapse }">
+      <fds-accordion-group #default="{ groupActive }">
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
           <p>
-            {{ groupcollapse }}
+            {{ groupActive }}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </fds-accordion-item>
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
@@ -27,7 +27,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success"
@@ -40,7 +40,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel"
@@ -53,7 +53,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :collapsed="groupcollapse"
+          :active="groupActive"
           header="Accordion header med Fejl"
           variant-text="Fejl"
           variant="error"
@@ -125,21 +125,21 @@ const accSingleCode = `
 </fds-accordion>`;
 const accGroupCode = `
 <fds-component-preview header="Accordion gruppe">
-<fds-accordion-group #default="{ groupcollapse }">
+<fds-accordion-group #default="{ groupActive }">
   <fds-accordion-item
-    :collapsed="groupcollapse"
+    :active="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
     <p>
-      {{ groupcollapse }}
+      {{ groupActive }}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   </fds-accordion-item>
   <fds-accordion-item
-    :collapsed="groupcollapse"
+    :active="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
@@ -151,7 +151,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :collapsed="groupcollapse"
+    :active="groupActive"
     header="Accordion header med Success"
     variant="success"
     variant-text="Success"
@@ -164,7 +164,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :collapsed="groupcollapse"
+    :active="groupActive"
     header="Accordion header med advarsel"
     variant="warning"
     variant-text="Advarsel"
@@ -177,7 +177,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :collapsed="groupcollapse"
+    :active="groupActive"
     header="Accordion header med Fejl"
     variant-text="Fejl"
     variant="error"
