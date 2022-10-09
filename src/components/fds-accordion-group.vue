@@ -3,7 +3,7 @@
     <button
       class="accordion-bulk-button"
       :data-accordion-bulk-expand="!refActive"
-      @click="toggle">
+      @click="onToggle">
       {{ `${refActive ? activeText : nonActiveText}` }}
     </button>
     <ul class="accordion">
@@ -34,7 +34,7 @@ defineProps({
 
 const refActive = ref(false);
 
-const toggle = () => {
+const onToggle = () => {
   refActive.value = !refActive.value;
 };
 </script>

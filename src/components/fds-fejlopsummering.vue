@@ -1,16 +1,16 @@
 <template>
   <fds-alert
     class="top-space"
-    level="error"
+    variant="error"
     showIcon
     :header="header"
-    :closeable="false">
+    :canClose="false">
     <div>
       <ul class="alert-text nobullet-list">
         <li
           v-for="(e, i) in list"
           :key="i">
-          <fds-funktionslink @click="clickError($event, e)">
+          <fds-funktionslink @click="onClickError($event, e)">
             {{ e.text }}
           </fds-funktionslink>
         </li>
@@ -38,7 +38,7 @@ defineProps({
 
 const emit = defineEmits(['fejlklik']);
 
-const clickError = (event: Event, fejl: FdsErrorListItem) => {
+const onClickError = (event: Event, fejl: FdsErrorListItem) => {
   emit('fejlklik', fejl);
 
   const el = document.getElementById(fejl.anchor);

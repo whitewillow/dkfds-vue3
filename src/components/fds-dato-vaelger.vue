@@ -2,7 +2,7 @@
   <input
     type="date"
     class="form-input form-input-date"
-    @input="handleInput"
+    @input="onInput"
     @blur="$emit('dirty', true)"
     :id="formid"
     :name="formid"
@@ -30,10 +30,10 @@ const isDateValid = (dateString: string) => {
   return !Number.isNaN(date);
 };
 
-const handleValid = () => emit('valid', isDateValid(value.value));
+const onValid = () => emit('valid', isDateValid(value.value));
 
-const handleInput = () => {
-  handleValid();
+const onInput = () => {
+  onValid();
   emit('update:modelValue', value.value);
 };
 </script>

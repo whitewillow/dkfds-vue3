@@ -26,6 +26,7 @@ Eksempel side udstilles på Git Pages.
 ## v0.5
 Dokumentation via:
 - https://histoire.dev/ ?
+- Prop Validation
 - Test
 - Test Aria/A11y/Tilgængelighed - https://designsystem.dk/design/tilgaengelighed/
 

@@ -1,22 +1,22 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-alert level="info" header="Informativ besked" closeable>
+      <fds-alert variant="info" header="Informativ besked" canClose>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
-      <fds-alert level="success" header="Succesmeddelelse" closeable>
+      <fds-alert variant="success" header="Succesmeddelelse" canClose>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
-      <fds-alert level="warning" header="Advarsel" closeable>
+      <fds-alert variant="warning" header="Advarsel" canClose>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
-      <fds-alert level="error" header="Fejlbesked" closeable>
+      <fds-alert variant="error" header="Fejlbesked" canClose>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
@@ -38,25 +38,25 @@
 
 <script setup lang="ts">
 const code = `
-<fds-alert level="info" header="Informativ besked" closeable>
+<fds-alert variant="info" header="Informativ besked"  canClose>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
   architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
   molestiae natus, hic eius ab architecto dolorum placeat.
 </fds-alert>
 
-<fds-alert level="success" header="Succesmeddelelse" closeable>
+<fds-alert variant="success" header="Succesmeddelelse"  canClose>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
   architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
   molestiae natus, hic eius ab architecto dolorum placeat.
 </fds-alert>
 
-<fds-alert level="warning" header="Advarsel" closeable>
+<fds-alert variant="warning" header="Advarsel"  canClose>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
   architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
   molestiae natus, hic eius ab architecto dolorum placeat.
 </fds-alert>
 
-<fds-alert level="error" header="Fejlbesked" closeable>
+<fds-alert variant="error" header="Fejlbesked"  canClose>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
   architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
   molestiae natus, hic eius ab architecto dolorum placeat.

@@ -1,7 +1,7 @@
 <template>
   <span
     class="badge"
-    :class="`${sizeClass} ${variantClass}`">
+    :class="`${getSizeClass} ${getVariantClass}`">
     <slot />
   </span>
 </template>
@@ -19,7 +19,7 @@ const props = defineProps({
   /**
    * Som lille badge
    * */
-  small: {
+  isSmall: {
     type: Boolean,
     default: false,
   },
@@ -31,8 +31,8 @@ const props = defineProps({
     default: null,
   },
 });
-const sizeClass = computed(() => (props.small ? 'badge-small' : 'badge-large'));
-const variantClass = computed(() => (props.variant ? `badge-${props.variant}` : ''));
+const getSizeClass = computed(() => (props.isSmall ? 'badge-small' : 'badge-large'));
+const getVariantClass = computed(() => (props.variant ? `badge-${props.variant}` : ''));
 </script>
 
 <style scoped lang="scss"></style>

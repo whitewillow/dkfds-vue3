@@ -2,7 +2,7 @@
   <button
     :aria-controls="`tabpanel_${formId}`"
     :id="`tab_${formId}`"
-    @click="handleEvent"
+    @click="onEvent"
     class="tabnav-item"
     role="tab"
     :aria-selected="active">
@@ -39,7 +39,7 @@ const props = defineProps({
 });
 const emit = defineEmits(['click', 'navigate']);
 
-const handleEvent = () => {
+const onEvent = () => {
   emit('click', props.id);
   emit('navigate', props.id);
 };

@@ -9,7 +9,7 @@
       <input
         class="form-input js-calendar-day-input"
         ref="day"
-        @input="handleNextTab($event, 'day')"
+        @input="onNextTab($event, 'day')"
         @blur="$emit('dirty', true)"
         @focus="($event.target as any)?.select()"
         :id="`day_${formId}`"
@@ -32,7 +32,7 @@
       <input
         class="form-input js-calendar-month-input"
         ref="month"
-        @input="handleNextTab($event, 'month')"
+        @input="onNextTab($event, 'month')"
         @blur="$emit('dirty', true)"
         @focus="($event.target as any)?.select()"
         :id="`month_${formId}`"
@@ -55,7 +55,7 @@
       <input
         class="form-input js-calendar-year-input"
         @blur="$emit('dirty', true)"
-        @input="handleNextTab($event, 'year')"
+        @input="onNextTab($event, 'year')"
         @focus="($event.target as any)?.select()"
         ref="year"
         :id="`year_${formId}`"
@@ -111,14 +111,14 @@ const getModelDate = (dateString: string) => {
 const formId = ref(props.id ?? uuidv4());
 const dateObj = ref<{ day: string; month: string; year: string }>(getModelDate(props.modelValue));
 
-const handleInput = () => emit('update:modelValue', [dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-'));
+const onInput = () => emit('update:modelValue', [dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-'));
 
-const handleValid = () => emit(
+const onValid = () => emit(
   'valid',
   isDateValid([dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-')),
 );
 
-const handleNextTab = (event: Event, source: string) => {
+const onNextTab = (event: Event, source: string) => {
   const inp = event.target as HTMLInputElement;
   if (!inp.selectionEnd || inp.selectionEnd < 2) {
     return;
@@ -126,14 +126,14 @@ const handleNextTab = (event: Event, source: string) => {
 
   if (source === 'day') {
     const regExString: string = day.value?.dataset.inputRegex ?? '';
-    const r = new RegExp(regExString);
+    // const r = new RegExp(regExString); // TODO: skal den bruges?
     (month.value as HTMLInputElement).focus();
   }
 
   if (source === 'month') {
     (year.value as HTMLInputElement).focus();
   }
-  handleInput();
-  handleValid();
+  onInput();
+  onValid();
 };
 </script>

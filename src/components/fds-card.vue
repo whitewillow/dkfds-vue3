@@ -7,9 +7,9 @@
     </div>
     <div
       class="card-header"
-      v-if="overskrift">
+      v-if="header">
       <h2 class="header-title">
-        {{ overskrift }}
+        {{ header }}
       </h2>
       <p
         class="sub-header"
@@ -40,7 +40,7 @@
 import { defineProps } from 'vue';
 
 defineProps({
-  overskrift: {
+  header: {
     type: String,
     default: null,
   },

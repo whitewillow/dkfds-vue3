@@ -739,7 +739,7 @@
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
           <fds-card
-            overskrift="Overskrift"
+            header="Overskrift"
             subheader="Understøttende tekst">
             <p>
               In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
@@ -754,7 +754,7 @@
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
           <fds-card
-            overskrift="Overskrift"
+            header="Overskrift"
             class="card-align-height">
             <template #content>
               <div class="align-text-center bg-info-light p-6">
@@ -1100,10 +1100,10 @@
       <hr class="my-8" />
 
       <fds-alert
-        level="warning"
+        variant="warning"
         header="Overskrift"
         class="w-percent-lg-80"
-        closeable>
+        canClose>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.

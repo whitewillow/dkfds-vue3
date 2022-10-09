@@ -5,11 +5,11 @@
     :name="id"
     :id="id"
     v-bind="value"
-    @change="handleInput"
+    @change="onInput"
     @blur="$emit('dirty', true)">
     <option
       value
-      v-if="!noHeader">
+      v-if="!optionHeader">
       {{ optionHeader }}
     </option>
     <option
@@ -41,10 +41,6 @@ const props = defineProps({
     type: String,
     default: 'Vælg',
   },
-  noHeader: {
-    type: Boolean,
-    default: false,
-  },
   disabled: {
     type: Boolean,
     default: false,
@@ -58,7 +54,7 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const value = ref(props.modelValue);
 
-const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
+const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>
 
 <style scoped lang="scss"></style>

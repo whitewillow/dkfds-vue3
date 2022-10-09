@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-alert level="info" header="Under udvikling" closeable>
+    <fds-alert variant="info" header="Under udvikling" canClose>
       Dette komponent kommer snart
     </fds-alert>
   </section>

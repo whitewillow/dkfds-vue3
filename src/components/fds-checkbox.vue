@@ -5,8 +5,8 @@
       type="checkbox"
       :checked="value"
       class="form-checkbox"
-      :class="{ 'checkbox-large': !small }"
-      @input="handleInput"
+      :class="{ 'checkbox-large': !isSmall }"
+      @input="onInput"
       @blur="$emit('dirty', true)"
       :disabled="disabled"/>
     <label
@@ -36,7 +36,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  small: {
+  isSmall: {
     type: Boolean,
     default: false,
   },
@@ -50,7 +50,7 @@ const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const value = ref(props.modelValue);
 
-const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
+const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
 const formId = computed(() => props.id ?? uuidv4());
 
