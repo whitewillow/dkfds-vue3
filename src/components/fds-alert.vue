@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div
-      v-if="show"
+      v-if="showAlert"
       class="alert has-close"
       :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]">
       <div class="alert-body align-text-left">
@@ -35,7 +35,7 @@
  * https://designsystem.dk/komponenter/beskeder/
  *
  * */
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
 
 defineProps({
   /**
@@ -68,11 +68,11 @@ defineProps({
   },
 });
 
-const show = ref(true);
-// eslint-disable-next-line no-undef
+const showAlert = ref(true);
 const emit = defineEmits(['close']);
+
 const onClose = () => {
-  show.value = !show.value;
+  showAlert.value = !showAlert.value;
   emit('close', true);
 };
 </script>

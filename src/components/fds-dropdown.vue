@@ -4,11 +4,11 @@
     :disabled="disabled"
     :name="id"
     :id="id"
-    v-bind="value"
+    v-bind="refValue"
     @change="onInput"
     @blur="$emit('dirty', true)">
     <option
-      value
+      :value="refValue"
       v-if="!optionHeader">
       {{ optionHeader }}
     </option>
@@ -17,7 +17,7 @@
       :value="o.value"
       :key="i"
       :disabled="o.disabled"
-      :selected="o.value === value">
+      :selected="o.value === refValue">
       {{ o.title }}
     </option>
   </select>
@@ -37,14 +37,23 @@ const props = defineProps({
     required: false,
     default: '',
   },
+  /**
+   * Første option - default: Vælg
+   * */
   optionHeader: {
     type: String,
     default: 'Vælg',
   },
+  /**
+   * Disable dropdown
+   * */
   disabled: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Dropdown options / valgmuligheder
+   * */
   options: {
     type: Array as () => Array<FdsOptionItem>,
   },
@@ -52,7 +61,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
-const value = ref(props.modelValue);
+const refValue = ref(props.modelValue);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>

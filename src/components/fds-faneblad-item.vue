@@ -2,7 +2,7 @@
   <button
     :aria-controls="`tabpanel_${formId}`"
     :id="`tab_${formId}`"
-    @click="onEvent"
+    @click="onFanButtonClick"
     class="tabnav-item"
     role="tab"
     :aria-selected="active">
@@ -24,6 +24,9 @@ import { defineProps, ref, defineEmits } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 const props = defineProps({
+  /**
+   * Faneknap aktiv
+   * */
   active: {
     type: Boolean,
     default: false,
@@ -32,14 +35,18 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  /**
+   * Faneknap overskrift
+   * */
   header: {
     type: String,
     required: true,
   },
 });
+
 const emit = defineEmits(['click', 'navigate']);
 
-const onEvent = () => {
+const onFanButtonClick = () => {
   emit('click', props.id);
   emit('navigate', props.id);
 };

@@ -126,7 +126,7 @@ const onNextTab = (event: Event, source: string) => {
 
   if (source === 'day') {
     const regExString: string = day.value?.dataset.inputRegex ?? '';
-    // const r = new RegExp(regExString); // TODO: skal den bruges?
+    const r = new RegExp(regExString); // TODO: skal den bruges?
     (month.value as HTMLInputElement).focus();
   }
 

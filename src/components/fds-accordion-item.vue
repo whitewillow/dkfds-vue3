@@ -4,7 +4,7 @@
     :class="[{ disabled: disabled }]">
     <button
       class="accordion-button"
-      :class="getvariantClass"
+      :class="getVariantClass"
       :aria-expanded="`${refActive ? 'true' : 'false'}`"
       @click="
         refActive = !refActive;
@@ -57,6 +57,7 @@ import {
 const props = defineProps({ ...accordionProps });
 
 const refActive = ref(props.active);
+
 const icons = {
   success: 'check-circle',
   warning: 'report-problem',
@@ -69,7 +70,7 @@ const defaultVariantText = {
   error: 'Fejl',
 };
 
-const getvariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
+const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
 const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
 const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
 

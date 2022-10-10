@@ -40,10 +40,16 @@
 import { defineProps } from 'vue';
 
 defineProps({
+  /**
+   * Overskrift
+   * */
   header: {
     type: String,
     default: null,
   },
+  /**
+   * Under overskrift
+   * */
   subheader: {
     type: String,
     default: null,

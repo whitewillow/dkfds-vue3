@@ -3,7 +3,7 @@
     <input
       :id="formId"
       type="checkbox"
-      :checked="value"
+      :checked="refValue"
       class="form-checkbox"
       :class="{ 'checkbox-large': !isSmall }"
       @input="onInput"
@@ -36,10 +36,16 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * Vis som lille checkbox
+   * */
   isSmall: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Skal checkbox være disabled
+   * */
   disabled: {
     type: Boolean,
     default: false,
@@ -48,7 +54,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty']);
 
-const value = ref(props.modelValue);
+const refValue = ref(props.modelValue);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
@@ -57,12 +63,10 @@ const formId = computed(() => props.id ?? uuidv4());
 watch(
   () => [props.modelValue],
   () => {
-    value.value = props.modelValue;
+    refValue.value = props.modelValue;
   },
   {
     immediate: true,
   },
 );
 </script>
-
-<style scoped lang="scss"></style>

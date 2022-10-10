@@ -25,6 +25,9 @@ defineProps({
     type: String as PropType<FdsVariantEnum | string>,
     default: () => FdsVariantEnum.primary,
   },
+  /**
+   * Marker knap som disabled
+   * */
   disabled: {
     type: Boolean,
     default: false,
