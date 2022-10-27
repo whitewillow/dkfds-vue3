@@ -1,7 +1,7 @@
 <template>
   <li
-    :disabled="disabled"
-    :class="[{ disabled: disabled }]">
+    :disabled="isDisabled"
+    :class="[{ disabled: isDisabled }]">
     <button
       class="accordion-button"
       :class="getVariantClass"
@@ -56,7 +56,7 @@ import {
 
 const props = defineProps({ ...accordionProps });
 
-const refActive = ref(props.active);
+const refActive = ref(props.isActive);
 
 const icons = {
   success: 'check-circle',
@@ -75,9 +75,9 @@ const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
 const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
 
 watch(
-  () => [props.active],
+  () => [props.isActive],
   () => {
-    refActive.value = props.active;
+    refActive.value = props.isActive;
   },
   {
     immediate: true,

@@ -19,7 +19,7 @@
 
         <div
           class="radio-content mt-2 ml-4 py-4"
-          :class="{ disabled: disabled }"
+          :class="{ disabled: isDisabled }"
           v-if="
             isValueSet &&
               $slots[radio.value.toString()] &&
@@ -51,7 +51,7 @@ const props = defineProps({
     type: String,
     default: 'Nej',
   },
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },
@@ -61,12 +61,12 @@ const choices: Array<FdsOptionItem> = [
   {
     title: props.trueLabel,
     value: 'true',
-    disabled: props.disabled,
+    disabled: props.isDisabled,
   },
   {
     title: props.falseLabel,
     value: 'false',
-    disabled: props.disabled,
+    disabled: props.isDisabled,
   },
 ];
 

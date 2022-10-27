@@ -8,7 +8,7 @@
       :class="{ 'checkbox-large': !isSmall }"
       @input="onInput"
       @blur="$emit('dirty', true)"
-      :disabled="disabled"/>
+      :disabled="isDisabled"/>
     <label
       :for="formId"
       class="hand">
@@ -46,7 +46,7 @@ const props = defineProps({
   /**
    * Skal checkbox være disabled
    * */
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },

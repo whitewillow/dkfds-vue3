@@ -1,7 +1,7 @@
 <template>
   <select
     class="form-select"
-    :disabled="disabled"
+    :disabled="isDisabled"
     :name="id"
     :id="id"
     v-bind="refValue"
@@ -47,7 +47,7 @@ const props = defineProps({
   /**
    * Disable dropdown
    * */
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },

@@ -1,8 +1,8 @@
 <template>
   <button
     class="button"
-    :class="[{ disabled: disabled }, `button-${variant}`]"
-    :disabled="disabled">
+    :class="[{ disabled: isDisabled }, `button-${variant}`]"
+    :disabled="isDisabled">
     <svg
       class="icon-svg"
       focusable="false"
@@ -50,7 +50,7 @@ defineProps({
   /**
    * disabled
    * */
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },

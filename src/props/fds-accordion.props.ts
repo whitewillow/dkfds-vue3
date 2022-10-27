@@ -18,14 +18,14 @@ const accordionProps = {
   /**
    * Er Accordion Åben = aktiv
    * */
-  active: {
+  isActive: {
     type: Boolean,
     default: false,
   },
   /**
    * Disabled
    * */
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },
