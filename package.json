@@ -1,6 +1,6 @@
 {
   "name": "dkfds-vue3",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/dkfds-vue3.esm.js",
   "types": "dist/main.d.ts",
   "repository": {
