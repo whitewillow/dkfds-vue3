@@ -48,6 +48,7 @@ const emit = defineEmits(['navigate']);
 const currentKey = ref('');
 
 const tabsList = ref<Array<FdsTabItem>>(props.list.filter((f) => !f.ignore));
+
 const onNavigate = (item: FdsTabItem) => {
   if (item.disabled) {
     return;

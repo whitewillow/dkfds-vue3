@@ -89,7 +89,7 @@
         <xfds-form-input
           label="Mobil nr."
           :modelValue="txtMobil"
-          disabled />
+          isDisabled />
 
         <xfds-form-input
           label="Mobil nr."
@@ -254,7 +254,7 @@
 
       <fds-accordion-group #default="{ groupActive }">
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -265,7 +265,7 @@
           </p>
         </fds-accordion-item>
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -276,7 +276,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success">
@@ -288,7 +288,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med advarsel"
           variant="warning">
           <p>
@@ -299,7 +299,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med Fejl"
           variant="error">
           <p>
@@ -661,7 +661,7 @@
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
-          :active="true"
+          :isActive="true"
           @click="fanebladManueltId = $event"
           id="1">
           <h2>Fane 1</h2>

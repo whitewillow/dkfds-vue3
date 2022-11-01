@@ -22,7 +22,7 @@
       <slot
         v-if="$slots.header"
         name="header"
-        v-bind:active="refActive" />
+        v-bind:isActive="refActive" />
       <span
         class="accordion-icon"
         v-if="variant && ['error', 'warning', 'success'].includes(variant)">

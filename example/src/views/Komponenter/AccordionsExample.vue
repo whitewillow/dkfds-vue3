@@ -3,7 +3,7 @@
     <fds-component-preview header="Accordion gruppe">
       <fds-accordion-group #default="{ groupActive }">
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
@@ -15,7 +15,7 @@
           </p>
         </fds-accordion-item>
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
@@ -27,7 +27,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success"
@@ -40,7 +40,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel"
@@ -53,7 +53,7 @@
         </fds-accordion-item>
 
         <fds-accordion-item
-          :active="groupActive"
+          :isActive="groupActive"
           header="Accordion header med Fejl"
           variant-text="Fejl"
           variant="error"
@@ -127,7 +127,7 @@ const accGroupCode = `
 <fds-component-preview header="Accordion gruppe">
 <fds-accordion-group #default="{ groupActive }">
   <fds-accordion-item
-    :active="groupActive"
+    :isActive="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
@@ -139,7 +139,7 @@ const accGroupCode = `
     </p>
   </fds-accordion-item>
   <fds-accordion-item
-    :active="groupActive"
+    :isActive="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
@@ -151,7 +151,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :active="groupActive"
+    :isActive="groupActive"
     header="Accordion header med Success"
     variant="success"
     variant-text="Success"
@@ -164,7 +164,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :active="groupActive"
+    :isActive="groupActive"
     header="Accordion header med advarsel"
     variant="warning"
     variant-text="Advarsel"
@@ -177,7 +177,7 @@ const accGroupCode = `
   </fds-accordion-item>
 
   <fds-accordion-item
-    :active="groupActive"
+    :isActive="groupActive"
     header="Accordion header med Fejl"
     variant-text="Fejl"
     variant="error"
