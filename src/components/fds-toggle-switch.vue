@@ -6,7 +6,7 @@
       name="toggle-example"
       :checked="modelValue"
       @input="handleInput"
-      :disabled="disabled"
+      :disabled="isDisabled"
       class="form-toggle"/>
     <label
       :for="formId"
@@ -34,7 +34,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },

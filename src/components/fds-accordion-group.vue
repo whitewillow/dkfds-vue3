@@ -2,12 +2,12 @@
   <div>
     <button
       class="accordion-bulk-button"
-      :data-accordion-bulk-expand="collapse"
-      @click="toggle">
-      {{ `${collapse ? openText : closeText}` }}
+      :data-accordion-bulk-expand="!refActive"
+      @click="onToggle">
+      {{ `${refActive ? activeText : nonActiveText}` }}
     </button>
     <ul class="accordion">
-      <slot :groupcollapse="collapse" />
+      <slot :groupActive="refActive" />
     </ul>
   </div>
 </template>
@@ -19,22 +19,22 @@ defineProps({
   /**
    * Tekst ved Lukket tilstand - Åbn alle
    * */
-  openText: {
+  nonActiveText: {
     type: String,
     default: 'Åbn alle',
   },
   /**
    * Tekst ved Åben tilstand - Luk alle
    * */
-  closeText: {
+  activeText: {
     type: String,
     default: 'Luk alle',
   },
 });
 
-const collapse = ref(true);
+const refActive = ref(false);
 
-const toggle = () => {
-  collapse.value = !collapse.value;
+const onToggle = () => {
+  refActive.value = !refActive.value;
 };
 </script>

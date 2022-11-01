@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
     <div
-      v-if="show"
+      v-if="showAlert"
       class="alert has-close"
-      :class="[{ 'alert--show-icon': showIcon }, `alert-${level}`]">
+      :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]">
       <div class="alert-body align-text-left">
         <p
           class="alert-heading pr-7"
@@ -15,8 +15,8 @@
         </div>
         <button
           class="alert-close"
-          v-if="closeable"
-          @click="handleClose">
+          v-if="canClose"
+          @click="onClose">
           <svg
             class="icon-svg"
             aria-hidden="true"
@@ -35,13 +35,20 @@
  * https://designsystem.dk/komponenter/beskeder/
  *
  * */
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
 
 defineProps({
-  level: {
-    /**
-     * Type af besked
-     * */
+  /**
+   *  Overskrift
+   * */
+  header: {
+    type: String,
+    default: null,
+  },
+  /**
+   * Type af besked
+   * */
+  variant: {
     type: String as () => 'info' | 'success' | 'warning' | 'error',
     default: 'info',
   },
@@ -55,24 +62,17 @@ defineProps({
   /**
    *  Klik for at lukke/fjerne besked
    * */
-  closeable: {
+  canClose: {
     type: Boolean,
     default: false,
   },
-  /**
-   *  Overskrift
-   * */
-  header: {
-    type: String,
-    default: null,
-  },
 });
 
-const show = ref(true);
-// eslint-disable-next-line no-undef
+const showAlert = ref(true);
 const emit = defineEmits(['close']);
-const handleClose = () => {
-  show.value = !show.value;
+
+const onClose = () => {
+  showAlert.value = !showAlert.value;
   emit('close', true);
 };
 </script>

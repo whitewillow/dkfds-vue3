@@ -11,7 +11,7 @@
         class="tabnav-item"
         :class="[{ active: item.active }, { disabled: item.disabled }]"
         role="tab"
-        @click="navigate(item)"
+        @click="onNavigate(item)"
         :aria-selected="currentKey === item.key">
         <span>{{ item.title }}</span>
       </button>
@@ -48,7 +48,8 @@ const emit = defineEmits(['navigate']);
 const currentKey = ref('');
 
 const tabsList = ref<Array<FdsTabItem>>(props.list.filter((f) => !f.ignore));
-const navigate = (item: FdsTabItem) => {
+
+const onNavigate = (item: FdsTabItem) => {
   if (item.disabled) {
     return;
   }
@@ -61,7 +62,7 @@ onMounted(() => {
   const firstActive = tabsList.value.find((f) => !f.disabled && f.active);
   const first = firstActive ?? tabsList.value.find((f) => !f.disabled);
   if (first) {
-    navigate(first);
+    onNavigate(first);
   }
 });
 </script>

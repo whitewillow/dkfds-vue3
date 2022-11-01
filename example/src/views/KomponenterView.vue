@@ -119,7 +119,7 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   },
   {
     key: 'komponentspinner',
-    title: 'Loadin spinner',
+    title: 'Loading spinner',
   },
   {
     key: 'komponentmodalvindue',

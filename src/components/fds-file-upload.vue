@@ -26,11 +26,11 @@
       type="file"
       id="fileinput"
       name="file"
-      @blur="emitDirty"
+      @blur="onDirty"
       @change="onFileChange"
       aria-describedby="fileinput"
       :accept="contenttypes.join(',')"
-      :disabled="disabled"/>
+      :disabled="isDisabled"/>
   </div>
 </template>
 
@@ -49,11 +49,10 @@ defineProps({
     type: String,
     default: null,
   },
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },
-
   contenttypes: {
     type: Array as () => Array<string>,
     default: () => ['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt'],
@@ -64,14 +63,14 @@ const file = ref<File | null>();
 
 const emit = defineEmits(['dirty', 'upload', 'error']);
 
-const emitDirty = () => emit('dirty', true);
+const onDirty = () => emit('dirty', true);
 
 const clearFile = () => {
   file.value = null;
 };
 
 const onFileChange = ($event: Event) => {
-  emitDirty();
+  onDirty();
   const target = $event.target as HTMLInputElement;
 
   const { files } = target;

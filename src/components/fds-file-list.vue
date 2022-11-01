@@ -12,25 +12,25 @@
       :key="index">
       <div class="d-flex justify-content-between">
         <a
-          v-if="!hideDownload"
+          v-if="canDownload"
           href="javascript:void(0);"
-          @click="downloadFile(file)"
+          @click="onDownloadFile(file)"
           class="function-link">
           <svg
             class="icon-svg"
             aria-hidden="true">
-            <use :xlink:href="`#${fileIcon(file)}`" />
+            <use :xlink:href="`#${getFileIcon(file)}`" />
           </svg>
           {{ file.filnavn }}</a>
         <label
           for=""
-          v-if="hideDownload"
+          v-if="!canDownload"
           class="disabled">
           <svg
             class="icon-svg mr-3"
             focusable="false"
             aria-hidden="true">
-            <use :xlink:href="`#${fileIcon(file)}`" />
+            <use :xlink:href="`#${getFileIcon(file)}`" />
           </svg>
           <template v-if="file.label">
             {{ file.label }}
@@ -41,8 +41,8 @@
         </label>
         <button
           class="function-link"
-          @click="deleteFile(file)"
-          v-if="!hideDelete">
+          @click="onDeleteFile(file)"
+          v-if="canDelete">
           <svg
             class="icon-svg"
             aria-hidden="true">
@@ -78,13 +78,13 @@ const props = defineProps({
     type: String,
     default: 'insert-drive-file',
   },
-  hideDelete: {
+  canDelete: {
     type: Boolean,
-    default: false,
+    default: true,
   },
-  hideDownload: {
+  canDownload: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 
   // TODO: download prop method?
@@ -94,10 +94,10 @@ const emit = defineEmits(['download', 'delete']);
 
 const keys = Object.keys(props.icons) as (keyof typeof props.icons)[];
 
-const deleteFile = (f: FdsFileModel) => emit('delete', f);
-const downloadFile = (f: FdsFileModel) => emit('download', f);
+const onDeleteFile = (f: FdsFileModel) => emit('delete', f);
+const onDownloadFile = (f: FdsFileModel) => emit('download', f);
 
-const fileIcon = (f: FdsFileModel): string => {
+const getFileIcon = (f: FdsFileModel): string => {
   const key = keys.find((k) => f.type.includes(k));
   if (key) {
     return props.icons[key];

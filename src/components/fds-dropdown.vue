@@ -1,15 +1,15 @@
 <template>
   <select
     class="form-select"
-    :disabled="disabled"
+    :disabled="isDisabled"
     :name="id"
     :id="id"
-    v-bind="value"
-    @change="handleInput"
+    v-bind="refValue"
+    @change="onInput"
     @blur="$emit('dirty', true)">
     <option
-      value
-      v-if="!noHeader">
+      :value="refValue"
+      v-if="!optionHeader">
       {{ optionHeader }}
     </option>
     <option
@@ -17,7 +17,7 @@
       :value="o.value"
       :key="i"
       :disabled="o.disabled"
-      :selected="o.value === value">
+      :selected="o.value === refValue">
       {{ o.title }}
     </option>
   </select>
@@ -37,18 +37,23 @@ const props = defineProps({
     required: false,
     default: '',
   },
+  /**
+   * Første option - default: Vælg
+   * */
   optionHeader: {
     type: String,
     default: 'Vælg',
   },
-  noHeader: {
+  /**
+   * Disable dropdown
+   * */
+  isDisabled: {
     type: Boolean,
     default: false,
   },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
+  /**
+   * Dropdown options / valgmuligheder
+   * */
   options: {
     type: Array as () => Array<FdsOptionItem>,
   },
@@ -56,9 +61,9 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
-const value = ref(props.modelValue);
+const refValue = ref(props.modelValue);
 
-const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
+const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>
 
 <style scoped lang="scss"></style>

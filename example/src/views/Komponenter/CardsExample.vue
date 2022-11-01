@@ -1,7 +1,7 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-card overskrift="Overskrift">
+      <fds-card header="Overskrift">
         <p>
           In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas purus
           lectus vitae tortor.
@@ -22,11 +22,7 @@
     <fds-component-preview header="Eksempel">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card
-            overskrift="Overskrift"
-            subheader="Understøttende tekst"
-            class="card-align-height"
-          >
+          <fds-card header="Overskrift" subheader="Understøttende tekst" class="card-align-height">
             <p>
               In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
               purus lectus vitae tortor.
@@ -37,7 +33,7 @@
           </fds-card>
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card overskrift="Overskrift" class="card-align-height">
+          <fds-card header="Overskrift" class="card-align-height">
             <template #content>
               <div class="align-text-center bg-info-light p-6">
                 <h2 class="h5 mb-5">Lorem ipsum fordeling</h2>
@@ -136,7 +132,7 @@
 
 <script setup lang="ts">
 const code = `
-<fds-card overskrift="Overskrift">
+<fds-card header="Overskrift">
   <p>
     In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas purus
     lectus vitae tortor.

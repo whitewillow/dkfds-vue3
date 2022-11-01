@@ -62,7 +62,7 @@
 
       <fds-formgroup label="Single Checkbox">
         <fds-checkbox v-model="twoChecked" class="mt-2"> Andet valg </fds-checkbox>
-        <fds-checkbox v-model="twoChecked" small> Andet valg - small </fds-checkbox>
+        <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
       </fds-formgroup>
 
       <fds-formgroup>

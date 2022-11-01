@@ -11,7 +11,7 @@
       :placeholder="placeholder"
       @input="handleInput"
       @blur="$emit('dirty', true)"
-      :disabled="disabled"></textarea>
+      :disabled="isDisabled"></textarea>
     <p
       class="mt-1 form-hint"
       v-if="val && val.length >= getMaxLength * 0.9">

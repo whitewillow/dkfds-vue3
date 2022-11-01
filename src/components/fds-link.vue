@@ -22,7 +22,7 @@ defineProps({
     type: String,
     default: '',
   },
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },

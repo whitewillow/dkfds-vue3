@@ -4,7 +4,7 @@
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
-          :active="true"
+          :isActive="true"
           @click="fanebladManueltId = $event"
           id="1"
         >
@@ -135,7 +135,7 @@ const faneBlade: FdsTabItem[] = [
 const code = `
 <fds-faneblad-item
     header="Fane 1"
-    :active="true"
+    :isActive="true"
     @click="fanebladManueltId = $event"
     id="1"
   >

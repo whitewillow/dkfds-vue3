@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-alert level="warning" header="Vil ikke blive udviklet" closeable>
+    <fds-alert variant="warning" header="Vil ikke blive udviklet" canClose>
       Dette komponent vil ikke blive udviklet.
       <p>Det anbefales at bruge egen komponent eller npm modul</p>
     </fds-alert>

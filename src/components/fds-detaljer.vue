@@ -14,6 +14,9 @@
 import { defineProps } from 'vue';
 
 defineProps({
+  /**
+   * Overskrift
+   * */
   header: {
     type: String,
     default: 'Mere information',

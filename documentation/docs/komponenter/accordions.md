@@ -1,9 +1,9 @@
 # Accordions
 
 ```html
-<fds-accordion-group #default="{ groupcollapse }">
+<fds-accordion-group #default="{ groupActive }">
     <fds-accordion-item
-        :collapsed="groupcollapse"
+        :isActive="groupActive"
         header="Accordion header med hint"
         hint="Hint for header"
     >
@@ -14,7 +14,7 @@
         </p>
     </fds-accordion-item>
     <fds-accordion-item
-        :collapsed="groupcollapse"
+        :isActive="groupActive"
         header="Accordion header med hint"
         hint="Hint for header"
     >

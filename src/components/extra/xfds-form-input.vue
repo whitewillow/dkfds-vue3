@@ -22,8 +22,8 @@
           autocomplete,
           inputType,
           inputClass,
-          disabled,
-          readonly,
+          isDisabled,
+          isReadonly,
           suffix,
           prefix,
         }"

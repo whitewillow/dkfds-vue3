@@ -1,14 +1,14 @@
 <template>
   <li
-    :disabled="disabled"
-    :class="[{ disabled: disabled }]">
+    :disabled="isDisabled"
+    :class="[{ disabled: isDisabled }]">
     <button
       class="accordion-button"
-      :class="variantClass"
-      :aria-expanded="`${collapse ? 'false' : 'true'}`"
+      :class="getVariantClass"
+      :aria-expanded="`${refActive ? 'true' : 'false'}`"
       @click="
-        collapse = !collapse;
-        $emit('collapsed', collapse);
+        refActive = !refActive;
+        $emit('active', refActive);
       "
       aria-controls="a1">
       <div v-if="!$slots.header">
@@ -22,12 +22,14 @@
       <slot
         v-if="$slots.header"
         name="header"
-        v-bind:collapse="collapse" />
+        v-bind:isActive="refActive" />
       <span
         class="accordion-icon"
         v-if="variant && ['error', 'warning', 'success'].includes(variant)">
-        <span class="icon_text">
-          {{ variantText }}
+        <span
+          class="icon_text"
+          v-if="variantText !== null">
+          {{ variantText === '' ? getIconText : variantText }}
         </span>
         <svg
           class="icon-svg"
@@ -39,7 +41,7 @@
     </button>
     <div
       id="a1"
-      :aria-hidden="`${collapse ? 'true' : 'false'}`"
+      :aria-hidden="`${refActive ? 'false' : 'true'}`"
       class="accordion-content">
       <slot />
     </div>
@@ -47,48 +49,35 @@
 </template>
 
 <script setup lang="ts">
+import accordionProps from '@/props/fds-accordion.props';
 import {
   defineProps, ref, computed, watch,
 } from 'vue';
 
-const props = defineProps({
-  header: {
-    type: String,
-  },
-  hint: {
-    type: String,
-    default: '',
-  },
-  collapsed: {
-    type: Boolean,
-    default: true,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  variant: {
-    type: String as () => string | 'success' | 'warning' | 'error',
-    default: null,
-  },
-  variantText: {
-    type: String,
-    default: '',
-  },
-});
+const props = defineProps({ ...accordionProps });
 
-const collapse = ref(props.collapsed);
+const refActive = ref(props.isActive);
+
 const icons = {
   success: 'check-circle',
   warning: 'report-problem',
   error: 'highlight-off',
 };
-const variantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
+
+const defaultVariantText = {
+  success: 'Success',
+  warning: 'Advarsel',
+  error: 'Fejl',
+};
+
+const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
 const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
+const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
+
 watch(
-  () => [props.collapsed],
+  () => [props.isActive],
   () => {
-    collapse.value = props.collapsed;
+    refActive.value = props.isActive;
   },
   {
     immediate: true,

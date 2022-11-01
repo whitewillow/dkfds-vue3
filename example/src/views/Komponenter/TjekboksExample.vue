@@ -30,7 +30,7 @@
     <fds-component-preview header="Enkeltstående">
       <fds-formgroup label="Single Checkbox">
         <fds-checkbox v-model="oneChecked" class="mt-2"> Et valg </fds-checkbox>
-        <fds-checkbox v-model="twoChecked" small> Andet valg - small </fds-checkbox>
+        <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
 
         <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
       </fds-formgroup>

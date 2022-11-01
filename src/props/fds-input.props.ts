@@ -22,11 +22,11 @@ const fdsInputProps = {
     type: String,
     default: '',
   },
-  disabled: {
+  isDisabled: {
     type: Boolean,
     default: false,
   },
-  readonly: {
+  isReadonly: {
     type: Boolean,
     default: false,
   },

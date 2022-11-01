@@ -9,13 +9,13 @@
     <input
       class="form-input d-flex"
       :class="inputClass"
-      :readonly="readonly"
+      :readonly="isReadonly"
       :name="id"
       v-model="value"
       :id="id"
       :placeholder="placeholder"
       :type="inputType"
-      :disabled="disabled"
+      :disabled="isDisabled"
       @input="handleInput"
       @blur="$emit('dirty', true)"
       @focus="($event.target as any).select()"/>

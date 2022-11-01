@@ -1,8 +1,27 @@
 <template>
   <section>
-    <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
-    <fds-pre header="Upload event JSON" :json="fileInput" />
+    <fds-component-preview header="Eksempel">
+      <fds-formgroup #default="{ formid }">
+        <fds-label :id="formid"> Vedhæft fil </fds-label>
+        <fds-file-upload @upload="fileInput = $event" :id="formid"></fds-file-upload>
+      </fds-formgroup>
 
+      <fds-pre header="Upload event JSON" :json="fileInput" />
+
+      <template #description>
+        <p class="italic">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ullam ea consectetur
+          quibusdam magnam autem atque error deleniti enim reiciendis temporibus, deserunt alias
+          laborum dolores voluptate quisquam repudiandae similique quod.
+        </p>
+      </template>
+      <template #code>
+        <pre v-text="codeUpload"></pre>
+      </template>
+    </fds-component-preview>
+  </section>
+
+  <section>
     <p class="form-label" htmlFor="file-list1">Vedhæftet filer</p>
 
     <fds-file-list
@@ -13,6 +32,7 @@
     >
     </fds-file-list>
 
+    <hr />
     <p>Eller med embedded header</p>
 
     <fds-file-list
@@ -58,4 +78,11 @@ const filListe = ref<FdsFileModel[]>([
 ]);
 const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
+
+const codeUpload = `
+<fds-formgroup #default="{ formid }">
+  <fds-label :id="formid"> Vedhæft fil </fds-label>
+  <fds-file-upload @upload="fileInput = $event" :id="formid"></fds-file-upload>
+</fds-formgroup>
+`;
 </script>

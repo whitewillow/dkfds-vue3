@@ -2,7 +2,7 @@
   <button
     class="button"
     :class="`button-${variant}`"
-    :disabled="disabled">
+    :disabled="isDisabled">
     <slot />
   </button>
 </template>
@@ -25,7 +25,10 @@ defineProps({
     type: String as PropType<FdsVariantEnum | string>,
     default: () => FdsVariantEnum.primary,
   },
-  disabled: {
+  /**
+   * Marker knap som disabled
+   * */
+  isDisabled: {
     type: Boolean,
     default: false,
   },

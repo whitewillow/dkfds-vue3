@@ -17,7 +17,7 @@
           </h2>
           <button
             class="modal-close function-link"
-            v-if="closeable"
+            v-if="canClose"
             @click="hideModal"
             data-modal-close>
             <svg
@@ -77,7 +77,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  closeable: {
+  canClose: {
     type: Boolean,
     default: true,
   },
@@ -112,7 +112,7 @@ const hideModal = () => {
 
 // TODO: able to click bacdrop or esc to close
 const handleBackdropClick = () => {
-  if (props.closeable) {
+  if (props.canClose) {
     hideModal();
   }
 };
