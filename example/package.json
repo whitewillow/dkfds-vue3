@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "dkfds": "^8.1.0",
+    "dkfds": "^8.2.0",
     "dkfds-vue3": "0.2.3",
     "vue": "^3.2.39",
     "vue-router": "^4.0.3",

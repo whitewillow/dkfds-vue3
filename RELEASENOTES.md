@@ -1,6 +1,22 @@
 
 
-# 0.2.3 - igang
+
+
+# 0.3.1
+
+- Refak props
+- Opdateret Example projekt
+- opdateret til DKFDS 8.2.0
+
+# 0.2.3
+
+- fds-paginering tilføjet
+- Eksempelside paginering
+- Opdateret Datovælger
+- Opdateret Datoangivelse
+
+
+# 0.2.3
 
 - fds-paginering tilføjet
 - Eksempelside paginering

@@ -1,5 +1,5 @@
 <template>
-  <ul class="accordion">
+  <ul class="accordion accordion-multiselectable">
     <fds-accordion-item v-bind="props">
       <template
         #header
