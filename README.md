@@ -31,6 +31,26 @@ Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig u
 
 # Brug det:
 
+
+
+> **INFO**: dkfds-vue3 har pt en bug med ren vite projekt - fix på vej.
+
+**Designsystem**
+
+Indtil videre forventes designssystemets egen komponent er installeret:
+
+
+```
+npm install --save dkfds
+```
+
+```typescript
+// src/global.d.ts
+declare module 'dkfds';
+```
+
+**dkfds-vue3**
+
 ```
 npm install -S dkfds-vue3
 ```
@@ -77,6 +97,9 @@ createApp(App)
   @import "../node_modules/dkfds-vue3/src/assets/main.scss";
 </style>
 ```
+
+eller se [app.vue eksempel](./dokumentation/app-vue-example.md)
+
 
 # Se det / Example Project
 

@@ -1,4 +1,5 @@
 import { App, Plugin } from 'vue';
+import DKFDS from 'dkfds';
 
 import FdsIconCollection from '@/components/fds-icon-collection.vue';
 
@@ -86,6 +87,10 @@ import FdsFormgroup from '@/components/fds-formgroup.vue';
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
 export * from '@/utils/file-utils';
+
+export function init (): void {
+  DKFDS.init();
+}
 
 function install (app: App): void {
   app.component('fds-trinindikator', FdsTrinindikator);
