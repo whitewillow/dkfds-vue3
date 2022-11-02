@@ -218,6 +218,7 @@ watch(
       navigationList.value,
       route.name?.toString() ?? '',
     );
+    currentNavigationKey.value = currentItem.value?.key ?? '';
     currentItem.value = navigationService.findFirstActiveItem(navigationList.value);
   },
   {

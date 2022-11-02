@@ -3,18 +3,17 @@
     class="form-group"
     :key="formid"
     :class="{ 'form-error': isValid === false }">
-    <fieldset>
-      <legend
-        class="form-label d-flex"
-        v-if="label">
-        {{ label }}
-        <fds-tooltip
-          v-if="tooltip"
-          class="ml-2"
-          :text="tooltip" />
-      </legend>
-      <slot :formid="formid" />
-    </fieldset>
+    <fds-label
+      v-if="label"
+      :id="formid">
+      {{ label }}
+    </fds-label>
+    <fds-tooltip
+      v-if="tooltip"
+      class="ml-2"
+      :text="tooltip" />
+
+    <slot :formid="formid" />
   </div>
 </template>
 

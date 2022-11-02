@@ -124,7 +124,6 @@ const accSingleCode = `
   </p>
 </fds-accordion>`;
 const accGroupCode = `
-<fds-component-preview header="Accordion gruppe">
 <fds-accordion-group #default="{ groupActive }">
   <fds-accordion-item
     :isActive="groupActive"

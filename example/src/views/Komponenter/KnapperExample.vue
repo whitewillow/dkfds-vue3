@@ -32,7 +32,7 @@
 
       <p>
         <fds-button-icon @click="klikEvent" icon="coronavirus" asRightAlignedIcon variant="primary">
-          Genopfrisk
+          Corona Virus
         </fds-button-icon>
       </p>
 
@@ -42,7 +42,7 @@
         </p>
       </template>
       <template #code>
-        <pre v-text="code"></pre>
+        <pre v-text="code2"></pre>
       </template>
     </fds-component-preview>
   </section>
@@ -70,7 +70,7 @@ const code2 = `
 </fds-button-icon>
 
 <fds-button-icon @click="klikEvent" icon="coronavirus" asRightAlignedIcon variant="primary">
-  Genopfrisk
+  Corona Virus
 </fds-button-icon>
 `;
 </script>
