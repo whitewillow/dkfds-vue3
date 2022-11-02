@@ -136,7 +136,11 @@ Selvfølgelig er der undtagelser, der giver en bedre kontekst med fornuftig navn
 - placeholder
 - item
 - itemList
-- xxx
+
+Booleans:
+- isDisabled
+- isReadonly
+- showX, isX, hasX, canX, asX
 
 
 **Undgå props** - hvis en allerede eksisterende dkfds css klasse kan løse det 
