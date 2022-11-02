@@ -33,6 +33,8 @@ Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig u
 
 
 
+
+DEs
 > **INFO**: dkfds-vue3 har pt en bug med ren vite projekt - fix på vej.
 
 **Designsystem**

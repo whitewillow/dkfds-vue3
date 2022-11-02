@@ -23,6 +23,10 @@ Eksempel side udstilles på Git Pages.
 - Gennemgang af komponent navngivning
 - Gennemgang af komponent properties
 
+## v0.4.5
+- Det skal være muligt at bruge `npm create vue@3`
+- Skal bruger også installere DKFDS - eller er det nok med dkfds-vue3
+
 ## v0.5
 Dokumentation via:
 - https://histoire.dev/ ?
