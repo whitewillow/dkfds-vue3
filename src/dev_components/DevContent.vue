@@ -183,6 +183,9 @@
             v-model="twoChecked"
             class="mt-2">
             Andet valg
+            <template #content>
+              Collapsed indhold
+            </template>
           </fds-checkbox>
           <fds-checkbox
             v-model="twoChecked"
@@ -1100,11 +1103,27 @@
 
       <hr class="my-8" />
 
+      <h2>Alert (besked)</h2>
+
+      <fds-alert
+        variant="success"
+        class="w-percent-lg-80"
+        header="Godt gået"
+        canClose>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
+        architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
+        molestiae natus, hic eius ab architecto dolorum placeat.
+      </fds-alert>
+
       <fds-alert
         variant="warning"
-        header="Overskrift"
         class="w-percent-lg-80"
         canClose>
+        <template #header>
+          <p class="alert-heading d-flex justify-content-start">
+            Fejl <i class="ml-4 icon icon-home" />
+          </p>
+        </template>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.

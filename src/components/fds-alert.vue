@@ -5,9 +5,12 @@
       class="alert has-close"
       :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]">
       <div class="alert-body align-text-left">
+        <slot
+          name="header"
+          v-if="$slots.header" />
         <p
-          class="alert-heading pr-7"
-          v-if="header">
+          class="alert-heading"
+          v-if="!$slots.header && header">
           {{ header }}
         </p>
         <div class="alert-text pt-2">

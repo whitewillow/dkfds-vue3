@@ -12,17 +12,12 @@
     <label
       :for="formId"
       class="hand">
-      <slot
-        v-bind:id="formId"
-        class="hand"></slot>
+      <section class="pl-2 hand">
+        <slot
+          v-bind:id="formId"
+          class="hand"></slot>
+      </section>
     </label>
-    <div
-      :id="`collapse-${formId}`"
-      v-if="$slots.content"
-      :aria-hidden="!refValue"
-      class="checkbox-content checkbox-content-large">
-      <slot name="content" />
-    </div>
   </fieldset>
 </template>
 
