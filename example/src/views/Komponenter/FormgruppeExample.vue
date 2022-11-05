@@ -1,11 +1,11 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> Navn </fds-label>
+      <fds-formgroup>
+        <fds-label> Navn </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
-        <fds-input v-model="user.name" :id="formid"></fds-input>
+        <fds-input v-model="user.name"></fds-input>
       </fds-formgroup>
 
       <fds-pre header="object data" :json="user" />
@@ -44,11 +44,11 @@ const user = ref({
   search: '',
 });
 const code = `
-  <fds-formgroup #default="{ formid }">
-    <fds-label :id="formid"> Navn </fds-label>
+  <fds-formgroup >
+    <fds-label> Navn </fds-label>
     <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
     <fds-hint>Indtast fornavn</fds-hint>
-    <fds-input v-model="user.name" :id="formid"></fds-input>
+    <fds-input v-model="user.name"></fds-input>
   </fds-formgroup>
   `;
 </script>

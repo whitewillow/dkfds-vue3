@@ -5,17 +5,14 @@
       <h1>Home</h1>
       <div>
         <h2>Eksempel på advanceret brug</h2>
-        <fds-formgroup #default="{ formid }">
-          <fds-label :id="formid">
-            Fornavn
-          </fds-label>
+
+        <fds-formgroup>
+          <fds-label> Fornavn </fds-label>
           <fds-tooltip
             class="ml-2"
             text="Hjælpende <b>tekst</b>" />
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input
-            v-model="txtFornavn"
-            :id="formid"></fds-input>
+          <fds-input v-model="txtFornavn" />
           <fds-input-limit
             :modelValue="txtFornavn"
             :limit="10" />
@@ -25,19 +22,13 @@
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
-          <fds-formgroup
-            :is-valid="isValid"
-            #default="{ formid }">
-            <fds-label :id="formid">
-              Efternavn
-            </fds-label>
+          <fds-formgroup :is-valid="isValid">
+            <fds-label> Efternavn </fds-label>
             <fds-fejlmeddelelse v-if="!isValid">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
             <fds-hint>Indtast efternavn</fds-hint>
-            <fds-input
-              v-model="txtEfternavn"
-              :id="formid"></fds-input>
+            <fds-input v-model="txtEfternavn"></fds-input>
           </fds-formgroup>
         </xfds-validate>
 
@@ -45,20 +36,15 @@
           :modelValue="noBeloeb"
           :validations="[numberMax(500)]"
           #default="{ isValid, errorMessage }">
-          <fds-formgroup
-            :is-valid="isValid"
-            #default="{ formid }">
-            <fds-label :id="formid">
-              Beløb i kr.
-            </fds-label>
+          <fds-formgroup :is-valid="isValid">
+            <fds-label> Beløb i kr. </fds-label>
             <fds-fejlmeddelelse v-if="!isValid">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
             <fds-hint>Indtast efternavn</fds-hint>
             <fds-input-number
               v-model="noBeloeb"
-              suffix="kr."
-              :id="formid"></fds-input-number>
+              suffix="kr."></fds-input-number>
           </fds-formgroup>
         </xfds-validate>
       </div>
@@ -129,11 +115,10 @@
 
         <h2>Tekstfelt med knap</h2>
 
-        <fds-formgroup #default="{ formid }">
+        <fds-formgroup>
           <fds-input
             v-model="txtSearch"
-            placeholder="Søg efter..."
-            :id="formid">
+            placeholder="Søg efter...">
             <template #button>
               <button class="button button-search">
                 <svg
@@ -147,11 +132,10 @@
           </fds-input>
         </fds-formgroup>
 
-        <fds-formgroup #default="{ formid }">
+        <fds-formgroup>
           <fds-input
             v-model="txtSearch"
-            placeholder="Søg efter..."
-            :id="formid">
+            placeholder="Søg efter...">
             <template #button>
               <button class="button button-search">
                 Søg
@@ -164,12 +148,8 @@
 
         <h2>Valg</h2>
 
-        <fds-formgroup
-          label="Vælg en checkbox"
-          #default="{ formid }">
-          <xfds-checkbox-list
-            v-model="checkboxList"
-            :id="formid">
+        <fds-formgroup label="Vælg en checkbox">
+          <xfds-checkbox-list v-model="checkboxList">
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
@@ -179,6 +159,7 @@
         <fds-pre :json="checkboxList" />
 
         <fds-formgroup label="Single Checkbox">
+          <fds-label>Med Label</fds-label>
           <fds-checkbox
             v-model="twoChecked"
             class="mt-2">
@@ -187,6 +168,8 @@
               Collapsed indhold
             </template>
           </fds-checkbox>
+        </fds-formgroup>
+        <fds-formgroup label="Single Checkbox">
           <fds-checkbox
             v-model="twoChecked"
             isSmall>
@@ -226,6 +209,7 @@
         <fds-pre :json="{ toggleRadio }" />
 
         <fds-formgroup>
+          <fds-label>Dropdown (xfds)</fds-label>
           <xfds-dropdown
             :options="dropdownOptions"
             v-model="dropdownValXFDS" />
@@ -233,6 +217,7 @@
         <fds-pre :json="{ dropdownValXFDS }" />
 
         <fds-formgroup>
+          <fds-label>Dropdown</fds-label>
           <fds-dropdown v-model="dropdownVal">
             <option value="Manuel">
               Manuel
@@ -348,12 +333,8 @@
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
-          <fds-formgroup
-            :is-valid="isValid"
-            #default="{ formid }">
-            <fds-label :id="formid">
-              Efternavn
-            </fds-label>
+          <fds-formgroup :is-valid="isValid">
+            <fds-label> Efternavn </fds-label>
             <fds-tooltip
               class="ml-2"
               text="Hjælpende <b>tekst</b>" />
@@ -362,9 +343,7 @@
               {{ errorMessage }}
             </fds-fejlmeddelelse>
 
-            <fds-input
-              v-model="txtEfternavn"
-              :id="formid"></fds-input>
+            <fds-input v-model="txtEfternavn"></fds-input>
           </fds-formgroup>
         </xfds-validate>
         <template #description>
@@ -397,7 +376,11 @@
       <hr />
       <h2>Filer</h2>
 
-      <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
+      <fds-formgroup>
+        <fds-label>Vedhæft fil</fds-label>
+        <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
+      </fds-formgroup>
+
       <fds-pre
         header="Upload event JSON"
         :json="fileInput" />
@@ -1021,10 +1004,8 @@
 
       <h2>Datoer</h2>
 
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid">
-          Indsendelsesfrist
-        </fds-label>
+      <fds-formgroup>
+        <fds-label> Indsendelsesfrist </fds-label>
         <fds-dato-angivelse
           v-model="datoAngiv"
           @valid="datoAngivValid = $event" />
@@ -1035,10 +1016,8 @@
 
       <h3>Dato Vælger</h3>
 
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid">
-          Fødselsdag
-        </fds-label>
+      <fds-formgroup>
+        <fds-label> Fødselsdag </fds-label>
         <fds-dato-vaelger
           v-model="datoValg"
           @valid="datoValgValid = $event" />
@@ -1576,9 +1555,8 @@ const codeExample = `
   :validations="[hasContent, charactersMinLength(10)]"
   #default="{ isValid, errorMessage }">
   <fds-formgroup
-    :is-valid="isValid"
-    #default="{ formid }">
-    <fds-label :id="formid">
+    :is-valid="isValid">
+    <fds-label>
       Efternavn
     </fds-label>
     <fds-tooltip
@@ -1590,7 +1568,7 @@ const codeExample = `
     </fds-fejlmeddelelse>
     <fds-input
       v-model="txtEfternavn"
-      :id="formid"></fds-input>
+  ></fds-input>
   </fds-formgroup>
 </xfds-validate>`;
 </script>

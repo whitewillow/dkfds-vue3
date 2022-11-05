@@ -5,11 +5,14 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
-      :is-valid="isValid"
-      :label="label"
-      :tooltip="tooltip"
-      #default="{ formid }">
+    <fds-formgroup :is-valid="isValid">
+      <fds-label v-if="label">
+        {{ label }}
+      </fds-label>
+      <fds-tooltip
+        v-if="tooltip"
+        class="ml-2"
+        :text="tooltip" />
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
@@ -17,8 +20,7 @@
       <xfds-checkbox-list
         v-model="value"
         @dirty="touchedEvent"
-        @update:modelValue="handleInput"
-        :id="formid">
+        @update:modelValue="handleInput">
         <slot />
       </xfds-checkbox-list>
     </fds-formgroup>

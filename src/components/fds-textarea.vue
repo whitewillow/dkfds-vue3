@@ -6,8 +6,8 @@
       v-model="val"
       :maxlength="maxLength"
       :rows="getRows"
-      :name="id"
-      :id="id"
+      :name="formid"
+      :id="formid"
       :placeholder="placeholder"
       @input="handleInput"
       @blur="$emit('dirty', true)"
@@ -27,6 +27,7 @@ import {
   defineProps, defineEmits, ref, computed, watch,
 } from 'vue';
 import fdsTextareaProps from '@/props/fds-texarea.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({ ...fdsTextareaProps });
 
@@ -48,6 +49,8 @@ const getRows = computed(() => {
 });
 
 const getMaxLength = computed(() => props.maxLength ?? 4000);
+
+const { formid } = getFormId(props.id);
 
 watch(
   () => [props.modelValue],

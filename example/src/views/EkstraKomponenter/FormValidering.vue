@@ -7,13 +7,13 @@
         :validations="[hasContent, charactersMinLength(10)]"
         #default="{ isValid, errorMessage }"
       >
-        <fds-formgroup :is-valid="isValid" #default="{ formid }">
-          <fds-label :id="formid"> Navn </fds-label>
+        <fds-formgroup :is-valid="isValid">
+          <fds-label> Navn </fds-label>
           <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
           </fds-fejlmeddelelse>
           <fds-hint>Indtast navn</fds-hint>
-          <fds-input v-model="user.name" :id="formid" @dirty="dirty = $event"></fds-input>
+          <fds-input v-model="user.name" @dirty="dirty = $event"></fds-input>
         </fds-formgroup>
       </xfds-validate>
 
@@ -116,13 +116,13 @@ const code = `
     :validations="[hasContent, charactersMinLength(10)]"
     #default="{ isValid, errorMessage }"
   >
-    <fds-formgroup :is-valid="isValid" #default="{ formid }">
-      <fds-label :id="formid"> Navn </fds-label>
+    <fds-formgroup :is-valid="isValid" >
+      <fds-label> Navn </fds-label>
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>Indtast navn</fds-hint>
-      <fds-input v-model="user.name" :id="formid" @dirty="dirty = $event"></fds-input>
+      <fds-input v-model="user.name" @dirty="dirty = $event"></fds-input>
     </fds-formgroup>
   </xfds-validate>
   `;

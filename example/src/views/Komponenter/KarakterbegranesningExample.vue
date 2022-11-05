@@ -1,11 +1,11 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> CVR nr. </fds-label>
+      <fds-formgroup>
+        <fds-label> CVR nr. </fds-label>
         <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
         <fds-hint>Indtast fornavn</fds-hint>
-        <fds-input v-model="cvr" :id="formid"></fds-input>
+        <fds-input v-model="cvr"></fds-input>
         <fds-input-limit :modelValue="cvr" :limit="10" />
       </fds-formgroup>
       <template #description>
@@ -26,7 +26,7 @@ import { ref } from 'vue';
 
 const cvr = ref('');
 const code = `
-<fds-input v-model="cvr" :id="formid"></fds-input>
+<fds-input v-model="cvr"></fds-input>
 <fds-input-limit :modelValue="cvr" :limit="10" />
 `;
 </script>

@@ -31,9 +31,9 @@
  * https://designsystem.dk/komponenter/overflowmenu/
  *
  * */
-import { defineProps, onMounted, ref } from 'vue';
+import { defineProps, onMounted } from 'vue';
 import { Dropdown } from 'dkfds';
-import { v4 as uuidv4 } from 'uuid';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   header: {
@@ -48,7 +48,7 @@ const props = defineProps({
   },
 });
 
-const formid = ref(props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 
 onMounted(async () => {
   new Dropdown(document.getElementById(`button_${formid.value}`)).init();

@@ -2,9 +2,9 @@
   <select
     class="form-select"
     :disabled="isDisabled"
-    :name="id"
+    :name="formid"
     ref="refElement"
-    :id="id"
+    :id="formid"
     v-bind="refValue"
     @change="onInput"
     @blur="$emit('dirty', true)">
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import getFormId from '@/composable/formId';
 import {
   defineProps, defineEmits, ref, onMounted,
 } from 'vue';
@@ -40,6 +41,7 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const refValue = ref(props.modelValue);
 const refElement = ref(null);
+const { formid } = getFormId(props.id);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 

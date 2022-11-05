@@ -2,8 +2,8 @@
   <select
     class="form-select"
     :disabled="isDisabled"
-    :name="id"
-    :id="id"
+    :name="formid"
+    :id="formid"
     v-bind="refValue"
     @change="onInput"
     @blur="$emit('dirty', true)">
@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref } from 'vue';
 import { FdsOptionItem } from '@/model/fds.model';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   id: {
@@ -62,6 +63,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const refValue = ref(props.modelValue);
+const { formid } = getFormId(props.id);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>

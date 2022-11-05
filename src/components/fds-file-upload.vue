@@ -1,37 +1,13 @@
 <template>
-  <div
-    class="form-group file-input"
-    :class="{ 'form-error': $slots.fejl }">
-    <label
-      class="form-label"
-      for="fileinput"
-      v-if="header">
-      {{ header }}
-    </label>
-    <div
-      class="form-hint"
-      v-if="hint">
-      {{ hint }}
-    </div>
-    <span
-      class="form-error-message mb-3"
-      id="fileinput-error">
-      <span class="sr-only">
-        Fejl:
-      </span>
-      <slot name="fejl" />
-    </span>
-
-    <input
-      type="file"
-      id="fileinput"
-      name="file"
-      @blur="onDirty"
-      @change="onFileChange"
-      aria-describedby="fileinput"
-      :accept="contenttypes.join(',')"
-      :disabled="isDisabled"/>
-  </div>
+  <input
+    type="file"
+    :id="formid"
+    :name="formid"
+    @blur="onDirty"
+    @change="onFileChange"
+    aria-describedby="fileinput"
+    :accept="contenttypes.join(',')"
+    :disabled="isDisabled"/>
 </template>
 
 <script setup lang="ts">
@@ -39,13 +15,10 @@ import { defineProps, defineEmits, ref } from 'vue';
 
 import { removeBrowserFileContentHeaders } from '@/utils/file-utils';
 import { FdsFileInputModel } from '@/model/fds.model';
+import getFormId from '@/composable/formId';
 
-defineProps({
-  header: {
-    type: String,
-    default: 'Vedhæft fil',
-  },
-  hint: {
+const props = defineProps({
+  id: {
     type: String,
     default: null,
   },
@@ -68,6 +41,8 @@ const onDirty = () => emit('dirty', true);
 const clearFile = () => {
   file.value = null;
 };
+
+const { formid } = getFormId(props.id);
 
 const onFileChange = ($event: Event) => {
   onDirty();

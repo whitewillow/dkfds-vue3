@@ -1,6 +1,37 @@
 
 
+# 0.3.2
+Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
 
+Core komponenter rettet
+- checkbox
+- dropdown
+- formgroup auto id på underliggende elementer
+- form label - forId påkrævet
+- form input - id påkrævet
+
+Extra komponenter tilføjet
+- checkbox
+- dropdown
+
+Mangler
+- Faner
+- Fejlopsummering
+- FileList
+- FileUpload
+
+TODO:
+fds-formgroup - Magic by Convention
+fds-file-upload
+xfds-form-xx - fjern validering
+xfds-form-val-xx - har validering
+tag
+toggleswitch
+tooltip
+trin
+xfds-checkbox-list
+Modal som dialog
+repeat code xfds input filer
 
 # 0.3.1
 
