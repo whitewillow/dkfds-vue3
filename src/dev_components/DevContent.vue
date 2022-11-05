@@ -167,13 +167,13 @@
         <fds-formgroup
           label="Vælg en checkbox"
           #default="{ formid }">
-          <fds-checkbox-list
+          <xfds-checkbox-list
             v-model="checkboxList"
             :id="formid">
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
-          </fds-checkbox-list>
+          </xfds-checkbox-list>
         </fds-formgroup>
 
         <fds-pre :json="checkboxList" />
@@ -189,7 +189,7 @@
           </fds-checkbox>
           <fds-checkbox
             v-model="twoChecked"
-            small>
+            isSmall>
             Andet valg - small
           </fds-checkbox>
         </fds-formgroup>
@@ -226,9 +226,21 @@
         <fds-pre :json="{ toggleRadio }" />
 
         <fds-formgroup>
-          <fds-dropdown
+          <xfds-dropdown
             :options="dropdownOptions"
-            v-model="dropdownVal" />
+            v-model="dropdownValXFDS" />
+        </fds-formgroup>
+        <fds-pre :json="{ dropdownValXFDS }" />
+
+        <fds-formgroup>
+          <fds-dropdown v-model="dropdownVal">
+            <option value="Manuel">
+              Manuel
+            </option>
+            <option value="Auto">
+              Auto
+            </option>
+          </fds-dropdown>
         </fds-formgroup>
         <fds-pre :json="{ dropdownVal }" />
 
@@ -238,18 +250,6 @@
           onText="Ja" />
         <fds-pre :json="{ toggleswitch }" />
       </div>
-
-      <hr class="my-6" />
-
-      <p>{{ txtFornavn }}</p>
-      <p>{{ txtEfternavn }}</p>
-      <p>{{ txtAdresse }}</p>
-      <p>{{ txtMobil }}</p>
-      <p>{{ txtBeskrivelse }}</p>
-      <p>{{ oneChecked }}</p>
-      <p>{{ twoChecked }}</p>
-      <p>{{ radioVal }}</p>
-      <p>{{ dropdownVal }}</p>
 
       <hr />
 
@@ -1369,6 +1369,7 @@ const checkboxListForm = ref<FdsCheckboxItem[]>([
   },
 ]);
 const dropdownValForm = ref('');
+const dropdownValXFDS = ref('');
 const dropdownVal = ref('');
 const dropdownOptions = ref<FdsOptionItem[]>([
   {

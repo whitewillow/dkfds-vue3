@@ -14,13 +14,13 @@
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-checkbox-list
+      <xfds-checkbox-list
         v-model="value"
         @dirty="touchedEvent"
         @update:modelValue="handleInput"
         :id="formid">
         <slot />
-      </fds-checkbox-list>
+      </xfds-checkbox-list>
     </fds-formgroup>
   </xfds-validate>
 </template>

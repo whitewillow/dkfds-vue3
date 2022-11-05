@@ -14,7 +14,7 @@
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-dropdown
+      <xfds-dropdown
         :id="formid"
         :options="options"
         v-model="value"

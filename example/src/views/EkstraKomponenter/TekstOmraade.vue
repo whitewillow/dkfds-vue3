@@ -19,7 +19,7 @@
         <p class="italic">Understøtter simpel validering, m.m.</p>
       </template>
       <template #code>
-        <pre v-text="code"></pre>
+        <pre v-text="codeForm"></pre>
       </template>
     </fds-component-preview>
   </section>
@@ -32,7 +32,7 @@ import { hasContent, charactersMinLength } from 'dkfds-vue3/src/utils/validate-u
 const product = ref({
   beskrivelse: '',
 });
-const code = `
+const codeForm = `
   <xfds-form-textarea
     label="Beskrivelse"
     hint="Angiv beskrivelse af produktet"

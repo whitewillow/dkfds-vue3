@@ -1,7 +1,10 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+      <fds-dropdown v-model="dropdownVal">
+        <option value="Manuel">Manuel</option>
+        <option value="Auto">Auto</option>
+      </fds-dropdown>
 
       <fds-pre header="v-model" :json="{ dropdownVal }" />
       <template #description>
@@ -19,41 +22,19 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { FdsOptionItem } from 'dkfds-vue3/src/model/fds.model';
 
 const dropdownVal = ref('');
-const dropdownOptions = ref<FdsOptionItem[]>([
-  {
-    title: 'Banan',
-    value: 'banan',
-  },
-  {
-    title: 'Melon',
-    value: 'melon',
-  },
-  {
-    title: 'Æble',
-    value: 'æble',
-  },
-]);
 
 const code = `
-<fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+<fds-dropdown v-model="dropdownVal">
+  <option value="Manuel">
+    Manuel
+  </option>
+  <option value="Auto">
+    Auto
+  </option>
+</fds-dropdown>
 
 const dropdownVal = ref('');
-const dropdownOptions = ref<FdsOptionItem[]>([
-  {
-    title: 'Banan',
-    value: 'banan',
-  },
-  {
-    title: 'Melon',
-    value: 'melon',
-  },
-  {
-    title: 'Æble',
-    value: 'æble',
-  },
-]);
 `;
 </script>

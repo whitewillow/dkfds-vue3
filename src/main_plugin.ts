@@ -17,7 +17,6 @@ import FdsInputNumber from '@/components/fds-input-number.vue';
 import FdsTextarea from '@/components/fds-textarea.vue';
 
 import FdsCheckbox from '@/components/fds-checkbox.vue';
-import FdsCheckboxList from '@/components/fds-checkbox-list.vue';
 
 import FdsToggleSwitch from '@/components/fds-toggle-switch.vue';
 
@@ -69,6 +68,9 @@ import FdsFanebladeList from '@/components/fds-faneblade-list.vue';
 import FdsSpinner from '@/components/fds-spinner.vue';
 
 import FdsComponentPreview from '@/components/fds-component-preview.vue';
+
+import XFdsCheckboxList from '@/components/extra/xfds-checkbox-list.vue';
+import XFdsDropdown from '@/components/extra/xfds-dropdown.vue';
 
 import XFdsFormInput from '@/components/extra/xfds-form-input.vue';
 import XFdsFormRadio from '@/components/extra/xfds-form-radio.vue';
@@ -122,7 +124,6 @@ function install (app: App): void {
   app.component('fds-textarea', FdsTextarea);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
-  app.component('fds-checkbox-list', FdsCheckboxList);
   app.component('fds-radio', FdsRadio);
   app.component('fds-radio-toggle', FdsRadioToggle);
   app.component('fds-dropdown', FdsDropdown);
@@ -151,6 +152,9 @@ function install (app: App): void {
   app.component('fds-paginering', FdsPaginering);
 
   app.component('fds-component-preview', FdsComponentPreview);
+
+  app.component('xfds-checkbox-list', XFdsCheckboxList);
+  app.component('xfds-dropdown', XFdsDropdown);
 
   app.component('xfds-validate', XFdsValidate);
   app.component('xfds-form-input', XFdsFormInput);
@@ -195,7 +199,6 @@ export {
   FdsCard,
   FdsInput,
   FdsCheckbox,
-  FdsCheckboxList,
   FdsRadio,
   FdsRadioToggle,
   FdsDropdown,
@@ -205,6 +208,8 @@ export {
   FdsFormgroup,
   FdsFejlmeddelelse,
   FdsFejlopsummering,
+  XFdsCheckboxList,
+  XFdsDropdown,
   XFdsValidate,
   XFdsFormInput,
   XFdsFormInputNumber,
