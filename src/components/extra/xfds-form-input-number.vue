@@ -7,11 +7,13 @@
     @valid="validEvent">
     <fds-formgroup :is-valid="isValid">
       <fds-label v-if="label">
-        {{ label }} </fds-label><fds-label>{{ label }}</fds-label>
+        {{ label }}
+      </fds-label><fds-label>{{ label }}</fds-label>
       <fds-tooltip
         v-if="tooltip"
-        class="ml-2"
-        :text="tooltip" />
+        class="ml-2">
+        {{ tooltip }}
+      </fds-tooltip>
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>

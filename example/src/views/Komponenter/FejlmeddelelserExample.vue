@@ -3,7 +3,7 @@
     <fds-component-preview header="Eksempel">
       <fds-formgroup :is-valid="false">
         <fds-label> Fornavn </fds-label>
-        <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-fejlmeddelelse> Giv dit kursus et navn </fds-fejlmeddelelse>
         <fds-input v-model="txtFornavn" input-type="name" autocomplete="name"></fds-input>
@@ -29,7 +29,9 @@ const txtFornavn = ref('');
 const code = `
 <fds-formgroup  :is-valid="false">
   <fds-label> Fornavn </fds-label>
-  <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+  <fds-tooltip class="ml-2">
+    Hjælpende <b>tekst</b>
+  </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
   <fds-fejlmeddelelse> Giv dit kursus et navn </fds-fejlmeddelelse>
   <fds-input

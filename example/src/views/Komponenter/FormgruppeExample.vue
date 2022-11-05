@@ -3,7 +3,7 @@
     <fds-component-preview header="Eksempel">
       <fds-formgroup>
         <fds-label> Navn </fds-label>
-        <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="user.name"></fds-input>
       </fds-formgroup>
@@ -46,7 +46,9 @@ const user = ref({
 const code = `
   <fds-formgroup >
     <fds-label> Navn </fds-label>
-    <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+    <fds-tooltip class="ml-2">
+      Hjælpende <b>tekst</b>
+    </fds-tooltip>
     <fds-hint>Indtast fornavn</fds-hint>
     <fds-input v-model="user.name"></fds-input>
   </fds-formgroup>

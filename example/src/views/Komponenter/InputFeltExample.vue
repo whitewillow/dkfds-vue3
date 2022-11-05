@@ -3,7 +3,7 @@
     <fds-component-preview header="Tekstfelt">
       <div class="form-group">
         <fds-label id="formid"> Fornavn </fds-label>
-        <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="txtFornavn" id="formid"></fds-input>
       </div>
@@ -21,7 +21,7 @@
     <fds-component-preview header="Karakterbegrænsning">
       <div class="form-group">
         <fds-label id="formid"> Efternavn </fds-label>
-        <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="txtEfternavn" id="formid"></fds-input>
         <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
@@ -124,7 +124,9 @@ const noBeloeb = ref(0);
 const code = `
 <div class="form-group">
   <fds-label id="formid"> Fornavn </fds-label>
-  <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+  <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
   <fds-input v-model="txtFornavn" id="formid"></fds-input>
 </div>
@@ -133,7 +135,9 @@ const code = `
 const codeLimit = `
 <div class="form-group">
   <fds-label id="formid"> Efternavn </fds-label>
-  <fds-tooltip class="ml-2" text="Hjælpende <b>tekst</b>" />
+  <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
   <fds-input v-model="txtEfternavn" id="formid"></fds-input>
   <fds-input-limit

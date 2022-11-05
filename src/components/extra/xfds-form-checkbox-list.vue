@@ -11,8 +11,10 @@
       </fds-label>
       <fds-tooltip
         v-if="tooltip"
-        class="ml-2"
-        :text="tooltip" />
+        class="ml-2">
+        {{ tooltip }}
+      </fds-tooltip>
+
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
