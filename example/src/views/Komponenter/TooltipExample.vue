@@ -1,8 +1,7 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
-
+      <fds-tooltip> Hjælpende <b>tekst</b> </fds-tooltip>
       <template #description>
         <p class="italic"><code>fds-tooltip</code> laver et tooltip, med tilhørende tekst</p>
       </template>
@@ -15,8 +14,8 @@
 
 <script setup lang="ts">
 const code = `
-<fds-tooltip class="ml-2">
-            Hjælpende <b>tekst</b>
-          </fds-tooltip>
+<fds-tooltip>
+  Hjælpende <b>tekst</b>
+</fds-tooltip>
 `;
 </script>

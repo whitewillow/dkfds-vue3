@@ -3,7 +3,11 @@
     <fds-component-preview header="Eksempel">
       <div>
         <fds-strukturerede-liste header="Navn"> Kirsten Mønster Jensen </fds-strukturerede-liste>
-        <fds-strukturerede-liste header="E-mail">
+        <fds-strukturerede-liste>
+          <template #header>
+            <fds-label class="d-flex justify-content-start"
+              >E-mail <i class="ml-4 icon icon-email" /> </fds-label
+          ></template>
           kirstenjensen@eksempel.dk
         </fds-strukturerede-liste>
       </div>
@@ -36,7 +40,7 @@
         <p class="italic">Simpel måde at vise overskrift og værdi</p>
       </template>
       <template #code>
-        <pre v-text="code"></pre>
+        <pre v-text="codeRediger"></pre>
       </template>
     </fds-component-preview>
   </section>
@@ -46,7 +50,27 @@
 const code = `
 <div class="w-percent-60">
   <fds-strukturerede-liste header="Navn"> Kirsten Mønster Jensen </fds-strukturerede-liste>
-  <fds-strukturerede-liste header="E-mail"> kirstenjensen@eksempel.dk </fds-strukturerede-liste>
+  <fds-strukturerede-liste>
+    <template #header>
+      <fds-label class="d-flex justify-content-start"
+        >E-mail <i class="ml-4 icon icon-email" /> </fds-label
+    ></template>
+    kirstenjensen@eksempel.dk
+  </fds-strukturerede-liste>
 </div>
+`;
+const codeRediger = `
+<fds-strukturerede-liste header="Navn">
+  Kirsten Mønster Jensen
+  <template #button>
+    <a href="#"> Redigér<span class="sr-only"> Kirsten Mønster Jensen </span> </a>
+  </template>
+</fds-strukturerede-liste>
+<fds-strukturerede-liste header="E-mail">
+  kirstenjensen@eksempel.dk
+  <template #button>
+    <a href="#"> Redigér<span class="sr-only"> Kirsten Mønster Jensen </span> </a>
+  </template>
+</fds-strukturerede-liste>
 `;
 </script>

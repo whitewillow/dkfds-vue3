@@ -16,8 +16,17 @@
           labels, m.fl elementer - se koden
         </p>
         <p class="italic">
-          Komponenten generer et id, der kan tilknyttes label og input element - se kode
+          Komponenten udstiller(provide) et <code>formid</code> som <code>fds-label</code> selv
+          omdanner til <code>for</code> id og <code>fds-[input]</code> elementer benytter som
+          <code>id</code>
         </p>
+        <p class="italic">
+          hvis nødvendigt kan man selv bruge enten
+          <code> &lt;fds-formgroup #default="{ formid }" &gt; </code>
+          eller selv <code>const formid = inject('formid', null)</code>
+        </p>
+
+        <p class="italic"></p>
         <p class="italic">
           Kan evt bruge til at lave egne komponenter der wrapper eksempelvis ovenstående i sin egen
           validarings-komponent
@@ -39,12 +48,9 @@ import { ref } from 'vue';
 
 const user = ref({
   name: '',
-  adress: '',
-  city: '',
-  search: '',
 });
 const code = `
-  <fds-formgroup >
+  <fds-formgroup>
     <fds-label> Navn </fds-label>
     <fds-tooltip class="ml-2">
       Hjælpende <b>tekst</b>

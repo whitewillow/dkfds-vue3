@@ -662,9 +662,11 @@
         </fds-faneblad-item>
 
         <fds-faneblad-item
-          header="Fane 2"
           @click="fanebladManueltId = $event"
           id="2">
+          <template #header>
+            Template Header
+          </template>
           <h2>Fane 2</h2>
           <p>
             Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
@@ -681,7 +683,7 @@
       <hr class="my-6" />
       <h3>Faneblade - automatiseret</h3>
 
-      <fds-faneblade-list :list="faneBlade">
+      <xfds-faneblade :list="faneBlade">
         <template v-slot:[`suppe`]>
           <h2>Suppe</h2>
           <p>
@@ -724,7 +726,7 @@
             velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
           </p>
         </template>
-      </fds-faneblade-list>
+      </xfds-faneblade>
       <hr class="my-6" />
 
       <h2>Cards</h2>

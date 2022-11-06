@@ -12,8 +12,13 @@ Core komponenter rettet
 - form input - id ikke påkrævet, genererer selv id, hvis ikke formgroup giver et
 
 Extra komponenter tilføjet
-- checkbox
-- dropdown
+- xfds-checkbox
+- xfds-dropdown
+- xfds-faneblade
+
+Eksempel project
+- Diverse justeringer for at matche ovenstående ændringer
+- Udvidet fds-formgroup beskrivelse
 
 Kraftig simplificering af form brugen.
 Eksempel:
@@ -33,10 +38,8 @@ Eksempel:
 ```
 
 Mangler
-- Faner
 - Fejlopsummering
 - FileList
-- FileUpload
 
 TODO:
 fds-file-upload

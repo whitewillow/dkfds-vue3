@@ -1,15 +1,15 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-formgroup label="Single Checkbox">
-        <fds-checkbox v-model="oneChecked" class="mt-2">
-          Et valg
-          <template #content> Det er muligt at angive indhold </template>
-        </fds-checkbox>
+      <fds-checkbox v-model="oneChecked" class="mt-2">
+        Et valg
+        <template #content> Det er muligt at angive indhold </template>
+      </fds-checkbox>
+      <fds-formgroup>
+        <fds-label>Label til tjekboks</fds-label>
         <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
-
-        <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
       </fds-formgroup>
+      <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
       <template #description>
         <p class="italic"><code>fds-checkbox </code> Enkeltstående checkboxe</p>
       </template>
@@ -27,12 +27,14 @@ const oneChecked = ref(false);
 const twoChecked = ref(false);
 
 const code2 = `
-<fds-checkbox v-model="oneChecked">
+<fds-checkbox v-model="oneChecked" class="mt-2">
   Et valg
   <template #content> Det er muligt at angive indhold </template>
 </fds-checkbox>
 
-<fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
-
+<fds-formgroup>
+  <fds-label>Label til tjekboks</fds-label>
+  <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
+</fds-formgroup>
 `;
 </script>

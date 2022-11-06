@@ -3,30 +3,17 @@
     class="tabnav"
     role="tablist">
     <template
-      v-for="item of list"
+      v-for="item of tabsList"
       :key="item.key">
-      <button
-        :aria-controls="`tabpanel_${item.key}`"
-        :id="`tab_${item.key}`"
-        class="tabnav-item"
-        :class="[{ active: item.active }, { disabled: item.disabled }]"
-        role="tab"
+      <fds-faneblad-item
+        :header="item.title"
+        :isActive="item.active"
         @click="onNavigate(item)"
-        :aria-selected="currentKey === item.key">
-        <span>{{ item.title }}</span>
-      </button>
-
-      <section
-        class="tabnav-panel"
-        :aria-hidden="currentKey !== item.key"
-        role="tabpanel"
-        tabindex="0"
-        :id="`tabpanel_${item.key}`"
-        :aria-labelledby="`tab_${item.key}`">
+        :id="`tab_${item.key}`">
         <slot
           v-bind:currentKey="currentKey"
           :name="currentKey" />
-      </section>
+      </fds-faneblad-item>
     </template>
   </div>
 </template>

@@ -40,7 +40,7 @@
     <hr class="my-6" />
 
     <fds-component-preview header="Faneblade - automatiseret">
-      <fds-faneblade-list :list="faneBlade">
+      <xfds-faneblade :list="faneBlade">
         <template v-slot:[`suppe`]>
           <h2>Suppe</h2>
           <p>
@@ -83,7 +83,7 @@
             velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
           </p>
         </template>
-      </fds-faneblade-list>
+      </xfds-faneblade>
       <template #description>
         <p class="italic">
           Anvend kun dropdown menuer, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren
@@ -157,7 +157,7 @@ const code = `
 `;
 
 const codeauto = `
-<fds-faneblade-list :list="faneBlade">
+<xfds-faneblade :list="faneBlade">
   <template v-slot:[\`suppe\`]>
     <h2>Suppe</h2>
     <p>

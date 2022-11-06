@@ -1,8 +1,10 @@
 <template>
   <section>
     <fds-component-preview header="Upload">
-      <fds-file-upload @upload="fileInput = $event" />
-
+      <fds-formgroup>
+        <fds-label>Vedhæft fil</fds-label>
+        <fds-file-upload @upload="fileInput = $event" />
+      </fds-formgroup>
       <fds-pre header="Upload event JSON" :json="fileInput" />
 
       <h2>Props</h2>
@@ -101,7 +103,10 @@ const filListe = ref<FdsFileModel[]>([
 ]);
 
 const codeUpload = `
-<fds-file-upload @upload="fileInput = $event"/>
+<fds-formgroup>
+  <fds-label>Vedhæft fil</fds-label>
+  <fds-file-upload @upload="fileInput = $event" />
+</fds-formgroup>
 `;
 
 const codeDownload = `
