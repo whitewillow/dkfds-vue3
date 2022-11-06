@@ -1,8 +1,21 @@
 
+# TODO:
+
+https://github.com/whitewillow/dkfds-vue3/issues
+
+Mangler
+- FileList
+
+TODO:
+Refak xfds inputs - split val ud
+overvej om magi med fejl og validering
+xfds-form-xx - fjern validering
+xfds-form-val-xx - har validering
+repeat code xfds input filer
+Fælles watcher
 
 # 0.3.2
 Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
-
 
 Core komponenter rettet
 - checkbox
@@ -37,25 +50,6 @@ Eksempel:
     :limit="10" />
 </fds-formgroup>
 ```
-
-Mangler
-- Fejlopsummering- 
-- FileList
-
-TODO:
-fds-file-upload
-xfds-form-xx - fjern validering
-xfds-form-val-xx - har validering
-tag
-toggleswitch
-trin
-xfds-checkbox-list
-Modal som dialog
-repeat code xfds input filer
-Fælles watcher
-
-TODO: aria
-- tooltip
 
 # 0.3.1
 
