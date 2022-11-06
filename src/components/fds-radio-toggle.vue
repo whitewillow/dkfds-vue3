@@ -5,15 +5,15 @@
         v-for="(radio, index) of choices"
         :key="index">
         <input
-          :id="'radio-' + formId + '-' + index"
+          :id="'radio-' + formid + '-' + index"
           type="radio"
-          :name="'radio' + formId"
+          :name="'radio' + formid"
           :value="radio.value"
           :disabled="radio.disabled"
           :checked="isValueSet && modelValue?.toString() === radio.value.toString()"
           @change="handleInput"
           class="form-radio radio-large"/>
-        <label :for="'radio-' + formId + '-' + index">
+        <label :for="'radio-' + formid + '-' + index">
           {{ radio.title }}
         </label>
 
@@ -36,8 +36,8 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmits, computed } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
 import { FdsOptionItem } from '@/model/fds.model';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   modelValue: {
@@ -54,6 +54,10 @@ const props = defineProps({
   isDisabled: {
     type: Boolean,
     default: false,
+  },
+  id: {
+    type: String,
+    default: null,
   },
 });
 
@@ -76,7 +80,7 @@ const isValueSet = computed(() => props.modelValue !== undefined && props.modelV
 
 const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value === 'true');
 
-const formId = computed(() => uuidv4());
+const { formid } = getFormId(props.id, true);
 </script>
 
 <style scoped lang="scss"></style>

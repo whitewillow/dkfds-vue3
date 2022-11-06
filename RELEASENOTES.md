@@ -3,16 +3,34 @@
 # 0.3.2
 Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
 
+
 Core komponenter rettet
 - checkbox
 - dropdown
 - formgroup auto id på underliggende elementer
 - form label - forId påkrævet
-- form input - id påkrævet
+- form input - id ikke påkrævet, genererer selv id, hvis ikke formgroup giver et
 
 Extra komponenter tilføjet
 - checkbox
 - dropdown
+
+Kraftig simplificering af form brugen.
+Eksempel:
+
+```html
+<fds-formgroup> // udstiller ID
+  <fds-label> Fornavn </fds-label> // fanger udstillet og sætter selv "for" attr
+  <fds-tooltip class="ml-2">
+    Hjælpende <b>tekst</b>
+  </fds-tooltip>
+  <fds-hint>Indtast fornavn</fds-hint>
+  <fds-input v-model="txtFornavn" /> // fanger udstillet ID
+  <fds-input-limit
+    :modelValue="txtFornavn"
+    :limit="10" />
+</fds-formgroup>
+```
 
 Mangler
 - Faner
@@ -21,17 +39,19 @@ Mangler
 - FileUpload
 
 TODO:
-fds-formgroup - Magic by Convention
 fds-file-upload
 xfds-form-xx - fjern validering
 xfds-form-val-xx - har validering
 tag
 toggleswitch
-tooltip
 trin
 xfds-checkbox-list
 Modal som dialog
 repeat code xfds input filer
+Fælles watcher
+
+TODO: aria
+- tooltip
 
 # 0.3.1
 

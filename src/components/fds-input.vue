@@ -71,7 +71,7 @@ const cssClass = computed((): string => {
 
 const handleInput = () => emit('update:modelValue', value.value);
 
-const { formid } = getFormId(props.id);
+const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],

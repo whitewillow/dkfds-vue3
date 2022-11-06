@@ -47,6 +47,12 @@
               suffix="kr."></fds-input-number>
           </fds-formgroup>
         </xfds-validate>
+
+        <fds-formgroup>
+          <fds-label> Begrundelse </fds-label>
+          <fds-hint>Indtast Begrundelse</fds-hint>
+          <fds-textarea v-model="txtBegrundelse" />
+        </fds-formgroup>
       </div>
 
       <hr class="my-6" />
@@ -1256,6 +1262,7 @@ const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
 const txtSearch = ref('');
 const txtEfternavn = ref('');
+const txtBegrundelse = ref('');
 const noBeloeb = ref(0);
 const txtAdresse = ref('');
 const kasser = ref(0);

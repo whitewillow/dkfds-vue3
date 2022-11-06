@@ -63,7 +63,7 @@ const refValue = ref(props.modelValue);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
-const { formid } = getFormId(props.id);
+const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],
