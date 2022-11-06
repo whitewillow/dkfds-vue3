@@ -10,6 +10,7 @@ Core komponenter rettet
 - formgroup auto id på underliggende elementer
 - form label - forId påkrævet
 - form input - id ikke påkrævet, genererer selv id, hvis ikke formgroup giver et
+- fejlopsummering
 
 Extra komponenter tilføjet
 - xfds-checkbox
@@ -38,7 +39,7 @@ Eksempel:
 ```
 
 Mangler
-- Fejlopsummering
+- Fejlopsummering- 
 - FileList
 
 TODO:

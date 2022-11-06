@@ -1116,6 +1116,14 @@
         molestiae natus, hic eius ab architecto dolorum placeat.
       </fds-alert>
 
+      <fds-fejlopsummering class="w-percent-lg-80">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <ul class="alert-text">
+          <li>Egen liste</li>
+          <li>Egen liste</li>
+        </ul>
+      </fds-fejlopsummering>
+
       <fds-fejlopsummering
         class="w-percent-lg-80"
         :list="fejlOpsummering"></fds-fejlopsummering>
