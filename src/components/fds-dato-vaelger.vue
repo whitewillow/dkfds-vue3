@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import { defineProps, defineEmits, ref } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   id: {
@@ -22,7 +22,7 @@ const props = defineProps({
   },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid']);
-const formid = ref(props.id ?? uuidv4());
+const { formid } = getFormId(props.id);
 const refValue = ref(props.modelValue);
 
 const isDateValid = (dateString: string) => {

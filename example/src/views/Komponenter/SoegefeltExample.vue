@@ -1,7 +1,7 @@
 <template>
   <section>
     <fds-component-preview header="Søg knap">
-      <div class="form-group">
+      <fds-formgroup>
         <fds-label id="searchtxt">Input med knap ikon</fds-label>
         <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchtxt">
           <template #button>
@@ -12,16 +12,16 @@
             </button>
           </template>
         </fds-input>
-      </div>
+      </fds-formgroup>
 
-      <div class="form-group">
+      <fds-formgroup>
         <fds-label id="searchbtn">Input med knap tekst</fds-label>
         <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchbtn">
           <template #button>
             <button class="button button-search">Søg</button>
           </template>
         </fds-input>
-      </div>
+      </fds-formgroup>
       <template #description>
         <p class="italic">Det er muligt at tilknytte knap med ikon eller tekst til et inputfelt.</p>
       </template>

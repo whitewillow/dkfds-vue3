@@ -1,20 +1,23 @@
 <template>
   <label
     class="form-label"
-    :for="id">
+    :for="formid">
     <slot />
   </label>
 </template>
 
 <script setup lang="ts">
+import getFormId from '@/composable/formId';
 import { defineProps } from 'vue';
 
-defineProps({
-  id: {
+const props = defineProps({
+  forId: {
     type: String,
-    default: '',
+    default: null,
   },
 });
+
+const { formid } = getFormId(props.forId);
 </script>
 
 <style scoped lang="scss"></style>

@@ -1,8 +1,8 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> Indsendelsesfrist </fds-label>
+      <fds-formgroup>
+        <fds-label> Indsendelsesfrist </fds-label>
         <fds-dato-angivelse v-model="datoAngiv" @valid="datoAngivValid = $event" />
       </fds-formgroup>
       <fds-pre :json="{ datoAngiv, datoAngivValid }" header="JSON DATE format" />

@@ -6,8 +6,8 @@
     </fds-alert>
 
     <fds-component-preview header="Eksempel">
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> Fødselsdag </fds-label>
+      <fds-formgroup>
+        <fds-label> Fødselsdag </fds-label>
         <fds-dato-vaelger v-model="datoValg" @valid="datoValgValid = $event" />
       </fds-formgroup>
 

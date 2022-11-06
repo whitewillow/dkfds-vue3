@@ -3,25 +3,15 @@
     class="form-group"
     :key="formid"
     :class="{ 'form-error': isValid === false }">
-    <fds-label
-      v-if="label"
-      :id="formid">
-      {{ label }}
-    </fds-label>
-    <fds-tooltip
-      v-if="tooltip"
-      class="ml-2"
-      :text="tooltip" />
-
     <slot :formid="formid" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from 'vue';
+import { defineProps, provide, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
-defineProps({
+const props = defineProps({
   id: {
     type: String,
     default: null,
@@ -30,17 +20,18 @@ defineProps({
     type: Boolean,
     default: true,
   },
-  label: {
-    type: String,
-    default: null,
-  },
-  tooltip: {
-    type: String,
-    default: null,
-  },
 });
 
-const formid = computed(() => uuidv4());
+/**
+ * Form id der bruges i slots
+ * eg. label for input element
+ */
+const formid = ref(props.id ?? uuidv4());
+/**
+ * Provide for underliggende elementer
+ * eg. label for input element
+ */
+provide('formid', formid);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

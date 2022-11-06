@@ -5,22 +5,26 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
-      :is-valid="isValid"
-      :label="label"
-      :tooltip="tooltip"
-      #default="{ formid }">
+    <fds-formgroup :is-valid="isValid">
+      <fds-label v-if="label">
+        {{ label }}
+      </fds-label>
+      <fds-tooltip
+        v-if="tooltip"
+        class="ml-2">
+        {{ tooltip }}
+      </fds-tooltip>
+
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
-      <fds-checkbox-list
+      <xfds-checkbox-list
         v-model="value"
         @dirty="touchedEvent"
-        @update:modelValue="handleInput"
-        :id="formid">
+        @update:modelValue="handleInput">
         <slot />
-      </fds-checkbox-list>
+      </xfds-checkbox-list>
     </fds-formgroup>
   </xfds-validate>
 </template>

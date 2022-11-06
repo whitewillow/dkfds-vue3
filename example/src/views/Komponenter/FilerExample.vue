@@ -1,9 +1,9 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> Vedhæft fil </fds-label>
-        <fds-file-upload @upload="fileInput = $event" :id="formid"></fds-file-upload>
+      <fds-formgroup>
+        <fds-label> Vedhæft fil </fds-label>
+        <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
       </fds-formgroup>
 
       <fds-pre header="Upload event JSON" :json="fileInput" />
@@ -80,9 +80,9 @@ const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 
 const codeUpload = `
-<fds-formgroup #default="{ formid }">
-  <fds-label :id="formid"> Vedhæft fil </fds-label>
-  <fds-file-upload @upload="fileInput = $event" :id="formid"></fds-file-upload>
+<fds-formgroup >
+  <fds-label> Vedhæft fil </fds-label>
+  <fds-file-upload @upload="fileInput = $event"></fds-file-upload>
 </fds-formgroup>
 `;
 </script>

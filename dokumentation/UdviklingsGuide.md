@@ -60,9 +60,8 @@ eks:
     :validations="[hasContent, charactersMinLength(10)]"
     #default="{ isValid, errorMessage }">
     <fds-formgroup
-    :is-valid="isValid"
-    #default="{ formid }">
-        <fds-label :id="formid">
+    :is-valid="isValid" >
+        <fds-label>
             Efternavn
         </fds-label>
         <fds-fejlmeddelelse v-if="!isValid">
@@ -71,7 +70,7 @@ eks:
         <fds-hint>Indtast efternavn</fds-hint>
         <fds-input
             v-model="txtEfternavn"
-            :id="formid" />
+            />
     </fds-formgroup>
 </xfds-validate>
 ```

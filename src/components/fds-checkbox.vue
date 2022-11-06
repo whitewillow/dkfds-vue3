@@ -1,7 +1,7 @@
 <template>
   <fieldset>
     <input
-      :id="formId"
+      :id="formid"
       type="checkbox"
       :checked="refValue"
       class="form-checkbox"
@@ -10,22 +10,27 @@
       @blur="$emit('dirty', true)"
       :disabled="isDisabled"/>
     <label
-      :for="formId"
+      :for="formid"
       class="hand">
-      <section class="pl-2 hand">
-        <slot
-          v-bind:id="formId"
-          class="hand"></slot>
-      </section>
+      <slot
+        v-bind:id="formid"
+        class="hand"></slot>
     </label>
+    <div
+      :id="`collapse-${formid}`"
+      v-if="$slots.content"
+      :aria-hidden="!refValue"
+      class="checkbox-content checkbox-content-large">
+      <slot name="content" />
+    </div>
   </fieldset>
 </template>
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed, watch,
+  defineProps, defineEmits, ref, watch,
 } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   id: {
@@ -58,7 +63,7 @@ const refValue = ref(props.modelValue);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
-const formId = computed(() => props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],

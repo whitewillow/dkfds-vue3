@@ -5,17 +5,21 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup
-      :is-valid="isValid"
-      :label="label"
-      #default="{ formid }">
+    <fds-formgroup :is-valid="isValid">
+      <fds-label v-if="label">
+        {{ label }}
+      </fds-label>
+      <fds-tooltip
+        v-if="tooltip"
+        class="ml-2">
+        {{ tooltip }}
+      </fds-tooltip>
       <fds-fejlmeddelelse v-if="!isValid">
         {{ errorMessage }}
       </fds-fejlmeddelelse>
       <fds-hint>{{ hint }}</fds-hint>
       <fds-textarea
         v-model="value"
-        :id="formid"
         :placeholder="placeholder"
         :max-length="maxLength"
         :inputClass="inputClass"

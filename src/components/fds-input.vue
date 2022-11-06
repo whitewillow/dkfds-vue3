@@ -10,9 +10,9 @@
       class="form-input d-flex"
       :class="inputClass"
       :readonly="isReadonly"
-      :name="id"
+      :name="formid"
       v-model="value"
-      :id="id"
+      :id="formid"
       :placeholder="placeholder"
       :type="inputType"
       :autocomplete="autocomplete"
@@ -34,6 +34,7 @@ import {
   defineProps, defineEmits, ref, computed, useSlots, watch,
 } from 'vue';
 import fdsInputProps from '@/props/fds-input.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   ...fdsInputProps,
@@ -69,6 +70,8 @@ const cssClass = computed((): string => {
 });
 
 const handleInput = () => emit('update:modelValue', value.value);
+
+const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],

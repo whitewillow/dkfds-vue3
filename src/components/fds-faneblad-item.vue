@@ -4,9 +4,14 @@
     :id="`tab_${formId}`"
     @click="onFanButtonClick"
     class="tabnav-item"
+    :class="[{ active: isActive }, { disabled: isDisabled }]"
     role="tab"
     :aria-selected="isActive">
-    <span>{{ header }}</span>
+    <slot name="header">
+      <span>
+        {{ header }}
+      </span>
+    </slot>
   </button>
   <section
     class="tabnav-panel"
@@ -31,6 +36,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+
+  isDisabled: {
+    type: Boolean,
+    default: false,
+  },
   id: {
     type: String,
     required: true,
@@ -40,7 +50,7 @@ const props = defineProps({
    * */
   header: {
     type: String,
-    required: true,
+    default: 'Fane',
   },
 });
 
@@ -51,7 +61,7 @@ const onFanButtonClick = () => {
   emit('navigate', props.id);
 };
 
-const formId = ref(uuidv4());
+const formId = ref(props.id ?? uuidv4());
 </script>
 
 <style scoped lang="scss"></style>

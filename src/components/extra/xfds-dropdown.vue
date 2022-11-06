@@ -3,20 +3,30 @@
     class="form-select"
     :disabled="isDisabled"
     :name="formid"
-    ref="refElement"
     :id="formid"
     v-bind="refValue"
     @change="onInput"
     @blur="$emit('dirty', true)">
-    <slot />
+    <option
+      :value="refValue"
+      v-if="!optionHeader">
+      {{ optionHeader }}
+    </option>
+    <option
+      v-for="(o, i) in options"
+      :value="o.value"
+      :key="i"
+      :disabled="o.disabled"
+      :selected="o.value === refValue">
+      {{ o.title }}
+    </option>
   </select>
 </template>
 
 <script setup lang="ts">
+import { defineProps, defineEmits, ref } from 'vue';
+import { FdsOptionItem } from '@/model/fds.model';
 import getFormId from '@/composable/formId';
-import {
-  defineProps, defineEmits, ref, onMounted,
-} from 'vue';
 
 const props = defineProps({
   id: {
@@ -29,26 +39,33 @@ const props = defineProps({
     default: '',
   },
   /**
+   * Første option - default: Vælg
+   * */
+  optionHeader: {
+    type: String,
+    default: 'Vælg',
+  },
+  /**
    * Disable dropdown
    * */
   isDisabled: {
     type: Boolean,
     default: false,
   },
+  /**
+   * Dropdown options / valgmuligheder
+   * */
+  options: {
+    type: Array as () => Array<FdsOptionItem>,
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const refValue = ref(props.modelValue);
-const refElement = ref(null);
 const { formid } = getFormId(props.id, true);
 
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
-
-onMounted(() => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (refElement.value as any).dispatchEvent(new Event('change'));
-});
 </script>
 
 <style scoped lang="scss"></style>

@@ -2,10 +2,10 @@
   <section>
     <div>
       <h3>Eksempel på advanceret brug</h3>
-      <fds-formgroup #default="{ formid }">
-        <fds-label :id="formid"> Fornavn </fds-label>
+      <fds-formgroup>
+        <fds-label> Fornavn </fds-label>
         <fds-hint>Indtast fornavn</fds-hint>
-        <fds-input v-model="txtFornavn" :id="formid"></fds-input>
+        <fds-input v-model="txtFornavn"></fds-input>
       </fds-formgroup>
 
       <xfds-validate
@@ -13,13 +13,13 @@
         :validations="[hasContent, charactersMinLength(10)]"
         #default="{ isValid, errorMessage }"
       >
-        <fds-formgroup :is-valid="isValid" #default="{ formid }">
-          <fds-label :id="formid"> Efternavn </fds-label>
+        <fds-formgroup :is-valid="isValid">
+          <fds-label> Efternavn </fds-label>
           <fds-fejlmeddelelse v-if="!isValid">
             {{ errorMessage }}
           </fds-fejlmeddelelse>
           <fds-hint>Indtast efternavn</fds-hint>
-          <fds-input v-model="txtEfternavn" :id="formid"></fds-input>
+          <fds-input v-model="txtEfternavn"></fds-input>
         </fds-formgroup>
       </xfds-validate>
     </div>

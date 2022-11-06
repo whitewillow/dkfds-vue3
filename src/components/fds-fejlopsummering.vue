@@ -5,7 +5,7 @@
     showIcon
     :header="header"
     :canClose="false">
-    <div>
+    <slot>
       <ul class="alert-text nobullet-list">
         <li
           v-for="(e, i) in list"
@@ -15,8 +15,7 @@
           </fds-funktionslink>
         </li>
       </ul>
-      <slot />
-    </div>
+    </slot>
   </fds-alert>
 </template>
 

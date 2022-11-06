@@ -10,9 +10,9 @@
       class="form-input d-flex"
       :class="inputClass"
       :readonly="isReadonly"
-      :name="id"
+      :name="formid"
       v-model="value"
-      :id="id"
+      :id="formid"
       :placeholder="placeholder"
       :type="inputType"
       :disabled="isDisabled"
@@ -33,6 +33,7 @@ import {
   defineProps, defineEmits, ref, computed,
 } from 'vue';
 import fdsInputProps from '@/props/fds-input.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   ...fdsInputProps,
@@ -56,6 +57,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
 const value = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
+const { formid } = getFormId(props.id, true);
 
 const cssClass = computed((): string => {
   if (props.suffix) {

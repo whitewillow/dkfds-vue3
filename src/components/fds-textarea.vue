@@ -1,25 +1,16 @@
 <template>
-  <div class="flex-items-center">
-    <textarea
-      class="form-input"
-      :class="inputClass"
-      v-model="val"
-      :maxlength="maxLength"
-      :rows="getRows"
-      :name="id"
-      :id="id"
-      :placeholder="placeholder"
-      @input="handleInput"
-      @blur="$emit('dirty', true)"
-      :disabled="isDisabled"></textarea>
-    <p
-      class="mt-1 form-hint"
-      v-if="val && val.length >= getMaxLength * 0.9">
-      Antal tegn {{ val.length }} <span v-if="getMaxLength > -1">
-        af {{ getMaxLength }}
-      </span>
-    </p>
-  </div>
+  <textarea
+    class="form-input"
+    :class="inputClass"
+    v-model="val"
+    :maxlength="maxLength"
+    :rows="getRows"
+    :name="formid"
+    :id="formid"
+    :placeholder="placeholder"
+    @input="handleInput"
+    @blur="$emit('dirty', true)"
+    :disabled="isDisabled"></textarea>
 </template>
 
 <script setup lang="ts">
@@ -27,6 +18,7 @@ import {
   defineProps, defineEmits, ref, computed, watch,
 } from 'vue';
 import fdsTextareaProps from '@/props/fds-texarea.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({ ...fdsTextareaProps });
 
@@ -47,7 +39,7 @@ const getRows = computed(() => {
   return result <= 10 ? result : 10;
 });
 
-const getMaxLength = computed(() => props.maxLength ?? 4000);
+const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],
