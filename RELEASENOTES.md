@@ -14,7 +14,7 @@ xfds-form-val-xx - har validering
 repeat code xfds input filer
 Fælles watcher
 
-# 0.3.2
+# 0.3.3
 Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
 
 Core komponenter rettet

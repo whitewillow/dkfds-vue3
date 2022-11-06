@@ -11,6 +11,46 @@ Eksempel side udstilles på Git Pages.
 - Datovælger
 - Paginering
 
+## v0.3.3 - :heavy_check_mark:
+Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
+
+
+Core komponenter rettet
+- checkbox
+- dropdown
+- formgroup auto id på underliggende elementer
+- form label - forId påkrævet
+- form input - id ikke påkrævet, genererer selv id, hvis ikke formgroup giver et
+- fejlopsummering
+
+Extra komponenter tilføjet
+- xfds-checkbox
+- xfds-dropdown
+- xfds-faneblade
+
+Eksempel project
+- Diverse justeringer for at matche ovenstående ændringer
+- Udvidet fds-formgroup beskrivelse
+
+Dertil oprettet en række issues
+
+Kraftig simplificering af form brugen.
+Eksempel:
+
+```html
+<fds-formgroup> // udstiller ID
+  <fds-label> Fornavn </fds-label> // fanger udstillet og sætter selv "for" attr
+  <fds-tooltip class="ml-2">
+    Hjælpende <b>tekst</b>
+  </fds-tooltip>
+  <fds-hint>Indtast fornavn</fds-hint>
+  <fds-input v-model="txtFornavn" /> // fanger udstillet ID
+  <fds-input-limit
+    :modelValue="txtFornavn"
+    :limit="10" />
+</fds-formgroup>
+```
+
 ## v0.4 - igang
 - Alle komponenter er lavet, undtagen:
   - Skip link
