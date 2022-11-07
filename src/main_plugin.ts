@@ -82,7 +82,6 @@ import XFdsFormTextarea from '@/components/extra/xfds-form-textarea.vue';
 import XFdsFormCheckboxList from '@/components/extra/xfds-form-checkbox-list.vue';
 import XFdsValidate from '@/components/extra/xfds-validate.vue';
 import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
-import FdsVenstremenuSub from '@/components/fds-venstremenu-sub.vue';
 
 import FdsMenu from '@/components/fds-menu.vue';
 import FdsMenuItem from '@/components/fds-menu-item.vue';
@@ -90,6 +89,7 @@ import XFdsButtonSpinner from '@/components/extra/xfds-button-spinner.vue';
 import XFdsFaneblade from '@/components/extra/xfds-faneblade.vue';
 
 import XFdsMenu from '@/components/extra/xfds-menu.vue';
+import XFdsMenuSub from '@/components/extra/xfds-menu-sub.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -150,7 +150,7 @@ function install (app: App): void {
 
   app.component('fds-nav-link', FdsNavLink);
   app.component('fds-funktionslink', FdsFunktionslink);
-  app.component('fds-venstremenu-sub', FdsVenstremenuSub);
+  app.component('xfds-menu-sub', XFdsMenuSub);
 
   app.component('fds-menu', FdsMenu);
   app.component('fds-menu-item', FdsMenuItem);
@@ -196,7 +196,6 @@ export {
   FdsFanebladItem,
   FdsStruktureredeListe,
   FdsFaneblade,
-  FdsVenstremenuSub,
   FdsMenu,
   FdsMenuItem,
   FdsHint,
@@ -219,6 +218,7 @@ export {
   FdsFejlmeddelelse,
   FdsFejlopsummering,
   XFdsMenu,
+  XFdsMenuSub,
   XFdsFaneblade,
   XFdsCheckboxList,
   XFdsDropdown,

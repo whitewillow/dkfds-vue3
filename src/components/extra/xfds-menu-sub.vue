@@ -14,7 +14,7 @@
         role="menuitem">
         {{ child.title }}
       </a>
-      <fds-venstremenu-sub
+      <xfds-menu-sub
         @navigate="navigateup"
         v-if="child.active && child.children && child.children.length > 0"
         v-model="child.children"/>

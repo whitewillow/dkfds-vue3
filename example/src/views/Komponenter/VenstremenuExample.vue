@@ -18,10 +18,7 @@
       </div>
 
       <template #description>
-        <p class="italic">
-          Badges er grafiske markører, som du kan bruge til at gøre opmærksom på nyt eller vigtigt
-          indhold.
-        </p>
+        <p class="italic">Håndtering af menu</p>
       </template>
       <template #code>
         <pre v-text="code"></pre>
@@ -56,10 +53,7 @@
       </div>
 
       <template #description>
-        <p class="italic">
-          Badges er grafiske markører, som du kan bruge til at gøre opmærksom på nyt eller vigtigt
-          indhold.
-        </p>
+        <p class="italic">Håndtering af menu med submenu</p>
       </template>
       <template #code>
         <pre v-text="code2"></pre>

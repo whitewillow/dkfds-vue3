@@ -14,7 +14,7 @@
       @navigate="navigate(item)">
       {{ item.title }}
       <template #content>
-        <fds-venstremenu-sub
+        <xfds-menu-sub
           v-if="item.active && item.children && item.children.length > 0"
           @navigate="subnavigation"
           v-model="item.children"/>
