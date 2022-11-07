@@ -3,10 +3,13 @@
     role="none"
     :class="[{ 'active current': active }, { disabled: disabled }]">
     <a
-      :href="'javascript:void(0);'"
+      :href="`${href ? href : 'javascript:void(0);'}`"
       role="menuitem"
       class="d-block menuitem hand"
       @click="navigate(id)">
+      <span v-if="index !== null">
+        {{ `${index}. ` }}
+      </span>
       <slot />
 
       <span
@@ -19,13 +22,11 @@
           <use :xlink:href="`#${icon}`" />
         </svg>
       </span>
-      <slot name="hint">
-        <p
-          v-if="hint && hint.length > 0"
-          class="sidenav-information">
-          {{ hint }}
-        </p>
-      </slot>
+      <p
+        v-if="hint && hint.length > 0"
+        class="sidenav-information">
+        {{ hint }}
+      </p>
     </a>
     <slot name="content" />
   </li>
@@ -53,6 +54,14 @@ const props = defineProps({
   },
   hint: {
     type: String,
+    default: null,
+  },
+  href: {
+    type: String,
+    default: null,
+  },
+  index: {
+    type: Number,
     default: null,
   },
 });

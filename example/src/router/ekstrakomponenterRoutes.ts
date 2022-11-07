@@ -60,6 +60,12 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('FormValidering.vue'),
       },
       {
+        path: 'venstremenu',
+        name: 'ekstravenstremenu',
+        component: loadExtraView('VenstreMenu.vue'),
+      },
+
+      {
         path: 'progressbar',
         name: 'ekstraprogressbar',
         component: loadExtraView('ProgressBar.vue'),

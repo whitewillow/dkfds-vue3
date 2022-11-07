@@ -588,11 +588,51 @@
       <h2>Side tabs</h2>
 
       <h3>Manuel venstremenu</h3>
+
       <div class="row">
         <div class="col-4">
-          <fds-venstremenu
+          <fds-menu>
+            <fds-menu-item
+              icon="done"
+              id="alpha"
+              @navigate="manuelIdClick = $event">
+              Alpha
+            </fds-menu-item>
+            <fds-menu-item
+              id="beta"
+              @navigate="manuelIdClick = $event"
+              active>
+              Beta
+              <template #content>
+                <fds-menu variant="submenu">
+                  <fds-menu-item
+                    id="beta/1"
+                    @navigate="manuelIdClick = $event">
+                    Beta - En
+                  </fds-menu-item>
+                  <fds-menu-item
+                    id="beta/2"
+                    @navigate="manuelIdClick = $event"
+                    active>
+                    Beta - To
+                  </fds-menu-item>
+                </fds-menu>
+              </template>
+            </fds-menu-item>
+          </fds-menu>
+        </div>
+        <div class="col">
+          <fds-pre :json="{ manuelIdClick }" />
+        </div>
+      </div>
+
+      <h3>Semi Manuel venstremenu</h3>
+      <div class="row">
+        <div class="col-4">
+          <xfds-menu
+            navigateFirst
             v-model="manuelSideNavList"
-            @navigate="manuelSideNavKey = $event" />
+            @navigate="manuelSideNavKey = $event"/>
         </div>
         <div class="col">
           <fds-pre :json="{ currentKey: manuelSideNavKey }" />
@@ -600,77 +640,6 @@
         </div>
       </div>
 
-      <hr class="my-6" />
-      <h3>Venstremenu automatiseret</h3>
-      <fds-venstremenu-side
-        v-model="sideTabs"
-        showIndex>
-        <template
-          v-slot:[tab.key]
-          v-for="tab of sideTabs"
-          :key="tab.key">
-          <h2>{{ tab.title }}</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-      </fds-venstremenu-side>
-
-      <hr class="my-6" />
-
-      <h3
-        id="cheeseapple"
-        name="cheeseapple">
-        Venstremenu automatiseret
-      </h3>
-      <fds-venstremenu-side v-model="sideTabs">
-        <template v-slot:[`suppe`]>
-          <h2>Suppe</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-        <template v-slot:[`dessert`]>
-          <h2>Dessert</h2>
-          <p>
-            Autogeneret faner ud fra liste, hvor man kan lave tilhørende template refereret med
-            "key"
-
-            <fds-pre>
-              {{`${`<template v-slot:[\`dessert\`]> Mit Indhold </template>
-              `}`}}
-            </fds-pre>
-          </p>
-        </template>
-        <template v-slot:[`kod`]>
-          <h2>Kød</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-        <template v-slot:[`fisk`]>
-          <h2>Fisk</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-      </fds-venstremenu-side>
       <hr class="my-6" />
 
       <h2>Faneblade</h2>
@@ -1449,6 +1418,7 @@ const filToDownload = ref<FdsFileModel | null>(null);
 const filToDelete = ref<FdsFileModel | null>(null);
 const klikEvent = () => window.confirm('KLIK');
 
+const manuelIdClick = ref('');
 const manuelSideNavKey = ref('');
 const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   {

@@ -4,7 +4,7 @@
       <div class="row">
         <aside class="col-12 col-lg-3 sidebar-col">
           <nav>
-            <fds-venstremenu
+            <xfds-menu
               class="discrete-icon"
               v-model="navigationList"
               @navigate="handleNavigation"

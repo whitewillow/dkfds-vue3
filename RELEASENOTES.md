@@ -14,6 +14,28 @@ xfds-form-val-xx - har validering
 repeat code xfds input filer
 Fælles watcher
 
+
+# 0.3.4
+Core komponenter rettet
+- fds-menu
+- fds-trin - benytter nu også fds-menu
+
+Extra komponenter tilføjet
+- xfds-menu
+
+Simplificering af brugen af menu (se eksempel project for mere):
+
+```html
+ <fds-menu>
+  <fds-menu-item icon="done" id="alpha" @navigate="idClickedExample = $event">
+    Alpha
+  </fds-menu-item>
+  <fds-menu-item id="beta" @navigate="idClickedExample = $event" active>
+    Beta
+  </fds-menu-item>
+</fds-menu>
+```
+
 # 0.3.3
 Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
 
