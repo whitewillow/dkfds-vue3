@@ -1,54 +1,42 @@
 <template>
-  <ul
-    class="bordered-list"
-    :class="{ 'border-list-dashed': $slots.default }">
-    <li v-if="$slots.default">
-      <div class="d-flex justify-content-between">
-        <slot />
-      </div>
-    </li>
+  <ul class="bordered-list">
     <li
       v-for="(file, index) of list"
-      :key="index">
-      <div class="d-flex justify-content-between">
-        <a
-          v-if="canDownload"
-          href="javascript:void(0);"
-          @click="onDownloadFile(file)"
-          class="function-link">
-          <svg
-            class="icon-svg"
-            aria-hidden="true">
-            <use :xlink:href="`#${getFileIcon(file)}`" />
-          </svg>
-          {{ file.filnavn }}</a>
-        <label
-          for=""
-          v-if="!canDownload"
-          class="disabled">
-          <svg
-            class="icon-svg mr-3"
-            focusable="false"
-            aria-hidden="true">
-            <use :xlink:href="`#${getFileIcon(file)}`" />
-          </svg>
-          <template v-if="file.label">
-            {{ file.label }}
-          </template>
-          <template v-else>
-            {{ file.filnavn }}
-          </template>
-        </label>
-        <button
-          class="function-link"
-          @click="onDeleteFile(file)"
-          v-if="canDelete">
-          <svg
-            class="icon-svg"
-            aria-hidden="true">
-            <use xlink:href="#trash-can"></use></svg>Slet
-        </button>
-      </div>
+      :key="index"
+      class="d-flex justify-content-between">
+      <fds-funktionslink
+        v-if="canDownload"
+        :icon="getFileIcon(file)"
+        @click="onDownloadFile(file)">
+        {{ file.filnavn }}
+      </fds-funktionslink>
+
+      <label
+        for=""
+        v-if="!canDownload"
+        class="disabled">
+        <svg
+          class="icon-svg mr-3"
+          focusable="false"
+          aria-hidden="true">
+          <use :xlink:href="`#${getFileIcon(file)}`" />
+        </svg>
+        <template v-if="file.label">
+          {{ file.label }}
+        </template>
+        <template v-else>
+          {{ file.filnavn }}
+        </template>
+      </label>
+      <button
+        class="function-link"
+        @click="onDeleteFile(file)"
+        v-if="canDelete">
+        <svg
+          class="icon-svg"
+          aria-hidden="true">
+          <use xlink:href="#trash-can"></use></svg>Slet
+      </button>
     </li>
   </ul>
 </template>

@@ -50,6 +50,8 @@ import FdsToast from '@/components/fds-toast.vue';
 import FdsDatoAngivelse from '@/components/fds-dato-angivelse.vue';
 import FdsDatoVaelger from '@/components/fds-dato-vaelger.vue';
 
+import FdsList from '@/components/fds-list.vue';
+
 import FdsFileUpload from '@/components/fds-file-upload.vue';
 import FdsFileList from '@/components/fds-file-list.vue';
 
@@ -113,6 +115,8 @@ function install (app: App): void {
   app.component('fds-pre', FdsPre);
   app.component('fds-hint', FdsHint);
 
+  app.component('fds-list', FdsList);
+
   app.component('fds-badge', FdsBadge);
   app.component('fds-tag', FdsTag);
   app.component('fds-til-top', FdsTilTop);
@@ -174,6 +178,7 @@ export {
   FdsOverflowMenu,
   FdsToastContainer,
   FdsToast,
+  FdsList,
   FdsSpinner,
   FdsComponentPreview,
   FdsTrinindikator,

@@ -3,6 +3,7 @@
     <fds-toast-container />
     <div class="container pb-6">
       <h1>Home</h1>
+
       <div>
         <h2>Eksempel på advanceret brug</h2>
 
@@ -401,17 +402,6 @@
         @delete="filToDelete = $event">
       </fds-file-list>
 
-      <p>Eller med embedded header</p>
-
-      <fds-file-list
-        :list="filListe"
-        @download="filToDownload = $event"
-        @delete="filToDelete = $event">
-        <label class="form-label">
-          Vedhæftet filer
-        </label>
-      </fds-file-list>
-
       <fds-pre
         header="Download JSON"
         :json="filToDownload" />
@@ -422,6 +412,41 @@
       <hr class="my-8" />
 
       <h3>Typography</h3>
+
+      <h4>Lister</h4>
+      <fds-alert> Boblere </fds-alert>
+
+      <h5>Alm UL</h5>
+      <fds-list>
+        <li>Banan</li>
+        <li>Æble</li>
+      </fds-list>
+
+      <h5>Bordered</h5>
+      <fds-list variant="bordered">
+        <li>Banan</li>
+        <li>Æble</li>
+      </fds-list>
+
+      <h5>Nobullet</h5>
+      <fds-list variant="nobullet">
+        <li>Banan</li>
+        <li>Æble</li>
+      </fds-list>
+
+      <h5>Unstyled</h5>
+      <fds-list variant="unstyled">
+        <li>Banan</li>
+        <li>Æble</li>
+      </fds-list>
+
+      <h5>Ordered</h5>
+      <fds-list ordered>
+        <li>Banan</li>
+        <li>Æble</li>
+      </fds-list>
+
+      <hr class="my-4" />
 
       <h4>Badges</h4>
 
