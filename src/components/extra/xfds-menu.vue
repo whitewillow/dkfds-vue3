@@ -2,40 +2,24 @@
   <ul
     class="sidenav-list mb-6"
     role="menu">
-    <li
+    <fds-menu-item
       v-for="(item, index) of tabsList"
       :key="item.key"
-      :class="[{ 'active current': item.active }, { disabled: item.disabled }]">
-      <a
-        :href="`${item.href ? item.href : 'javascript:void(0);'}`"
-        class="d-block menuitem hand"
-        @click="navigate(item)">
-        <span v-if="showIndex">
-          {{ index + 1 + `. ` }}
-        </span>
-        {{ item.title }}
-
-        <span
-          class="sidenav-icon"
-          v-if="item.icon">
-          <svg
-            class="icon-svg"
-            focusable="false"
-            aria-hidden="true">
-            <use :xlink:href="`#${item.icon}`" />
-          </svg>
-        </span>
-        <p
-          v-if="item.hint && item.hint.length > 0"
-          class="sidenav-information">
-          {{ item.hint }}
-        </p>
-      </a>
-      <fds-venstremenu-sub
-        v-if="item.active && item.children && item.children.length > 0"
-        @navigate="subnavigation"
-        v-model="item.children"/>
-    </li>
+      :id="item.key"
+      :active="item.active"
+      :disabled="item.disabled"
+      :icon="item.icon"
+      :hint="item.hint"
+      :index="showIndex ? index : null"
+      @navigate="navigate(item)">
+      {{ item.title }}
+      <template #content>
+        <fds-venstremenu-sub
+          v-if="item.active && item.children && item.children.length > 0"
+          @navigate="subnavigation"
+          v-model="item.children"/>
+      </template>
+    </fds-menu-item>
   </ul>
 </template>
 

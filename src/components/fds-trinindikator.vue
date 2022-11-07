@@ -19,36 +19,22 @@
       :id="formid"
       aria-hidden="true">
       <nav>
-        <ul
-          class="sidenav-list"
-          role="menu">
-          <li
+        <fds-menu>
+          <fds-menu-item
             role="none"
             v-for="(item, index) of tabsList"
             :key="item.key"
-            :class="[{ 'active current': item.active }, { disabled: item.disabled }]">
-            <a
-              :href="`${item.href ? item.href : 'javascript:void(0);'}`"
-              role="menuitem"
-              @click="navigate(item)">
-              <span class="sidenav-number">
-                {{ index + 1 + `. ` }} </span><span class="sidenav-title">
-                  {{ item.title }}
-                </span>
-              <span
-                class="sidenav-icon"
-                v-if="item.icon">
-                <svg
-                  class="icon-svg"
-                  focusable="false"
-                  aria-hidden="true"
-                  tabindex="-1">
-                  <use :xlink:href="`#${item.icon}`"></use>
-                </svg>
-              </span>
-            </a>
-          </li>
-        </ul>
+            :id="item.key"
+            :active="item.active"
+            :disabled="item.disabled"
+            :icon="item.icon"
+            :hint="item.hint"
+            :href="item.href"
+            :index="index + 1"
+            @navigate="navigate(item)">
+            {{ item.title }}
+          </fds-menu-item>
+        </fds-menu>
       </nav>
     </div>
   </div>

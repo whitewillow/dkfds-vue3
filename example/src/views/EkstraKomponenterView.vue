@@ -4,7 +4,7 @@
       <div class="row">
         <aside class="col-12 col-lg-3 sidebar-col">
           <nav>
-            <fds-venstremenu v-model="navigationList" @navigate="handleNavigation" />
+            <xfds-menu v-model="navigationList" @navigate="handleNavigation" />
           </nav>
         </aside>
         <div class="col-12 col-lg-9">
@@ -65,6 +65,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'ekstraformvalidering',
     title: 'Validate',
+  },
+  {
+    key: 'ekstravenstremenu',
+    title: 'Venstremenu',
   },
 ] as FdsNavigationItem[]);
 
