@@ -5,19 +5,14 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup :is-valid="isValid">
-      <fds-label v-if="label">
-        {{ label }}
-      </fds-label>
-      <fds-tooltip
-        v-if="tooltip"
-        class="ml-2">
-        {{ tooltip }}
-      </fds-tooltip>
-      <fds-fejlmeddelelse v-if="!isValid">
-        {{ errorMessage }}
-      </fds-fejlmeddelelse>
-      <fds-hint>{{ hint }}</fds-hint>
+    <xfds-form-group
+      v-bind="{
+        label,
+        hint,
+        tooltip,
+        isValid,
+        errorMessage,
+      }">
       <fds-textarea
         v-model="value"
         :placeholder="placeholder"
@@ -29,7 +24,7 @@
         :readonly="isReadonly"
         @update:modelValue="handleInput"
         @dirty="touchedEvent"></fds-textarea>
-    </fds-formgroup>
+    </xfds-form-group>
   </xfds-validate>
 </template>
 
@@ -39,11 +34,11 @@ import {
 } from 'vue';
 
 import fdsTextareaProps from '@/props/fds-texarea.props';
-import fdsFormProps from '@/props/fds-form.props';
+import xfdsFormGroupProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsTextareaProps,
-  ...fdsFormProps,
+  ...xfdsFormGroupProps,
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 

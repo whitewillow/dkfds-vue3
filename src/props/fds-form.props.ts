@@ -1,7 +1,7 @@
 /**
  * Comon props for FDS Textarea
  */
-const fdsFormProps = {
+const xfdsFormGroupProps = {
   validations: {
     type: Array as () => Array<(x?: unknown) => string | null>,
     default: null,
@@ -18,5 +18,13 @@ const fdsFormProps = {
     type: String,
     default: null,
   },
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
 };
-export default fdsFormProps;
+export default xfdsFormGroupProps;

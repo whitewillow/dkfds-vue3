@@ -51,6 +51,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Radio',
   },
   {
+    key: 'ekstraformgroup',
+    title: 'Form gruppe',
+  },
+  {
     key: 'ekstratekstfelt',
     title: 'Tekstfelt',
   },

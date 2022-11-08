@@ -25,6 +25,11 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('TekstFelt.vue'),
       },
       {
+        path: 'formgroup',
+        name: 'ekstraformgroup',
+        component: loadExtraView('FormGroup.vue'),
+      },
+      {
         path: 'nummerfelt',
         name: 'ekstranummerfelt',
         component: loadExtraView('NummerFelt.vue'),

@@ -92,7 +92,7 @@
  * */
 import { FdsPaging } from '@/model/fds.model';
 import {
-  defineProps, computed, ref, nextTick, defineEmits, watch,
+  defineProps, computed, ref, defineEmits, watch,
 } from 'vue';
 
 const props = defineProps({
@@ -128,12 +128,12 @@ const lastPage = computed((): number => {
   return getTotalPages.value.length;
 });
 
-const focusButton = (id: number) => {
-  nextTick(() => {
-    const e = document.querySelector(`ul.pagination>li[id="${id}"]>button`) as HTMLElement;
-    e.focus();
-  });
-};
+// const focusButton = (id: number) => {
+//   nextTick(() => {
+//     const e = document.querySelector(`ul.pagination>li[id="${id}"]>button`) as HTMLElement;
+//     e.focus();
+//   });
+// };
 
 const emitList = (skip = 0) => {
   emit('filteredPage', props.list.length > 0 ? props.list.slice(skip, skip + props.pageSize) : []);
@@ -151,7 +151,7 @@ const generatePages = (): FdsPaging[] => {
   const pages: FdsPaging[] = [];
   const centerDiff = Math.ceil(props.maxElements / 2) + 1;
 
-  tmpPages.forEach((f, i) => {
+  tmpPages.forEach((f) => {
     if (f === 1 || f === lastPage.value || f === currentPage.value) {
       pages.push({ index: f, dotted: false });
       return;

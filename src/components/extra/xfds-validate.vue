@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, provide, ref, watch,
 } from 'vue';
 import { validateAllErrorMessage } from '@/utils/validate-utils';
 
@@ -37,6 +37,13 @@ const props = defineProps({
     ],
   },
 });
+
+/**
+ * Provide for underliggende Inputs
+ * Hhv om validering gik godt eller fejlbesked
+ */
+provide('validateIsValid', isValid);
+provide('validateErrorMessage', errorMessage);
 
 const emit = defineEmits(['valid']);
 
