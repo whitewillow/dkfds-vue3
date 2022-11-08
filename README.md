@@ -31,7 +31,8 @@ Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig u
 
 # Brug det:
 
-> **INFO**: dkfds-vue3 har pt en bug med ren vite projekt - fix på vej.
+> **INFO**: dkfds-vue3 har pt en bug med ren vite projekt - fix på vej. 
+> Dvs. brug gl måde at oprette vue projekt `vue create hello-world` indtil videre
 
 **Designsystem**
 
