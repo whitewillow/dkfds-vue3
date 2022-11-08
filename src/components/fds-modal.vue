@@ -111,11 +111,11 @@ const hideModal = () => {
 };
 
 // TODO: able to click bacdrop or esc to close
-const handleBackdropClick = () => {
-  if (props.canClose) {
-    hideModal();
-  }
-};
+// const handleBackdropClick = () => {
+//   if (props.canClose) {
+//     hideModal();
+//   }
+// };
 const handleOk = () => {
   emit('ok');
 };
