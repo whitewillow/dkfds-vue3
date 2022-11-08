@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <fds-toast-container />
+
     <div class="container pb-6">
       <h1>Home</h1>
-
       <div>
         <h2>Eksempel på advanceret brug</h2>
 
@@ -70,6 +70,7 @@
 
         <xfds-form-input-number
           label="Antal kasser"
+          hint="Kasser"
           v-model="kasser"
           prefix="stk" />
 

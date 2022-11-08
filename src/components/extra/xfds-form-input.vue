@@ -5,19 +5,14 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup :is-valid="isValid">
-      <fds-label v-if="label">
-        {{ label }}
-      </fds-label>
-      <fds-tooltip
-        v-if="tooltip"
-        class="ml-2">
-        {{ tooltip }}
-      </fds-tooltip>
-      <fds-fejlmeddelelse v-if="!isValid">
-        {{ errorMessage }}
-      </fds-fejlmeddelelse>
-      <fds-hint>{{ hint }}</fds-hint>
+    <xfds-form-group
+      v-bind="{
+        label,
+        hint,
+        tooltip,
+        isValid,
+        errorMessage,
+      }">
       <fds-input
         v-model="value"
         v-bind="{
@@ -38,7 +33,7 @@
           <slot name="button" />
         </template>
       </fds-input>
-    </fds-formgroup>
+    </xfds-form-group>
   </xfds-validate>
 </template>
 
@@ -48,11 +43,11 @@ import {
 } from 'vue';
 
 import fdsInputProps from '@/props/fds-input.props';
-import fdsFormProps from '@/props/fds-form.props';
+import xfdsFormGroupProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsInputProps,
-  ...fdsFormProps,
+  ...xfdsFormGroupProps,
   modelValue: {
     type: String,
     default: '',

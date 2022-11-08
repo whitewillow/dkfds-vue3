@@ -5,27 +5,21 @@
     #default="{ isValid, errorMessage }"
     :dirty="dirty"
     @valid="validEvent">
-    <fds-formgroup :is-valid="isValid">
-      <fds-label v-if="label">
-        {{ label }}
-      </fds-label>
-      <fds-tooltip
-        v-if="tooltip"
-        class="ml-2">
-        {{ tooltip }}
-      </fds-tooltip>
-
-      <fds-fejlmeddelelse v-if="!isValid">
-        {{ errorMessage }}
-      </fds-fejlmeddelelse>
-      <fds-hint>{{ hint }}</fds-hint>
+    <xfds-form-group
+      v-bind="{
+        label,
+        hint,
+        tooltip,
+        isValid,
+        errorMessage,
+      }">
       <xfds-checkbox-list
         v-model="value"
         @dirty="touchedEvent"
         @update:modelValue="handleInput">
         <slot />
       </xfds-checkbox-list>
-    </fds-formgroup>
+    </xfds-form-group>
   </xfds-validate>
 </template>
 
@@ -36,11 +30,11 @@ import {
 
 import fdsCheckboxProps from '@/props/fds-checkbox.props';
 import { FdsCheckboxItem } from '@/model/fds.model';
-import fdsFormProps from '@/props/fds-form.props';
+import xfdsFormGroupProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsCheckboxProps,
-  ...fdsFormProps,
+  ...xfdsFormGroupProps,
   suffix: {
     type: String,
     default: null,

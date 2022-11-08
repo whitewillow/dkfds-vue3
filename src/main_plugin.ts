@@ -74,6 +74,7 @@ import FdsComponentPreview from '@/components/fds-component-preview.vue';
 import XFdsCheckboxList from '@/components/extra/xfds-checkbox-list.vue';
 import XFdsDropdown from '@/components/extra/xfds-dropdown.vue';
 
+import XFdsFormGroup from '@/components/extra/xfds-form-group.vue';
 import XFdsFormInput from '@/components/extra/xfds-form-input.vue';
 import XFdsFormRadio from '@/components/extra/xfds-form-radio.vue';
 import XFdsFormDropdown from '@/components/extra/xfds-form-dropdown.vue';
@@ -165,6 +166,7 @@ function install (app: App): void {
   app.component('xfds-dropdown', XFdsDropdown);
 
   app.component('xfds-validate', XFdsValidate);
+  app.component('xfds-form-group', XFdsFormGroup);
   app.component('xfds-form-input', XFdsFormInput);
   app.component('xfds-form-input-number', XFdsFormInputNumber);
   app.component('xfds-form-textarea', XFdsFormTextarea);
@@ -230,6 +232,7 @@ export {
   XFdsFormTextarea,
   XFdsFormCheckboxList,
   XFdsProgressbar,
+  XFdsFormGroup,
   FdsButton,
   FdsButtonIcon,
   FdsIconCollection,
