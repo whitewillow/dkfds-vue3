@@ -1,4 +1,5 @@
 
+
 # TODO:
 
 https://github.com/whitewillow/dkfds-vue3/issues
@@ -13,6 +14,25 @@ xfds-form-xx - fjern validering
 xfds-form-val-xx - har validering
 repeat code xfds input filer
 Fælles watcher
+
+
+# 0.3.5
+Extra komponenter tilføjet
+- xfds-form-group
+
+Refak Extra komponenter, gør nu brug af xfds-form-group
+- xfds-form-checkbox-list
+- xfds-form-dropdown
+- xfds-form-input-number
+- xfds-form-input
+- xfds-form-radio
+- xfds-form-textera
+
+```html
+ <xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
+  <fds-input v-model="maerke" /> // hvilkårlig input
+</xfds-form-group>
+```
 
 
 # 0.3.4
