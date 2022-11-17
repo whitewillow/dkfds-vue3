@@ -48,8 +48,6 @@
  *
  * */
 
-import { Dropdown } from 'dkfds';
-import { v4 as uuidv4 } from 'uuid';
 import { FdsNavigationItem } from '@/model/fds.model';
 import {
   defineProps, ref, defineEmits, onMounted, computed,
@@ -57,6 +55,8 @@ import {
 import navigationService from '@/service/navigation.service';
 
 import fdsNavigationProps from '@/props/fds-navigation.props';
+import DKFDSDropdown from '@/scripts/dropdown';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   ...fdsNavigationProps,
@@ -75,7 +75,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
-const formid = ref(props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 
 const mVal = computed(() => props.modelValue ?? []);
 const currentKey = ref('');
@@ -100,6 +100,6 @@ onMounted(async () => {
   if (item) {
     navigate(item);
   }
-  new Dropdown(document.getElementById(`button_${formid.value}`)).init();
+  new DKFDSDropdown(document.getElementById(`button_${formid.value}`)).init();
 });
 </script>
