@@ -17,8 +17,10 @@ Fælles watcher
 
 # 0.3.6
 WIP
-Refak af tooltip,
- - Et skridt mod at løse fejlen https://github.com/whitewillow/dkfds-vue3/issues/7
+- Refak af tooltip
+- Refak af dropdown
+
+Et skridt mod at løse fejlen https://github.com/whitewillow/dkfds-vue3/issues/7
 
 
 

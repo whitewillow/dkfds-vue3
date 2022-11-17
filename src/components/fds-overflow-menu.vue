@@ -3,7 +3,7 @@
     <button
       class="button-overflow-menu js-dropdown"
       :id="`button_${formid}`"
-      :data-js-target="`#${formid}`"
+      :data-js-target="`${formid}`"
       aria-haspopup="true"
       :aria-expanded="false">
       <span>{{ header }}
@@ -32,8 +32,9 @@
  *
  * */
 import { defineProps, onMounted } from 'vue';
-import { Dropdown } from 'dkfds';
+
 import getFormId from '@/composable/formId';
+import DKFDSDropdown from '@/scripts/dropdown';
 
 const props = defineProps({
   header: {
@@ -51,6 +52,6 @@ const props = defineProps({
 const { formid } = getFormId(props.id, true);
 
 onMounted(async () => {
-  new Dropdown(document.getElementById(`button_${formid.value}`)).init();
+  new DKFDSDropdown(document.getElementById(`button_${formid.value}`)).init();
 });
 </script>
