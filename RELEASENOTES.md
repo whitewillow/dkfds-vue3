@@ -15,6 +15,12 @@ xfds-form-val-xx - har validering
 repeat code xfds input filer
 Fælles watcher
 
+# 0.3.6
+WIP
+Refak af tooltip,
+ - Et skridt mod at løse fejlen https://github.com/whitewillow/dkfds-vue3/issues/7
+
+
 
 # 0.3.5
 Extra komponenter tilføjet

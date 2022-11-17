@@ -13,6 +13,7 @@ module.exports = {
     // Airbnb with a couple of minor tweaks
     'object-shorthand': ['error', 'always'],
     'linebreak-style': 'off',
+    'class-methods-use-this': 'off',
     'eol-last': ['error', 'never'],
     'arrow-body-style': 'off',
     'max-len': [
