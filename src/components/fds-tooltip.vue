@@ -21,7 +21,7 @@ import {
   computed, onMounted, ref, useSlots,
 } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-import { Tooltip } from 'dkfds';
+import DKFSTooltip from '@/scripts/tooltip';
 
 const formId = ref(uuidv4());
 const slotText = ref(null);
@@ -40,7 +40,7 @@ const slotContent = computed(() => {
 });
 
 onMounted(() => {
-  new Tooltip(document.getElementById(formId.value)).init();
+  new DKFSTooltip(document.getElementById(formId.value)).init();
 });
 </script>
 
