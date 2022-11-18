@@ -121,7 +121,7 @@ $font-path: '~dkfds/src/fonts/IBMPlexSans/';
 $image-path: '~dkfds/src/img';
 $site-image-path: '~dkfds/src/img';
 $icons-folder-path: '~dkfds/src/img/svg-icons';
-@import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
+@import '../node_modules/dkfds/src/stylesheets/dkfds-borgerdk.scss';
 @import 'assets/bgs.scss';
 @import 'assets/main.scss';
 </style>

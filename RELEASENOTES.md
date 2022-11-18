@@ -8,20 +8,27 @@ Mangler
 - FileList
 
 TODO:
-Refak xfds inputs - split val ud
-overvej om magi med fejl og validering
-xfds-form-xx - fjern validering
-xfds-form-val-xx - har validering
-repeat code xfds input filer
-Fælles watcher
+- Refak xfds inputs - split val ud
+- overvej om magi med fejl og validering
+- xfds-form-xx - fjern validering
+- xfds-form-val-xx - har validering
+- repeat code xfds input filer
+- Fælles watcher
 
 # 0.3.6
-WIP
+
 - Refak af tooltip
 - Refak af dropdown
+- Ændret installations process.
 
-Et skridt mod at løse fejlen https://github.com/whitewillow/dkfds-vue3/issues/7
+Ovenstående løser fejl med brug af rent Vite project. https://github.com/whitewillow/dkfds-vue3/issues/7
 
+Dvs. det er nu muligt at oprette et nyt projekt:
+
+```
+npm create vue@3
+```
+Og gennemføre alm. installation process for DKFDS-Vue3
 
 
 # 0.3.5

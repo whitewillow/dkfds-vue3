@@ -51,6 +51,22 @@ Eksempel:
 </fds-formgroup>
 ```
 
+## 0.3.6 - :heavy_check_mark:
+
+- Refak af tooltip
+- Refak af dropdown
+- Ændret installations process.
+
+Ovenstående løser fejl med brug af rent Vite project. https://github.com/whitewillow/dkfds-vue3/issues/7
+
+Dvs. det er nu muligt at oprette et nyt projekt:
+
+```
+npm create vue@3
+```
+Og gennemføre alm. installation process for DKFDS-Vue3
+
+
 ## v0.4 - igang
 - Alle komponenter er lavet, undtagen:
   - Skip link
