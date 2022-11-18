@@ -2,6 +2,7 @@
   <fds-icon-collection />
 
   <header class="header">
+    <div id="top"></div>
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
     <!-- Start: Portal header -->
     <div class="portal-header portal-header-compact">

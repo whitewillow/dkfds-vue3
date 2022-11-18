@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    <div id="top"></div>
     <a
       class="skipnav"
       href="#main-content">
