@@ -2,6 +2,7 @@
   <fds-icon-collection />
 
   <header class="header">
+    <div id="top"></div>
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
     <!-- Start: Portal header -->
     <div class="portal-header portal-header-compact">
@@ -228,10 +229,8 @@
 </template>
 
 <script setup lang="ts">
-import DKFDS from 'dkfds';
 import { useRoute, useRouter } from 'vue-router';
 
-DKFDS.init();
 const route = useRoute();
 const router = useRouter();
 const isPartOfMenu = (name: string): boolean => {

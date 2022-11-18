@@ -9,7 +9,7 @@ export default defineConfig({
     cssCodeSplit: false,
     outDir: 'dist',
     resolve: {
-      dedupe: ['vue'],
+      dedupe: ['vue', 'dkfds'],
       preserveSymlinks: false,
     },
     lib: {
