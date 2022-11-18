@@ -228,10 +228,8 @@
 </template>
 
 <script setup lang="ts">
-import DKFDS from 'dkfds';
 import { useRoute, useRouter } from 'vue-router';
 
-DKFDS.init();
 const route = useRoute();
 const router = useRouter();
 const isPartOfMenu = (name: string): boolean => {
