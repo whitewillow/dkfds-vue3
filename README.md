@@ -29,26 +29,12 @@ TODO: mere beskrivelse
 
 Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig under udarbejdelse)
 
-# Brug det:
 
-> **INFO**: dkfds-vue3 har pt en bug med ren vite projekt - fix på vej. 
-> Dvs. brug gl måde at oprette vue projekt `vue create hello-world` indtil videre
+<br />
+<br />
 
-**Designsystem**
+# Installation:
 
-Indtil videre forventes designssystemets egen komponent er installeret:
-
-
-```
-npm install --save dkfds
-```
-
-```typescript
-// src/global.d.ts
-declare module 'dkfds';
-```
-
-**dkfds-vue3**
 
 ```
 npm install -S dkfds-vue3
@@ -72,20 +58,10 @@ createApp(App)
 ```html
 // app.ts
 <template>
+  ...
   <fds-icon-collection />
   <!-- Sørger for at ikoner bliver indlæst -->
-  ...
 </template>
-<script lang="ts">
-  import { defineComponent } from "vue";
-  import DKFDS from "dkfds";
-
-  DKFDS.init();
-
-  export default defineComponent({
-    name: "App",
-  });
-</script>
 
 <style lang="scss">
   $font-path: "~dkfds/src/fonts/IBMPlexSans/";
@@ -97,9 +73,14 @@ createApp(App)
 </style>
 ```
 
+
 eller se [app.vue eksempel](./dokumentation/app-vue-example.md)
 
 
+For Borger DK tema brug følgende istedet for `dkfds-virkdk`
+```html
+@import '../node_modules/dkfds/src/stylesheets/dkfds-borgerdk.scss';
+```
 # Se det / Example Project
 
 Bedste måde at se hvad der er muligt er at køre example projektet, indtil der kommer noget rigtig dokumentation.
