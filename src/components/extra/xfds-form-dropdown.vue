@@ -1,34 +1,27 @@
 <template>
-  <xfds-validate
-    :modelValue="value"
-    :validations="validations"
-    #default="{ isValid, errorMessage }"
-    :dirty="dirty"
-    @valid="validEvent">
-    <xfds-form-group
-      v-bind="{
-        label,
-        hint,
-        tooltip,
-        isValid,
-        errorMessage,
-      }">
-      <xfds-dropdown
-        :options="options"
-        v-model="value"
-        @update:modelValue="handleInput"
-        @dirty="touchedEvent"/>
-    </xfds-form-group>
-  </xfds-validate>
+  <xfds-form-group
+    v-bind="{
+      label,
+      hint,
+      tooltip,
+      isValid,
+      errorMessage,
+    }">
+    <xfds-dropdown
+      :options="options"
+      v-model="value"
+      @update:modelValue="handleInput"
+      @dirty="touchedEvent"/>
+  </xfds-form-group>
 </template>
 
 <script setup lang="ts">
 import {
   defineEmits, defineProps, PropType, ref, watch,
 } from 'vue';
-import xfdsFormGroupProps from '@/props/fds-form.props';
-import fdsInputProps from '@/props/fds-input.props';
 import { FdsOptionItem } from '@/model/fds.model';
+import fdsInputProps from '@/props/fds-input.props';
+import xfdsFormGroupProps from '@/props/fds-form.props';
 
 const props = defineProps({
   ...fdsInputProps,
@@ -49,10 +42,6 @@ const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
-};
-
-const validEvent = (isValid: boolean) => {
-  emit('valid', isValid);
 };
 
 const handleInput = () => emit('update:modelValue', value.value);

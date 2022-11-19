@@ -26,44 +26,6 @@ Gå til Forside
 </fds-link>
 ```
 
-## Manuel tilgang - venstremenu og trin
-
-Overvej at, også, tilbyde en mere manuel tilgang til hhv venstremenu og trin m.fl.
-Istedet for at give en liste med, give muligfor at direkte at skrive sit "a" tag.
-
-```html
-
-<fds-trinindikator
-        @navigate="trinNavKey = $event">
-        
-  <template v-slot:[`0`]> 
-    <a href='#' role='menuitem'>
-      <span class='sidenav-number'>1.</span>
-      <span class='sidenav-title'>Lorem ipsum</span>
-      <span class='sidenav-icon'>
-        <svg class='icon-svg' aria-hidden='true' focusable='false' tabindex='-1'>
-          <use xlink:href='#done'></use>
-        </svg>
-      </span>
-    </a>
-  </template>
-  <template v-slot:[`1`]> 
-    <a href='#' role='menuitem'>
-      <span class='sidenav-number'>2.</span>
-      <span class='sidenav-title'>Lorem ipsum</span>
-      <span class='sidenav-icon'>
-        <svg class='icon-svg' aria-hidden='true' focusable='false' tabindex='-1'>
-          <use xlink:href='#done'></use>
-        </svg>
-      </span>
-    </a>
-  </template>
-</fds-trinindikator>
-
-```
-
-
-
 ## Layout
 Forslag til hvordan layout/implementering kunne laves?
 
@@ -101,4 +63,4 @@ Forslag til hvordan layout/implementering kunne laves?
     </fds-footer>
     <fds-cookies />
 <fds>
-
+```

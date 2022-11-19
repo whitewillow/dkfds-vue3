@@ -1,5 +1,5 @@
 /**
- * Comon props for FDS Textarea
+ * Comon props for FDS unput
  */
 const fdsInputProps = {
   id: {

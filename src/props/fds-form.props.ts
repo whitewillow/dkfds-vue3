@@ -1,11 +1,7 @@
 /**
- * Comon props for FDS Textarea
+ * Comon props for Extra FDS Form group
  */
 const xfdsFormGroupProps = {
-  validations: {
-    type: Array as () => Array<(x?: unknown) => string | null>,
-    default: null,
-  },
   label: {
     type: String,
     default: '',

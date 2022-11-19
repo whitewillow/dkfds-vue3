@@ -1,5 +1,5 @@
 <template>
-  <fds-formgroup :is-valid="isValid">
+  <fds-formgroup :is-valid="compValid">
     <slot name="label">
       <fds-label v-if="label">
         {{ label }}
@@ -14,8 +14,8 @@
     </slot>
 
     <slot name="fejlmeddelelse">
-      <fds-fejlmeddelelse v-if="!isValid">
-        {{ errorMessage }}
+      <fds-fejlmeddelelse v-if="!compValid">
+        {{ compErrorMessage }}
       </fds-fejlmeddelelse>
     </slot>
     <slot name="hint">
@@ -26,11 +26,19 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import {
+  computed, defineProps, inject, ref,
+} from 'vue';
 
 import xfdsFormGroupProps from '@/props/fds-form.props';
 
-defineProps({
+const props = defineProps({
   ...xfdsFormGroupProps,
 });
+
+const injIsValid = ref<boolean | null>(inject('validateIsValid', null));
+const injErrorMessage = ref<string | null>(inject('validateErrorMessage', null));
+
+const compValid = computed(() => injIsValid.value ?? props.isValid);
+const compErrorMessage = computed(() => injErrorMessage.value ?? props.errorMessage);
 </script>

@@ -61,12 +61,21 @@
       <div>
         <h2>Eksempel på Form komponent (simpel brug)</h2>
 
+        <xfds-validate
+          :modelValue="txtAdresseValidering"
+          :validations="[hasContent, charactersMinLength(10)]">
+          <xfds-form-input
+            label="Adresse (m. Validering)"
+            hint="Angiv gyldig adresse"
+            tooltip="Input tooltip"
+            v-model="txtAdresseValidering"/>
+        </xfds-validate>
+
         <xfds-form-input
           label="Adresse"
           hint="Angiv gyldig adresse"
           tooltip="Input tooltip"
-          v-model="txtAdresse"
-          :validations="[hasContent, charactersMinLength(10)]"/>
+          v-model="txtAdresse"/>
 
         <xfds-form-input-number
           label="Antal kasser"
@@ -1270,7 +1279,9 @@ const txtEfternavn = ref('');
 const txtBegrundelse = ref('');
 const noBeloeb = ref(0);
 const txtAdresse = ref('');
+const txtAdresseValidering = ref('');
 const kasser = ref(0);
+const kasserValidering = ref(0);
 const txtMobil = ref('23232323');
 const txtBeskrivelse = ref('');
 const oneChecked = ref(false);

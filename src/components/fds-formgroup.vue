@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, provide, ref } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import { defineProps, provide } from 'vue';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   id: {
@@ -26,7 +26,7 @@ const props = defineProps({
  * Form id der bruges i slots
  * eg. label for input element
  */
-const formid = ref(props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 /**
  * Provide for underliggende elementer
  * eg. label for input element
