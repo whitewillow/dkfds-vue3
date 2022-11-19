@@ -4,7 +4,6 @@ Med dkfds-vue3 kan du bygge responsive og ARIA tilgængelige web projekter med v
 
 Med over 40 Standard komponenter og flere ekstra komponenter til at hjælpe dig med at udvikle selvbetjeningsløsninger hurtigt og effektivt.
 
-TODO: mere beskrivelse
 
 <p align="center">
    <a href="https://www.npmjs.com/package/dkfds-vue3">
@@ -81,44 +80,17 @@ For Borger DK tema brug følgende istedet for `dkfds-virkdk`
 ```html
 @import '../node_modules/dkfds/src/stylesheets/dkfds-borgerdk.scss';
 ```
-# Se det / Example Project
 
-Bedste måde at se hvad der er muligt er at køre example projektet, indtil der kommer noget rigtig dokumentation.
-
-Dog er `example projektet` opsat som dokumentation for projektet.
-
-clone /example
-
-```
-cd example
-npm install
-npm run serve
-```
-
-# Udvikling af komponenter - Project setup
-
-```
-npm install
-npm run build-vite-link
-```
-
-Herefter kan man køre `example` siden:
-
-```
-cd example
-npm run serve
-```
-
-Efterfølgende, under udvikling, kan man kører fra `/`
-
-```
-npm run build-vite-link
-cd example
-npm run serve
-```
 
 ## Faser og Mangler:
 
 Se [Roadmap](./dokumentation/WIP.md)
+
+## FAQ
+
+Se [FAQ](./dokumentation/faq.md)
+
+
+## Udvikling
 
 Hvis du vil tilføje komponenter/pull request, se da [Udviklingsguide](./dokumentation/UdviklingsGuide.md)
