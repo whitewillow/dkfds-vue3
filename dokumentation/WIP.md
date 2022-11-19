@@ -67,7 +67,7 @@ npm create vue@3
 Og gennemføre alm. installation process for DKFDS-Vue3
 
 
-## v0.4 - igang
+## v0.4 - Produktionsklar - igang
 - Alle komponenter er lavet, undtagen:
   - Skip link
   - Toastbesked
@@ -79,9 +79,9 @@ Og gennemføre alm. installation process for DKFDS-Vue3
 - Gennemgang af komponent navngivning
 - Gennemgang af komponent properties
 
-## v0.4.5
-- Det skal være muligt at bruge `npm create vue@3`
-- Skal bruger også installere DKFDS - eller er det nok med dkfds-vue3
+Denne release gør at komponenter kan bruges i produktion.
+Der vil umiddelbart ikke komme flere ændringer for KERNE (og eksisterende EKSTRA) komponenternes brug.
+
 
 ## v0.5
 Dokumentation via:

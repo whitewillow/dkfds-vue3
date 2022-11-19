@@ -1,4 +1,28 @@
- # Udviklingsguide
+
+# Udvikling af komponenter - Project setup
+
+```
+npm install
+npm run build-vite-link
+```
+
+Herefter kan man køre `example` siden:
+
+```
+cd example
+npm run serve
+```
+
+Efterfølgende, under udvikling, kan man kører fra `/`
+
+```
+npm run build-vite-link
+cd example
+npm run serve
+```
+
+# Udviklingsguide
+
 
 Kort beskrivelse af overvejelser for udvikling af komponenter
 
