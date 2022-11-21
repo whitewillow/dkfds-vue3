@@ -66,6 +66,56 @@ npm create vue@3
 ```
 Og gennemføre alm. installation process for DKFDS-Vue3
 
+## 0.3.7 - :heavy_check_mark:
+
+- Refak af xfds-validate
+- Refak af xfds form komponenter
+
+Validering er udskilt fra xfds form komponenter, dvs den skal kaldes seperat:
+
+```
+<xfds-validate :modelValue="user.adress" :validations="[hasContent, charactersMinLength(10)]">
+  <xfds-form-input
+    label="Adresse"
+    hint="Angiv gyldig adresse"
+    tooltip="Input tooltip"
+    input-type="street-address"
+    autocomplete="street-address"
+    placeholder="e.g: Jarlsvej 23"
+    v-model="user.adress"
+  />
+</xfds-validate>
+
+// eller
+
+<xfds-validate :modelValue="user.name" :validations="[hasContent, charactersMinLength(10)]">
+  <fds-input v-model="user.name" />
+</xfds-validate>
+```
+
+Som udgangspunkt vil xfds-validate selv prøve at lytte på `input|select` `blur` og begynde at validere herefter, man kan også slå dette fra `useAutoDirty=false` og selv angive `dirty`.
+
+## 0.3.8 - :heavy_check_mark:
+
+- fds-cookiemeddelelse
+
+Simpel cookiemeddelelse, giver kun styling for cookiemeddelelsen, ikke den tekniske implementering af cookiemeddelelsen.
+
+Du skal selv tilpasse indholdet i meddelelsen, så den overholder gældende lovgivning og stemmer overens med din løsnings specifikke anvendelse af cookies.
+
+
+```
+<fds-cookiemeddelelse 
+  @accepter="cookieAccept = $event"
+  header="Fortæl os om du accepterer cookies">
+  <p class="mt-0" id="cookie-message-text">
+    Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
+    <a href="#"> Læs mere om vores brug af cookies. </a>
+  </p>
+</fds-cookiemeddelelse>
+```
+
+
 
 ## v0.4 - Produktionsklar - igang
 - Alle komponenter er lavet, undtagen:
