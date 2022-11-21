@@ -14,6 +14,24 @@
           Udskrive fejlmeddelelse med <code>fds-fejlmeddelelse</code> hertil skal form gruppen og
           vide at der er Fejl. Dette gøre med <code>:is-valid</code>
         </p>
+
+        <p class="h4">Inject</p>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>provideErrorMessage</code></td>
+              <td><code>string</code></td>
+              <td>lytter efter provideErrorMessage og sættes som default indhold i slot</td>
+            </tr>
+          </tbody>
+        </table>
       </template>
       <template #code>
         <pre v-text="code"></pre>

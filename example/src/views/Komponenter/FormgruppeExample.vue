@@ -15,13 +15,72 @@
           Komponenten <code>fds-formgroup</code> er et wrapper komponent, der omfavner input,
           labels, m.fl elementer - se koden
         </p>
+
+        <p class="h4">Props</p>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>isValid</code></td>
+              <td><code>boolean</code></td>
+              <td><code>true</code></td>
+              <td>Hvis false sættes class form-error</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="h4">Provide</p>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>formid</code></td>
+              <td><code>string</code></td>
+              <td><code>Auto id</code></td>
+              <td>Udstiller form id</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="h4">Inject</p>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>provideIsValid</code></td>
+              <td><code>boolean</code></td>
+              <td>lytter efter provideIsValid, vægtes højere end props.isValid</td>
+            </tr>
+          </tbody>
+        </table>
+
         <p class="italic">
           Komponenten udstiller(provide) et <code>formid</code> som <code>fds-label</code> selv
           omdanner til <code>for</code> id og <code>fds-[input]</code> elementer benytter som
           <code>id</code>
         </p>
         <p class="italic">
-          hvis nødvendigt kan man selv bruge enten
+          Hvis nødvendigt kan man selv bruge enten
           <code> &lt;fds-formgroup #default="{ formid }" &gt; </code>
           eller selv <code>const formid = inject('formid', null)</code>
         </p>

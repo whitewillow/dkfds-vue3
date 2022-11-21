@@ -16,12 +16,13 @@
     </fds-component-preview>
 
     <fds-component-preview header="Eksempel Formular">
-      <xfds-form-dropdown
-        label="Dropdown form"
-        :validations="[hasContent]"
-        :options="dropdownOptions"
-        v-model="dropdownValForm"
-      />
+      <xfds-validate :modelValue="dropdownValForm" :validations="[hasContent]">
+        <xfds-form-dropdown
+          label="Dropdown form"
+          :options="dropdownOptions"
+          v-model="dropdownValForm"
+        />
+      </xfds-validate>
 
       <fds-pre header="v-model for dropdown" :json="{ dropdownValForm }" />
 

@@ -42,6 +42,7 @@ const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
+  emit('dirty', true);
 };
 
 const handleInput = () => emit('update:modelValue', value.value);

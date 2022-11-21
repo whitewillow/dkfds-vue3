@@ -36,8 +36,8 @@ const props = defineProps({
   ...xfdsFormGroupProps,
 });
 
-const injIsValid = ref<boolean | null>(inject('validateIsValid', null));
-const injErrorMessage = ref<string | null>(inject('validateErrorMessage', null));
+const injIsValid = ref<boolean | null>(inject('provideIsValid', null));
+const injErrorMessage = ref<string | null>(inject('provideErrorMessage', null));
 
 const compValid = computed(() => injIsValid.value ?? props.isValid);
 const compErrorMessage = computed(() => injErrorMessage.value ?? props.errorMessage);

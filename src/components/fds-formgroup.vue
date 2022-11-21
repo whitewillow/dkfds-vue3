@@ -2,13 +2,15 @@
   <div
     class="form-group"
     :key="formid"
-    :class="{ 'form-error': isValid === false }">
+    :class="{ 'form-error': compValid === false }">
     <slot :formid="formid" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, provide } from 'vue';
+import {
+  computed, defineProps, inject, provide, ref,
+} from 'vue';
 import getFormId from '@/composable/formId';
 
 const props = defineProps({
@@ -32,6 +34,10 @@ const { formid } = getFormId(props.id, true);
  * eg. label for input element
  */
 provide('formid', formid);
+
+const injIsValid = ref<boolean | null>(inject('provideIsValid', null));
+
+const compValid = computed(() => injIsValid.value ?? props.isValid);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

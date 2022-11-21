@@ -31,7 +31,7 @@ const slots = useSlots();
 const slotContent = computed(() => {
   try {
     if (slots.default && slotText.value) {
-      return (slotText.value as unknown as HTMLElement).innerHTML ?? 'asdas';
+      return (slotText.value as unknown as HTMLElement).innerHTML ?? '';
     }
   } catch {
     return '';
