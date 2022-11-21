@@ -4,16 +4,38 @@
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
-Mangler
-- FileList
 
-TODO:
-- Refak xfds inputs - split val ud
-- overvej om magi med fejl og validering
-- xfds-form-xx - fjern validering
-- xfds-form-val-xx - har validering
-- repeat code xfds input filer
-- Fælles watcher
+# 0.3.7
+
+- Refak af xfds-validate
+- Refak af xfds form komponenter
+
+Validering er udskilt fra xfds form komponenter, dvs den skal kaldes seperat:
+
+```
+<xfds-validate :modelValue="user.adress" :validations="[hasContent, charactersMinLength(10)]">
+  <xfds-form-input
+    label="Adresse"
+    hint="Angiv gyldig adresse"
+    tooltip="Input tooltip"
+    input-type="street-address"
+    autocomplete="street-address"
+    placeholder="e.g: Jarlsvej 23"
+    v-model="user.adress"
+  />
+</xfds-validate>
+
+// eller
+
+<xfds-validate :modelValue="user.name" :validations="[hasContent, charactersMinLength(10)]">
+  <fds-input v-model="user.name" />
+</xfds-validate>
+```
+
+Som udgangspunkt vil xfds-validate selv prøve at lytte på `input|select` `blur` og begynde at validere herefter, man kan også slå dette fra `useAutoDirty=false` og selv angive `dirty`.
+
+
+
 
 # 0.3.6
 
