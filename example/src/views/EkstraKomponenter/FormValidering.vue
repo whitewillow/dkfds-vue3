@@ -19,34 +19,78 @@
 
       <fds-pre header="object data" :json="user" />
 
-      <h2>Validering komponent</h2>
-      <div class="col-10">
-        <fds-strukturerede-liste header="modelValue">
-          <template #header>
-            <fds-label class="d-block">modelValue</fds-label>
-            <code>string, number, array</code>
-          </template>
-          tager imod <code>string, number, array</code>
-        </fds-strukturerede-liste>
-        <fds-strukturerede-liste header="validations">
-          <template #header>
-            <fds-label class="d-block">validations</fds-label>
-            <code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code>
-          </template>
-          et array af valideringsmetoder
-        </fds-strukturerede-liste>
-        <fds-strukturerede-liste header="dirty">
-          <template #header>
-            <fds-label class="d-block">dirty</fds-label>
-            <code>Boolean</code>
-          </template>
-          Om feltet er blevet berørt
-        </fds-strukturerede-liste>
-        <fds-strukturerede-liste header='#default="{ isValid, errorMessage }"'>
-          Eksponering af resultatet, om modelValue er validt <code>isValid</code> og evt. tilhørende
-          fejlbesked <code>errorMessage</code>
-        </fds-strukturerede-liste>
-      </div>
+      <p class="h4">Props</p>
+      <table class="table table--compact">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>modelValue</code></td>
+            <td><code>string, number, array</code></td>
+            <td><code>null</code></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>validations</code></td>
+            <td><code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code></td>
+            <td>
+              <code>
+                [(input: unknown) => { if (!input) { return 'Indtast data'; } return null; }]</code
+              >
+            </td>
+            <td>Et array af valideringsmetoder</td>
+          </tr>
+          <tr>
+            <td><code>dirty</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Om feltet er blevet berørt</td>
+          </tr>
+          <tr>
+            <td><code>useAutoDirty</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="h4">Provide</p>
+      <table class="table table--compact">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>provideIsValid</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Er alle validations valide</td>
+          </tr>
+          <tr>
+            <td><code>provideErrorMessage</code></td>
+            <td><code>string</code></td>
+            <td>
+              <code> ''</code>
+            </td>
+            <td>Først fundne fejl</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Det er også muligt at brug slot props, <code>#default="{ isValid, errorMessage }</code></p>
+
       <fds-pre header="properties" :code="codeValidate" />
 
       <h2>Validerings metoder</h2>
@@ -106,6 +150,20 @@ const codeValidate = `
     #default="{ isValid, errorMessage }"
   >
   ...
+  </xfds-validate>
+
+
+  // Eller
+
+  <xfds-validate
+    :modelValue="user.name"
+    :validations="[hasContent, charactersMinLength(10)]">
+    <fds-formgroup> // lytter efter provideIsValid
+      <fds-label> Navn </fds-label>
+      <fds-fejlmeddelelse /> // lytter efter provideErrorMessage
+      <fds-hint>Indtast navn</fds-hint>
+      <fds-input v-model="user.name" />
+    </fds-formgroup>
   </xfds-validate>
   `;
 

@@ -1,34 +1,27 @@
 <template>
-  <xfds-validate
-    :modelValue="value"
-    :validations="validations"
-    #default="{ isValid, errorMessage }"
-    :dirty="dirty"
-    @valid="validEvent">
-    <xfds-form-group
+  <xfds-form-group
+    v-bind="{
+      label,
+      hint,
+      tooltip,
+      isValid,
+      errorMessage,
+    }">
+    <fds-input-number
+      v-model="value"
       v-bind="{
-        label,
-        hint,
-        tooltip,
-        isValid,
-        errorMessage,
-      }">
-      <fds-input-number
-        v-model="value"
-        v-bind="{
-          placeholder,
-          autocomplete,
-          inputType,
-          inputClass,
-          isDisabled,
-          isReadonly,
-          suffix,
-          prefix,
-        }"
-        @update:modelValue="handleInput"
-        @dirty="touchedEvent"/>
-    </xfds-form-group>
-  </xfds-validate>
+        placeholder,
+        autocomplete,
+        inputType,
+        inputClass,
+        isDisabled,
+        isReadonly,
+        suffix,
+        prefix,
+      }"
+      @update:modelValue="handleInput"
+      @dirty="touchedEvent"/>
+  </xfds-form-group>
 </template>
 
 <script setup lang="ts">
@@ -63,10 +56,6 @@ const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
-};
-
-const validEvent = (isValid: boolean) => {
-  emit('valid', isValid);
 };
 
 const handleInput = () => emit('update:modelValue', value.value);

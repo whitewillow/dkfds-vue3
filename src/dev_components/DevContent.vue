@@ -24,7 +24,7 @@
           :validations="[hasContent, charactersMinLength(10)]"
           #default="{ isValid, errorMessage }">
           <fds-formgroup :is-valid="isValid">
-            <fds-label> Efternavn </fds-label>
+            <fds-label> Efternavn (m. validering) </fds-label>
             <fds-fejlmeddelelse v-if="!isValid">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
@@ -35,13 +35,10 @@
 
         <xfds-validate
           :modelValue="noBeloeb"
-          :validations="[numberMax(500)]"
-          #default="{ isValid, errorMessage }">
-          <fds-formgroup :is-valid="isValid">
-            <fds-label> Beløb i kr. </fds-label>
-            <fds-fejlmeddelelse v-if="!isValid">
-              {{ errorMessage }}
-            </fds-fejlmeddelelse>
+          :validations="[numberMax(500)]">
+          <fds-formgroup>
+            <fds-label> Beløb i kr. (m. validering) </fds-label>
+            <fds-fejlmeddelelse />
             <fds-hint>Indtast efternavn</fds-hint>
             <fds-input-number
               v-model="noBeloeb"
@@ -59,14 +56,23 @@
       <hr class="my-6" />
 
       <div>
-        <h2>Eksempel på Form komponent (simpel brug)</h2>
+        <h2>Extra komponent</h2>
+
+        <xfds-validate
+          :modelValue="txtAdresseValidering"
+          :validations="[hasContent, charactersMinLength(10)]">
+          <xfds-form-input
+            label="Adresse (m. Validering)"
+            hint="Angiv gyldig adresse"
+            tooltip="Input tooltip"
+            v-model="txtAdresseValidering"/>
+        </xfds-validate>
 
         <xfds-form-input
           label="Adresse"
           hint="Angiv gyldig adresse"
           tooltip="Input tooltip"
-          v-model="txtAdresse"
-          :validations="[hasContent, charactersMinLength(10)]"/>
+          v-model="txtAdresse"/>
 
         <xfds-form-input-number
           label="Antal kasser"
@@ -96,24 +102,33 @@
           v-model="txtBeskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"/>
 
-        <xfds-form-checkbox-list
-          label="Checkbox form"
-          :validations="[arrayHasItems]"
-          v-model="checkboxListForm"/>
+        <xfds-validate
+          :modelValue="checkboxListForm"
+          :validations="[arrayHasItems]">
+          <xfds-form-checkbox-list
+            label="Checkbox form"
+            v-model="checkboxListForm" />
+        </xfds-validate>
 
-        <xfds-form-dropdown
-          label="Dropdown form"
-          :validations="[hasContent]"
-          :options="dropdownOptions"
-          v-model="dropdownValForm">
-        </xfds-form-dropdown>
+        <xfds-validate
+          :modelValue="dropdownValForm"
+          :validations="[hasContent]">
+          <xfds-form-dropdown
+            label="Dropdown form"
+            :options="dropdownOptions"
+            v-model="dropdownValForm">
+          </xfds-form-dropdown>
+        </xfds-validate>
 
-        <xfds-form-radio
-          label="Radio form"
-          :validations="[hasContent]"
-          :options="radioOptions"
-          v-model="radioValForm">
-        </xfds-form-radio>
+        <xfds-validate
+          :modelValue="radioValForm"
+          :validations="[hasContent]">
+          <xfds-form-radio
+            label="Radio form"
+            :options="radioOptions"
+            v-model="radioValForm">
+          </xfds-form-radio>
+        </xfds-validate>
 
         <fds-pre :json="{ radioValForm }" />
 
@@ -1270,7 +1285,9 @@ const txtEfternavn = ref('');
 const txtBegrundelse = ref('');
 const noBeloeb = ref(0);
 const txtAdresse = ref('');
+const txtAdresseValidering = ref('');
 const kasser = ref(0);
+const kasserValidering = ref(0);
 const txtMobil = ref('23232323');
 const txtBeskrivelse = ref('');
 const oneChecked = ref(false);

@@ -1,13 +1,17 @@
 <template>
   <section>
     <fds-component-preview header="Eksempel">
-      <xfds-form-textarea
-        label="Beskrivelse"
-        hint="Angiv beskrivelse af produktet"
-        placeholder="...Produktet er består af xxx"
-        v-model="product.beskrivelse"
+      <xfds-validate
+        :modelValue="product.beskrivelse"
         :validations="[hasContent, charactersMinLength(10)]"
-      />
+      >
+        <xfds-form-textarea
+          label="Beskrivelse"
+          hint="Angiv beskrivelse af produktet"
+          placeholder="...Produktet er består af xxx"
+          v-model="product.beskrivelse"
+        />
+      </xfds-validate>
 
       <fds-pre header="v-model" :json="product" />
 

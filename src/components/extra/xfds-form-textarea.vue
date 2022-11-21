@@ -1,31 +1,24 @@
 <template>
-  <xfds-validate
-    :modelValue="value"
-    :validations="validations"
-    #default="{ isValid, errorMessage }"
-    :dirty="dirty"
-    @valid="validEvent">
-    <xfds-form-group
-      v-bind="{
-        label,
-        hint,
-        tooltip,
-        isValid,
-        errorMessage,
-      }">
-      <fds-textarea
-        v-model="value"
-        :placeholder="placeholder"
-        :max-length="maxLength"
-        :inputClass="inputClass"
-        :rowlength="rowlength"
-        :rows="rows"
-        :disabled="isDisabled"
-        :readonly="isReadonly"
-        @update:modelValue="handleInput"
-        @dirty="touchedEvent"></fds-textarea>
-    </xfds-form-group>
-  </xfds-validate>
+  <xfds-form-group
+    v-bind="{
+      label,
+      hint,
+      tooltip,
+      isValid,
+      errorMessage,
+    }">
+    <fds-textarea
+      v-model="value"
+      :placeholder="placeholder"
+      :max-length="maxLength"
+      :inputClass="inputClass"
+      :rowlength="rowlength"
+      :rows="rows"
+      :disabled="isDisabled"
+      :readonly="isReadonly"
+      @update:modelValue="handleInput"
+      @dirty="touchedEvent"></fds-textarea>
+  </xfds-form-group>
 </template>
 
 <script setup lang="ts">
@@ -47,10 +40,6 @@ const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
-};
-
-const validEvent = (isValid: boolean) => {
-  emit('valid', isValid);
 };
 
 const handleInput = () => emit('update:modelValue', value.value);

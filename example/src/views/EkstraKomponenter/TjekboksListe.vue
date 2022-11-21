@@ -28,11 +28,9 @@
     <hr class="my-6" />
 
     <fds-component-preview header="Eksempel Formular">
-      <xfds-form-checkbox-list
-        label="Checkbox form"
-        :validations="[arrayHasItems]"
-        v-model="checkboxListForm"
-      />
+      <xfds-validate :modelValue="checkboxListForm" :validations="[arrayHasItems]">
+        <xfds-form-checkbox-list label="Checkbox form" v-model="checkboxListForm" />
+      </xfds-validate>
 
       <fds-pre header="v-model for checkbox liste" :json="checkboxListForm" />
 
@@ -41,7 +39,6 @@
           Komponenten <code>xfds-form-checkbox-list</code> er en samling af komponenter der giver en
           samlet funktionalitet.
         </p>
-        <p class="italic">Understøtter simpel validering, m.m.</p>
       </template>
       <template #code>
         <pre v-text="code"></pre>
@@ -91,11 +88,9 @@ const checkboxList = ref<FdsCheckboxItem[]>([
 ]);
 
 const code = `
-  <xfds-form-checkbox-list
-    label="Checkbox form"
-    :validations="[arrayHasItems]"
-    v-model="checkboxListForm"
-  />
+  <xfds-validate :modelValue="checkboxListForm" :validations="[arrayHasItems]">
+    <xfds-form-checkbox-list label="Checkbox form" v-model="checkboxListForm" />
+  </xfds-validate>
   
   const checkboxListForm = ref<FdsCheckboxItem[]>([
     {

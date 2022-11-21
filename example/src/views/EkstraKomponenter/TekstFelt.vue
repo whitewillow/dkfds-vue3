@@ -3,16 +3,17 @@
     <fds-component-preview header="Tekstfelter">
       <xfds-form-input label="Navn" placeholder="e.g: Anders Hansen" v-model="user.name" />
 
-      <xfds-form-input
-        label="Adresse"
-        hint="Angiv gyldig adresse"
-        tooltip="Input tooltip"
-        input-type="street-address"
-        autocomplete="street-address"
-        placeholder="e.g: Jarlsvej 23"
-        v-model="user.adress"
-        :validations="[hasContent, charactersMinLength(10)]"
-      />
+      <xfds-validate :modelValue="user.adress" :validations="[hasContent, charactersMinLength(10)]">
+        <xfds-form-input
+          label="Adresse"
+          hint="Angiv gyldig adresse"
+          tooltip="Input tooltip"
+          input-type="street-address"
+          autocomplete="street-address"
+          placeholder="e.g: Jarlsvej 23"
+          v-model="user.adress"
+        />
+      </xfds-validate>
 
       <xfds-form-input
         inputClass="input-width-xs"
@@ -61,16 +62,17 @@ const user = ref({
 const code = `
 <xfds-form-input label="Navn" placeholder="e.g: Anders Hansen" v-model="user.name" />
 
-<xfds-form-input
-  label="Adresse"
-  hint="Angiv gyldig adresse"
-  tooltip="Input tooltip"
-  input-type="street-address"
-  autocomplete="street-address"
-  placeholder="e.g: Jarlsvej 23"
-  v-model="user.adress"
-  :validations="[hasContent, charactersMinLength(10)]"
-/>
+<xfds-validate :modelValue="user.adress" :validations="[hasContent, charactersMinLength(10)]">
+  <xfds-form-input
+    label="Adresse"
+    hint="Angiv gyldig adresse"
+    tooltip="Input tooltip"
+    input-type="street-address"
+    autocomplete="street-address"
+    placeholder="e.g: Jarlsvej 23"
+    v-model="user.adress"
+  />
+</xfds-validate>
 
 <xfds-form-input
   inputClass="input-width-xs"

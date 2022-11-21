@@ -1,17 +1,17 @@
 <template>
-  <slot
-    :isValid="isValid"
-    :errorMessage="errorMessage" />
+  <section ref="refElement">
+    <slot
+      :isValid="isValid"
+      :errorMessage="errorMessage" />
+  </section>
 </template>
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, provide, ref, watch,
+  defineEmits, defineProps, onMounted, provide, ref, watch,
 } from 'vue';
 import { validateAllErrorMessage } from '@/utils/validate-utils';
 
-const isValid = ref(true);
-const errorMessage = ref('');
 const props = defineProps({
   modelValue: {
     type: [String, Number, Array],
@@ -24,6 +24,10 @@ const props = defineProps({
   dirty: {
     type: Boolean,
     default: false,
+  },
+  useAutoDirty: {
+    type: Boolean,
+    default: true,
   },
   validations: {
     type: Array as () => Array<(x?: unknown) => string | null>,
@@ -38,12 +42,16 @@ const props = defineProps({
   },
 });
 
+const isValid = ref(true);
+const errorMessage = ref('');
+const refElement = ref(null);
+const localDirty = ref(false);
 /**
  * Provide for underliggende Inputs
  * Hhv om validering gik godt eller fejlbesked
  */
-provide('validateIsValid', isValid);
-provide('validateErrorMessage', errorMessage);
+provide('provideIsValid', isValid);
+provide('provideErrorMessage', errorMessage);
 
 const emit = defineEmits(['valid']);
 
@@ -63,6 +71,7 @@ const isFormValid = () => {
 
     const result: string | null = validateAllErrorMessage(...vals)(props.modelValue);
     isValid.value = true;
+    errorMessage.value = '';
 
     if (result) {
       errorMessage.value = result;
@@ -73,13 +82,22 @@ const isFormValid = () => {
   emit('valid', isValid.value);
 };
 
+onMounted(() => {
+  if (!refElement.value || !props.useAutoDirty) {
+    return;
+  }
+  (refElement.value as HTMLElement).querySelector('input, select')?.addEventListener('blur', () => {
+    localDirty.value = true;
+  });
+});
+
 watch(
-  () => [props.modelValue, props.dirty],
+  () => [props.modelValue, props.dirty, localDirty],
   () => {
     isFormValid();
   },
   {
-    immediate: props.validateFlow === 'immediate' || hasValue() || props.dirty,
+    immediate: props.validateFlow === 'immediate' || hasValue() || props.dirty || localDirty.value,
     deep: true,
   },
 );

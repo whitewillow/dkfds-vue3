@@ -7,14 +7,15 @@
         v-model="lager.lager"
       />
 
-      <xfds-form-input-number
-        label="Forventet lager"
-        hint="Angiv gyldig lager antal"
-        tooltip="Input tooltip"
-        prefix="stk."
-        v-model="lager.forventetLager"
-        :validations="[numberMin(2)]"
-      />
+      <xfds-validate :modelValue="lager.forventetLager" :validations="[numberMin(2)]">
+        <xfds-form-input-number
+          label="Forventet lager"
+          hint="Angiv gyldig lager antal"
+          tooltip="Input tooltip"
+          prefix="stk."
+          v-model="lager.forventetLager"
+        />
+      </xfds-validate>
 
       <xfds-form-input-number
         inputClass="input-width-xs"
@@ -55,14 +56,15 @@ const code = `
   v-model="lager.lager"
 />
 
-<xfds-form-input-number
-  label="Forventet lager"
-  hint="Angiv gyldig lager antal"
-  tooltip="Input tooltip"
-  prefix="stk."
-  v-model="lager.forventetLager"
-  :validations="[numberMin(2)]"
-/>
+<xfds-validate :modelValue="lager.forventetLager" :validations="[numberMin(2)]">
+  <xfds-form-input-number
+    label="Forventet lager"
+    hint="Angiv gyldig lager antal"
+    tooltip="Input tooltip"
+    prefix="stk."
+    v-model="lager.forventetLager"
+  />
+</xfds-validate>
 
 <xfds-form-input-number
   inputClass="input-width-xs"

@@ -163,7 +163,9 @@ function install (app: App): void {
   app.component('xfds-validate', XFdsValidate);
   app.component('xfds-form-group', XFdsFormGroup);
   app.component('xfds-form-input', XFdsFormInput);
+
   app.component('xfds-form-input-number', XFdsFormInputNumber);
+
   app.component('xfds-form-textarea', XFdsFormTextarea);
   app.component('xfds-form-radio', XFdsFormRadio);
   app.component('xfds-form-dropdown', XFdsFormDropdown);

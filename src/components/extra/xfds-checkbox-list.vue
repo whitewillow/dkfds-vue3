@@ -1,20 +1,20 @@
 <template>
   <ul
     class="nobullet-list"
-    :id="formId">
+    :id="formid">
     <li
       v-for="(checkbox, index) of value"
       :key="index">
       <input
-        :id="'checkbox-' + formId + '-' + index"
+        :id="'checkbox-' + formid + '-' + index"
         type="checkbox"
-        :name="'checkbox' + formId"
+        :name="'checkbox' + formid"
         v-model="checkbox.checked"
         :disabled="checkbox.disabled"
         @change="handleInput"
         @blur="handleDirty"
         class="form-checkbox checkbox-large"/>
-      <label :for="'checkbox-' + formId + '-' + index">
+      <label :for="'checkbox-' + formid + '-' + index">
         {{ checkbox.title }}
       </label>
 
@@ -30,11 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defineProps, defineEmits, ref, computed,
-} from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import { defineProps, defineEmits, ref } from 'vue';
 import fdsCheckboxProps from '@/props/fds-checkbox.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   ...fdsCheckboxProps,
@@ -56,7 +54,7 @@ const handleInput = () => {
   emit('update:modelValue', value.value);
 };
 
-const formId = computed(() => uuidv4());
+const { formid } = getFormId(props.id, true);
 </script>
 
 <style scoped lang="scss"></style>

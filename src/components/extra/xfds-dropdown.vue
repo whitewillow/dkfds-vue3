@@ -1,15 +1,16 @@
 <template>
   <select
     class="form-select"
+    :class="{ dirty: dirty }"
     :disabled="isDisabled"
     :name="formid"
     :id="formid"
     v-bind="refValue"
     @change="onInput"
-    @blur="$emit('dirty', true)">
+    @blur="onDirty">
     <option
       :value="refValue"
-      v-if="!optionHeader">
+      v-if="optionHeader">
       {{ optionHeader }}
     </option>
     <option
@@ -65,6 +66,11 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 const refValue = ref(props.modelValue);
 const { formid } = getFormId(props.id, true);
 
+const dirty = ref(false);
+const onDirty = () => {
+  dirty.value = true;
+  emit('dirty', true);
+};
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>
 
