@@ -5,6 +5,27 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 
+
+# 0.3.8
+
+- fds-cookiemeddelelse
+
+Simpel cookiemeddelelse, giver kun styling for cookiemeddelelsen, ikke den tekniske implementering af cookiemeddelelsen.
+
+Du skal selv tilpasse indholdet i meddelelsen, så den overholder gældende lovgivning og stemmer overens med din løsnings specifikke anvendelse af cookies.
+
+
+```
+<fds-cookiemeddelelse 
+  @accepter="cookieAccept = $event"
+  header="Fortæl os om du accepterer cookies">
+  <p class="mt-0" id="cookie-message-text">
+    Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
+    <a href="#"> Læs mere om vores brug af cookies. </a>
+  </p>
+</fds-cookiemeddelelse>
+```
+
 # 0.3.7
 
 - Refak af xfds-validate

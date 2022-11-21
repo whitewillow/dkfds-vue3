@@ -6,6 +6,7 @@ import FdsStruktureredeListe from '@/components/fds-strukturerede-liste.vue';
 
 import FdsAlert from '@/components/fds-alert.vue';
 import FdsPre from '@/components/fds-pre.vue';
+import FdsCookiemeddelelse from '@/components/fds-cookiemeddelelse.vue';
 
 import FdsFormgroup from '@/components/fds-formgroup.vue';
 import FdsTooltip from '@/components/fds-tooltip.vue';
@@ -98,6 +99,8 @@ export * from '@/utils/file-utils';
 function install (app: App): void {
   app.component('fds-trinindikator', FdsTrinindikator);
   app.component('fds-modal', FdsModal);
+  app.component('fds-cookiemeddelelse', FdsCookiemeddelelse);
+
   app.component('fds-overflow-menu', FdsOverflowMenu);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
   app.component('fds-dato-angivelse', FdsDatoAngivelse);
@@ -179,6 +182,7 @@ function install (app: App): void {
 export {
   FdsAlert,
   FdsModal,
+  FdsCookiemeddelelse,
   FdsOverflowMenu,
   FdsToastContainer,
   FdsToast,

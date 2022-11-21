@@ -1,5 +1,12 @@
 <template>
   <div class="home">
+    <fds-cookiemeddelelse
+      :show="cookieAccept === null"
+      @accepter="cookieAccept = $event" />
+
+    <fds-pre
+      header="Cookimeddelelse"
+      :json="{ cookieAccept }" />
     <fds-toast-container />
 
     <div class="container pb-6">
@@ -1270,6 +1277,7 @@ const genLargeArray = computed((): Array<{ id: string; indhold: string }> => {
   }));
 });
 
+const cookieAccept = ref<boolean | null>(null);
 const showToast = ref(false);
 const datoValg = ref('2022-12-01');
 const datoValgValid = ref(true);
