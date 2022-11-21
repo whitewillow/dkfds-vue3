@@ -74,7 +74,6 @@ Og gennemføre alm. installation process for DKFDS-Vue3
   - Headers
   - Footers
   - Brødkrumme
-  - Cookiemeddelelse - LAVES IKKE
   - Tabeller - LAVES IKKE
 - Gennemgang af komponent navngivning
 - Gennemgang af komponent properties
