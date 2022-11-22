@@ -5,6 +5,10 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 
+# 0.3.9
+
+- overflow - klik uden for lukkede ikke menu
+
 
 # 0.3.8
 
