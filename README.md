@@ -1,6 +1,8 @@
 # dkfds-vue3
 
-Med dkfds-vue3 kan du bygge responsive og ARIA tilgængelige web projekter med vue 3 og det mest populære front-end CSS bibliotek for selvbetjeningsløsninger - Det Fælles Designsystem
+DKFDS-Vue3 er et komponent bibliotek til [Det Fælles Designsystem](https://designsystem.dk/) (DKFDS).
+
+Med DKFDS-Vue3 kan du let benytte [DKFDS](https://designsystem.dk/) i vue 3 og bygge responsive og ARIA tilgængelige web projekter, som Det Fælles Designsystem foreligger.
 
 Med over 40 Standard komponenter og flere ekstra komponenter til at hjælpe dig med at udvikle selvbetjeningsløsninger hurtigt og effektivt.
 
