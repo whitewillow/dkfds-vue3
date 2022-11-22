@@ -32,17 +32,16 @@ const props = defineProps({
   },
 });
 
-const file = ref<File | null>();
-
 const emit = defineEmits(['dirty', 'upload', 'error']);
+
+const { formid } = getFormId(props.id);
+const file = ref<File | null>();
 
 const onDirty = () => emit('dirty', true);
 
 const clearFile = () => {
   file.value = null;
 };
-
-const { formid } = getFormId(props.id);
 
 const onFileChange = ($event: Event) => {
   onDirty();

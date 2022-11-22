@@ -41,6 +41,7 @@ const props = defineProps({
     ],
   },
 });
+const emit = defineEmits(['valid']);
 
 const isValid = ref(true);
 const errorMessage = ref('');
@@ -52,8 +53,6 @@ const localDirty = ref(false);
  */
 provide('provideIsValid', isValid);
 provide('provideErrorMessage', errorMessage);
-
-const emit = defineEmits(['valid']);
 
 onMounted(() => {
   if (!refElement.value || !props.useAutoDirty) {

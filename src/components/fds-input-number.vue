@@ -56,8 +56,8 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
-const value = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
 const { formid } = getFormId(props.id, true);
+const value = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
 
 const cssClass = computed((): string => {
   if (props.suffix) {

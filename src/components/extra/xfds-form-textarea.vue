@@ -33,6 +33,7 @@ const props = defineProps({
   ...fdsTextareaProps,
   ...xfdsFormGroupProps,
 });
+
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
 const value = ref(props.modelValue);

@@ -71,8 +71,9 @@ defineProps({
   },
 });
 
-const showAlert = ref(true);
 const emit = defineEmits(['close']);
+
+const showAlert = ref(true);
 
 const onClose = () => {
   showAlert.value = !showAlert.value;

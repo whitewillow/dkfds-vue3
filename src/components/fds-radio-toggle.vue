@@ -76,11 +76,11 @@ const choices: Array<FdsOptionItem> = [
 
 const emit = defineEmits(['update:modelValue', 'dirty']);
 
+const { formid } = getFormId(props.id, true);
+
 const isValueSet = computed(() => props.modelValue !== undefined && props.modelValue !== null);
 
 const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value === 'true');
-
-const { formid } = getFormId(props.id, true);
 </script>
 
 <style scoped lang="scss"></style>

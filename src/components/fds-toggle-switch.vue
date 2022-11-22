@@ -1,7 +1,7 @@
 <template>
   <div class="form-group mb-4">
     <input
-      :id="formId"
+      :id="formid"
       type="checkbox"
       name="toggle-example"
       :checked="modelValue"
@@ -9,21 +9,22 @@
       :disabled="isDisabled"
       class="form-toggle"/>
     <label
-      :for="formId"
+      :for="formid"
       class="form-toggle-label"
       :data-toggle-off-text="offText"
       :data-toggle-on-text="onText">
       <section class="pl-2 hand">
         <slot
-          v-bind:id="formId"
+          v-bind:id="formid"
           class="hand">
         </slot></section></label>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import { defineProps, defineEmits } from 'vue';
+
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   id: {
@@ -52,7 +53,7 @@ const emit = defineEmits(['update:modelValue', 'input']);
 
 const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
-const formId = computed(() => props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 </script>
 
 <style lang="scss" scoped>
