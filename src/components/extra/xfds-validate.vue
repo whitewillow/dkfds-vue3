@@ -55,6 +55,15 @@ provide('provideErrorMessage', errorMessage);
 
 const emit = defineEmits(['valid']);
 
+onMounted(() => {
+  if (!refElement.value || !props.useAutoDirty) {
+    return;
+  }
+  (refElement.value as HTMLElement).querySelector('input, select')?.addEventListener('blur', () => {
+    localDirty.value = true;
+  });
+});
+
 const hasValue = (): boolean => {
   if (typeof props.modelValue === 'string') {
     return props.modelValue.length > 0;
@@ -81,15 +90,6 @@ const isFormValid = () => {
 
   emit('valid', isValid.value);
 };
-
-onMounted(() => {
-  if (!refElement.value || !props.useAutoDirty) {
-    return;
-  }
-  (refElement.value as HTMLElement).querySelector('input, select')?.addEventListener('blur', () => {
-    localDirty.value = true;
-  });
-});
 
 watch(
   () => [props.modelValue, props.dirty, localDirty],

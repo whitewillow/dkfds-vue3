@@ -12,11 +12,11 @@ export default class DKFDSDropdown {
 
   responsiveListCollapseEnabled = false;
 
-  BUTTON = '.button-overflow-menu';
+  static BUTTONCLASS = '.button-overflow-menu';
 
-  jsDropdownCollapseModifier = 'js-dropdown--responsive-collapse'; // option: make dropdown behave as the collapse component when on small screens (used by submenus in the header and step-dropdown).
+  static jsDropdownCollapseModifier = 'js-dropdown--responsive-collapse'; // option: make dropdown behave as the collapse component when on small screens (used by submenus in the header and step-dropdown).
 
-  TARGET = 'data-js-target';
+  static TARGET = 'data-js-target';
 
   constructor (newButtonElement: HTMLElement | null | undefined) {
     if (!newButtonElement) {
@@ -25,9 +25,11 @@ export default class DKFDSDropdown {
 
     this.buttonElement = newButtonElement;
 
-    const targetAttr = this.buttonElement.getAttribute(this.TARGET);
+    const targetAttr = this.buttonElement.getAttribute(DKFDSDropdown.TARGET);
     if (!targetAttr) {
-      throw new Error(`Attribute could not be found on overflow menu component: ${this.TARGET}`);
+      throw new Error(
+        `Attribute could not be found on overflow menu component: ${DKFDSDropdown.TARGET}`,
+      );
     }
     const targetEl = document.getElementById(targetAttr.replace('#', ''));
     if (!targetEl) {
@@ -108,15 +110,17 @@ export default class DKFDSDropdown {
     const overflowMenuEl = document.getElementsByClassName('overflow-menu');
     for (let oi = 0; oi < overflowMenuEl.length; oi += 1) {
       const currentOverflowMenuEL = overflowMenuEl[oi];
-      const triggerEl = currentOverflowMenuEL.querySelector(`${this.BUTTON}[aria-expanded="true"]`);
+      const triggerEl = currentOverflowMenuEL.querySelector(
+        `${DKFDSDropdown.BUTTONCLASS}[aria-expanded="true"]`,
+      );
       if (triggerEl) {
         changed = true;
         const targetEl = currentOverflowMenuEL.querySelector(
-          `#${triggerEl.getAttribute(this.TARGET)?.replace('#', '')}`,
+          `#${triggerEl.getAttribute(DKFDSDropdown.TARGET)?.replace('#', '')}`,
         );
 
         if (targetEl) {
-          if (this.doResponsiveCollapse(triggerEl)) {
+          if (DKFDSDropdown.doResponsiveCollapse(triggerEl)) {
             if (triggerEl.getAttribute('aria-expanded')) {
               const eventClose = new Event('fds.dropdown.close');
               triggerEl.dispatchEvent(eventClose);
@@ -152,7 +156,7 @@ export default class DKFDSDropdown {
     const triggerEl = button;
     let targetEl = null;
     if (triggerEl !== null && triggerEl !== undefined) {
-      const targetAttr = triggerEl.getAttribute(this.TARGET);
+      const targetAttr = triggerEl.getAttribute(DKFDSDropdown.TARGET);
       if (targetAttr !== null && targetAttr !== undefined) {
         targetEl = document.getElementById(targetAttr.replace('#', ''));
       }
@@ -227,28 +231,31 @@ export default class DKFDSDropdown {
         document.querySelector('body.mobile_nav-active') === null
         && !(<Element>evt.target)?.classList.contains('button-menu-close')
       ) {
-        const openDropdowns = document.querySelectorAll(`${this.BUTTON}[aria-expanded=true]`);
+        const openDropdowns = document.querySelectorAll(
+          `${DKFDSDropdown.BUTTONCLASS}[aria-expanded=true]`,
+        );
         for (let i = 0; i < openDropdowns.length; i += 1) {
           const triggerEl = openDropdowns[i];
           let targetEl = null;
-          let targetAttr = triggerEl.getAttribute(this.TARGET);
-          if (targetAttr !== null && targetAttr !== undefined) {
+          let targetAttr = triggerEl.getAttribute(DKFDSDropdown.TARGET);
+          if (targetAttr) {
             if (targetAttr.indexOf('#') !== -1) {
               targetAttr = targetAttr.replace('#', '');
             }
             targetEl = document.getElementById(targetAttr);
           }
           if (
-            this.doResponsiveCollapse(triggerEl)
+            DKFDSDropdown.doResponsiveCollapse(triggerEl)
             || (this.hasParent(triggerEl, 'HEADER')
               && !(<Element>evt.target)?.classList.contains('overlay'))
           ) {
             // closes dropdown when clicked outside
-            if (evt.target !== triggerEl) {
+
+            if (<Element>evt.target !== triggerEl) {
               // clicked outside trigger, force close
               triggerEl.setAttribute('aria-expanded', 'false');
-              this.targetEl.classList.add('collapsed');
-              this.targetEl.setAttribute('aria-hidden', 'true');
+              targetEl?.classList.add('collapsed');
+              targetEl?.setAttribute('aria-hidden', 'true');
               const eventClose = new Event('fds.dropdown.close');
               triggerEl.dispatchEvent(eventClose);
             }
@@ -258,15 +265,15 @@ export default class DKFDSDropdown {
     }
   }
 
-  doResponsiveCollapse (triggerEl: Element) {
-    if (!triggerEl.classList.contains(this.jsDropdownCollapseModifier)) {
+  static doResponsiveCollapse (triggerEl: Element) {
+    if (!triggerEl.classList.contains(DKFDSDropdown.jsDropdownCollapseModifier)) {
       // not nav overflow menu
       if (
         triggerEl.parentElement?.classList.contains('overflow-menu--md-no-responsive')
         || triggerEl.parentElement?.classList.contains('overflow-menu--lg-no-responsive')
       ) {
         // trinindikator overflow menu
-        if (window.innerWidth <= this.getTringuideBreakpoint(triggerEl)) {
+        if (window.innerWidth <= DKFDSDropdown.getTringuideBreakpoint(triggerEl)) {
           // overflow menu på responsiv tringuide aktiveret
           return true;
         }
@@ -279,7 +286,7 @@ export default class DKFDSDropdown {
     return false;
   }
 
-  getTringuideBreakpoint (button: Element) {
+  static getTringuideBreakpoint (button: Element) {
     if (button.parentElement?.classList.contains('overflow-menu--lg-no-responsive')) {
       return breakpoints.lg;
     }
