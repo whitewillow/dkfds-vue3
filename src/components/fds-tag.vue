@@ -2,7 +2,7 @@
   <button
     class="tag"
     :class="{ 'tag-icon': icon }"
-    :id="formId">
+    :id="formid">
     <slot />
     <svg
       v-if="icon"
@@ -21,8 +21,8 @@
  *
  * */
 
-import { defineProps, ref, defineEmits } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import { defineProps, defineEmits } from 'vue';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
   icon: {
@@ -33,12 +33,12 @@ const props = defineProps({
   },
 });
 
-const formId = ref(props.id ?? uuidv4());
-
 const emit = defineEmits(['iconClick']);
 
+const { formid } = getFormId(props.id, true);
+
 const handleIconClick = () => {
-  emit('iconClick', formId.value);
+  emit('iconClick', formid.value);
 };
 </script>
 

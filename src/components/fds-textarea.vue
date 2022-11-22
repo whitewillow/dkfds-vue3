@@ -24,6 +24,7 @@ const props = defineProps({ ...fdsTextareaProps });
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
+const { formid } = getFormId(props.id, true);
 const val = ref(props.modelValue);
 
 const handleInput = () => emit('update:modelValue', val.value);
@@ -38,8 +39,6 @@ const getRows = computed(() => {
 
   return result <= 10 ? result : 10;
 });
-
-const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],

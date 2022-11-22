@@ -15,6 +15,7 @@ const props = defineProps({
     default: null,
   },
 });
+
 const cssClass = computed(() => {
   if (props.variant === 'submenu') {
     return 'sidenav-sub_list';

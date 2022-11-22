@@ -36,6 +36,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
+
 const mVal = computed(() => props.modelValue ?? []);
 
 const currentKey = ref('');

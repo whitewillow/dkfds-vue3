@@ -33,6 +33,7 @@ const props = defineProps({
     required: true,
   },
 });
+
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const navigateup = (key: string) => {

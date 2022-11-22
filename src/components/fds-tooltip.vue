@@ -1,7 +1,7 @@
 <template>
   <button
     class="js-tooltip button-unstyled"
-    :id="formId"
+    :id="formid"
     :data-tooltip="slotContent"
     data-tooltip-trigger="click">
     <svg
@@ -20,10 +20,10 @@
 import {
   computed, onMounted, ref, useSlots,
 } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
 import DKFSTooltip from '@/scripts/tooltip';
+import getFormId from '@/composable/formId';
 
-const formId = ref(uuidv4());
+const { formid } = getFormId(undefined, true);
 const slotText = ref(null);
 
 const slots = useSlots();
@@ -40,7 +40,7 @@ const slotContent = computed(() => {
 });
 
 onMounted(() => {
-  new DKFSTooltip(document.getElementById(formId.value)).init();
+  new DKFSTooltip(document.getElementById(formid.value)).init();
 });
 </script>
 

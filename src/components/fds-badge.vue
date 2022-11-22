@@ -31,6 +31,7 @@ const props = defineProps({
     default: null,
   },
 });
+
 const getSizeClass = computed(() => (props.isSmall ? 'badge-small' : 'badge-large'));
 const getVariantClass = computed(() => (props.variant ? `badge-${props.variant}` : ''));
 </script>

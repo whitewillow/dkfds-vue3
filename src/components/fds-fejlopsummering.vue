@@ -21,8 +21,8 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
-import FdsAlert from '@/components/fds-alert.vue';
 import { FdsErrorListItem } from '@/model/fds.model';
+import FdsAlert from '@/components/fds-alert.vue';
 
 defineProps({
   list: {

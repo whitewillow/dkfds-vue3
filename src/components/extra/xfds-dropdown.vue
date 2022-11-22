@@ -65,12 +65,13 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const refValue = ref(props.modelValue);
 const { formid } = getFormId(props.id, true);
-
 const dirty = ref(false);
+
 const onDirty = () => {
   dirty.value = true;
   emit('dirty', true);
 };
+
 const onInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>
 

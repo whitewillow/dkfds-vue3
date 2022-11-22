@@ -35,6 +35,7 @@ const props = defineProps({
     default: () => [],
   },
 });
+
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
 const value = ref(props.modelValue);

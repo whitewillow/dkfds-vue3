@@ -45,6 +45,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const value = ref(props.modelValue);
+const { formid } = getFormId(props.id, true);
 
 const handleDirty = () => {
   emit('dirty', true);
@@ -53,8 +54,6 @@ const handleDirty = () => {
 const handleInput = () => {
   emit('update:modelValue', value.value);
 };
-
-const { formid } = getFormId(props.id, true);
 </script>
 
 <style scoped lang="scss"></style>

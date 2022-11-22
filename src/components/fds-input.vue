@@ -54,6 +54,8 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 const slots = useSlots();
+
+const { formid } = getFormId(props.id, true);
 const value = ref(props.modelValue);
 
 const cssClass = computed((): string => {
@@ -70,8 +72,6 @@ const cssClass = computed((): string => {
 });
 
 const handleInput = () => emit('update:modelValue', value.value);
-
-const { formid } = getFormId(props.id, true);
 
 watch(
   () => [props.modelValue],
