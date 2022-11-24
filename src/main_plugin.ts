@@ -38,6 +38,7 @@ import FdsAccordionGroup from '@/components/fds-accordion-group.vue';
 import FdsBadge from '@/components/fds-badge.vue';
 import FdsTag from '@/components/fds-tag.vue';
 import FdsCard from '@/components/fds-card.vue';
+import FdsCardGroup from '@/components/fds-card-group.vue';
 import FdsTilTop from '@/components/fds-til-top.vue';
 import FdsSprogVaelger from '@/components/fds-sprogvaelger.vue';
 
@@ -124,6 +125,7 @@ function install (app: App): void {
   app.component('fds-sprogvaelger', FdsSprogVaelger);
 
   app.component('fds-card', FdsCard);
+  app.component('fds-card-group', FdsCardGroup);
   app.component('fds-input', FdsInput);
   app.component('fds-input-number', FdsInputNumber);
   app.component('fds-textarea', FdsTextarea);
@@ -207,6 +209,7 @@ export {
   FdsSprogVaelger,
   FdsTag,
   FdsCard,
+  FdsCardGroup,
   FdsInput,
   FdsCheckbox,
   FdsRadio,
