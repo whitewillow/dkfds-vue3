@@ -2,16 +2,16 @@
   <div
     :disabled="disabled"
     :class="[{ disabled: disabled }]">
-    {{ refExpanded }}
+    Ref: {{ refExpanded }} - Group: {{ injExpanded }}
     <button
       class="accordion-button"
       :class="getVariantClass"
-      :aria-expanded="`${isExpanded ? 'true' : 'false'}`"
+      :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
       @click="refExpanded = !refExpanded"
       :aria-controls="`acc_${formid}`">
       <slot
         name="header"
-        v-bind:expanded="isExpanded">
+        v-bind:expanded="refExpanded">
         <div>
           {{ header }}
           <div
@@ -39,7 +39,7 @@
     </button>
     <div
       :id="`acc_${formid}`"
-      :aria-hidden="`${isExpanded ? 'false' : 'true'}`"
+      :aria-hidden="`${refExpanded ? 'false' : 'true'}`"
       class="accordion-content">
       <slot />
     </div>
@@ -49,14 +49,17 @@
 <script setup lang="ts">
 import getFormId from '@/composable/formId';
 import accordionProps from '@/props/fds-accordion.props';
-import { defineProps, ref, computed } from 'vue';
+import {
+  defineProps, ref, computed, inject,
+} from 'vue';
 
 const props = defineProps({ ...accordionProps });
 
 // TODO: få provideGroupExpanded til at virke
-// || inject<boolean>('provideGroupExpanded', false)
-const refExpanded = ref<boolean>(props.expanded);
-const isExpanded = computed(() => refExpanded.value);
+// se template Ref: false - Group: false
+
+const injExpanded = computed(() => inject('provideGroupExpanded', false));
+const refExpanded = ref(props.expanded);
 
 const { formid } = getFormId(undefined, true);
 
