@@ -272,7 +272,6 @@
 
       <fds-accordion-group #default="{ groupActive }">
         <fds-accordion
-          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -283,7 +282,6 @@
           </p>
         </fds-accordion>
         <fds-accordion
-          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -294,7 +292,6 @@
         </fds-accordion>
 
         <fds-accordion
-          :expanded="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success">
@@ -306,7 +303,6 @@
         </fds-accordion>
 
         <fds-accordion
-          :expanded="groupActive"
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel">
@@ -318,7 +314,6 @@
         </fds-accordion>
 
         <fds-accordion
-          :expanded="groupActive"
           header="Accordion header med Fejl"
           variant="error">
           <p>

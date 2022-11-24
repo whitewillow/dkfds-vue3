@@ -2,18 +2,16 @@
   <div
     :disabled="disabled"
     :class="[{ disabled: disabled }]">
+    {{ refExpanded }}
     <button
       class="accordion-button"
       :class="getVariantClass"
-      :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
-      @click="
-        refExpanded = !refExpanded;
-        $emit('active', refExpanded);
-      "
+      :aria-expanded="`${isExpanded ? 'true' : 'false'}`"
+      @click="refExpanded = !refExpanded"
       :aria-controls="`acc_${formid}`">
       <slot
         name="header"
-        v-bind:expanded="refExpanded">
+        v-bind:expanded="isExpanded">
         <div>
           {{ header }}
           <div
@@ -41,7 +39,7 @@
     </button>
     <div
       :id="`acc_${formid}`"
-      :aria-hidden="`${refExpanded ? 'false' : 'true'}`"
+      :aria-hidden="`${isExpanded ? 'false' : 'true'}`"
       class="accordion-content">
       <slot />
     </div>
@@ -51,13 +49,15 @@
 <script setup lang="ts">
 import getFormId from '@/composable/formId';
 import accordionProps from '@/props/fds-accordion.props';
-import {
-  defineProps, ref, computed, watch,
-} from 'vue';
+import { defineProps, ref, computed } from 'vue';
 
 const props = defineProps({ ...accordionProps });
 
-const refExpanded = ref(props.expanded);
+// TODO: få provideGroupExpanded til at virke
+// || inject<boolean>('provideGroupExpanded', false)
+const refExpanded = ref<boolean>(props.expanded);
+const isExpanded = computed(() => refExpanded.value);
+
 const { formid } = getFormId(undefined, true);
 
 const icons = {
@@ -75,14 +75,4 @@ const defaultVariantText = {
 const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
 const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
 const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
-
-watch(
-  () => [props.expanded],
-  () => {
-    refExpanded.value = props.expanded;
-  },
-  {
-    immediate: true,
-  },
-);
 </script>

@@ -1,41 +1,49 @@
 <template>
   <div>
-    <button
-      class="accordion-bulk-button"
-      :data-accordion-bulk-expand="!refActive"
-      @click="onToggle">
-      {{ `${refActive ? activeText : nonActiveText}` }}
-    </button>
+    <slot name="header">
+      <button
+        class="accordion-bulk-button"
+        :data-accordion-bulk-expand="!refExpanded"
+        @click="onToggle">
+        {{ `${refExpanded ? expandedText : collapsedText}` }}
+      </button>
+    </slot>
     <div class="accordion-group">
-      <slot :groupActive="refActive" />
+      <slot :groupActive="refExpanded" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
+import {
+  ref, defineProps, provide, computed,
+} from 'vue';
 
 defineProps({
   /**
    * Tekst ved Lukket tilstand - Åbn alle
    * */
-  nonActiveText: {
+  collapsedText: {
     type: String,
     default: 'Åbn alle',
   },
   /**
    * Tekst ved Åben tilstand - Luk alle
    * */
-  activeText: {
+  expandedText: {
     type: String,
     default: 'Luk alle',
   },
 });
 
-const refActive = ref(false);
+// TODO: Overvej single select (collapse andre) og multiselect (multi default) ?
+
+const refExpanded = ref(false);
+const compExpanded = computed(() => refExpanded.value);
+provide('provideGroupExpanded', compExpanded);
 
 const onToggle = () => {
-  refActive.value = !refActive.value;
+  refExpanded.value = !refExpanded.value;
 };
 </script>
 

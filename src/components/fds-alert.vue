@@ -19,11 +19,13 @@
           class="alert-close"
           v-if="closeable"
           @click="onClose">
-          <svg
-            class="icon-svg"
-            aria-hidden="true"
-            focusable="false">
-            <use xlink:href="#close"></use></svg>Luk
+          <slot name="button">
+            <svg
+              class="icon-svg"
+              aria-hidden="true"
+              focusable="false">
+              <use xlink:href="#close"></use></svg>Luk
+          </slot>
         </button>
       </div>
     </div>
