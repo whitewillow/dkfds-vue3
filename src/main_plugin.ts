@@ -87,7 +87,6 @@ import XFdsProgressbar from '@/components/extra/xfds-progressbar.vue';
 import FdsMenu from '@/components/fds-menu.vue';
 import FdsMenuItem from '@/components/fds-menu-item.vue';
 import XFdsButtonSpinner from '@/components/extra/xfds-button-spinner.vue';
-import XFdsFaneblade from '@/components/extra/xfds-faneblade.vue';
 
 import XFdsMenu from '@/components/extra/xfds-menu.vue';
 import XFdsMenuSub from '@/components/extra/xfds-menu-sub.vue';
@@ -175,7 +174,6 @@ function install (app: App): void {
   app.component('xfds-form-checkbox-list', XFdsFormCheckboxList);
   app.component('xfds-progressbar', XFdsProgressbar);
   app.component('xfds-button-spinner', XFdsButtonSpinner);
-  app.component('xfds-faneblade', XFdsFaneblade);
   app.component('xfds-menu', XFdsMenu);
 }
 
@@ -223,7 +221,6 @@ export {
   FdsFejlopsummering,
   XFdsMenu,
   XFdsMenuSub,
-  XFdsFaneblade,
   XFdsCheckboxList,
   XFdsDropdown,
   XFdsValidate,

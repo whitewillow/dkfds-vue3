@@ -11,6 +11,13 @@ https://github.com/whitewillow/dkfds-vue3/issues
 Efter fælles gennemgang med teamet, er der enighed om refak kerne komponenter, for at give konsistenc og ensartethed
 - fds-alert - prop navne
 - fds-badge - prop navne
+- fds-accordian - prop navne
+- fds-card-group - grupper cards
+- div boolean prop navne rettet til at lige html attr: eg. disabled/active/expanded/selected 
+
+Fjernet 
+- xfds-faneblade - ikke gennemtænkt nok - fds-faneblade er dækkende
+- 
 
 
 # 0.3.9
