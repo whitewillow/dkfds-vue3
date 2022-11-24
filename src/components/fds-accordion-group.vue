@@ -2,6 +2,7 @@
   <div>
     <slot name="header">
       <button
+        v-if="false"
         class="accordion-bulk-button"
         :data-accordion-bulk-expand="!refExpanded"
         @click="onToggle">
@@ -37,6 +38,7 @@ defineProps({
 });
 
 // TODO: Overvej single select (collapse andre) og multiselect (multi default) ?
+// TODO: Group expand/
 
 const refExpanded = ref(false);
 const compExpanded = computed(() => refExpanded.value);

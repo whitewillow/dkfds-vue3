@@ -2,7 +2,6 @@
   <div
     :disabled="disabled"
     :class="[{ disabled: disabled }]">
-    Ref: {{ refExpanded }} - Group: {{ injExpanded }}
     <button
       class="accordion-button"
       :class="getVariantClass"
@@ -49,16 +48,10 @@
 <script setup lang="ts">
 import getFormId from '@/composable/formId';
 import accordionProps from '@/props/fds-accordion.props';
-import {
-  defineProps, ref, computed, inject,
-} from 'vue';
+import { defineProps, ref, computed } from 'vue';
 
 const props = defineProps({ ...accordionProps });
 
-// TODO: få provideGroupExpanded til at virke
-// se template Ref: false - Group: false
-
-const injExpanded = computed(() => inject('provideGroupExpanded', false));
 const refExpanded = ref(props.expanded);
 
 const { formid } = getFormId(undefined, true);
