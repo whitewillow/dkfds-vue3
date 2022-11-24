@@ -7,18 +7,17 @@
       <div class="alert-body align-text-left">
         <slot
           name="header"
-          v-if="$slots.header" />
-        <p
-          class="alert-heading"
-          v-if="!$slots.header && header">
-          {{ header }}
-        </p>
+          v-if="$slots.header || header">
+          <p class="alert-heading">
+            {{ header }}
+          </p>
+        </slot>
         <div class="alert-text pt-2">
           <slot />
         </div>
         <button
           class="alert-close"
-          v-if="canClose"
+          v-if="closeable"
           @click="onClose">
           <svg
             class="icon-svg"
@@ -38,7 +37,9 @@
  * https://designsystem.dk/komponenter/beskeder/
  *
  * */
-import { defineProps, ref, defineEmits } from 'vue';
+import {
+  defineProps, ref, defineEmits, PropType,
+} from 'vue';
 
 defineProps({
   /**
@@ -52,7 +53,7 @@ defineProps({
    * Type af besked
    * */
   variant: {
-    type: String as () => 'info' | 'success' | 'warning' | 'error',
+    type: String as PropType<'success' | 'info' | 'warning' | 'error'>,
     default: 'info',
   },
   /**
@@ -60,12 +61,12 @@ defineProps({
    * */
   showIcon: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   /**
    *  Klik for at lukke/fjerne besked
    * */
-  canClose: {
+  closeable: {
     type: Boolean,
     default: false,
   },

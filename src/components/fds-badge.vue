@@ -13,26 +13,23 @@
  * https://designsystem.dk/komponenter/badges/
  *
  * */
-import { defineProps, computed } from 'vue';
+import { defineProps, computed, PropType } from 'vue';
 
 const props = defineProps({
-  /**
-   * Som lille badge
-   * */
-  isSmall: {
-    type: Boolean,
-    default: false,
+  size: {
+    type: String as PropType<'small' | 'large'>,
+    default: 'large',
   },
   /**
    * Variant 'success' | 'info' | 'warning' | 'error'
    * */
   variant: {
-    type: String as () => 'success' | 'info' | 'warning' | 'error',
+    type: String as PropType<'success' | 'info' | 'warning' | 'error'>,
     default: null,
   },
 });
 
-const getSizeClass = computed(() => (props.isSmall ? 'badge-small' : 'badge-large'));
+const getSizeClass = computed(() => `badge-${props.size}`);
 const getVariantClass = computed(() => (props.variant ? `badge-${props.variant}` : ''));
 </script>
 

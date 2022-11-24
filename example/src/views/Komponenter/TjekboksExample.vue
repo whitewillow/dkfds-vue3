@@ -7,7 +7,7 @@
       </fds-checkbox>
       <fds-formgroup>
         <fds-label>Label til tjekboks</fds-label>
-        <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
+        <fds-checkbox v-model="twoChecked" size="small"> Andet valg - small </fds-checkbox>
       </fds-formgroup>
       <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
       <template #description>
@@ -34,7 +34,7 @@ const code2 = `
 
 <fds-formgroup>
   <fds-label>Label til tjekboks</fds-label>
-  <fds-checkbox v-model="twoChecked" isSmall> Andet valg - small </fds-checkbox>
+  <fds-checkbox v-model="twoChecked" size="small"> Andet valg - small </fds-checkbox>
 </fds-formgroup>
 `;
 </script>

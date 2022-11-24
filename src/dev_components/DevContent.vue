@@ -202,7 +202,7 @@
         <fds-formgroup label="Single Checkbox">
           <fds-checkbox
             v-model="twoChecked"
-            isSmall>
+            size="small">
             Andet valg - small
           </fds-checkbox>
         </fds-formgroup>
@@ -1113,7 +1113,8 @@
         variant="success"
         class="w-percent-lg-80"
         header="Godt gået"
-        canClose>
+        show-icon
+        closeable>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
@@ -1121,8 +1122,7 @@
 
       <fds-alert
         variant="warning"
-        class="w-percent-lg-80"
-        canClose>
+        class="w-percent-lg-80">
         <template #header>
           <p class="alert-heading d-flex justify-content-start">
             Fejl <i class="ml-4 icon icon-home" />

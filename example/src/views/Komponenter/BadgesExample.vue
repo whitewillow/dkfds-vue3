@@ -3,7 +3,7 @@
     <fds-component-preview header="Eksempel">
       <p>
         <fds-badge class="mr-4"> Normal </fds-badge>
-        <fds-badge isSmall> small </fds-badge>
+        <fds-badge size="small"> small </fds-badge>
       </p>
       <p>
         <fds-badge class="mr-4" variant="success"> success </fds-badge>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 const code = `
 <fds-badge class="mr-4"> Normal </fds-badge>
-<fds-badge isSmall> Normal small </fds-badge>
+<fds-badge size="small"> Normal small </fds-badge>
 <fds-badge variant="success"> success </fds-badge>
 <fds-badge variant="info"> success </fds-badge>
 <fds-badge variant="warning"> warning </fds-badge>

@@ -4,7 +4,7 @@
     variant="error"
     showIcon
     :header="header"
-    :canClose="false">
+    :closeable="false">
     <slot>
       <ul class="alert-text nobullet-list">
         <li

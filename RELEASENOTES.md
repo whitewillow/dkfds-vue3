@@ -5,9 +5,17 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 
+
+# 0.3.10
+
+Efter fælles gennemgang med teamet, er der enighed om refak kerne komponenter, for at give konsistenc og ensartethed
+- fds-alert - prop navne
+- fds-badge - prop navne
+
+
 # 0.3.9
 
-- overflow - klik uden for lukkede ikke menu
+- overflow - klik udenfor, lukkede ikke menu
 - oprydning
 
 

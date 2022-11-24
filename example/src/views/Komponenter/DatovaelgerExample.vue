@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-alert variant="info" header="Info" canClose class="mb-8">
+    <fds-alert variant="info" header="Info" closeable class="mb-8">
       Komponenten benytter ikke DKFDS kalender, da DKFDS script laver om på elementer og ikke
       generisk nok til at bruge i denne sammenhæng
     </fds-alert>

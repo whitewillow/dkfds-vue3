@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-alert variant="info" header="Under udvikling" canClose
+    <fds-alert variant="info" header="Under udvikling" closeable
       >Cookiemeddelelse er stadig under udvikling, mindre ændringer kan forkomme
     </fds-alert>
     <fds-component-preview header="Eksempel">
