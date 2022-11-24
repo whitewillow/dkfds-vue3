@@ -2,8 +2,8 @@
   <section>
     <fds-component-preview header="Accordion gruppe">
       <fds-accordion-group #default="{ groupActive }">
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
@@ -13,9 +13,9 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
-        <fds-accordion-item
-          :isActive="groupActive"
+        </fds-accordion>
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header"
         >
@@ -24,10 +24,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success"
@@ -37,10 +37,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel"
@@ -50,10 +50,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med Fejl"
           variant-text="Fejl"
           variant="error"
@@ -63,7 +63,7 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
       </fds-accordion-group>
 
       <template #description>
@@ -125,8 +125,8 @@ const accSingleCode = `
 </fds-accordion>`;
 const accGroupCode = `
 <fds-accordion-group #default="{ groupActive }">
-  <fds-accordion-item
-    :isActive="groupActive"
+  <fds-accordion
+    :expanded="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
@@ -136,9 +136,9 @@ const accGroupCode = `
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-  </fds-accordion-item>
-  <fds-accordion-item
-    :isActive="groupActive"
+  </fds-accordion>
+  <fds-accordion
+    :expanded="groupActive"
     header="Accordion header med hint"
     hint="Hint for header"
   >
@@ -147,10 +147,10 @@ const accGroupCode = `
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-  </fds-accordion-item>
+  </fds-accordion>
 
-  <fds-accordion-item
-    :isActive="groupActive"
+  <fds-accordion
+    :expanded="groupActive"
     header="Accordion header med Success"
     variant="success"
     variant-text="Success"
@@ -160,10 +160,10 @@ const accGroupCode = `
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-  </fds-accordion-item>
+  </fds-accordion>
 
-  <fds-accordion-item
-    :isActive="groupActive"
+  <fds-accordion
+    :expanded="groupActive"
     header="Accordion header med advarsel"
     variant="warning"
     variant-text="Advarsel"
@@ -173,10 +173,10 @@ const accGroupCode = `
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-  </fds-accordion-item>
+  </fds-accordion>
 
-  <fds-accordion-item
-    :isActive="groupActive"
+  <fds-accordion
+    :expanded="groupActive"
     header="Accordion header med Fejl"
     variant-text="Fejl"
     variant="error"
@@ -186,7 +186,7 @@ const accGroupCode = `
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-  </fds-accordion-item>
+  </fds-accordion>
 </fds-accordion-group>
 `;
 </script>

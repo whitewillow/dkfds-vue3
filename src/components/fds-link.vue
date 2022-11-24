@@ -1,6 +1,6 @@
 <template>
   <a
-    :class="{'icon-link':icon}"
+    :class="{ 'icon-link': icon }"
     href="javascript:void(0);">
     <slot />
     <svg
@@ -22,7 +22,7 @@ defineProps({
     type: String,
     default: '',
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

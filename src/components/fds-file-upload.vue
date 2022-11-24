@@ -7,7 +7,7 @@
     @change="onFileChange"
     aria-describedby="fileinput"
     :accept="contenttypes.join(',')"
-    :disabled="isDisabled"/>
+    :disabled="disabled"/>
 </template>
 
 <script setup lang="ts">
@@ -22,7 +22,7 @@ const props = defineProps({
     type: String,
     default: null,
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

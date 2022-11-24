@@ -1,6 +1,6 @@
 <template>
   <a
-    v-if="!isDisabled"
+    v-if="!disabled"
     href="javascript:void(0);"
     class="nav-link"
     role="menuitem">
@@ -19,7 +19,7 @@
 import { defineProps } from 'vue';
 
 defineProps({
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

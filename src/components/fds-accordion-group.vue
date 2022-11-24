@@ -6,9 +6,9 @@
       @click="onToggle">
       {{ `${refActive ? activeText : nonActiveText}` }}
     </button>
-    <ul class="accordion">
+    <div class="accordion-group">
       <slot :groupActive="refActive" />
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -38,3 +38,11 @@ const onToggle = () => {
   refActive.value = !refActive.value;
 };
 </script>
+
+<style lang="scss">
+.accordion-group {
+  > div {
+    margin-bottom: 0.8rem;
+  }
+}
+</style>

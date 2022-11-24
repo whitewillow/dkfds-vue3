@@ -2,7 +2,7 @@
   <a
     href="javascript:void(0);"
     class="function-link"
-    :class="[{ disabled: isDisabled }]">
+    :class="[{ disabled: disabled }]">
     <svg
       class="icon-svg"
       focusable="false"
@@ -22,7 +22,7 @@ defineProps({
     type: String,
     default: '',
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

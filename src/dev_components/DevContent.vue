@@ -96,7 +96,7 @@
         <xfds-form-input
           label="Mobil nr."
           :modelValue="txtMobil"
-          isDisabled />
+          disabled />
 
         <xfds-form-input
           label="Mobil nr."
@@ -271,8 +271,8 @@
       <h2>Accordions</h2>
 
       <fds-accordion-group #default="{ groupActive }">
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -281,9 +281,9 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
-        <fds-accordion-item
-          :isActive="groupActive"
+        </fds-accordion>
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -291,10 +291,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med Success"
           variant="success"
           variant-text="Success">
@@ -303,10 +303,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel">
@@ -315,10 +315,10 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
+          :expanded="groupActive"
           header="Accordion header med Fejl"
           variant="error">
           <p>
@@ -326,12 +326,12 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
       </fds-accordion-group>
 
       <h3>Single Accordions</h3>
 
-      <fds-accordion>
+      <fds-accordion class="mb-4">
         <template #header>
           <h4 class="">
             Accordion med custom header
@@ -671,7 +671,7 @@
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
-          :isActive="true"
+          selected
           @click="fanebladManueltId = $event"
           id="1">
           <h2>Fane 1</h2>

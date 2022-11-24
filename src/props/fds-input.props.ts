@@ -22,7 +22,7 @@ const fdsInputProps = {
     type: String,
     default: '',
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

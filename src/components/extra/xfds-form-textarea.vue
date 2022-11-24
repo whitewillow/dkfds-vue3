@@ -14,7 +14,7 @@
       :inputClass="inputClass"
       :rowlength="rowlength"
       :rows="rows"
-      :disabled="isDisabled"
+      :disabled="disabled"
       :readonly="isReadonly"
       @update:modelValue="handleInput"
       @dirty="touchedEvent"></fds-textarea>

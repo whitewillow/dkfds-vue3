@@ -2,8 +2,8 @@
 
 ```html
 <fds-accordion-group #default="{ groupActive }">
-    <fds-accordion-item
-        :isActive="groupActive"
+    <fds-accordion
+        :expanded="groupActive"
         header="Accordion header med hint"
         hint="Hint for header"
     >
@@ -12,9 +12,9 @@
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-    </fds-accordion-item>
-    <fds-accordion-item
-        :isActive="groupActive"
+    </fds-accordion>
+    <fds-accordion
+        :expanded="groupActive"
         header="Accordion header med hint"
         hint="Hint for header"
     >
@@ -23,6 +23,6 @@
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-    </fds-accordion-item>
+    </fds-accordion>
 </fds-accordion-group>
 ```

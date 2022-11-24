@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 /**
  * Comon props for FDS Accordion
  */
@@ -18,14 +20,14 @@ const accordionProps = {
   /**
    * Er Accordion Åben = aktiv
    * */
-  isActive: {
+  expanded: {
     type: Boolean,
     default: false,
   },
   /**
    * Disabled
    * */
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },
@@ -33,7 +35,7 @@ const accordionProps = {
    * Variant - ikon der vises til højre
    * */
   variant: {
-    type: String as () => string | 'success' | 'warning' | 'error',
+    type: String as PropType<'success' | 'warning' | 'error'>,
     default: null,
   },
   /**

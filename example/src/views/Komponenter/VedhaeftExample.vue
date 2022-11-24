@@ -23,9 +23,9 @@
           </template>
           Hjælpetekst
         </fds-strukturerede-liste>
-        <fds-strukturerede-liste header="isDisabled">
+        <fds-strukturerede-liste header="disabled">
           <template #header>
-            <fds-label class="d-block">isDisabled</fds-label>
+            <fds-label class="d-block">disabled</fds-label>
             <code>Boolean</code>
           </template>
           Om feltet skal være disabled

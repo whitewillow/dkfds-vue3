@@ -2,12 +2,7 @@
   <section>
     <fds-component-preview header="Faneblade Manuelt">
       <fds-faneblade>
-        <fds-faneblad-item
-          header="Fane 1"
-          :isActive="true"
-          @click="fanebladManueltId = $event"
-          id="1"
-        >
+        <fds-faneblad-item header="Fane 1" selected @click="fanebladManueltId = $event" id="1">
           <h2>Fane 1</h2>
           <p>Manuel styret faneblade</p>
         </fds-faneblad-item>
@@ -135,7 +130,7 @@ const faneBlade: FdsTabItem[] = [
 const code = `
 <fds-faneblad-item
     header="Fane 1"
-    :isActive="true"
+    selected
     @click="fanebladManueltId = $event"
     id="1"
   >

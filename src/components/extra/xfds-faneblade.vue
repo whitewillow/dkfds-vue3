@@ -7,7 +7,7 @@
       :key="item.key">
       <fds-faneblad-item
         :header="item.title"
-        :isActive="item.active"
+        :selected="item.active"
         @click="onNavigate(item)"
         :id="`tab_${item.key}`">
         <slot

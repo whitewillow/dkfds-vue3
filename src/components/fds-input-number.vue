@@ -15,7 +15,7 @@
       :id="formid"
       :placeholder="placeholder"
       :type="inputType"
-      :disabled="isDisabled"
+      :disabled="disabled"
       @input="handleInput"
       @blur="$emit('dirty', true)"
       @focus="($event.target as any).select()"/>

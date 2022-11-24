@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{ name: toName }" custom v-slot="{ href, navigate, isActive }">
     <li role="none" :class="[{ current: isActive || isPartOfMenu(toName) }]">
-      <fds-nav-link :href="href" :title="linkTitle" :disabled="isDisabled" @click="navigate">
+      <fds-nav-link :href="href" :title="linkTitle" :disabled="disabled" @click="navigate">
         <slot />
       </fds-nav-link>
     </li>
@@ -26,7 +26,7 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

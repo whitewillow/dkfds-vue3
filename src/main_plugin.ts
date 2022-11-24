@@ -34,7 +34,6 @@ import FdsButtonIcon from '@/components/fds-button-icon.vue';
 
 import FdsAccordion from '@/components/fds-accordion.vue';
 import FdsAccordionGroup from '@/components/fds-accordion-group.vue';
-import FdsAccordionItem from '@/components/fds-accordion-item.vue';
 
 import FdsBadge from '@/components/fds-badge.vue';
 import FdsTag from '@/components/fds-tag.vue';
@@ -143,7 +142,6 @@ function install (app: App): void {
   app.component('fds-toggle-switch', FdsToggleSwitch);
   app.component('fds-accordion', FdsAccordion);
   app.component('fds-accordion-group', FdsAccordionGroup);
-  app.component('fds-accordion-item', FdsAccordionItem);
   app.component('fds-file-upload', FdsFileUpload);
   app.component('fds-file-list', FdsFileList);
 
@@ -241,7 +239,6 @@ export {
   XFdsButtonSpinner,
   FdsAccordion,
   FdsAccordionGroup,
-  FdsAccordionItem,
   FdsFileUpload,
 };
 export default install as unknown as Plugin;

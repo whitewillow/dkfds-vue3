@@ -8,7 +8,7 @@
       :class="{ 'checkbox-large': size === 'large' }"
       @input="onInput"
       @blur="$emit('dirty', true)"
-      :disabled="isDisabled"/>
+      :disabled="disabled"/>
     <label
       :for="formid"
       class="hand">
@@ -51,7 +51,7 @@ const props = defineProps({
   /**
    * Skal checkbox være disabled
    * */
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },
