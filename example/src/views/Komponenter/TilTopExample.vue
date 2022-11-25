@@ -1,20 +1,16 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-til-top class="example_tiltop" />
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-til-top class="example_tiltop" />
 
-      <p>se også bund højre side</p>
+        <p>se også bund højre side</p>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>fds-til-top</code> er umiddelt enkeltstående og skal kun inkluderes en gang i
-          <code>footer</code>
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

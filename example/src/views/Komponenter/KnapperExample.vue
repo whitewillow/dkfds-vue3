@@ -1,50 +1,51 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <p>
-        <fds-button @click="klikEvent"> Gå til næste </fds-button>
-      </p>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <p>
+          <fds-button @click="klikEvent"> Gå til næste </fds-button>
+        </p>
 
-      <p><fds-button variant="secondary" @click="klikEvent"> Variant secondary </fds-button></p>
+        <p><fds-button variant="secondary" @click="klikEvent"> Variant secondary </fds-button></p>
 
-      <p>
-        <fds-button :variant="FdsVariantEnum.tertiary" @click="klikEvent">
-          Variant {{ FdsVariantEnum.tertiary }}
-        </fds-button>
-      </p>
+        <p>
+          <fds-button :variant="FdsVariantEnum.tertiary" @click="klikEvent">
+            Variant {{ FdsVariantEnum.tertiary }}
+          </fds-button>
+        </p>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">Knapper med mulighed for at angive variant</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
     <hr class="my-6" />
 
-    <fds-component-preview header="Eksempel med ikon">
-      <p>
-        <fds-button-icon @click="klikEvent" icon="refresh" variant="primary">
-          Genopfrisk
-        </fds-button-icon>
-      </p>
-
-      <p>
-        <fds-button-icon @click="klikEvent" icon="coronavirus" asRightAlignedIcon variant="primary">
-          Corona Virus
-        </fds-button-icon>
-      </p>
-
-      <template #description>
-        <p class="italic">
-          Knapper med ikon - ikonet kan venstre eller højre stilles - Ved brug af <code>right</code>
+    <fds-preview header="Eksempel med ikon">
+      <fds-preview-item>
+        <p>
+          <fds-button-icon @click="klikEvent" icon="refresh" variant="primary">
+            Genopfrisk
+          </fds-button-icon>
         </p>
-      </template>
-      <template #code>
+
+        <p>
+          <fds-button-icon
+            @click="klikEvent"
+            icon="coronavirus"
+            asRightAlignedIcon
+            variant="primary"
+          >
+            Corona Virus
+          </fds-button-icon>
+        </p>
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="code2"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

@@ -49,10 +49,4 @@ const onToggle = () => {
 };
 </script>
 
-<style lang="scss">
-.accordion-group {
-  > div {
-    margin-bottom: 0.8rem;
-  }
-}
-</style>
+<style lang="scss"></style>

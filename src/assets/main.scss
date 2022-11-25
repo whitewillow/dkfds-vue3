@@ -1,5 +1,7 @@
 @import "_variables";
 @import "_animations";
+@import "_accordion";
+@import "_card";
 @import "_code";
 @import "_componentpreview";
 @import "_knapper";
@@ -15,6 +17,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+
 
 .disabled {
   position: relative;

@@ -43,7 +43,7 @@ const accordionProps = {
    * */
   variantText: {
     type: String,
-    default: 'Fejl',
+    default: '',
   },
 };
 export default accordionProps;

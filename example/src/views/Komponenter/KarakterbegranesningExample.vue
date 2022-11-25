@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
+    <fds-preview header="Eksempel">
       <fds-formgroup>
         <fds-label> CVR nr. </fds-label>
         <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
@@ -8,16 +8,11 @@
         <fds-input v-model="cvr"></fds-input>
         <fds-input-limit :modelValue="cvr" :limit="10" />
       </fds-formgroup>
-      <template #description>
-        <p class="italic">
-          <code>fds-input-limit</code> bruges sammen med et input felt. Viser med tekst
-          Karakterbegræsningen for angivet input.
-        </p>
-      </template>
-      <template #code>
+
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

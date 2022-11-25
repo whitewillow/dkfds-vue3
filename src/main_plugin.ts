@@ -70,8 +70,6 @@ import FdsFanebladItem from '@/components/fds-faneblad-item.vue';
 
 import FdsSpinner from '@/components/fds-spinner.vue';
 
-import FdsComponentPreview from '@/components/fds-component-preview.vue';
-
 import XFdsCheckboxList from '@/components/extra/xfds-checkbox-list.vue';
 import XFdsDropdown from '@/components/extra/xfds-dropdown.vue';
 import XFdsRadio from '@/components/extra/xfds-radio.vue';
@@ -93,6 +91,10 @@ import XFdsButtonSpinner from '@/components/extra/xfds-button-spinner.vue';
 
 import XFdsMenu from '@/components/extra/xfds-menu.vue';
 import XFdsMenuSub from '@/components/extra/xfds-menu-sub.vue';
+import FdsPreviewExample from '@/components/fds-preview-example.vue';
+import FdsPreviewItem from '@/components/fds-preview-item.vue';
+import FdsPreviewCode from '@/components/fds-preview-code.vue';
+import FdsPreview from '@/components/fds-preview.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -165,7 +167,10 @@ function install (app: App): void {
   app.component('fds-tilbage-link', FdsTilbageLink);
   app.component('fds-paginering', FdsPaginering);
 
-  app.component('fds-component-preview', FdsComponentPreview);
+  app.component('fds-preview', FdsPreview);
+  app.component('fds-preview-code', FdsPreviewCode);
+  app.component('fds-preview-item', FdsPreviewItem);
+  app.component('fds-preview-example', FdsPreviewExample);
 
   app.component('xfds-checkbox-list', XFdsCheckboxList);
   app.component('xfds-dropdown', XFdsDropdown);
@@ -195,7 +200,10 @@ export {
   FdsToast,
   FdsList,
   FdsSpinner,
-  FdsComponentPreview,
+  FdsPreview,
+  FdsPreviewCode,
+  FdsPreviewItem,
+  FdsPreviewExample,
   FdsTrinindikatorGroup,
   FdsTilbageLink,
   FdsPaginering,

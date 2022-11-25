@@ -1,48 +1,47 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <p>Nedestående er et eksempel navigation med standard komponenter og med overflow.</p>
-      <p>
-        Se også
-        <router-link :to="{ name: 'anbefalingernavigation' }"
-          >Eksempel på navigation med vue router</router-link
-        >
-      </p>
-      <div class="navbar navbar-primary">
-        <div class="navbar-inner container">
-          <ul class="nav-primary" role="menu">
-            <li role="none">
-              <fds-nav-link href="/forside" title="Link title"> Forside </fds-nav-link>
-            </li>
-            <li class="current">
-              <fds-overflow-menu header="Overflow menu eks">
-                <ul class="overflow-list">
-                  <li class="active">
-                    <a href="#"> Subsektion med en meget lang titel som går i flere linier </a>
-                  </li>
-                  <li>
-                    <a href="#"> Subsektion title </a>
-                  </li>
-                  <li>
-                    <a href="#"> Subsektion title </a>
-                  </li>
-                  <li>
-                    <a href="#"> Subsektion title som også er forholdsvis lang </a>
-                  </li>
-                </ul>
-              </fds-overflow-menu>
-            </li>
-          </ul>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <p>Nedestående er et eksempel navigation med standard komponenter og med overflow.</p>
+        <p>
+          Se også
+          <router-link :to="{ name: 'anbefalingernavigation' }"
+            >Eksempel på navigation med vue router</router-link
+          >
+        </p>
+        <div class="navbar navbar-primary">
+          <div class="navbar-inner container">
+            <ul class="nav-primary" role="menu">
+              <li role="none">
+                <fds-nav-link href="/forside" title="Link title"> Forside </fds-nav-link>
+              </li>
+              <li class="current">
+                <fds-overflow-menu header="Overflow menu eks">
+                  <ul class="overflow-list">
+                    <li class="active">
+                      <a href="#"> Subsektion med en meget lang titel som går i flere linier </a>
+                    </li>
+                    <li>
+                      <a href="#"> Subsektion title </a>
+                    </li>
+                    <li>
+                      <a href="#"> Subsektion title </a>
+                    </li>
+                    <li>
+                      <a href="#"> Subsektion title som også er forholdsvis lang </a>
+                    </li>
+                  </ul>
+                </fds-overflow-menu>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">Navigation</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

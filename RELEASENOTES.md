@@ -14,13 +14,14 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
 - fds-badge - prop navne
 - fds-accordian - prop navne
 - fds-card-group - grupper cards
-- div boolean prop navne rettet til at lige html attr: eg. disabled/active/expanded/selected 
+- div boolean prop navne rettet til at ligne html attr: eg. disabled/active/expanded/selected 
 - fds-fejlopsummering, fjernet list - ikke gennemtænkt og ikke kerne funktion
 - fjernet fds-trinindikator
 - Tilføjet fds-trinindikator-group med tilhørende fds-trinindikator-item
 - Tilføjet xfds-trinindikator, der tager imod liste af trin
 - Tilføjet fds-radio-group og fds-radio-item 
 - Tilføjet xfds-radio og xfds-radio-toggle
+- Opdatering af example siden
 
 ```HTML
 <fds-radio-group v-model="radioValueKerne">

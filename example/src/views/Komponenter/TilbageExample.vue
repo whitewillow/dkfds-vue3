@@ -1,20 +1,16 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-tilbage-link @click="klikEvent" />
-      <br />
-      <fds-tilbage-link @click="klikEvent">Egen tekst</fds-tilbage-link>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-tilbage-link @click="klikEvent" />
+        <br />
+        <fds-tilbage-link @click="klikEvent">Egen tekst</fds-tilbage-link>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Tilbage-linket gør brugeren i stand til at gå tilbage til forrige trin eller side i en
-          selvbetjeningsløsning.
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 
   <section></section>

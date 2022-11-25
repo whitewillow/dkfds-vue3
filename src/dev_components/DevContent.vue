@@ -293,12 +293,11 @@
 
       <h2>Accordions</h2>
 
-      <fds-accordion-group #default="{ groupActive }">
+      <fds-accordion-group>
         <fds-accordion
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
-            {{ groupActive }}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -376,50 +375,73 @@
 
       <h2>Component preview</h2>
 
-      <fds-component-preview header="Eksempel">
-        <xfds-validate
-          :modelValue="txtEfternavn"
-          :validations="[hasContent, charactersMinLength(10)]"
-          #default="{ isValid, errorMessage }">
-          <fds-formgroup :is-valid="isValid">
-            <fds-label> Efternavn </fds-label>
-            <fds-tooltip
-              class="ml-2"
-              text="Hjælpende <b>tekst</b>" />
-            <fds-hint>Indtast efternavn</fds-hint>
-            <fds-fejlmeddelelse v-if="!isValid">
-              {{ errorMessage }}
-            </fds-fejlmeddelelse>
+      <fds-preview header="Eksempel">
+        <fds-preview-item>
+          <xfds-validate
+            :modelValue="txtEfternavn"
+            :validations="[hasContent, charactersMinLength(10)]"
+            #default="{ isValid, errorMessage }">
+            <fds-formgroup :is-valid="isValid">
+              <fds-label> Efternavn </fds-label>
+              <fds-tooltip
+                class="ml-2"
+                text="Hjælpende <b>tekst</b>" />
+              <fds-hint>Indtast efternavn</fds-hint>
+              <fds-fejlmeddelelse v-if="!isValid">
+                {{ errorMessage }}
+              </fds-fejlmeddelelse>
 
-            <fds-input v-model="txtEfternavn"></fds-input>
-          </fds-formgroup>
-        </xfds-validate>
-        <template #description>
-          <p class="italic">
-            Dette eksempel viser hvordan man kan sammenkæde enkeltstående komponenter til en samlet
-            "komponent" der validere input for et tekstfelt.
-          </p>
-          <p class="italic">
-            Alle komponenter kan bruges enkeltstående - dvs du kunne eksempelvis udbytte
-            <code>xfds-validate</code> til egen komponent
-          </p>
-          <p class="italic">
-            Følgende komponenter er i brug:
-          </p>
-          <ul>
-            <li><code>xfds-validate</code></li>
-            <li><code>fds-formgroup</code></li>
-            <li><code>fds-label</code></li>
-            <li><code>fds-fejlmeddelelse</code></li>
-            <li><code>fds-hint</code></li>
-            <li><code>fds-input</code></li>
-            <li><code>fds-tooltip</code></li>
-          </ul>
-        </template>
-        <template #code>
+              <fds-input v-model="txtEfternavn"></fds-input>
+            </fds-formgroup>
+          </xfds-validate>
+        </fds-preview-item>
+
+        <fds-preview-code>
           <pre v-text="codeExample" />
-        </template>
-      </fds-component-preview>
+        </fds-preview-code>
+        <fds-preview-item>
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th>Props</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>modelValue</code></td>
+                <td><code>string, number, array</code></td>
+                <td><code>null</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>validations</code></td>
+                <td><code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code></td>
+                <td>
+                  <code>
+                    [(input: unknown) => { if (!input) { return 'Indtast data'; } return null;
+                    }]</code>
+                </td>
+                <td>Et array af valideringsmetoder</td>
+              </tr>
+              <tr>
+                <td><code>dirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Om feltet er blevet berørt</td>
+              </tr>
+              <tr>
+                <td><code>useAutoDirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
+              </tr>
+            </tbody>
+          </table>
+        </fds-preview-item>
+      </fds-preview>
 
       <hr />
       <h2>Filer</h2>
@@ -1777,7 +1799,7 @@ const sideTabs = ref<FdsNavigationItem[]>([
   },
 ] as unknown as FdsNavigationItem[]);
 
-const fanebladManueltId = ref('');
+const fanebladManueltId = ref('1');
 const faneBlade: FdsTabItem[] = [
   {
     key: 'suppe',

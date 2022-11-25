@@ -3,39 +3,72 @@
     <fds-alert variant="info" header="Under udvikling" closeable
       >Cookiemeddelelse er stadig under udvikling, mindre ændringer kan forkomme
     </fds-alert>
-    <fds-component-preview header="Eksempel">
-      <fds-cookiemeddelelse @accepter="cookieAccept = $event" class="example_relative">
-        <template #header>
-          <div class="h3 mt-0 mb-3" id="cookie-message-heading">
-            Fortæl os om du accepterer cookies
-          </div>
-        </template>
-        <p class="mt-0" id="cookie-message-text">
-          Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
-          <a href="#"> Læs mere om vores brug af cookies. </a>
-        </p>
-      </fds-cookiemeddelelse>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-cookiemeddelelse @accepter="cookieAccept = $event" class="example_relative">
+          <template #header>
+            <div class="h3 mt-0 mb-3" id="cookie-message-heading">
+              Fortæl os om du accepterer cookies
+            </div>
+          </template>
+          <p class="mt-0" id="cookie-message-text">
+            Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
+            <a href="#"> Læs mere om vores brug af cookies. </a>
+          </p>
+        </fds-cookiemeddelelse>
 
-      <fds-pre header="Cookimeddelelse" :json="{ cookieAccept }" />
+        <fds-pre header="Cookimeddelelse" :json="{ cookieAccept }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Koden indsættes under body og før header. Gør man brug af skip link, skal skip-link
-          indsættes efter cookiemeddelelsen.
-        </p>
-        <p class="italic">
-          Bemærk at DKFDS-Vue3 på nuværende tidspunkt kun leverer HTML og CSS til denne komponent.
-          Funktionaliteten skal man derfor selv håndtere.
-        </p>
-        <p class="italic">
-          Læs mere på designsystem for vejledning:
-          <a href="https://designsystem.dk/komponenter/cookiemeddelelse/">Cookiemeddelelse</a>
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>header</code></td>
+              <td><code>string</code></td>
+              <td><code>Fortæl os om du accepterer cookies</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>show</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Template</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>header</code></td>
+              <td><code>props.header</code></td>
+            </tr>
+            <tr>
+              <td><code>actions</code></td>
+              <td>default knapper</td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
+    </fds-preview>
   </section>
 </template>
 

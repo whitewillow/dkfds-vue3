@@ -1,33 +1,26 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-formgroup label="Vælg en checkbox">
-        <xfds-checkbox-list v-model="checkboxList">
-          <template v-slot:[`melon`]>
-            <p>Det er muligt at benytte tjekboks til mere indhold</p>
-          </template>
-        </xfds-checkbox-list>
-      </fds-formgroup>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-formgroup label="Vælg en checkbox">
+          <xfds-checkbox-list v-model="checkboxList">
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte tjekboks til mere indhold</p>
+            </template>
+          </xfds-checkbox-list>
+        </fds-formgroup>
 
-      <fds-pre header="v-model" :json="checkboxList" />
-      <template #description>
-        <p class="italic">
-          <code>fds-checkbox-list</code> Ud fra en liste af <code>FdsCheckboxItem[]</code> genereres
-          checkbox liste.
-        </p>
-        <p class="italic">
-          Det er muligt at udfolde valgte checkbox og angive eget indhold, via dynamisk
-          <code>slot</code>
-        </p>
-      </template>
-      <template #code>
+        <fds-pre header="v-model" :json="checkboxList" />
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="codeList"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
     <hr class="my-6" />
 
-    <fds-component-preview header="Eksempel Formular">
+    <fds-preview header="Eksempel Formular">
       <xfds-validate :modelValue="checkboxListForm" :validations="[arrayHasItems]">
         <xfds-form-checkbox-list label="Checkbox form" v-model="checkboxListForm" />
       </xfds-validate>
@@ -40,10 +33,10 @@
           samlet funktionalitet.
         </p>
       </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

@@ -1,42 +1,38 @@
 <template>
   <section>
-    <fds-component-preview header="Nummer felt">
-      <xfds-form-input-number
-        inputClass="input-width-xxs"
-        label="Lager antal"
-        v-model="lager.lager"
-      />
-
-      <xfds-validate :modelValue="lager.forventetLager" :validations="[numberMin(2)]">
+    <fds-preview header="Nummer felt">
+      <fds-preview-item>
         <xfds-form-input-number
-          label="Forventet lager"
-          hint="Angiv gyldig lager antal"
-          tooltip="Input tooltip"
-          prefix="stk."
-          v-model="lager.forventetLager"
+          inputClass="input-width-xxs"
+          label="Lager antal"
+          v-model="lager.lager"
         />
-      </xfds-validate>
 
-      <xfds-form-input-number
-        inputClass="input-width-xs"
-        suffix="kr."
-        label="Pris"
-        v-model="lager.pris"
-      />
+        <xfds-validate :modelValue="lager.forventetLager" :validations="[numberMin(2)]">
+          <xfds-form-input-number
+            label="Forventet lager"
+            hint="Angiv gyldig lager antal"
+            tooltip="Input tooltip"
+            prefix="stk."
+            v-model="lager.forventetLager"
+          />
+        </xfds-validate>
 
-      <fds-pre header="Object data" :json="lager" />
+        <xfds-form-input-number
+          inputClass="input-width-xs"
+          suffix="kr."
+          label="Pris"
+          v-model="lager.pris"
+        />
 
-      <template #description>
-        <p class="italic">
-          Komponenten <code>xfds-form-input-number</code> er en samling af komponenter der giver en
-          samlet funktionalitet.
-        </p>
-        <p class="italic">Understøtter simpel validering, autocomplete m.m.</p>
-      </template>
-      <template #code>
+        <fds-pre header="Object data" :json="lager" />
+      </fds-preview-item>
+      <hr />
+
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

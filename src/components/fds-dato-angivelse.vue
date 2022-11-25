@@ -12,7 +12,7 @@
         @input="onNextTab($event, 'day')"
         @blur="$emit('dirty', true)"
         @focus="($event.target as any)?.select()"
-        :id="`day_${formId}`"
+        :id="`day_${formid}`"
         v-model="dateObj.day"
         type="tel"
         data-min="1"
@@ -35,7 +35,7 @@
         @input="onNextTab($event, 'month')"
         @blur="$emit('dirty', true)"
         @focus="($event.target as any)?.select()"
-        :id="`month_${formId}`"
+        :id="`month_${formid}`"
         v-model="dateObj.month"
         type="tel"
         data-min="1"
@@ -58,7 +58,7 @@
         @input="onNextTab($event, 'year')"
         @focus="($event.target as any)?.select()"
         ref="year"
-        :id="`year_${formId}`"
+        :id="`year_${formid}`"
         v-model="dateObj.year"
         type="tel"
         data-min="1900"
@@ -73,7 +73,7 @@
 </template>
 <script setup lang="ts">
 import { defineProps, ref, defineEmits } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import getFormId from '@/composable/formId';
 
 const day = ref<HTMLInputElement | null>(null);
 const month = ref<HTMLInputElement | null>(null);
@@ -108,7 +108,7 @@ const getModelDate = (dateString: string) => {
   return { day: '', month: '', year: '' };
 };
 
-const formId = ref(props.id ?? uuidv4());
+const { formid } = getFormId(props.id, true);
 const dateObj = ref<{ day: string; month: string; year: string }>(getModelDate(props.modelValue));
 
 const onInput = () => emit('update:modelValue', [dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-'));

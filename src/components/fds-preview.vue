@@ -5,20 +5,7 @@
     <div class="component-link">
       {{ header }}
     </div>
-    <div
-      class="component-example"
-      aria-label="Eksempel">
-      <slot />
-    </div>
-    <div
-      class="component-description"
-      v-if="$slots.description">
-      <slot name="description" />
-    </div>
-
-    <div class="component-code">
-      <slot name="code" />
-    </div>
+    <slot />
   </div>
 </template>
 <script setup lang="ts">

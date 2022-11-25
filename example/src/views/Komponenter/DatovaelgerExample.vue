@@ -5,15 +5,17 @@
       generisk nok til at bruge i denne sammenhæng
     </fds-alert>
 
-    <fds-component-preview header="Eksempel">
-      <fds-formgroup>
-        <fds-label> Fødselsdag </fds-label>
-        <fds-dato-vaelger v-model="datoValg" @valid="datoValgValid = $event" />
-      </fds-formgroup>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-formgroup>
+          <fds-label> Fødselsdag </fds-label>
+          <fds-dato-vaelger v-model="datoValg" @valid="datoValgValid = $event" />
+        </fds-formgroup>
 
-      <fds-pre :json="{ datoValg, datoValgValid }" header="JSON DATE format" />
-
-      <template #description>
+        <fds-pre :json="{ datoValg, datoValgValid }" header="JSON DATE format" />
+      </fds-preview-item>
+      <hr />
+      <fds-preview-item>
         <p class="italic">
           Datovælger benytter standard dato type <code>&lt;input type="date"&gt;</code>
         </p>
@@ -29,11 +31,31 @@
             >https://www.w3schools.com/tags/att_input_type_date.asp</a
           >
         </p>
-      </template>
-      <template #code>
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>v-model</code></td>
+              <td><code>yyyy-mm-dd</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
+    </fds-preview>
   </section>
 </template>
 

@@ -1,40 +1,33 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-funktionslink title="Klik for event" @click="handleFunkClick">
-        Funktionslink
-      </fds-funktionslink>
-      <fds-pre header="Klik" :json="{ funktionsLinkClick }" />
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-funktionslink title="Klik for event" @click="handleFunkClick">
+          Funktionslink
+        </fds-funktionslink>
+        <fds-pre header="Klik" :json="{ funktionsLinkClick }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>fds-funktionslink</code>
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Med ikon og Som link">
-      <fds-funktionslink
-        @click="$router.push({ name: 'about' })"
-        icon="contact-support"
-        title="Klik for at gå til om os"
-      >
-        Funktionslink med ikon - Om os
-      </fds-funktionslink>
+    <fds-preview header="Med ikon og Som link">
+      <fds-preview-item>
+        <fds-funktionslink
+          @click="$router.push({ name: 'about' })"
+          icon="contact-support"
+          title="Klik for at gå til om os"
+        >
+          Funktionslink med ikon - Om os
+        </fds-funktionslink>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>fds-funktionslink</code> det er også muligt at overskrive <code>href</code> med egen
-          sti
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code2"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

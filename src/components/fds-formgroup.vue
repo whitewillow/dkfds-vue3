@@ -1,6 +1,6 @@
 <template>
   <div
-    class="form-group mt-5"
+    class="form-group"
     :key="formid"
     :class="{ 'form-error': compValid === false }">
     <slot :formid="formid" />

@@ -1,113 +1,165 @@
 <template>
   <section>
-    <fds-component-preview header="Accordion gruppe">
-      <fds-accordion-group #default="{ groupActive }">
-        <fds-accordion
-          :expanded="groupActive"
-          header="Accordion header med hint"
-          hint="Hint for header"
-        >
-          <p>
-            {{ groupActive }}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion>
-        <fds-accordion
-          :expanded="groupActive"
-          header="Accordion header med hint"
-          hint="Hint for header"
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion>
+    <fds-preview header="Accordion gruppe">
+      <fds-preview-item>
+        <fds-accordion-group>
+          <fds-accordion header="Accordion header med hint" hint="Hint for header">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
 
-        <fds-accordion
-          :expanded="groupActive"
-          header="Accordion header med Success"
-          variant="success"
-          variant-text="Success"
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion>
+          <fds-accordion
+            header="Accordion header med Success"
+            variant="success"
+            variant-text="Success"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
 
-        <fds-accordion
-          :expanded="groupActive"
-          header="Accordion header med advarsel"
-          variant="warning"
-          variant-text="Advarsel"
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion>
+          <fds-accordion
+            header="Accordion header med advarsel"
+            variant="warning"
+            variant-text="Advarsel"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
 
-        <fds-accordion
-          :expanded="groupActive"
-          header="Accordion header med Fejl"
-          variant-text="Fejl"
-          variant="error"
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion>
-      </fds-accordion-group>
-
-      <template #description>
-        <p class="italic">Gruppering af Accordion, samt håndtering af varianter</p>
-      </template>
-      <template #code>
+          <fds-accordion header="Accordion header med Fejl" variant="error">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
+        </fds-accordion-group>
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="accGroupCode"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Single Accordions">
-      <fds-accordion>
-        <template #header>
-          <h4 class="">Accordion med custom header</h4>
-        </template>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </fds-accordion>
+    <fds-preview header="Single Accordions">
+      <fds-preview-item>
+        <fds-accordion class="mb-4">
+          <template #header>
+            <h4 class="">Accordion med custom header</h4>
+          </template>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </fds-accordion>
 
-      <fds-accordion header="Accordion normal header" hint="Et hint">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </fds-accordion>
-      <template #description>
-        <p class="italic">Dette eksempel viser hvordan man bruger enkeltstående accordions</p>
-      </template>
-      <template #code>
+        <fds-accordion header="Accordion normal header" hint="Et hint">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </fds-accordion>
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="accSingleCode"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>header</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>hint</code></td>
+              <td><code>string</code></td>
+              <td>
+                <code> ''</code>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>expanded</code></td>
+              <td><code>Boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>variant</code></td>
+              <td><code>'success' | 'warning' | 'error'</code></td>
+              <td><code>null</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>variantText</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Template</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>header</code></td>
+              <td><code>prop.header, prop.hint</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>default</code></td>
+              <td><code></code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
+    </fds-preview>
   </section>
 </template>
 
 <script setup lang="ts">
 const accSingleCode = `
-<fds-accordion>
+<fds-accordion class="mb-4">
   <template #header>
-    <h4 class="">Accordion med custom header</h4>
+    <h4 class="">
+      Accordion med custom header
+    </h4>
   </template>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -116,7 +168,9 @@ const accSingleCode = `
   </p>
 </fds-accordion>
 
-<fds-accordion header="Accordion normal header" hint="Et hint">
+<fds-accordion
+  header="Accordion normal header"
+  hint="Et hint">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
     ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -124,24 +178,8 @@ const accSingleCode = `
   </p>
 </fds-accordion>`;
 const accGroupCode = `
-<fds-accordion-group #default="{ groupActive }">
-  <fds-accordion
-    :expanded="groupActive"
-    header="Accordion header med hint"
-    hint="Hint for header"
-  >
-    <p>
-      {{ groupActive }}
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-  </fds-accordion>
-  <fds-accordion
-    :expanded="groupActive"
-    header="Accordion header med hint"
-    hint="Hint for header"
-  >
+<fds-accordion-group>
+  <fds-accordion header="Accordion header med hint" hint="Hint for header">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -150,7 +188,6 @@ const accGroupCode = `
   </fds-accordion>
 
   <fds-accordion
-    :expanded="groupActive"
     header="Accordion header med Success"
     variant="success"
     variant-text="Success"
@@ -163,7 +200,6 @@ const accGroupCode = `
   </fds-accordion>
 
   <fds-accordion
-    :expanded="groupActive"
     header="Accordion header med advarsel"
     variant="warning"
     variant-text="Advarsel"
@@ -175,12 +211,7 @@ const accGroupCode = `
     </p>
   </fds-accordion>
 
-  <fds-accordion
-    :expanded="groupActive"
-    header="Accordion header med Fejl"
-    variant-text="Fejl"
-    variant="error"
-  >
+  <fds-accordion header="Accordion header med Fejl" variant="error">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

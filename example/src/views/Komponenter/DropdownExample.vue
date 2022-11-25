@@ -1,22 +1,52 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-dropdown v-model="dropdownVal">
-        <option value="Manuel">Manuel</option>
-        <option value="Auto">Auto</option>
-      </fds-dropdown>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-dropdown v-model="dropdownVal">
+          <option value="Manuel">Manuel</option>
+          <option value="Auto">Auto</option>
+        </fds-dropdown>
 
-      <fds-pre header="v-model" :json="{ dropdownVal }" />
-      <template #description>
-        <p class="italic">
-          Anvend kun dropdown menuer, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren
-          skal vælge mellem 7 til 15 værdier på en begrænset plads.
-        </p>
-      </template>
-      <template #code>
+        <fds-pre header="v-model" :json="{ dropdownVal }" />
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>formid</code></td>
+              <td>Se form gruppe</td>
+            </tr>
+            <tr>
+              <td><code>v-model</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
+    </fds-preview>
   </section>
 </template>
 

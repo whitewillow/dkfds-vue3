@@ -1,51 +1,35 @@
 <template>
   <section>
-    <fds-component-preview header="Form gruppe">
-      <xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
-        <fds-input v-model="maerke" />
-      </xfds-form-group>
+    <fds-preview header="Form gruppe">
+      <fds-preview-item>
+        <xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
+          <fds-input v-model="maerke" />
+        </xfds-form-group>
 
-      <fds-pre header="Object data" :json="{ maerke }" />
+        <fds-pre header="Object data" :json="{ maerke }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>xfds-form-group</code> wrapper et valgfrit komponent, i dette eks. er det
-          <code>fds-input</code>.
-        </p>
-        <p class="italic">
-          <code>xfds-form-group</code> giver dig let adgang til label, hint tooltip, tooltip,
-          fejlmeddelelse som alle også har tilhørende templates
-        </p>
-
-        <p>
-          Samme provide og inject som
-          <router-link :to="{ name: 'komponentformgruppe' }"> Formgruppe </router-link> og
-
-          <router-link :to="{ name: 'komponentfejlmeddelelser' }"> Fejlmeddelelse </router-link>
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Form gruppe">
-      <xfds-form-group label="Farver" hint="Angiv et alle farver" tooltip="Hjælp i tooltip">
-        <template #hint>
-          <fds-hint>Overstyret hint</fds-hint>
-        </template>
-        <fds-textarea v-model="farver" />
-      </xfds-form-group>
+    <fds-preview header="Form gruppe">
+      <fds-preview-item>
+        <xfds-form-group label="Farver" hint="Angiv et alle farver" tooltip="Hjælp i tooltip">
+          <template #hint>
+            <fds-hint>Overstyret hint</fds-hint>
+          </template>
+          <fds-textarea v-model="farver" />
+        </xfds-form-group>
 
-      <fds-pre header="Object data" :json="{ farver }" />
+        <fds-pre header="Object data" :json="{ farver }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic"></p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code2"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

@@ -1,25 +1,25 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-formgroup :is-valid="false">
-        <fds-label> Fornavn </fds-label>
-        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
-        <fds-hint>Indtast fornavn</fds-hint>
-        <fds-fejlmeddelelse> Giv dit kursus et navn </fds-fejlmeddelelse>
-        <fds-input v-model="txtFornavn" input-type="name" autocomplete="name"></fds-input>
-      </fds-formgroup>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-formgroup :is-valid="false">
+          <fds-label> Fornavn </fds-label>
+          <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+          <fds-hint>Indtast fornavn</fds-hint>
+          <fds-fejlmeddelelse> Giv dit kursus et navn </fds-fejlmeddelelse>
+          <fds-input v-model="txtFornavn" input-type="name" autocomplete="name"></fds-input>
+        </fds-formgroup>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Udskrive fejlmeddelelse med <code>fds-fejlmeddelelse</code> hertil skal form gruppen og
-          vide at der er Fejl. Dette gøre med <code>:is-valid</code>
-        </p>
+      <fds-preview-code>
+        <pre v-text="code"></pre>
+      </fds-preview-code>
 
-        <p class="h4">Inject</p>
+      <fds-preview-item>
         <table class="table table--compact">
           <thead>
             <tr>
-              <th></th>
+              <th>Inject</th>
               <th>Type</th>
               <th>Beskrivelse</th>
             </tr>
@@ -32,11 +32,8 @@
             </tr>
           </tbody>
         </table>
-      </template>
-      <template #code>
-        <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-item>
+    </fds-preview>
   </section>
 </template>
 

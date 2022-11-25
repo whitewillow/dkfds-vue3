@@ -1,21 +1,20 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <div class="container page-container">
-        <fds-sprogvaelger v-model="languages" @lang="selectedLangauge = $event"></fds-sprogvaelger>
-      </div>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <div class="container page-container">
+          <fds-sprogvaelger
+            v-model="languages"
+            @lang="selectedLangauge = $event"
+          ></fds-sprogvaelger>
+        </div>
 
-      <fds-pre :json="{ selectedLangauge, languages }" header="Valgt sprog" />
-
-      <template #description>
-        <p class="italic">
-          Sprogvælgeren <code>fds-sprogvaelger</code> indsættes nederst i footeren
-        </p>
-      </template>
-      <template #code>
+        <fds-pre :json="{ selectedLangauge, languages }" header="Valgt sprog" />
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

@@ -1,49 +1,42 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-formgroup>
-        <fds-label>Vælg radio</fds-label>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-formgroup>
+          <fds-label>Vælg radio</fds-label>
 
-        <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
-          <template v-slot:[`melon`]>
-            <p>Det er muligt at benytte radio til mere indhold</p>
-          </template>
-        </xfds-radio>
-      </fds-formgroup>
+          <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </xfds-radio>
+        </fds-formgroup>
 
-      <fds-pre header="v-model" :json="{ radioVal }" />
+        <fds-pre header="v-model" :json="{ radioVal }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>fds-radio</code> Ud fra en liste af <code>FdsOptionItem[]</code> genereres radio
-          knapperne.
-        </p>
-        <p class="italic">
-          Det er muligt at udfolde valgte radio og angive eget indhold, via dynamisk
-          <code>slot</code>
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
     <hr class="my-6" />
 
-    <fds-component-preview header="Ja eller nej">
-      <fds-formgroup>
-        <fds-label>Vælg radio toggle</fds-label>
+    <fds-preview header="Ja eller nej">
+      <fds-preview-item>
+        <fds-formgroup>
+          <fds-label>Vælg radio toggle</fds-label>
 
-        <xfds-radio-toggle v-model="toggleRadio">
-          <template v-slot:[`true`]>
-            <p>Det er muligt at benytte radio til mere indhold</p>
-          </template>
-        </xfds-radio-toggle>
-      </fds-formgroup>
+          <xfds-radio-toggle v-model="toggleRadio">
+            <template v-slot:[`true`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </xfds-radio-toggle>
+        </fds-formgroup>
 
-      <fds-pre header="v-model" :json="{ toggleRadio }" />
-
-      <template #description>
+        <fds-pre header="v-model" :json="{ toggleRadio }" />
+      </fds-preview-item>
+      <fds-preview-item>
         <p class="italic">
           Er det kun ja eller nej - sand eller falsk, kan <code>xfds-radio-toggle</code> benyttes.
         </p>
@@ -51,11 +44,11 @@
           Det er muligt at udfolde valgte radio og angive eget indhold, via dynamisk
           <code>slot</code>
         </p>
-      </template>
-      <template #code>
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="code2"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

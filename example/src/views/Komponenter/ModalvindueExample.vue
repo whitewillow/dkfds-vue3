@@ -1,70 +1,70 @@
 <template>
   <section>
-    <fds-component-preview header="Standard modal">
-      <fds-modal
-        :show="showModal"
-        header="Min Modal"
-        focusId="modalButton"
-        @close="showModal = false"
-      >
-        <p>Eksempel på et modal vindue</p>
-        <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
-        </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
-        <p>Hvis <code>focusId</code> er sat, sætte denne i focus efter luk</p>
-      </fds-modal>
-      <fds-pre :json="{ showModal }" />
+    <fds-preview header="Standard modal">
+      <fds-preview-item>
+        <fds-modal
+          :show="showModal"
+          header="Min Modal"
+          focusId="modalButton"
+          @close="showModal = false"
+        >
+          <p>Eksempel på et modal vindue</p>
+          <p>
+            Det er muligt at skifte tekster på nedestående knapper
+            <code>okTekst, annullerTekst</code>
+          </p>
+          <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+          <p>Hvis <code>focusId</code> er sat, sætte denne i focus efter luk</p>
+        </fds-modal>
+        <fds-pre :json="{ showModal }" />
 
-      <fds-button @click="showModal = !showModal" id="modalButton"> Vis Modal </fds-button>
+        <fds-button @click="showModal = !showModal" id="modalButton"> Vis Modal </fds-button>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">Eksempel på et modal vindue</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Modal med egen footer">
-      <fds-modal
-        :show="showModalCustomFooter"
-        header="Egen footer modal"
-        focusId="showModalCustomFooter"
-        @close="showModalCustomFooter = false"
-      >
-        <p>Eksempel på et modal vindue</p>
-        <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
-        </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
-        <p>Hvis <code>focusId</code> er sat, sætte denne i focus efter luk</p>
-        <template #footer>
-          <fds-button id="showModalCustomFooter" variant="error"> Godkend </fds-button>
-          <fds-button
-            variant="secondary"
-            @click="showModalCustomFooter = !showModalCustomFooter"
-            id="showModalCustomFooter"
-          >
-            Nej takker
-          </fds-button>
-        </template>
-      </fds-modal>
-      <fds-pre :json="{ showModalCustomFooter }" />
-      <fds-button
-        @click="showModalCustomFooter = !showModalCustomFooter"
-        id="showModalCustomFooter"
-      >
-        Vis Footer Modal
-      </fds-button>
+    <fds-preview header="Modal med egen footer">
+      <fds-preview-item>
+        <fds-modal
+          :show="showModalCustomFooter"
+          header="Egen footer modal"
+          focusId="showModalCustomFooter"
+          @close="showModalCustomFooter = false"
+        >
+          <p>Eksempel på et modal vindue</p>
+          <p>
+            Det er muligt at skifte tekster på nedestående knapper
+            <code>okTekst, annullerTekst</code>
+          </p>
+          <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+          <p>Hvis <code>focusId</code> er sat, sætte denne i focus efter luk</p>
+          <template #footer>
+            <fds-button id="showModalCustomFooter" variant="error"> Godkend </fds-button>
+            <fds-button
+              variant="secondary"
+              @click="showModalCustomFooter = !showModalCustomFooter"
+              id="showModalCustomFooter"
+            >
+              Nej takker
+            </fds-button>
+          </template>
+        </fds-modal>
+        <fds-pre :json="{ showModalCustomFooter }" />
+        <fds-button
+          @click="showModalCustomFooter = !showModalCustomFooter"
+          id="showModalCustomFooter"
+        >
+          Vis Footer Modal
+        </fds-button>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">Eksempel på et modal vindue med egen footer</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="codeFooter"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

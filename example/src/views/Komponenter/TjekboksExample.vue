@@ -1,22 +1,22 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-checkbox v-model="oneChecked" class="mt-2">
-        Et valg
-        <template #content> Det er muligt at angive indhold </template>
-      </fds-checkbox>
-      <fds-formgroup>
-        <fds-label>Label til tjekboks</fds-label>
-        <fds-checkbox v-model="twoChecked" size="small"> Andet valg - small </fds-checkbox>
-      </fds-formgroup>
-      <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
-      <template #description>
-        <p class="italic"><code>fds-checkbox </code> Enkeltstående checkboxe</p>
-      </template>
-      <template #code>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <fds-checkbox v-model="oneChecked" class="mt-2">
+          Et valg
+          <template #content> Det er muligt at angive indhold </template>
+        </fds-checkbox>
+        <fds-formgroup>
+          <fds-label>Label til tjekboks</fds-label>
+          <fds-checkbox v-model="twoChecked" size="small"> Andet valg - small </fds-checkbox>
+        </fds-formgroup>
+        <fds-pre header="v-model" :json="{ oneChecked, twoChecked }" />
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="code2"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 
