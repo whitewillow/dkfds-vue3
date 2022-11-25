@@ -8,7 +8,8 @@ https://github.com/whitewillow/dkfds-vue3/issues
 
 # 0.3.10
 
-Efter fælles gennemgang med teamet, er der enighed om refak kerne komponenter, for at give konsistenc og ensartethed
+Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponenter, for at give konsistens og ensartethed
+
 - fds-alert - prop navne
 - fds-badge - prop navne
 - fds-accordian - prop navne
