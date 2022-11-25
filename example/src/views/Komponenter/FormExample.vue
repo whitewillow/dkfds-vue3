@@ -68,23 +68,23 @@
       <fds-formgroup>
         <fds-label>Vælg radio</fds-label>
 
-        <fds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
+        <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
           <template #hint> Lorem ipsum dolor sit amet consectetur adipisicing elit. </template>
           <template v-slot:[`melon`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
-        </fds-radio>
+        </xfds-radio>
       </fds-formgroup>
 
       <fds-formgroup>
         <fds-label>Vælg radio toggle</fds-label>
 
-        <fds-radio-toggle v-model="toggleRadio">
+        <xfds-radio-toggle v-model="toggleRadio">
           <template #hint> Lorem ipsum dolor sit amet consectetur adipisicing elit. </template>
           <template v-slot:[`true`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
-        </fds-radio-toggle>
+        </xfds-radio-toggle>
       </fds-formgroup>
       {{ toggleRadio }}
 

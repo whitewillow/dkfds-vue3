@@ -49,7 +49,7 @@ undtagelser:
 <fds-textarea />
 <fds-checkbox />
 <fds-dropdown />
-<fds-radio />
+<xfds-radio />
 ```
 
 ## Ekstra funktionalitet:

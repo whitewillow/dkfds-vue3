@@ -7,13 +7,13 @@
       isValid,
       errorMessage,
     }">
-    <fds-radio
+    <xfds-radio
       :list="options"
       v-model="value"
       @update:modelValue="handleInput"
       @dirty="touchedEvent">
       <slot />
-    </fds-radio>
+    </xfds-radio>
   </xfds-form-group>
 </template>
 

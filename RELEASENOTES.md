@@ -18,6 +18,23 @@ Efter fælles gennemgang med teamet, er der enighed om refak kerne komponenter, 
 - fjernet fds-trinindikator
 - Tilføjet fds-trinindikator-group med tilhørende fds-trinindikator-item
 - Tilføjet xfds-trinindikator, der tager imod liste af trin
+- Tilføjet fds-radio-group og fds-radio-item 
+- Tilføjet xfds-radio og xfds-radio-toggle
+
+```HTML
+<fds-radio-group v-model="radioValueKerne">
+  <fds-radio-item value="metal"> Metal </fds-radio-item>
+  <fds-radio-item value="pop">
+    Pop
+    <template #content>
+      Pop er som musikgenre den mest udbredte musikstilart i moderne tid - væsentlig mere
+      udbredt end fx rock, jazz og folkemusik. Navnet er en afledning af ordet "populær"
+      (eng. "popular").
+    </template>
+  </fds-radio-item>
+  <fds-radio-item value="klassisk"> Klassist </fds-radio-item>
+</fds-radio-group>
+```
 
 Fjernet 
 - xfds-faneblade - ikke gennemtænkt nok - fds-faneblade er dækkende

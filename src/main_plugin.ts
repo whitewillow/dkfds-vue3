@@ -21,8 +21,8 @@ import FdsCheckbox from '@/components/fds-checkbox.vue';
 
 import FdsToggleSwitch from '@/components/fds-toggle-switch.vue';
 
-import FdsRadio from '@/components/fds-radio.vue';
-import FdsRadioToggle from '@/components/fds-radio-toggle.vue';
+import FdsRadioGroup from '@/components/fds-radio-group.vue';
+import FdsRadioItem from '@/components/fds-radio-item.vue';
 
 import FdsDropdown from '@/components/fds-dropdown.vue';
 
@@ -74,6 +74,8 @@ import FdsComponentPreview from '@/components/fds-component-preview.vue';
 
 import XFdsCheckboxList from '@/components/extra/xfds-checkbox-list.vue';
 import XFdsDropdown from '@/components/extra/xfds-dropdown.vue';
+import XFdsRadio from '@/components/extra/xfds-radio.vue';
+import XFdsRadioToggle from '@/components/extra/xfds-radio-toggle.vue';
 
 import XFdsFormGroup from '@/components/extra/xfds-form-group.vue';
 import XFdsFormInput from '@/components/extra/xfds-form-input.vue';
@@ -133,8 +135,10 @@ function install (app: App): void {
   app.component('fds-textarea', FdsTextarea);
   app.component('fds-icon-collection', FdsIconCollection);
   app.component('fds-checkbox', FdsCheckbox);
-  app.component('fds-radio', FdsRadio);
-  app.component('fds-radio-toggle', FdsRadioToggle);
+  app.component('fds-radio-group', FdsRadioGroup);
+  app.component('fds-radio-item', FdsRadioItem);
+
+  app.component('xfds-radio-toggle', XFdsRadioToggle);
   app.component('fds-dropdown', FdsDropdown);
   app.component('fds-label', FdsLabel);
   app.component('fds-input-limit', FdsInputLimit);
@@ -165,6 +169,7 @@ function install (app: App): void {
 
   app.component('xfds-checkbox-list', XFdsCheckboxList);
   app.component('xfds-dropdown', XFdsDropdown);
+  app.component('xfds-radio', XFdsRadio);
 
   app.component('xfds-validate', XFdsValidate);
   app.component('xfds-form-group', XFdsFormGroup);
@@ -214,8 +219,8 @@ export {
   FdsCardGroup,
   FdsInput,
   FdsCheckbox,
-  FdsRadio,
-  FdsRadioToggle,
+  FdsRadioGroup,
+  FdsRadioItem,
   FdsDropdown,
   FdsLabel,
   FdsInputLimit,
@@ -228,6 +233,8 @@ export {
   XFdsMenuSub,
   XFdsCheckboxList,
   XFdsDropdown,
+  XFdsRadio,
+  XFdsRadioToggle,
   XFdsValidate,
   XFdsFormInput,
   XFdsFormInputNumber,

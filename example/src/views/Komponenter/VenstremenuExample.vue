@@ -34,7 +34,7 @@
             </fds-menu-item>
             <fds-menu-item id="beta" @navigate="submenuClickedExample = $event" active>
               Beta
-              <template #content>
+              <template #submenu>
                 <fds-menu variant="submenu">
                   <fds-menu-item id="beta/1" @navigate="submenuClickedExample = $event">
                     Beta - En
@@ -85,7 +85,7 @@ const code2 = `
   </fds-menu-item>
   <fds-menu-item id="beta" @navigate="submenuClickedExample = $event" active>
     Beta
-    <template #content>
+    <template #submenu>
       <fds-menu variant="submenu">
         <fds-menu-item id="beta/1" @navigate="submenuClickedExample = $event">
           Beta - En

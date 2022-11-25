@@ -208,9 +208,32 @@
         </fds-formgroup>
 
         <fds-formgroup>
-          <fds-label>Vælg radio</fds-label>
+          <fds-label>Vælg radio (KERNE)</fds-label>
 
-          <fds-radio
+          <fds-radio-group v-model="radioValueKerne">
+            <fds-radio-item value="metal">
+              Metal
+            </fds-radio-item>
+            <fds-radio-item value="pop">
+              Pop
+              <template #content>
+                Pop er som musikgenre den mest udbredte musikstilart i moderne tid - væsentlig mere
+                udbredt end fx rock, jazz og folkemusik. Navnet er en afledning af ordet "populær"
+                (eng. "popular").
+              </template>
+            </fds-radio-item>
+            <fds-radio-item value="klassisk">
+              Klassist
+            </fds-radio-item>
+          </fds-radio-group>
+        </fds-formgroup>
+
+        <fds-pre :json="{ radioValueKerne }" />
+
+        <fds-formgroup>
+          <fds-label>Vælg radio (Extra)</fds-label>
+
+          <xfds-radio
             :list="radioOptions"
             v-model="radioVal">
             <template #hint>
@@ -219,7 +242,7 @@
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
-          </fds-radio>
+          </xfds-radio>
         </fds-formgroup>
 
         <fds-pre :json="{ radioVal }" />
@@ -227,14 +250,14 @@
         <fds-formgroup>
           <fds-label>Vælg radio toggle</fds-label>
 
-          <fds-radio-toggle v-model="toggleRadio">
+          <xfds-radio-toggle v-model="toggleRadio">
             <template #hint>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </template>
             <template v-slot:[`true`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
-          </fds-radio-toggle>
+          </xfds-radio-toggle>
         </fds-formgroup>
         <fds-pre :json="{ toggleRadio }" />
 
@@ -649,7 +672,7 @@
               @navigate="manuelIdClick = $event"
               active>
               Beta
-              <template #content>
+              <template #submenu>
                 <fds-menu variant="submenu">
                   <fds-menu-item
                     id="beta/1"
@@ -1499,6 +1522,7 @@ const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
 const twoChecked = ref(false);
 const radioVal = ref('');
+const radioValueKerne = ref('pop');
 const radioValForm = ref('');
 const toggleswitch = ref(false);
 
