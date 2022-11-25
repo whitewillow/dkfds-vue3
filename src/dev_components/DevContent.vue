@@ -542,10 +542,38 @@
       <hr />
       <h2>Trinindikator</h2>
 
-      <p>Afventer</p>
-      <fds-trinindikator
+      <p>Kerne</p>
+
+      <fds-trinindikator-group>
+        <template #header>
+          Trin {{ trinManuelNavId }} af 4
+        </template>
+        <fds-trinindikator-item
+          id="1"
+          :active="trinManuelNavId === '1'"
+          icon="done"
+          hint="Et hint"
+          @navigate="trinManuelNavId = $event"
+          :index="1">
+          Første
+        </fds-trinindikator-item>
+        <fds-trinindikator-item
+          id="2"
+          :active="trinManuelNavId === '2'"
+          hint="Et hint"
+          @navigate="trinManuelNavId = $event"
+          :index="2">
+          Anden
+        </fds-trinindikator-item>
+      </fds-trinindikator-group>
+
+      <fds-pre :json="{ trinManuelNavId }"></fds-pre>
+
+      <p>Extra</p>
+      <xfds-trinindikator
         v-model="trin"
-        @navigate="trinNavKey = $event"></fds-trinindikator>
+        @navigate="trinNavKey = $event">
+      </xfds-trinindikator>
 
       <fds-pre :json="{ trinNavKey }"></fds-pre>
       <hr />
@@ -1667,6 +1695,7 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   },
 ] as unknown as FdsNavigationItem[]);
 
+const trinManuelNavId = ref('1');
 const trinNavKey = '';
 const trin = ref<FdsNavigationItem[]>([
   {

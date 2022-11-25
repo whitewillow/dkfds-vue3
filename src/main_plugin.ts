@@ -62,7 +62,8 @@ import FdsNavLink from '@/components/fds-nav-link.vue';
 import FdsTilbageLink from '@/components/fds-tilbage-link.vue';
 import FdsPaginering from '@/components/fds-paginering.vue';
 
-import FdsTrinindikator from '@/components/fds-trinindikator.vue';
+import FdsTrinindikatorGroup from '@/components/fds-trinindikator-group.vue';
+import XFdsTrinindikator from '@/components/extra/xfds-trinindikator.vue';
 
 import FdsFaneblade from '@/components/fds-faneblade.vue';
 import FdsFanebladItem from '@/components/fds-faneblad-item.vue';
@@ -96,7 +97,9 @@ export * from '@/utils/validate-utils';
 export * from '@/utils/file-utils';
 
 function install (app: App): void {
-  app.component('fds-trinindikator', FdsTrinindikator);
+  app.component('fds-trinindikator-group', FdsTrinindikatorGroup);
+  app.component('xfds-trinindikator', XFdsTrinindikator);
+
   app.component('fds-modal', FdsModal);
   app.component('fds-cookiemeddelelse', FdsCookiemeddelelse);
 
@@ -152,6 +155,7 @@ function install (app: App): void {
 
   app.component('fds-menu', FdsMenu);
   app.component('fds-menu-item', FdsMenuItem);
+  app.component('fds-trinindikator-item', FdsMenuItem);
   app.component('fds-tooltip', FdsTooltip);
   app.component('fds-detaljer', FdsDetaljer);
   app.component('fds-tilbage-link', FdsTilbageLink);
@@ -187,7 +191,7 @@ export {
   FdsList,
   FdsSpinner,
   FdsComponentPreview,
-  FdsTrinindikator,
+  FdsTrinindikatorGroup,
   FdsTilbageLink,
   FdsPaginering,
   FdsDatoAngivelse,
@@ -219,6 +223,7 @@ export {
   FdsFormgroup,
   FdsFejlmeddelelse,
   FdsFejlopsummering,
+  XFdsTrinindikator,
   XFdsMenu,
   XFdsMenuSub,
   XFdsCheckboxList,

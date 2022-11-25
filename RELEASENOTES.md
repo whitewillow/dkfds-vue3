@@ -15,7 +15,10 @@ Efter fælles gennemgang med teamet, er der enighed om refak kerne komponenter, 
 - fds-card-group - grupper cards
 - div boolean prop navne rettet til at lige html attr: eg. disabled/active/expanded/selected 
 - fds-fejlopsummering, fjernet list - ikke gennemtænkt og ikke kerne funktion
-- 
+- fjernet fds-trinindikator
+- Tilføjet fds-trinindikator-group med tilhørende fds-trinindikator-item
+- Tilføjet xfds-trinindikator, der tager imod liste af trin
+
 Fjernet 
 - xfds-faneblade - ikke gennemtænkt nok - fds-faneblade er dækkende
 - 
