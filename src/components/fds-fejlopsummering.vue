@@ -3,48 +3,28 @@
     class="top-space"
     variant="error"
     showIcon
-    :header="header"
     :closeable="false">
-    <slot>
-      <ul class="alert-text nobullet-list">
-        <li
-          v-for="(e, i) in list"
-          :key="i">
-          <fds-funktionslink @click="onClickError($event, e)">
-            {{ e.text }}
-          </fds-funktionslink>
-        </li>
-      </ul>
+    <slot
+      name="header"
+      v-if="$slots.header || header">
+      <p class="alert-heading">
+        {{ header }}
+      </p>
     </slot>
+    <slot />
   </fds-alert>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-import { FdsErrorListItem } from '@/model/fds.model';
+import { defineProps } from 'vue';
 import FdsAlert from '@/components/fds-alert.vue';
 
 defineProps({
-  list: {
-    type: Array as () => FdsErrorListItem[],
-    default: () => [],
-  },
   header: {
     type: String,
     default: 'Fejlopsummering',
   },
 });
-
-const emit = defineEmits(['fejlklik']);
-
-const onClickError = (event: Event, fejl: FdsErrorListItem) => {
-  emit('fejlklik', fejl);
-
-  const el = document.getElementById(fejl.anchor);
-  if (el) {
-    el.scrollIntoView();
-  }
-};
 </script>
 
 <style scoped lang="scss"></style>

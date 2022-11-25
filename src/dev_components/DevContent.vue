@@ -1315,10 +1315,6 @@
         </ul>
       </fds-fejlopsummering>
 
-      <fds-fejlopsummering
-        class="w-percent-lg-80"
-        :list="fejlOpsummering"></fds-fejlopsummering>
-
       <p>
         <fds-button @click="klikEvent">
           Gå til næste
@@ -1578,17 +1574,6 @@ const dropdownOptions = ref<FdsOptionItem[]>([
     title: 'Tomat',
     value: 'tomat',
     disabled: true,
-  },
-]);
-
-const fejlOpsummering = ref<FdsErrorListItem[]>([
-  {
-    anchor: 'anchor',
-    text: 'Datoen for udløbsdato på dit pas bør inkludere årstal',
-  },
-  {
-    anchor: 'anchor',
-    text: 'Indtast postnummer - fx 4000',
   },
 ]);
 

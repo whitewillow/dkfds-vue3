@@ -12,7 +12,7 @@
             {{ header }}
           </p>
         </slot>
-        <div class="alert-text pt-2">
+        <div class="alert-text">
           <slot />
         </div>
         <button
