@@ -1,5 +1,7 @@
 <template>
-  <section ref="refElement">
+  <section
+    ref="refElement"
+    class="validate-form-group">
     <slot
       :isValid="isValid"
       :errorMessage="errorMessage" />
