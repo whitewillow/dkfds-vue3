@@ -29,10 +29,10 @@
         <xfds-validate
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
-          #default="{ isValid, errorMessage }">
-          <fds-formgroup :is-valid="isValid">
+          #default="{ isValidWaitForDirty, errorMessage }">
+          <fds-formgroup :is-valid="isValidWaitForDirty">
             <fds-label> Efternavn (m. validering) </fds-label>
-            <fds-fejlmeddelelse v-if="!isValid">
+            <fds-fejlmeddelelse v-if="!isValidWaitForDirty">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
             <fds-hint>Indtast efternavn</fds-hint>
@@ -65,9 +65,12 @@
       <div>
         <h2>Extra komponent</h2>
 
+        <fds-pre :json="{ v: validator.validatorItems }" />
+
         <xfds-validate
           :modelValue="txtAdresseValidering"
-          :validations="[hasContent, charactersMinLength(10)]">
+          :validations="[hasContent, charactersMinLength(10)]"
+          @validated="validator.addItem($event)">
           <xfds-form-input
             label="Adresse (m. Validering)"
             hint="Angiv gyldig adresse"
@@ -111,7 +114,8 @@
 
         <xfds-validate
           :modelValue="checkboxListForm"
-          :validations="[arrayHasItems]">
+          :validations="[arrayHasItems]"
+          @validated="validator.addItem($event)">
           <xfds-form-checkbox-list
             label="Checkbox form"
             v-model="checkboxListForm" />
@@ -1490,7 +1494,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-
+import ValidatorService, { ValidatorItem } from '@/service/validator.service';
 import {
   FdsErrorListItem,
   FdsOptionItem,
@@ -1520,6 +1524,7 @@ const genLargeArray = computed((): Array<{ id: string; indhold: string }> => {
   }));
 });
 
+const validator = ref(new ValidatorService());
 const cookieAccept = ref<boolean | null>(null);
 const showToast = ref(false);
 const datoValg = ref('2022-12-01');

@@ -6,11 +6,11 @@
           :modelValue="user.name"
           :dirty="dirty"
           :validations="[hasContent, charactersMinLength(10)]"
-          #default="{ isValid, errorMessage }"
+          #default="{ isValidWaitForDirty, errorMessage }"
         >
-          <fds-formgroup :is-valid="isValid">
+          <fds-formgroup :is-valid="isValidWaitForDirty">
             <fds-label> Navn </fds-label>
-            <fds-fejlmeddelelse v-if="!isValid">
+            <fds-fejlmeddelelse v-if="!isValidWaitForDirty">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
             <fds-hint>Indtast navn</fds-hint>

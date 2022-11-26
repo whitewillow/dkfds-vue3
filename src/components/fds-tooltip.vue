@@ -1,7 +1,7 @@
 <template>
   <button
     class="js-tooltip button-unstyled"
-    :id="formid"
+    :id="`tip_${formid}`"
     :data-tooltip="slotContent"
     data-tooltip-trigger="click">
     <svg
@@ -40,7 +40,7 @@ const slotContent = computed(() => {
 });
 
 onMounted(() => {
-  new DKFSTooltip(document.getElementById(formid.value)).init();
+  new DKFSTooltip(document.getElementById(`tip_${formid.value}`)).init();
 });
 </script>
 
