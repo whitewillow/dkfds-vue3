@@ -10,18 +10,31 @@ https://github.com/whitewillow/dkfds-vue3/issues
 
 Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponenter, for at give konsistens og ensartethed
 
+
 - fds-alert - prop navne
 - fds-badge - prop navne
 - fds-accordian - prop navne
 - fds-card-group - grupper cards
+- fds-modal omskrevet til at bruge native HTML Dialog element
 - div boolean prop navne rettet til at ligne html attr: eg. disabled/active/expanded/selected 
 - fds-fejlopsummering, fjernet list - ikke gennemtænkt og ikke kerne funktion
 - fjernet fds-trinindikator
 - Tilføjet fds-trinindikator-group med tilhørende fds-trinindikator-item
 - Tilføjet xfds-trinindikator, der tager imod liste af trin
+- Opdatering af example siden
+- Opdateret xfds-validate til også at emitte @validated med et ValidatorItem - der giver 
+```javascript
+  {
+    key: string; // auto generet nøgle eller tager prop.id
+    type: string; // ???
+    reasons?: string[]; // alle evt fejl årsager
+    valid: boolean; // om valid
+    dirty: boolean; // om berørt
+  }
+```
+
 - Tilføjet fds-radio-group og fds-radio-item 
 - Tilføjet xfds-radio og xfds-radio-toggle
-- Opdatering af example siden
 
 ```HTML
 <fds-radio-group v-model="radioValueKerne">
@@ -36,7 +49,7 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
   </fds-radio-item>
   <fds-radio-item value="klassisk"> Klassist </fds-radio-item>
 </fds-radio-group>
-```
+
 
 Fjernet 
 - xfds-faneblade - ikke gennemtænkt nok - fds-faneblade er dækkende

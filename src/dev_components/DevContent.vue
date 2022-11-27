@@ -1140,52 +1140,49 @@
       <h2>Modal</h2>
 
       <fds-modal
-        :show="showModal"
+        ref="refModal"
         header="Min Modal"
-        focusId="modalButton"
-        @close="showModal = false">
+        closeable>
         <p>Eksempel på et modal vindue</p>
         <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
+          Det er muligt at skifte tekster på nedestående knapper <code>acceptText, cancelText</code>
         </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+        <p>
+          Events <code>cancel, close, accept</code> emittes ved hhv klik på godkend og annuller/luk
+          knap
+        </p>
       </fds-modal>
-      <fds-pre :json="{ showModal }" />
 
       <fds-button
-        @click="showModal = !showModal"
+        @click="(refModal as any)?.showModal()"
         id="modalButton">
         Vis Modal
       </fds-button>
 
       <h3>Custom footer</h3>
       <fds-modal
-        :show="showModalCustomFooter"
-        header="Egen footer modal"
-        focusId="showModalCustomFooter"
-        @close="showModalCustomFooter = false">
+        ref="refModalCustomFooter"
+        header="Egen footer modal">
         <p>Eksempel på et modal vindue</p>
-        <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
-        </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+        <p>med egen footer</p>
         <template #footer>
           <fds-button
             id="showModalCustomFooter"
+            @click="(refModalCustomFooter as any).hideModal()"
             variant="error">
             Godkend
           </fds-button>
           <fds-button
             variant="secondary"
-            @click="showModalCustomFooter = !showModalCustomFooter"
+            @click="(refModalCustomFooter as any).hideModal()"
             id="showModalCustomFooter">
             Nej takker
           </fds-button>
         </template>
       </fds-modal>
-      <fds-pre :json="{ showModalCustomFooter }" />
+
       <fds-button
-        @click="showModalCustomFooter = !showModalCustomFooter"
+        @click="(refModalCustomFooter as any).showModal()"
         id="showModalCustomFooter">
         Vis Footer Modal
       </fds-button>
@@ -1493,7 +1490,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { ComponentPublicInstance, computed, ref } from 'vue';
 import ValidatorService, { ValidatorItem } from '@/service/validator.service';
 import {
   FdsErrorListItem,
@@ -1506,6 +1503,7 @@ import {
   FdsTabItem,
   FdsLanguageItem,
 } from '@/model/fds.model';
+import FdsModal from '@/components/fds-modal.vue';
 import {
   arrayHasItems,
   charactersMinLength,
@@ -1531,8 +1529,10 @@ const datoValg = ref('2022-12-01');
 const datoValgValid = ref(true);
 const datoAngiv = ref('2022-12-01');
 const datoAngivValid = ref(true);
-const showModal = ref(false);
-const showModalCustomFooter = ref(false);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const refModal = ref(null);
+const refModalCustomFooter = ref(null);
+
 const progress = ref(46);
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
