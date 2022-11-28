@@ -49,4 +49,11 @@ const router = createRouter({
   },
 });
 
+const DEFAULT_TITLE = '';
+
+router.beforeEach((to, from, next) => {
+  document.title = `DKFDS-Vue3 ${to.meta?.title ?? DEFAULT_TITLE}`;
+  next();
+});
+
 export default router;

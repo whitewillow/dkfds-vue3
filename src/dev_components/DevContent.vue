@@ -401,7 +401,7 @@
           </xfds-validate>
         </fds-preview-item>
 
-        <fds-preview-code>
+        <fds-preview-code header="Header">
           <pre v-text="codeExample" />
         </fds-preview-code>
         <fds-preview-item>

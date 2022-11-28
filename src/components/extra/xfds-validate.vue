@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import {
-  computed, defineEmits, defineProps, onMounted, PropType, provide, ref, watch,
+  computed, defineEmits, defineProps, onMounted, provide, ref, watch,
 } from 'vue';
 import { validateAllErrorMessage } from '@/utils/validate-utils';
 import { ValidatorItem } from '@/service/validator.service';
