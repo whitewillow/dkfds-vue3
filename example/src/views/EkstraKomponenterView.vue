@@ -48,6 +48,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   },
   {
     key: 'ekstraradio',
+    title: 'Radio List',
+  },
+  {
+    key: 'ekstraradioknap',
     title: 'Radio',
   },
   {

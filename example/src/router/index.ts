@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import ekstraKomponenterRoutes from './ekstrakomponenterRoutes';
 import komponenterRoutes from './KomponenterRoutes';
 import anbefalingerRoutes from './AnbefalingerRoutes';
@@ -34,7 +34,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.NODE_ENV === 'production' ? '/dkfds-vue3-example/' : '/'),
+  history: createWebHashHistory(
+    process.env.NODE_ENV === 'production' ? '/dkfds-vue3-example/' : '/',
+  ),
   routes,
   scrollBehavior(to) {
     // , from, savedPosition

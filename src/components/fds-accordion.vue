@@ -1,25 +1,74 @@
 <template>
-  <ul class="accordion accordion-multiselectable">
-    <fds-accordion-item v-bind="props">
-      <template
-        #header
-        v-if="$slots.header">
-        <slot name="header" />
-      </template>
+  <div
+    :disabled="disabled"
+    :class="[{ disabled: disabled }]">
+    <button
+      class="accordion-button"
+      :class="getVariantClass"
+      :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
+      @click="refExpanded = !refExpanded"
+      :aria-controls="`acc_${formid}`">
+      <slot
+        name="header"
+        v-bind:expanded="refExpanded">
+        <div>
+          {{ header }}
+          <div
+            class="form-hint"
+            v-if="hint !== ''">
+            {{ hint }}
+          </div>
+        </div>
+      </slot>
+      <span
+        class="accordion-icon"
+        v-if="variant && ['error', 'warning', 'success'].includes(variant)">
+        <span
+          class="icon_text"
+          v-if="variantText !== null">
+          {{ variantText === '' ? getIconText : variantText }}
+        </span>
+        <svg
+          class="icon-svg"
+          focusable="false"
+          aria-hidden="true">
+          <use :xlink:href="`#${getIcon}`"></use>
+        </svg>
+      </span>
+    </button>
+    <div
+      :id="`acc_${formid}`"
+      :aria-hidden="`${refExpanded ? 'false' : 'true'}`"
+      class="accordion-content">
       <slot />
-    </fds-accordion-item>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
+import getFormId from '@/composable/formId';
 import accordionProps from '@/props/fds-accordion.props';
-import { defineProps } from 'vue';
-
-/**
- * Komponent til Accordions
- * https://designsystem.dk/komponenter/accordions/
- *
- * */
+import { defineProps, ref, computed } from 'vue';
 
 const props = defineProps({ ...accordionProps });
+
+const refExpanded = ref(props.expanded);
+
+const { formid } = getFormId(undefined, true);
+
+const icons = {
+  success: 'check-circle',
+  warning: 'report-problem',
+  error: 'highlight-off',
+};
+
+const defaultVariantText = {
+  success: 'Success',
+  warning: 'Advarsel',
+  error: 'Fejl',
+};
+
+const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
+const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
+const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
 </script>

@@ -28,7 +28,7 @@
         {{ hint }}
       </p>
     </a>
-    <slot name="content" />
+    <slot name="submenu" />
   </li>
 </template>
 

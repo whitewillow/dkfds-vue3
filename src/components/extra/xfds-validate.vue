@@ -1,20 +1,30 @@
 <template>
-  <section ref="refElement">
+  <section
+    ref="refElement"
+    class="validate-form-group"
+    :id="validateId">
     <slot
       :isValid="isValid"
-      :errorMessage="errorMessage" />
+      :isValidWaitForDirty="isValidWaitForDirty"
+      :errorMessage="errorMessage"/>
   </section>
 </template>
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, onMounted, provide, ref, watch,
+  computed, defineEmits, defineProps, onMounted, PropType, provide, ref, watch,
 } from 'vue';
 import { validateAllErrorMessage } from '@/utils/validate-utils';
+import { ValidatorItem } from '@/service/validator.service';
+import getComputedId from '@/composable/getComputedId';
 
 const props = defineProps({
   modelValue: {
     type: [String, Number, Array],
+    default: null,
+  },
+  id: {
+    type: String,
     default: null,
   },
   validateFlow: {
@@ -41,17 +51,21 @@ const props = defineProps({
     ],
   },
 });
-const emit = defineEmits(['valid']);
+const emit = defineEmits(['valid', 'validated']);
 
-const isValid = ref(true);
+const isValid = ref(false);
+const isValidWaitForDirty = ref(true);
 const errorMessage = ref('');
+const errorMessages = ref<Array<string>>([]);
 const refElement = ref(null);
 const localDirty = ref(false);
+
+const validateId = getComputedId(props.id);
 /**
  * Provide for underliggende Inputs
  * Hhv om validering gik godt eller fejlbesked
  */
-provide('provideIsValid', isValid);
+provide('provideIsValid', isValidWaitForDirty);
 provide('provideErrorMessage', errorMessage);
 
 onMounted(() => {
@@ -73,30 +87,59 @@ const hasValue = (): boolean => {
   return false;
 };
 
+const updateCollection = () => {
+  const currentItem = {
+    key: validateId.value,
+    type: '',
+    valid: isValid.value,
+    reasons: errorMessages.value,
+    dirty: localDirty.value,
+  } as ValidatorItem;
+
+  emit('validated', currentItem);
+};
+
+const touched = computed(() => localDirty.value || props.dirty);
+
 const isFormValid = () => {
+  isValid.value = true;
+  isValidWaitForDirty.value = true;
+  errorMessage.value = '';
+  errorMessages.value = [];
   if (props.validations) {
     const vals = [...props.validations];
+    const result: string[] = validateAllErrorMessage(...vals)(props.modelValue);
 
-    const result: string | null = validateAllErrorMessage(...vals)(props.modelValue);
-    isValid.value = true;
-    errorMessage.value = '';
-
-    if (result) {
-      errorMessage.value = result;
+    if (result.length > 0) {
+      [errorMessage.value] = result;
+      errorMessages.value = result;
       isValid.value = false;
+      if (touched.value) {
+        isValidWaitForDirty.value = false;
+      }
     }
   }
+  updateCollection();
 
   emit('valid', isValid.value);
 };
 
 watch(
-  () => [props.modelValue, props.dirty, localDirty],
+  () => props.modelValue,
   () => {
     isFormValid();
   },
   {
-    immediate: props.validateFlow === 'immediate' || hasValue() || props.dirty || localDirty.value,
+    immediate: true,
+    deep: true,
+  },
+);
+watch(
+  () => localDirty,
+  () => {
+    isFormValid();
+  },
+  {
     deep: true,
   },
 );

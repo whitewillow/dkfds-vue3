@@ -5,3 +5,11 @@
     color: #c00;
   }
 }
+
+.validate-form-group {
+  margin-top: 24px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

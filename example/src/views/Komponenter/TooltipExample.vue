@@ -1,14 +1,13 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-tooltip> Hjælpende <b>tekst</b> </fds-tooltip>
-      <template #description>
-        <p class="italic"><code>fds-tooltip</code> laver et tooltip, med tilhørende tekst</p>
-      </template>
-      <template #code>
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tooltip/">
+      <fds-preview-item>
+        <fds-tooltip> Hjælpende <b>tekst</b> </fds-tooltip>
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

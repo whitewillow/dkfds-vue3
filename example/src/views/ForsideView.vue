@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-7">
-            <h1>DKFDS-VUE3</h1>
+            <h1 class="dv3-gra tagline">DKFDS-Vue3</h1>
             <p class="font-lead">Vue 3 Komponent bibliotek til "Det Fælles Designsystem"</p>
             <ul class="nobullet-list">
               <li>
@@ -37,7 +37,7 @@
           <div class="col-12 col-lg-5 align-text-center">
             <img
               id="designsystem-illustration"
-              src="https://via.placeholder.com/250x200"
+              src="https://via.placeholder.com/250x200/0059B3/FFFFFF"
               alt=""
               class="d-none d-lg-inline-block"
             />

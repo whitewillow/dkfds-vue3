@@ -13,7 +13,7 @@
       :index="showIndex ? index : null"
       @navigate="navigate(item)">
       {{ item.title }}
-      <template #content>
+      <template #submenu>
         <xfds-menu-sub
           v-if="item.active && item.children && item.children.length > 0"
           @navigate="subnavigation"

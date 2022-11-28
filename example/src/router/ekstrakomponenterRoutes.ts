@@ -45,6 +45,12 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         component: loadExtraView('RadioList.vue'),
       },
       {
+        path: 'radioknap',
+        name: 'ekstraradioknap',
+        component: loadExtraView('RadioKnap.vue'),
+      },
+
+      {
         path: 'dropdownmenu',
         name: 'ekstradropdownmenu',
         component: loadExtraView('DropdownMenu.vue'),

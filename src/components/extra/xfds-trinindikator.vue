@@ -43,7 +43,8 @@
 <script setup lang="ts">
 /**
  *
- * Komponent for Trin indikator
+ * Ekstra Komponent for Trin indikator (se også fds-trinindikator)
+ * Generer selv trin ud fra liste
  * https://designsystem.dk/komponenter/trin/
  *
  * */

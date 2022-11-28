@@ -36,8 +36,8 @@
     <!-- Start: Løsningsheader -->
     <div class="solution-header">
       <div class="container solution-header-inner">
-        <div class="solution-heading">
-          <a href="#">Det Fælles Designsystem Vue 3</a>
+        <div class="solution-heading dv3-gra">
+          <a href="#">DKFDS-Vue3 et Komponent bibliotek til DKFDS</a>
         </div>
 
         <!--2B: Solution header: Authority name + text -->
@@ -149,7 +149,7 @@
                 <ul class="unstyled-list">
                   <li class="">
                     <img
-                      src="https://via.placeholder.com/150x100"
+                      src="https://via.placeholder.com/150x100/0059B3/FFFFFF"
                       class="logo"
                       alt="Logostyrelsen"
                     />

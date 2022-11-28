@@ -14,7 +14,7 @@
         autocomplete,
         inputType,
         inputClass,
-        isDisabled,
+        disabled,
         isReadonly,
         suffix,
         prefix,

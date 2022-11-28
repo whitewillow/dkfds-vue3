@@ -16,7 +16,7 @@
       :placeholder="placeholder"
       :type="inputType"
       :autocomplete="autocomplete"
-      :disabled="isDisabled"
+      :disabled="disabled"
       @input="handleInput"
       @blur="$emit('dirty', true)"/>
     <div

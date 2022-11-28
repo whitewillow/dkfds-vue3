@@ -1,44 +1,46 @@
 <template>
   <section>
-    <fds-component-preview header="Udvidet Navigationslink til header">
-      <p>
-        Nedestående er et eksempel på at udvide eksisterende komponenter, til at gøre brug af
-        vue-router (da DKFDS-Vue3 - ikke selv inkludere vue router)
-      </p>
-      <div class="navbar navbar-primary">
-        <div class="navbar-inner container">
-          <ul class="nav-primary" role="menu">
-            <fds-xtnd-nav-item-route
-              toName="forside"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
-              Forside
-            </fds-xtnd-nav-item-route>
-            <fds-xtnd-nav-item-route
-              toName="anbefalingernavigation"
-              :current-route-name="$route.name?.toString()"
-              linkTitle="Link title"
-            >
-              Denne side
-            </fds-xtnd-nav-item-route>
-          </ul>
+    <fds-preview header="Udvidet Navigationslink til header">
+      <fds-preview-item>
+        <p>
+          Nedestående er et eksempel på at udvide eksisterende komponenter, til at gøre brug af
+          vue-router (da DKFDS-Vue3 - ikke selv inkludere vue router)
+        </p>
+        <div class="navbar navbar-primary">
+          <div class="navbar-inner container">
+            <ul class="nav-primary" role="menu">
+              <fds-xtnd-nav-item-route
+                toName="forside"
+                :current-route-name="$route.name?.toString()"
+                linkTitle="Link title"
+              >
+                Forside
+              </fds-xtnd-nav-item-route>
+              <fds-xtnd-nav-item-route
+                toName="anbefalingernavigation"
+                :current-route-name="$route.name?.toString()"
+                linkTitle="Link title"
+              >
+                Denne side
+              </fds-xtnd-nav-item-route>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <fds-pre :code="code" :header="'Brug af komponent'" />
-
-      <template #description>
+        <fds-pre :code="code" :header="'Brug af komponent'" />
+      </fds-preview-item>
+      <hr />
+      <fds-preview-item>
         <p class="italic">
           Komponenten <code>fds-xtnd-nav-item-route</code> gør det nemmer at auto markere om siden
           er aktiv
         </p>
         <p class="italic">Se nedestående kode for komponenten</p>
-      </template>
-      <template #code>
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="codeComponent"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 
@@ -71,7 +73,7 @@ const codeComponent = `
 <template>
   <router-link :to="{ name: toName }" custom v-slot="{ href, navigate, isActive }">
     <li role="none" :class="[{ current: isActive || isPartOfMenu(toName) }]">
-      <fds-nav-link :href="href" :title="linkTitle" :disabled="isDisabled" @click="navigate">
+      <fds-nav-link :href="href" :title="linkTitle" :disabled="disabled" @click="navigate">
         <slot />
       </fds-nav-link>
     </li>
@@ -96,7 +98,7 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

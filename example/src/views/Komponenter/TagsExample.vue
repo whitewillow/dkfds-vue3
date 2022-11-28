@@ -1,41 +1,30 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-tag>Bornholm</fds-tag>
-      <fds-tag icon="highlight-off"> Sjælland </fds-tag>
-      <fds-tag>Fyn</fds-tag>
-      <fds-tag>Jylland</fds-tag>
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tags/">
+      <fds-preview-item>
+        <fds-tag>Bornholm</fds-tag>
+        <fds-tag icon="highlight-off"> Sjælland </fds-tag>
+        <fds-tag>Fyn</fds-tag>
+        <fds-tag>Jylland</fds-tag>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          <code>fds-tag</code> er en mindre knap, som du kan bruge til at angive metainformation om
-          indhold, der kan kategoriseres, filtreres eller på anden vis beskrives med nøgleord. Tags
-          forekommer med og uden ikon.
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Tag med icon">
-      <fds-tag icon="highlight-off" @click.self="handleKnapClick" @iconClick="handleIconClick">
-        Bornholm
-      </fds-tag>
+    <fds-preview header="Tag med icon">
+      <fds-preview-item>
+        <fds-tag icon="highlight-off" @click.self="handleKnapClick" @iconClick="handleIconClick">
+          Bornholm
+        </fds-tag>
 
-      <fds-pre header="Klik event" :json="{ antalIconClick, antalKnapClick }" />
-
-      <template #description>
-        <p class="italic">
-          <code>fds-tag</code> er en mindre knap, som du kan bruge til at angive metainformation om
-          indhold, der kan kategoriseres, filtreres eller på anden vis beskrives med nøgleord. Tags
-          forekommer med og uden ikon.
-        </p>
-      </template>
-      <template #code>
+        <fds-pre header="Klik event" :json="{ antalIconClick, antalKnapClick }" />
+      </fds-preview-item>
+      <fds-preview-code>
         <pre v-text="codeTagIcon"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

@@ -1,42 +1,34 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <xfds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <xfds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
 
-      <fds-pre header="v-model" :json="{ dropdownVal }" />
-      <template #description>
-        <p class="italic">
-          Anvend kun dropdown menuer, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren
-          skal vælge mellem 7 til 15 værdier på en begrænset plads.
-        </p>
-      </template>
-      <template #code>
+        <fds-pre header="v-model" :json="{ dropdownVal }" />
+      </fds-preview-item>
+
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
 
-    <fds-component-preview header="Eksempel Formular">
-      <xfds-validate :modelValue="dropdownValForm" :validations="[hasContent]">
-        <xfds-form-dropdown
-          label="Dropdown form"
-          :options="dropdownOptions"
-          v-model="dropdownValForm"
-        />
-      </xfds-validate>
+    <fds-preview header="Eksempel Formular">
+      <fds-preview-item>
+        <xfds-validate :modelValue="dropdownValForm" :validations="[hasContent]">
+          <xfds-form-dropdown
+            label="Dropdown form"
+            :options="dropdownOptions"
+            v-model="dropdownValForm"
+          />
+        </xfds-validate>
 
-      <fds-pre header="v-model for dropdown" :json="{ dropdownValForm }" />
+        <fds-pre header="v-model for dropdown" :json="{ dropdownValForm }" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Komponenten <code>xfds-form-dropdown</code> er en samling af komponenter der giver en
-          samlet funktionalitet.
-        </p>
-        <p class="italic">Understøtter simpel validering, m.m.</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="codeForm"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

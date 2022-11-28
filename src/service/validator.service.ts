@@ -5,6 +5,7 @@ export interface ValidatorItem {
   type: string;
   reasons?: string[];
   valid: boolean;
+  dirty: boolean;
 }
 
 /**

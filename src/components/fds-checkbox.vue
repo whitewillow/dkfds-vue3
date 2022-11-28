@@ -5,10 +5,10 @@
       type="checkbox"
       :checked="refValue"
       class="form-checkbox"
-      :class="{ 'checkbox-large': !isSmall }"
+      :class="{ 'checkbox-large': size === 'large' }"
       @input="onInput"
       @blur="$emit('dirty', true)"
-      :disabled="isDisabled"/>
+      :disabled="disabled"/>
     <label
       :for="formid"
       class="hand">
@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, watch,
+  defineProps, defineEmits, ref, watch, PropType,
 } from 'vue';
 import getFormId from '@/composable/formId';
 
@@ -44,14 +44,14 @@ const props = defineProps({
   /**
    * Vis som lille checkbox
    * */
-  isSmall: {
-    type: Boolean,
-    default: false,
+  size: {
+    type: String as PropType<'small' | 'large'>,
+    default: 'large',
   },
   /**
    * Skal checkbox være disabled
    * */
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

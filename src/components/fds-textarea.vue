@@ -10,7 +10,7 @@
     :placeholder="placeholder"
     @input="handleInput"
     @blur="$emit('dirty', true)"
-    :disabled="isDisabled"></textarea>
+    :disabled="disabled"></textarea>
 </template>
 
 <script setup lang="ts">

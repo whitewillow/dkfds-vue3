@@ -56,11 +56,10 @@ const navigationList = ref<Array<FdsNavigationItem>>([
   {
     key: 'komponentcookie',
     title: 'Cookiemeddelelse',
-    icon: 'engineering',
   },
   {
     key: 'komponentdatoangivelse',
-    title: 'Datoangivelse',
+    title: 'Datofelter',
   },
   {
     key: 'komponentdatovaelger',

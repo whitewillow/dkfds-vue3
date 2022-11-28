@@ -1,26 +1,21 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <xfds-form-radio
-        label="Radio form"
-        :validations="[hasContent]"
-        :options="radioOptions"
-        v-model="product.type"
-      />
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <xfds-form-radio
+          label="Radio form"
+          :validations="[hasContent]"
+          :options="radioOptions"
+          v-model="product.type"
+        />
 
-      <fds-pre header="v-model for radio" :json="product" />
+        <fds-pre header="v-model for radio" :json="product" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Komponenten <code>xfds-form-radio</code> er en samling af komponenter der giver en samlet
-          funktionalitet.
-        </p>
-        <p class="italic">Understøtter simpel validering, m.m.</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

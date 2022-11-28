@@ -49,7 +49,7 @@ undtagelser:
 <fds-textarea />
 <fds-checkbox />
 <fds-dropdown />
-<fds-radio />
+<xfds-radio />
 ```
 
 ## Ekstra funktionalitet:
@@ -161,7 +161,7 @@ Selvfølgelig er der undtagelser, der giver en bedre kontekst med fornuftig navn
 - itemList
 
 Booleans:
-- isDisabled
+- disabled
 - isReadonly
 - showX, isX, hasX, canX, asX
 

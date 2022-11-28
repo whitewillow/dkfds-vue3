@@ -1,9 +1,9 @@
 <template>
   <button
     class="button mr-4"
-    :class="[`button-${variant}`, { disabled: isDisabled }]"
+    :class="[`button-${variant}`, { disabled: disabled }]"
     @click="emit('click', $event)"
-    :disabled="showSpinner || isDisabled">
+    :disabled="showSpinner || disabled">
     <div
       :class="{ 'inner-spinner-white': variant === 'primary' }"
       class="inner-spinner mr-4 icon-svg"
@@ -48,7 +48,7 @@ defineProps({
   /**
    * disabled
    * */
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

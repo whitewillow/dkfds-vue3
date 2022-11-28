@@ -1,31 +1,26 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <xfds-validate
-        :modelValue="product.beskrivelse"
-        :validations="[hasContent, charactersMinLength(10)]"
-      >
-        <xfds-form-textarea
-          label="Beskrivelse"
-          hint="Angiv beskrivelse af produktet"
-          placeholder="...Produktet er består af xxx"
-          v-model="product.beskrivelse"
-        />
-      </xfds-validate>
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <xfds-validate
+          :modelValue="product.beskrivelse"
+          :validations="[hasContent, charactersMinLength(10)]"
+        >
+          <xfds-form-textarea
+            label="Beskrivelse"
+            hint="Angiv beskrivelse af produktet"
+            placeholder="...Produktet er består af xxx"
+            v-model="product.beskrivelse"
+          />
+        </xfds-validate>
 
-      <fds-pre header="v-model" :json="product" />
+        <fds-pre header="v-model" :json="product" />
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Komponenten <code>xfds-form-textarea</code> er en samling af komponenter der giver en
-          samlet funktionalitet.
-        </p>
-        <p class="italic">Understøtter simpel validering, m.m.</p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="codeForm"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

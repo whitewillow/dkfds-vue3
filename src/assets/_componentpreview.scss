@@ -2,6 +2,11 @@
     border: 1px solid #747474;
     border-radius: 5px;
 
+    >div:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
     >.component-link {
         border-bottom: 1px solid #747474;
         font-weight: 500;
@@ -9,6 +14,14 @@
         border-top-right-radius: 5px;
         background-color: #f4f4f4;
         padding: 1em 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        >a {
+            display: flex;
+            font-weight: 200;
+        }
     }
 
     >.component-example {
@@ -16,15 +29,34 @@
     }
 
     >.component-description {
-        border-top: 2px dashed #dcdcdc;
         padding: 1em 1.5em;
+
+        table {
+            th {
+                font-weight: 200;
+
+                &:first-child {
+                    font-weight: 600;
+                }
+            }
+
+
+            margin-bottom: 24px;
+        }
     }
+
+    hr {
+        border-top: 2px dashed #dcdcdc;
+    }
+
+    //#d63384
 
     >.component-code {
         border-top: 1px solid #dcdcdc;
         background-color: #f4f4f4;
         font-size: 0.8em;
         border-top: 3px solid #d63384;
+        border-bottom: 3px solid #d63384;
         color: #d63384;
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         page-break-inside: avoid;
@@ -32,7 +64,5 @@
         padding: 0em 1.5em;
         display: block;
         word-wrap: break-word;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
     }
 }

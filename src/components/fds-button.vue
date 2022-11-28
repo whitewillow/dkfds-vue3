@@ -2,7 +2,7 @@
   <button
     class="button"
     :class="`button-${variant}`"
-    :disabled="isDisabled">
+    :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -28,7 +28,7 @@ defineProps({
   /**
    * Marker knap som disabled
    * */
-  isDisabled: {
+  disabled: {
     type: Boolean,
     default: false,
   },

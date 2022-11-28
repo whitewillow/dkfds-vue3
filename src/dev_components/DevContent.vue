@@ -2,7 +2,8 @@
   <div class="home">
     <fds-cookiemeddelelse
       :show="cookieAccept === null"
-      @accepter="cookieAccept = $event" />
+      @accept="cookieAccept = true"
+      @cancel="cookieAccept = false"/>
 
     <fds-pre
       header="Cookimeddelelse"
@@ -29,10 +30,10 @@
         <xfds-validate
           :modelValue="txtEfternavn"
           :validations="[hasContent, charactersMinLength(10)]"
-          #default="{ isValid, errorMessage }">
-          <fds-formgroup :is-valid="isValid">
+          #default="{ isValidWaitForDirty, errorMessage }">
+          <fds-formgroup :is-valid="isValidWaitForDirty">
             <fds-label> Efternavn (m. validering) </fds-label>
-            <fds-fejlmeddelelse v-if="!isValid">
+            <fds-fejlmeddelelse v-if="!isValidWaitForDirty">
               {{ errorMessage }}
             </fds-fejlmeddelelse>
             <fds-hint>Indtast efternavn</fds-hint>
@@ -65,9 +66,12 @@
       <div>
         <h2>Extra komponent</h2>
 
+        <fds-pre :json="{ v: validator.validatorItems }" />
+
         <xfds-validate
           :modelValue="txtAdresseValidering"
-          :validations="[hasContent, charactersMinLength(10)]">
+          :validations="[hasContent, charactersMinLength(10)]"
+          @validated="validator.addItem($event)">
           <xfds-form-input
             label="Adresse (m. Validering)"
             hint="Angiv gyldig adresse"
@@ -96,7 +100,7 @@
         <xfds-form-input
           label="Mobil nr."
           :modelValue="txtMobil"
-          isDisabled />
+          disabled />
 
         <xfds-form-input
           label="Mobil nr."
@@ -111,7 +115,8 @@
 
         <xfds-validate
           :modelValue="checkboxListForm"
-          :validations="[arrayHasItems]">
+          :validations="[arrayHasItems]"
+          @validated="validator.addItem($event)">
           <xfds-form-checkbox-list
             label="Checkbox form"
             v-model="checkboxListForm" />
@@ -202,15 +207,38 @@
         <fds-formgroup label="Single Checkbox">
           <fds-checkbox
             v-model="twoChecked"
-            isSmall>
+            size="small">
             Andet valg - small
           </fds-checkbox>
         </fds-formgroup>
 
         <fds-formgroup>
-          <fds-label>Vælg radio</fds-label>
+          <fds-label>Vælg radio (KERNE)</fds-label>
 
-          <fds-radio
+          <fds-radio-group v-model="radioValueKerne">
+            <fds-radio-item value="metal">
+              Metal
+            </fds-radio-item>
+            <fds-radio-item value="pop">
+              Pop
+              <template #content>
+                Pop er som musikgenre den mest udbredte musikstilart i moderne tid - væsentlig mere
+                udbredt end fx rock, jazz og folkemusik. Navnet er en afledning af ordet "populær"
+                (eng. "popular").
+              </template>
+            </fds-radio-item>
+            <fds-radio-item value="klassisk">
+              Klassist
+            </fds-radio-item>
+          </fds-radio-group>
+        </fds-formgroup>
+
+        <fds-pre :json="{ radioValueKerne }" />
+
+        <fds-formgroup>
+          <fds-label>Vælg radio (Extra)</fds-label>
+
+          <xfds-radio
             :list="radioOptions"
             v-model="radioVal">
             <template #hint>
@@ -219,7 +247,7 @@
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
-          </fds-radio>
+          </xfds-radio>
         </fds-formgroup>
 
         <fds-pre :json="{ radioVal }" />
@@ -227,14 +255,14 @@
         <fds-formgroup>
           <fds-label>Vælg radio toggle</fds-label>
 
-          <fds-radio-toggle v-model="toggleRadio">
+          <xfds-radio-toggle v-model="toggleRadio">
             <template #hint>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </template>
             <template v-slot:[`true`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
-          </fds-radio-toggle>
+          </xfds-radio-toggle>
         </fds-formgroup>
         <fds-pre :json="{ toggleRadio }" />
 
@@ -270,20 +298,8 @@
 
       <h2>Accordions</h2>
 
-      <fds-accordion-group #default="{ groupActive }">
-        <fds-accordion-item
-          :isActive="groupActive"
-          header="Accordion header med hint"
-          hint="Hint for header">
-          <p>
-            {{ groupActive }}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </fds-accordion-item>
-        <fds-accordion-item
-          :isActive="groupActive"
+      <fds-accordion-group>
+        <fds-accordion
           header="Accordion header med hint"
           hint="Hint for header">
           <p>
@@ -291,10 +307,18 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
+        <fds-accordion
+          header="Accordion header med hint"
+          hint="Hint for header">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
           header="Accordion header med Success"
           variant="success"
           variant-text="Success">
@@ -303,10 +327,9 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
           header="Accordion header med advarsel"
           variant="warning"
           variant-text="Advarsel">
@@ -315,10 +338,9 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
 
-        <fds-accordion-item
-          :isActive="groupActive"
+        <fds-accordion
           header="Accordion header med Fejl"
           variant="error">
           <p>
@@ -326,12 +348,12 @@
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </fds-accordion-item>
+        </fds-accordion>
       </fds-accordion-group>
 
       <h3>Single Accordions</h3>
 
-      <fds-accordion>
+      <fds-accordion class="mb-4">
         <template #header>
           <h4 class="">
             Accordion med custom header
@@ -358,50 +380,73 @@
 
       <h2>Component preview</h2>
 
-      <fds-component-preview header="Eksempel">
-        <xfds-validate
-          :modelValue="txtEfternavn"
-          :validations="[hasContent, charactersMinLength(10)]"
-          #default="{ isValid, errorMessage }">
-          <fds-formgroup :is-valid="isValid">
-            <fds-label> Efternavn </fds-label>
-            <fds-tooltip
-              class="ml-2"
-              text="Hjælpende <b>tekst</b>" />
-            <fds-hint>Indtast efternavn</fds-hint>
-            <fds-fejlmeddelelse v-if="!isValid">
-              {{ errorMessage }}
-            </fds-fejlmeddelelse>
+      <fds-preview header="Eksempel">
+        <fds-preview-item>
+          <xfds-validate
+            :modelValue="txtEfternavn"
+            :validations="[hasContent, charactersMinLength(10)]"
+            #default="{ isValid, errorMessage }">
+            <fds-formgroup :is-valid="isValid">
+              <fds-label> Efternavn </fds-label>
+              <fds-tooltip
+                class="ml-2"
+                text="Hjælpende <b>tekst</b>" />
+              <fds-hint>Indtast efternavn</fds-hint>
+              <fds-fejlmeddelelse v-if="!isValid">
+                {{ errorMessage }}
+              </fds-fejlmeddelelse>
 
-            <fds-input v-model="txtEfternavn"></fds-input>
-          </fds-formgroup>
-        </xfds-validate>
-        <template #description>
-          <p class="italic">
-            Dette eksempel viser hvordan man kan sammenkæde enkeltstående komponenter til en samlet
-            "komponent" der validere input for et tekstfelt.
-          </p>
-          <p class="italic">
-            Alle komponenter kan bruges enkeltstående - dvs du kunne eksempelvis udbytte
-            <code>xfds-validate</code> til egen komponent
-          </p>
-          <p class="italic">
-            Følgende komponenter er i brug:
-          </p>
-          <ul>
-            <li><code>xfds-validate</code></li>
-            <li><code>fds-formgroup</code></li>
-            <li><code>fds-label</code></li>
-            <li><code>fds-fejlmeddelelse</code></li>
-            <li><code>fds-hint</code></li>
-            <li><code>fds-input</code></li>
-            <li><code>fds-tooltip</code></li>
-          </ul>
-        </template>
-        <template #code>
+              <fds-input v-model="txtEfternavn"></fds-input>
+            </fds-formgroup>
+          </xfds-validate>
+        </fds-preview-item>
+
+        <fds-preview-code>
           <pre v-text="codeExample" />
-        </template>
-      </fds-component-preview>
+        </fds-preview-code>
+        <fds-preview-item>
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th>Props</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>modelValue</code></td>
+                <td><code>string, number, array</code></td>
+                <td><code>null</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>validations</code></td>
+                <td><code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code></td>
+                <td>
+                  <code>
+                    [(input: unknown) => { if (!input) { return 'Indtast data'; } return null;
+                    }]</code>
+                </td>
+                <td>Et array af valideringsmetoder</td>
+              </tr>
+              <tr>
+                <td><code>dirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Om feltet er blevet berørt</td>
+              </tr>
+              <tr>
+                <td><code>useAutoDirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
+              </tr>
+            </tbody>
+          </table>
+        </fds-preview-item>
+      </fds-preview>
 
       <hr />
       <h2>Filer</h2>
@@ -547,10 +592,38 @@
       <hr />
       <h2>Trinindikator</h2>
 
-      <p>Afventer</p>
-      <fds-trinindikator
+      <p>Kerne</p>
+
+      <fds-trinindikator-group>
+        <template #header>
+          Trin {{ trinManuelNavId }} af 4
+        </template>
+        <fds-trinindikator-item
+          id="1"
+          :active="trinManuelNavId === '1'"
+          icon="done"
+          hint="Et hint"
+          @navigate="trinManuelNavId = $event"
+          :index="1">
+          Første
+        </fds-trinindikator-item>
+        <fds-trinindikator-item
+          id="2"
+          :active="trinManuelNavId === '2'"
+          hint="Et hint"
+          @navigate="trinManuelNavId = $event"
+          :index="2">
+          Anden
+        </fds-trinindikator-item>
+      </fds-trinindikator-group>
+
+      <fds-pre :json="{ trinManuelNavId }"></fds-pre>
+
+      <p>Extra</p>
+      <xfds-trinindikator
         v-model="trin"
-        @navigate="trinNavKey = $event"></fds-trinindikator>
+        @navigate="trinNavKey = $event">
+      </xfds-trinindikator>
 
       <fds-pre :json="{ trinNavKey }"></fds-pre>
       <hr />
@@ -626,7 +699,7 @@
               @navigate="manuelIdClick = $event"
               active>
               Beta
-              <template #content>
+              <template #submenu>
                 <fds-menu variant="submenu">
                   <fds-menu-item
                     id="beta/1"
@@ -671,7 +744,7 @@
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
-          :isActive="true"
+          :selected="fanebladManueltId === '1'"
           @click="fanebladManueltId = $event"
           id="1">
           <h2>Fane 1</h2>
@@ -680,6 +753,7 @@
 
         <fds-faneblad-item
           @click="fanebladManueltId = $event"
+          :selected="fanebladManueltId === '2'"
           id="2">
           <template #header>
             Template Header
@@ -698,186 +772,364 @@
       <fds-pre :json="{ fanebladManueltId }" />
 
       <hr class="my-6" />
-      <h3>Faneblade - automatiseret</h3>
-
-      <xfds-faneblade :list="faneBlade">
-        <template v-slot:[`suppe`]>
-          <h2>Suppe</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-        <template v-slot:[`dessert`]>
-          <h2>Dessert</h2>
-          <p>
-            Autogeneret faner ud fra liste, hvor man kan lave tilhørende template refereret med
-            "key"
-
-            <fds-pre>
-              {{`${`<template v-slot:[\`dessert\`]> Mit Indhold </template>
-              `}`}}
-            </fds-pre>
-          </p>
-        </template>
-        <template v-slot:[`kod`]>
-          <h2>Kød</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-        <template v-slot:[`fisk`]>
-          <h2>Fisk</h2>
-          <p>
-            Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
-            dolor et augue. Ut lorem massa, consequat ut orci sit amet, maximus dictum orci. Mauris
-            pharetra nunc sed augue bibendum semper. Donec in cursus orci. Ut sed posuere elit, quis
-            semper turpis. Curabitur malesuada nisi nec nisl facilisis ornare. Praesent vestibulum,
-            velit id sollicitudin auctor, ipsum lacus auctor nisl, in lacinia sem massa eget urna.
-          </p>
-        </template>
-      </xfds-faneblade>
-      <hr class="my-6" />
 
       <h2>Cards</h2>
 
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card
-            header="Overskrift"
-            subheader="Understøttende tekst">
-            <p>
-              In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
-              purus lectus vitae tortor.
-            </p>
-            <template #actions>
-              <button class="button button-secondary">
-                Sekundærknap
-              </button>
-            </template>
-          </fds-card>
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card
-            header="Overskrift"
-            class="card-align-height">
-            <template #content>
-              <div class="align-text-center bg-info-light p-6">
-                <h2 class="h5 mb-5">
-                  Lorem ipsum fordeling
-                </h2>
-                <div class="mt-3 row">
-                  <div class="col-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-label="80%"
-                      class="w-percent-30 w-percent-md-70"
-                      viewBox="0 0 50 100">
-                      <rect
-                        width="50"
-                        height="100"
-                        fill="#eefafa" />
-                      <rect
-                        y="20"
-                        width="50"
-                        height="80"
-                        fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
-                      København
-                    </span>
-                  </div>
-                  <div class="col-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-label="36%"
-                      class="w-percent-30 w-percent-md-70"
-                      viewBox="0 0 50 100">
-                      <rect
-                        width="50"
-                        height="100"
-                        fill="#eefafa" />
-                      <rect
-                        y="64"
-                        width="50"
-                        height="36"
-                        fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
-                      Hele landet
-                    </span>
-                  </div>
+      <fds-card-group>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          class="card-align-height">
+          <template #content>
+            <div class="align-text-center bg-info-light p-6">
+              <h2 class="h5 mb-5">
+                Lorem ipsum fordeling
+              </h2>
+              <div class="mt-3 row">
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="80%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="20"
+                      width="50"
+                      height="80"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    København
+                  </span>
+                </div>
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="36%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="64"
+                      width="50"
+                      height="36"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    Hele landet
+                  </span>
                 </div>
               </div>
-            </template>
-            <p>
-              In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
-              purus lectus vitae tortor.
-            </p>
-          </fds-card>
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-6 mt-md-0">
-          <fds-card class="card-align-height">
-            <template #custom>
-              <div class="card-content">
-                <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
-                <div class="row bg-success-light p-6">
-                  <div class="col-12 align-text-left">
-                    <h2 class="h3 mb-0">
-                      3 ofte stillede spørgsmål
-                    </h2>
-                    <ul class="mt-0 noindent-list">
-                      <li>In viverra faucibus lorem?</li>
-                      <li>Phasellus posuere neque?</li>
-                      <li>Nullam quis nunc dui?</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-header">
-                <h2 class="header-title">
-                  Header
-                </h2>
-                <p class="sub-header">
-                  Understøttende tekst
-                </p>
-              </div>
+            </div>
+          </template>
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+      </fds-card-group>
 
-              <div class="card-footer card-action">
-                <div class="action-buttons">
-                  <button class="button button-secondary">
-                    Sekundærknap
-                  </button><button class="button button-tertiary">
-                    Tertiærknap
-                  </button>
+      <h2>Card DECK</h2>
+      <fds-card-group type="deck">
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          class="card-align-height">
+          <template #content>
+            <div class="align-text-center bg-info-light p-6">
+              <h2 class="h5 mb-5">
+                Lorem ipsum fordeling
+              </h2>
+              <div class="mt-3 row">
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="80%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="20"
+                      width="50"
+                      height="80"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    København
+                  </span>
                 </div>
-                <div class="action-links">
-                  <ul class="nobullet-list">
-                    <li>
-                      <a
-                        href="javascript:void(0);"
-                        class="default link state">Et link til et sted i løsningen</a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0);"
-                        class="icon-link">Et link til et sted uden for løsningen<svg
-                        class="icon-svg"
-                        aria-hidden="true"
-                        focusable="false"
-                        tabindex="-1">
-                        <use xlink:href="#open-in-new"></use></svg></a>
-                    </li>
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="36%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="64"
+                      width="50"
+                      height="36"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    Hele landet
+                  </span>
+                </div>
+              </div>
+            </div>
+          </template>
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+      </fds-card-group>
+
+      <h2>Card COLUMNS</h2>
+      <fds-card-group type="columns">
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          class="card-align-height">
+          <template #content>
+            <div class="align-text-center bg-info-light p-6">
+              <h2 class="h5 mb-5">
+                Lorem ipsum fordeling
+              </h2>
+              <div class="mt-3 row">
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="80%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="20"
+                      width="50"
+                      height="80"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    København
+                  </span>
+                </div>
+                <div class="col-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="36%"
+                    class="w-percent-30 w-percent-md-70"
+                    viewBox="0 0 50 100">
+                    <rect
+                      width="50"
+                      height="100"
+                      fill="#eefafa" />
+                    <rect
+                      y="64"
+                      width="50"
+                      height="36"
+                      fill="#0868AC" /></svg><span class="small-text mt-2 bold d-block">
+                    Hele landet
+                  </span>
+                </div>
+              </div>
+            </div>
+          </template>
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card
+          header="Overskrift"
+          subheader="Understøttende tekst">
+          <p>
+            In sollicitudin, nulla sit amet facilisis euismod, ex ex hendrerit eros, et egestas
+            purus lectus vitae tortor.
+          </p>
+          <template #actions>
+            <button class="button button-secondary">
+              Sekundærknap
+            </button>
+          </template>
+        </fds-card>
+        <fds-card class="card-align-height">
+          <template #custom>
+            <div class="card-content">
+              <!-- Alt i denne div er blot et eksempel. Visse klasser er ikke en del af FDS. -->
+              <div class="row bg-success-light p-6">
+                <div class="col-12 align-text-left">
+                  <h2 class="h3 mb-0">
+                    3 ofte stillede spørgsmål
+                  </h2>
+                  <ul class="mt-0 noindent-list">
+                    <li>In viverra faucibus lorem?</li>
+                    <li>Phasellus posuere neque?</li>
+                    <li>Nullam quis nunc dui?</li>
                   </ul>
                 </div>
               </div>
-            </template>
-          </fds-card>
-        </div>
-      </div>
+            </div>
+            <div class="card-header">
+              <h2 class="header-title">
+                Header
+              </h2>
+              <p class="sub-header">
+                Understøttende tekst
+              </p>
+            </div>
+
+            <div class="card-footer card-action">
+              <div class="action-buttons">
+                <button class="button button-secondary">
+                  Sekundærknap
+                </button><button class="button button-tertiary">
+                  Tertiærknap
+                </button>
+              </div>
+              <div class="action-links">
+                <ul class="nobullet-list">
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      class="default link state">Et link til et sted i løsningen</a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      class="icon-link">Et link til et sted uden for løsningen<svg
+                      class="icon-svg"
+                      aria-hidden="true"
+                      focusable="false"
+                      tabindex="-1">
+                      <use xlink:href="#open-in-new"></use></svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </template>
+        </fds-card>
+      </fds-card-group>
       <hr class="my-8" />
 
       <h2>Toast</h2>
@@ -889,52 +1141,49 @@
       <h2>Modal</h2>
 
       <fds-modal
-        :show="showModal"
+        ref="refModal"
         header="Min Modal"
-        focusId="modalButton"
-        @close="showModal = false">
+        closeable>
         <p>Eksempel på et modal vindue</p>
         <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
+          Det er muligt at skifte tekster på nedestående knapper <code>acceptText, cancelText</code>
         </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+        <p>
+          Events <code>cancel, close, accept</code> emittes ved hhv klik på godkend og annuller/luk
+          knap
+        </p>
       </fds-modal>
-      <fds-pre :json="{ showModal }" />
 
       <fds-button
-        @click="showModal = !showModal"
+        @click="(refModal as any)?.showModal()"
         id="modalButton">
         Vis Modal
       </fds-button>
 
       <h3>Custom footer</h3>
       <fds-modal
-        :show="showModalCustomFooter"
-        header="Egen footer modal"
-        focusId="showModalCustomFooter"
-        @close="showModalCustomFooter = false">
+        ref="refModalCustomFooter"
+        header="Egen footer modal">
         <p>Eksempel på et modal vindue</p>
-        <p>
-          Det er muligt at skifte tekster på nedestående knapper <code>okTekst, annullerTekst</code>
-        </p>
-        <p>Events <code>ok, close</code> emittes ved hhv klik på ok og annuller/luk knap</p>
+        <p>med egen footer</p>
         <template #footer>
           <fds-button
             id="showModalCustomFooter"
+            @click="(refModalCustomFooter as any).hideModal()"
             variant="error">
             Godkend
           </fds-button>
           <fds-button
             variant="secondary"
-            @click="showModalCustomFooter = !showModalCustomFooter"
+            @click="(refModalCustomFooter as any).hideModal()"
             id="showModalCustomFooter">
             Nej takker
           </fds-button>
         </template>
       </fds-modal>
-      <fds-pre :json="{ showModalCustomFooter }" />
+
       <fds-button
-        @click="showModalCustomFooter = !showModalCustomFooter"
+        @click="(refModalCustomFooter as any).showModal()"
         id="showModalCustomFooter">
         Vis Footer Modal
       </fds-button>
@@ -1031,7 +1280,7 @@
 
       <fds-formgroup>
         <fds-label> Indsendelsesfrist </fds-label>
-        <fds-dato-angivelse
+        <fds-dato-felter
           v-model="datoAngiv"
           @valid="datoAngivValid = $event" />
       </fds-formgroup>
@@ -1113,7 +1362,8 @@
         variant="success"
         class="w-percent-lg-80"
         header="Godt gået"
-        canClose>
+        show-icon
+        closeable>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum corrupti
         architecto? Accusantium obcaecati aliquam totam voluptas perspiciatis. Voluptate animi quas
         molestiae natus, hic eius ab architecto dolorum placeat.
@@ -1121,8 +1371,7 @@
 
       <fds-alert
         variant="warning"
-        class="w-percent-lg-80"
-        canClose>
+        class="w-percent-lg-80">
         <template #header>
           <p class="alert-heading d-flex justify-content-start">
             Fejl <i class="ml-4 icon icon-home" />
@@ -1140,10 +1389,6 @@
           <li>Egen liste</li>
         </ul>
       </fds-fejlopsummering>
-
-      <fds-fejlopsummering
-        class="w-percent-lg-80"
-        :list="fejlOpsummering"></fds-fejlopsummering>
 
       <p>
         <fds-button @click="klikEvent">
@@ -1246,8 +1491,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-
+import { ComponentPublicInstance, computed, ref } from 'vue';
+import ValidatorService, { ValidatorItem } from '@/service/validator.service';
 import {
   FdsErrorListItem,
   FdsOptionItem,
@@ -1259,6 +1504,7 @@ import {
   FdsTabItem,
   FdsLanguageItem,
 } from '@/model/fds.model';
+import FdsModal from '@/components/fds-modal.vue';
 import {
   arrayHasItems,
   charactersMinLength,
@@ -1277,14 +1523,17 @@ const genLargeArray = computed((): Array<{ id: string; indhold: string }> => {
   }));
 });
 
+const validator = ref(new ValidatorService());
 const cookieAccept = ref<boolean | null>(null);
 const showToast = ref(false);
 const datoValg = ref('2022-12-01');
 const datoValgValid = ref(true);
 const datoAngiv = ref('2022-12-01');
 const datoAngivValid = ref(true);
-const showModal = ref(false);
-const showModalCustomFooter = ref(false);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const refModal = ref(null);
+const refModalCustomFooter = ref(null);
+
 const progress = ref(46);
 const fileInput = ref<FdsFileInputModel | null>(null);
 const txtFornavn = ref('');
@@ -1301,6 +1550,7 @@ const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
 const twoChecked = ref(false);
 const radioVal = ref('');
+const radioValueKerne = ref('pop');
 const radioValForm = ref('');
 const toggleswitch = ref(false);
 
@@ -1407,17 +1657,6 @@ const dropdownOptions = ref<FdsOptionItem[]>([
   },
 ]);
 
-const fejlOpsummering = ref<FdsErrorListItem[]>([
-  {
-    anchor: 'anchor',
-    text: 'Datoen for udløbsdato på dit pas bør inkludere årstal',
-  },
-  {
-    anchor: 'anchor',
-    text: 'Indtast postnummer - fx 4000',
-  },
-]);
-
 const filListe = ref<FdsFileModel[]>([
   {
     id: 'a',
@@ -1508,6 +1747,7 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
   },
 ] as unknown as FdsNavigationItem[]);
 
+const trinManuelNavId = ref('1');
 const trinNavKey = '';
 const trin = ref<FdsNavigationItem[]>([
   {
@@ -1565,7 +1805,7 @@ const sideTabs = ref<FdsNavigationItem[]>([
   },
 ] as unknown as FdsNavigationItem[]);
 
-const fanebladManueltId = ref('');
+const fanebladManueltId = ref('1');
 const faneBlade: FdsTabItem[] = [
   {
     key: 'suppe',

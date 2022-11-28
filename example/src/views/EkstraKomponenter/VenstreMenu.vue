@@ -1,26 +1,22 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <div class="row">
-        <div class="col-4">
-          <xfds-menu v-model="manuelSideNavList" @navigate="navigatedKey = $event" />
+    <fds-preview header="Eksempel">
+      <fds-preview-item>
+        <div class="row">
+          <div class="col-4">
+            <xfds-menu v-model="manuelSideNavList" @navigate="navigatedKey = $event" />
+          </div>
+          <div class="col">
+            <fds-pre :json="{ navigatedKey }" />
+            <fds-pre :json="manuelSideNavList" />
+          </div>
         </div>
-        <div class="col">
-          <fds-pre :json="{ navigatedKey }" />
-          <fds-pre :json="manuelSideNavList" />
-        </div>
-      </div>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          Udvidelse af <code>fds-menu</code> men tager imod en list og angiver selv hvilket
-          <code>FdsNavigationItem</code> der er aktiv
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 

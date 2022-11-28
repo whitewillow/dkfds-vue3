@@ -7,12 +7,12 @@ import { FdsCheckboxItem } from '@/model/fds.model';
  */
 export function validateAllErrorMessage (...functions: Array<(x?: unknown) => string | null>) {
   return (x: unknown) => {
-    const messages = functions.map((f) => f(x)).filter((msg) => msg);
+    const messages = functions.map((f) => f(x)).filter((msg) => msg !== null) as string[];
 
     if (messages && messages.length > 0) {
-      return messages[0];
+      return messages;
     }
-    return null;
+    return [];
   };
 }
 

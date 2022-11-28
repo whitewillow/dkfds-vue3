@@ -1,22 +1,18 @@
 <template>
   <section>
-    <fds-component-preview header="Eksempel">
-      <fds-toggle-switch v-model="toggleswitch" />
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/toggle/">
+      <fds-preview-item>
+        <fds-toggle-switch v-model="toggleswitch" />
 
-      <div>
-        <fds-pre header="v-model" :json="{ toggleswitch }" />
-      </div>
+        <div>
+          <fds-pre header="v-model" :json="{ toggleswitch }" />
+        </div>
+      </fds-preview-item>
 
-      <template #description>
-        <p class="italic">
-          En toggle switch er en digital tænd/sluk-knap. Til forskel fra en radioknap eller tjekboks
-          træder valget i kraft i det øjeblik brugerne interagerer med komponenten.
-        </p>
-      </template>
-      <template #code>
+      <fds-preview-code>
         <pre v-text="code"></pre>
-      </template>
-    </fds-component-preview>
+      </fds-preview-code>
+    </fds-preview>
   </section>
 </template>
 
