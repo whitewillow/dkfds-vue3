@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/funktionslink/">
       <fds-preview-item>
         <fds-funktionslink title="Klik for event" @click="handleFunkClick">
           Funktionslink

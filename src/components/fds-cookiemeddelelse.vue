@@ -31,14 +31,14 @@
             <li>
               <fds-button
                 variant="secondary"
-                @click="$emit('accepter', true)">
+                @click="$emit('accept', true)">
                 Accepter cookies
               </fds-button>
             </li>
             <li class="ml-4">
               <fds-button
                 variant="secondary"
-                @click="$emit('accepter', false)">
+                @click="$emit('cancel', true)">
                 Nej tak til cookies
               </fds-button>
             </li>

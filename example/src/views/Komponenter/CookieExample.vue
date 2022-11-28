@@ -3,9 +3,13 @@
     <fds-alert variant="info" header="Under udvikling" closeable
       >Cookiemeddelelse er stadig under udvikling, mindre ændringer kan forkomme
     </fds-alert>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/cookiemeddelelse/">
       <fds-preview-item>
-        <fds-cookiemeddelelse @accepter="cookieAccept = $event" class="example_relative">
+        <fds-cookiemeddelelse
+          @accept="cookieAccept = true"
+          @cancel="cookieAccept = false"
+          class="example_relative"
+        >
           <template #header>
             <div class="h3 mt-0 mb-3" id="cookie-message-heading">
               Fortæl os om du accepterer cookies
@@ -52,7 +56,7 @@
         <table class="table table--compact">
           <thead>
             <tr>
-              <th>Template</th>
+              <th>Slots</th>
               <th>Type</th>
             </tr>
           </thead>
@@ -67,6 +71,25 @@
             </tr>
           </tbody>
         </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Events</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>@accept</code></td>
+              <td>Klik Ja til cookie</td>
+            </tr>
+            <tr>
+              <td><code>@cancel</code></td>
+              <td>Klik Nej til cookie</td>
+            </tr>
+          </tbody>
+        </table>
       </fds-preview-item>
     </fds-preview>
   </section>
@@ -78,7 +101,7 @@ import { ref } from 'vue';
 const cookieAccept = ref<boolean | null>(null);
 
 const code = `
-<fds-cookiemeddelelse @accepter="cookieAccept = $event">
+<fds-cookiemeddelelse @accept="cookieAccept = $event">
   <template #header>
     <div class="h3 mt-0 mb-3" id="cookie-message-heading">
       Fortæl os om du accepterer cookies
@@ -93,7 +116,8 @@ const code = `
 // Eller
 
 <fds-cookiemeddelelse 
-  @accepter="cookieAccept = $event"
+  @accept="cookieAccept = true"
+  @cancel="cookieAccept = false"
   header="Fortæl os om du accepterer cookies">
   <p class="mt-0" id="cookie-message-text">
     Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
@@ -104,7 +128,8 @@ const code = `
 // Eller egne knapper
 
 <fds-cookiemeddelelse 
-  @accepter="cookieAccept = $event"
+  @accept="cookieAccept = true"
+  @cancel="cookieAccept = false"
   header="Fortæl os om du accepterer cookies">
   <p class="mt-0" id="cookie-message-text">
     Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
@@ -121,9 +146,6 @@ const code = `
     </fds-button>
   </template>
 </fds-cookiemeddelelse>
-
-
-
 `;
 </script>
 

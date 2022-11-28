@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Standard modal">
+    <fds-preview header="Standard modal" href="https://designsystem.dk/komponenter/modal/">
       <fds-preview-item>
         <fds-modal ref="refModal" header="Min Modal" closeable>
           <p>Eksempel på et modal vindue</p>

@@ -1,55 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Accordion gruppe">
-      <fds-preview-item>
-        <fds-accordion-group>
-          <fds-accordion header="Accordion header med hint" hint="Hint for header">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </fds-accordion>
-
-          <fds-accordion
-            header="Accordion header med Success"
-            variant="success"
-            variant-text="Success"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </fds-accordion>
-
-          <fds-accordion
-            header="Accordion header med advarsel"
-            variant="warning"
-            variant-text="Advarsel"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </fds-accordion>
-
-          <fds-accordion header="Accordion header med Fejl" variant="error">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </fds-accordion>
-        </fds-accordion-group>
-      </fds-preview-item>
-      <fds-preview-code>
-        <pre v-text="accGroupCode"></pre>
-      </fds-preview-code>
-    </fds-preview>
-
-    <fds-preview header="Single Accordions">
+    <fds-preview header="Single Accordions" href="https://designsystem.dk/komponenter/accordions/">
       <fds-preview-item>
         <fds-accordion class="mb-4">
           <template #header>
@@ -130,7 +81,7 @@
         <table class="table table--compact">
           <thead>
             <tr>
-              <th>Template</th>
+              <th>Slots</th>
               <th>Default</th>
               <th>Beskrivelse</th>
             </tr>
@@ -149,6 +100,55 @@
           </tbody>
         </table>
       </fds-preview-item>
+    </fds-preview>
+
+    <fds-preview header="Accordion gruppe">
+      <fds-preview-item>
+        <fds-accordion-group>
+          <fds-accordion header="Accordion header med hint" hint="Hint for header">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
+
+          <fds-accordion
+            header="Accordion header med Success"
+            variant="success"
+            variant-text="Success"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
+
+          <fds-accordion
+            header="Accordion header med advarsel"
+            variant="warning"
+            variant-text="Advarsel"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
+
+          <fds-accordion header="Accordion header med Fejl" variant="error">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </fds-accordion>
+        </fds-accordion-group>
+      </fds-preview-item>
+      <fds-preview-code>
+        <pre v-text="accGroupCode"></pre>
+      </fds-preview-code>
     </fds-preview>
   </section>
 </template>

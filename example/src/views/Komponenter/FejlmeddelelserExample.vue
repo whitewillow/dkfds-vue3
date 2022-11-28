@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/fejlmeddelelser/">
       <fds-preview-item>
         <fds-formgroup :is-valid="false">
           <fds-label> Fornavn </fds-label>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tags/">
       <fds-preview-item>
         <fds-tag>Bornholm</fds-tag>
         <fds-tag icon="highlight-off"> Sjælland </fds-tag>

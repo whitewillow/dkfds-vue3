@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/fil-upload/">
       <fds-formgroup>
         <fds-label> Vedhæft fil </fds-label>
         <fds-file-upload @upload="fileInput = $event"></fds-file-upload>

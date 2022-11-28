@@ -1,6 +1,9 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-alert variant="info" header="Under udvikling" closeable>
+      Brødkrumme vil på sigt indgår som en del af <code>fds-header</code> layout
+    </fds-alert>
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/broedkrumme/">
       <fds-preview-item>
         <nav class="breadcrumbs container" aria-label="Brødkrumme">
           <ol class="breadcrumbs__list">

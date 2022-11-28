@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Faneblade Manuelt">
+    <fds-preview header="Faneblade Manuelt" href="https://designsystem.dk/komponenter/faneblade/">
       <fds-preview-item>
         <fds-faneblade>
           <fds-faneblad-item

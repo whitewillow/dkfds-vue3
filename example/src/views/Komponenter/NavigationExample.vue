@@ -1,6 +1,9 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/header/#standard-header-med-navigation"
+    >
       <fds-preview-item>
         <p>Nedestående er et eksempel navigation med standard komponenter og med overflow.</p>
         <p>

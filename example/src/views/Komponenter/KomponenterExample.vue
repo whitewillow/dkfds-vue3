@@ -1,14 +1,19 @@
 <template>
   <section>
-    <p class="font-lead">
-      Komponenterne i designsystemet er genanvendelige enheder, der kan sættes sammen på mange
-      forskellige måder, i forskellige mønstre, for at bygge de selvbetjeningsløsninger, dine
-      brugere har brug for.
-    </p>
-    <p>
-      Ved at anvende komponenterne bliver det let og hurtigt at bygge løsninger, som er konsistente
-      og logiske for brugeren på tværs af borger.dk og Virk.
-    </p>
+    <p class="font-lead">Oversigt over DKFDS-Vue 3 Kerne Komponenterne</p>
+    <p>Gennemse kerne komponenter ved at klikke på deres respektive navne i menu.</p>
+    <p>Under hvert komponent vil du kunne se:</p>
+    <ul>
+      <li>Eksempel</li>
+      <li>Kode eksempel</li>
+      <li>Slots</li>
+      <li>Events</li>
+      <li>Props</li>
+      <li>Metoder</li>
+      <li>Metoder</li>
+      <li>Inject</li>
+      <li>Provide</li>
+    </ul>
   </section>
 </template>
 

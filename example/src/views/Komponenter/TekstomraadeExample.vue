@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Nummer tekstfelt">
+    <fds-preview header="Nummer tekstfelt" href="https://designsystem.dk/komponenter/tekstomraade/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label> Begrundelse </fds-label>

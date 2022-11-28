@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/beskeder/">
       <fds-preview-item>
         <fds-alert variant="info" header="Informativ besked" closeable>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste possimus voluptatum

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/skip-link/">
       <fds-preview-item>
         <a href="#main-content" class="skipnav" style="position: relative; top: inherit"
           >Gå til sidens indhold</a

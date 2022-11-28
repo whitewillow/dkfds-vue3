@@ -1,7 +1,7 @@
 <template>
   <section>
     <fds-preview header="Eksempel">
-      <fds-preview-item>
+      <fds-preview-item href="https://designsystem.dk/komponenter/inputfelter/">
         <fds-formgroup>
           <fds-label> Navn </fds-label>
           <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>

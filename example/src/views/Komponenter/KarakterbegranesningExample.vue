@@ -1,6 +1,9 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/inputfelter/#karakterbegraensning"
+    >
       <fds-formgroup>
         <fds-label> CVR nr. </fds-label>
         <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>

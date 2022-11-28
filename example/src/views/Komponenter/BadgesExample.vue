@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/badges/">
       <fds-preview-item>
         <p>
           <fds-badge class="mr-4"> Normal </fds-badge>

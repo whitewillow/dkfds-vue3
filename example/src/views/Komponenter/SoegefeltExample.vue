@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Søg knap">
+    <fds-preview header="Søg knap" href="https://designsystem.dk/komponenter/search/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label id="searchtxt">Input med knap ikon</fds-label>

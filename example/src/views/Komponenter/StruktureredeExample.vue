@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/strukturerede-lister/">
       <fds-preview-item>
         <fds-strukturerede-liste header="Navn"> Kirsten Mønster Jensen </fds-strukturerede-liste>
         <fds-strukturerede-liste>

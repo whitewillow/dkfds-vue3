@@ -2,7 +2,8 @@
   <div class="home">
     <fds-cookiemeddelelse
       :show="cookieAccept === null"
-      @accepter="cookieAccept = $event" />
+      @accept="cookieAccept = true"
+      @cancel="cookieAccept = false"/>
 
     <fds-pre
       header="Cookimeddelelse"
@@ -1279,7 +1280,7 @@
 
       <fds-formgroup>
         <fds-label> Indsendelsesfrist </fds-label>
-        <fds-dato-angivelse
+        <fds-dato-felter
           v-model="datoAngiv"
           @valid="datoAngivValid = $event" />
       </fds-formgroup>

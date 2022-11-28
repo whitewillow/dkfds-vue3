@@ -5,7 +5,7 @@
       generisk nok til at bruge i denne sammenhæng
     </fds-alert>
 
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/datovaelger/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label> Fødselsdag </fds-label>

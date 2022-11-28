@@ -4,6 +4,13 @@
     :aria-label="header">
     <div class="component-link">
       {{ header }}
+
+      <a
+        :href="href"
+        target="designsystem"
+        v-if="href">
+        {{ linkText }}
+      </a>
     </div>
     <slot />
   </div>
@@ -15,6 +22,14 @@ defineProps({
   header: {
     type: String,
     default: null,
+  },
+  href: {
+    type: String,
+    default: null,
+  },
+  linkText: {
+    type: String,
+    default: 'Design System',
   },
 });
 </script>

@@ -47,7 +47,6 @@ import FdsModal from '@/components/fds-modal.vue';
 import FdsToastContainer from '@/components/fds-toast-container.vue';
 import FdsToast from '@/components/fds-toast.vue';
 
-import FdsDatoAngivelse from '@/components/fds-dato-angivelse.vue';
 import FdsDatoVaelger from '@/components/fds-dato-vaelger.vue';
 
 import FdsList from '@/components/fds-list.vue';
@@ -95,6 +94,7 @@ import FdsPreviewExample from '@/components/fds-preview-example.vue';
 import FdsPreviewItem from '@/components/fds-preview-item.vue';
 import FdsPreviewCode from '@/components/fds-preview-code.vue';
 import FdsPreview from '@/components/fds-preview.vue';
+import FdsDatoFelter from '@/components/fds-dato-felter.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -109,7 +109,7 @@ function install (app: App): void {
 
   app.component('fds-overflow-menu', FdsOverflowMenu);
   app.component('fds-strukturerede-liste', FdsStruktureredeListe);
-  app.component('fds-dato-angivelse', FdsDatoAngivelse);
+  app.component('fds-dato-felter', FdsDatoFelter);
   app.component('fds-dato-vaelger', FdsDatoVaelger);
 
   app.component('fds-toast-container', FdsToastContainer);
@@ -207,7 +207,7 @@ export {
   FdsTrinindikatorGroup,
   FdsTilbageLink,
   FdsPaginering,
-  FdsDatoAngivelse,
+  FdsDatoFelter,
   FdsDatoVaelger,
   FdsTextarea,
   FdsInputNumber,

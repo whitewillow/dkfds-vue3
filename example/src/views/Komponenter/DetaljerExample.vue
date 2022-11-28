@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/detaljer/">
       <fds-preview-item>
         <fds-detaljer header="Mine detaljer">
           <p>
@@ -41,7 +41,7 @@
         <table class="table table--compact">
           <thead>
             <tr>
-              <th>Template</th>
+              <th>Slots</th>
               <th>Type</th>
             </tr>
           </thead>

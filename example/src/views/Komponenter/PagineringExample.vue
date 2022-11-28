@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/paginering/">
       <fds-preview-item>
         <fds-paginering
           :list="largeArray"

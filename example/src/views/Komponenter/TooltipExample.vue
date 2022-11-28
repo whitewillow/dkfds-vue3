@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tooltip/">
       <fds-preview-item>
         <fds-tooltip> Hjælpende <b>tekst</b> </fds-tooltip>
       </fds-preview-item>

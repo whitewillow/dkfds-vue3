@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Tekstfelt">
+    <fds-preview header="Tekstfelt" href="https://designsystem.dk/komponenter/inputfelter/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label id="formid"> Fornavn </fds-label>

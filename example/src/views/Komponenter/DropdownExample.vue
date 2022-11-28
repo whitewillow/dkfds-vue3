@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/dropdown/">
       <fds-preview-item>
         <fds-dropdown v-model="dropdownVal">
           <option value="Manuel">Manuel</option>

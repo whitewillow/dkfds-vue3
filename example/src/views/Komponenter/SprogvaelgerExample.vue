@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/sprogvaelger/">
       <fds-preview-item>
         <div class="container page-container">
           <fds-sprogvaelger

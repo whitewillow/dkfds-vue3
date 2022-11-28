@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/knapper/">
       <fds-preview-item>
         <p>
           <fds-button @click="klikEvent"> Gå til næste </fds-button>

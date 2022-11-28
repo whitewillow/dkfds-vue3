@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/cards/">
       <fds-preview-item>
         <fds-card header="Overskrift">
           <p>
@@ -43,7 +43,7 @@
         <table class="table table--compact">
           <thead>
             <tr>
-              <th>Template</th>
+              <th>Slots</th>
               <th>Default</th>
               <th>Beskrivelse</th>
             </tr>

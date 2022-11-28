@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Upload">
+    <fds-preview header="Upload" href="https://designsystem.dk/komponenter/fil-upload/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label>Vedhæft fil</fds-label>

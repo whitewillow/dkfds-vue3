@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/trinindikator/">
       <fds-preview-item>
         <fds-trinindikator-group>
           <template #header> Trin {{ trinNavigationsId }} af 4 </template>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tjekboks/">
       <fds-preview-item>
         <fds-checkbox v-model="oneChecked" class="mt-2">
           Et valg

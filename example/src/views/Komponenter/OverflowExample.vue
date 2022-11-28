@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/overflowmenu/">
       <fds-preview-item>
         <fds-overflow-menu header="Overflow menu">
           <ul class="overflow-list">

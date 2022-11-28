@@ -15,6 +15,7 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
 - fds-badge - prop navne
 - fds-accordian - prop navne
 - fds-card-group - grupper cards
+- fds-datoangivelse omdøbt til fds-dato-felter
 - fds-modal omskrevet til at bruge native HTML Dialog element
 - div boolean prop navne rettet til at ligne html attr: eg. disabled/active/expanded/selected 
 - fds-fejlopsummering, fjernet list - ikke gennemtænkt og ikke kerne funktion

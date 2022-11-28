@@ -1,6 +1,6 @@
 <template>
   <section>
-    <fds-preview header="Eksempel">
+    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/venstremenu/">
       <fds-preview-item>
         <div class="row">
           <div class="col-4">

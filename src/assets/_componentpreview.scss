@@ -14,6 +14,14 @@
         border-top-right-radius: 5px;
         background-color: #f4f4f4;
         padding: 1em 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        >a {
+            display: flex;
+            font-weight: 200;
+        }
     }
 
     >.component-example {
