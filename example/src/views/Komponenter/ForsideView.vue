@@ -23,8 +23,9 @@
       mere om hvad komponenten anvendes til og ikke anvendes til.
     </p>
     <p>
-      DKFDS-Vue3 har lavet vue 3 komponenter til <b>DKFDS</b> - men DKFDS har tænkt de gode tanker
-      om hvornår komponenter skal anvendes - Så det anbefales at give det et læs inden brug.
+      <b>DKFDS-Vue3</b> har lavet vue 3 komponenter til <b>DKFDS</b> - men <b>DKFDS</b> har tænkt de
+      gode tanker om hvornår komponenter skal anvendes - Så det anbefales at give det et læs inden
+      brug.
     </p>
   </section>
 </template>
