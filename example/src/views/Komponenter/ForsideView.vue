@@ -12,7 +12,6 @@
       <li>Events</li>
       <li>Props</li>
       <li>Metoder</li>
-      <li>Metoder</li>
       <li>Inject</li>
       <li>Provide</li>
     </ul>

@@ -64,5 +64,21 @@
         padding: 0em 1.5em;
         display: block;
         word-wrap: break-word;
+
+        >pre {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        >legend {
+            background-color: #d63384;
+            color: #fff;
+            padding: 4px 6px 2px 6px;
+            margin-left: 24px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 30%);
+        }
     }
 }
