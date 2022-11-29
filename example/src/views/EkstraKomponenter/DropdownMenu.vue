@@ -3,13 +3,60 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <xfds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
-
         <fds-pre header="v-model" :json="{ dropdownVal }" />
       </fds-preview-item>
 
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
+
+      <fds-preview-item>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>null (autoid)</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>v-model</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>optionHeader</code></td>
+              <td><code>string</code></td>
+              <td><code>'Vælg'</code></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>options</code></td>
+              <td><code>Array&lt;FdsOptionItem&gt;</code></td>
+              <td><code>[]</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
+
     </fds-preview>
 
     <fds-preview header="Eksempel Formular">
@@ -55,7 +102,7 @@ const dropdownOptions = ref<FdsOptionItem[]>([
 ]);
 
 const code = `
-<fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+<xfds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
 
 const dropdownVal = ref('');
 const dropdownOptions = ref<FdsOptionItem[]>([
@@ -75,26 +122,12 @@ const dropdownOptions = ref<FdsOptionItem[]>([
 `;
 
 const codeForm = `
-<xfds-form-dropdown
-  label="Radio form"
-  :validations="[hasContent]"
-  :options="dropdownOptions"
-  v-model="dropdownVal"
-/>
-
-const dropdownOptions = ref<FdsOptionItem[]>([
-  {
-    title: 'Banan',
-    value: 'banan',
-  },
-  {
-    title: 'Melon',
-    value: 'melon',
-  },
-  {
-    title: 'Æble',
-    value: 'æble',
-  },
-]);
+<xfds-validate :modelValue="dropdownValForm" :validations="[hasContent]">
+  <xfds-form-dropdown
+    label="Dropdown form"
+    :options="dropdownOptions"
+    v-model="dropdownValForm"
+  />
+</xfds-validate>
   `;
 </script>

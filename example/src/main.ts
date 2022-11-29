@@ -5,6 +5,7 @@ import router from './router';
 import store from './store';
 
 import FdsXtndNavItemRoute from './components/fds-xtnd-nav-item-route.vue';
+import InfoTable from './components/info-table.vue';
 
 const app = createApp(App);
 
@@ -14,4 +15,5 @@ app
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .use(dkfdsvue3 as any)
   .component('fds-xtnd-nav-item-route', FdsXtndNavItemRoute)
+  .component('info-table', InfoTable)
   .mount('#app');
