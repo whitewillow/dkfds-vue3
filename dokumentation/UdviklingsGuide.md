@@ -75,39 +75,7 @@ Og hvis muligt og det giver mening, DKFDS egen javascript - dkfds-vue3 har typed
 
 ## Ind til benet
 
-Komponent skal begrænses til minimum og evt deles fornuftigt op således slutbruger selv kan lave udvidelser/egne komponenter udfra disse.
-
-eks:
-```html
-<xfds-validate
-    :modelValue="txtEfternavn"
-    :validations="[hasContent, charactersMinLength(10)]"
-    #default="{ isValid, errorMessage }">
-    <fds-formgroup
-    :is-valid="isValid" >
-        <fds-label>
-            Efternavn
-        </fds-label>
-        <fds-fejlmeddelelse v-if="!isValid">
-            {{ errorMessage }}
-        </fds-fejlmeddelelse>
-        <fds-hint>Indtast efternavn</fds-hint>
-        <fds-input
-            v-model="txtEfternavn"
-            />
-    </fds-formgroup>
-</xfds-validate>
-```
-
-Dertil er det op til brugeren PT. selv at sortere evt lister m.m.
-
-# Ingen ekstra npm moduler
-
-Undgå at introducere nye moduler. Brug hvad DKFDS allerede har.
-
-Dertil ingen vue-router - det er op til brugeren at selv håndtere dette.
-
-Dog kan man lave tips til evt brug.
+Komponent skal begrænses til minimum og evt deles fornuftigt op således slutbruger selv kan lave udvidelser/egne komponenter udfra disse
 
 ## Form samling / Komponent gruppering
 
@@ -119,91 +87,56 @@ I kontekst med opdelte komponenter er der nogle der giver mening af samle som fo
 <xfds-form-textarea />
 ```
 
-Dog er disse kun hjælpe komponenter der er "nice 2 have" og der fokuseret på enkeltstående komponenter først
+Nedestående er et eks: på kerne komponenter der er samlet til et Ekstra komponent
+
+eks:
+```html
+<fds-formgroup >
+    <fds-label>Efternavn</fds-label>
+    <fds-tooltip class="ml-2">
+        Hjælpende <b>tekst</b>
+    </fds-tooltip>
+    <fds-fejlmeddelelse />
+    <fds-hint>Indtast efternavn</fds-hint>
+    <fds-input v-model="txtEfternavn"/>
+</fds-formgroup>
+```
+
+Er det samme som
+
+```html
+<xfds-form-input
+    label="Efternavn"
+    hint="Indtast efternavn"
+    tooltip="Input tooltip"
+    v-model="txtEfternavn"/>
+```
+
+
+# Lister
+Hvis du benytter lister, så vær opmærksom på at det er op til brugeren PT. selv at sortere evt lister m.m.
+
+# Nye interfaces/modeller
+TODO
+
+
+# Ingen ekstra npm moduler
+
+Undgå at introducere nye moduler. Brug hvad DKFDS allerede har. Eller lav egen script.
+
+Dertil ingen vue-router - det er op til brugeren at selv håndtere dette.
+
+Dog kan man lave tips til evt brug.
+
 
 
 ## Props
 
 Det er altid et dilemma med `props` navne. Men vær konsistent og vær ens på tværs af løsningen.
 
-Hold til engelske termer - medmindre "forretningslogik" kommer i spil, benyt da danske termer (`list: Array<fejlsummering>`).
-
-Hold dem korte og præcise.
-Hvis komponenten hedder noget med `<fds-fejlsummering>` og skal bruge en liste af fejlsummeringer, bruges det genbrugelige term:
-
-```javascript
-list: Array<fejlsummering>
-```
-
-Selvfølgelig er der undtagelser, der giver en bedre kontekst med fornuftig navngivning eg `validations`:
-
-```html
-<xfds-form-input
-    label="Adresse"
-    hint="Angiv gyldig adresse"
-    placeholder="HC Andersens blv. 12"
-    v-model="txtAdresse"
-    :validations="[hasContent, charactersMinLength(10)]"/>
-
-<xfds-form-input
-    label="Antal kasser"
-    v-model="kasser"
-    suffix="stk" />
-```
-
-**Generiske termer**
-
-- list
-- label
-- hint
-- placeholder
-- item
-- itemList
-
-Booleans:
-- disabled
-- isReadonly
-- showX, isX, hasX, canX, asX
+Prøv at skue til hvordan HTML attributter er navngivet - kort og præcis.
 
 
-**Undgå props** - hvis en allerede eksisterende dkfds css klasse kan løse det 
+## Mere på vej
 
-GOOD
-
-```html
-<fds-cards class="card-align-height">
-```
-
-BAD
-
-```html
-<fds-cards alignHeight>
-```
-
-
-
-## Validering
-
-Biblioteket kommer med minimum validering.
-
-```html
-<xfds-validate
-    :modelValue="txtEfternavn"
-    :validations="[hasContent, charactersMinLength(10)]"
-    #default="{ isValid, errorMessage }">
-    ...
-</xfds-validate>
-```
-
-Hvor validerings metode er `(x: string) => string | null` hvor `null` er VALID og `string` er fejlbeskeden.
-Dvs ovenstående eks på metode er
-
-```javascript
-export function hasContent (x: string): string | null {
-    return x !== null && x.replace(/\s+/g, '').length > 0 ? null : 'Feltet må ikke være tomt.';
-}
-
-export function charactersMinLength (length: number): (args: string) => string | null {
-  return (x: string) => (x.length >= length ? null : `Feltet må ikke være kortere end ${length} tegn.`);
-}
-```
+Denne guide er stadig under udvikling. - Men lav et Pull Request og vi kigger på det.
