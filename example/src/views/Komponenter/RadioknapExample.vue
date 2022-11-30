@@ -25,6 +25,86 @@
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
+
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props (fds-radio-group)</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>null (autoid)</code></td>
+              <td>Lytter efter injected formid</td>
+            </tr>
+            <tr>
+              <td><code>v-model</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props (radio-item)</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>value</code></td>
+              <td><code>string - required</code></td>
+              <td><code></code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>null (autoid)</code></td>
+              <td>Lytter efter injected formid - bruges til <code>name</code> (radio gruppe)</td>
+            </tr>
+            <tr>
+              <td><code>index</code></td>
+              <td><code>string</code></td>
+              <td><code>null (autoid/index)</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Slots (radio-item)</th>
+
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content</code></td>
+              <td>Hvis radio er valgt vil slut udfoldes og vise indhold</td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
     </fds-preview>
   </section>
 </template>

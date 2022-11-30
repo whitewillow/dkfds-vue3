@@ -59,7 +59,10 @@
               <td><code>icon</code></td>
               <td><code>string</code></td>
               <td><code>null</code></td>
-              <td></td>
+              <td>
+                Se standard ikone hos
+                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+              </td>
             </tr>
 
             <tr>

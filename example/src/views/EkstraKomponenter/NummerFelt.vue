@@ -35,7 +35,7 @@
       <fds-preview-item>
         <!-- <info-table :json-string="propTest"> </info-table> -->
 
-        <table class="table table--responsive-headers">
+        <table class="table table--compact">
           <thead>
             <tr>
               <th>Props</th>
@@ -46,45 +46,46 @@
           </thead>
           <tbody>
             <tr>
-              <td data-title="Props"><code>variant</code></td>
-              <td data-title="Type">
+              <td><code>variant</code></td>
+              <td>
                 <code>'primary' | 'secondary' | 'tertiary' | 'quaternary'</code>
               </td>
-              <td data-title="Default"><code>secondary</code></td>
-              <td data-title="Beskrivelse"></td>
+              <td><code>secondary</code></td>
+              <td></td>
             </tr>
             <tr>
-              <td data-title="Props"><code>showSpinner</code></td>
-              <td data-title="Type"><code>boolean</code></td>
-              <td data-title="Default"><code>false</code></td>
-              <td data-title="Beskrivelse"></td>
+              <td><code>showSpinner</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
             </tr>
             <tr>
-              <td data-title="Props"><code>spinnerText</code></td>
-              <td data-title="Type"><code>string</code></td>
-              <td data-title="Default"><code>null</code></td>
-              <td data-title="Beskrivelse">Spinner tekst - erstatter alm tekst</td>
+              <td><code>spinnerText</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>Spinner tekst - erstatter alm tekst</td>
             </tr>
             <tr>
-              <td data-title="Props"><code>icon</code></td>
-              <td data-title="Type"><code>string</code></td>
-              <td data-title="Default"><code>null</code></td>
-              <td data-title="Beskrivelse"></td>
+              <td><code>icon</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>
+                Se standard ikone hos
+                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+              </td>
             </tr>
 
             <tr>
-              <td data-title="Props"><code>disabled</code></td>
-              <td data-title="Type"><code>boolean</code></td>
-              <td data-title="Default"><code>false</code></td>
-              <td data-title="Beskrivelse"></td>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
             </tr>
             <tr>
-              <td data-title="Props"><code>useoverlay</code></td>
-              <td data-title="Type"><code>boolean</code></td>
-              <td data-title="Default"><code>false</code></td>
-              <td data-title="Beskrivelse">
-                Tilføjer overlay når showSpinner, ikke muligt at klikke andre steder imens
-              </td>
+              <td><code>useoverlay</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Tilføjer overlay når showSpinner, ikke muligt at klikke andre steder imens</td>
             </tr>
           </tbody>
         </table>
