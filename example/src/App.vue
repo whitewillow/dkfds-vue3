@@ -230,6 +230,7 @@
 
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
+import DKFDS from 'dkfds';
 
 const route = useRoute();
 const router = useRouter();
@@ -247,6 +248,8 @@ const isPartOfMenu = (name: string): boolean => {
 
   return false;
 };
+
+new DKFDS.Navigation().init();
 </script>
 
 <style lang="scss">

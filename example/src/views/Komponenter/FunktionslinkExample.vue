@@ -11,6 +11,59 @@
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
+
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>icon</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>
+                Se standard ikone hos
+                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>href</code></td>
+              <td><code>string</code></td>
+              <td><code></code></td>
+              <td>Standard a tag</td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Slots</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>header</code></td>
+              <td><code>props.header</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
     </fds-preview>
 
     <fds-preview header="Med ikon og Som link">

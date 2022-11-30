@@ -15,6 +15,96 @@
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
+
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>null (autoid)</code></td>
+              <td>Lytter efter injected formid</td>
+            </tr>
+            <tr>
+              <td><code>v-model</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>placeholder</code></td>
+              <td><code>string</code></td>
+              <td><code>'text'</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>inputType</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>autocomplete</code></td>
+              <td><code>string</code></td>
+              <td><code>'text'</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>inputClass</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Css klasse på input felt</td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>isReadonly</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>prefix</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>Indikator/tydeliggørelse af data i starten - eg. stk, kr, m.m.</td>
+            </tr>
+            <tr>
+              <td><code>suffix</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>Indikator/tydeliggørelse af data i enden - eg. stk, kr, m.m.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Events</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>@dirty</code></td>
+              <td>Om input feltet er blevet berørt</td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
     </fds-preview>
 
     <fds-preview header="Karakterbegrænsning">
@@ -116,12 +206,7 @@ const txtSearch = ref('');
 const noBeloeb = ref(0);
 
 const code = `
-<fds-formgroup>
-  <fds-label id="formid"> Fornavn </fds-label>
-  <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
-  <fds-hint>Indtast fornavn</fds-hint>
-  <fds-input v-model="txtFornavn" id="formid"></fds-input>
-</fds-formgroup>
+<fds-input v-model="txtFornavn" />
 `;
 
 const codeLimit = `

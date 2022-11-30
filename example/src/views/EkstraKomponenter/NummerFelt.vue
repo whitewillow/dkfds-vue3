@@ -27,24 +27,137 @@
 
         <fds-pre header="Object data" :json="lager" />
       </fds-preview-item>
-      <hr />
 
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
+
+      <fds-preview-item>
+        <!-- <info-table :json-string="propTest"> </info-table> -->
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>variant</code></td>
+              <td>
+                <code>'primary' | 'secondary' | 'tertiary' | 'quaternary'</code>
+              </td>
+              <td><code>secondary</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>showSpinner</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>spinnerText</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>Spinner tekst - erstatter alm tekst</td>
+            </tr>
+            <tr>
+              <td><code>icon</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td>
+                Se standard ikone hos
+                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>useoverlay</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Tilføjer overlay når showSpinner, ikke muligt at klikke andre steder imens</td>
+            </tr>
+          </tbody>
+        </table>
+      </fds-preview-item>
     </fds-preview>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
 import { numberMin } from 'dkfds-vue3/src/utils/validate-utils';
+
+const props = defineProps({
+  test: {
+    type: String,
+    default: 'Banana',
+    description: 'asdadsads',
+  },
+});
 
 const lager = ref({
   lager: '',
   forventetLager: '',
   pris: '',
 });
+
+const propTest = `
+{
+  /**
+   * Overskrift
+   * */
+  header: {
+    type: String,
+  },
+  /**
+   * Hjælpetekst
+   * */
+  hint: {
+    type: String,
+    default: '',
+  },
+  /**
+   * Er Accordion Åben = aktiv
+   * */
+  expanded: {
+    type: Boolean,
+    default: false,
+  },
+  /**
+   * Disabled
+   * */
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  /**
+   * Variant - ikon der vises til højre
+   * */
+  variant: {
+    type: String as PropType<'success' | 'warning' | 'error'>,
+    default: null,
+  },
+  /**
+   * Tilhørende tekst til varianten
+   * */
+  variantText: {
+    type: String,
+    default: '',
+  },
+}
+`;
+
 const code = `
 <xfds-form-input-number
   inputClass="input-width-xxs"

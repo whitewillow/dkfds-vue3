@@ -33,7 +33,7 @@ Layout komponenter er rimlig statisk og derfor ligger det sidst i udviklings pro
 **EKSTRA Komponenter**
 Der vil løbende komme flere EKSTRA komponentner
 
-**Dertil** ønsker at det skal være nemt at starte nyt project, ud fra en vedligeholdt template, eg.:
+**Dertil** ønsker vi at det skal være nemt at starte nyt project, ud fra en vedligeholdt template, eg.:
 
 ```npm create vite@latest my-vue-app -- --template vue-ts-dkfds```
 
