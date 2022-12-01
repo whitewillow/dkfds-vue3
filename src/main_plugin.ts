@@ -52,7 +52,6 @@ import FdsDatoVaelger from '@/components/fds-dato-vaelger.vue';
 import FdsList from '@/components/fds-list.vue';
 
 import FdsFileUpload from '@/components/fds-file-upload.vue';
-import FdsFileList from '@/components/fds-file-list.vue';
 
 import FdsDetaljer from '@/components/fds-detaljer.vue';
 
@@ -95,6 +94,7 @@ import FdsPreviewItem from '@/components/fds-preview-item.vue';
 import FdsPreviewCode from '@/components/fds-preview-code.vue';
 import FdsPreview from '@/components/fds-preview.vue';
 import FdsDatoFelter from '@/components/fds-dato-felter.vue';
+import XFdsFileList from '@/components/extra/xfds-file-list.vue';
 
 export * from '@/model/fds.model';
 export * from '@/utils/validate-utils';
@@ -153,7 +153,7 @@ function install (app: App): void {
   app.component('fds-accordion', FdsAccordion);
   app.component('fds-accordion-group', FdsAccordionGroup);
   app.component('fds-file-upload', FdsFileUpload);
-  app.component('fds-file-list', FdsFileList);
+  app.component('xfds-file-list', XFdsFileList);
 
   app.component('fds-nav-link', FdsNavLink);
   app.component('fds-funktionslink', FdsFunktionslink);
@@ -252,6 +252,7 @@ export {
   XFdsFormCheckboxList,
   XFdsProgressbar,
   XFdsFormGroup,
+  XFdsFileList,
   FdsButton,
   FdsButtonIcon,
   FdsIconCollection,

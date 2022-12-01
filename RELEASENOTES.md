@@ -5,6 +5,9 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 
+# 0.3.11
+- fds-file-upload - removeContentHeaders
+- xfds-file-list - Fil listen er flyttet til Ekstra
 
 # 0.3.10
 

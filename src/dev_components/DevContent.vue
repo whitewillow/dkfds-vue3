@@ -464,11 +464,11 @@
         Vedhæftet filer
       </label>
 
-      <fds-file-list
+      <xfds-file-list
         :list="filListe"
         @download="filToDownload = $event"
         @delete="filToDelete = $event">
-      </fds-file-list>
+      </xfds-file-list>
 
       <fds-pre
         header="Download JSON"
@@ -1660,22 +1660,22 @@ const dropdownOptions = ref<FdsOptionItem[]>([
 const filListe = ref<FdsFileModel[]>([
   {
     id: 'a',
-    filnavn: 'Banankage.jpg',
+    filename: 'Banankage.jpg',
     type: 'image/jpg',
   },
   {
     id: 'b',
-    filnavn: 'Opskrift.pdf',
+    filename: 'Opskrift.pdf',
     type: 'pdf',
   },
   {
     id: 'c',
-    filnavn: 'Regnskab.xls',
+    filename: 'Regnskab.xls',
     type: 'xls',
   },
   {
     id: 'd',
-    filnavn: 'KodeFil.json',
+    filename: 'KodeFil.json',
     type: 'json',
   },
 ]);

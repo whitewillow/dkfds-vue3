@@ -35,6 +35,14 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Dropdown-menu',
   },
   {
+    key: 'ekstrafilliste',
+    title: 'Fil liste',
+  },
+  {
+    key: 'ekstraformgroup',
+    title: 'Form gruppe',
+  },
+  {
     key: 'ekstraknapspinner',
     title: 'Knap spinner',
   },
@@ -47,16 +55,12 @@ const navigationList = ref<Array<FdsNavigationItem>>([
     title: 'Progressbar',
   },
   {
-    key: 'ekstraradio',
-    title: 'Radio List',
-  },
-  {
     key: 'ekstraradioknap',
     title: 'Radio',
   },
   {
-    key: 'ekstraformgroup',
-    title: 'Form gruppe',
+    key: 'ekstraradio',
+    title: 'Radio List',
   },
   {
     key: 'ekstratekstfelt',

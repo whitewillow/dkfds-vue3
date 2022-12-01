@@ -8,7 +8,7 @@
         v-if="canDownload"
         :icon="getFileIcon(file)"
         @click="onDownloadFile(file)">
-        {{ file.filnavn }}
+        {{ file.filename }}
       </fds-funktionslink>
 
       <label
@@ -25,7 +25,7 @@
           {{ file.label }}
         </template>
         <template v-else>
-          {{ file.filnavn }}
+          {{ file.filename }}
         </template>
       </label>
       <button
