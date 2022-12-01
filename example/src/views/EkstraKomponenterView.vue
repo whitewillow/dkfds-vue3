@@ -21,7 +21,7 @@
 import { FdsNavigationItem } from 'dkfds-vue3/src/model/fds.model';
 import navigationService from 'dkfds-vue3/src/service/navigation.service';
 import { ref, watch } from 'vue';
-
+import { sort } from 'fast-sort';
 import { useRouter, useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -29,60 +29,62 @@ const router = useRouter();
 
 const currentNavigationKey = ref('');
 const currentItem = ref<FdsNavigationItem | undefined>();
-const navigationList = ref<Array<FdsNavigationItem>>([
-  {
-    key: 'ekstradropdownmenu',
-    title: 'Dropdown-menu',
-  },
-  {
-    key: 'ekstrafilliste',
-    title: 'Fil liste',
-  },
-  {
-    key: 'ekstraformgroup',
-    title: 'Form gruppe',
-  },
-  {
-    key: 'ekstraknapspinner',
-    title: 'Knap spinner',
-  },
-  {
-    key: 'ekstranummerfelt',
-    title: 'Nummer',
-  },
-  {
-    key: 'ekstraprogressbar',
-    title: 'Progressbar',
-  },
-  {
-    key: 'ekstraradioknap',
-    title: 'Radio',
-  },
-  {
-    key: 'ekstraradio',
-    title: 'Radio List',
-  },
-  {
-    key: 'ekstratekstfelt',
-    title: 'Tekstfelt',
-  },
-  {
-    key: 'ekstratekstomraade',
-    title: 'Tekstområde',
-  },
-  {
-    key: 'ekstratjekboksliste',
-    title: 'Tjekbox liste',
-  },
-  {
-    key: 'ekstraformvalidering',
-    title: 'Validate',
-  },
-  {
-    key: 'ekstravenstremenu',
-    title: 'Venstremenu',
-  },
-] as FdsNavigationItem[]);
+const navigationList = ref<Array<FdsNavigationItem>>(
+  sort([
+    {
+      key: 'ekstradropdownmenu',
+      title: 'Dropdown-menu',
+    },
+    {
+      key: 'ekstrafilliste',
+      title: 'Fil liste',
+    },
+    {
+      key: 'ekstraformgroup',
+      title: 'Form gruppe',
+    },
+    {
+      key: 'ekstraknapspinner',
+      title: 'Knap spinner',
+    },
+    {
+      key: 'ekstranummerfelt',
+      title: 'Nummer',
+    },
+    {
+      key: 'ekstraprogressbar',
+      title: 'Progressbar',
+    },
+    {
+      key: 'ekstraradioknap',
+      title: 'Radio',
+    },
+    {
+      key: 'ekstraradio',
+      title: 'Radio List',
+    },
+    {
+      key: 'ekstratekstfelt',
+      title: 'Tekstfelt',
+    },
+    {
+      key: 'ekstratekstomraade',
+      title: 'Tekstområde',
+    },
+    {
+      key: 'ekstratjekboksliste',
+      title: 'Tjekbox liste',
+    },
+    {
+      key: 'ekstraformvalidering',
+      title: 'Validate',
+    },
+    {
+      key: 'ekstravenstremenu',
+      title: 'Venstremenu',
+    },
+  ] as FdsNavigationItem[]).asc((a) => a.title),
+);
 
 watch(
   () => route.name,
