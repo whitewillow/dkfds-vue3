@@ -32,12 +32,12 @@ export interface FdsErrorListItem {
 
 export interface FdsFileModel {
   id: string;
-  filnavn: string;
+  filename: string;
   label?: string;
   type: string;
 }
 export interface FdsFileInputModel {
-  filnavn: string;
+  filename: string;
   type: string;
   size: number;
   data: string;

@@ -9,133 +9,99 @@
         <fds-pre header="Upload event JSON" :json="fileInput" />
       </fds-preview-item>
 
-      <hr />
-      <fds-preview-item>
-        <h2>Props</h2>
-        <div class="col-10">
-          <fds-strukturerede-liste header="header">
-            <template #header>
-              <fds-label class="d-block">header</fds-label>
-              <code>string</code>
-            </template>
-            Overskrift
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="hint">
-            <template #header>
-              <fds-label class="d-block">hint</fds-label>
-              <code>string</code>
-            </template>
-            Hjælpetekst
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="disabled">
-            <template #header>
-              <fds-label class="d-block">disabled</fds-label>
-              <code>Boolean</code>
-            </template>
-            Om feltet skal være disabled
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="contenttypes">
-            <template #header>
-              <fds-label class="d-block">contenttypes</fds-label>
-              <code>Array'&lt;'string'&gt;'</code>
-            </template>
-            Mulig contenttypes - default:
-            <code>['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt']</code>
-          </fds-strukturerede-liste>
-        </div>
-      </fds-preview-item>
-
       <fds-preview-code>
         <pre v-text="codeUpload"></pre>
       </fds-preview-code>
-    </fds-preview>
 
-    <fds-preview header="Download og Slet">
       <fds-preview-item>
-        <p class="form-label">Vedhæftet filer</p>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td><code>formid</code></td>
+              <td>Se form gruppe</td>
+            </tr>
+            <tr>
+              <td><code>contenttypes</code></td>
+              <td><code>Array&lt;string&gt;</code></td>
+              <td>
+                <code
+                  >['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt']</code
+                >
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>removeContentHeaders</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Fjerner eg: <code>data:application/pdf;base64,</code> fra data</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <fds-file-list
-          :list="filListe"
-          @download="filToDownload = $event"
-          @delete="filToDelete = $event"
-        />
-
-        <fds-pre header="Download JSON" :json="filToDownload" />
-        <fds-pre header="Delete JSON" :json="filToDelete" />
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Events</th>
+              <th>Returns</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>@upload</code></td>
+              <td>
+                FdsFileInputModel:
+                <code> { filename: string; type: string; size: number; data: string; } </code>
+              </td>
+              <td>Upload fil event</td>
+            </tr>
+            <tr>
+              <td><code>@error</code></td>
+              <td>
+                <code> Error</code>
+              </td>
+              <td>Ved upload fejl</td>
+            </tr>
+            <tr>
+              <td><code>@dirty</code></td>
+              <td>
+                <code>Boolean</code>
+              </td>
+              <td>Om input feltet er blevet berørt</td>
+            </tr>
+          </tbody>
+        </table>
       </fds-preview-item>
-
-      <fds-preview-code>
-        <pre v-text="codeDownload"></pre>
-      </fds-preview-code>
     </fds-preview>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FdsFileInputModel, FdsFileModel } from 'dkfds-vue3/src/model/fds.model';
+import { FdsFileInputModel } from 'dkfds-vue3/src/model/fds.model';
 import { ref } from 'vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
-const filToDownload = ref<FdsFileModel | null>(null);
-const filToDelete = ref<FdsFileModel | null>(null);
-const filListe = ref<FdsFileModel[]>([
-  {
-    id: 'a',
-    filnavn: 'Banankage.jpg',
-    type: 'image/jpg',
-  },
-  {
-    id: 'b',
-    filnavn: 'Opskrift.pdf',
-    type: 'pdf',
-  },
-  {
-    id: 'c',
-    filnavn: 'Regnskab.xls',
-    type: 'xls',
-  },
-  {
-    id: 'd',
-    filnavn: 'KodeFil.json',
-    type: 'json',
-  },
-]);
-
 const codeUpload = `
 <fds-formgroup>
   <fds-label>Vedhæft fil</fds-label>
   <fds-file-upload @upload="fileInput = $event" />
 </fds-formgroup>
-`;
-
-const codeDownload = `
-const filListe = ref<FdsFileModel[]>([
-  {
-    id: 'a',
-    filnavn: 'Banankage.jpg',
-    type: 'image/jpg',
-  },
-  {
-    id: 'b',
-    filnavn: 'Opskrift.pdf',
-    type: 'pdf',
-  },
-  {
-    id: 'c',
-    filnavn: 'Regnskab.xls',
-    type: 'xls',
-  },
-  {
-    id: 'd',
-    filnavn: 'KodeFil.json',
-    type: 'json',
-  },
-]);
-
-<fds-file-list
-  :list="filListe"
-  @download="filToDownload = $event"
-  @delete="filToDelete = $event"
-/>
 `;
 </script>

@@ -7,12 +7,12 @@ export function removeBrowserFileContentHeaders (data: string): string {
   return data;
 }
 
-export function downloadBlob (blob: Blob, filnavn = 'download') {
+export function downloadBlob (blob: Blob, filename = 'download') {
   const url = window.URL.createObjectURL(blob);
 
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = filnavn;
+  anchor.download = filename;
   anchor.click();
 
   window.URL.revokeObjectURL(url);

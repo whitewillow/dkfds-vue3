@@ -30,6 +30,10 @@ const props = defineProps({
     type: Array as () => Array<string>,
     default: () => ['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt'],
   },
+  removeContentHeaders: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['dirty', 'upload', 'error']);
@@ -58,10 +62,12 @@ const onFileChange = ($event: Event) => {
   const reader = new FileReader();
   reader.readAsDataURL(file.value);
   reader.onload = async () => {
-    const data = removeBrowserFileContentHeaders(reader.result?.toString() || '');
+    const data = props.removeContentHeaders
+      ? removeBrowserFileContentHeaders(reader.result?.toString() ?? '')
+      : reader.result?.toString();
 
     const fileObj = {
-      filnavn: files[0].name, // test.pdf
+      filename: files[0].name, // test.pdf
       type: files[0].type, // application/pdf
       size: files[0].size,
       data,
