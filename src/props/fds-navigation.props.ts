@@ -6,6 +6,7 @@ import { FdsNavigationItem } from '@/model/fds.model';
 const fdsNavigationProps = {
   modelValue: {
     type: Array as () => Array<FdsNavigationItem>,
+    default: () => [],
     required: true,
   },
   showIndex: {

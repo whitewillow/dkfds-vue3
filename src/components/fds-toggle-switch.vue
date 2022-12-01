@@ -54,6 +54,10 @@ const emit = defineEmits(['update:modelValue', 'input']);
 const handleInput = (event: Event) => emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
 const { formid } = getFormId(props.id, true);
+
+// onMounted(() => {
+//   const toggle = new DKFDSToggle(document.getElementById(formid.value));
+// });
 </script>
 
 <style lang="scss" scoped>

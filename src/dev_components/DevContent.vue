@@ -722,6 +722,9 @@
         </div>
       </div>
 
+      <fds-button @click="changeMenu">
+        asd
+      </fds-button>
       <h3>Semi Manuel venstremenu</h3>
       <div class="row">
         <div class="col-4">
@@ -1745,7 +1748,16 @@ const manuelSideNavList = ref<Array<FdsNavigationItem>>([
     hint: '',
     disabled: true,
   },
-] as unknown as FdsNavigationItem[]);
+] as FdsNavigationItem[]);
+
+const changeMenu = () => {
+  console.warn('changeMenu');
+
+  manuelSideNavList.value = manuelSideNavList.value.map((m) => ({
+    ...m,
+    active: m.key === 'kod',
+  }));
+};
 
 const trinManuelNavId = ref('1');
 const trinNavKey = '';

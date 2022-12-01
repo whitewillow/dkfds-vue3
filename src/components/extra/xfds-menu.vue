@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from '@/model/fds.model';
 import {
-  defineProps, ref, defineEmits, onMounted, computed,
+  defineProps, ref, defineEmits, onMounted, computed, watch,
 } from 'vue';
 import navigationService from '@/service/navigation.service';
 import fdsNavigationProps from '@/props/fds-navigation.props';
@@ -36,14 +36,12 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
-
-const mVal = computed(() => props.modelValue ?? []);
-
+const filteredList = computed(() => props.modelValue.filter((f) => !f.ignore));
 const currentKey = ref('');
-const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
+const tabsList = ref<Array<FdsNavigationItem>>(filteredList.value);
 
 const subnavigation = (key: string) => {
-  emit('navigate', navigationService.resolveKey(key, mVal.value));
+  emit('navigate', navigationService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {
@@ -64,6 +62,16 @@ onMounted(() => {
     navigate(item);
   }
 });
+
+watch(
+  () => [props.modelValue],
+  () => {
+    tabsList.value = filteredList.value;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>
