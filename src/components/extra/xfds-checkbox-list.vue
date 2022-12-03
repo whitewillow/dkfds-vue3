@@ -6,14 +6,14 @@
       v-for="(checkbox, index) of value"
       :key="index">
       <input
-        :id="'checkbox-' + formid + '-' + index"
-        type="checkbox"
-        :name="'checkbox' + formid"
         v-model="checkbox.checked"
+        type="checkbox"
+        class="form-checkbox checkbox-large"
+        :id="'checkbox-' + formid + '-' + index"
+        :name="'checkbox' + formid"
         :disabled="checkbox.disabled"
         @change="handleInput"
-        @blur="handleDirty"
-        class="form-checkbox checkbox-large"/>
+        @blur="handleDirty"/>
       <label :for="'checkbox-' + formid + '-' + index">
         {{ checkbox.title }}
       </label>
@@ -30,15 +30,22 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from 'vue';
-import fdsCheckboxProps from '@/props/fds-checkbox.props';
+import {
+  defineProps, defineEmits, ref, PropType,
+} from 'vue';
+import { FdsCheckboxItem } from '@/model/fds.model';
 import getFormId from '@/composable/formId';
 
 const props = defineProps({
-  ...fdsCheckboxProps,
   id: {
     type: String,
     default: null,
+  },
+  modelValue: {
+    // eslint-disable-next-line no-undef
+    type: Array as PropType<Array<FdsCheckboxItem>>,
+    required: true,
+    default: () => [],
   },
 });
 

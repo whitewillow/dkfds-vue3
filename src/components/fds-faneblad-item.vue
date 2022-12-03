@@ -4,7 +4,7 @@
     :id="`tab_${formId}`"
     @click="onFanButtonClick"
     class="tabnav-item"
-    :class="[{ active: selected }, { disabled: disabled }]"
+    :class="[{ active: selected }]"
     role="tab"
     :aria-selected="selected">
     <slot name="header">
@@ -14,10 +14,10 @@
     </slot>
   </button>
   <section
-    class="tabnav-panel"
-    :aria-hidden="!selected"
-    role="tabpanel"
     tabindex="0"
+    class="tabnav-panel"
+    role="tabpanel"
+    :aria-hidden="!selected"
     :id="`tabpanel_${formId}`"
     :aria-labelledby="`tab_${formId}`">
     <slot />
@@ -33,11 +33,6 @@ const props = defineProps({
    * Faneknap aktiv
    * */
   selected: {
-    type: Boolean,
-    default: false,
-  },
-
-  disabled: {
     type: Boolean,
     default: false,
   },

@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="show"
     class="cookie-container"
     role="complementary"
     aria-labelledby="cookie-message-heading"
@@ -65,11 +64,6 @@ defineProps({
   header: {
     type: String,
     default: 'Fortæl os om du accepterer cookies',
-  },
-
-  show: {
-    type: Boolean,
-    default: true,
   },
 });
 </script>

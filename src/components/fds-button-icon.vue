@@ -1,13 +1,12 @@
 <template>
   <button
     class="button"
-    :class="[{ disabled: disabled }, `button-${variant}`]"
-    :disabled="disabled">
+    :class="`button-${variant}`">
     <svg
       class="icon-svg"
       focusable="false"
       aria-hidden="true"
-      v-if="!asRightAlignedIcon && icon">
+      v-if="!right && icon">
       <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
     <slot />
@@ -15,7 +14,7 @@
       class="icon-svg rightside-icon"
       focusable="false"
       aria-hidden="true"
-      v-if="asRightAlignedIcon">
+      v-if="right">
       <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
   </button>
@@ -48,16 +47,9 @@ defineProps({
     default: 'pencil',
   },
   /**
-   * disabled
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  /**
    * Højre stillet ikon
    * */
-  asRightAlignedIcon: {
+  right: {
     type: Boolean,
     default: false,
   },

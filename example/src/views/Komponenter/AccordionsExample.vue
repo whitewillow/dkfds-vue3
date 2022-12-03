@@ -58,12 +58,6 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><code>variant</code></td>
               <td><code>'success' | 'warning' | 'error'</code></td>
               <td><code>null</code></td>

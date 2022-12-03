@@ -9,13 +9,9 @@
     }">
     <fds-input
       v-model="value"
+      type="text"
       v-bind="{
-        placeholder,
-        autocomplete,
-        inputType,
-        inputClass,
-        disabled,
-        isReadonly,
+        attrs,
         suffix,
         prefix,
       }"
@@ -32,15 +28,36 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, ref, useAttrs, watch,
 } from 'vue';
 
-import fdsInputProps from '@/props/fds-input.props';
-import xfdsFormGroupProps from '@/props/fds-form.props';
+const attrs = useAttrs();
 
 const props = defineProps({
-  ...fdsInputProps,
-  ...xfdsFormGroupProps,
+  id: {
+    type: String,
+    default: null,
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
+  },
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
   modelValue: {
     type: String,
     default: '',

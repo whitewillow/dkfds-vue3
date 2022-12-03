@@ -1,8 +1,6 @@
 <template>
   <select
     class="form-select"
-    :class="{ dirty: dirty }"
-    :disabled="disabled"
     :name="formid"
     :id="formid"
     v-bind="refValue"
@@ -46,13 +44,7 @@ const props = defineProps({
     type: String,
     default: 'Vælg',
   },
-  /**
-   * Disable dropdown
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
+
   /**
    * Dropdown options / valgmuligheder
    * */
@@ -65,10 +57,8 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const refValue = ref(props.modelValue);
 const { formid } = getFormId(props.id, true);
-const dirty = ref(false);
 
 const onDirty = () => {
-  dirty.value = true;
   emit('dirty', true);
 };
 

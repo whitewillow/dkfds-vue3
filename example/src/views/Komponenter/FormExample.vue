@@ -40,11 +40,7 @@
 
       <xfds-form-input label="Mobil nr." :modelValue="txtMobil" disabled />
 
-      <xfds-form-textarea
-        label="Tekst område"
-        v-model="txtBeskrivelse"
-        :validations="[hasContent, charactersMinLength(10)]"
-      />
+      <xfds-form-textarea label="Tekst område" v-model="txtBeskrivelse" />
 
       <hr />
 

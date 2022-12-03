@@ -30,10 +30,27 @@ import {
   computed, defineProps, inject, ref,
 } from 'vue';
 
-import xfdsFormGroupProps from '@/props/fds-form.props';
-
 const props = defineProps({
-  ...xfdsFormGroupProps,
+  label: {
+    type: String,
+    default: '',
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
+  },
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
 });
 
 const injIsValid = ref<boolean | null>(inject('provideIsValid', null));

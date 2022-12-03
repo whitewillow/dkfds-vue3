@@ -31,12 +31,7 @@
         </p>
 
         <p>
-          <fds-button-icon
-            @click="klikEvent"
-            icon="coronavirus"
-            asRightAlignedIcon
-            variant="primary"
-          >
+          <fds-button-icon @click="klikEvent" icon="coronavirus" right variant="primary">
             Corona Virus
           </fds-button-icon>
         </p>
@@ -70,7 +65,7 @@ const code2 = `
   Genopfrisk
 </fds-button-icon>
 
-<fds-button-icon @click="klikEvent" icon="coronavirus" asRightAlignedIcon variant="primary">
+<fds-button-icon @click="klikEvent" icon="coronavirus" right variant="primary">
   Corona Virus
 </fds-button-icon>
 `;

@@ -1,7 +1,5 @@
 <template>
-  <div
-    :disabled="disabled"
-    :class="[{ disabled: disabled }]">
+  <div>
     <button
       class="accordion-button"
       :class="getVariantClass"
@@ -47,10 +45,46 @@
 
 <script setup lang="ts">
 import getFormId from '@/composable/formId';
-import accordionProps from '@/props/fds-accordion.props';
-import { defineProps, ref, computed } from 'vue';
+import {
+  defineProps, ref, computed, PropType,
+} from 'vue';
 
-const props = defineProps({ ...accordionProps });
+const props = defineProps({
+  /**
+   * Overskrift
+   * */
+  header: {
+    type: String,
+  },
+  /**
+   * Hjælpetekst
+   * */
+  hint: {
+    type: String,
+    default: '',
+  },
+  /**
+   * Er Accordion Åben = aktiv
+   * */
+  expanded: {
+    type: Boolean,
+    default: false,
+  },
+  /**
+   * Variant - ikon der vises til højre
+   * */
+  variant: {
+    type: String as PropType<'success' | 'warning' | 'error'>,
+    default: null,
+  },
+  /**
+   * Tilhørende tekst til varianten
+   * */
+  variantText: {
+    type: String,
+    default: '',
+  },
+});
 
 const refExpanded = ref(props.expanded);
 

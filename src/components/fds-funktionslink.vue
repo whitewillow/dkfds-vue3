@@ -1,8 +1,7 @@
 <template>
   <a
     href="javascript:void(0);"
-    class="function-link"
-    :class="[{ disabled: disabled }]">
+    class="function-link">
     <svg
       class="icon-svg"
       focusable="false"
@@ -21,10 +20,6 @@ defineProps({
   icon: {
     type: String,
     default: '',
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
   },
 });
 </script>

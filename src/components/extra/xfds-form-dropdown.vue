@@ -8,6 +8,7 @@
       errorMessage,
     }">
     <xfds-dropdown
+      v-bind="attrs"
       :options="options"
       v-model="value"
       @update:modelValue="handleInput"
@@ -17,15 +18,37 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, PropType, ref, watch,
+  defineEmits, defineProps, PropType, ref, useAttrs, watch,
 } from 'vue';
 import { FdsOptionItem } from '@/model/fds.model';
-import fdsInputProps from '@/props/fds-input.props';
-import xfdsFormGroupProps from '@/props/fds-form.props';
+
+const attrs = useAttrs();
 
 const props = defineProps({
-  ...fdsInputProps,
-  ...xfdsFormGroupProps,
+  id: {
+    type: String,
+    default: null,
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
+  },
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
   modelValue: {
     type: String,
     default: '',

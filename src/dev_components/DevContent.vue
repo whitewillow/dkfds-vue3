@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <fds-cookiemeddelelse
-      :show="cookieAccept === null"
+      v-if="cookieAccept === null"
       @accept="cookieAccept = true"
       @cancel="cookieAccept = false"/>
 
@@ -15,13 +15,32 @@
       <div>
         <h2>Eksempel på advanceret brug</h2>
 
+        <p>
+          <fds-input
+            v-model="txtFornavn"
+            readonly />
+          <fds-input
+            v-model="txtFornavn"
+            disabled />
+
+          <fds-input-number
+            v-model="noBeloeb"
+            readonly
+            suffix="kr."></fds-input-number>
+        </p>
+
         <fds-formgroup>
           <fds-label> Fornavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input v-model="txtFornavn" />
+
+          <fds-input v-model="txtFornavn">
+            <template #prefix>
+              €
+            </template>
+          </fds-input>
           <fds-input-limit
             :modelValue="txtFornavn"
             :limit="10" />
@@ -110,8 +129,7 @@
 
         <xfds-form-textarea
           label="Tekst område"
-          v-model="txtBeskrivelse"
-          :validations="[hasContent, charactersMinLength(10)]"/>
+          v-model="txtBeskrivelse" />
 
         <xfds-validate
           :modelValue="checkboxListForm"
@@ -119,7 +137,11 @@
           @validated="validator.addItem($event)">
           <xfds-form-checkbox-list
             label="Checkbox form"
-            v-model="checkboxListForm" />
+            v-model="checkboxListForm">
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
+          </xfds-form-checkbox-list>
         </xfds-validate>
 
         <xfds-validate
@@ -136,9 +158,12 @@
           :modelValue="radioValForm"
           :validations="[hasContent]">
           <xfds-form-radio
-            label="Radio form"
+            label="Radio form uno"
             :options="radioOptions"
             v-model="radioValForm">
+            <template v-slot:[`melon`]>
+              <p>Det er muligt at benytte radio til mere indhold</p>
+            </template>
           </xfds-form-radio>
         </xfds-validate>
 
@@ -566,6 +591,7 @@
           Funktionslink
         </fds-funktionslink>
       </p>
+
       <div>
         <fds-funktionslink
           @click="klikEvent"
@@ -747,9 +773,9 @@
       <fds-faneblade>
         <fds-faneblad-item
           header="Fane 1"
+          id="1"
           :selected="fanebladManueltId === '1'"
-          @click="fanebladManueltId = $event"
-          id="1">
+          @click="fanebladManueltId = $event">
           <h2>Fane 1</h2>
           <p>Manuel styret faneblade</p>
         </fds-faneblad-item>
@@ -759,7 +785,7 @@
           :selected="fanebladManueltId === '2'"
           id="2">
           <template #header>
-            Template Header
+            Template Header 2
           </template>
           <h2>Fane 2</h2>
           <p>
@@ -1399,6 +1425,14 @@
         </fds-button>
       </p>
 
+      <p>
+        <fds-button
+          @click="klikEvent"
+          disabled>
+          Gå til næste (disabled)
+        </fds-button>
+      </p>
+
       <p><fds-button
         variant="secondary"
         @click="klikEvent">
@@ -1443,6 +1477,16 @@
           icon="refresh"
           variant="primary">
           Genopfrisk
+        </fds-button-icon>
+      </p>
+
+      <p>
+        <fds-button-icon
+          @click="klikEvent"
+          icon="refresh"
+          disabled
+          variant="primary">
+          Genopfrisk (disabled)
         </fds-button-icon>
       </p>
 

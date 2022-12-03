@@ -4,10 +4,10 @@
     role="menu">
     <fds-menu-item
       v-for="(item, index) of tabsList"
+      :class="[{ disabled: item.disabled }]"
       :key="item.key"
       :id="item.key"
       :active="item.active"
-      :disabled="item.disabled"
       :icon="item.icon"
       :hint="item.hint"
       :index="showIndex ? index : null"
@@ -29,10 +29,21 @@ import {
   defineProps, ref, defineEmits, onMounted, computed, watch,
 } from 'vue';
 import navigationService from '@/service/navigation.service';
-import fdsNavigationProps from '@/props/fds-navigation.props';
 
 const props = defineProps({
-  ...fdsNavigationProps,
+  modelValue: {
+    type: Array as () => Array<FdsNavigationItem>,
+    default: () => [],
+    required: true,
+  },
+  showIndex: {
+    type: Boolean,
+    default: false,
+  },
+  navigateFirst: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);

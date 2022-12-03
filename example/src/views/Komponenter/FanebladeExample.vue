@@ -67,12 +67,6 @@
               <td><code>false</code></td>
               <td></td>
             </tr>
-            <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
           </tbody>
         </table>
       </fds-preview-item>
