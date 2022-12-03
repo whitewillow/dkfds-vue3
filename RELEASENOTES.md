@@ -7,7 +7,7 @@ https://github.com/whitewillow/dkfds-vue3/issues
 
 # 0.3.12
 - https://github.com/whitewillow/dkfds-vue3/issues/54
-- 
+- Alert og Fejlopsummering aria roles https://github.com/whitewillow/dkfds-vue3/issues/52
 
 # 0.3.11
 - fds-file-upload - removeContentHeaders

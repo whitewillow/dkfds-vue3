@@ -2,6 +2,8 @@
   <transition name="fade">
     <div
       v-if="showAlert"
+      :role="compAlert ? 'alert' : ''"
+      :aria-atomic="compAlert"
       class="alert has-close"
       :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]">
       <div class="alert-body align-text-left">
@@ -40,10 +42,10 @@
  *
  * */
 import {
-  defineProps, ref, defineEmits, PropType,
+  defineProps, ref, defineEmits, PropType, computed,
 } from 'vue';
 
-defineProps({
+const props = defineProps({
   /**
    *  Overskrift
    * */
@@ -77,6 +79,8 @@ defineProps({
 const emit = defineEmits(['close']);
 
 const showAlert = ref(true);
+
+const compAlert = computed(() => ['warning', 'error'].includes(props.variant));
 
 const onClose = () => {
   showAlert.value = !showAlert.value;
