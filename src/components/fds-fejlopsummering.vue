@@ -1,6 +1,8 @@
 <template>
   <fds-alert
     class="top-space"
+    role="alert"
+    aria-atomic="true"
     variant="error"
     showIcon
     :closeable="false">
