@@ -8,15 +8,10 @@
     </div>
     <input
       class="form-input d-flex"
-      :class="inputClass"
-      :readonly="isReadonly"
-      :name="formid"
+      v-bind="attrs"
       v-model="value"
       :id="formid"
-      :placeholder="placeholder"
-      :type="inputType"
-      :autocomplete="autocomplete"
-      :disabled="disabled"
+      :name="formid"
       @input="handleInput"
       @blur="$emit('dirty', true)"/>
     <div
@@ -31,13 +26,17 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed, useSlots, watch,
+  defineProps, defineEmits, ref, computed, useSlots, watch, useAttrs,
 } from 'vue';
-import fdsInputProps from '@/props/fds-input.props';
 import getFormId from '@/composable/formId';
 
+const attrs = useAttrs();
+
 const props = defineProps({
-  ...fdsInputProps,
+  id: {
+    type: String,
+    default: null,
+  },
   modelValue: {
     type: String,
     default: '',

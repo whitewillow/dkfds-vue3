@@ -23,10 +23,10 @@
           <fds-menu-item
             role="none"
             v-for="(item, index) of tabsList"
+            :class="[{ disabled: item.disabled }]"
             :key="item.key"
             :id="item.key"
             :active="item.active"
-            :disabled="item.disabled"
             :icon="item.icon"
             :hint="item.hint"
             :href="item.href"
@@ -55,12 +55,23 @@ import {
 } from 'vue';
 import navigationService from '@/service/navigation.service';
 
-import fdsNavigationProps from '@/props/fds-navigation.props';
 import DKFDSDropdown from '@/scripts/dropdown';
 import getFormId from '@/composable/formId';
 
 const props = defineProps({
-  ...fdsNavigationProps,
+  modelValue: {
+    type: Array as () => Array<FdsNavigationItem>,
+    default: () => [],
+    required: true,
+  },
+  showIndex: {
+    type: Boolean,
+    default: false,
+  },
+  navigateFirst: {
+    type: Boolean,
+    default: false,
+  },
   header: {
     type: String,
     default: 'Trin', // TODO: overvej interpolation

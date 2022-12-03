@@ -9,13 +9,10 @@
     }">
     <fds-textarea
       v-model="value"
-      :placeholder="placeholder"
-      :max-length="maxLength"
-      :inputClass="inputClass"
+      v-bind="attrs"
+      :maxlength="maxlength"
       :rowlength="rowlength"
       :rows="rows"
-      :disabled="disabled"
-      :readonly="isReadonly"
       @update:modelValue="handleInput"
       @dirty="touchedEvent"></fds-textarea>
   </xfds-form-group>
@@ -23,15 +20,53 @@
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, ref, useAttrs, watch,
 } from 'vue';
 
-import fdsTextareaProps from '@/props/fds-texarea.props';
-import xfdsFormGroupProps from '@/props/fds-form.props';
+const attrs = useAttrs();
 
 const props = defineProps({
-  ...fdsTextareaProps,
-  ...xfdsFormGroupProps,
+  modelValue: {
+    type: String,
+    default: '',
+    required: true,
+  },
+  id: {
+    type: String,
+    default: null,
+  },
+  rows: {
+    type: Number,
+    default: 5,
+  },
+  rowlength: {
+    type: Number,
+    default: 80,
+  },
+  maxlength: {
+    type: Number,
+    default: 4000,
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
+  tooltip: {
+    type: String,
+    default: null,
+  },
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);

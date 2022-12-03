@@ -41,12 +41,6 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><code>removeContentHeaders</code></td>
               <td><code>boolean</code></td>
               <td><code>false</code></td>

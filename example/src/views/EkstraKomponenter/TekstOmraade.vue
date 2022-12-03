@@ -37,6 +37,6 @@ const codeForm = `
     hint="Angiv beskrivelse af produktet"
     placeholder="...Produktet er består af xxx"
     v-model="product.beskrivelse"
-    :validations="[hasContent, charactersMinLength(10)]"
+    
   />`;
 </script>

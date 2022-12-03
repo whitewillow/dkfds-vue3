@@ -44,12 +44,6 @@
               <td><code>Fortæl os om du accepterer cookies</code></td>
               <td></td>
             </tr>
-            <tr>
-              <td><code>show</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
           </tbody>
         </table>
 

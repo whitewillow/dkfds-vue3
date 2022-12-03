@@ -1,26 +1,48 @@
 <template>
   <textarea
     class="form-input"
-    :class="inputClass"
     v-model="val"
-    :maxlength="maxLength"
+    :maxlength="maxlength"
     :rows="getRows"
     :name="formid"
     :id="formid"
-    :placeholder="placeholder"
     @input="handleInput"
-    @blur="$emit('dirty', true)"
-    :disabled="disabled"></textarea>
+    @blur="$emit('dirty', true)"></textarea>
 </template>
 
 <script setup lang="ts">
 import {
   defineProps, defineEmits, ref, computed, watch,
 } from 'vue';
-import fdsTextareaProps from '@/props/fds-texarea.props';
 import getFormId from '@/composable/formId';
 
-const props = defineProps({ ...fdsTextareaProps });
+const props = defineProps({
+  modelValue: {
+    type: String,
+    default: '',
+    required: true,
+  },
+  id: {
+    type: String,
+    default: null,
+  },
+  rows: {
+    type: Number,
+    default: 5,
+  },
+  maxRows: {
+    type: Number,
+    default: 10,
+  },
+  rowlength: {
+    type: Number,
+    default: 80,
+  },
+  maxlength: {
+    type: Number,
+    default: 4000,
+  },
+});
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
@@ -33,11 +55,15 @@ const getRows = computed(() => {
   if (!val.value) {
     return props.rows;
   }
+  const newlineRows = val.value.split(/\r?\n/).length;
 
-  let result = Math.floor(val.value.length / props.rowlength) + 1;
-  result = result >= props.rows ? result : props.rows;
+  const textLengthRow = Math.floor(val.value.length / props.rowlength) + 1;
+  const result = newlineRows > textLengthRow ? newlineRows : textLengthRow;
 
-  return result <= 10 ? result : 10;
+  if (result < props.maxRows) {
+    return result < props.rows ? props.rows : result;
+  }
+  return props.maxRows;
 });
 
 watch(

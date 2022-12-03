@@ -11,7 +11,6 @@
       </fds-preview-code>
 
       <fds-preview-item>
-
         <table class="table table--compact">
           <thead>
             <tr>
@@ -40,13 +39,6 @@
               <td><code>'Vælg'</code></td>
               <td></td>
             </tr>
-
-            <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
             <tr>
               <td><code>options</code></td>
               <td><code>Array&lt;FdsOptionItem&gt;</code></td>
@@ -56,7 +48,6 @@
           </tbody>
         </table>
       </fds-preview-item>
-
     </fds-preview>
 
     <fds-preview header="Eksempel Formular">

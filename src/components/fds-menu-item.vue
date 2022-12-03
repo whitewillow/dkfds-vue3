@@ -1,7 +1,7 @@
 <template>
   <li
     role="none"
-    :class="[{ 'active current': active }, { disabled: disabled }]">
+    :class="[{ 'active current': active }]">
     <a
       :href="`${href ? href : 'javascript:void(0);'}`"
       role="menuitem"
@@ -35,16 +35,12 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     required: true,
   },
   active: {
-    type: Boolean,
-    default: false,
-  },
-  disabled: {
     type: Boolean,
     default: false,
   },
@@ -69,10 +65,6 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const navigate = (key: string) => {
-  if (props.disabled) {
-    return;
-  }
-
   emit('navigate', key);
 };
 </script>

@@ -8,14 +8,11 @@
     </div>
     <input
       class="form-input d-flex"
-      :class="inputClass"
-      :readonly="isReadonly"
-      :name="formid"
+      v-bind="attrs"
       v-model="value"
       :id="formid"
-      :placeholder="placeholder"
-      :type="inputType"
-      :disabled="disabled"
+      :name="formid"
+      type="number"
       @input="handleInput"
       @blur="$emit('dirty', true)"
       @focus="($event.target as any).select()"/>
@@ -30,19 +27,18 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, computed,
+  defineProps, defineEmits, ref, computed, useAttrs,
 } from 'vue';
-import fdsInputProps from '@/props/fds-input.props';
 import getFormId from '@/composable/formId';
 
+const attrs = useAttrs();
 const props = defineProps({
-  ...fdsInputProps,
+  id: {
+    type: String,
+    default: null,
+  },
   modelValue: {
     default: 0,
-  },
-  inputType: {
-    type: String,
-    default: 'number',
   },
   suffix: {
     type: String,

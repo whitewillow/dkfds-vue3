@@ -1,14 +1,14 @@
 <template>
   <fieldset>
     <input
-      :id="formid"
       type="checkbox"
-      :checked="refValue"
       class="form-checkbox"
+      :id="formid"
+      :checked="refValue"
       :class="{ 'checkbox-large': size === 'large' }"
       @input="onInput"
       @blur="$emit('dirty', true)"
-      :disabled="disabled"/>
+      v-bind="attrs"/>
     <label
       :for="formid"
       class="hand">
@@ -28,9 +28,11 @@
 
 <script setup lang="ts">
 import {
-  defineProps, defineEmits, ref, watch, PropType,
+  defineProps, defineEmits, ref, watch, PropType, useAttrs,
 } from 'vue';
 import getFormId from '@/composable/formId';
+
+const attrs = useAttrs();
 
 const props = defineProps({
   id: {
@@ -47,13 +49,6 @@ const props = defineProps({
   size: {
     type: String as PropType<'small' | 'large'>,
     default: 'large',
-  },
-  /**
-   * Skal checkbox være disabled
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
   },
 });
 

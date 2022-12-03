@@ -7,32 +7,67 @@
       isValid,
       errorMessage,
     }">
-    <xfds-checkbox-list
-      v-model="value"
-      @dirty="touchedEvent"
-      @update:modelValue="handleInput">
-      <slot />
-    </xfds-checkbox-list>
+    <ul
+      class="nobullet-list"
+      :id="formid">
+      <li
+        v-for="(checkbox, index) of value"
+        :key="index">
+        <input
+          v-model="checkbox.checked"
+          type="checkbox"
+          class="form-checkbox checkbox-large"
+          :id="'checkbox-' + formid + '-' + index"
+          :name="'checkbox' + formid"
+          :disabled="checkbox.disabled"
+          @change="handleInput"
+          @blur="touchedEvent"/>
+        <label :for="'checkbox-' + formid + '-' + index">
+          {{ checkbox.title }}
+        </label>
+
+        <div
+          class="checkbox-content mt-2 ml-4 py-4"
+          v-if="$slots[checkbox.value] && checkbox.checked">
+          <slot
+            :name="checkbox.value"
+            v-bind:checkboxvalue="value" />
+        </div>
+      </li>
+    </ul>
   </xfds-form-group>
 </template>
 
 <script setup lang="ts">
 import {
-  defineEmits, defineProps, ref, watch,
+  defineEmits, defineProps, PropType, ref, watch,
 } from 'vue';
 import { FdsCheckboxItem } from '@/model/fds.model';
-
-import fdsCheckboxProps from '@/props/fds-checkbox.props';
-import xfdsFormGroupProps from '@/props/fds-form.props';
+import getFormId from '@/composable/formId';
 
 const props = defineProps({
-  ...fdsCheckboxProps,
-  ...xfdsFormGroupProps,
-  suffix: {
+  modelValue: {
+    type: Array as PropType<Array<FdsCheckboxItem>>,
+    required: true,
+    default: () => [],
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
+  tooltip: {
     type: String,
     default: null,
   },
-  prefix: {
+  isValid: {
+    type: Boolean,
+    default: true,
+  },
+  errorMessage: {
     type: String,
     default: null,
   },
@@ -40,15 +75,17 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
-const value = ref(props.modelValue);
 const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
+  emit('dirty', true);
 };
 
-const handleInput = (event: Array<FdsCheckboxItem>) => {
-  value.value = event;
+const value = ref(props.modelValue);
+const { formid } = getFormId(undefined, true);
+
+const handleInput = () => {
   emit('update:modelValue', value.value);
 };
 

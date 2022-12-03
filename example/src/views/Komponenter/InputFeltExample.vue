@@ -46,36 +46,6 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>inputType</code></td>
-              <td><code>string</code></td>
-              <td><code>''</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>autocomplete</code></td>
-              <td><code>string</code></td>
-              <td><code>'text'</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>inputClass</code></td>
-              <td><code>string</code></td>
-              <td><code>''</code></td>
-              <td>Css klasse på input felt</td>
-            </tr>
-            <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>isReadonly</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><code>prefix</code></td>
               <td><code>string</code></td>
               <td><code>null</code></td>

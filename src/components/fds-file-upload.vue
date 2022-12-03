@@ -6,8 +6,7 @@
     @blur="onDirty"
     @change="onFileChange"
     aria-describedby="fileinput"
-    :accept="contenttypes.join(',')"
-    :disabled="disabled"/>
+    :accept="contenttypes.join(',')"/>
 </template>
 
 <script setup lang="ts">
@@ -21,10 +20,6 @@ const props = defineProps({
   id: {
     type: String,
     default: null,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
   },
   contenttypes: {
     type: Array as () => Array<string>,

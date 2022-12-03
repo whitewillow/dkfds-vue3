@@ -1,9 +1,9 @@
 <template>
   <button
     class="button mr-4"
-    :class="[`button-${variant}`, { disabled: disabled }]"
+    :class="[`button-${variant}`]"
     @click="emit('click', $event)"
-    :disabled="showSpinner || disabled">
+    :disabled="showSpinner">
     <div
       :class="{ 'inner-spinner-white': variant === 'primary' }"
       class="inner-spinner mr-4 icon-svg"
@@ -45,13 +45,7 @@ defineProps({
     type: String as PropType<FdsVariantEnum | string>,
     default: () => FdsVariantEnum.secondary,
   },
-  /**
-   * disabled
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
+
   /**
    * Vis spinner
    * */

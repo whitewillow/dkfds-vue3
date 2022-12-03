@@ -4,6 +4,7 @@
       <fds-preview-item>
         <xfds-form-input-number
           inputClass="input-width-xxs"
+          placeholder="Angiv antal"
           label="Lager antal"
           v-model="lager.lager"
         />
@@ -33,8 +34,6 @@
       </fds-preview-code>
 
       <fds-preview-item>
-        <!-- <info-table :json-string="propTest"> </info-table> -->
-
         <table class="table table--compact">
           <thead>
             <tr>
@@ -73,13 +72,6 @@
                 Se standard ikone hos
                 <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
               </td>
-            </tr>
-
-            <tr>
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
             </tr>
             <tr>
               <td><code>useoverlay</code></td>

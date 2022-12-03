@@ -2,7 +2,6 @@
   <select
     class="form-select"
     :class="{ dirty: dirty }"
-    :disabled="disabled"
     :name="formid"
     ref="refElement"
     :id="formid"
@@ -28,13 +27,6 @@ const props = defineProps({
     type: String,
     required: false,
     default: '',
-  },
-  /**
-   * Disable dropdown
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
   },
 });
 
