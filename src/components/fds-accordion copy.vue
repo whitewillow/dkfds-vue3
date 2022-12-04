@@ -1,34 +1,40 @@
 <template>
-  <div class="accordion-single">
-    <component :is="headerLevel">
-      <button
-        class="accordion-button"
-        :class="getVariantClass"
-        :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
-        :id="formid"
-        @click="refExpanded = !refExpanded"
-        :aria-controls="`acc_${formid}`">
-        <slot name="header">
+  <div>
+    <button
+      class="accordion-button"
+      :class="getVariantClass"
+      :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
+      :id="formid"
+      @click="refExpanded = !refExpanded"
+      :aria-controls="`acc_${formid}`">
+      <slot
+        name="header"
+        v-bind:expanded="refExpanded">
+        <div>
           {{ header }}
-          <span
-            class="accordion-icon"
-            v-if="variant && ['error', 'warning', 'success'].includes(variant)">
-            <span
-              class="icon_text"
-              v-if="variantText !== null">
-              {{ variantText === '' ? getIconText : variantText }}
-            </span>
-            <svg
-              class="icon-svg"
-              focusable="false"
-              aria-hidden="true">
-              <use :xlink:href="`#${getIcon}`"></use>
-            </svg>
-          </span>
-        </slot>
-      </button>
-    </component>
-
+          <div
+            class="form-hint"
+            v-if="hint !== ''">
+            {{ hint }}
+          </div>
+        </div>
+      </slot>
+      <span
+        class="accordion-icon"
+        v-if="variant && ['error', 'warning', 'success'].includes(variant)">
+        <span
+          class="icon_text"
+          v-if="variantText !== null">
+          {{ variantText === '' ? getIconText : variantText }}
+        </span>
+        <svg
+          class="icon-svg"
+          focusable="false"
+          aria-hidden="true">
+          <use :xlink:href="`#${getIcon}`"></use>
+        </svg>
+      </span>
+    </button>
     <div
       :id="`acc_${formid}`"
       role="region"
@@ -67,12 +73,6 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-
-  headerLevel: {
-    type: String as PropType<'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
-    default: 'h2',
-  },
-
   /**
    * Variant - ikon der vises til højre
    * */
