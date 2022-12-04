@@ -335,7 +335,7 @@
         </fds-accordion>
         <fds-accordion
           header="Accordion header med hint"
-          header-level="h3">
+          header-level="h3asdasd">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

@@ -71,6 +71,9 @@ const props = defineProps({
   headerLevel: {
     type: String as PropType<'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
     default: 'h2',
+    validator (value: string) {
+      return ['h2', 'h3', 'h4', 'h5', 'h6'].includes(value);
+    },
   },
 
   /**

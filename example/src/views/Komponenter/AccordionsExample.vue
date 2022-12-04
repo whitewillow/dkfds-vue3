@@ -53,14 +53,8 @@
             </tr>
             <tr>
               <td><code>header-level</code></td>
-              <td><code>string</code></td>
+              <td><code>'h2' | 'h3' | 'h4' | 'h5' | 'h6'</code></td>
               <td><code>'h2'</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>expanded</code></td>
-              <td><code>Boolean</code></td>
-              <td><code>false</code></td>
               <td></td>
             </tr>
             <tr>
@@ -73,6 +67,12 @@
               <td><code>variantText</code></td>
               <td><code>string</code></td>
               <td><code>''</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>expanded</code></td>
+              <td><code>Boolean</code></td>
+              <td><code>false</code></td>
               <td></td>
             </tr>
           </tbody>
@@ -89,7 +89,7 @@
           <tbody>
             <tr>
               <td><code>header</code></td>
-              <td><code>prop.header, prop.hint</code></td>
+              <td><code>prop.header, prop.variantText</code></td>
               <td></td>
             </tr>
             <tr>
