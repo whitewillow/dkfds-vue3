@@ -2,10 +2,7 @@
   <section>
     <fds-preview header="Single Accordions" href="https://designsystem.dk/komponenter/accordions/">
       <fds-preview-item>
-        <fds-accordion class="mb-4">
-          <template #header>
-            <h4 class="">Accordion med custom header</h4>
-          </template>
+        <fds-accordion header="Accordion normal header" class="mb-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -13,7 +10,18 @@
           </p>
         </fds-accordion>
 
-        <fds-accordion header="Accordion normal header" hint="Et hint">
+        <fds-accordion header="Accordion normal header" header-level="h3" class="mb-4">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </fds-accordion>
+
+        <fds-accordion class="mb-4" header-level="h3">
+          <template #header>
+            <p class="h4">Accordion med custom header</p>
+          </template>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -44,11 +52,9 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>hint</code></td>
+              <td><code>header-level</code></td>
               <td><code>string</code></td>
-              <td>
-                <code> ''</code>
-              </td>
+              <td><code>'h2'</code></td>
               <td></td>
             </tr>
             <tr>
@@ -99,7 +105,7 @@
     <fds-preview header="Accordion gruppe">
       <fds-preview-item>
         <fds-accordion-group>
-          <fds-accordion header="Accordion header med hint" hint="Hint for header">
+          <fds-accordion header="Accordion header med hint">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -149,31 +155,35 @@
 
 <script setup lang="ts">
 const accSingleCode = `
-<fds-accordion class="mb-4">
-  <template #header>
-    <h4 class="">
-      Accordion med custom header
-    </h4>
-  </template>
+<fds-accordion header="Accordion normal header" class="mb-4">
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
 </fds-accordion>
 
-<fds-accordion
-  header="Accordion normal header"
-  hint="Et hint">
+<fds-accordion header="Accordion normal header" header-level="h3" class="mb-4">
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</fds-accordion>
+
+<fds-accordion class="mb-4" header-level="h3">
+  <template #header>
+    <p class="h4">Accordion med custom header</p>
+  </template>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
 </fds-accordion>`;
 const accGroupCode = `
 <fds-accordion-group>
-  <fds-accordion header="Accordion header med hint" hint="Hint for header">
+  <fds-accordion header="Accordion header med hint">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
