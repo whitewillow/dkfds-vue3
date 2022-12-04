@@ -335,7 +335,7 @@
         </fds-accordion>
         <fds-accordion
           header="Accordion header med hint"
-          hint="Hint for header">
+          header-level="h3asdasd">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -380,9 +380,9 @@
 
       <fds-accordion class="mb-4">
         <template #header>
-          <h4 class="">
+          <p class="h4">
             Accordion med custom header
-          </h4>
+          </p>
         </template>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
