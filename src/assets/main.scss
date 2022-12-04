@@ -9,22 +9,15 @@
 @import "_forms";
 @import "_progress";
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-
-
 .disabled {
   position: relative;
 }
-
 
 .disabled::after {
   position: absolute;
@@ -37,7 +30,6 @@ body {
   top: 0;
   left: 0;
 }
-
 
 header .navbar .search-form {
   align-self: center;
