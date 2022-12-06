@@ -4,10 +4,10 @@ fieldset.code {
   max-width: 800px;
   background: #f4f4f4;
   border: 1px solid #ddd;
-  border-left: 3px solid #54278F;
+  border-left: 3px solid #0059B3;
 
   >legend {
-    background-color: #54278F;
+    background-color: #0059B3;
     color: #FCFBFD;
     padding: 4px 6px 2px 6px;
     margin-left: 24px;
@@ -17,8 +17,7 @@ fieldset.code {
   }
 
   >pre {
-    color: #3F007D;
-
+    color: #0059B3;
     font-size: 0.8em;
     font-weight: 200;
     page-break-inside: avoid;
@@ -30,7 +29,7 @@ fieldset.code {
 }
 
 code {
-  color: #3F007D;
+  color: #0059B3;
   background-color: #f4f4f4;
   font-size: 0.8em;
   padding: 2px 4px;
