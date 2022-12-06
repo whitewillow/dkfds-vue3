@@ -238,9 +238,10 @@
         </fds-formgroup>
 
         <fds-formgroup>
-          <fds-label>Vælg radio (KERNE)</fds-label>
 
-          <fds-radio-group v-model="radioValueKerne">
+          <fds-radio-group
+            v-model="radioValueKerne"
+            label="Vælg radio (KERNE)">
             <fds-radio-item value="metal">
               Metal
             </fds-radio-item>
@@ -261,9 +262,8 @@
         <fds-pre :json="{ radioValueKerne }" />
 
         <fds-formgroup>
-          <fds-label>Vælg radio (Extra)</fds-label>
-
           <xfds-radio
+            label="Vælg radio (Extra)"
             :list="radioOptions"
             v-model="radioVal">
             <template #hint>
@@ -278,9 +278,10 @@
         <fds-pre :json="{ radioVal }" />
 
         <fds-formgroup>
-          <fds-label>Vælg radio toggle</fds-label>
 
-          <xfds-radio-toggle v-model="toggleRadio">
+          <xfds-radio-toggle
+            v-model="toggleRadio"
+            label="Vælg radio toggle">
             <template #hint>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </template>
@@ -335,7 +336,7 @@
         </fds-accordion>
         <fds-accordion
           header="Accordion header med hint"
-          header-level="h3asdasd">
+          header-level="h3">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -1296,6 +1297,7 @@
       <div class="container page-container">
         <fds-sprogvaelger
           v-model="languages"
+          autoSetLang
           @lang="selectedLangauge = $event"></fds-sprogvaelger>
       </div>
 

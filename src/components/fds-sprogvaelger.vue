@@ -33,6 +33,10 @@ const props = defineProps({
     required: true,
     default: () => [],
   },
+  autoSetLang: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'lang']);
@@ -41,6 +45,9 @@ const value = ref(props.modelValue);
 
 const handleUpdateLang = (langauge: FdsLanguageItem) => {
   value.value = value.value.map((m) => ({ ...m, active: langauge.lang === m.lang }));
+  if (props.autoSetLang) {
+    document.documentElement.setAttribute('lang', langauge.lang);
+  }
   emit('lang', langauge.lang);
   emit('update:modelValue', value.value);
 };

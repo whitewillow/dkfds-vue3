@@ -1,5 +1,10 @@
 <template>
   <fieldset>
+    <legend class="form-label">
+      <slot name="label">
+        {{label}}
+      </slot>
+    </legend>
     <ul class="nobullet-list">
       <li
         v-for="(radio, index) of choices"
@@ -58,6 +63,13 @@ const props = defineProps({
   id: {
     type: String,
     default: null,
+  },
+  label: {
+    type: String,
+    required: true,
+    validator (value: string) {
+      return value?.length > 0;
+    },
   },
 });
 

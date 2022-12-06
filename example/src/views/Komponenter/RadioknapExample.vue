@@ -3,9 +3,7 @@
     <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/radioknap/">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label>Vælg Genre</fds-label>
-
-          <fds-radio-group v-model="radioValueKerne">
+          <fds-radio-group v-model="radioValueKerne" label="Vælg Genre">
             <fds-radio-item value="metal"> Metal </fds-radio-item>
             <fds-radio-item value="pop">
               Pop
@@ -48,6 +46,28 @@
               <td><code>string</code></td>
               <td><code>null</code></td>
               <td></td>
+            </tr>
+            <tr>
+              <td><code>label*</code></td>
+              <td><code>string</code></td>
+              <td><code>null</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Slots</th>
+
+              <th>label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>props.label</code></td>
+              <td>Angiv egen label (indgår i en legend)</td>
             </tr>
           </tbody>
         </table>
@@ -112,7 +132,7 @@ const code = `
 <fds-formgroup>
   <fds-label>Vælg Genre</fds-label>
 
-  <fds-radio-group v-model="radioValueKerne">
+  <fds-radio-group v-model="radioValueKerne" label="Vælg Genre">
     <fds-radio-item value="metal"> Metal </fds-radio-item>
     <fds-radio-item value="pop">
       Pop
