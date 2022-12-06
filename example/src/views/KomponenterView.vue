@@ -13,7 +13,7 @@
         </aside>
         <div class="col-12 col-lg-9">
           <div class="subheading">Komponenter</div>
-          <h1 v-if="currentItem" :id="currentItem.key">{{ currentItem.title }}</h1>
+          <h1 v-if="currentItem" :id="currentItem.key">{{ currentItem.title }}s</h1>
           <router-view />
         </div>
       </div>

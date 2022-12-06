@@ -10,6 +10,7 @@ https://github.com/whitewillow/dkfds-vue3/issues
 - Alert og Fejlopsummering aria roles https://github.com/whitewillow/dkfds-vue3/issues/52
 - Fjernet default smooth scroll på html - ikke en del af FDS - og scroll kan virke sløv i chrome https://github.com/whitewillow/dkfds-vue3/issues/12
 - Accordion brugte ikke FDS standard og er rettet
+- Diverse Aria justeringer
 
 
 # 0.3.11

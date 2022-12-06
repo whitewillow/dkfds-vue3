@@ -5,7 +5,7 @@
     <div id="top"></div>
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
     <!-- Start: Portal header -->
-    <div class="portal-header portal-header-compact">
+    <div class="portal-header">
       <div class="container portal-header-inner">
         <!-- Start: Portallogo -->
         <a href="#" aria-label="Portalnavn" class="logo"
@@ -25,8 +25,12 @@
 
         <!-- Start: Persondetaljer -->
         <div class="portal-info">
-          <p class="user">Anders Andersen, Forsikringens Forsikringsfirma</p>
-          <button href="#" class="button button-secondary d-print-none">Log af</button>
+          <p class="user">
+            <span class="username weight-semibold">Anders Andersen</span> <br />Forsikringens
+            Forsikringsfirma
+          </p>
+
+          <button class="button button-secondary d-print-none">Log af</button>
         </div>
         <!-- Slut: Persondetaljer -->
       </div>
@@ -67,7 +71,7 @@
       <!-- Start: Hovedmenu -->
       <div class="navbar navbar-primary">
         <div class="navbar-inner container">
-          <ul class="nav-primary">
+          <ul class="nav-primary" role="menu">
             <li role="none" :class="[{ current: isPartOfMenu('forside') }]">
               <fds-nav-link @click="router.push({ name: 'forside' })" title="Link title">
                 Forside
