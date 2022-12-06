@@ -40,7 +40,7 @@ defineProps({
   },
   header: {
     type: String,
-    default: null,
+    default: 'Kode eksempel',
   },
 });
 </script>

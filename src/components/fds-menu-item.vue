@@ -3,10 +3,10 @@
     role="none"
     :class="[{ 'active current': active }]">
     <a
-      :href="`${href ? href : 'javascript:void(0);'}`"
+      :href="`${href ? href : '#'}`"
       role="menuitem"
       class="d-block menuitem hand"
-      @click="navigate(id)">
+      @click="navigate($event, id)">
       <span v-if="index !== null">
         {{ `${index}. ` }}
       </span>
@@ -64,7 +64,8 @@ defineProps({
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
-const navigate = (key: string) => {
+const navigate = (event: Event, key: string) => {
+  event.preventDefault();
   emit('navigate', key);
 };
 </script>

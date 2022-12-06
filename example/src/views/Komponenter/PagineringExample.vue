@@ -11,49 +11,74 @@
         <fds-pre header="filter list" :json="{ skipPaging }" />
 
         <fds-pre header="filter list" :json="{ filteredPagingList }" />
+      </fds-preview-item>
+      <fds-preview-item>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Props</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>list</code></td>
+              <td><code>Array[any]</code></td>
+              <td><code>null</code></td>
+              <td>Tager imod en et vilkårligt array</td>
+            </tr>
+            <tr>
+              <td><code>skip</code></td>
+              <td><code>Number</code></td>
+              <td>
+                <code> 0</code>
+              </td>
+              <td>Antal elementer der skal skippes</td>
+            </tr>
+            <tr>
+              <td><code>pageSize</code></td>
+              <td><code>Number</code></td>
+              <td><code>10</code></td>
+              <td>Antal elementer per side, default 10</td>
+            </tr>
+            <tr>
+              <td><code>dirty</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Om feltet er blevet berørt</td>
+            </tr>
+            <tr>
+              <td><code>useAutoDirty</code></td>
+              <td><code>boolean</code></td>
+              <td><code>true</code></td>
+              <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <h2>Properties</h2>
-        <div class="col-10">
-          <fds-strukturerede-liste header="modelValue">
-            <template #header>
-              <fds-label class="d-block">list</fds-label>
-              <code>Array[any]</code>
-            </template>
-            Tager imod en et vilkårligt array
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="validations">
-            <template #header>
-              <fds-label class="d-block">skip</fds-label>
-              <code>Number = 0</code>
-            </template>
-            Antal elementer der skal skippes
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="dirty">
-            <template #header>
-              <fds-label class="d-block">pageSize</fds-label>
-              <code>Number = 10</code>
-            </template>
-            Antal elementer per side, default 10
-          </fds-strukturerede-liste>
-        </div>
-
-        <h2>Events</h2>
-        <div class="col-10">
-          <fds-strukturerede-liste header="modelValue">
-            <template #header>
-              <fds-label class="d-block">@filteredPage</fds-label>
-              <code>Array[any]</code>
-            </template>
-            Filtreret liste, med nuværende side elementer
-          </fds-strukturerede-liste>
-          <fds-strukturerede-liste header="validations">
-            <template #header>
-              <fds-label class="d-block">@skip</fds-label>
-              <code>Number</code>
-            </template>
-            Antal elementer der er skippet
-          </fds-strukturerede-liste>
-        </div>
+        <table class="table table--compact">
+          <thead>
+            <tr>
+              <th>Events</th>
+              <th>return</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>@filteredPage</code></td>
+              <td><code>Array[any]</code></td>
+              <td>Filtreret liste, med nuværende side elementer</td>
+            </tr>
+            <tr>
+              <td><code>@skip</code></td>
+              <td><code>Number</code></td>
+              <td>Antal elementer der er skippet</td>
+            </tr>
+          </tbody>
+        </table>
       </fds-preview-item>
 
       <fds-preview-code>

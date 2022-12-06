@@ -6,7 +6,7 @@
     aria-label="Pagineringseksempel med 12 sider">
     <a
       href="javascript:void(0);"
-      @click="handlePageChange(1)"
+      @click="handlePageChange($event, 1)"
       class="button button-arrow button-first"><svg
         class="icon-svg"
         aria-hidden="true">
@@ -16,7 +16,7 @@
     <a
       v-if="currentPage > 1"
       href="javascript:void(0);"
-      @click="handlePageChange(currentPage - 1)"
+      @click="handlePageChange($event, currentPage - 1)"
       class="button button-arrow button-previous"
       aria-label="Forrige side">
       <svg
@@ -38,7 +38,8 @@
         :class="[{ 'pagination-number': !page.dotted }, { ' pagination-overflow': page.dotted }]">
         <a
           v-if="currentPage === page.index"
-          href="javascript:void(0);"
+          href="#"
+          @click="$event.preventDefault()"
           class="button current-page"
           :aria-label="`Side ${page.index}`"
           aria-current="page">
@@ -46,8 +47,8 @@
         </a>
         <a
           v-if="currentPage !== page.index && !page.dotted"
-          href="javascript:void(0);"
-          @click="handlePageChange(page.index)"
+          href="#"
+          @click="handlePageChange($event, page.index)"
           class="button button-secondary"
           :aria-label="`Side ${page.index}`">
           {{ page.index }}
@@ -59,8 +60,8 @@
     </ul>
     <a
       v-if="currentPage !== lastPage"
-      href="javascript:void(0);"
-      @click="handlePageChange(currentPage + 1)"
+      href="#"
+      @click="handlePageChange($event, currentPage + 1)"
       class="button button-arrow button-next"
       aria-label="Næste side">
       <span class="pagination-nav-link">
@@ -72,8 +73,8 @@
       </svg>
     </a>
     <a
-      href="javascript:void(0);"
-      @click="handlePageChange(lastPage)"
+      href="#"
+      @click="handlePageChange($event, lastPage)"
       class="button button-arrow button-last"><svg
       class="icon-svg"
       aria-hidden="true">
@@ -140,7 +141,8 @@ const emitList = (skip = 0) => {
   emit('skip', props.skip > 0 ? props.skip : skip);
 };
 
-const handlePageChange = (newPage: number) => {
+const handlePageChange = (event: Event, newPage: number) => {
+  event.preventDefault();
   const skip = props.pageSize * (newPage - 1);
   emitList(skip);
   currentPage.value = newPage;

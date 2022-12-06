@@ -12,6 +12,7 @@
         :id="'checkbox-' + formid + '-' + index"
         :name="'checkbox' + formid"
         :disabled="checkbox.disabled"
+        :aria-disabled="checkbox.ariaDisabled"
         @change="handleInput"
         @blur="handleDirty"/>
       <label :for="'checkbox-' + formid + '-' + index">

@@ -3,7 +3,7 @@
     <div class="form-group form-group-day">
       <label
         class="form-label"
-        for="date-day">
+        :for="`day_${formid}`">
         Dag
       </label>
       <input
@@ -20,13 +20,12 @@
         maxlength="2"
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
-        title="Indskriv dag på måneden som tal"
-        aria-describedby="example-date-field-helptext"/>
+        title="Indskriv dag på måneden som tal"/>
     </div>
     <div class="form-group form-group-month">
       <label
         class="form-label"
-        for="date-month">
+        :for="`month_${formid}`">
         Måned
       </label>
       <input
@@ -43,13 +42,12 @@
         maxlength="2"
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
-        title="Indskriv månedens nummer"
-        aria-describedby="example-date-field-helptext"/>
+        title="Indskriv månedens nummer"/>
     </div>
     <div class="form-group form-group-year">
       <label
         class="form-label"
-        for="date-year">
+        :for="`year_${formid}`">
         År
       </label>
       <input
@@ -66,8 +64,7 @@
         maxlength="4"
         pattern="^[0-9]{0,4}$"
         data-input-regex="^[0-9]{0,4}$"
-        title="Indskriv årstal"
-        aria-describedby="example-date-field-helptext"/>
+        title="Indskriv årstal"/>
     </div>
   </div>
 </template>

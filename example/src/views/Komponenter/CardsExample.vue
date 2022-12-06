@@ -29,7 +29,7 @@
               <td><code>header</code></td>
               <td><code>string</code></td>
               <td><code>null</code></td>
-              <td></td>
+              <td>Default h2 - benyt #header hvis andet ønskes</td>
             </tr>
             <tr>
               <td><code>subheader</code></td>

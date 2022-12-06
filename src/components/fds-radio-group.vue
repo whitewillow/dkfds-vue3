@@ -1,9 +1,16 @@
 <template>
-  <ul
-    class="nobullet-list"
-    :id="formid">
-    <slot />
-  </ul>
+  <fieldset>
+    <legend class="form-label">
+      <slot name="label">
+        {{label}}
+      </slot>
+    </legend>
+    <ul
+      class="nobullet-list"
+      :id="formid">
+      <slot />
+    </ul>
+  </fieldset>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +25,14 @@ const props = defineProps({
   id: {
     type: String,
     default: null,
+  },
+
+  label: {
+    type: String,
+    required: true,
+    validator (value: string) {
+      return value?.length > 0;
+    },
   },
 });
 

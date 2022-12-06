@@ -5,7 +5,6 @@
     :name="formid"
     @blur="onDirty"
     @change="onFileChange"
-    aria-describedby="fileinput"
     :accept="contenttypes.join(',')"/>
 </template>
 

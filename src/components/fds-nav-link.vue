@@ -1,7 +1,8 @@
 <template>
   <a
     v-if="!disabled"
-    href="javascript:void(0);"
+    href="#"
+    @click="$event.preventDefault()"
     class="nav-link"
     role="menuitem">
     <span>

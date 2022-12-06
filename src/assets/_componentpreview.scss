@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+
 .component-preview {
     border: 1px solid #747474;
     border-radius: 5px;
@@ -54,12 +56,11 @@
 
     >.component-code {
         border-top: 1px solid #dcdcdc;
-        background-color: #f4f4f4;
+        background-color: #FCFBFD;
         font-size: 0.8em;
-        border-top: 3px solid #d63384;
-        border-bottom: 3px solid #d63384;
-        color: #d63384;
-        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        border-top: 3px solid #0059B3;
+        border-bottom: 3px solid #0059B3;
+        color: #0059B3;
         page-break-inside: avoid;
         overflow: auto;
         padding: 0em 1.5em;
@@ -67,13 +68,14 @@
         word-wrap: break-word;
 
         >pre {
+            font-size: 1.0em;
             padding-top: 0;
             margin-top: 0;
         }
 
         >legend {
-            background-color: #d63384;
-            color: #fff;
+            background-color: #0059B3;
+            color: #FCFBFD;
             padding: 4px 6px 2px 6px;
             margin-left: 24px;
             font-size: 1.2em;

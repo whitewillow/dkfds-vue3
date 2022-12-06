@@ -1,5 +1,7 @@
 <template>
-  <div class="component-code">
+  <div
+    class="component-code"
+    aria-hidden="true">
     <legend v-if="header">
       {{ header }}
     </legend>

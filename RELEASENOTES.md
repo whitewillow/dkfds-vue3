@@ -10,13 +10,18 @@ https://github.com/whitewillow/dkfds-vue3/issues
 - Alert og Fejlopsummering aria roles https://github.com/whitewillow/dkfds-vue3/issues/52
 - Fjernet default smooth scroll på html - ikke en del af FDS - og scroll kan virke sløv i chrome https://github.com/whitewillow/dkfds-vue3/issues/12
 - Accordion brugte ikke FDS standard og er rettet
+- Diverse Aria justeringer og kontrast farver
+- fds-paging
 
 
 # 0.3.11
 - fds-file-upload - removeContentHeaders
 - xfds-file-list - Fil listen er flyttet til Ekstra
 - xfds-menu - watch, så menu opdateres, ved ændring
-
+- Aria lang på html
+- Autoset aria lang på fds-sprogvaelger
+- fjernet prop disabled på fds-radio-item
+- radio lister fds-radio-group/xfds-radio skal benytte fieldset og legends istedet for label
 # 0.3.10
 
 Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponenter, for at give konsistens og ensartethed

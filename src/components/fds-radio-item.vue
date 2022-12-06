@@ -5,7 +5,6 @@
       type="radio"
       :name="'radio' + formid"
       :value="value"
-      :disabled="disabled"
       :checked="value === injGroupValue"
       @change="handleInput"
       @blur="$emit('dirty', true)"
@@ -39,10 +38,6 @@ const props = defineProps({
   id: {
     type: String,
     default: null,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
   },
 });
 

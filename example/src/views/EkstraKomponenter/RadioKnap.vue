@@ -3,9 +3,7 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label>Vælg radio</fds-label>
-
-          <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
+          <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal" label="Vælg radio">
             <template v-slot:[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
@@ -25,9 +23,7 @@
     <fds-preview header="Ja eller nej">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label>Vælg radio toggle</fds-label>
-
-          <xfds-radio-toggle v-model="toggleRadio">
+          <xfds-radio-toggle v-model="toggleRadio" label="Vælg radio toggle">
             <template v-slot:[`true`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
@@ -75,7 +71,7 @@ const radioOptions = ref<FdsOptionItem[]>([
 ]);
 
 const code = `
-<xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal">
+<xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal" label="Vælg radio">
   <template v-slot:[\`melon\`]>
     <p>Det er muligt at benytte radio til mere indhold</p>
   </template>
@@ -98,7 +94,7 @@ const radioOptions = ref<FdsOptionItem[]>([
 `;
 
 const code2 = `
-<xfds-radio-toggle v-model="toggleRadio">
+<xfds-radio-toggle v-model="toggleRadio" label="Vælg radio toggle">
   <template v-slot:[\`true\`]>
     <p>Det er muligt at benytte radio til mere indhold</p>
   </template>
