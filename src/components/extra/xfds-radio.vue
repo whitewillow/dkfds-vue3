@@ -17,6 +17,7 @@
           :name="'radio' + formid"
           :value="radio.value"
           :disabled="radio.disabled"
+          :aria-disabled="radio.ariaDisabled"
           :checked="value === radio.value.toString()"
           @change="handleInput"
           @blur="$emit('dirty', true)"

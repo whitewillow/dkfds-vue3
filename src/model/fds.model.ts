@@ -16,6 +16,7 @@ export interface FdsOptionItem {
   title: string;
   value: string;
   disabled?: boolean;
+  ariaDisabled?: boolean;
 }
 
 /**
