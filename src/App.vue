@@ -110,10 +110,13 @@ import FdsHeaderPortalMobil from '@/dev_components/fds-header-portal-mobil.vue';
 import FdsHeaderSolutionMobil from '@/dev_components/fds-header-solution-mobil.vue';
 import FdsHeaderSolution from '@/dev_components/fds-header-solution.vue';
 import FdsHeaderNavigation from '@/dev_components/fds-header-navigation.vue';
+import DKFSNavigation from '@/scripts/navigation';
 
 const clickLogout = () => {
   console.warn('Logout event');
 };
+
+new DKFSNavigation().init();
 </script>
 
 <style lang="scss">
