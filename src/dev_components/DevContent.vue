@@ -171,7 +171,7 @@
 
         <fds-pre :json="{ dropdownValForm }" />
 
-        <hr />
+        <hr class="my-6" />
 
         <h2>Tekstfelt med knap</h2>
 
@@ -238,7 +238,6 @@
         </fds-formgroup>
 
         <fds-formgroup>
-
           <fds-radio-group
             v-model="radioValueKerne"
             label="Vælg radio (KERNE)">
@@ -278,7 +277,6 @@
         <fds-pre :json="{ radioVal }" />
 
         <fds-formgroup>
-
           <xfds-radio-toggle
             v-model="toggleRadio"
             label="Vælg radio toggle">
@@ -318,9 +316,18 @@
           offText="Nej"
           onText="Ja" />
         <fds-pre :json="{ toggleswitch }" />
-      </div>
 
-      <hr />
+        <h3>Range</h3>
+        <fds-formgroup>
+          <fds-label> Range </fds-label>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
+          <fds-hint>Indtast Range</fds-hint>
+          <xfds-range v-model="rangeInput">
+          </xfds-range>
+        </fds-formgroup>
+      </div>
 
       <h2>Accordions</h2>
 
@@ -1683,6 +1690,7 @@ const checkboxListForm = ref<FdsCheckboxItem[]>([
     disabled: true,
   },
 ]);
+const rangeInput = ref(5);
 const dropdownValForm = ref('');
 const dropdownValXFDS = ref('');
 const dropdownVal = ref('');

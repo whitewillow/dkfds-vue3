@@ -73,6 +73,8 @@ import XFdsDropdown from '@/components/extra/xfds-dropdown.vue';
 import XFdsRadio from '@/components/extra/xfds-radio.vue';
 import XFdsRadioToggle from '@/components/extra/xfds-radio-toggle.vue';
 
+import XFdsRange from '@/components/extra/xfds-range.vue';
+
 import XFdsFormGroup from '@/components/extra/xfds-form-group.vue';
 import XFdsFormInput from '@/components/extra/xfds-form-input.vue';
 import XFdsFormRadio from '@/components/extra/xfds-form-radio.vue';
@@ -176,6 +178,8 @@ function install (app: App): void {
   app.component('xfds-dropdown', XFdsDropdown);
   app.component('xfds-radio', XFdsRadio);
 
+  app.component('xfds-range', XFdsRange);
+
   app.component('xfds-validate', XFdsValidate);
   app.component('xfds-form-group', XFdsFormGroup);
   app.component('xfds-form-input', XFdsFormInput);
@@ -243,6 +247,7 @@ export {
   XFdsDropdown,
   XFdsRadio,
   XFdsRadioToggle,
+  XFdsRange,
   XFdsValidate,
   XFdsFormInput,
   XFdsFormInputNumber,

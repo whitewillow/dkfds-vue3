@@ -22,6 +22,12 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Overvej https://joshcollinsworth.com/blog/accessible-toggle-buttons
+ * https://alvarotrigo.com/blog/toggle-switch-css/
+ *
+ * */
+
 import { defineProps, defineEmits } from 'vue';
 
 import getFormId from '@/composable/formId';

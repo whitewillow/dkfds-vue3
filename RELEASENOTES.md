@@ -5,6 +5,9 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 
+# 0.3.13
+- Omskrev primær navigation event håndtering til typescript
+
 # 0.3.12
 - https://github.com/whitewillow/dkfds-vue3/issues/54
 - Alert og Fejlopsummering aria roles https://github.com/whitewillow/dkfds-vue3/issues/52
