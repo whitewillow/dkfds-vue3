@@ -1,14 +1,21 @@
+@import "_code-color";
+
+
 fieldset.code {
   margin-top: 24px;
   margin-bottom: 1.6em;
-  max-width: 800px;
-  background: #f4f4f4;
+  overflow: auto;
+  page-break-inside: avoid;
+  display: block;
+  word-wrap: break-word;
+
+  background: $preview-background-color;
   border: 1px solid #ddd;
-  border-left: 3px solid #0059B3;
+  border-left: 3px solid $preview-border-color;
 
   >legend {
-    background-color: #0059B3;
-    color: #FCFBFD;
+    background-color: $preview-legend-background-color;
+    color: $preview-legend-color;
     padding: 4px 6px 2px 6px;
     margin-left: 24px;
     font-size: 0.8em;
@@ -17,20 +24,16 @@ fieldset.code {
   }
 
   >pre {
-    color: #0059B3;
+    color: $preview-color;
     font-size: 0.8em;
     font-weight: 200;
-    page-break-inside: avoid;
-    overflow: auto;
     padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
   }
 }
 
 code {
-  color: #0059B3;
-  background-color: #f4f4f4;
+  color: $preview-color;
+  background-color: $preview-background-color;
   font-size: 0.8em;
   padding: 2px 4px;
 }
