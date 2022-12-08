@@ -1,7 +1,7 @@
 {
   "name": "dkfds-vue3",
   "version": "0.3.12",
-  "module": "dist/dkfds-vue3.mjs",
+  "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vite build && pnpm run typings",
