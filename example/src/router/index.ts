@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import ekstraKomponenterRoutes from './ekstrakomponenterRoutes';
 import komponenterRoutes from './KomponenterRoutes';
 import anbefalingerRoutes from './AnbefalingerRoutes';
+import boblereRoutes from './BoblereRoutes';
 
 function loadView(view: string) {
   return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}`);
@@ -25,6 +26,7 @@ const routes: Array<RouteRecordRaw> = [
   ...komponenterRoutes,
   ...ekstraKomponenterRoutes,
   ...anbefalingerRoutes,
+  ...boblereRoutes,
   {
     path: '/about',
     name: 'about',
