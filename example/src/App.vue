@@ -19,8 +19,7 @@
           title="Åben mobil menu"
         >
           <svg class="icon-svg" focusable="false" aria-hidden="true">
-            <use xlink:href="#menu"></use></svg
-          >Menu
+            <use xlink:href="#menu"></use></svg>Menu
         </button>
 
         <!-- Start: Persondetaljer -->
@@ -73,28 +72,33 @@
         <div class="navbar-inner container">
           <ul class="nav-primary" role="menu">
             <li role="none" :class="[{ current: isPartOfMenu('forside') }]">
-              <fds-nav-link @click="router.push({ name: 'forside' })" title="Link title">
+              <fds-nav-link @click="router.push({ name: 'forside' })"
+              aria-label="Naviger til forside">
                 Forside
               </fds-nav-link>
             </li>
             <li role="none" :class="[{ current: isPartOfMenu('komponenter') }]">
-              <fds-nav-link @click="router.push({ name: 'komponenter' })" title="Link title">
+              <fds-nav-link @click="router.push({ name: 'komponenter' })"
+              aria-label="Naviger til komponenter">
                 Komponenter
               </fds-nav-link>
             </li>
             <li role="none" :class="[{ current: isPartOfMenu('ekstrakomponenter') }]">
-              <fds-nav-link @click="router.push({ name: 'ekstrakomponenter' })" title="Link title">
+              <fds-nav-link @click="router.push({ name: 'ekstrakomponenter' })"
+              aria-label="Naviger til ekstra komponenter">
                 Ekstra Komponenter
               </fds-nav-link>
             </li>
 
             <li role="none" :class="[{ current: isPartOfMenu('anbefalinger') }]">
-              <fds-nav-link @click="router.push({ name: 'anbefalinger' })" title="Link title">
+              <fds-nav-link @click="router.push({ name: 'anbefalinger' })"
+              aria-label="Naviger til anbefalinger">
                 Anbefalinger
               </fds-nav-link>
             </li>
             <li role="none" :class="[{ current: isPartOfMenu('about') }]">
-              <fds-nav-link @click="router.push({ name: 'about' })" title="Link title">
+              <fds-nav-link @click="router.push({ name: 'about' })"
+              aria-label="Naviger til fællesskab">
                 Fællesskab
               </fds-nav-link>
             </li>
@@ -129,8 +133,7 @@
           Support: 12 34 56 78 ·
           <a href="#" class="icon-link function-link alert-leave"
             >Kontakt<svg class="icon-svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#open-in-new"></use></svg
-          ></a>
+              <use xlink:href="#open-in-new"></use></svg></a>
         </p>
       </div>
     </nav>
@@ -195,8 +198,7 @@
                     <a class="function-link icon-link" href="#"
                       >Eller måske er du interesseret i noget helt andet, som tager mange linjer at
                       forklare<svg class="icon-svg" focusable="&gt;false" aria-hidden="true">
-                        <use xlink:href="#open-in-new"></use></svg
-                    ></a>
+                        <use xlink:href="#open-in-new"></use></svg></a>
                   </li>
                 </ul>
               </div>
@@ -215,8 +217,7 @@
                         focusable="&gt;false"
                         aria-hidden="true"
                       >
-                        <use xlink:href="#open-in-new"></use></svg
-                    ></a>
+                        <use xlink:href="#open-in-new"></use></svg></a>
                   </li>
 
                   <li class="">

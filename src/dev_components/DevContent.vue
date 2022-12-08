@@ -1355,6 +1355,7 @@
 
       <xfds-progressbar
         :procent="progress"
+        :max="66"
         :showProgress="false"
         style="height: 2px"
         variant="primary">

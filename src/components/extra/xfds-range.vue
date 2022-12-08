@@ -6,6 +6,7 @@
     :step="step"
     :aria-valuemax="max"
     :aria-valuemin="min"
+    :aria-valuenow="value"
     v-model="value"
     :id="formid"
     :name="formid"
@@ -42,7 +43,7 @@ const props = defineProps({
   },
   max: {
     type: Number,
-    default: 10,
+    default: 100,
   },
   step: {
     type: Number,
