@@ -1,3 +1,0 @@
-# Komponenter
-
-## Accordions
