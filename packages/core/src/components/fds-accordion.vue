@@ -7,18 +7,21 @@
         :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
         :id="formid"
         @click="refExpanded = !refExpanded"
-        :aria-controls="`acc_${formid}`"
-      >
+        :aria-controls="`acc_${formid}`">
         <slot name="header">
           {{ header }}
           <span
             class="accordion-icon"
-            v-if="variant && ['error', 'warning', 'success'].includes(variant)"
-          >
-            <span class="icon_text" v-if="variantText !== null">
+            v-if="variant && ['error', 'warning', 'success'].includes(variant)">
+            <span
+              class="icon_text"
+              v-if="variantText !== null">
               {{ variantText === "" ? getIconText : variantText }}
             </span>
-            <svg class="icon-svg" focusable="false" aria-hidden="true">
+            <svg
+              class="icon-svg"
+              focusable="false"
+              aria-hidden="true">
               <use :xlink:href="`#${getIcon}`"></use>
             </svg>
           </span>
@@ -31,16 +34,17 @@
       role="region"
       :aria-labelledby="formid"
       :aria-hidden="`${refExpanded ? 'false' : 'true'}`"
-      class="accordion-content"
-    >
+      class="accordion-content">
       <slot />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { formId } from "dkfds-vue3-utils";
-import { defineProps, ref, computed, PropType } from "vue";
+import { formId } from 'dkfds-vue3-utils';
+import {
+  defineProps, ref, computed, PropType,
+} from 'vue';
 
 const props = defineProps({
   /**
@@ -54,7 +58,7 @@ const props = defineProps({
    * */
   hint: {
     type: String,
-    default: "",
+    default: '',
   },
   /**
    * Er Accordion Åben = aktiv
@@ -65,10 +69,10 @@ const props = defineProps({
   },
 
   headerLevel: {
-    type: String as PropType<"h2" | "h3" | "h4" | "h5" | "h6">,
-    default: "h2",
-    validator(value: string) {
-      return ["h2", "h3", "h4", "h5", "h6"].includes(value);
+    type: String as PropType<'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
+    default: 'h2',
+    validator (value: string) {
+      return ['h2', 'h3', 'h4', 'h5', 'h6'].includes(value);
     },
   },
 
@@ -76,7 +80,7 @@ const props = defineProps({
    * Variant - ikon der vises til højre
    * */
   variant: {
-    type: String as PropType<"success" | "warning" | "error">,
+    type: String as PropType<'success' | 'warning' | 'error'>,
     default: null,
   },
   /**
@@ -84,7 +88,7 @@ const props = defineProps({
    * */
   variantText: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
@@ -93,18 +97,18 @@ const refExpanded = ref(props.expanded);
 const { formid } = formId(undefined, true);
 
 const icons = {
-  success: "check-circle",
-  warning: "report-problem",
-  error: "highlight-off",
+  success: 'check-circle',
+  warning: 'report-problem',
+  error: 'highlight-off',
 };
 
 const defaultVariantText = {
-  success: "Success",
-  warning: "Advarsel",
-  error: "Fejl",
+  success: 'Success',
+  warning: 'Advarsel',
+  error: 'Fejl',
 };
 
-const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ""));
+const getVariantClass = computed(() => (props.variant ? `accordion-${props.variant}` : ''));
 const getIcon = computed(() => icons[props.variant as keyof typeof icons]);
 const getIconText = computed(() => defaultVariantText[props.variant as keyof typeof icons]);
 </script>
