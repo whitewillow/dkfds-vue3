@@ -5,7 +5,8 @@
 https://github.com/whitewillow/dkfds-vue3/issues
 
 # 0.3.13
-- Refak setup - pnpm, opdeling af core, extra, utils
+- Refak setup - pnpm, opdeling af core, extra, utils for bedre treeshaking
+- Accordion header-level renamed header-tag
 
 # 0.3.12
 - https://github.com/whitewillow/dkfds-vue3/issues/54

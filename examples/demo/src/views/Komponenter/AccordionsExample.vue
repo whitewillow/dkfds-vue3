@@ -10,7 +10,7 @@
           </p>
         </fds-accordion>
 
-        <fds-accordion header="Accordion normal header" header-level="h3" class="mb-4">
+        <fds-accordion header="Accordion normal header" header-tag="h3" class="mb-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -18,7 +18,7 @@
           </p>
         </fds-accordion>
 
-        <fds-accordion class="mb-4" header-level="h3">
+        <fds-accordion class="mb-4" header-tag="h3">
           <template #header>
             <p class="h4">Accordion med custom header</p>
           </template>
@@ -52,7 +52,7 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>header-level</code></td>
+              <td><code>header-tag</code></td>
               <td><code>'h2' | 'h3' | 'h4' | 'h5' | 'h6'</code></td>
               <td><code>'h2'</code></td>
               <td></td>
@@ -163,7 +163,7 @@ const accSingleCode = `
   </p>
 </fds-accordion>
 
-<fds-accordion header="Accordion normal header" header-level="h3" class="mb-4">
+<fds-accordion header="Accordion normal header" header-tag="h3" class="mb-4">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -171,7 +171,7 @@ const accSingleCode = `
   </p>
 </fds-accordion>
 
-<fds-accordion class="mb-4" header-level="h3">
+<fds-accordion class="mb-4" header-tag="h3">
   <template #header>
     <p class="h4">Accordion med custom header</p>
   </template>

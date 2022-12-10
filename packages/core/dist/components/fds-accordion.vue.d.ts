@@ -6,7 +6,7 @@ declare const _default: {
         $props: Partial<{
             expanded: boolean;
             hint: string;
-            headerLevel: "h2" | "h3" | "h4" | "h5" | "h6";
+            headerTag: "h2" | "h3" | "h4" | "h5" | "h6";
             variant: "error" | "success" | "warning";
             variantText: string;
         }> & Omit<Readonly<import("vue").ExtractPropTypes<{
@@ -30,7 +30,7 @@ declare const _default: {
                 type: BooleanConstructor;
                 default: boolean;
             };
-            headerLevel: {
+            headerTag: {
                 type: PropType<"h2" | "h3" | "h4" | "h5" | "h6">;
                 default: string;
                 validator(value: string): boolean;
@@ -49,7 +49,7 @@ declare const _default: {
                 type: StringConstructor;
                 default: string;
             };
-        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "expanded" | "hint" | "headerLevel" | "variant" | "variantText">;
+        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "expanded" | "hint" | "headerTag" | "variant" | "variantText">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -84,7 +84,7 @@ declare const _default: {
                 type: BooleanConstructor;
                 default: boolean;
             };
-            headerLevel: {
+            headerTag: {
                 type: PropType<"h2" | "h3" | "h4" | "h5" | "h6">;
                 default: string;
                 validator(value: string): boolean;
@@ -106,7 +106,7 @@ declare const _default: {
         }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
             expanded: boolean;
             hint: string;
-            headerLevel: "h2" | "h3" | "h4" | "h5" | "h6";
+            headerTag: "h2" | "h3" | "h4" | "h5" | "h6";
             variant: "error" | "success" | "warning";
             variantText: string;
         }, {}, string> & {
@@ -150,7 +150,7 @@ declare const _default: {
             type: BooleanConstructor;
             default: boolean;
         };
-        headerLevel: {
+        headerTag: {
             type: PropType<"h2" | "h3" | "h4" | "h5" | "h6">;
             default: string;
             validator(value: string): boolean;
@@ -194,7 +194,7 @@ declare const _default: {
         type: BooleanConstructor;
         default: boolean;
     };
-    headerLevel: {
+    headerTag: {
         type: PropType<"h2" | "h3" | "h4" | "h5" | "h6">;
         default: string;
         validator(value: string): boolean;
@@ -216,7 +216,7 @@ declare const _default: {
 }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
     expanded: boolean;
     hint: string;
-    headerLevel: "h2" | "h3" | "h4" | "h5" | "h6";
+    headerTag: "h2" | "h3" | "h4" | "h5" | "h6";
     variant: "error" | "success" | "warning";
     variantText: string;
 }, {}, string> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {

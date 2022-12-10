@@ -414,7 +414,7 @@ const Ce = { class: "accordion-single" }, ke = ["aria-expanded", "id", "aria-con
       type: Boolean,
       default: !1
     },
-    headerLevel: {
+    headerTag: {
       type: String,
       default: "h2",
       validator(e) {
@@ -441,7 +441,7 @@ const Ce = { class: "accordion-single" }, ke = ["aria-expanded", "id", "aria-con
       error: "Fejl"
     }, i = w(() => o.variant ? `accordion-${o.variant}` : ""), c = w(() => s[o.variant]), h = w(() => n[o.variant]);
     return (m, f) => (d(), r("div", Ce, [
-      (d(), O(ue(e.headerLevel), null, {
+      (d(), O(ue(e.headerTag), null, {
         default: N(() => [
           a("button", {
             class: x(["accordion-button", u(i)]),
