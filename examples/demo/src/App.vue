@@ -248,8 +248,6 @@ import { navigation } from "dkfds-vue3-utils";
 const route = useRoute();
 const router = useRouter();
 const isPartOfMenu = (name: string): boolean => {
-  console.warn('NAME', name);
-  
   if (route) {
     const [parent] = route.matched;
 
