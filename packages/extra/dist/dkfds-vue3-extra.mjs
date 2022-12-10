@@ -1,35 +1,35 @@
-var ae = Object.defineProperty;
-var se = (e, l, t) => l in e ? ae(e, l, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[l] = t;
-var N = (e, l, t) => (se(e, typeof l != "symbol" ? l + "" : l, t), t);
-import { ref as g, inject as G, computed as M, defineComponent as S, openBlock as u, createElementBlock as f, Fragment as E, createElementVNode as y, normalizeClass as D, createCommentVNode as V, renderSlot as w, toDisplayString as b, unref as v, renderList as B, withDirectives as te, vModelCheckbox as le, mergeProps as X, resolveComponent as _, createBlock as x, withCtx as k, createTextVNode as $, pushScopeId as ie, popScopeId as re, watch as T, normalizeProps as j, guardReactiveProps as U, useAttrs as P, createVNode as R, createSlots as de, onMounted as H, Transition as ue, normalizeStyle as ce, provide as J } from "vue";
-var fe = Object.defineProperty, me = (e, l, t) => l in e ? fe(e, l, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[l] = t, I = (e, l, t) => (me(e, typeof l != "symbol" ? l + "" : l, t), t);
-function q(e, l = !1) {
+var se = Object.defineProperty;
+var ie = (e, l, t) => l in e ? se(e, l, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[l] = t;
+var D = (e, l, t) => (ie(e, typeof l != "symbol" ? l + "" : l, t), t);
+import { ref as g, inject as G, computed as C, defineComponent as S, openBlock as u, createElementBlock as f, Fragment as E, createElementVNode as y, normalizeClass as q, createCommentVNode as V, renderSlot as w, toDisplayString as b, unref as p, renderList as B, withDirectives as H, vModelCheckbox as le, mergeProps as X, resolveComponent as x, createBlock as _, withCtx as k, createTextVNode as $, pushScopeId as re, popScopeId as de, watch as N, normalizeProps as j, guardReactiveProps as U, useAttrs as O, createVNode as R, createSlots as ue, onMounted as Y, Transition as ce, normalizeStyle as ne, vModelText as fe, provide as Q } from "vue";
+var me = Object.defineProperty, pe = (e, l, t) => l in e ? me(e, l, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[l] = t, M = (e, l, t) => (pe(e, typeof l != "symbol" ? l + "" : l, t), t);
+function T(e, l = !1) {
   var t;
-  const n = g((t = G("formid", null)) != null ? t : e), o = `fid_${ne().replaceAll("-", "")}`;
-  return { formid: M(() => {
+  const n = g((t = G("formid", null)) != null ? t : e), o = `fid_${oe().replaceAll("-", "")}`;
+  return { formid: C(() => {
     var s;
     if (!n.value && !l)
       throw Error("Form id is not set. Did you forget formgroup");
     return (s = n == null ? void 0 : n.value) != null ? s : o;
   }) };
 }
-function ne() {
+function oe() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(
     /[018]/g,
     (e) => (e ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> e / 4).toString(16)
   );
 }
-function pe(...e) {
+function ve(...e) {
   return (l) => {
     const t = e.map((n) => n(l)).filter((n) => n !== null);
     return t && t.length > 0 ? t : [];
   };
 }
-function ve(e) {
-  const l = e != null ? e : `fid_${ne().replaceAll("-", "")}`;
+function ge(e) {
+  const l = e != null ? e : `fid_${oe().replaceAll("-", "")}`;
   return g(l);
 }
-const Q = {
+const Z = {
   xs: 0,
   sm: 576,
   md: 768,
@@ -37,7 +37,7 @@ const Q = {
   xl: 1200
 }, A = class {
   constructor(e) {
-    if (I(this, "buttonElement"), I(this, "targetEl"), I(this, "responsiveListCollapseEnabled", !1), !e)
+    if (M(this, "buttonElement"), M(this, "targetEl"), M(this, "responsiveListCollapseEnabled", !1), !e)
       throw new Error("Could not find button for overflow menu component.");
     this.buttonElement = e;
     const l = this.buttonElement.getAttribute(A.TARGET);
@@ -166,12 +166,12 @@ const Q = {
   }
   static getTringuideBreakpoint(e) {
     var l;
-    return (l = e.parentElement) != null && l.classList.contains("overflow-menu--lg-no-responsive") ? Q.lg : Q.md;
+    return (l = e.parentElement) != null && l.classList.contains("overflow-menu--lg-no-responsive") ? Z.lg : Z.md;
   }
 };
-let O = A;
-I(O, "BUTTONCLASS", ".button-overflow-menu"), I(O, "jsDropdownCollapseModifier", "js-dropdown--responsive-collapse"), I(O, "TARGET", "data-js-target");
-const Y = ".nav", ge = `${Y} a`, Z = ".js-menu-open", W = ".js-menu-close", ye = ".overlay", he = `${W}, .overlay`, be = [Y, ye].join(", "), z = "mobile_nav-active", Ve = "is-visible";
+let P = A;
+M(P, "BUTTONCLASS", ".button-overflow-menu"), M(P, "jsDropdownCollapseModifier", "js-dropdown--responsive-collapse"), M(P, "TARGET", "data-js-target");
+const J = ".nav", ye = `${J} a`, ee = ".js-menu-open", W = ".js-menu-close", he = ".overlay", be = `${W}, .overlay`, Ve = [J, he].join(", "), z = "mobile_nav-active", xe = "is-visible";
 let K;
 const L = class {
   static focusTrapInit(e) {
@@ -205,26 +205,26 @@ const L = class {
     const { body: l } = document;
     console.warn("incActive", e);
     const t = typeof e == "boolean" ? e : !L.isActive();
-    l.classList.toggle(z, t), console.warn("toggleNav", z, t), L.selectStuff(be).forEach((s) => s.classList.toggle(Ve, t)), t ? K.enable() : K.release();
-    const n = l.querySelector(W), o = l.querySelector(Z);
+    l.classList.toggle(z, t), console.warn("toggleNav", z, t), L.selectStuff(Ve).forEach((s) => s.classList.toggle(xe, t)), t ? K.enable() : K.release();
+    const n = l.querySelector(W), o = l.querySelector(ee);
     return t && n ? n.focus() : !t && document.activeElement === n && o && o.focus(), t;
   }
   mobileMenu() {
     let e = !1;
-    const l = document.querySelectorAll(Z);
+    const l = document.querySelectorAll(ee);
     for (let n = 0; n < l.length; n += 1)
       window.getComputedStyle(l[n], null).display !== "none" && (l[n].addEventListener("click", L.toggleNav), e = !0);
     if (e) {
-      const n = document.querySelectorAll(he);
+      const n = document.querySelectorAll(be);
       for (let a = 0; a < n.length; a += 1)
         n[a].addEventListener("click", L.toggleNav);
-      const o = document.querySelectorAll(ge);
+      const o = document.querySelectorAll(ye);
       o.forEach((a, r) => {
         o[r].addEventListener("click", () => {
           L.isActive() && L.toggleNav(!1);
         });
       });
-      const s = document.querySelectorAll(Y);
+      const s = document.querySelectorAll(J);
       for (let a = 0; a < s.length; a += 1)
         K = L.focusTrapInit(s[a]);
     }
@@ -238,23 +238,23 @@ const L = class {
     window.removeEventListener("resize", this.mobileMenu, !1);
   }
 };
-let ee = L;
-I(ee, "selectStuff", (e) => [...window.document.querySelectorAll(e)]), I(ee, "isActive", () => document.body.classList.contains(z));
-var oe = /* @__PURE__ */ ((e) => (e.primary = "primary", e.secondary = "secondary", e.tertiary = "tertiary", e.quaternary = "quaternary", e.info = "info", e.success = "success", e.warning = "warning", e.error = "error", e))(oe || {});
-const _e = ["disabled"], ke = {
+let te = L;
+M(te, "selectStuff", (e) => [...window.document.querySelectorAll(e)]), M(te, "isActive", () => document.body.classList.contains(z));
+var ae = /* @__PURE__ */ ((e) => (e.primary = "primary", e.secondary = "secondary", e.tertiary = "tertiary", e.quaternary = "quaternary", e.info = "info", e.success = "success", e.warning = "warning", e.error = "error", e))(ae || {});
+const Se = ["disabled"], ke = {
   key: 1,
   class: "icon-svg rightside-icon",
   focusable: "false",
   "aria-hidden": "true"
-}, Se = ["xlink:href"], we = { key: 3 }, xe = {
+}, we = ["xlink:href"], _e = { key: 3 }, $e = {
   key: 0,
   class: "spinneroverlay"
-}, $e = /* @__PURE__ */ S({
+}, Ee = /* @__PURE__ */ S({
   __name: "xfds-button-spinner",
   props: {
     variant: {
       type: String,
-      default: () => oe.secondary
+      default: () => ae.secondary
     },
     showSpinner: {
       type: Boolean,
@@ -277,27 +277,27 @@ const _e = ["disabled"], ke = {
   setup(e, { emit: l }) {
     return (t, n) => (u(), f(E, null, [
       y("button", {
-        class: D(["button mr-4", [`button-${e.variant}`]]),
+        class: q(["button mr-4", [`button-${e.variant}`]]),
         onClick: n[0] || (n[0] = (o) => l("click", o)),
         disabled: e.showSpinner
       }, [
         e.showSpinner ? (u(), f("div", {
           key: 0,
-          class: D([{ "inner-spinner-white": e.variant === "primary" }, "inner-spinner mr-4 icon-svg"])
+          class: q([{ "inner-spinner-white": e.variant === "primary" }, "inner-spinner mr-4 icon-svg"])
         }, null, 2)) : V("", !0),
         e.icon && !e.showSpinner ? (u(), f("svg", ke, [
           y("use", {
             "xlink:href": `#${e.icon}`
-          }, null, 8, Se)
+          }, null, 8, we)
         ])) : V("", !0),
         e.showSpinner && !e.spinnerText ? w(t.$slots, "default", { key: 2 }) : V("", !0),
-        e.showSpinner && e.spinnerText ? (u(), f("span", we, b(e.spinnerText), 1)) : V("", !0),
+        e.showSpinner && e.spinnerText ? (u(), f("span", _e, b(e.spinnerText), 1)) : V("", !0),
         e.showSpinner ? V("", !0) : w(t.$slots, "default", { key: 4 })
-      ], 10, _e),
-      e.showSpinner && e.useoverlay ? (u(), f("div", xe)) : V("", !0)
+      ], 10, Se),
+      e.showSpinner && e.useoverlay ? (u(), f("div", $e)) : V("", !0)
     ], 64));
   }
-}), Ee = ["id"], Ae = ["onUpdate:modelValue", "id", "name", "disabled", "aria-disabled"], Le = ["for"], Be = {
+}), Ae = ["id"], Le = ["onUpdate:modelValue", "id", "name", "disabled", "aria-disabled"], Be = ["for"], Ie = {
   key: 0,
   class: "checkbox-content mt-2 ml-4 py-4"
 }, Ce = /* @__PURE__ */ S({
@@ -315,39 +315,39 @@ const _e = ["disabled"], ke = {
   },
   emits: ["update:modelValue", "dirty"],
   setup(e, { emit: l }) {
-    const t = e, n = g(t.modelValue), { formid: o } = q(t.id, !0), s = () => {
+    const t = e, n = g(t.modelValue), { formid: o } = T(t.id, !0), s = () => {
       l("dirty", !0);
     }, a = () => {
       l("update:modelValue", n.value);
     };
     return (r, i) => (u(), f("ul", {
       class: "nobullet-list",
-      id: v(o)
+      id: p(o)
     }, [
       (u(!0), f(E, null, B(n.value, (d, c) => (u(), f("li", { key: c }, [
-        te(y("input", {
-          "onUpdate:modelValue": (p) => d.checked = p,
+        H(y("input", {
+          "onUpdate:modelValue": (v) => d.checked = v,
           type: "checkbox",
           class: "form-checkbox checkbox-large",
-          id: "checkbox-" + v(o) + "-" + c,
-          name: "checkbox" + v(o),
+          id: "checkbox-" + p(o) + "-" + c,
+          name: "checkbox" + p(o),
           disabled: d.disabled,
           "aria-disabled": d.ariaDisabled,
           onChange: a,
           onBlur: s
-        }, null, 40, Ae), [
+        }, null, 40, Le), [
           [le, d.checked]
         ]),
         y("label", {
-          for: "checkbox-" + v(o) + "-" + c
-        }, b(d.title), 9, Le),
-        r.$slots[d.value] && d.checked ? (u(), f("div", Be, [
+          for: "checkbox-" + p(o) + "-" + c
+        }, b(d.title), 9, Be),
+        r.$slots[d.value] && d.checked ? (u(), f("div", Ie, [
           w(r.$slots, d.value, { checkboxvalue: n.value })
         ])) : V("", !0)
       ]))), 128))
-    ], 8, Ee));
+    ], 8, Ae));
   }
-}), Ie = ["name", "id"], Me = ["value"], Te = ["value", "disabled", "selected"], Ne = /* @__PURE__ */ S({
+}), Ne = ["name", "id"], Me = ["value"], Te = ["value", "disabled", "selected"], De = /* @__PURE__ */ S({
   __name: "xfds-dropdown",
   props: {
     id: {
@@ -369,13 +369,13 @@ const _e = ["disabled"], ke = {
   },
   emits: ["update:modelValue", "dirty", "change"],
   setup(e, { emit: l }) {
-    const t = e, n = g(t.modelValue), { formid: o } = q(t.id, !0), s = () => {
+    const t = e, n = g(t.modelValue), { formid: o } = T(t.id, !0), s = () => {
       l("dirty", !0);
     }, a = (r) => l("update:modelValue", (r == null ? void 0 : r.target).value);
     return (r, i) => (u(), f("select", X({
       class: "form-select",
-      name: v(o),
-      id: v(o)
+      name: p(o),
+      id: p(o)
     }, n.value, {
       onChange: a,
       onBlur: s
@@ -390,22 +390,22 @@ const _e = ["disabled"], ke = {
         disabled: d.disabled,
         selected: d.value === n.value
       }, b(d.title), 9, Te))), 128))
-    ], 16, Ie));
+    ], 16, Ne));
   }
-}), De = (e) => (ie("data-v-6a19ee65"), e = e(), re(), e), qe = { class: "bordered-list" }, Fe = {
+}), qe = (e) => (re("data-v-6a19ee65"), e = e(), de(), e), Fe = { class: "bordered-list" }, je = {
   key: 1,
   for: "",
   class: "disabled"
-}, je = {
+}, Ue = {
   class: "icon-svg mr-3",
   focusable: "false",
   "aria-hidden": "true"
-}, Ue = ["xlink:href"], Re = ["onClick"], Xe = /* @__PURE__ */ De(() => /* @__PURE__ */ y("svg", {
+}, Re = ["xlink:href"], Xe = ["onClick"], Oe = /* @__PURE__ */ qe(() => /* @__PURE__ */ y("svg", {
   class: "icon-svg",
   "aria-hidden": "true"
 }, [
   /* @__PURE__ */ y("use", { "xlink:href": "#trash-can" })
-], -1)), Oe = /* @__PURE__ */ S({
+], -1)), Pe = /* @__PURE__ */ S({
   __name: "xfds-file-list",
   props: {
     list: {
@@ -443,13 +443,13 @@ const _e = ["disabled"], ke = {
       return i ? t.icons[i] : t.defaultIcon;
     };
     return (r, i) => {
-      const d = _("fds-funktionslink");
-      return u(), f("ul", qe, [
-        (u(!0), f(E, null, B(e.list, (c, p) => (u(), f("li", {
-          key: p,
+      const d = x("fds-funktionslink");
+      return u(), f("ul", Fe, [
+        (u(!0), f(E, null, B(e.list, (c, v) => (u(), f("li", {
+          key: v,
           class: "d-flex justify-content-between"
         }, [
-          e.canDownload ? (u(), x(d, {
+          e.canDownload ? (u(), _(d, {
             key: 0,
             icon: a(c),
             onClick: (m) => s(c)
@@ -459,11 +459,11 @@ const _e = ["disabled"], ke = {
             ]),
             _: 2
           }, 1032, ["icon", "onClick"])) : V("", !0),
-          e.canDownload ? V("", !0) : (u(), f("label", Fe, [
-            (u(), f("svg", je, [
+          e.canDownload ? V("", !0) : (u(), f("label", je, [
+            (u(), f("svg", Ue, [
               y("use", {
                 "xlink:href": `#${a(c)}`
-              }, null, 8, Ue)
+              }, null, 8, Re)
             ])),
             c.label ? (u(), f(E, { key: 0 }, [
               $(b(c.label), 1)
@@ -476,23 +476,23 @@ const _e = ["disabled"], ke = {
             class: "function-link",
             onClick: (m) => o(c)
           }, [
-            Xe,
+            Oe,
             $("Slet ")
-          ], 8, Re)) : V("", !0)
+          ], 8, Xe)) : V("", !0)
         ]))), 128))
       ]);
     };
   }
 });
-const Pe = (e, l) => {
+const Ke = (e, l) => {
   const t = e.__vccOpts || e;
   for (const [n, o] of l)
     t[n] = o;
   return t;
-}, Ke = /* @__PURE__ */ Pe(Oe, [["__scopeId", "data-v-6a19ee65"]]), Ge = ["id"], We = ["onUpdate:modelValue", "id", "name", "disabled"], ze = ["for"], He = {
+}, Ge = /* @__PURE__ */ Ke(Pe, [["__scopeId", "data-v-6a19ee65"]]), We = ["id"], ze = ["onUpdate:modelValue", "id", "name", "disabled"], He = ["for"], Ye = {
   key: 0,
   class: "checkbox-content mt-2 ml-4 py-4"
-}, Ye = /* @__PURE__ */ S({
+}, Je = /* @__PURE__ */ S({
   __name: "xfds-form-checkbox-list",
   props: {
     modelValue: {
@@ -525,10 +525,10 @@ const Pe = (e, l) => {
   setup(e, { emit: l }) {
     const t = e, n = g(!1), o = () => {
       n.value = !0, l("dirty", !0);
-    }, s = g(t.modelValue), { formid: a } = q(void 0, !0), r = () => {
+    }, s = g(t.modelValue), { formid: a } = T(void 0, !0), r = () => {
       l("update:modelValue", s.value);
     };
-    return T(
+    return N(
       () => [t.modelValue],
       () => {
         s.value = t.modelValue;
@@ -537,8 +537,8 @@ const Pe = (e, l) => {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("xfds-form-group");
-      return u(), x(c, j(U({
+      const c = x("xfds-form-group");
+      return u(), _(c, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -548,35 +548,35 @@ const Pe = (e, l) => {
         default: k(() => [
           y("ul", {
             class: "nobullet-list",
-            id: v(a)
+            id: p(a)
           }, [
-            (u(!0), f(E, null, B(s.value, (p, m) => (u(), f("li", { key: m }, [
-              te(y("input", {
-                "onUpdate:modelValue": (h) => p.checked = h,
+            (u(!0), f(E, null, B(s.value, (v, m) => (u(), f("li", { key: m }, [
+              H(y("input", {
+                "onUpdate:modelValue": (h) => v.checked = h,
                 type: "checkbox",
                 class: "form-checkbox checkbox-large",
-                id: "checkbox-" + v(a) + "-" + m,
-                name: "checkbox" + v(a),
-                disabled: p.disabled,
+                id: "checkbox-" + p(a) + "-" + m,
+                name: "checkbox" + p(a),
+                disabled: v.disabled,
                 onChange: r,
                 onBlur: o
-              }, null, 40, We), [
-                [le, p.checked]
+              }, null, 40, ze), [
+                [le, v.checked]
               ]),
               y("label", {
-                for: "checkbox-" + v(a) + "-" + m
-              }, b(p.title), 9, ze),
-              i.$slots[p.value] && p.checked ? (u(), f("div", He, [
-                w(i.$slots, p.value, { checkboxvalue: s.value })
+                for: "checkbox-" + p(a) + "-" + m
+              }, b(v.title), 9, He),
+              i.$slots[v.value] && v.checked ? (u(), f("div", Ye, [
+                w(i.$slots, v.value, { checkboxvalue: s.value })
               ])) : V("", !0)
             ]))), 128))
-          ], 8, Ge)
+          ], 8, We)
         ]),
         _: 3
       }, 16);
     };
   }
-}), Je = /* @__PURE__ */ S({
+}), Qe = /* @__PURE__ */ S({
   __name: "xfds-form-dropdown",
   props: {
     id: {
@@ -614,10 +614,10 @@ const Pe = (e, l) => {
   },
   emits: ["update:modelValue", "dirty", "valid", "input"],
   setup(e, { emit: l }) {
-    const t = e, n = P(), o = g(t.modelValue), s = g(!1), a = () => {
+    const t = e, n = O(), o = g(t.modelValue), s = g(!1), a = () => {
       s.value = !0, l("dirty", !0);
     }, r = () => l("update:modelValue", o.value);
-    return T(
+    return N(
       () => [t.modelValue],
       () => {
         o.value = t.modelValue;
@@ -626,8 +626,8 @@ const Pe = (e, l) => {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("xfds-dropdown"), p = _("xfds-form-group");
-      return u(), x(p, j(U({
+      const c = x("xfds-dropdown"), v = x("xfds-form-group");
+      return u(), _(v, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -635,7 +635,7 @@ const Pe = (e, l) => {
         errorMessage: e.errorMessage
       })), {
         default: k(() => [
-          R(c, X(v(n), {
+          R(c, X(p(n), {
             options: e.options,
             modelValue: o.value,
             "onUpdate:modelValue": [
@@ -649,7 +649,7 @@ const Pe = (e, l) => {
       }, 16);
     };
   }
-}), Qe = /* @__PURE__ */ S({
+}), Ze = /* @__PURE__ */ S({
   __name: "xfds-form-group",
   props: {
     label: {
@@ -674,19 +674,19 @@ const Pe = (e, l) => {
     }
   },
   setup(e) {
-    const l = e, t = g(G("provideIsValid", null)), n = g(G("provideErrorMessage", null)), o = M(() => {
+    const l = e, t = g(G("provideIsValid", null)), n = g(G("provideErrorMessage", null)), o = C(() => {
       var a;
       return (a = t.value) != null ? a : l.isValid;
-    }), s = M(() => {
+    }), s = C(() => {
       var a;
       return (a = n.value) != null ? a : l.errorMessage;
     });
     return (a, r) => {
-      const i = _("fds-label"), d = _("fds-tooltip"), c = _("fds-fejlmeddelelse"), p = _("fds-hint"), m = _("fds-formgroup");
-      return u(), x(m, { "is-valid": v(o) }, {
+      const i = x("fds-label"), d = x("fds-tooltip"), c = x("fds-fejlmeddelelse"), v = x("fds-hint"), m = x("fds-formgroup");
+      return u(), _(m, { "is-valid": p(o) }, {
         default: k(() => [
           w(a.$slots, "label", {}, () => [
-            e.label ? (u(), x(i, { key: 0 }, {
+            e.label ? (u(), _(i, { key: 0 }, {
               default: k(() => [
                 $(b(e.label), 1)
               ]),
@@ -694,7 +694,7 @@ const Pe = (e, l) => {
             })) : V("", !0)
           ]),
           w(a.$slots, "tooltip", {}, () => [
-            e.tooltip ? (u(), x(d, {
+            e.tooltip ? (u(), _(d, {
               key: 0,
               class: "ml-2"
             }, {
@@ -705,15 +705,15 @@ const Pe = (e, l) => {
             })) : V("", !0)
           ]),
           w(a.$slots, "fejlmeddelelse", {}, () => [
-            v(o) ? V("", !0) : (u(), x(c, { key: 0 }, {
+            p(o) ? V("", !0) : (u(), _(c, { key: 0 }, {
               default: k(() => [
-                $(b(v(s)), 1)
+                $(b(p(s)), 1)
               ]),
               _: 1
             }))
           ]),
           w(a.$slots, "hint", {}, () => [
-            R(p, null, {
+            R(v, null, {
               default: k(() => [
                 $(b(e.hint), 1)
               ]),
@@ -726,7 +726,7 @@ const Pe = (e, l) => {
       }, 8, ["is-valid"]);
     };
   }
-}), Ze = /* @__PURE__ */ S({
+}), et = /* @__PURE__ */ S({
   __name: "xfds-form-input-number",
   props: {
     id: {
@@ -767,12 +767,12 @@ const Pe = (e, l) => {
   },
   emits: ["update:modelValue", "dirty", "valid", "input"],
   setup(e, { emit: l }) {
-    const t = e, n = P(), o = g(t.modelValue), s = g(!1), a = () => {
+    const t = e, n = O(), o = g(t.modelValue), s = g(!1), a = () => {
       s.value = !0;
     }, r = () => l("update:modelValue", o.value);
     return (i, d) => {
-      const c = _("fds-input-number"), p = _("xfds-form-group");
-      return u(), x(p, j(U({
+      const c = x("fds-input-number"), v = x("xfds-form-group");
+      return u(), _(v, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -785,7 +785,7 @@ const Pe = (e, l) => {
             "onUpdate:modelValue": d[0] || (d[0] = (m) => o.value = m),
             type: "number"
           }, {
-            attrs: v(n),
+            attrs: p(n),
             suffix: e.suffix,
             prefix: e.prefix
           }, {
@@ -797,7 +797,7 @@ const Pe = (e, l) => {
       }, 16);
     };
   }
-}), et = /* @__PURE__ */ S({
+}), tt = /* @__PURE__ */ S({
   __name: "xfds-form-input",
   props: {
     id: {
@@ -839,10 +839,10 @@ const Pe = (e, l) => {
   },
   emits: ["update:modelValue", "dirty", "valid", "input"],
   setup(e, { emit: l }) {
-    const t = e, n = P(), o = g(t.modelValue), s = g(!1), a = () => {
+    const t = e, n = O(), o = g(t.modelValue), s = g(!1), a = () => {
       s.value = !0, l("dirty", !0);
     }, r = () => l("update:modelValue", o.value);
-    return T(
+    return N(
       () => [t.modelValue],
       () => {
         o.value = t.modelValue;
@@ -851,8 +851,8 @@ const Pe = (e, l) => {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("fds-input"), p = _("xfds-form-group");
-      return u(), x(p, j(U({
+      const c = x("fds-input"), v = x("xfds-form-group");
+      return u(), _(v, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -865,13 +865,13 @@ const Pe = (e, l) => {
             "onUpdate:modelValue": d[0] || (d[0] = (m) => o.value = m),
             type: "text"
           }, {
-            attrs: v(n),
+            attrs: p(n),
             suffix: e.suffix,
             prefix: e.prefix
           }, {
             "onUpdate:modelValue": r,
             onDirty: a
-          }), de({ _: 2 }, [
+          }), ue({ _: 2 }, [
             i.$slots.button ? {
               name: "button",
               fn: k(() => [
@@ -885,10 +885,10 @@ const Pe = (e, l) => {
       }, 16);
     };
   }
-}), tt = ["id"], lt = ["id", "name", "value", "disabled", "checked"], nt = ["for"], ot = {
+}), lt = ["id"], nt = ["id", "name", "value", "disabled", "checked"], ot = ["for"], at = {
   key: 0,
   class: "radio-content mt-2 ml-4 py-4"
-}, at = /* @__PURE__ */ S({
+}, st = /* @__PURE__ */ S({
   __name: "xfds-form-radio",
   props: {
     id: {
@@ -928,8 +928,8 @@ const Pe = (e, l) => {
   setup(e, { emit: l }) {
     const t = e, n = g(t.modelValue), o = g(!1), s = () => {
       o.value = !0;
-    }, { formid: a } = q(t.id, !0), r = (i) => l("update:modelValue", (i == null ? void 0 : i.target).value);
-    return T(
+    }, { formid: a } = T(t.id, !0), r = (i) => l("update:modelValue", (i == null ? void 0 : i.target).value);
+    return N(
       () => [t.modelValue],
       () => {
         n.value = t.modelValue;
@@ -938,8 +938,8 @@ const Pe = (e, l) => {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("xfds-form-group");
-      return u(), x(c, j(U({
+      const c = x("xfds-form-group");
+      return u(), _(c, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -949,34 +949,34 @@ const Pe = (e, l) => {
         default: k(() => [
           y("ul", {
             class: "nobullet-list",
-            id: v(a)
+            id: p(a)
           }, [
-            (u(!0), f(E, null, B(e.options, (p, m) => (u(), f("li", { key: m }, [
+            (u(!0), f(E, null, B(e.options, (v, m) => (u(), f("li", { key: m }, [
               y("input", {
                 type: "radio",
                 class: "form-radio radio-large",
-                id: "radio-" + v(a) + "-" + m,
-                name: "radio" + v(a),
-                value: p.value,
-                disabled: p.disabled,
-                checked: n.value === p.value.toString(),
+                id: "radio-" + p(a) + "-" + m,
+                name: "radio" + p(a),
+                value: v.value,
+                disabled: v.disabled,
+                checked: n.value === v.value.toString(),
                 onChange: r,
                 onBlur: s
-              }, null, 40, lt),
+              }, null, 40, nt),
               y("label", {
-                for: "radio-" + v(a) + "-" + m
-              }, b(p.title), 9, nt),
-              i.$slots[p.value] && e.modelValue === p.value.toString() ? (u(), f("div", ot, [
-                w(i.$slots, p.value, { radiovalue: n.value })
+                for: "radio-" + p(a) + "-" + m
+              }, b(v.title), 9, ot),
+              i.$slots[v.value] && e.modelValue === v.value.toString() ? (u(), f("div", at, [
+                w(i.$slots, v.value, { radiovalue: n.value })
               ])) : V("", !0)
             ]))), 128))
-          ], 8, tt)
+          ], 8, lt)
         ]),
         _: 3
       }, 16);
     };
   }
-}), st = /* @__PURE__ */ S({
+}), it = /* @__PURE__ */ S({
   __name: "xfds-form-textarea",
   props: {
     modelValue: {
@@ -1023,10 +1023,10 @@ const Pe = (e, l) => {
   },
   emits: ["update:modelValue", "dirty", "valid", "input"],
   setup(e, { emit: l }) {
-    const t = e, n = P(), o = g(t.modelValue), s = g(!1), a = () => {
+    const t = e, n = O(), o = g(t.modelValue), s = g(!1), a = () => {
       s.value = !0;
     }, r = () => l("update:modelValue", o.value);
-    return T(
+    return N(
       () => [t.modelValue],
       () => {
         o.value = t.modelValue;
@@ -1035,8 +1035,8 @@ const Pe = (e, l) => {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("fds-textarea"), p = _("xfds-form-group");
-      return u(), x(p, j(U({
+      const c = x("fds-textarea"), v = x("xfds-form-group");
+      return u(), _(v, j(U({
         label: e.label,
         hint: e.hint,
         tooltip: e.tooltip,
@@ -1047,7 +1047,7 @@ const Pe = (e, l) => {
           R(c, X({
             modelValue: o.value,
             "onUpdate:modelValue": d[0] || (d[0] = (m) => o.value = m)
-          }, v(n), {
+          }, p(n), {
             maxlength: e.maxlength,
             rowlength: e.rowlength,
             rows: e.rows,
@@ -1060,27 +1060,27 @@ const Pe = (e, l) => {
     };
   }
 });
-class it {
+class rt {
   constructor() {
-    N(this, "getParent", (l, t) => t.find((n) => {
+    D(this, "getParent", (l, t) => t.find((n) => {
       var o;
       return (o = n.children) == null ? void 0 : o.some((s) => s.key === l);
     }));
-    N(this, "resolveKey", (l, t) => {
+    D(this, "resolveKey", (l, t) => {
       const [n] = l.split("/"), o = this.getParent(n, t);
       return o ? `${o.key}/${l}` : l;
     });
-    N(this, "resolveActiveKey", (l) => {
+    D(this, "resolveActiveKey", (l) => {
       const [t] = l.split("/").reverse();
       return t;
     });
-    N(this, "clearChildren", (l) => l && l.map((t) => ({ ...t, active: !1, children: this.clearChildren(t.children) })));
-    N(this, "setActive", (l, t) => l.map((n) => ({
+    D(this, "clearChildren", (l) => l && l.map((t) => ({ ...t, active: !1, children: this.clearChildren(t.children) })));
+    D(this, "setActive", (l, t) => l.map((n) => ({
       ...n,
       active: n.key === t,
       children: this.clearChildren(n.children)
     })));
-    N(this, "findFirstActiveItem", (l, t = !1) => {
+    D(this, "findFirstActiveItem", (l, t = !1) => {
       const n = l.find((o) => !o.disabled && o.active);
       if (n)
         return n;
@@ -1089,10 +1089,10 @@ class it {
     });
   }
 }
-const F = new it(), rt = {
+const F = new rt(), dt = {
   class: "sidenav-sub_list",
   role: "menu"
-}, dt = ["href", "title", "onClick"], ut = /* @__PURE__ */ S({
+}, ut = ["href", "title", "onClick"], ct = /* @__PURE__ */ S({
   __name: "xfds-menu-sub",
   props: {
     modelValue: {
@@ -1111,20 +1111,20 @@ const F = new it(), rt = {
       l("update:modelValue", a), l("navigate", s.key);
     };
     return (s, a) => {
-      const r = _("xfds-menu-sub", !0);
-      return u(), f("ul", rt, [
+      const r = x("xfds-menu-sub", !0);
+      return u(), f("ul", dt, [
         (u(!0), f(E, null, B(t.modelValue, (i) => (u(), f("li", {
           role: "none",
           key: i.key,
-          class: D([{ active: i.active }, { disabled: i.disabled }])
+          class: q([{ active: i.active }, { disabled: i.disabled }])
         }, [
           y("a", {
             href: `${i.href ? i.href : "javascript:void(0);"}`,
             title: i.title,
             onClick: (d) => o(i),
             role: "menuitem"
-          }, b(i.title), 9, dt),
-          i.active && i.children && i.children.length > 0 ? (u(), x(r, {
+          }, b(i.title), 9, ut),
+          i.active && i.children && i.children.length > 0 ? (u(), _(r, {
             key: 0,
             onNavigate: n,
             modelValue: i.children,
@@ -1134,10 +1134,10 @@ const F = new it(), rt = {
       ]);
     };
   }
-}), ct = {
+}), ft = {
   class: "sidenav-list mb-6",
   role: "menu"
-}, ft = /* @__PURE__ */ S({
+}, mt = /* @__PURE__ */ S({
   __name: "xfds-menu",
   props: {
     modelValue: {
@@ -1156,15 +1156,15 @@ const F = new it(), rt = {
   },
   emits: ["update:modelValue", "navigate"],
   setup(e, { emit: l }) {
-    const t = e, n = M(() => t.modelValue.filter((i) => !i.ignore)), o = g(""), s = g(n.value), a = (i) => {
+    const t = e, n = C(() => t.modelValue.filter((i) => !i.ignore)), o = g(""), s = g(n.value), a = (i) => {
       l("navigate", F.resolveKey(i, t.modelValue));
     }, r = (i) => {
       i.disabled || (s.value = F.setActive(s.value, i.key), o.value = i.key, l("update:modelValue", s.value), l("navigate", o.value));
     };
-    return H(() => {
+    return Y(() => {
       const i = F.findFirstActiveItem(s.value, t.navigateFirst);
       i && r(i);
-    }), T(
+    }), N(
       () => [t.modelValue],
       () => {
         s.value = n.value;
@@ -1173,24 +1173,24 @@ const F = new it(), rt = {
         immediate: !0
       }
     ), (i, d) => {
-      const c = _("xfds-menu-sub"), p = _("fds-menu-item");
-      return u(), f("ul", ct, [
-        (u(!0), f(E, null, B(s.value, (m, h) => (u(), x(p, {
-          class: D([{ disabled: m.disabled }]),
+      const c = x("xfds-menu-sub"), v = x("fds-menu-item");
+      return u(), f("ul", ft, [
+        (u(!0), f(E, null, B(s.value, (m, h) => (u(), _(v, {
+          class: q([{ disabled: m.disabled }]),
           key: m.key,
           id: m.key,
           active: m.active,
           icon: m.icon,
           hint: m.hint,
           index: e.showIndex ? h : null,
-          onNavigate: (C) => r(m)
+          onNavigate: (I) => r(m)
         }, {
           submenu: k(() => [
-            m.active && m.children && m.children.length > 0 ? (u(), x(c, {
+            m.active && m.children && m.children.length > 0 ? (u(), _(c, {
               key: 0,
               onNavigate: a,
               modelValue: m.children,
-              "onUpdate:modelValue": (C) => m.children = C
+              "onUpdate:modelValue": (I) => m.children = I
             }, null, 8, ["modelValue", "onUpdate:modelValue"])) : V("", !0)
           ]),
           default: k(() => [
@@ -1201,7 +1201,7 @@ const F = new it(), rt = {
       ]);
     };
   }
-}), mt = { class: "progress-bar" }, pt = ["aria-valuenow"], vt = /* @__PURE__ */ S({
+}), pt = { class: "progress-bar" }, vt = ["aria-valuenow"], gt = /* @__PURE__ */ S({
   __name: "xfds-progressbar",
   props: {
     procent: {
@@ -1218,32 +1218,32 @@ const F = new it(), rt = {
     }
   },
   setup(e) {
-    const l = e, t = M(() => {
+    const l = e, t = C(() => {
       if (typeof l.procent == "string")
         return 0;
       const n = Math.floor(Math.abs(l.procent));
       return n > 100 ? 100 : n;
     });
-    return (n, o) => (u(), x(ue, { name: "progress" }, {
+    return (n, o) => (u(), _(ce, { name: "progress" }, {
       default: k(() => [
-        y("div", mt, [
+        y("div", pt, [
           y("div", {
-            class: D(["progress-bar-fill", `progress-${e.variant}`]),
-            style: ce(`width: ${v(t)}%;`),
-            "aria-valuenow": v(t),
+            class: q(["progress-bar-fill", `progress-${e.variant}`]),
+            style: ne(`width: ${p(t)}%;`),
+            "aria-valuenow": p(t),
             "aria-valuemin": "0",
             "aria-valuemax": "100"
           }, [
             e.showProgress ? w(n.$slots, "default", { key: 0 }, () => [
-              $(b(v(t)) + "% ", 1)
+              $(b(p(t)) + "% ", 1)
             ]) : V("", !0)
-          ], 14, pt)
+          ], 14, vt)
         ])
       ]),
       _: 3
     }));
   }
-}), gt = { class: "form-label" }, yt = { class: "nobullet-list" }, ht = ["id", "name", "value", "disabled", "checked"], bt = ["for"], Vt = /* @__PURE__ */ S({
+}), yt = { class: "form-label" }, ht = { class: "nobullet-list" }, bt = ["id", "name", "value", "disabled", "checked"], Vt = ["for"], xt = /* @__PURE__ */ S({
   __name: "xfds-radio-toggle",
   props: {
     modelValue: {
@@ -1286,33 +1286,33 @@ const F = new it(), rt = {
         value: "false",
         disabled: t.disabled
       }
-    ], { formid: o } = q(t.id, !0), s = M(() => t.modelValue !== void 0 && t.modelValue !== null), a = (r) => l("update:modelValue", (r == null ? void 0 : r.target).value === "true");
+    ], { formid: o } = T(t.id, !0), s = C(() => t.modelValue !== void 0 && t.modelValue !== null), a = (r) => l("update:modelValue", (r == null ? void 0 : r.target).value === "true");
     return (r, i) => (u(), f("fieldset", null, [
-      y("legend", gt, [
+      y("legend", yt, [
         w(r.$slots, "label", {}, () => [
           $(b(e.label), 1)
         ])
       ]),
-      y("ul", yt, [
+      y("ul", ht, [
         (u(), f(E, null, B(n, (d, c) => {
-          var p, m, h;
+          var v, m, h;
           return y("li", { key: c }, [
             y("input", {
-              id: "radio-" + v(o) + "-" + c,
+              id: "radio-" + p(o) + "-" + c,
               type: "radio",
-              name: "radio" + v(o),
+              name: "radio" + p(o),
               value: d.value,
               disabled: d.disabled,
-              checked: v(s) && ((p = e.modelValue) == null ? void 0 : p.toString()) === d.value.toString(),
+              checked: p(s) && ((v = e.modelValue) == null ? void 0 : v.toString()) === d.value.toString(),
               onChange: a,
               class: "form-radio radio-large"
-            }, null, 40, ht),
+            }, null, 40, bt),
             y("label", {
-              for: "radio-" + v(o) + "-" + c
-            }, b(d.title), 9, bt),
-            v(s) && r.$slots[d.value.toString()] && ((m = e.modelValue) == null ? void 0 : m.toString()) === d.value.toString() ? (u(), f("div", {
+              for: "radio-" + p(o) + "-" + c
+            }, b(d.title), 9, Vt),
+            p(s) && r.$slots[d.value.toString()] && ((m = e.modelValue) == null ? void 0 : m.toString()) === d.value.toString() ? (u(), f("div", {
               key: 0,
-              class: D(["radio-content mt-2 ml-4 py-4", { disabled: e.disabled }])
+              class: q(["radio-content mt-2 ml-4 py-4", { disabled: e.disabled }])
             }, [
               w(r.$slots, d.value.toString(), {
                 radiovalue: (h = e.modelValue) == null ? void 0 : h.toString()
@@ -1323,10 +1323,10 @@ const F = new it(), rt = {
       ])
     ]));
   }
-}), _t = { class: "form-label" }, kt = ["id"], St = ["id", "name", "value", "disabled", "aria-disabled", "checked"], wt = ["for"], xt = {
+}), St = { class: "form-label" }, kt = ["id"], wt = ["id", "name", "value", "disabled", "aria-disabled", "checked"], _t = ["for"], $t = {
   key: 0,
   class: "radio-content mt-2 ml-4 py-4"
-}, $t = /* @__PURE__ */ S({
+}, Et = /* @__PURE__ */ S({
   __name: "xfds-radio",
   props: {
     modelValue: {
@@ -1351,22 +1351,22 @@ const F = new it(), rt = {
   },
   emits: ["update:modelValue", "dirty"],
   setup(e, { emit: l }) {
-    const t = e, { formid: n } = q(t.id), o = g(t.modelValue), s = (a) => l("update:modelValue", (a == null ? void 0 : a.target).value);
+    const t = e, { formid: n } = T(t.id), o = g(t.modelValue), s = (a) => l("update:modelValue", (a == null ? void 0 : a.target).value);
     return (a, r) => (u(), f("fieldset", null, [
-      y("legend", _t, [
+      y("legend", St, [
         w(a.$slots, "label", {}, () => [
           $(b(e.label), 1)
         ])
       ]),
       y("ul", {
         class: "nobullet-list",
-        id: v(n)
+        id: p(n)
       }, [
         (u(!0), f(E, null, B(e.list, (i, d) => (u(), f("li", { key: d }, [
           y("input", {
-            id: "radio-" + v(n) + "-" + d,
+            id: "radio-" + p(n) + "-" + d,
             type: "radio",
-            name: "radio" + v(n),
+            name: "radio" + p(n),
             value: i.value,
             disabled: i.disabled,
             "aria-disabled": i.ariaDisabled,
@@ -1374,22 +1374,79 @@ const F = new it(), rt = {
             onChange: s,
             onBlur: r[0] || (r[0] = (c) => a.$emit("dirty", !0)),
             class: "form-radio radio-large"
-          }, null, 40, St),
+          }, null, 40, wt),
           y("label", {
-            for: "radio-" + v(n) + "-" + d
-          }, b(i.title), 9, wt),
-          a.$slots[i.value] && e.modelValue === i.value.toString() ? (u(), f("div", xt, [
+            for: "radio-" + p(n) + "-" + d
+          }, b(i.title), 9, _t),
+          a.$slots[i.value] && e.modelValue === i.value.toString() ? (u(), f("div", $t, [
             w(a.$slots, i.value, { radiovalue: o.value })
           ])) : V("", !0)
         ]))), 128))
       ], 8, kt)
     ]));
   }
-}), Et = { class: "overflow-menu overflow-menu--open-right" }, At = ["id", "data-js-target"], Lt = {
+}), At = ["max", "min", "step", "aria-valuemax", "aria-valuemin", "aria-valuenow", "id", "name"], Lt = /* @__PURE__ */ S({
+  __name: "xfds-range",
+  props: {
+    id: {
+      type: String,
+      default: null
+    },
+    modelValue: {
+      default: 0
+    },
+    min: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: 100
+    },
+    step: {
+      type: Number,
+      default: 1
+    }
+  },
+  emits: ["update:modelValue", "dirty", "input"],
+  setup(e, { emit: l }) {
+    const t = e;
+    O();
+    const { formid: n } = T(t.id, !0), o = g(Number.isNaN(t.modelValue) ? 0 : t.modelValue), s = C(
+      () => `${(o.value - t.min) * 100 / (t.max - t.min)}% 100%`
+    ), a = () => l("update:modelValue", o.value);
+    return N(
+      () => [t.modelValue],
+      () => {
+        o.value = t.modelValue;
+      },
+      {
+        immediate: !0
+      }
+    ), (r, i) => H((u(), f("input", {
+      class: "form-range d-flex",
+      max: e.max,
+      min: e.min,
+      step: e.step,
+      "aria-valuemax": e.max,
+      "aria-valuemin": e.min,
+      "aria-valuenow": o.value,
+      "onUpdate:modelValue": i[0] || (i[0] = (d) => o.value = d),
+      id: p(n),
+      name: p(n),
+      type: "range",
+      style: ne({ backgroundSize: p(s) }),
+      onInput: a,
+      onBlur: i[1] || (i[1] = (d) => r.$emit("dirty", !0))
+    }, null, 44, At)), [
+      [fe, o.value]
+    ]);
+  }
+}), Bt = { class: "overflow-menu overflow-menu--open-right" }, It = ["id", "data-js-target"], Ct = {
   class: "icon-svg",
   "aria-hidden": "true",
   focusable: "false"
-}, Bt = ["xlink:href"], Ct = ["id"], It = /* @__PURE__ */ S({
+}, Nt = ["xlink:href"], Mt = ["id"], Tt = /* @__PURE__ */ S({
   __name: "xfds-trinindikator",
   props: {
     modelValue: {
@@ -1419,51 +1476,51 @@ const F = new it(), rt = {
   },
   emits: ["update:modelValue", "navigate"],
   setup(e, { emit: l }) {
-    const t = e, { formid: n } = q(t.id, !0), o = M(() => {
+    const t = e, { formid: n } = T(t.id, !0), o = C(() => {
       var d;
       return (d = t.modelValue) != null ? d : [];
     }), s = g(""), a = g(o.value.filter((d) => !d.ignore)), r = g(0), i = (d) => {
       d.disabled || (a.value = F.setActive(a.value, d.key), s.value = d.key, r.value = a.value.findIndex((c) => c.key === d.key), l("update:modelValue", a.value), l("navigate", s.value));
     };
-    return H(async () => {
+    return Y(async () => {
       const d = F.findFirstActiveItem(a.value, t.navigateFirst);
-      d && i(d), new O(document.getElementById(`button_${n.value}`)).init();
+      d && i(d), new P(document.getElementById(`button_${n.value}`)).init();
     }), (d, c) => {
-      const p = _("fds-menu-item"), m = _("fds-menu");
-      return u(), f("div", Et, [
+      const v = x("fds-menu-item"), m = x("fds-menu");
+      return u(), f("div", Bt, [
         y("button", {
           class: "button-overflow-menu js-dropdown",
-          id: `button_${v(n)}`,
-          "data-js-target": `#${v(n)}`,
+          id: `button_${p(n)}`,
+          "data-js-target": `#${p(n)}`,
           "aria-haspopup": "true",
           "aria-expanded": "false"
         }, [
-          $(b(e.header) + " " + b(r.value + 1) + " af " + b(v(o).length) + " ", 1),
-          (u(), f("svg", Lt, [
+          $(b(e.header) + " " + b(r.value + 1) + " af " + b(p(o).length) + " ", 1),
+          (u(), f("svg", Ct, [
             y("use", {
               "xlink:href": `#${e.icon}`
-            }, null, 8, Bt)
+            }, null, 8, Nt)
           ]))
-        ], 8, At),
+        ], 8, It),
         y("div", {
           class: "overflow-menu-inner",
-          id: v(n),
+          id: p(n),
           "aria-hidden": "true"
         }, [
           y("nav", null, [
             R(m, null, {
               default: k(() => [
-                (u(!0), f(E, null, B(a.value, (h, C) => (u(), x(p, {
+                (u(!0), f(E, null, B(a.value, (h, I) => (u(), _(v, {
                   role: "none",
-                  class: D([{ disabled: h.disabled }]),
+                  class: q([{ disabled: h.disabled }]),
                   key: h.key,
                   id: h.key,
                   active: h.active,
                   icon: h.icon,
                   hint: h.hint,
                   href: h.href,
-                  index: C + 1,
-                  onNavigate: (Nt) => i(h)
+                  index: I + 1,
+                  onNavigate: (Ft) => i(h)
                 }, {
                   default: k(() => [
                     $(b(h.title), 1)
@@ -1474,11 +1531,11 @@ const F = new it(), rt = {
               _: 1
             })
           ])
-        ], 8, Ct)
+        ], 8, Mt)
       ]);
     };
   }
-}), Mt = ["id"], Tt = /* @__PURE__ */ S({
+}), Dt = ["id"], qt = /* @__PURE__ */ S({
   __name: "xfds-validate",
   props: {
     modelValue: {
@@ -1510,8 +1567,8 @@ const F = new it(), rt = {
   },
   emits: ["valid", "validated"],
   setup(e, { emit: l }) {
-    const t = e, n = g(!1), o = g(!0), s = g(""), a = g([]), r = g(null), i = g(!1), d = ve(t.id);
-    J("provideIsValid", o), J("provideErrorMessage", s), H(() => {
+    const t = e, n = g(!1), o = g(!0), s = g(""), a = g([]), r = g(null), i = g(!1), d = ge(t.id);
+    Q("provideIsValid", o), Q("provideErrorMessage", s), Y(() => {
       var h;
       !r.value || !t.useAutoDirty || (h = r.value.querySelector("input, select")) == null || h.addEventListener("blur", () => {
         i.value = !0;
@@ -1526,14 +1583,14 @@ const F = new it(), rt = {
         dirty: i.value
       };
       l("validated", h);
-    }, p = M(() => i.value || t.dirty), m = () => {
+    }, v = C(() => i.value || t.dirty), m = () => {
       if (n.value = !0, o.value = !0, s.value = "", a.value = [], t.validations) {
-        const h = [...t.validations], C = pe(...h)(t.modelValue);
-        C.length > 0 && ([s.value] = C, a.value = C, n.value = !1, p.value && (o.value = !1));
+        const h = [...t.validations], I = ve(...h)(t.modelValue);
+        I.length > 0 && ([s.value] = I, a.value = I, n.value = !1, v.value && (o.value = !1));
       }
       c(), l("valid", n.value);
     };
-    return T(
+    return N(
       () => t.modelValue,
       () => {
         m();
@@ -1542,7 +1599,7 @@ const F = new it(), rt = {
         immediate: !0,
         deep: !0
       }
-    ), T(
+    ), N(
       () => i,
       () => {
         m();
@@ -1550,41 +1607,42 @@ const F = new it(), rt = {
       {
         deep: !0
       }
-    ), (h, C) => (u(), f("section", {
+    ), (h, I) => (u(), f("section", {
       ref_key: "refElement",
       ref: r,
       class: "validate-form-group",
-      id: v(d)
+      id: p(d)
     }, [
       w(h.$slots, "default", {
         isValid: n.value,
         isValidWaitForDirty: o.value,
         errorMessage: s.value
       })
-    ], 8, Mt));
+    ], 8, Dt));
   }
 });
-function Ft(e) {
-  e.component("xfds-button-spinner", $e), e.component("xfds-checkbox-list", Ce), e.component("xfds-dropdown", Ne), e.component("xfds-file-list", Ke), e.component("xfds-form-checkbox-list", Ye), e.component("xfds-form-dropdown", Je), e.component("xfds-form-group", Qe), e.component("xfds-form-input-number", Ze), e.component("xfds-form-input", et), e.component("xfds-form-radio", at), e.component("xfds-form-textarea", st), e.component("xfds-menu-sub", ut), e.component("xfds-menu", ft), e.component("xfds-progressbar", vt), e.component("xfds-radio-toggle", Vt), e.component("xfds-radio", $t), e.component("xfds-trinindikator", It), e.component("xfds-validate", Tt);
+function Rt(e) {
+  e.component("xfds-button-spinner", Ee), e.component("xfds-checkbox-list", Ce), e.component("xfds-dropdown", De), e.component("xfds-file-list", Ge), e.component("xfds-form-checkbox-list", Je), e.component("xfds-form-dropdown", Qe), e.component("xfds-form-group", Ze), e.component("xfds-form-input-number", et), e.component("xfds-form-input", tt), e.component("xfds-form-radio", st), e.component("xfds-form-textarea", it), e.component("xfds-menu-sub", ct), e.component("xfds-menu", mt), e.component("xfds-progressbar", gt), e.component("xfds-radio-toggle", xt), e.component("xfds-radio", Et), e.component("xfds-range", Lt), e.component("xfds-trinindikator", Tt), e.component("xfds-validate", qt);
 }
 export {
-  $e as XfdsButtonSpinner,
+  Ee as XfdsButtonSpinner,
   Ce as XfdsCheckboxList,
-  Ne as XfdsDropdown,
-  Ke as XfdsFileList,
-  Ye as XfdsFormCheckboxList,
-  Je as XfdsFormDropdown,
-  Qe as XfdsFormGroup,
-  et as XfdsFormInput,
-  Ze as XfdsFormInputNumber,
-  at as XfdsFormRadio,
-  st as XfdsFormTextarea,
-  ft as XfdsMenu,
-  ut as XfdsMenuSub,
-  vt as XfdsProgressbar,
-  $t as XfdsRadio,
-  Vt as XfdsRadioToggle,
-  It as XfdsTrinindikator,
-  Tt as XfdsValidate,
-  Ft as default
+  De as XfdsDropdown,
+  Ge as XfdsFileList,
+  Je as XfdsFormCheckboxList,
+  Qe as XfdsFormDropdown,
+  Ze as XfdsFormGroup,
+  tt as XfdsFormInput,
+  et as XfdsFormInputNumber,
+  st as XfdsFormRadio,
+  it as XfdsFormTextarea,
+  mt as XfdsMenu,
+  ct as XfdsMenuSub,
+  gt as XfdsProgressbar,
+  Et as XfdsRadio,
+  xt as XfdsRadioToggle,
+  Lt as XfdsRange,
+  Tt as XfdsTrinindikator,
+  qt as XfdsValidate,
+  Rt as default
 };

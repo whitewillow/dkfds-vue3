@@ -16,6 +16,7 @@ import XfdsMenu from "./components/xfds-menu.vue";
 import XfdsProgressbar from "./components/xfds-progressbar.vue";
 import XfdsRadioToggle from "./components/xfds-radio-toggle.vue";
 import XfdsRadio from "./components/xfds-radio.vue";
+import XfdsRange from "./components/xfds-range.vue";
 import XfdsTrinindikator from "./components/xfds-trinindikator.vue";
 import XfdsValidate from "./components/xfds-validate.vue";
 
@@ -36,6 +37,7 @@ export {
   XfdsProgressbar,
   XfdsRadioToggle,
   XfdsRadio,
+  XfdsRange,
   XfdsTrinindikator,
   XfdsValidate,
 };
@@ -57,6 +59,7 @@ function install(app: App): void {
   app.component("xfds-progressbar", XfdsProgressbar);
   app.component("xfds-radio-toggle", XfdsRadioToggle);
   app.component("xfds-radio", XfdsRadio);
+  app.component("xfds-range", XfdsRange);
   app.component("xfds-trinindikator", XfdsTrinindikator);
   app.component("xfds-validate", XfdsValidate);
 }

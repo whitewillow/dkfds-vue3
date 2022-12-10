@@ -90,6 +90,11 @@
                 Ekstra Komponenter
               </fds-nav-link>
             </li>
+            <li role="none" :class="[{ current: isPartOfMenu('boblere') }]">
+              <fds-nav-link @click="router.push({ name: 'boblere' })" title="Gå til boblere">
+                Boblere
+              </fds-nav-link>
+            </li>
 
             <li role="none" :class="[{ current: isPartOfMenu('anbefalinger') }]">
               <fds-nav-link @click="router.push({ name: 'anbefalinger' })" title="Link title">
@@ -243,6 +248,8 @@ import { navigation } from "dkfds-vue3-utils";
 const route = useRoute();
 const router = useRouter();
 const isPartOfMenu = (name: string): boolean => {
+  console.warn('NAME', name);
+  
   if (route) {
     const [parent] = route.matched;
 
