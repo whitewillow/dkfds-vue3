@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+
+.component-preview {
+    border: 1px solid #747474;
+    border-radius: 5px;
+
+    >div:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    >.component-link {
+        border-bottom: 1px solid #747474;
+        font-weight: 500;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #f4f4f4;
+        padding: 1em 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        >a {
+            display: flex;
+            font-weight: 200;
+        }
+    }
+
+    >.component-example {
+        padding: 1.5em 1.5em 2em;
+    }
+
+    >.component-description {
+        padding: 1em 1.5em;
+
+        table {
+            th {
+                font-weight: 200;
+
+                &:first-child {
+                    font-weight: 600;
+                }
+            }
+
+
+            margin-bottom: 24px;
+        }
+    }
+
+    hr {
+        border-top: 2px dashed #dcdcdc;
+    }
+
+    //#d63384
+
+    >.component-code {
+        border-top: 1px solid #dcdcdc;
+        background-color: $preview-background-color;
+        font-size: 0.8em;
+        border-top: 3px solid $preview-border-color;
+        border-bottom: 3px solid $preview-border-color;
+        color: $preview-color;
+        page-break-inside: avoid;
+        overflow: auto;
+        padding: 0em 1.5em;
+        display: block;
+        word-wrap: break-word;
+
+        >pre {
+            font-size: 1.0em;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        >legend {
+            background-color: $preview-legend-background-color;
+            color: $preview-legend-color;
+            padding: 4px 6px 2px 6px;
+            margin-left: 24px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 30%);
+        }
+    }
+}
