@@ -3,12 +3,12 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <xfds-button-spinner
-          @click="handleButtonEvent"
           icon="send"
           variant="secondary"
-          spinnerText="Sender"
-          :showSpinner="showSpinner"
+          spinner-text="Sender"
+          :show-spinner="showSpinner"
           useoverlay
+          @click="handleButtonEvent"
         >
           Send
         </xfds-button-spinner>
@@ -61,7 +61,11 @@
               <td><code>null</code></td>
               <td>
                 Se standard ikone hos
-                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+                <a
+                  href="https://designsystem.dk/design/ikoner/"
+                  target="dkfds">
+                  DKFDS
+                </a>
               </td>
             </tr>
 
@@ -82,13 +86,22 @@
       <fds-preview-item>
         <div class="row">
           <div class="col">
-            <xfds-button-spinner icon="search" variant="primary" spinnerText="Søger">
+            <xfds-button-spinner
+              icon="search"
+              variant="primary"
+              spinner-text="Søger">
               Søg
             </xfds-button-spinner>
-            <xfds-button-spinner icon="search" variant="secondary" spinnerText="Søger">
+            <xfds-button-spinner
+              icon="search"
+              variant="secondary"
+              spinner-text="Søger">
               Søg
             </xfds-button-spinner>
-            <xfds-button-spinner icon="search" variant="tertiary" spinnerText="Søger">
+            <xfds-button-spinner
+              icon="search"
+              variant="tertiary"
+              spinner-text="Søger">
               Søg
             </xfds-button-spinner>
           </div>
@@ -99,24 +112,24 @@
             <xfds-button-spinner
               icon="search"
               variant="primary"
-              :showSpinner="true"
-              spinnerText="...Søger"
+              :show-spinner="true"
+              spinner-text="...Søger"
             >
               Søg
             </xfds-button-spinner>
             <xfds-button-spinner
               icon="search"
               variant="secondary"
-              :showSpinner="true"
-              spinnerText="...Søger"
+              :show-spinner="true"
+              spinner-text="...Søger"
             >
               Søg
             </xfds-button-spinner>
             <xfds-button-spinner
               icon="search"
               variant="tertiary"
-              :showSpinner="true"
-              spinnerText="...Søger"
+              :show-spinner="true"
+              spinner-text="...Søger"
             >
               Søg
             </xfds-button-spinner>

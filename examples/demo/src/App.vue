@@ -3,13 +3,22 @@
 
   <header class="header">
     <div id="top"></div>
-    <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
+    <a
+      class="skipnav"
+      href="#main-content">
+      Gå til sidens indhold
+    </a>
     <!-- Start: Portal header -->
     <div class="portal-header">
       <div class="container portal-header-inner">
         <!-- Start: Portallogo -->
-        <a href="#" aria-label="Portalnavn" class="logo">
-          <span class="d-none d-print-block">Portalnavn</span>
+        <a
+          href="#"
+          aria-label="Portalnavn"
+          class="logo">
+          <span class="d-none d-print-block">
+            Portalnavn
+          </span>
         </a>
         <!-- Slut: Portallogo -->
 
@@ -18,7 +27,10 @@
           aria-haspopup="menu"
           title="Åben mobil menu"
         >
-          <svg class="icon-svg" focusable="false" aria-hidden="true">
+          <svg
+            class="icon-svg"
+            focusable="false"
+            aria-hidden="true">
             <use xlink:href="#menu"></use>
           </svg>
           Menu
@@ -27,11 +39,15 @@
         <!-- Start: Persondetaljer -->
         <div class="portal-info">
           <p class="user">
-            <span class="username weight-semibold">Anders Andersen</span>
+            <span class="username weight-semibold">
+              Anders Andersen
+            </span>
             <br />Forsikringens Forsikringsfirma
           </p>
 
-          <button class="button button-secondary d-print-none">Log af</button>
+          <button class="button button-secondary d-print-none">
+            Log af
+          </button>
         </div>
         <!-- Slut: Persondetaljer -->
       </div>
@@ -42,20 +58,29 @@
     <div class="solution-header">
       <div class="container solution-header-inner">
         <div class="solution-heading dv3-gra">
-          <a href="#">DKFDS-Vue3 et Komponent bibliotek til DKFDS</a>
+          <a href="#">
+            DKFDS-Vue3 et Komponent bibliotek til DKFDS
+          </a>
         </div>
 
         <!--2B: Solution header: Authority name + text -->
         <div class="solution-info">
-          <p class="h5 authority-name">Myndighedsnavn</p>
+          <p class="h5 authority-name">
+            Myndighedsnavn
+          </p>
           <p>
             Support: 12 34 56 78
             <span class="d-print-none"
-              >·
-              <a href="#" class="icon-link function-link alert-leave"
-                >Kontakt<svg class="icon-svg" aria-hidden="true" focusable="false">
-                  <use xlink:href="#open-in-new"></use>
-                </svg>
+            >·
+              <a
+                href="#"
+                class="icon-link function-link alert-leave"
+              >Kontakt<svg
+                class="icon-svg"
+                aria-hidden="true"
+                focusable="false">
+                <use xlink:href="#open-in-new"></use>
+              </svg>
               </a>
             </span>
           </p>
@@ -67,42 +92,74 @@
     <!-- Start: Navigation -->
     <div class="overlay"></div>
     <nav class="nav">
-      <button class="function-link button-menu-close js-menu-close" title="Luk mobil menu">
-        <svg class="icon-svg" aria-hidden="true"><use xlink:href="#close"></use></svg>Luk
+      <button
+        class="function-link button-menu-close js-menu-close"
+        title="Luk mobil menu">
+        <svg
+          class="icon-svg"
+          aria-hidden="true">
+          <use xlink:href="#close"></use>
+        </svg>Luk
       </button>
 
       <!-- Start: Hovedmenu -->
       <div class="navbar navbar-primary">
         <div class="navbar-inner container">
-          <ul class="nav-primary" role="menu">
-            <li role="none" :class="[{ current: isPartOfMenu('forside') }]">
-              <fds-nav-link @click="router.push({ name: 'forside' })" title="Link title">
+          <ul
+            class="nav-primary"
+            role="menu">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('forside') }]">
+              <fds-nav-link
+                title="Link title"
+                @click="router.push({ name: 'forside' })">
                 Forside
               </fds-nav-link>
             </li>
-            <li role="none" :class="[{ current: isPartOfMenu('komponenter') }]">
-              <fds-nav-link @click="router.push({ name: 'komponenter' })" title="Link title">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('komponenter') }]">
+              <fds-nav-link
+                title="Link title"
+                @click="router.push({ name: 'komponenter' })">
                 Komponenter
               </fds-nav-link>
             </li>
-            <li role="none" :class="[{ current: isPartOfMenu('ekstrakomponenter') }]">
-              <fds-nav-link @click="router.push({ name: 'ekstrakomponenter' })" title="Link title">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('ekstrakomponenter') }]">
+              <fds-nav-link
+                title="Link title"
+                @click="router.push({ name: 'ekstrakomponenter' })">
                 Ekstra Komponenter
               </fds-nav-link>
             </li>
-            <li role="none" :class="[{ current: isPartOfMenu('boblere') }]">
-              <fds-nav-link @click="router.push({ name: 'boblere' })" title="Gå til boblere">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('boblere') }]">
+              <fds-nav-link
+                title="Gå til boblere"
+                @click="router.push({ name: 'boblere' })">
                 Boblere
               </fds-nav-link>
             </li>
 
-            <li role="none" :class="[{ current: isPartOfMenu('anbefalinger') }]">
-              <fds-nav-link @click="router.push({ name: 'anbefalinger' })" title="Link title">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('anbefalinger') }]">
+              <fds-nav-link
+                title="Link title"
+                @click="router.push({ name: 'anbefalinger' })">
                 Anbefalinger
               </fds-nav-link>
             </li>
-            <li role="none" :class="[{ current: isPartOfMenu('about') }]">
-              <fds-nav-link @click="router.push({ name: 'about' })" title="Link title">
+            <li
+              role="none"
+              :class="[{ current: isPartOfMenu('about') }]">
+              <fds-nav-link
+                title="Link title"
+                @click="router.push({ name: 'about' })">
                 Fællesskab
               </fds-nav-link>
             </li>
@@ -111,11 +168,19 @@
           <!-- Start: Overflow menu i navigation -->
           <ul class="unstyled-list nav-actions">
             <li>
-              <fds-overflow-menu header="Overflow menu" icon="arrow-drop-down">
+              <fds-overflow-menu
+                header="Overflow menu"
+                icon="arrow-drop-down">
                 <ul class="overflow-list">
-                  <li><a href="#">Menupunkt 1</a></li>
-                  <li><a href="#">Et menupunkt 2</a></li>
-                  <li><a href="#">Tredje menupunkt 3</a></li>
+                  <li><a href="#">
+                    Menupunkt 1
+                  </a></li>
+                  <li><a href="#">
+                    Et menupunkt 2
+                  </a></li>
+                  <li><a href="#">
+                    Tredje menupunkt 3
+                  </a></li>
                 </ul>
               </fds-overflow-menu>
             </li>
@@ -126,19 +191,33 @@
       <!-- Slut: Hovedmenu -->
 
       <div class="portal-info-mobile">
-        <p class="user">Christian Emil Vestergaard Christensen</p>
+        <p class="user">
+          Christian Emil Vestergaard Christensen
+        </p>
         <p>Københavns Urmager og Værksted v/Martin Elsig</p>
-        <a href="#" class="button button-secondary alert-leave" role="button"> Log af </a>
+        <a
+          href="#"
+          class="button button-secondary alert-leave"
+          role="button">
+          Log af
+        </a>
       </div>
 
       <div class="solution-info-mobile">
-        <p class="h5 authority-name">Myndighedsnavn</p>
+        <p class="h5 authority-name">
+          Myndighedsnavn
+        </p>
         <p>
           Support: 12 34 56 78 ·
-          <a href="#" class="icon-link function-link alert-leave"
-            >Kontakt<svg class="icon-svg" aria-hidden="true" focusable="false">
-              <use xlink:href="#open-in-new"></use>
-            </svg>
+          <a
+            href="#"
+            class="icon-link function-link alert-leave"
+          >Kontakt<svg
+            class="icon-svg"
+            aria-hidden="true"
+            focusable="false">
+            <use xlink:href="#open-in-new"></use>
+          </svg>
           </a>
         </p>
       </div>
@@ -157,7 +236,9 @@
           <div class="col-12 col-sm-12 col-md-3 footer-col">
             <section>
               <div class="align-text-left">
-                <h2 class="h5 mb-4">Ansvarlig myndighed</h2>
+                <h2 class="h5 mb-4">
+                  Ansvarlig myndighed
+                </h2>
 
                 <ul class="unstyled-list">
                   <li class="">
@@ -174,17 +255,25 @@
           <div class="col-12 col-sm-12 col-md-3 footer-col">
             <section>
               <div class="align-text-left">
-                <h2 class="h5 mb-4">Kontakt</h2>
+                <h2 class="h5 mb-4">
+                  Kontakt
+                </h2>
 
                 <ul class="mt-0 nobullet-list">
                   <li class="">
-                    <a class="function-link" href="mailto:support@myndighed.dk">
+                    <a
+                      class="function-link"
+                      href="mailto:support@myndighed.dk">
                       support@myndighed.dk
                     </a>
                   </li>
 
                   <li class="">
-                    <a class="function-link" href="tel:004512345678">(+45) 12 34 56 78</a>
+                    <a
+                      class="function-link"
+                      href="tel:004512345678">
+                      (+45) 12 34 56 78
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -193,18 +282,37 @@
           <div class="col-12 col-sm-12 col-md-3 footer-col d-print-none">
             <section>
               <div class="align-text-left">
-                <h2 class="h5 mb-4">Links</h2>
+                <h2 class="h5 mb-4">
+                  Links
+                </h2>
 
                 <ul class="mt-0 nobullet-list">
-                  <li class=""><a class="function-link" href="#">Læs lidt om dit</a></li>
-
-                  <li class=""><a class="function-link" href="#">Her er også lidt om dat</a></li>
+                  <li class="">
+                    <a
+                      class="function-link"
+                      href="#">
+                      Læs lidt om dit
+                    </a>
+                  </li>
 
                   <li class="">
-                    <a class="function-link icon-link" href="#">
+                    <a
+                      class="function-link"
+                      href="#">
+                      Her er også lidt om dat
+                    </a>
+                  </li>
+
+                  <li class="">
+                    <a
+                      class="function-link icon-link"
+                      href="#">
                       Eller måske er du interesseret i noget helt andet, som tager mange linjer at
                       forklare
-                      <svg class="icon-svg" focusable="&gt;false" aria-hidden="true">
+                      <svg
+                        class="icon-svg"
+                        focusable="&gt;false"
+                        aria-hidden="true">
                         <use xlink:href="#open-in-new"></use>
                       </svg>
                     </a>
@@ -216,19 +324,30 @@
           <div class="col-12 col-sm-12 col-md-3 footer-col d-print-none">
             <section>
               <div class="align-text-left">
-                <h2 class="h5 mb-4">Webtilgængelighed og cookies</h2>
+                <h2 class="h5 mb-4">
+                  Webtilgængelighed og cookies
+                </h2>
 
                 <ul class="mt-0 nobullet-list">
                   <li class="">
-                    <a href="#" class="function-link icon-link">
+                    <a
+                      href="#"
+                      class="function-link icon-link">
                       Tilgængelighedserklæring
-                      <svg class="icon-svg" focusable="&gt;false" aria-hidden="true">
+                      <svg
+                        class="icon-svg"
+                        focusable="&gt;false"
+                        aria-hidden="true">
                         <use xlink:href="#open-in-new"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="">
-                    <a class="function-link" href="#">Privatlivspolitik (cookies)</a>
+                    <a
+                      class="function-link"
+                      href="#">
+                      Privatlivspolitik (cookies)
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -241,9 +360,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from 'vue-router';
 // import DKFDS from 'dkfds';
-import { navigation } from "dkfds-vue3-utils";
+import { navigation } from 'dkfds-vue3-utils';
 
 const route = useRoute();
 const router = useRouter();
@@ -266,12 +385,12 @@ new navigation().init();
 </script>
 
 <style lang="scss">
-$font-path: "dkfds/src/fonts/IBMPlexSans/";
-$image-path: "dkfds/src/img";
-$site-image-path: "dkfds/src/img";
-$icons-folder-path: "dkfds/src/img/svg-icons";
-@import "../node_modules/dkfds/src/stylesheets/dkfds-virkdk";
-@import "../node_modules/dkfds-vue3/src/assets/bgs.scss";
-@import "../node_modules/dkfds-vue3/src/assets/main.scss";
-@import "assets/main.scss";
+$font-path: 'dkfds/src/fonts/IBMPlexSans/';
+$image-path: 'dkfds/src/img';
+$site-image-path: 'dkfds/src/img';
+$icons-folder-path: 'dkfds/src/img/svg-icons';
+@import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
+@import '../node_modules/dkfds-vue3/src/assets/bgs.scss';
+@import '../node_modules/dkfds-vue3/src/assets/main.scss';
+@import 'assets/main.scss';
 </style>

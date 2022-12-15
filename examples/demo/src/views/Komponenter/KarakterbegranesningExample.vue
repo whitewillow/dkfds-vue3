@@ -6,10 +6,14 @@
     >
       <fds-formgroup>
         <fds-label> CVR nr. </fds-label>
-        <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+        <fds-tooltip class="ml-2">
+          Hjælpende <b>tekst</b>
+        </fds-tooltip>
         <fds-hint>Indtast fornavn</fds-hint>
         <fds-input v-model="cvr"></fds-input>
-        <fds-input-limit :modelValue="cvr" :limit="10" />
+        <fds-input-limit
+          :model-value="cvr"
+          :limit="10" />
       </fds-formgroup>
 
       <fds-preview-code>

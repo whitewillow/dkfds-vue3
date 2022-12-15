@@ -1,11 +1,17 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/funktionslink/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/funktionslink/">
       <fds-preview-item>
-        <fds-funktionslink title="Klik for event" @click="handleFunkClick">
+        <fds-funktionslink
+          title="Klik for event"
+          @click="handleFunkClick">
           Funktionslink
         </fds-funktionslink>
-        <fds-pre header="Klik" :json="{ funktionsLinkClick }" />
+        <fds-pre
+          header="Klik"
+          :json="{ funktionsLinkClick }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -29,7 +35,11 @@
               <td><code>''</code></td>
               <td>
                 Se standard ikone hos
-                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+                <a
+                  href="https://designsystem.dk/design/ikoner/"
+                  target="dkfds">
+                  DKFDS
+                </a>
               </td>
             </tr>
             <tr>
@@ -63,9 +73,9 @@
     <fds-preview header="Med ikon og Som link">
       <fds-preview-item>
         <fds-funktionslink
-          @click="$router.push({ name: 'about' })"
           icon="contact-support"
           title="Klik for at gå til om os"
+          @click="$router.push({ name: 'about' })"
         >
           Funktionslink med ikon - Om os
         </fds-funktionslink>

@@ -1,6 +1,8 @@
 <template>
   <section>
-    <p class="font-lead">Oversigt over DKFDS-Vue 3 Kerne Komponenterne</p>
+    <p class="font-lead">
+      Oversigt over DKFDS-Vue 3 Kerne Komponenterne
+    </p>
     <p>Gennemse kerne komponenter ved at klikke på deres respektive navne i menu.</p>
     <p>Under hvert komponent vil du kunne se:</p>
     <ul>

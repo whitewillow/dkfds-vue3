@@ -2,28 +2,42 @@
   <section>
     <fds-preview header="Eksempel">
       <fds-preview-item>
-        <xfds-form-input-number label="Angiv progress" v-model="progress" suffix="%" />
+        <xfds-form-input-number
+          v-model="progress"
+          label="Angiv progress"
+          suffix="%" />
 
         <xfds-progressbar
           :procent="progress"
-          :showProgress="false"
+          :show-progress="false"
           style="height: 2px"
           variant="primary"
         />
 
         <xfds-progressbar :procent="progress" />
 
-        <xfds-progressbar :procent="progress" style="height: 50px" variant="primary" />
+        <xfds-progressbar
+          :procent="progress"
+          style="height: 50px"
+          variant="primary" />
 
-        <xfds-progressbar :procent="progress" variant="info" />
+        <xfds-progressbar
+          :procent="progress"
+          variant="info" />
 
-        <xfds-progressbar :procent="progress" variant="success">
+        <xfds-progressbar
+          :procent="progress"
+          variant="success">
           På vej mod success - {{ progress }}%
         </xfds-progressbar>
 
-        <xfds-progressbar :procent="progress" variant="warning" />
+        <xfds-progressbar
+          :procent="progress"
+          variant="warning" />
 
-        <xfds-progressbar :procent="progress" variant="error" />
+        <xfds-progressbar
+          :procent="progress"
+          variant="error" />
       </fds-preview-item>
       <fds-preview-item>
         <p class="italic">
@@ -31,7 +45,9 @@
           "job"
         </p>
 
-        <p class="italic">Det er muligt at angive tekst - men vær varsom med for megen tekst</p>
+        <p class="italic">
+          Det er muligt at angive tekst - men vær varsom med for megen tekst
+        </p>
       </fds-preview-item>
       <fds-preview-code>
         <pre v-text="code"></pre>

@@ -1,7 +1,11 @@
 <template>
-  <div class="tooltip-custom" :id="tooltipId">
+  <div
+    :id="tooltipId"
+    class="tooltip-custom">
     <slot />
-    <span class="tooltip-customtext" v-if="!hideTooltip">
+    <span
+      v-if="!hideTooltip"
+      class="tooltip-customtext">
       <slot name="tooltip">
         {{ tooltipTekst }}
       </slot>
@@ -10,17 +14,17 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
-import { generateId } from "dkfds-vue3-utils";
+import { defineProps } from 'vue';
+import { generateId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   tooltipTekst: {
     type: String,
-    default: "",
+    default: '',
   },
   hideTooltip: {
     type: Boolean,
@@ -62,7 +66,7 @@ const tooltipId = generateId(props.id);
 }
 
 .tooltip-custom .tooltip-customtext::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;

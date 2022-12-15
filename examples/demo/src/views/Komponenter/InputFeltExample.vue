@@ -1,15 +1,25 @@
 <template>
   <section>
-    <fds-preview header="Tekstfelt" href="https://designsystem.dk/komponenter/inputfelter/">
+    <fds-preview
+      header="Tekstfelt"
+      href="https://designsystem.dk/komponenter/inputfelter/">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid"> Fornavn </fds-label>
-          <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+          <fds-label id="formid">
+            Fornavn
+          </fds-label>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input v-model="txtFornavn" id="formid"></fds-input>
+          <fds-input
+            id="formid"
+            v-model="txtFornavn"></fds-input>
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ txtFornavn }" />
+        <fds-pre
+          header="v-model"
+          :json="{ txtFornavn }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -80,14 +90,24 @@
     <fds-preview header="Karakterbegrænsning">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid"> Efternavn </fds-label>
-          <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+          <fds-label id="formid">
+            Efternavn
+          </fds-label>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input v-model="txtEfternavn" id="formid"></fds-input>
-          <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
+          <fds-input
+            id="formid"
+            v-model="txtEfternavn"></fds-input>
+          <fds-input-limit
+            :model-value="txtEfternavn"
+            :limit="20" />
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ txtEfternavn }" />
+        <fds-pre
+          header="v-model"
+          :json="{ txtEfternavn }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -98,13 +118,23 @@
     <fds-preview header="Prefix og Suffix">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="prefix"> Med prefix </fds-label>
-          <fds-input v-model="txtPre" prefix="prefix" id="prefix"></fds-input>
+          <fds-label id="prefix">
+            Med prefix
+          </fds-label>
+          <fds-input
+            id="prefix"
+            v-model="txtPre"
+            prefix="prefix"></fds-input>
         </fds-formgroup>
 
         <fds-formgroup>
-          <fds-label id="txtSuffix"> Med suffix </fds-label>
-          <fds-input v-model="txtSuffix" suffix="suffix" id="txtSuffix"></fds-input>
+          <fds-label id="txtSuffix">
+            Med suffix
+          </fds-label>
+          <fds-input
+            id="txtSuffix"
+            v-model="txtSuffix"
+            suffix="suffix"></fds-input>
         </fds-formgroup>
       </fds-preview-item>
 
@@ -116,16 +146,20 @@
     <fds-preview header="Nummer tekstfelt">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="noBeloeb"> Tal/Beløb </fds-label>
+          <fds-label id="noBeloeb">
+            Tal/Beløb
+          </fds-label>
           <fds-input-number
-            v-model="noBeloeb"
-            inputClass="input-width-xs"
-            suffix="kr."
             id="noBeloeb"
+            v-model="noBeloeb"
+            input-class="input-width-xs"
+            suffix="kr."
           ></fds-input-number>
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ noBeloeb }" />
+        <fds-pre
+          header="v-model"
+          :json="{ noBeloeb }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -136,23 +170,39 @@
     <fds-preview header="Søg knap">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="searchtxt">Input med knap ikon</fds-label>
-          <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchtxt">
+          <fds-label id="searchtxt">
+            Input med knap ikon
+          </fds-label>
+          <fds-input
+            id="searchtxt"
+            v-model="txtSearch"
+            placeholder="Søg efter...">
             <template #button>
               <button class="button button-search">
-                <svg class="icon-svg m-0" aria-hidden="true">
+                <svg
+                  class="icon-svg m-0"
+                  aria-hidden="true">
                   <use xlink:href="#search"></use></svg
-                ><span class="sr-only"> Søg </span>
+                ><span class="sr-only">
+                  Søg
+                </span>
               </button>
             </template>
           </fds-input>
         </fds-formgroup>
 
         <fds-formgroup>
-          <fds-label id="searchbtn">Input med knap tekst</fds-label>
-          <fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchbtn">
+          <fds-label id="searchbtn">
+            Input med knap tekst
+          </fds-label>
+          <fds-input
+            id="searchbtn"
+            v-model="txtSearch"
+            placeholder="Søg efter...">
             <template #button>
-              <button class="button button-search">Søg</button>
+              <button class="button button-search">
+                Søg
+              </button>
             </template>
           </fds-input>
         </fds-formgroup>

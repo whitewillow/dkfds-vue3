@@ -1,11 +1,15 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/toggle/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/toggle/">
       <fds-preview-item>
         <fds-toggle-switch v-model="toggleswitch" />
 
         <div>
-          <fds-pre header="v-model" :json="{ toggleswitch }" />
+          <fds-pre
+            header="v-model"
+            :json="{ toggleswitch }" />
         </div>
       </fds-preview-item>
 

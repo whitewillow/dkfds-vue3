@@ -1,7 +1,16 @@
 <template>
-  <router-link :to="{ name: toName }" custom v-slot="{ href, navigate, isActive }">
-    <li role="none" :class="[{ current: isActive || isPartOfMenu(toName) }]">
-      <fds-nav-link :href="href" :title="linkTitle" :disabled="disabled" @click="navigate">
+  <router-link
+    v-slot="{ href, navigate, isActive }"
+    :to="{ name: toName }"
+    custom>
+    <li
+      role="none"
+      :class="[{ current: isActive || isPartOfMenu(toName) }]">
+      <fds-nav-link
+        :href="href"
+        :title="linkTitle"
+        :disabled="disabled"
+        @click="navigate">
         <slot />
       </fds-nav-link>
     </li>
@@ -32,6 +41,7 @@ const props = defineProps({
   },
   tooltip: {
     type: String,
+    default: null,
   },
 });
 

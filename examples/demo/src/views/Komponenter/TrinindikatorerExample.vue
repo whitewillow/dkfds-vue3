@@ -1,16 +1,20 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/trinindikator/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/trinindikator/">
       <fds-preview-item>
         <fds-trinindikator-group :size="trinSize ? 'large' : 'small'">
-          <template #header> Trin {{ trinNavigationsId }} af 4 </template>
+          <template #header>
+            Trin {{ trinNavigationsId }} af 4
+          </template>
           <fds-trinindikator-item
             id="1"
             :active="trinNavigationsId === '1'"
             icon="done"
             hint="Et hint"
-            @navigate="trinNavigationsId = $event"
             :index="1"
+            @navigate="trinNavigationsId = $event"
           >
             Første
           </fds-trinindikator-item>
@@ -18,8 +22,8 @@
             id="2"
             :active="trinNavigationsId === '2'"
             hint="Et hint"
-            @navigate="trinNavigationsId = $event"
             :index="2"
+            @navigate="trinNavigationsId = $event"
           >
             Anden
           </fds-trinindikator-item>
@@ -27,7 +31,9 @@
 
         <fds-formgroup>
           <fds-label>Størrelse af trin</fds-label>
-          <fds-checkbox v-model="trinSize"> Large - fuld bredde når der er plads (breakpoint lg)</fds-checkbox>
+          <fds-checkbox v-model="trinSize">
+            Large - fuld bredde når der er plads (breakpoint lg)</fds-checkbox
+          >
         </fds-formgroup>
 
         <fds-pre :json="{ trinNavigationsId }"></fds-pre>
@@ -77,7 +83,6 @@
               <td><code>small</code></td>
               <td>large = fuld bredde, men small ved responsive</td>
             </tr>
-            
           </tbody>
         </table>
 
@@ -139,7 +144,6 @@
               </td>
               <td></td>
             </tr>
-            
           </tbody>
         </table>
       </fds-preview-item>
@@ -148,11 +152,10 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from "dkfds-vue3-utils";
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const trinSize = ref(false);
-const trinNavigationsId = ref("1");
+const trinNavigationsId = ref('1');
 const code = `
 <fds-trinindikator-group :size="trinSize ? 'large' : 'small'">
   <template #header> Trin {{ trinNavigationsId }} af 4 </template>
@@ -177,69 +180,4 @@ const code = `
   </fds-trinindikator-item>
 </fds-trinindikator-group>
 `;
-
-const codeExtra = `
-<xfds-trinindikator
-  v-model="trin"
-  @navigate="trinNavKey = $event" />
-
-
-const trinNavKey = '';
-const trin = ref<FdsNavigationItem[]>([
-  {
-    key: 'suppe',
-    title: 'Supper',
-    hint: '',
-    icon: 'done',
-  },
-  {
-    key: 'dessert',
-    title: 'Dessert',
-    hint: 'Hjælpetekst',
-    icon: 'home',
-
-    active: true,
-  },
-  {
-    key: 'kod',
-    title: 'Kød',
-    hint: '',
-  },
-  {
-    key: 'fisk',
-    title: 'Fisk',
-    hint: '',
-    disabled: true,
-  },
-] as unknown as FdsNavigationItem[]);
-`;
-
-const trinNavKey = "";
-const trin = ref<FdsNavigationItem[]>([
-  {
-    key: "suppe",
-    title: "Supper",
-    hint: "",
-    icon: "done",
-  },
-  {
-    key: "dessert",
-    title: "Dessert",
-    hint: "Hjælpetekst",
-    icon: "home",
-
-    active: true,
-  },
-  {
-    key: "kod",
-    title: "Kød",
-    hint: "",
-  },
-  {
-    key: "fisk",
-    title: "Fisk",
-    hint: "",
-    disabled: true,
-  },
-] as unknown as FdsNavigationItem[]);
 </script>

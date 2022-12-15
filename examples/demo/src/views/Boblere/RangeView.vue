@@ -5,14 +5,16 @@
         <fds-formgroup>
           <fds-label> Range </fds-label>
           <fds-tooltip class="ml-2">
-          Hjælpende <b>tekst</b>
+            Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast Range</fds-hint>
           <xfds-range v-model="rangeInput">
           </xfds-range>
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{range: rangeInput}" />
+        <fds-pre
+          header="v-model"
+          :json="{ range: rangeInput }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -20,7 +22,6 @@
       </fds-preview-code>
 
       <fds-preview-item>
-        
         <table class="table table--compact">
           <thead>
             <tr>
@@ -59,10 +60,13 @@
         </table>
 
         <fds-alert>
-          Se også <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range" target="mdn">mdn web docs for Range</a>
+          Se også
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range"
+            target="mdn"
+          >mdn web docs for Range</a
+          >
         </fds-alert>
-
-
       </fds-preview-item>
     </fds-preview>
   </section>

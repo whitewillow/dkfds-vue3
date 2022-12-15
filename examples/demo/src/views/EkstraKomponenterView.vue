@@ -4,12 +4,20 @@
       <div class="row">
         <aside class="col-12 col-lg-3 sidebar-col">
           <nav>
-            <xfds-menu v-model="navigationList" @navigate="handleNavigation" />
+            <xfds-menu
+              v-model="navigationList"
+              @navigate="handleNavigation" />
           </nav>
         </aside>
         <div class="col-12 col-lg-9">
-          <div class="subheading">Extra Komponenter</div>
-          <h1 v-if="currentItem" :id="currentItem.key">{{ currentItem.title }}</h1>
+          <div class="subheading">
+            Extra Komponenter
+          </div>
+          <h1
+            v-if="currentItem"
+            :id="currentItem.key">
+            {{ currentItem.title }}
+          </h1>
           <router-view />
         </div>
       </div>
@@ -18,72 +26,72 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from "dkfds-vue3-utils";
-import navigationService from "dkfds-vue3-extra/src/service/navigation.service";
-import { ref, watch } from "vue";
-import { sort } from "fast-sort";
-import { useRouter, useRoute } from "vue-router";
+import { FdsNavigationItem } from 'dkfds-vue3-utils';
+import navigationService from 'dkfds-vue3-extra/src/service/navigation.service';
+import { ref, watch } from 'vue';
+import { sort } from 'fast-sort';
+import { useRouter, useRoute } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
 
-const currentNavigationKey = ref("");
+const currentNavigationKey = ref('');
 const currentItem = ref<FdsNavigationItem | undefined>();
 const navigationList = ref<Array<FdsNavigationItem>>(
   sort([
     {
-      key: "ekstradropdownmenu",
-      title: "Dropdown-menu",
+      key: 'ekstradropdownmenu',
+      title: 'Dropdown-menu',
     },
     {
-      key: "ekstrafilliste",
-      title: "Fil liste",
+      key: 'ekstrafilliste',
+      title: 'Fil liste',
     },
     {
-      key: "ekstraformgroup",
-      title: "Form gruppe",
+      key: 'ekstraformgroup',
+      title: 'Form gruppe',
     },
     {
-      key: "ekstraknapspinner",
-      title: "Knap spinner",
+      key: 'ekstraknapspinner',
+      title: 'Knap spinner',
     },
     {
-      key: "ekstranummerfelt",
-      title: "Nummer",
+      key: 'ekstranummerfelt',
+      title: 'Nummer',
     },
     {
-      key: "ekstraprogressbar",
-      title: "Progressbar",
+      key: 'ekstraprogressbar',
+      title: 'Progressbar',
     },
     {
-      key: "ekstraradioknap",
-      title: "Radio",
+      key: 'ekstraradioknap',
+      title: 'Radio',
     },
     {
-      key: "ekstraradio",
-      title: "Radio List",
+      key: 'ekstraradio',
+      title: 'Radio List',
     },
     {
-      key: "ekstratekstfelt",
-      title: "Tekstfelt",
+      key: 'ekstratekstfelt',
+      title: 'Tekstfelt',
     },
     {
-      key: "ekstratekstomraade",
-      title: "Tekstområde",
+      key: 'ekstratekstomraade',
+      title: 'Tekstområde',
     },
     {
-      key: "ekstratjekboksliste",
-      title: "Tjekbox liste",
+      key: 'ekstratjekboksliste',
+      title: 'Tjekbox liste',
     },
     {
-      key: "ekstraformvalidering",
-      title: "Validate",
+      key: 'ekstraformvalidering',
+      title: 'Validate',
     },
     {
-      key: "ekstravenstremenu",
-      title: "Venstremenu",
+      key: 'ekstravenstremenu',
+      title: 'Venstremenu',
     },
-  ] as FdsNavigationItem[]).asc((a) => a.title)
+  ] as FdsNavigationItem[]).asc((a) => a.title),
 );
 
 watch(
@@ -91,13 +99,13 @@ watch(
   () => {
     navigationList.value = navigationService.setActive(
       navigationList.value,
-      route.name?.toString() ?? ""
+      route.name?.toString() ?? '',
     );
     currentItem.value = navigationService.findFirstActiveItem(navigationList.value);
   },
   {
     immediate: true,
-  }
+  },
 );
 
 const handleNavigation = (key: string) => {

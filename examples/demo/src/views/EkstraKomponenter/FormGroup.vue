@@ -2,11 +2,16 @@
   <section>
     <fds-preview header="Form gruppe">
       <fds-preview-item>
-        <xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
+        <xfds-form-group
+          label="Bil mærke"
+          hint="Angiv et mærke"
+          tooltip="Hjælp i tooltip">
           <fds-input v-model="maerke" />
         </xfds-form-group>
 
-        <fds-pre header="Object data" :json="{ maerke }" />
+        <fds-pre
+          header="Object data"
+          :json="{ maerke }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -16,14 +21,19 @@
 
     <fds-preview header="Form gruppe">
       <fds-preview-item>
-        <xfds-form-group label="Farver" hint="Angiv et alle farver" tooltip="Hjælp i tooltip">
+        <xfds-form-group
+          label="Farver"
+          hint="Angiv et alle farver"
+          tooltip="Hjælp i tooltip">
           <template #hint>
             <fds-hint>Overstyret hint</fds-hint>
           </template>
           <fds-textarea v-model="farver" />
         </xfds-form-group>
 
-        <fds-pre header="Object data" :json="{ farver }" />
+        <fds-pre
+          header="Object data"
+          :json="{ farver }" />
       </fds-preview-item>
 
       <fds-preview-code>

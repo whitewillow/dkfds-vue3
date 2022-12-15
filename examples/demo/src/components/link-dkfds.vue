@@ -1,7 +1,12 @@
 <template>
   <custom-tooltip tooltip-tekst="Det Fælles Designsystem">
     <slot>
-      <a class="dkfds-link" target="dkfds" href="https://designsystem.dk/">DKFDS</a>
+      <a
+        class="dkfds-link"
+        target="dkfds"
+        href="https://designsystem.dk/">
+        DKFDS
+      </a>
     </slot>
   </custom-tooltip>
 </template>

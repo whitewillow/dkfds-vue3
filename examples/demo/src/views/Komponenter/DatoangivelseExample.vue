@@ -1,12 +1,18 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/datofelter/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/datofelter/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label> Indsendelsesfrist </fds-label>
-          <fds-dato-felter v-model="datoAngiv" @valid="datoAngivValid = $event" />
+          <fds-dato-felter
+            v-model="datoAngiv"
+            @valid="datoAngivValid = $event" />
         </fds-formgroup>
-        <fds-pre :json="{ datoAngiv, datoAngivValid }" header="JSON DATE format" />
+        <fds-pre
+          :json="{ datoAngiv, datoAngivValid }"
+          header="JSON DATE format" />
       </fds-preview-item>
 
       <fds-preview-code>

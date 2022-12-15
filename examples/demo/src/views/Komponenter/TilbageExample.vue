@@ -1,10 +1,14 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tilbage-link/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/tilbage-link/">
       <fds-preview-item>
         <fds-tilbage-link @click="klikEvent" />
         <br />
-        <fds-tilbage-link @click="klikEvent">Egen tekst</fds-tilbage-link>
+        <fds-tilbage-link @click="klikEvent">
+          Egen tekst
+        </fds-tilbage-link>
       </fds-preview-item>
 
       <fds-preview-code>

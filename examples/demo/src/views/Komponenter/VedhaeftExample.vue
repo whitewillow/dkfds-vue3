@@ -1,12 +1,16 @@
 <template>
   <section>
-    <fds-preview header="Upload" href="https://designsystem.dk/komponenter/fil-upload/">
+    <fds-preview
+      header="Upload"
+      href="https://designsystem.dk/komponenter/fil-upload/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label>Vedhæft fil</fds-label>
           <fds-file-upload @upload="fileInput = $event" />
         </fds-formgroup>
-        <fds-pre header="Upload event JSON" :json="fileInput" />
+        <fds-pre
+          header="Upload event JSON"
+          :json="fileInput" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -35,7 +39,7 @@
               <td><code>Array&lt;string&gt;</code></td>
               <td>
                 <code
-                  >['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt']</code
+                >['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt']</code
                 >
               </td>
               <td></td>
@@ -88,8 +92,8 @@
 </template>
 
 <script setup lang="ts">
-import { FdsFileInputModel } from "dkfds-vue3-utils";
-import { ref } from "vue";
+import { FdsFileInputModel } from 'dkfds-vue3-utils';
+import { ref } from 'vue';
 
 const fileInput = ref<FdsFileInputModel | null>(null);
 const codeUpload = `

@@ -1,13 +1,20 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/fejlmeddelelser/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/fejlmeddelelser/">
       <fds-preview-item>
         <fds-formgroup :is-valid="false">
           <fds-label> Fornavn </fds-label>
-          <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-fejlmeddelelse> Giv dit kursus et navn </fds-fejlmeddelelse>
-          <fds-input v-model="txtFornavn" input-type="name" autocomplete="name"></fds-input>
+          <fds-input
+            v-model="txtFornavn"
+            input-type="name"
+            autocomplete="name"></fds-input>
         </fds-formgroup>
       </fds-preview-item>
 

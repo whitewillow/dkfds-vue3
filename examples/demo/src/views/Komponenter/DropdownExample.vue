@@ -1,13 +1,21 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/dropdown/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/dropdown/">
       <fds-preview-item>
         <fds-dropdown v-model="dropdownVal">
-          <option value="Manuel">Manuel</option>
-          <option value="Auto">Auto</option>
+          <option value="Manuel">
+            Manuel
+          </option>
+          <option value="Auto">
+            Auto
+          </option>
         </fds-dropdown>
 
-        <fds-pre header="v-model" :json="{ dropdownVal }" />
+        <fds-pre
+          header="v-model"
+          :json="{ dropdownVal }" />
       </fds-preview-item>
 
       <fds-preview-code>

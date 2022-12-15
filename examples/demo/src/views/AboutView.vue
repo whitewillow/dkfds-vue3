@@ -16,7 +16,10 @@
       <h2>Fejl / Forbedringer</h2>
       <p>Har du fundet en fejl eller har forslag til en feature eller et bug fix?</p>
 
-      <a href="https://github.com/whitewillow/dkfds-vue3/issues" target="github" class="icon-link">
+      <a
+        href="https://github.com/whitewillow/dkfds-vue3/issues"
+        target="github"
+        class="icon-link">
         Så opret gerne et issue på github<svg
           class="icon-svg"
           focusable="false"
@@ -24,7 +27,7 @@
           tabindex="-1"
         >
           <use xlink:href="#open-in-new"></use></svg
-      ></a>
+        ></a>
 
       <h2>Udviklingsguide</h2>
       <p>
@@ -37,9 +40,13 @@
         target="github"
         class="icon-link"
       >
-        Udviklingsguide<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1">
+        Udviklingsguide<svg
+          class="icon-svg"
+          focusable="false"
+          aria-hidden="true"
+          tabindex="-1">
           <use xlink:href="#open-in-new"></use></svg
-      ></a>
+        ></a>
 
       <h2>Roadmap</h2>
       <p>Se Roadmap for kommende features</p>
@@ -49,9 +56,13 @@
         target="github"
         class="icon-link"
       >
-        Roadmap<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1">
+        Roadmap<svg
+          class="icon-svg"
+          focusable="false"
+          aria-hidden="true"
+          tabindex="-1">
           <use xlink:href="#open-in-new"></use></svg
-      ></a>
+        ></a>
     </div>
   </div>
 </template>

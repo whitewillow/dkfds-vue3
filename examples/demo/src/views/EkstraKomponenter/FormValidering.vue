@@ -3,9 +3,9 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <xfds-validate
-          :modelValue="user.name"
-          @validated="validator.addItem($event)"
+          :model-value="user.name"
           :validations="[hasContent, charactersMinLength(10)]"
+          @validated="validator.addItem($event)"
         >
           <fds-formgroup>
             <fds-label> Navn </fds-label>
@@ -15,13 +15,19 @@
           </fds-formgroup>
         </xfds-validate>
 
-        <fds-pre header="object data" :json="{ navn: user.name }" />
+        <fds-pre
+          header="object data"
+          :json="{ navn: user.name }" />
 
-        <fds-pre header="@validated" :json="{ validatedList: validator.validatorItems }" />
+        <fds-pre
+          header="@validated"
+          :json="{ validatedList: validator.validatorItems }" />
       </fds-preview-item>
       <hr />
       <fds-preview-item>
-        <p class="italic">Komponenten <code>xfds-validate</code> er en valideringswrapper.</p>
+        <p class="italic">
+          Komponenten <code>xfds-validate</code> er en valideringswrapper.
+        </p>
         <p class="italic">
           Kan evt bruge til at lave egne komponenter der wrapper eksempelvis ovenstående i sin egen
           validarings-komponent
@@ -134,7 +140,9 @@
           </tbody>
         </table>
 
-        <p class="h4">Provide</p>
+        <p class="h4">
+          Provide
+        </p>
         <table class="table table--compact">
           <thead>
             <tr>
@@ -170,8 +178,12 @@
         <p>Konceptet er at hvis der returneres en fejlbesked <code>string</code> så er der fejl</p>
         <p>returneres der <code>null</code> er modelValue valid</p>
 
-        <fds-pre header="eks på valideringsmetode" :code="codeVal1" />
-        <fds-pre header="eks på valideringsmetode" :code="codeVal2" />
+        <fds-pre
+          header="eks på valideringsmetode"
+          :code="codeVal1" />
+        <fds-pre
+          header="eks på valideringsmetode"
+          :code="codeVal2" />
       </fds-preview-item>
 
       <fds-preview-code header="Andre eksempler">
@@ -182,19 +194,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { charactersMinLength, hasContent } from "dkfds-vue3-utils";
-import ValidatorService from "dkfds-vue3-extra/src/service/validator.service";
+import { ref } from 'vue';
+import { charactersMinLength, hasContent } from 'dkfds-vue3-utils';
+import ValidatorService from 'dkfds-vue3-extra/src/service/validator.service';
 
 const validator = ref(new ValidatorService());
 
 const user = ref({
-  name: "",
-  adress: "",
-  city: "",
-  search: "",
+  name: '',
+  adress: '',
+  city: '',
+  search: '',
 });
-const dirty = ref(false);
 
 const codeVal1 = `
   export function charactersMinLength (length: number): (args: string) => string | null {
@@ -263,13 +274,5 @@ const codeAlternatives = `
     <fds-input v-model="user.name" @dirty="dirty = $event"></fds-input>
   </fds-formgroup>
 </xfds-validate>
-`;
-
-const codeVal = `
-import ValidatorService, { ValidatorItem } from '@/service/validator.service';
-
-
-const validator = ref(new ValidatorService());
-
 `;
 </script>

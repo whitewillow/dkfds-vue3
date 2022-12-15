@@ -1,6 +1,8 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/tilbage-til-top/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/tilbage-til-top/">
       <fds-preview-item>
         <fds-til-top class="example_tiltop" />
 

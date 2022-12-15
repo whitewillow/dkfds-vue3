@@ -4,12 +4,16 @@
       <fds-preview-item href="https://designsystem.dk/komponenter/inputfelter/">
         <fds-formgroup>
           <fds-label> Navn </fds-label>
-          <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-input v-model="user.name"></fds-input>
         </fds-formgroup>
 
-        <fds-pre header="object data" :json="user" />
+        <fds-pre
+          header="object data"
+          :json="user" />
       </fds-preview-item>
 
       <hr />
@@ -20,7 +24,9 @@
           labels, m.fl elementer - se koden
         </p>
 
-        <p class="h4">Props</p>
+        <p class="h4">
+          Props
+        </p>
         <table class="table table--compact">
           <thead>
             <tr>
@@ -40,7 +46,9 @@
           </tbody>
         </table>
 
-        <p class="h4">Provide</p>
+        <p class="h4">
+          Provide
+        </p>
         <table class="table table--compact">
           <thead>
             <tr>
@@ -60,7 +68,9 @@
           </tbody>
         </table>
 
-        <p class="h4">Inject</p>
+        <p class="h4">
+          Inject
+        </p>
         <table class="table table--compact">
           <thead>
             <tr>

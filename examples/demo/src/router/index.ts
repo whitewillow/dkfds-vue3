@@ -1,39 +1,39 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import ekstraKomponenterRoutes from "./ekstrakomponenterRoutes";
-import komponenterRoutes from "./KomponenterRoutes";
-import anbefalingerRoutes from "./AnbefalingerRoutes";
-import boblereRoutes from "./BoblereRoutes";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import ekstraKomponenterRoutes from './ekstrakomponenterRoutes';
+import komponenterRoutes from './KomponenterRoutes';
+import anbefalingerRoutes from './AnbefalingerRoutes';
+import boblereRoutes from './BoblereRoutes';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    redirect: { name: "forside" },
+    path: '/',
+    redirect: { name: 'forside' },
   },
   {
-    path: "/forside",
-    name: "forside",
-    component: () => import("@/views/ForsideView.vue"),
+    path: '/forside',
+    name: 'forside',
+    component: () => import('@/views/ForsideView.vue'),
   },
   {
-    path: "/anbefalinger",
-    name: "anbefalinger",
-    component: () => import("@/views/AnbefalingerView.vue"),
+    path: '/anbefalinger',
+    name: 'anbefalinger',
+    component: () => import('@/views/AnbefalingerView.vue'),
   },
   ...komponenterRoutes,
   ...ekstraKomponenterRoutes,
   ...boblereRoutes,
   ...anbefalingerRoutes,
   {
-    path: "/about",
-    name: "about",
-    component: () => import("@/views/AboutView.vue"),
+    path: '/about',
+    name: 'about',
+    component: () => import('@/views/AboutView.vue'),
   },
-  { path: "/:pathMatch(.*)*", redirect: { name: "forside" } },
+  { path: '/:pathMatch(.*)*', redirect: { name: 'forside' } },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(
-    process.env.NODE_ENV === "production" ? "/dkfds-vue3-example/" : "/"
+    process.env.NODE_ENV === 'production' ? '/dkfds-vue3-example/' : '/',
   ),
   routes,
   scrollBehavior(to) {
@@ -47,7 +47,7 @@ const router = createRouter({
   },
 });
 
-const DEFAULT_TITLE = "";
+const DEFAULT_TITLE = '';
 
 router.beforeEach((to, from, next) => {
   document.title = `DKFDS-Vue3 ${to.meta?.title ?? DEFAULT_TITLE}`;

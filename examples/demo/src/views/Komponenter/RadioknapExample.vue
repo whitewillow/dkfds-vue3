@@ -1,10 +1,16 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/radioknap/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/radioknap/">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-radio-group v-model="radioValueKerne" label="Vælg Genre">
-            <fds-radio-item value="metal"> Metal </fds-radio-item>
+          <fds-radio-group
+            v-model="radioValueKerne"
+            label="Vælg Genre">
+            <fds-radio-item value="metal">
+              Metal
+            </fds-radio-item>
             <fds-radio-item value="pop">
               Pop
               <template #content>
@@ -13,7 +19,9 @@
                 (eng. "popular").
               </template>
             </fds-radio-item>
-            <fds-radio-item value="klassisk"> Klassist </fds-radio-item>
+            <fds-radio-item value="klassisk">
+              Klassist
+            </fds-radio-item>
           </fds-radio-group>
         </fds-formgroup>
 

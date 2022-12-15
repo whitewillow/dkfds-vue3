@@ -1,27 +1,40 @@
 <template>
   <section>
-    <fds-alert variant="info" header="Under udvikling" closeable
-      >Cookiemeddelelse er stadig under udvikling, mindre ændringer kan forkomme
+    <fds-alert
+      variant="info"
+      header="Under udvikling"
+      closeable
+    >Cookiemeddelelse er stadig under udvikling, mindre ændringer kan forkomme
     </fds-alert>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/cookiemeddelelse/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/cookiemeddelelse/">
       <fds-preview-item>
         <fds-cookiemeddelelse
+          class="example_relative"
           @accept="cookieAccept = true"
           @cancel="cookieAccept = false"
-          class="example_relative"
         >
           <template #header>
-            <div class="h3 mt-0 mb-3" id="cookie-message-heading">
+            <div
+              id="cookie-message-heading"
+              class="h3 mt-0 mb-3">
               Fortæl os om du accepterer cookies
             </div>
           </template>
-          <p class="mt-0" id="cookie-message-text">
+          <p
+            id="cookie-message-text"
+            class="mt-0">
             Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
-            <a href="#"> Læs mere om vores brug af cookies. </a>
+            <a href="#">
+              Læs mere om vores brug af cookies.
+            </a>
           </p>
         </fds-cookiemeddelelse>
 
-        <fds-pre header="Cookimeddelelse" :json="{ cookieAccept }" />
+        <fds-pre
+          header="Cookimeddelelse"
+          :json="{ cookieAccept }" />
       </fds-preview-item>
 
       <fds-preview-code>

@@ -1,18 +1,28 @@
 <template>
   <section>
-    <fds-alert variant="info" header="Info" closeable class="mb-8">
+    <fds-alert
+      variant="info"
+      header="Info"
+      closeable
+      class="mb-8">
       Komponenten benytter ikke DKFDS kalender, da DKFDS script laver om på elementer og ikke
       generisk nok til at bruge i denne sammenhæng
     </fds-alert>
 
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/datovaelger/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/datovaelger/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label> Fødselsdag </fds-label>
-          <fds-dato-vaelger v-model="datoValg" @valid="datoValgValid = $event" />
+          <fds-dato-vaelger
+            v-model="datoValg"
+            @valid="datoValgValid = $event" />
         </fds-formgroup>
 
-        <fds-pre :json="{ datoValg, datoValgValid }" header="JSON DATE format" />
+        <fds-pre
+          :json="{ datoValg, datoValgValid }"
+          header="JSON DATE format" />
       </fds-preview-item>
       <hr />
       <fds-preview-item>
@@ -24,11 +34,11 @@
           Se mere under
           <br />
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date"
-            >https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date</a
+          >https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date</a
           >
           <br />
           <a href="https://www.w3schools.com/tags/att_input_type_date.asp"
-            >https://www.w3schools.com/tags/att_input_type_date.asp</a
+          >https://www.w3schools.com/tags/att_input_type_date.asp</a
           >
         </p>
       </fds-preview-item>

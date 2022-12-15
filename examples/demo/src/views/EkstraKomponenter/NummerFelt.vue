@@ -3,30 +3,34 @@
     <fds-preview header="Nummer felt">
       <fds-preview-item>
         <xfds-form-input-number
-          inputClass="input-width-xxs"
+          v-model="lager.lager"
+          input-class="input-width-xxs"
           placeholder="Angiv antal"
           label="Lager antal"
-          v-model="lager.lager"
         />
 
-        <xfds-validate :modelValue="lager.forventetLager" :validations="[numberMin(2)]">
+        <xfds-validate
+          :model-value="lager.forventetLager"
+          :validations="[numberMin(2)]">
           <xfds-form-input-number
+            v-model="lager.forventetLager"
             label="Forventet lager"
             hint="Angiv gyldig lager antal"
             tooltip="Input tooltip"
             prefix="stk."
-            v-model="lager.forventetLager"
           />
         </xfds-validate>
 
         <xfds-form-input-number
-          inputClass="input-width-xs"
+          v-model="lager.pris"
+          input-class="input-width-xs"
           suffix="kr."
           label="Pris"
-          v-model="lager.pris"
         />
 
-        <fds-pre header="Object data" :json="lager" />
+        <fds-pre
+          header="Object data"
+          :json="lager" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -70,7 +74,11 @@
               <td><code>null</code></td>
               <td>
                 Se standard ikone hos
-                <a href="https://designsystem.dk/design/ikoner/" target="dkfds">DKFDS</a>
+                <a
+                  href="https://designsystem.dk/design/ikoner/"
+                  target="dkfds">
+                  DKFDS
+                </a>
               </td>
             </tr>
             <tr>
@@ -87,68 +95,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from "vue";
-import { numberMin } from "dkfds-vue3-utils";
+import { ref, defineProps } from 'vue';
+import { numberMin } from 'dkfds-vue3-utils';
 
-const props = defineProps({
+defineProps({
   test: {
     type: String,
-    default: "Banana",
-    description: "asdadsads",
+    default: 'Banana',
+    description: 'asdadsads',
   },
 });
 
 const lager = ref({
-  lager: "",
-  forventetLager: "",
-  pris: "",
+  lager: '',
+  forventetLager: '',
+  pris: '',
 });
-
-const propTest = `
-{
-  /**
-   * Overskrift
-   * */
-  header: {
-    type: String,
-  },
-  /**
-   * Hjælpetekst
-   * */
-  hint: {
-    type: String,
-    default: '',
-  },
-  /**
-   * Er Accordion Åben = aktiv
-   * */
-  expanded: {
-    type: Boolean,
-    default: false,
-  },
-  /**
-   * Disabled
-   * */
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  /**
-   * Variant - ikon der vises til højre
-   * */
-  variant: {
-    type: String as PropType<'success' | 'warning' | 'error'>,
-    default: null,
-  },
-  /**
-   * Tilhørende tekst til varianten
-   * */
-  variantText: {
-    type: String,
-    default: '',
-  },
-}
-`;
 
 const code = `
 <xfds-form-input-number

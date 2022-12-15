@@ -3,18 +3,20 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <xfds-validate
-          :modelValue="product.beskrivelse"
+          :model-value="product.beskrivelse"
           :validations="[hasContent, charactersMinLength(10)]"
         >
           <xfds-form-textarea
+            v-model="product.beskrivelse"
             label="Beskrivelse"
             hint="Angiv beskrivelse af produktet"
             placeholder="...Produktet er består af xxx"
-            v-model="product.beskrivelse"
           />
         </xfds-validate>
 
-        <fds-pre header="v-model" :json="product" />
+        <fds-pre
+          header="v-model"
+          :json="product" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -25,11 +27,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { hasContent, charactersMinLength } from "dkfds-vue3-utils";
+import { ref } from 'vue';
+import { hasContent, charactersMinLength } from 'dkfds-vue3-utils';
 
 const product = ref({
-  beskrivelse: "",
+  beskrivelse: '',
 });
 const codeForm = `
   <xfds-form-textarea

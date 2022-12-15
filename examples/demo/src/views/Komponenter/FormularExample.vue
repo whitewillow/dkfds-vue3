@@ -1,8 +1,13 @@
 <template>
   <section>
-    <fds-alert variant="info" header="Se" closeable>
+    <fds-alert
+      variant="info"
+      header="Se"
+      closeable>
       Se
-      <router-link :to="{ name: 'komponentfelter' }"> Inputfelter </router-link>
+      <router-link :to="{ name: 'komponentfelter' }">
+        Inputfelter
+      </router-link>
     </fds-alert>
   </section>
 </template>

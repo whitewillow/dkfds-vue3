@@ -3,14 +3,20 @@
     <fds-preview header="Eksempel">
       <fds-preview-item>
         <fds-formgroup>
-          <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal" label="Vælg radio">
-            <template v-slot:[`melon`]>
+          <xfds-radio
+            v-model="radioVal"
+            header="Pick one"
+            :list="radioOptions"
+            label="Vælg radio">
+            <template #[`melon`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
           </xfds-radio>
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ radioVal }" />
+        <fds-pre
+          header="v-model"
+          :json="{ radioVal }" />
       </fds-preview-item>
 
       <fds-preview-code>
@@ -23,14 +29,18 @@
     <fds-preview header="Ja eller nej">
       <fds-preview-item>
         <fds-formgroup>
-          <xfds-radio-toggle v-model="toggleRadio" label="Vælg radio toggle">
-            <template v-slot:[`true`]>
+          <xfds-radio-toggle
+            v-model="toggleRadio"
+            label="Vælg radio toggle">
+            <template #[`true`]>
               <p>Det er muligt at benytte radio til mere indhold</p>
             </template>
           </xfds-radio-toggle>
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ toggleRadio }" />
+        <fds-pre
+          header="v-model"
+          :json="{ toggleRadio }" />
       </fds-preview-item>
       <fds-preview-item>
         <p class="italic">
@@ -49,24 +59,24 @@
 </template>
 
 <script setup lang="ts">
-import { FdsOptionItem } from "dkfds-vue3-utils";
-import { ref } from "vue";
+import { FdsOptionItem } from 'dkfds-vue3-utils';
+import { ref } from 'vue';
 
-const radioVal = ref("");
+const radioVal = ref('');
 
 const toggleRadio = ref(null);
 const radioOptions = ref<FdsOptionItem[]>([
   {
-    title: "Banan",
-    value: "banan",
+    title: 'Banan',
+    value: 'banan',
   },
   {
-    title: "Melon",
-    value: "melon",
+    title: 'Melon',
+    value: 'melon',
   },
   {
-    title: "Æble",
-    value: "æble",
+    title: 'Æble',
+    value: 'æble',
   },
 ]);
 

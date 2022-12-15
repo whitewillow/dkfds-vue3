@@ -1,8 +1,13 @@
 <template>
   <section>
-    <fds-preview header="Standard modal" href="https://designsystem.dk/komponenter/modal/">
+    <fds-preview
+      header="Standard modal"
+      href="https://designsystem.dk/komponenter/modal/">
       <fds-preview-item>
-        <fds-modal ref="refModal" header="Min Modal" closeable>
+        <fds-modal
+          ref="refModal"
+          header="Min Modal"
+          closeable>
           <p>Eksempel på et modal vindue</p>
           <p>
             Det er muligt at skifte tekster på nedestående knapper
@@ -14,15 +19,19 @@
           </p>
         </fds-modal>
 
-        <fds-button @click="(refModal as any)?.showModal()" id="modalButton">
+        <fds-button
+          id="modalButton"
+          @click="(refModal as any)?.showModal()">
           Vis Modal
         </fds-button>
       </fds-preview-item>
       <hr />
       <fds-preview-item>
         <code>fds-modal</code> afviger fra standard DKFDS Modal - da den udelukkende bruger standard
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="mdn"
-          >HTML dialog element</a
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog"
+          target="mdn"
+        >HTML dialog element</a
         >:
       </fds-preview-item>
 
@@ -142,28 +151,32 @@
 
     <fds-preview header="Modal med egen footer">
       <fds-preview-item>
-        <fds-modal ref="refModalCustomFooter" header="Egen footer modal">
+        <fds-modal
+          ref="refModalCustomFooter"
+          header="Egen footer modal">
           <p>Eksempel på et modal vindue</p>
           <p>med egen footer</p>
           <template #footer>
             <fds-button
               id="showModalCustomFooter"
-              @click="(refModalCustomFooter as any).hideModal()"
               variant="error"
+              @click="(refModalCustomFooter as any).hideModal()"
             >
               Godkend
             </fds-button>
             <fds-button
+              id="showModalCustomFooter"
               variant="secondary"
               @click="(refModalCustomFooter as any).hideModal()"
-              id="showModalCustomFooter"
             >
               Nej takker
             </fds-button>
           </template>
         </fds-modal>
 
-        <fds-button @click="(refModalCustomFooter as any).showModal()" id="showModalCustomFooter">
+        <fds-button
+          id="showModalCustomFooter"
+          @click="(refModalCustomFooter as any).showModal()">
           Vis Footer Modal
         </fds-button>
       </fds-preview-item>

@@ -1,6 +1,8 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/detaljer/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/detaljer/">
       <fds-preview-item>
         <fds-detaljer header="Mine detaljer">
           <p>

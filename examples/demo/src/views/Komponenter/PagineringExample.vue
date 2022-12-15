@@ -1,16 +1,22 @@
 <template>
   <section>
-    <fds-preview header="Eksempel" href="https://designsystem.dk/komponenter/paginering/">
+    <fds-preview
+      header="Eksempel"
+      href="https://designsystem.dk/komponenter/paginering/">
       <fds-preview-item>
         <fds-paginering
           :list="largeArray"
-          @filteredPage="filteredPagingList = $event"
+          @filtered-page="filteredPagingList = $event"
           @skip="skipPaging = $event"
         />
 
-        <fds-pre header="filter list" :json="{ skipPaging }" />
+        <fds-pre
+          header="filter list"
+          :json="{ skipPaging }" />
 
-        <fds-pre header="filter list" :json="{ filteredPagingList }" />
+        <fds-pre
+          header="filter list"
+          :json="{ filteredPagingList }" />
       </fds-preview-item>
       <fds-preview-item>
         <table class="table table--compact">

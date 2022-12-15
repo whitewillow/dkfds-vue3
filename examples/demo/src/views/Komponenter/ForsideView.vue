@@ -2,7 +2,7 @@
   <section>
     <h1>Komponenter</h1>
     <p class="font-lead">
-      Oversigt over <link-dv3 hideTooltip /> kerne komponenter - Genanvendelige enheder der kan
+      Oversigt over <link-dv3 hide-tooltip /> kerne komponenter - Genanvendelige enheder der kan
       sættes sammen på forskellige måder
     </p>
     <p>Gennemse kerne komponenter ved at klikke på deres respektive navne i menu.</p>
@@ -20,7 +20,11 @@
     </ul>
     <p>
       Hvert eksempel vil også linke til det samme
-      <a href="https://designsystem.dk/komponenter/" target="dkfds">komponent</a> hos
+      <a
+        href="https://designsystem.dk/komponenter/"
+        target="dkfds">
+        komponent
+      </a> hos
       <link-dkfds /> - så man kan læse mere om hvad komponenten anvendes til og ikke anvendes til.
     </p>
     <p>

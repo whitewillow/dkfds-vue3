@@ -1,24 +1,28 @@
 <template>
   <section>
-    <fds-preview header="Faneblade Manuelt" href="https://designsystem.dk/komponenter/faneblade/">
+    <fds-preview
+      header="Faneblade Manuelt"
+      href="https://designsystem.dk/komponenter/faneblade/">
       <fds-preview-item>
         <fds-faneblade>
           <fds-faneblad-item
+            id="1"
             header="Fane 1"
             :selected="fanebladManueltId === '1'"
             @click="fanebladManueltId = $event"
-            id="1"
           >
             <h2>Fane 1</h2>
             <p>Manuel styret faneblade</p>
           </fds-faneblad-item>
 
           <fds-faneblad-item
-            @click="fanebladManueltId = $event"
-            :selected="fanebladManueltId === '2'"
             id="2"
+            :selected="fanebladManueltId === '2'"
+            @click="fanebladManueltId = $event"
           >
-            <template #header> Template Header </template>
+            <template #header>
+              Template Header
+            </template>
             <h2>Fane 2</h2>
             <p>
               Mauris tempor, tellus a laoreet finibus, neque metus hendrerit augue, ac lacinia nisl
@@ -31,7 +35,9 @@
           </fds-faneblad-item>
         </fds-faneblade>
 
-        <fds-pre header="Valgt fane" :json="{ fanebladManueltId }" />
+        <fds-pre
+          header="Valgt fane"
+          :json="{ fanebladManueltId }" />
       </fds-preview-item>
 
       <fds-preview-code>

@@ -9,9 +9,9 @@
       </fds-formgroup>
 
       <xfds-validate
-        :modelValue="txtEfternavn"
+        v-slot="{ isValid, errorMessage }"
+        :model-value="txtEfternavn"
         :validations="[hasContent, charactersMinLength(10)]"
-        #default="{ isValid, errorMessage }"
       >
         <fds-formgroup :is-valid="isValid">
           <fds-label> Efternavn </fds-label>
@@ -28,19 +28,30 @@
       <h3>Eksempel på simpel brug</h3>
 
       <xfds-form-input
+        v-model="txtAdresse"
         label="Adresse"
         hint="Angiv gyldig adresse"
-        v-model="txtAdresse"
         :validations="[hasContent, charactersMinLength(10)]"
       />
 
-      <xfds-form-input label="Antal kasser" v-model="kasser" prefix="stk" />
+      <xfds-form-input
+        v-model="kasser"
+        label="Antal kasser"
+        prefix="stk" />
 
-      <xfds-form-input label="Antal kasser" v-model="kasser" suffix="stk" />
+      <xfds-form-input
+        v-model="kasser"
+        label="Antal kasser"
+        suffix="stk" />
 
-      <xfds-form-input label="Mobil nr." :modelValue="txtMobil" disabled />
+      <xfds-form-input
+        label="Mobil nr."
+        :model-value="txtMobil"
+        disabled />
 
-      <xfds-form-textarea label="Tekst område" v-model="txtBeskrivelse" />
+      <xfds-form-textarea
+        v-model="txtBeskrivelse"
+        label="Tekst område" />
 
       <hr />
 
@@ -48,7 +59,7 @@
 
       <fds-formgroup label="Vælg en checkbox">
         <fds-checkbox-list v-model="checkboxList">
-          <template v-slot:[`melon`]>
+          <template #[`melon`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </fds-checkbox-list>
@@ -57,23 +68,41 @@
       <fds-pre :json="checkboxList" />
 
       <fds-formgroup label="Single Checkbox">
-        <fds-checkbox v-model="twoChecked" class="mt-2"> Andet valg </fds-checkbox>
-        <fds-checkbox v-model="twoChecked" size="small"> Andet valg - small </fds-checkbox>
+        <fds-checkbox
+          v-model="twoChecked"
+          class="mt-2">
+          Andet valg
+        </fds-checkbox>
+        <fds-checkbox
+          v-model="twoChecked"
+          size="small">
+          Andet valg - small
+        </fds-checkbox>
       </fds-formgroup>
 
       <fds-formgroup>
-        <xfds-radio header="Pick one" :list="radioOptions" v-model="radioVal" label="Vælg radio">
-          <template #hint> Lorem ipsum dolor sit amet consectetur adipisicing elit. </template>
-          <template v-slot:[`melon`]>
+        <xfds-radio
+          v-model="radioVal"
+          header="Pick one"
+          :list="radioOptions"
+          label="Vælg radio">
+          <template #hint>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </template>
+          <template #[`melon`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </xfds-radio>
       </fds-formgroup>
 
       <fds-formgroup>
-        <xfds-radio-toggle v-model="toggleRadio" label="Vælg radio toggle">
-          <template #hint> Lorem ipsum dolor sit amet consectetur adipisicing elit. </template>
-          <template v-slot:[`true`]>
+        <xfds-radio-toggle
+          v-model="toggleRadio"
+          label="Vælg radio toggle">
+          <template #hint>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </template>
+          <template #[`true`]>
             <p>Det er muligt at benytte radio til mere indhold</p>
           </template>
         </xfds-radio-toggle>
@@ -81,7 +110,9 @@
       {{ toggleRadio }}
 
       <fds-formgroup>
-        <fds-dropdown :options="dropdownOptions" v-model="dropdownVal" />
+        <fds-dropdown
+          v-model="dropdownVal"
+          :options="dropdownOptions" />
       </fds-formgroup>
 
       <fds-toggle-switch v-model="toggleswitch" />
@@ -106,62 +137,62 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { charactersMinLength, hasContent } from "dkfds-vue3-utils";
-import { FdsOptionItem, FdsCheckboxItem } from "dkfds-vue3-utils";
+import { ref } from 'vue';
+import { charactersMinLength, hasContent } from 'dkfds-vue3-utils';
+import { FdsOptionItem, FdsCheckboxItem } from 'dkfds-vue3-utils';
 
-const txtFornavn = ref("");
-const txtEfternavn = ref("");
-const txtAdresse = ref("");
-const kasser = ref("");
-const txtMobil = ref("23232323");
-const txtBeskrivelse = ref("");
+const txtFornavn = ref('');
+const txtEfternavn = ref('');
+const txtAdresse = ref('');
+const kasser = ref('');
+const txtMobil = ref('23232323');
+const txtBeskrivelse = ref('');
 const oneChecked = ref(false);
 const twoChecked = ref(false);
-const radioVal = ref("");
+const radioVal = ref('');
 const toggleswitch = ref(false);
 const toggleRadio = ref(null);
 const radioOptions = ref<FdsOptionItem[]>([
   {
-    title: "Banan",
-    value: "banan",
+    title: 'Banan',
+    value: 'banan',
   },
   {
-    title: "Melon",
-    value: "melon",
+    title: 'Melon',
+    value: 'melon',
   },
   {
-    title: "Æble",
-    value: "æble",
+    title: 'Æble',
+    value: 'æble',
   },
 ]);
 const checkboxList = ref<FdsCheckboxItem[]>([
   {
-    title: "Banan",
-    value: "banan",
+    title: 'Banan',
+    value: 'banan',
   },
   {
-    title: "Melon",
-    value: "melon",
+    title: 'Melon',
+    value: 'melon',
   },
   {
-    title: "Æble",
-    value: "æble",
+    title: 'Æble',
+    value: 'æble',
   },
 ]);
-const dropdownVal = ref("");
+const dropdownVal = ref('');
 const dropdownOptions = ref<FdsOptionItem[]>([
   {
-    title: "Banan",
-    value: "banan",
+    title: 'Banan',
+    value: 'banan',
   },
   {
-    title: "Melon",
-    value: "melon",
+    title: 'Melon',
+    value: 'melon',
   },
   {
-    title: "Æble",
-    value: "æble",
+    title: 'Æble',
+    value: 'æble',
   },
 ]);
 </script>

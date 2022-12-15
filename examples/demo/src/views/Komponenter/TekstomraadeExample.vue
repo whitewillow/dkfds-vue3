@@ -1,6 +1,8 @@
 <template>
   <section>
-    <fds-preview header="Nummer tekstfelt" href="https://designsystem.dk/komponenter/tekstomraade/">
+    <fds-preview
+      header="Nummer tekstfelt"
+      href="https://designsystem.dk/komponenter/tekstomraade/">
       <fds-preview-item>
         <fds-formgroup>
           <fds-label> Begrundelse </fds-label>
@@ -8,7 +10,9 @@
           <fds-textarea v-model="txtBegrundelse" />
         </fds-formgroup>
 
-        <fds-pre header="v-model" :json="{ txtBegrundelse }" />
+        <fds-pre
+          header="v-model"
+          :json="{ txtBegrundelse }" />
       </fds-preview-item>
 
       <fds-preview-code>

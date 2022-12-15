@@ -8,18 +8,20 @@
         </p>
         <div class="navbar navbar-primary">
           <div class="navbar-inner container">
-            <ul class="nav-primary" role="menu">
+            <ul
+              class="nav-primary"
+              role="menu">
               <fds-xtnd-nav-item-route
-                toName="forside"
+                to-name="forside"
                 :current-route-name="$route.name?.toString()"
-                linkTitle="Link title"
+                link-title="Link title"
               >
                 Forside
               </fds-xtnd-nav-item-route>
               <fds-xtnd-nav-item-route
-                toName="anbefalingernavigation"
+                to-name="anbefalingernavigation"
                 :current-route-name="$route.name?.toString()"
-                linkTitle="Link title"
+                link-title="Link title"
               >
                 Denne side
               </fds-xtnd-nav-item-route>
@@ -27,7 +29,9 @@
           </div>
         </div>
 
-        <fds-pre :code="code" :header="'Brug af komponent'" />
+        <fds-pre
+          :code="code"
+          :header="'Brug af komponent'" />
       </fds-preview-item>
       <hr />
       <fds-preview-item>
@@ -35,7 +39,9 @@
           Komponenten <code>fds-xtnd-nav-item-route</code> gør det nemmer at auto markere om siden
           er aktiv
         </p>
-        <p class="italic">Se nedestående kode for komponenten</p>
+        <p class="italic">
+          Se nedestående kode for komponenten
+        </p>
       </fds-preview-item>
       <fds-preview-code>
         <pre v-text="codeComponent"></pre>
