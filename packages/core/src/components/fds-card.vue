@@ -12,9 +12,11 @@
       v-if="$slots.header || header"
       class="card-header">
       <slot name="header">
-        <h2 class="header-title">
+        <component
+          :is="headerTag"
+          class="header-title">
           {{ header }}
-        </h2>
+        </component>
         <p
           v-if="subheader"
           class="sub-header">
@@ -44,7 +46,7 @@
  * https://designsystem.dk/komponenter/cards/
  *
  * */
-import { defineProps } from 'vue';
+import { defineProps, PropType } from 'vue';
 
 defineProps({
   /**
@@ -53,6 +55,13 @@ defineProps({
   header: {
     type: String,
     default: null,
+  },
+  headerTag: {
+    type: String as PropType<'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
+    default: 'h2',
+    validator(value: string) {
+      return ['h2', 'h3', 'h4', 'h5', 'h6'].includes(value);
+    },
   },
   /**
    * Under overskrift
