@@ -2,21 +2,23 @@
   <div class="accordion-single">
     <component :is="headerTag">
       <button
+        :id="formid"
         class="accordion-button"
         :class="getVariantClass"
         :aria-expanded="`${refExpanded ? 'true' : 'false'}`"
-        :id="formid"
+        :aria-controls="`acc_${formid}`"
         @click="refExpanded = !refExpanded"
-        :aria-controls="`acc_${formid}`">
+      >
         <slot name="header">
           {{ header }}
           <span
+            v-if="variant && ['error', 'warning', 'success'].includes(variant)"
             class="accordion-icon"
-            v-if="variant && ['error', 'warning', 'success'].includes(variant)">
+          >
             <span
-              class="icon_text"
-              v-if="variantText !== null">
-              {{ variantText === "" ? getIconText : variantText }}
+              v-if="variantText !== null"
+              class="icon_text">
+              {{ variantText === '' ? getIconText : variantText }}
             </span>
             <svg
               class="icon-svg"
@@ -34,7 +36,8 @@
       role="region"
       :aria-labelledby="formid"
       :aria-hidden="`${refExpanded ? 'false' : 'true'}`"
-      class="accordion-content">
+      class="accordion-content"
+    >
       <slot />
     </div>
   </div>
@@ -42,9 +45,7 @@
 
 <script setup lang="ts">
 import { formId } from 'dkfds-vue3-utils';
-import {
-  defineProps, ref, computed, PropType,
-} from 'vue';
+import { defineProps, ref, computed, PropType } from 'vue';
 
 const props = defineProps({
   /**
@@ -52,6 +53,7 @@ const props = defineProps({
    * */
   header: {
     type: String,
+    default: null,
   },
   /**
    * Hjælpetekst
@@ -71,7 +73,7 @@ const props = defineProps({
   headerTag: {
     type: String as PropType<'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
     default: 'h2',
-    validator (value: string) {
+    validator(value: string) {
       return ['h2', 'h3', 'h4', 'h5', 'h6'].includes(value);
     },
   },
