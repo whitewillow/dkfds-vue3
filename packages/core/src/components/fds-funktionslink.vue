@@ -3,10 +3,10 @@
     href="javascript:void(0);"
     class="function-link">
     <svg
+      v-if="icon && icon.length > 0"
       class="icon-svg"
       focusable="false"
-      aria-hidden="true"
-      v-if="icon && icon.length > 0">
+      aria-hidden="true">
       <use :xlink:href="'#' + icon"></use>
     </svg>
     <slot />

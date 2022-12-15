@@ -15,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['vue', '@typescript-eslint', 'import', 'prettier'],
+  ignorePatterns: ['*d.ts', '*.js'],
   rules: {
     // These are weird inconsistencies between eslint and typescript eslint integration.
     // Need to make some GitHub issues.
@@ -33,6 +34,7 @@ module.exports = {
     'no-unused-vars': 'off',
 
     // Vue
+    'vue/component-definition-name-casing': ['error', 'kebab-case'],
     'vue/html-indent': [
       'error',
       2,

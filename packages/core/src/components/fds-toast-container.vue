@@ -1,7 +1,7 @@
 <template>
   <div
-    class="toast-container"
-    :id="id"></div>
+    :id="id"
+    class="toast-container"></div>
 </template>
 
 <script setup lang="ts">

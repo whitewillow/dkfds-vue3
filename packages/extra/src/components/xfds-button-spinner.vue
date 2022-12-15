@@ -2,19 +2,19 @@
   <button
     class="button mr-4"
     :class="[`button-${variant}`]"
-    @click="emit('click', $event)"
     :disabled="showSpinner"
+    @click="emit('click', $event)"
   >
     <div
+      v-if="showSpinner"
       :class="{ 'inner-spinner-white': variant === 'primary' }"
       class="inner-spinner mr-4 icon-svg"
-      v-if="showSpinner"
     ></div>
     <svg
+      v-if="icon && !showSpinner"
       class="icon-svg rightside-icon"
       focusable="false"
       aria-hidden="true"
-      v-if="icon && !showSpinner"
     >
       <use :xlink:href="`#${icon}`" />
     </svg>
@@ -24,7 +24,9 @@
     </span>
     <slot v-if="!showSpinner" />
   </button>
-  <div class="spinneroverlay" v-if="showSpinner && useoverlay"></div>
+  <div
+    v-if="showSpinner && useoverlay"
+    class="spinneroverlay"></div>
 </template>
 
 <script setup lang="ts">
@@ -35,8 +37,8 @@
  * https://designsystem.dk/komponenter/knapper/
  *
  * */
-import { defineProps, PropType, defineEmits } from "vue";
-import { FdsVariantEnum } from "dkfds-vue3-utils";
+import { defineProps, PropType, defineEmits } from 'vue';
+import { FdsVariantEnum } from 'dkfds-vue3-utils';
 
 defineProps({
   /**
@@ -76,7 +78,7 @@ defineProps({
     default: false,
   },
 });
-const emit = defineEmits(["click"]);
+const emit = defineEmits(['click']);
 </script>
 
 <style lang="scss"></style>

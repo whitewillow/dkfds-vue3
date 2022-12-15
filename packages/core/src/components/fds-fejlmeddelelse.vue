@@ -1,7 +1,7 @@
 <template>
   <div
-    class="form-error-message"
-    v-if="showError">
+    v-if="showError"
+    class="form-error-message">
     <slot>
       {{ compErrorMessage }}
     </slot>
@@ -9,9 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  computed, inject, ref, useSlots,
-} from 'vue';
+import { computed, inject, ref, useSlots } from 'vue';
 
 const props = defineProps({
   auto: {

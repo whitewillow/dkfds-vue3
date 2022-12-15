@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint src",
+    "lint": "npx eslint packages",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src --check",
+    "prettier": "npx prettier packages --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix"
   },

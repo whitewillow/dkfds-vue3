@@ -1,13 +1,15 @@
 <template>
-  <label class="form-label" :for="formid">
+  <label
+    class="form-label"
+    :for="formid">
     <slot />
   </label>
 </template>
 
 <script setup lang="ts">
-import { formId } from "dkfds-vue3-utils";
+import { formId } from 'dkfds-vue3-utils';
 
-import { defineProps } from "vue";
+import { defineProps } from 'vue';
 
 const props = defineProps({
   forId: {

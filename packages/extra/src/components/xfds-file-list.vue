@@ -1,12 +1,24 @@
 <template>
   <ul class="bordered-list">
-    <li v-for="(file, index) of list" :key="index" class="d-flex justify-content-between">
-      <fds-funktionslink v-if="canDownload" :icon="getFileIcon(file)" @click="onDownloadFile(file)">
+    <li
+      v-for="(file, index) of list"
+      :key="index"
+      class="d-flex justify-content-between">
+      <fds-funktionslink
+        v-if="canDownload"
+        :icon="getFileIcon(file)"
+        @click="onDownloadFile(file)">
         {{ file.filename }}
       </fds-funktionslink>
 
-      <label for="" v-if="!canDownload" class="disabled">
-        <svg class="icon-svg mr-3" focusable="false" aria-hidden="true">
+      <label
+        v-if="!canDownload"
+        for=""
+        class="disabled">
+        <svg
+          class="icon-svg mr-3"
+          focusable="false"
+          aria-hidden="true">
           <use :xlink:href="`#${getFileIcon(file)}`" />
         </svg>
         <template v-if="file.label">
@@ -16,8 +28,13 @@
           {{ file.filename }}
         </template>
       </label>
-      <button class="function-link" @click="onDeleteFile(file)" v-if="canDelete">
-        <svg class="icon-svg" aria-hidden="true">
+      <button
+        v-if="canDelete"
+        class="function-link"
+        @click="onDeleteFile(file)">
+        <svg
+          class="icon-svg"
+          aria-hidden="true">
           <use xlink:href="#trash-can"></use></svg
         >Slet
       </button>
@@ -26,9 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, PropType } from "vue";
+import { defineProps, defineEmits, PropType } from 'vue';
 
-import { FdsFileModel } from "dkfds-vue3-utils";
+import { FdsFileModel } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   list: {
@@ -39,16 +56,16 @@ const props = defineProps({
   icons: {
     type: Object as PropType<Record<string, string>>,
     default: () => ({
-      pdf: "file-pdf",
-      image: "file-image",
-      doc: "file-word",
-      odt: "file-word",
-      xls: "file-excel",
+      pdf: 'file-pdf',
+      image: 'file-image',
+      doc: 'file-word',
+      odt: 'file-word',
+      xls: 'file-excel',
     }),
   },
   defaultIcon: {
     type: String,
-    default: "insert-drive-file",
+    default: 'insert-drive-file',
   },
   canDelete: {
     type: Boolean,
@@ -62,12 +79,12 @@ const props = defineProps({
   // TODO: download prop method?
 });
 
-const emit = defineEmits(["download", "delete"]);
+const emit = defineEmits(['download', 'delete']);
 
 const keys = Object.keys(props.icons) as (keyof typeof props.icons)[];
 
-const onDeleteFile = (f: FdsFileModel) => emit("delete", f);
-const onDownloadFile = (f: FdsFileModel) => emit("download", f);
+const onDeleteFile = (f: FdsFileModel) => emit('delete', f);
+const onDownloadFile = (f: FdsFileModel) => emit('download', f);
 
 const getFileIcon = (f: FdsFileModel): string => {
   const key = keys.find((k) => f.type.includes(k));

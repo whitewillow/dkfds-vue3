@@ -1,14 +1,29 @@
 <template>
-  <dialog :id="`${dialogId}`" :aria-labelledby="`modal_${dialogId}_title`" ref="refDialog">
-    <div class="fds-modal" :id="`modal_${dialogId}`" aria-hidden="false" aria-modal="true">
+  <dialog
+    :id="`${dialogId}`"
+    ref="refDialog"
+    :aria-labelledby="`modal_${dialogId}_title`">
+    <div
+      :id="`modal_${dialogId}`"
+      class="fds-modal"
+      aria-hidden="false"
+      aria-modal="true">
       <div class="modal-content">
         <div class="modal-header">
           <slot name="header">
-            <h2 class="modal-title" :id="`modal_${dialogId}_title`">
+            <h2
+              :id="`modal_${dialogId}_title`"
+              class="modal-title">
               {{ header }}
             </h2>
-            <button class="modal-close function-link" v-if="closeable" @click="hideModal">
-              <svg class="icon-svg" focusable="false" aria-hidden="true">
+            <button
+              v-if="closeable"
+              class="modal-close function-link"
+              @click="hideModal">
+              <svg
+                class="icon-svg"
+                focusable="false"
+                aria-hidden="true">
                 <use xlink:href="#close"></use></svg
               >Luk
             </button>
@@ -20,10 +35,14 @@
 
         <div class="modal-footer">
           <slot name="footer">
-            <button class="button button-primary" @click="handleAccept">
+            <button
+              class="button button-primary"
+              @click="handleAccept">
               {{ acceptText }}
             </button>
-            <button class="button button-secondary" @click="handleCancel">
+            <button
+              class="button button-secondary"
+              @click="handleCancel">
               {{ cancelText }}
             </button>
           </slot>
@@ -48,15 +67,17 @@
 // eslint-disable-next-line max-len
 // https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop
 
-import { generateId } from "dkfds-vue3-utils";
-import { computed, defineProps, ref, defineEmits, onMounted } from "vue";
+import { generateId } from 'dkfds-vue3-utils';
+import { computed, defineProps, ref, defineEmits, onMounted } from 'vue';
 
 const props = defineProps({
   header: {
     type: String,
+    default: null,
   },
   id: {
     type: String,
+    default: null,
   },
   closeable: {
     type: Boolean,
@@ -64,15 +85,15 @@ const props = defineProps({
   },
   acceptText: {
     type: String,
-    default: "Godkend",
+    default: 'Godkend',
   },
   cancelText: {
     type: String,
-    default: "Annuller",
+    default: 'Annuller',
   },
 });
 
-const emit = defineEmits(["close", "accept", "cancel"]);
+const emit = defineEmits(['close', 'accept', 'cancel']);
 
 const refDialog = ref(null);
 const dialogId = generateId(props.id);
@@ -83,7 +104,7 @@ const showModal = () => {
 };
 const hideModal = () => {
   htmlDialog.value.close();
-  emit("close");
+  emit('close');
 };
 
 defineExpose({
@@ -94,19 +115,19 @@ defineExpose({
 onMounted(() => {
   if (props.closeable) {
     // cancel is exposed by HTMLDialogElement
-    htmlDialog.value.addEventListener("cancel", () => {
+    htmlDialog.value.addEventListener('cancel', () => {
       hideModal();
     });
   }
 });
 
 const handleAccept = () => {
-  emit("accept");
+  emit('accept');
   hideModal();
 };
 
 const handleCancel = () => {
   hideModal();
-  emit("cancel");
+  emit('cancel');
 };
 </script>

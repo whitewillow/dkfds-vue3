@@ -5,9 +5,9 @@
       type="checkbox"
       name="toggle-example"
       :checked="modelValue"
-      @input="handleInput"
       :disabled="disabled"
       class="form-toggle"
+      @input="handleInput"
     />
     <label
       :for="formid"
@@ -16,15 +16,18 @@
       :data-toggle-on-text="onText"
     >
       <section class="pl-2 hand">
-        <slot v-bind:id="formid" class="hand"> </slot></section
-    ></label>
+        <slot
+          :id="formid"
+          class="hand">
+        </slot></section
+      ></label>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits } from 'vue';
 
-import { formId } from "dkfds-vue3-utils";
+import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   id: {
@@ -41,18 +44,18 @@ const props = defineProps({
   },
   offText: {
     type: String,
-    default: "Fra",
+    default: 'Fra',
   },
   onText: {
     type: String,
-    default: "Til",
+    default: 'Til',
   },
 });
 
-const emit = defineEmits(["update:modelValue", "input"]);
+const emit = defineEmits(['update:modelValue', 'input']);
 
 const handleInput = (event: Event) =>
-  emit("update:modelValue", (event?.target as HTMLInputElement).checked);
+  emit('update:modelValue', (event?.target as HTMLInputElement).checked);
 
 const { formid } = formId(props.id, true);
 
@@ -63,10 +66,10 @@ const { formid } = formId(props.id, true);
 
 <style lang="scss" scoped>
 // TODO: scoped virker ikke med npm publish
-input[type="checkbox"].form-toggle ~ .form-toggle-label:before {
+input[type='checkbox'].form-toggle ~ .form-toggle-label:before {
   content: attr(data-toggle-off-text);
 }
-input[type="checkbox"].form-toggle:checked ~ .form-toggle-label:before {
+input[type='checkbox'].form-toggle:checked ~ .form-toggle-label:before {
   content: attr(data-toggle-on-text);
   left: 27px;
 }

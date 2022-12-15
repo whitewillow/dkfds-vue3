@@ -1,4 +1,4 @@
-import { FdsNavigationItem } from "dkfds-vue3-utils";
+import { FdsNavigationItem } from 'dkfds-vue3-utils';
 
 class NavigationService {
   getParent = (key: string, list: Array<FdsNavigationItem>): FdsNavigationItem | undefined => {
@@ -12,7 +12,7 @@ class NavigationService {
    * @returns "x/y/z"
    */
   resolveKey = (key: string, list: Array<FdsNavigationItem>) => {
-    const [firstKey] = key.split("/");
+    const [firstKey] = key.split('/');
 
     const parent = this.getParent(firstKey, list);
     return parent ? `${parent.key}/${key}` : key;
@@ -25,7 +25,7 @@ class NavigationService {
    * @returns z
    */
   resolveActiveKey = (key: string) => {
-    const [firstKey] = key.split("/").reverse();
+    const [firstKey] = key.split('/').reverse();
     return firstKey;
   };
 
@@ -35,7 +35,7 @@ class NavigationService {
    * @returns
    */
   clearChildren = (
-    children: Array<FdsNavigationItem> | undefined
+    children: Array<FdsNavigationItem> | undefined,
   ): Array<FdsNavigationItem> | undefined => {
     if (!children) {
       return children;
@@ -66,7 +66,7 @@ class NavigationService {
    */
   findFirstActiveItem = (
     list: Array<FdsNavigationItem>,
-    navigateFirst = false
+    navigateFirst = false,
   ): FdsNavigationItem | undefined => {
     const firstActive = list.find((f) => !f.disabled && f.active);
     if (firstActive) {

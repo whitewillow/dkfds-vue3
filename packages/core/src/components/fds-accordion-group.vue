@@ -5,20 +5,19 @@
         v-if="false"
         class="accordion-bulk-button"
         :data-accordion-bulk-expand="!refExpanded"
-        @click="onToggle">
+        @click="onToggle"
+      >
         {{ `${refExpanded ? expandedText : collapsedText}` }}
       </button>
     </slot>
     <div class="accordion-group">
-      <slot :groupActive="refExpanded" />
+      <slot :group-active="refExpanded" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  ref, defineProps, provide, computed,
-} from 'vue';
+import { ref, defineProps, provide, computed } from 'vue';
 
 defineProps({
   /**

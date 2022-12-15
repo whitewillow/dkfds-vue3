@@ -7,7 +7,8 @@
         :style="`width: ${progress}%;`"
         :aria-valuenow="progress"
         aria-valuemin="0"
-        aria-valuemax="100">
+        aria-valuemax="100"
+      >
         <slot v-if="showProgress">
           {{ progress }}%
         </slot>

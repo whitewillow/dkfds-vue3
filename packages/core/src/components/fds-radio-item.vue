@@ -6,17 +6,17 @@
       :name="'radio' + formid"
       :value="value"
       :checked="value === injGroupValue"
+      class="form-radio radio-large"
       @change="handleInput"
       @blur="$emit('dirty', true)"
-      class="form-radio radio-large"
     />
     <label :for="'radio-' + formid + '-' + indexId">
       <slot />
     </label>
 
     <div
-      class="radio-content mt-2 ml-4 py-4"
       v-if="$slots.content && injGroupValue === value.toString()"
+      class="radio-content mt-2 ml-4 py-4"
     >
       <slot name="content" />
     </div>
@@ -24,10 +24,10 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, inject } from "vue";
-import { formId } from "dkfds-vue3-utils";
+import { defineProps, defineEmits, inject } from 'vue';
+import { formId } from 'dkfds-vue3-utils';
 
-import { generateId } from "dkfds-vue3-utils";
+import { generateId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   value: {
@@ -44,14 +44,14 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["dirty"]);
-const injGroupEmit = inject<(x: string) => void>("provideGroupEmit");
-const injGroupValue = inject<string | null>("provideGroupValue");
+const emit = defineEmits(['dirty']);
+const injGroupEmit = inject<(x: string) => void>('provideGroupEmit');
+const injGroupValue = inject<string | null>('provideGroupValue');
 const { formid } = formId(props.id);
 const indexId = generateId(props.index);
 
 const handleInput = (event: Event) => {
-  emit("dirty", true);
+  emit('dirty', true);
   if (injGroupEmit) {
     injGroupEmit((event?.target as HTMLInputElement).value);
   }

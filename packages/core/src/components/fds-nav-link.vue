@@ -2,9 +2,9 @@
   <a
     v-if="!disabled"
     href="#"
-    @click="$event.preventDefault()"
     class="nav-link"
-    role="menuitem">
+    role="menuitem"
+    @click="$event.preventDefault()">
     <span>
       <slot />
     </span>

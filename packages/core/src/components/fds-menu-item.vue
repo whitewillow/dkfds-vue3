@@ -6,15 +6,16 @@
       :href="`${href ? href : '#'}`"
       role="menuitem"
       class="d-block menuitem hand"
-      @click="navigate($event, id)">
+      @click="navigate($event, id)"
+    >
       <span v-if="index !== null">
         {{ `${index}. ` }}
       </span>
       <slot />
 
       <span
-        class="sidenav-icon"
-        v-if="icon">
+        v-if="icon"
+        class="sidenav-icon">
         <svg
           class="icon-svg"
           focusable="false"

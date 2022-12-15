@@ -3,20 +3,21 @@
     class="cookie-container"
     role="complementary"
     aria-labelledby="cookie-message-heading"
-    aria-describedby="cookie-message-text">
+    aria-describedby="cookie-message-text"
+  >
     <div class="cookie-message">
       <div class="cookie-text">
         <slot name="header">
           <div
-            class="h3 mt-0 mb-3"
-            id="cookie-message-heading">
+            id="cookie-message-heading"
+            class="h3 mt-0 mb-3">
             {{ header }}
           </div>
         </slot>
         <slot>
           <p
-            class="mt-0"
-            id="cookie-message-text">
+            id="cookie-message-text"
+            class="mt-0">
             Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
             <a href="#">
               Læs mere om vores brug af cookies.
@@ -66,4 +67,6 @@ defineProps({
     default: 'Fortæl os om du accepterer cookies',
   },
 });
+
+defineEmits(['accept', 'cancel']);
 </script>

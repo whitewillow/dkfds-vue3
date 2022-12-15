@@ -1,17 +1,20 @@
 <template>
-  <section ref="refElement" class="validate-form-group" :id="validateId">
+  <section
+    :id="validateId"
+    ref="refElement"
+    class="validate-form-group">
     <slot
-      :isValid="isValid"
-      :isValidWaitForDirty="isValidWaitForDirty"
-      :errorMessage="errorMessage"
+      :is-valid="isValid"
+      :is-valid-wait-for-dirty="isValidWaitForDirty"
+      :error-message="errorMessage"
     />
   </section>
 </template>
 
 <script setup lang="ts">
-import { generateId, validateAllErrorMessage } from "dkfds-vue3-utils";
-import { computed, defineEmits, defineProps, onMounted, provide, ref, watch } from "vue";
-import { ValidatorItem } from "../service/validator.service";
+import { generateId, validateAllErrorMessage } from 'dkfds-vue3-utils';
+import { computed, defineEmits, defineProps, onMounted, provide, ref, watch } from 'vue';
+import { ValidatorItem } from '../service/validator.service';
 
 const props = defineProps({
   modelValue: {
@@ -24,7 +27,7 @@ const props = defineProps({
   },
   validateFlow: {
     type: String,
-    default: "normal",
+    default: 'normal',
   },
   dirty: {
     type: Boolean,
@@ -39,18 +42,18 @@ const props = defineProps({
     default: () => [
       (input: unknown) => {
         if (!input) {
-          return "Indtast data";
+          return 'Indtast data';
         }
         return null;
       },
     ],
   },
 });
-const emit = defineEmits(["valid", "validated"]);
+const emit = defineEmits(['valid', 'validated']);
 
 const isValid = ref(false);
 const isValidWaitForDirty = ref(true);
-const errorMessage = ref("");
+const errorMessage = ref('');
 const errorMessages = ref<Array<string>>([]);
 const refElement = ref(null);
 const localDirty = ref(false);
@@ -60,38 +63,38 @@ const validateId = generateId(props.id);
  * Provide for underliggende Inputs
  * Hhv om validering gik godt eller fejlbesked
  */
-provide("provideIsValid", isValidWaitForDirty);
-provide("provideErrorMessage", errorMessage);
+provide('provideIsValid', isValidWaitForDirty);
+provide('provideErrorMessage', errorMessage);
 
 onMounted(() => {
   if (!refElement.value || !props.useAutoDirty) {
     return;
   }
-  (refElement.value as HTMLElement).querySelector("input, select")?.addEventListener("blur", () => {
+  (refElement.value as HTMLElement).querySelector('input, select')?.addEventListener('blur', () => {
     localDirty.value = true;
   });
 });
 
-const hasValue = (): boolean => {
-  if (typeof props.modelValue === "string") {
-    return props.modelValue.length > 0;
-  }
-  if (Array.isArray(props.modelValue)) {
-    return false;
-  }
-  return false;
-};
+// const hasValue = (): boolean => {
+//   if (typeof props.modelValue === 'string') {
+//     return props.modelValue.length > 0;
+//   }
+//   if (Array.isArray(props.modelValue)) {
+//     return false;
+//   }
+//   return false;
+// };
 
 const updateCollection = () => {
   const currentItem = {
     key: validateId.value,
-    type: "",
+    type: '',
     valid: isValid.value,
     reasons: errorMessages.value,
     dirty: localDirty.value,
   } as ValidatorItem;
 
-  emit("validated", currentItem);
+  emit('validated', currentItem);
 };
 
 const touched = computed(() => localDirty.value || props.dirty);
@@ -99,7 +102,7 @@ const touched = computed(() => localDirty.value || props.dirty);
 const isFormValid = () => {
   isValid.value = true;
   isValidWaitForDirty.value = true;
-  errorMessage.value = "";
+  errorMessage.value = '';
   errorMessages.value = [];
   if (props.validations) {
     const vals = [...props.validations];
@@ -116,7 +119,7 @@ const isFormValid = () => {
   }
   updateCollection();
 
-  emit("valid", isValid.value);
+  emit('valid', isValid.value);
 };
 
 watch(
@@ -127,7 +130,7 @@ watch(
   {
     immediate: true,
     deep: true,
-  }
+  },
 );
 watch(
   () => localDirty,
@@ -136,7 +139,7 @@ watch(
   },
   {
     deep: true,
-  }
+  },
 );
 </script>
 

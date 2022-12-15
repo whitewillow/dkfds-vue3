@@ -1,5 +1,5 @@
 export default class DKFDSToggle {
-  TOGGLE_ATTRIBUTE = "data-controls";
+  TOGGLE_ATTRIBUTE = 'data-controls';
 
   radioGroup: HTMLElement;
 
@@ -11,7 +11,7 @@ export default class DKFDSToggle {
    */
   constructor(containerElement: HTMLElement | null) {
     if (!containerElement) {
-      throw new Error("Could not find panel element. Verify value of attribute");
+      throw new Error('Could not find panel element. Verify value of attribute');
     }
     this.radioGroup = containerElement;
     this.radioEls = [
@@ -25,11 +25,11 @@ export default class DKFDSToggle {
    */
   init() {
     if (this.radioEls.length === 0) {
-      throw new Error("No radiobuttons found in radiobutton group.");
+      throw new Error('No radiobuttons found in radiobutton group.');
     }
 
     this.radioEls.forEach((radio) => {
-      radio.addEventListener("change", () => {
+      radio.addEventListener('change', () => {
         for (let a = 0; a < this.radioEls.length; a += 1) {
           this.toggle(this.radioEls[a]);
         }
@@ -44,11 +44,11 @@ export default class DKFDSToggle {
    */
   toggle(radioInputElement: HTMLInputElement) {
     const contentId = radioInputElement.getAttribute(this.TOGGLE_ATTRIBUTE);
-    if (contentId !== null && contentId !== undefined && contentId !== "") {
+    if (contentId !== null && contentId !== undefined && contentId !== '') {
       const contentElement = document.querySelector<HTMLElement>(contentId);
       if (contentElement === null || contentElement === undefined) {
         throw new Error(
-          `Could not find panel element. Verify value of attribute ${this.TOGGLE_ATTRIBUTE}`
+          `Could not find panel element. Verify value of attribute ${this.TOGGLE_ATTRIBUTE}`,
         );
       }
       if (radioInputElement.checked) {
@@ -71,9 +71,9 @@ export default class DKFDSToggle {
       contentElement !== null &&
       contentElement !== undefined
     ) {
-      radioInputElement.setAttribute("data-expanded", "true");
-      contentElement.setAttribute("aria-hidden", "false");
-      const eventOpen = new Event("fds.radio.expanded");
+      radioInputElement.setAttribute('data-expanded', 'true');
+      contentElement.setAttribute('aria-hidden', 'false');
+      const eventOpen = new Event('fds.radio.expanded');
       radioInputElement.dispatchEvent(eventOpen);
     }
   }
@@ -90,9 +90,9 @@ export default class DKFDSToggle {
       contentElement !== null &&
       contentElement !== undefined
     ) {
-      radioInputElement.setAttribute("data-expanded", "false");
-      contentElement.setAttribute("aria-hidden", "true");
-      const eventClose = new Event("fds.radio.collapsed");
+      radioInputElement.setAttribute('data-expanded', 'false');
+      contentElement.setAttribute('aria-hidden', 'true');
+      const eventClose = new Event('fds.radio.collapsed');
       radioInputElement.dispatchEvent(eventClose);
     }
   }

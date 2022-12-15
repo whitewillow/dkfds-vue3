@@ -5,11 +5,12 @@
       :role="compAlert ? 'alert' : ''"
       :aria-atomic="compAlert"
       class="alert has-close"
-      :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]">
+      :class="[{ 'alert--show-icon': showIcon }, `alert-${variant}`]"
+    >
       <div class="alert-body align-text-left">
         <slot
-          name="header"
-          v-if="$slots.header || header">
+          v-if="$slots.header || header"
+          name="header">
           <p class="alert-heading">
             {{ header }}
           </p>
@@ -18,15 +19,16 @@
           <slot />
         </div>
         <button
-          class="alert-close"
           v-if="closeable"
+          class="alert-close"
           @click="onClose">
           <slot name="button">
             <svg
               class="icon-svg"
               aria-hidden="true"
               focusable="false">
-              <use xlink:href="#close"></use></svg>Luk
+              <use xlink:href="#close"></use></svg
+            >Luk
           </slot>
         </button>
       </div>
@@ -41,9 +43,7 @@
  * https://designsystem.dk/komponenter/beskeder/
  *
  * */
-import {
-  defineProps, ref, defineEmits, PropType, computed,
-} from 'vue';
+import { defineProps, ref, defineEmits, PropType, computed } from 'vue';
 
 const props = defineProps({
   /**

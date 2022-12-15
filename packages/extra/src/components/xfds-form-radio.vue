@@ -8,12 +8,16 @@
       errorMessage,
     }"
   >
-    <ul class="nobullet-list" :id="formid">
-      <li v-for="(radio, index) of options" :key="index">
+    <ul
+      :id="formid"
+      class="nobullet-list">
+      <li
+        v-for="(radio, index) of options"
+        :key="index">
         <input
+          :id="'radio-' + formid + '-' + index"
           type="radio"
           class="form-radio radio-large"
-          :id="'radio-' + formid + '-' + index"
           :name="'radio' + formid"
           :value="radio.value"
           :disabled="radio.disabled"
@@ -26,10 +30,12 @@
         </label>
 
         <div
-          class="radio-content mt-2 ml-4 py-4"
           v-if="$slots[radio.value] && modelValue === radio.value.toString()"
+          class="radio-content mt-2 ml-4 py-4"
         >
-          <slot :name="radio.value" v-bind:radiovalue="value" />
+          <slot
+            :name="radio.value"
+            :radiovalue="value" />
         </div>
       </li>
     </ul>
@@ -37,9 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, PropType, ref, watch } from "vue";
-import { FdsOptionItem } from "dkfds-vue3-utils";
-import { formId } from "dkfds-vue3-utils";
+import { defineEmits, defineProps, PropType, ref, watch } from 'vue';
+import { FdsOptionItem } from 'dkfds-vue3-utils';
+import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   id: {
@@ -48,11 +54,11 @@ const props = defineProps({
   },
   label: {
     type: String,
-    default: "",
+    default: '',
   },
   hint: {
     type: String,
-    default: "",
+    default: '',
   },
   tooltip: {
     type: String,
@@ -68,7 +74,7 @@ const props = defineProps({
   },
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   options: {
     type: Array as PropType<FdsOptionItem[]>,
@@ -76,7 +82,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty", "valid", "input"]);
+const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
 const value = ref(props.modelValue);
 const dirty = ref(false);
@@ -88,7 +94,7 @@ const touchedEvent = () => {
 const { formid } = formId(props.id, true);
 
 const handleInput = (event: Event) =>
-  emit("update:modelValue", (event?.target as HTMLInputElement).value);
+  emit('update:modelValue', (event?.target as HTMLInputElement).value);
 
 watch(
   () => [props.modelValue],
@@ -97,7 +103,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

@@ -10,17 +10,17 @@
   >
     <xfds-dropdown
       v-bind="attrs"
-      :options="options"
       v-model="value"
-      @update:modelValue="handleInput"
+      :options="options"
+      @update:model-value="handleInput"
       @dirty="touchedEvent"
     />
   </xfds-form-group>
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, PropType, ref, useAttrs, watch } from "vue";
-import { FdsOptionItem } from "dkfds-vue3-utils";
+import { defineEmits, defineProps, PropType, ref, useAttrs, watch } from 'vue';
+import { FdsOptionItem } from 'dkfds-vue3-utils';
 
 const attrs = useAttrs();
 
@@ -31,11 +31,11 @@ const props = defineProps({
   },
   label: {
     type: String,
-    default: "",
+    default: '',
   },
   hint: {
     type: String,
-    default: "",
+    default: '',
   },
   tooltip: {
     type: String,
@@ -51,7 +51,7 @@ const props = defineProps({
   },
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   options: {
     type: Array as PropType<FdsOptionItem[]>,
@@ -59,17 +59,17 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty", "valid", "input"]);
+const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);
 
 const value = ref(props.modelValue);
 const dirty = ref(false);
 
 const touchedEvent = () => {
   dirty.value = true;
-  emit("dirty", true);
+  emit('dirty', true);
 };
 
-const handleInput = () => emit("update:modelValue", value.value);
+const handleInput = () => emit('update:modelValue', value.value);
 
 watch(
   () => [props.modelValue],
@@ -78,7 +78,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

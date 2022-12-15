@@ -1,15 +1,15 @@
-@import "_variables";
-@import "_animations";
-@import "_accordion";
-@import "_card";
-@import "_code";
-@import "_componentpreview";
-@import "_dialog";
-@import "_knapper";
-@import "_navigation";
-@import "_forms";
-@import "_range";
-@import "_progress";
+@import '_variables';
+@import '_animations';
+@import '_accordion';
+@import '_card';
+@import '_code';
+@import '_componentpreview';
+@import '_dialog';
+@import '_knapper';
+@import '_navigation';
+@import '_forms';
+@import '_range';
+@import '_progress';
 
 body {
   display: flex;
@@ -37,11 +37,9 @@ header .navbar .search-form {
   align-self: center;
 }
 
-
 .form-input-date {
   max-width: 22rem;
 }
-
 
 /*
 
@@ -50,28 +48,25 @@ Styling for at kunne bruge samme overflow komponent i menu
 */
 
 .nav-primary .overflow-menu {
-
   .icon-svg {
     display: none;
   }
 }
 
 @media (min-width: 992px) {
-
   .nav-primary .overflow-menu {
-
     .icon-svg {
       display: inline-block;
     }
   }
 
-  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=false] {
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded='false'] {
     background-image: none;
     background-repeat: no-repeat;
     background-position: right 1rem center;
   }
 
-  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=true] {
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded='true'] {
     color: white;
 
     .icon-svg {
@@ -79,7 +74,7 @@ Styling for at kunne bruge samme overflow komponent i menu
     }
   }
 
-  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded=true] {
+  .nav-primary .overflow-menu .button-overflow-menu[aria-expanded='true'] {
     background-image: none;
     background-color: white;
   }
@@ -87,6 +82,4 @@ Styling for at kunne bruge samme overflow komponent i menu
   .nav-primary .overflow-menu .button-overflow-menu span {
     padding-right: 0px;
   }
-
-
 }

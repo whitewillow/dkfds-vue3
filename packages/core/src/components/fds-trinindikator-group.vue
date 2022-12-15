@@ -1,8 +1,10 @@
 <template>
-  <div class="overflow-menu overflow-menu--open-right" :class="lgNoResponsive">
+  <div
+    class="overflow-menu overflow-menu--open-right"
+    :class="lgNoResponsive">
     <button
-      class="button-overflow-menu js-dropdown"
       :id="`button_${formid}`"
+      class="button-overflow-menu js-dropdown"
       :data-js-target="`#${formid}`"
       aria-haspopup="true"
       aria-expanded="false"
@@ -10,11 +12,17 @@
       <slot name="header">
         {{ header }}
       </slot>
-      <svg class="icon-svg" aria-hidden="true" focusable="false">
+      <svg
+        class="icon-svg"
+        aria-hidden="true"
+        focusable="false">
         <use :xlink:href="`#${icon}`"></use>
       </svg>
     </button>
-    <div class="overflow-menu-inner" :id="formid" aria-hidden="true">
+    <div
+      :id="formid"
+      class="overflow-menu-inner"
+      aria-hidden="true">
       <nav>
         <fds-menu>
           <slot />
@@ -32,26 +40,27 @@
  *
  * */
 
-import { computed, defineProps, onMounted } from "vue";
+import { computed, defineProps, onMounted } from 'vue';
 
-import { formId, dropdown } from "dkfds-vue3-utils";
+import { formId, dropdown } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   header: {
     type: String,
-    default: "Trin", // TODO: overvej interpolation
+    default: 'Trin', // TODO: overvej interpolation
   },
   id: {
     type: String,
+    default: null,
   },
   icon: {
     type: String,
-    default: "arrow-drop-down",
+    default: 'arrow-drop-down',
   },
   size: {
     type: String,
     default: 'small',
-    validator (value: string) {
+    validator(value: string) {
       return ['small', 'large'].includes(value);
     },
   },
@@ -59,7 +68,9 @@ const props = defineProps({
 
 const { formid } = formId(props.id, true);
 
-const lgNoResponsive = computed(()=>props.size === 'large' ? 'overflow-menu--lg-no-responsive': '')
+const lgNoResponsive = computed(() =>
+  props.size === 'large' ? 'overflow-menu--lg-no-responsive' : '',
+);
 
 onMounted(async () => {
   new dropdown(document.getElementById(`button_${formid.value}`)).init();

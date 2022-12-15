@@ -1,19 +1,19 @@
-import { resolve } from "path";
-import { defineConfig } from "vite";
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
-import packageJson from "./package.json";
+import packageJson from './package.json';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "./src/index.ts"),
-      name: "dkfds-vue3-utils",
+      entry: resolve(__dirname, './src/index.ts'),
+      name: 'dkfds-vue3-utils',
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ['vue'],
       output: {
         globals: {
-          vue: "Vue",
+          vue: 'Vue',
         },
       },
     },

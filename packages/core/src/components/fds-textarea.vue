@@ -1,24 +1,24 @@
 <template>
   <textarea
-    class="form-input"
+    :id="formid"
     v-model="val"
+    class="form-input"
     :maxlength="maxlength"
     :rows="getRows"
     :name="formid"
-    :id="formid"
     @input="handleInput"
     @blur="$emit('dirty', true)"
   ></textarea>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch } from "vue";
-import { formId } from "dkfds-vue3-utils";
+import { defineProps, defineEmits, ref, computed, watch } from 'vue';
+import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
     required: true,
   },
   id: {
@@ -43,12 +43,12 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty", "input"]);
+const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
 const { formid } = formId(props.id, true);
 const val = ref(props.modelValue);
 
-const handleInput = () => emit("update:modelValue", val.value);
+const handleInput = () => emit('update:modelValue', val.value);
 
 const getRows = computed(() => {
   if (!val.value) {
@@ -72,7 +72,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

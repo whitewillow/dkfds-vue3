@@ -6,9 +6,9 @@
       {{ header }}
 
       <a
+        v-if="href"
         :href="href"
-        target="designsystem"
-        v-if="href">
+        target="designsystem">
         {{ linkText }}
       </a>
     </div>

@@ -5,8 +5,12 @@
         {{ label }}
       </slot>
     </legend>
-    <ul class="nobullet-list" :id="formid">
-      <li v-for="(radio, index) of list" :key="index">
+    <ul
+      :id="formid"
+      class="nobullet-list">
+      <li
+        v-for="(radio, index) of list"
+        :key="index">
         <input
           :id="'radio-' + formid + '-' + index"
           type="radio"
@@ -15,19 +19,21 @@
           :disabled="radio.disabled"
           :aria-disabled="radio.ariaDisabled"
           :checked="value === radio.value.toString()"
+          class="form-radio radio-large"
           @change="handleInput"
           @blur="$emit('dirty', true)"
-          class="form-radio radio-large"
         />
         <label :for="'radio-' + formid + '-' + index">
           {{ radio.title }}
         </label>
 
         <div
-          class="radio-content mt-2 ml-4 py-4"
           v-if="$slots[radio.value] && modelValue === radio.value.toString()"
+          class="radio-content mt-2 ml-4 py-4"
         >
-          <slot :name="radio.value" v-bind:radiovalue="value" />
+          <slot
+            :name="radio.value"
+            :radiovalue="value" />
         </div>
       </li>
     </ul>
@@ -35,13 +41,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, PropType } from "vue";
-import { FdsOptionItem } from "dkfds-vue3-utils";
-import { formId } from "dkfds-vue3-utils";
+import { defineProps, defineEmits, ref, PropType } from 'vue';
+import { FdsOptionItem } from 'dkfds-vue3-utils';
+import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   modelValue: {
     type: String,
+    default: null,
   },
   list: {
     type: Array as PropType<Array<FdsOptionItem>>,
@@ -61,13 +68,13 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty"]);
+const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const { formid } = formId(props.id);
 const value = ref(props.modelValue);
 
 const handleInput = (event: Event) =>
-  emit("update:modelValue", (event?.target as HTMLInputElement).value);
+  emit('update:modelValue', (event?.target as HTMLInputElement).value);
 </script>
 
 <style scoped lang="scss"></style>

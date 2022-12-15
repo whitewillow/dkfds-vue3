@@ -1,10 +1,12 @@
 <template>
-  <ul class="sidenav-list mb-6" role="menu">
+  <ul
+    class="sidenav-list mb-6"
+    role="menu">
     <fds-menu-item
       v-for="(item, index) of tabsList"
-      :class="[{ disabled: item.disabled }]"
-      :key="item.key"
       :id="item.key"
+      :key="item.key"
+      :class="[{ disabled: item.disabled }]"
       :active="item.active"
       :icon="item.icon"
       :hint="item.hint"
@@ -15,8 +17,8 @@
       <template #submenu>
         <xfds-menu-sub
           v-if="item.active && item.children && item.children.length > 0"
-          @navigate="subnavigation"
           v-model="item.children"
+          @navigate="subnavigation"
         />
       </template>
     </fds-menu-item>
@@ -24,9 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from "dkfds-vue3-utils";
-import { computed, defineEmits, defineProps, onMounted, ref, watch } from "vue";
-import navigationService from "./../service/navigation.service";
+import { FdsNavigationItem } from 'dkfds-vue3-utils';
+import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
+import navigationService from './../service/navigation.service';
 
 const props = defineProps({
   modelValue: {
@@ -44,13 +46,13 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "navigate"]);
+const emit = defineEmits(['update:modelValue', 'navigate']);
 const filteredList = computed(() => props.modelValue.filter((f) => !f.ignore));
-const currentKey = ref("");
+const currentKey = ref('');
 const tabsList = ref<Array<FdsNavigationItem>>(filteredList.value);
 
 const subnavigation = (key: string) => {
-  emit("navigate", navigationService.resolveKey(key, props.modelValue));
+  emit('navigate', navigationService.resolveKey(key, props.modelValue));
 };
 
 const navigate = (item: FdsNavigationItem) => {
@@ -61,8 +63,8 @@ const navigate = (item: FdsNavigationItem) => {
   tabsList.value = navigationService.setActive(tabsList.value, item.key);
   currentKey.value = item.key;
 
-  emit("update:modelValue", tabsList.value);
-  emit("navigate", currentKey.value);
+  emit('update:modelValue', tabsList.value);
+  emit('navigate', currentKey.value);
 };
 
 onMounted(() => {
@@ -79,7 +81,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

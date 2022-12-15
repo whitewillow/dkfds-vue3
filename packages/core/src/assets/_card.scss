@@ -1,7 +1,7 @@
 .card-group {
   margin-bottom: 32px;
 
-  >.card {
+  > .card {
     margin-bottom: 24px;
   }
 }
@@ -11,7 +11,7 @@
     display: flex;
     flex-flow: row wrap;
 
-    >.card {
+    > .card {
       position: relative;
       flex: 1 0 0%;
       margin-bottom: 0;
@@ -30,7 +30,7 @@
     margin-right: -15px;
     margin-left: -15px;
 
-    >.card {
+    > .card {
       flex: 1 0 0%;
       flex-direction: column;
       margin-right: 15px;
@@ -45,7 +45,7 @@
     widows: 1;
     column-count: 3;
 
-    >.card {
+    > .card {
       display: inline-block;
       width: 100%;
       flex-direction: column;

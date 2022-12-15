@@ -1,13 +1,13 @@
-const NAV = ".nav";
+const NAV = '.nav';
 const NAV_LINKS = `${NAV} a`;
-const OPENERS = ".js-menu-open";
-const CLOSE_BUTTON = ".js-menu-close";
-const OVERLAY = ".overlay";
+const OPENERS = '.js-menu-open';
+const CLOSE_BUTTON = '.js-menu-close';
+const OVERLAY = '.overlay';
 const CLOSERS = `${CLOSE_BUTTON}, .overlay`;
-const TOGGLES = [NAV, OVERLAY].join(", ");
+const TOGGLES = [NAV, OVERLAY].join(', ');
 
-const ACTIVE_CLASS = "mobile_nav-active";
-const VISIBLE_CLASS = "is-visible";
+const ACTIVE_CLASS = 'mobile_nav-active';
+const VISIBLE_CLASS = 'is-visible';
 let focusTrap: {
   enable(): void;
   release(): void;
@@ -32,7 +32,7 @@ class Navigation {
    * @param {HTMLElement} trapContainer
    */
   static focusTrapInit(trapContainer: HTMLElement) {
-    console.warn("focusTrapInit", trapContainer);
+    console.warn('focusTrapInit', trapContainer);
 
     // Find all focusable children
     const focusableElementsString =
@@ -43,7 +43,7 @@ class Navigation {
     function trapTabKey(e: KeyboardEvent) {
       const { key } = e;
       // Check for TAB key press
-      if (key === "Tab") {
+      if (key === 'Tab') {
         let lastTabStop = null;
         for (let i = 0; i < focusableElements.length; i += 1) {
           const number = focusableElements.length - 1;
@@ -69,7 +69,7 @@ class Navigation {
       }
 
       // ESCAPE
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         // toggleNav.call(e, false);
         Navigation.toggleNav(false);
       }
@@ -80,23 +80,23 @@ class Navigation {
         // Focus first child
         firstTabStop.focus();
         // Listen for and trap the keyboard
-        document.addEventListener("keydown", trapTabKey);
+        document.addEventListener('keydown', trapTabKey);
       },
 
       release() {
-        document.removeEventListener("keydown", trapTabKey);
+        document.removeEventListener('keydown', trapTabKey);
       },
     };
   }
 
   static toggleNav(incActive: boolean | Event) {
     const { body } = document;
-    console.warn("incActive", incActive);
+    console.warn('incActive', incActive);
 
-    const active: boolean = typeof incActive === "boolean" ? incActive : !Navigation.isActive();
+    const active: boolean = typeof incActive === 'boolean' ? incActive : !Navigation.isActive();
 
     body.classList.toggle(ACTIVE_CLASS, active);
-    console.warn("toggleNav", ACTIVE_CLASS, active);
+    console.warn('toggleNav', ACTIVE_CLASS, active);
 
     Navigation.selectStuff(TOGGLES).forEach((el) => el.classList.toggle(VISIBLE_CLASS, active));
 
@@ -132,8 +132,8 @@ class Navigation {
     let mobile = false;
     const openers = document.querySelectorAll<HTMLElement>(OPENERS);
     for (let o = 0; o < openers.length; o += 1) {
-      if (window.getComputedStyle(openers[o], null).display !== "none") {
-        openers[o].addEventListener("click", Navigation.toggleNav);
+      if (window.getComputedStyle(openers[o], null).display !== 'none') {
+        openers[o].addEventListener('click', Navigation.toggleNav);
         mobile = true;
       }
     }
@@ -142,12 +142,12 @@ class Navigation {
     if (mobile) {
       const closers = document.querySelectorAll<HTMLElement>(CLOSERS);
       for (let c = 0; c < closers.length; c += 1) {
-        closers[c].addEventListener("click", Navigation.toggleNav);
+        closers[c].addEventListener('click', Navigation.toggleNav);
       }
 
       const navLinks = document.querySelectorAll(NAV_LINKS);
       navLinks.forEach((nav, i) => {
-        navLinks[i].addEventListener("click", () => {
+        navLinks[i].addEventListener('click', () => {
           // A navigation link has been clicked! We want to collapse any
           // hierarchical navigation UI it's a part of, so that the user
           // can focus on whatever they've just selected.
@@ -183,7 +183,7 @@ class Navigation {
    * Set events
    */
   init() {
-    window.addEventListener("resize", this.mobileMenu, false);
+    window.addEventListener('resize', this.mobileMenu, false);
     this.mobileMenu();
   }
 
@@ -191,7 +191,7 @@ class Navigation {
    * Remove events
    */
   teardown() {
-    window.removeEventListener("resize", this.mobileMenu, false);
+    window.removeEventListener('resize', this.mobileMenu, false);
   }
 }
 

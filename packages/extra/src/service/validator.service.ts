@@ -15,52 +15,52 @@ export interface ValidatorItem {
 export default class ValidatorService {
   validatorItems: ValidatorItem[] = [];
 
-  clear () {
+  clear() {
     this.validatorItems = [];
   }
 
-  removeItem (key: string) {
+  removeItem(key: string) {
     this.validatorItems = this.validatorItems.filter((f) => f.key !== key);
   }
 
-  removeItemsByType (type: string) {
+  removeItemsByType(type: string) {
     this.validatorItems = this.validatorItems.filter((f) => f.type !== type);
   }
 
-  addItem (validatorItem: ValidatorItem): void {
+  addItem(validatorItem: ValidatorItem): void {
     this.validatorItems = this.validatorItems.filter((f) => f.key !== validatorItem.key);
     this.validatorItems.push(validatorItem);
   }
 
-  addItems (validatorSet: ValidatorItem[]): void {
+  addItems(validatorSet: ValidatorItem[]): void {
     const mKeys = validatorSet.map((m) => m.key);
     this.validatorItems = this.validatorItems.filter((f) => !mKeys.includes(f.key));
     // this.validatorItems = sortby([...this.validatorItems, ...validatorSet], 'key');
   }
 
-  getItem (key: string, type: string): ValidatorItem | undefined {
+  getItem(key: string, type: string): ValidatorItem | undefined {
     return this.validatorItems.find((f) => f.key === key && f.type === type);
   }
 
-  getUnvalidItems (): ValidatorItem[] {
+  getUnvalidItems(): ValidatorItem[] {
     return this.validatorItems.filter((f) => !f.valid);
   }
 
-  getUnvalidItemsReasonsByKey (key: string): string[] {
+  getUnvalidItemsReasonsByKey(key: string): string[] {
     return this.validatorItems
       .filter((f) => !f.valid && f.key === key)
       .flatMap((m) => m.reasons ?? []);
   }
 
-  exists (key: string): boolean {
+  exists(key: string): boolean {
     return this.validatorItems.find((f) => f.key === key) !== undefined;
   }
 
-  isValid (key: string): boolean {
+  isValid(key: string): boolean {
     return this.validatorItems.find((f) => f.key === key)?.valid ?? false;
   }
 
-  isEveryValid (): boolean {
+  isEveryValid(): boolean {
     return this.validatorItems.every((f) => f.valid);
   }
 }

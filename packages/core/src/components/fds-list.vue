@@ -1,12 +1,12 @@
 <template>
   <ul
-    :class="getListClass"
-    v-if="!ordered">
+    v-if="!ordered"
+    :class="getListClass">
     <slot />
   </ul>
   <ol
-    :class="getListClass"
-    v-else>
+    v-else
+    :class="getListClass">
     <slot />
   </ol>
 </template>

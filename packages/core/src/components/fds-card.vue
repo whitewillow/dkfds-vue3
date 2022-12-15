@@ -3,21 +3,21 @@
     <slot name="custom" />
 
     <div
-      class="card-content"
-      v-if="$slots.content">
+      v-if="$slots.content"
+      class="card-content">
       <slot name="content" />
     </div>
 
     <div
-      class="card-header"
-      v-if="$slots.header || header">
+      v-if="$slots.header || header"
+      class="card-header">
       <slot name="header">
         <h2 class="header-title">
           {{ header }}
         </h2>
         <p
-          class="sub-header"
-          v-if="subheader">
+          v-if="subheader"
+          class="sub-header">
           {{ subheader }}
         </p>
       </slot>
@@ -28,8 +28,8 @@
     </div>
 
     <div
-      class="card-footer card-action"
-      v-if="$slots.actions">
+      v-if="$slots.actions"
+      class="card-footer card-action">
       <div class="action-buttons">
         <slot name="actions" />
       </div>

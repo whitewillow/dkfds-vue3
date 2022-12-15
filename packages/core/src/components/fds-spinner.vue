@@ -3,9 +3,9 @@
     class="spinner"
     v-bind="attrs"></div>
   <div
+    v-if="$slots.default"
     class="spinner-status"
-    role="status"
-    v-if="$slots.default">
+    role="status">
     <slot />
   </div>
 </template>

@@ -1,20 +1,20 @@
 <template>
   <input
-    type="file"
     :id="formid"
+    type="file"
     :name="formid"
+    :accept="contenttypes.join(',')"
     @blur="onDirty"
     @change="onFileChange"
-    :accept="contenttypes.join(',')"
   />
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from "vue";
+import { defineProps, defineEmits, ref } from 'vue';
 
-import { removeBrowserFileContentHeaders } from "dkfds-vue3-utils";
-import { FdsFileInputModel } from "dkfds-vue3-utils";
-import { formId } from "dkfds-vue3-utils";
+import { removeBrowserFileContentHeaders } from 'dkfds-vue3-utils';
+import { FdsFileInputModel } from 'dkfds-vue3-utils';
+import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   id: {
@@ -23,7 +23,7 @@ const props = defineProps({
   },
   contenttypes: {
     type: Array as () => Array<string>,
-    default: () => ["image/png", "image/jpg", "image/jpeg", ".pdf", ".doc", ".docx", ".odt"],
+    default: () => ['image/png', 'image/jpg', 'image/jpeg', '.pdf', '.doc', '.docx', '.odt'],
   },
   removeContentHeaders: {
     type: Boolean,
@@ -31,12 +31,12 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["dirty", "upload", "error"]);
+const emit = defineEmits(['dirty', 'upload', 'error']);
 
 const { formid } = formId(props.id);
 const file = ref<File | null>();
 
-const onDirty = () => emit("dirty", true);
+const onDirty = () => emit('dirty', true);
 
 const clearFile = () => {
   file.value = null;
@@ -58,7 +58,7 @@ const onFileChange = ($event: Event) => {
   reader.readAsDataURL(file.value);
   reader.onload = async () => {
     const data = props.removeContentHeaders
-      ? removeBrowserFileContentHeaders(reader.result?.toString() ?? "")
+      ? removeBrowserFileContentHeaders(reader.result?.toString() ?? '')
       : reader.result?.toString();
 
     const fileObj = {
@@ -69,10 +69,10 @@ const onFileChange = ($event: Event) => {
     } as FdsFileInputModel;
 
     try {
-      emit("upload", fileObj);
+      emit('upload', fileObj);
     } catch (error) {
       console.error(error);
-      emit("error", error);
+      emit('error', error);
     }
     clearFile();
   };

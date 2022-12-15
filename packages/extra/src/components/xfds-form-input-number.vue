@@ -6,7 +6,8 @@
       tooltip,
       isValid,
       errorMessage,
-    }">
+    }"
+  >
     <fds-input-number
       v-model="value"
       type="number"
@@ -15,15 +16,14 @@
         suffix,
         prefix,
       }"
-      @update:modelValue="handleInput"
-      @dirty="touchedEvent"/>
+      @update:model-value="handleInput"
+      @dirty="touchedEvent"
+    />
   </xfds-form-group>
 </template>
 
 <script setup lang="ts">
-import {
-  defineEmits, defineProps, ref, useAttrs,
-} from 'vue';
+import { defineEmits, defineProps, ref, useAttrs } from 'vue';
 
 const attrs = useAttrs();
 
@@ -53,6 +53,7 @@ const props = defineProps({
     default: null,
   },
   modelValue: {
+    type: [Number, String],
     default: 0,
   },
   suffix: {

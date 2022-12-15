@@ -1,5 +1,5 @@
-import { computed, inject, ref } from "vue";
-import { uuid } from "../index";
+import { computed, inject, ref } from 'vue';
+import { uuid } from '../index';
 
 /**
  * Composable for getting formId if any
@@ -8,11 +8,11 @@ import { uuid } from "../index";
  * @returns
  */
 export default function getFormId(localId: string | undefined, autogenId = false) {
-  const injFormid = ref(inject("formid", null) ?? localId);
-  const autoId = `fid_${uuid().replaceAll("-", "")}`;
+  const injFormid = ref(inject('formid', null) ?? localId);
+  const autoId = `fid_${uuid().replaceAll('-', '')}`;
   const formid = computed(() => {
     if (!injFormid.value && !autogenId) {
-      throw Error("Form id is not set. Did you forget formgroup");
+      throw Error('Form id is not set. Did you forget formgroup');
     }
     return injFormid?.value ?? autoId;
   });

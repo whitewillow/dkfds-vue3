@@ -1,7 +1,9 @@
 <template>
   <span
     id="input-type-character-limit-message"
-    class="sr-only">Du kan indtaste op til {{ limit }} tegn</span>
+    class="sr-only"
+  >Du kan indtaste op til {{ limit }} tegn</span
+  >
 
   <template v-if="modelValue === null || modelValue.length === 0">
     <span

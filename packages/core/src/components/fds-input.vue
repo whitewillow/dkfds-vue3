@@ -1,18 +1,24 @@
 <template>
   <div :class="`${cssClass}`">
-    <div v-if="prefix" class="form-input-prefix" aria-hidden="true">
+    <div
+      v-if="prefix"
+      class="form-input-prefix"
+      aria-hidden="true">
       {{ prefix }}
     </div>
     <input
-      class="form-input d-flex"
       v-bind="attrs"
-      v-model="value"
       :id="formid"
+      v-model="value"
+      class="form-input d-flex"
       :name="formid"
       @input="handleInput"
       @blur="$emit('dirty', true)"
     />
-    <div v-if="suffix" class="form-input-suffix" aria-hidden="true">
+    <div
+      v-if="suffix"
+      class="form-input-suffix"
+      aria-hidden="true">
       {{ suffix }}
     </div>
     <slot name="button" />
@@ -20,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, useSlots, watch, useAttrs } from "vue";
-import { formId } from "dkfds-vue3-utils";
+import { defineProps, defineEmits, ref, computed, useSlots, watch, useAttrs } from 'vue';
+import { formId } from 'dkfds-vue3-utils';
 
 const attrs = useAttrs();
 
@@ -32,7 +38,7 @@ const props = defineProps({
   },
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   suffix: {
     type: String,
@@ -44,7 +50,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty", "input"]);
+const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 const slots = useSlots();
 
 const { formid } = formId(props.id, true);
@@ -52,18 +58,18 @@ const value = ref(props.modelValue);
 
 const cssClass = computed((): string => {
   if (props.suffix) {
-    return "form-input-wrapper form-input-wrapper--suffix";
+    return 'form-input-wrapper form-input-wrapper--suffix';
   }
   if (props.prefix) {
-    return "form-input-wrapper form-input-wrapper--prefix";
+    return 'form-input-wrapper form-input-wrapper--prefix';
   }
   if (slots.button) {
-    return "search";
+    return 'search';
   }
-  return "flex-items-center";
+  return 'flex-items-center';
 });
 
-const handleInput = () => emit("update:modelValue", value.value);
+const handleInput = () => emit('update:modelValue', value.value);
 
 watch(
   () => [props.modelValue],
@@ -72,7 +78,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

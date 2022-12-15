@@ -1,22 +1,22 @@
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-import packageJson from "./package.json";
+import packageJson from './package.json';
 
 export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: resolve(__dirname, "./src/index.ts"),
-      name: "FloatingVue",
+      entry: resolve(__dirname, './src/index.ts'),
+      name: 'FloatingVue',
     },
     rollupOptions: {
-      external: ["vue", "@floating-ui/dom"],
+      external: ['vue', '@floating-ui/dom'],
       output: {
         globals: {
-          vue: "Vue",
-          "@floating-ui/dom": "FloatingUIDOM",
+          vue: 'Vue',
+          '@floating-ui/dom': 'FloatingUIDOM',
         },
       },
     },

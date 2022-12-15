@@ -1,4 +1,4 @@
-export function removeBrowserFileContentHeaders (data: string): string {
+export function removeBrowserFileContentHeaders(data: string): string {
   // Remove the "data:...;base64," part, as it make Java sad ...
   const regex = RegExp('data:([0-9a-z/.-]+);base64,', 'g');
   if (regex.test(data)) {
@@ -7,7 +7,7 @@ export function removeBrowserFileContentHeaders (data: string): string {
   return data;
 }
 
-export function downloadBlob (blob: Blob, filename = 'download') {
+export function downloadBlob(blob: Blob, filename = 'download') {
   const url = window.URL.createObjectURL(blob);
 
   const anchor = document.createElement('a');
@@ -24,11 +24,11 @@ export function downloadBlob (blob: Blob, filename = 'download') {
  * @param type eg. text/csv, application/pdf, etc
  * @returns blob
  */
-export function updateBlobType (blob: Blob, type: string): Blob {
+export function updateBlobType(blob: Blob, type: string): Blob {
   return new Blob([blob], { type });
 }
 
-export function readableFileSize (fileSizeInBytes: number) {
+export function readableFileSize(fileSizeInBytes: number) {
   let b = fileSizeInBytes;
   let u = 0;
   const s = 1024;
@@ -39,6 +39,6 @@ export function readableFileSize (fileSizeInBytes: number) {
   return `${(u ? `${b.toFixed(1)} ` : b) + ' KMGTPEZY'[u]}B`;
 }
 
-export function base64Decode (data: string): string {
+export function base64Decode(data: string): string {
   return decodeURIComponent(escape(window.atob(data)));
 }

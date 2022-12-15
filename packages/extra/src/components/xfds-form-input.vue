@@ -6,7 +6,8 @@
       tooltip,
       isValid,
       errorMessage,
-    }">
+    }"
+  >
     <fds-input
       v-model="value"
       type="text"
@@ -15,11 +16,12 @@
         suffix,
         prefix,
       }"
-      @update:modelValue="handleInput"
-      @dirty="touchedEvent">
+      @update:model-value="handleInput"
+      @dirty="touchedEvent"
+    >
       <template
-        #button
-        v-if="$slots.button">
+        v-if="$slots.button"
+        #button>
         <slot name="button" />
       </template>
     </fds-input>
@@ -27,9 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defineEmits, defineProps, ref, useAttrs, watch,
-} from 'vue';
+import { defineEmits, defineProps, ref, useAttrs, watch } from 'vue';
 
 const attrs = useAttrs();
 

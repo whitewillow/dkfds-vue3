@@ -1,26 +1,32 @@
 <template>
   <div class="overflow-menu overflow-menu--open-right">
     <button
-      class="button-overflow-menu js-dropdown"
       :id="`button_${formid}`"
+      class="button-overflow-menu js-dropdown"
       :data-js-target="`#${formid}`"
       aria-haspopup="true"
       aria-expanded="false"
     >
       {{ header }} {{ currentStepIndex + 1 }} af {{ mVal.length }}
-      <svg class="icon-svg" aria-hidden="true" focusable="false">
+      <svg
+        class="icon-svg"
+        aria-hidden="true"
+        focusable="false">
         <use :xlink:href="`#${icon}`"></use>
       </svg>
     </button>
-    <div class="overflow-menu-inner" :id="formid" aria-hidden="true">
+    <div
+      :id="formid"
+      class="overflow-menu-inner"
+      aria-hidden="true">
       <nav>
         <fds-menu>
           <fds-menu-item
-            role="none"
             v-for="(item, index) of tabsList"
-            :class="[{ disabled: item.disabled }]"
-            :key="item.key"
             :id="item.key"
+            :key="item.key"
+            role="none"
+            :class="[{ disabled: item.disabled }]"
             :active="item.active"
             :icon="item.icon"
             :hint="item.hint"
@@ -45,11 +51,11 @@
  *
  * */
 
-import { FdsNavigationItem } from "dkfds-vue3-utils";
-import { defineProps, ref, defineEmits, onMounted, computed } from "vue";
-import navigationService from "./../service/navigation.service";
+import { FdsNavigationItem } from 'dkfds-vue3-utils';
+import { defineProps, ref, defineEmits, onMounted, computed } from 'vue';
+import navigationService from './../service/navigation.service';
 
-import { formId, dropdown } from "dkfds-vue3-utils";
+import { formId, dropdown } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   modelValue: {
@@ -67,23 +73,24 @@ const props = defineProps({
   },
   header: {
     type: String,
-    default: "Trin", // TODO: overvej interpolation
+    default: 'Trin', // TODO: overvej interpolation
   },
   id: {
     type: String,
+    default: null,
   },
   icon: {
     type: String,
-    default: "arrow-drop-down",
+    default: 'arrow-drop-down',
   },
 });
 
-const emit = defineEmits(["update:modelValue", "navigate"]);
+const emit = defineEmits(['update:modelValue', 'navigate']);
 
 const { formid } = formId(props.id, true);
 
 const mVal = computed(() => props.modelValue ?? []);
-const currentKey = ref("");
+const currentKey = ref('');
 const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
 const currentStepIndex = ref(0);
 
@@ -96,8 +103,8 @@ const navigate = (item: FdsNavigationItem) => {
   currentKey.value = item.key;
   currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
 
-  emit("update:modelValue", tabsList.value);
-  emit("navigate", currentKey.value);
+  emit('update:modelValue', tabsList.value);
+  emit('navigate', currentKey.value);
 };
 
 onMounted(async () => {

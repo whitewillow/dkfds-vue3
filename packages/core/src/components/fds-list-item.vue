@@ -1,7 +1,7 @@
 <template>
   <li
-    :class="getListClass"
-    v-if="!ordered">
+    v-if="!ordered"
+    :class="getListClass">
     <slot />
   </li>
 </template>

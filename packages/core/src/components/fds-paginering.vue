@@ -1,33 +1,43 @@
 <template>
   <nav
     v-if="show"
-    class="pagination"
     id="pagination-ID"
+    class="pagination"
     aria-label="Pagineringseksempel med 12 sider"
   >
     <a
       href="javascript:void(0);"
-      @click="handlePageChange($event, 1)"
       class="button button-arrow button-first"
+      @click="handlePageChange($event, 1)"
     >
-      <svg class="icon-svg" aria-hidden="true">
+      <svg
+        class="icon-svg"
+        aria-hidden="true">
         <use xlink:href="#first-page"></use>
       </svg>
-      <span class="sr-only"> Første side </span></a
+      <span class="sr-only">
+        Første side
+      </span></a
     >
     <a
       v-if="currentPage > 1"
       href="javascript:void(0);"
-      @click="handlePageChange($event, currentPage - 1)"
       class="button button-arrow button-previous"
       aria-label="Forrige side"
+      @click="handlePageChange($event, currentPage - 1)"
     >
-      <svg class="icon-svg" aria-hidden="true">
+      <svg
+        class="icon-svg"
+        aria-hidden="true">
         <use xlink:href="#chevron-left"></use>
       </svg>
-      <span class="pagination-nav-link"> Forrige </span>
+      <span class="pagination-nav-link">
+        Forrige
+      </span>
     </a>
-    <span class="pagination-mobile"> Side {{ currentPage }} af {{ lastPage }} </span>
+    <span class="pagination-mobile">
+      Side {{ currentPage }} af {{ lastPage }}
+    </span>
     <ul class="pagination__items">
       <li
         v-for="page in generatePages()"
@@ -39,42 +49,55 @@
         <a
           v-if="currentPage === page.index"
           href="#"
-          @click="$event.preventDefault()"
           class="button current-page"
           :aria-label="`Side ${page.index}`"
           aria-current="page"
+          @click="$event.preventDefault()"
         >
           {{ page.index }}
         </a>
         <a
           v-if="currentPage !== page.index && !page.dotted"
           href="#"
-          @click="handlePageChange($event, page.index)"
           class="button button-secondary"
           :aria-label="`Side ${page.index}`"
+          @click="handlePageChange($event, page.index)"
         >
           {{ page.index }}
         </a>
-        <span v-if="page.dotted"> ... </span>
+        <span v-if="page.dotted">
+          ...
+        </span>
       </li>
     </ul>
     <a
       v-if="currentPage !== lastPage"
       href="#"
-      @click="handlePageChange($event, currentPage + 1)"
       class="button button-arrow button-next"
       aria-label="Næste side"
+      @click="handlePageChange($event, currentPage + 1)"
     >
-      <span class="pagination-nav-link"> Næste </span>
-      <svg class="icon-svg" aria-hidden="true">
+      <span class="pagination-nav-link">
+        Næste
+      </span>
+      <svg
+        class="icon-svg"
+        aria-hidden="true">
         <use xlink:href="#chevron-right"></use>
       </svg>
     </a>
-    <a href="#" @click="handlePageChange($event, lastPage)" class="button button-arrow button-last">
-      <svg class="icon-svg" aria-hidden="true">
+    <a
+      href="#"
+      class="button button-arrow button-last"
+      @click="handlePageChange($event, lastPage)">
+      <svg
+        class="icon-svg"
+        aria-hidden="true">
         <use xlink:href="#last-page"></use>
       </svg>
-      <span class="sr-only"> Sidste side </span></a
+      <span class="sr-only">
+        Sidste side
+      </span></a
     >
   </nav>
 </template>
@@ -86,8 +109,8 @@
  * https://designsystem.dk/komponenter/badges/
  *
  * */
-import { FdsPaging } from "dkfds-vue3-utils";
-import { defineProps, computed, ref, defineEmits, watch } from "vue";
+import { FdsPaging } from 'dkfds-vue3-utils';
+import { defineProps, computed, ref, defineEmits, watch } from 'vue';
 
 const props = defineProps({
   list: {
@@ -108,7 +131,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["filteredPage", "skip"]);
+const emit = defineEmits(['filteredPage', 'skip']);
 
 const currentPage = ref(1);
 const show = ref(true);
@@ -130,8 +153,8 @@ const lastPage = computed((): number => {
 // };
 
 const emitList = (skip = 0) => {
-  emit("filteredPage", props.list.length > 0 ? props.list.slice(skip, skip + props.pageSize) : []);
-  emit("skip", props.skip > 0 ? props.skip : skip);
+  emit('filteredPage', props.list.length > 0 ? props.list.slice(skip, skip + props.pageSize) : []);
+  emit('skip', props.skip > 0 ? props.skip : skip);
 };
 
 const handlePageChange = (event: Event, newPage: number) => {
@@ -195,7 +218,7 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 );
 </script>
 

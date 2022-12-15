@@ -1,17 +1,17 @@
 <template>
   <fieldset class="code">
     <legend
-      for=""
-      v-if="header">
+      v-if="header"
+      for="">
       {{ header }}
     </legend>
     <pre
-      class="code"
       v-if="json"
+      class="code"
       v-text="JSON.stringify(json, undefined, 2)" />
     <pre
-      class="code"
       v-else-if="code"
+      class="code"
       v-text="code" />
     <pre
       v-else
@@ -21,7 +21,8 @@
 
     <span
       v-if="json && JSON.stringify(json, undefined, 2).length > 65535"
-      class="pl-4 pb-0 small-text">
+      class="pl-4 pb-0 small-text"
+    >
       JSON indeholder elementer over 65535 tegn og noget data vil ikke blive vist
     </span>
   </fieldset>

@@ -1,11 +1,15 @@
 <template>
-  <ul class="nobullet-list" :id="formid">
-    <li v-for="(checkbox, index) of value" :key="index">
+  <ul
+    :id="formid"
+    class="nobullet-list">
+    <li
+      v-for="(checkbox, index) of value"
+      :key="index">
       <input
+        :id="'checkbox-' + formid + '-' + index"
         v-model="checkbox.checked"
         type="checkbox"
         class="form-checkbox checkbox-large"
-        :id="'checkbox-' + formid + '-' + index"
         :name="'checkbox' + formid"
         :disabled="checkbox.disabled"
         :aria-disabled="checkbox.ariaDisabled"
@@ -17,18 +21,20 @@
       </label>
 
       <div
-        class="checkbox-content mt-2 ml-4 py-4"
         v-if="$slots[checkbox.value] && checkbox.checked"
+        class="checkbox-content mt-2 ml-4 py-4"
       >
-        <slot :name="checkbox.value" v-bind:checkboxvalue="value" />
+        <slot
+          :name="checkbox.value"
+          :checkboxvalue="value" />
       </div>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, PropType } from "vue";
-import { formId, FdsCheckboxItem } from "dkfds-vue3-utils";
+import { defineProps, defineEmits, ref, PropType } from 'vue';
+import { formId, FdsCheckboxItem } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   id: {
@@ -43,17 +49,17 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty"]);
+const emit = defineEmits(['update:modelValue', 'dirty']);
 
 const value = ref(props.modelValue);
 const { formid } = formId(props.id, true);
 
 const handleDirty = () => {
-  emit("dirty", true);
+  emit('dirty', true);
 };
 
 const handleInput = () => {
-  emit("update:modelValue", value.value);
+  emit('update:modelValue', value.value);
 };
 </script>
 

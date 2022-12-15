@@ -6,22 +6,22 @@
       tooltip,
       isValid,
       errorMessage,
-    }">
+    }"
+  >
     <fds-textarea
       v-model="value"
       v-bind="attrs"
       :maxlength="maxlength"
       :rowlength="rowlength"
       :rows="rows"
-      @update:modelValue="handleInput"
-      @dirty="touchedEvent"></fds-textarea>
+      @update:model-value="handleInput"
+      @dirty="touchedEvent"
+    ></fds-textarea>
   </xfds-form-group>
 </template>
 
 <script setup lang="ts">
-import {
-  defineEmits, defineProps, ref, useAttrs, watch,
-} from 'vue';
+import { defineEmits, defineProps, ref, useAttrs, watch } from 'vue';
 
 const attrs = useAttrs();
 

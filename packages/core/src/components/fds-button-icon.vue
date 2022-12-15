@@ -1,10 +1,20 @@
 <template>
-  <button class="button" :class="`button-${variant}`">
-    <svg class="icon-svg" focusable="false" aria-hidden="true" v-if="!right && icon">
+  <button
+    class="button"
+    :class="`button-${variant}`">
+    <svg
+      v-if="!right && icon"
+      class="icon-svg"
+      focusable="false"
+      aria-hidden="true">
       <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
     <slot />
-    <svg class="icon-svg rightside-icon" focusable="false" aria-hidden="true" v-if="right">
+    <svg
+      v-if="right"
+      class="icon-svg rightside-icon"
+      focusable="false"
+      aria-hidden="true">
       <use v-bind="{ 'xlink:href': `#${icon}` }" />
     </svg>
   </button>
@@ -18,8 +28,8 @@
  *
  * */
 
-import { FdsVariantEnum } from "dkfds-vue3-utils";
-import { defineProps, PropType } from "vue";
+import { FdsVariantEnum } from 'dkfds-vue3-utils';
+import { defineProps, PropType } from 'vue';
 
 defineProps({
   /**
@@ -27,14 +37,14 @@ defineProps({
    * */
   variant: {
     type: String as PropType<FdsVariantEnum | string>,
-    default: "secondary",
+    default: 'secondary',
   },
   /**
    * Ikon som string
    * */
   icon: {
     type: String,
-    default: "pencil",
+    default: 'pencil',
   },
   /**
    * Højre stillet ikon

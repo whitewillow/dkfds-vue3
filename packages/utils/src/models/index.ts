@@ -1,1 +1,1 @@
-export * from "./fds.model";
+export * from './fds.model';

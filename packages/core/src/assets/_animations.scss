@@ -6,20 +6,16 @@
   animation-name: progress-out;
   animation-fill-mode: forwards;
   animation-duration: 0.8s;
-
 }
 
 .progress-enter,
 .progress-leave-to
 
-/* .fade-leave-active below version 2.1.8 */
-  {
+/* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
-
 @keyframes spinner-white {
-
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em $color-gray-600, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),

@@ -1,15 +1,16 @@
 <template>
   <div class="date-group js-calendar-group mt-3">
     <div class="form-group form-group-day">
-      <label class="form-label" :for="`day_${formid}`"> Dag </label>
+      <label
+        class="form-label"
+        :for="`day_${formid}`">
+        Dag
+      </label>
       <input
-        class="form-input js-calendar-day-input"
-        ref="day"
-        @input="onNextTab($event, 'day')"
-        @blur="$emit('dirty', true)"
-        @focus="($event.target as any)?.select()"
         :id="`day_${formid}`"
+        ref="day"
         v-model="dateObj.day"
+        class="form-input js-calendar-day-input"
         type="tel"
         data-min="1"
         data-max="31"
@@ -17,18 +18,22 @@
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
         title="Indskriv dag på måneden som tal"
+        @input="onNextTab($event, 'day')"
+        @blur="$emit('dirty', true)"
+        @focus="($event.target as any)?.select()"
       />
     </div>
     <div class="form-group form-group-month">
-      <label class="form-label" :for="`month_${formid}`"> Måned </label>
+      <label
+        class="form-label"
+        :for="`month_${formid}`">
+        Måned
+      </label>
       <input
-        class="form-input js-calendar-month-input"
-        ref="month"
-        @input="onNextTab($event, 'month')"
-        @blur="$emit('dirty', true)"
-        @focus="($event.target as any)?.select()"
         :id="`month_${formid}`"
+        ref="month"
         v-model="dateObj.month"
+        class="form-input js-calendar-month-input"
         type="tel"
         data-min="1"
         data-max="12"
@@ -36,18 +41,22 @@
         pattern="^[0-9]{0,2}$"
         data-input-regex="^[0-9]{0,2}$"
         title="Indskriv månedens nummer"
+        @input="onNextTab($event, 'month')"
+        @blur="$emit('dirty', true)"
+        @focus="($event.target as any)?.select()"
       />
     </div>
     <div class="form-group form-group-year">
-      <label class="form-label" :for="`year_${formid}`"> År </label>
+      <label
+        class="form-label"
+        :for="`year_${formid}`">
+        År
+      </label>
       <input
-        class="form-input js-calendar-year-input"
-        @blur="$emit('dirty', true)"
-        @input="onNextTab($event, 'year')"
-        @focus="($event.target as any)?.select()"
-        ref="year"
         :id="`year_${formid}`"
+        ref="year"
         v-model="dateObj.year"
+        class="form-input js-calendar-year-input"
         type="tel"
         data-min="1900"
         data-max="3000"
@@ -55,13 +64,16 @@
         pattern="^[0-9]{0,4}$"
         data-input-regex="^[0-9]{0,4}$"
         title="Indskriv årstal"
+        @blur="$emit('dirty', true)"
+        @input="onNextTab($event, 'year')"
+        @focus="($event.target as any)?.select()"
       />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps, ref, defineEmits } from "vue";
-import { formId } from "dkfds-vue3-utils";
+import { defineProps, ref, defineEmits } from 'vue';
+import { formId } from 'dkfds-vue3-utils';
 
 const day = ref<HTMLInputElement | null>(null);
 const month = ref<HTMLInputElement | null>(null);
@@ -70,14 +82,15 @@ const year = ref<HTMLInputElement | null>(null);
 const props = defineProps({
   id: {
     type: String,
+    default: null,
   },
   modelValue: {
     type: String, // JSON Date
-    default: "",
+    default: '',
   },
 });
 
-const emit = defineEmits(["update:modelValue", "dirty", "valid"]);
+const emit = defineEmits(['update:modelValue', 'dirty', 'valid']);
 
 const isDateValid = (dateString: string) => {
   const date = Date.parse(dateString);
@@ -93,19 +106,19 @@ const getModelDate = (dateString: string) => {
       year: date.getFullYear().toString(),
     };
   }
-  return { day: "", month: "", year: "" };
+  return { day: '', month: '', year: '' };
 };
 
 const { formid } = formId(props.id, true);
 const dateObj = ref<{ day: string; month: string; year: string }>(getModelDate(props.modelValue));
 
 const onInput = () =>
-  emit("update:modelValue", [dateObj.value.year, dateObj.value.month, dateObj.value.day].join("-"));
+  emit('update:modelValue', [dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-'));
 
 const onValid = () =>
   emit(
-    "valid",
-    isDateValid([dateObj.value.year, dateObj.value.month, dateObj.value.day].join("-"))
+    'valid',
+    isDateValid([dateObj.value.year, dateObj.value.month, dateObj.value.day].join('-')),
   );
 
 const onNextTab = (event: Event, source: string) => {
@@ -114,13 +127,13 @@ const onNextTab = (event: Event, source: string) => {
     return;
   }
 
-  if (source === "day") {
+  if (source === 'day') {
     // const regExString: string = day.value?.dataset.inputRegex ?? '';
     // const r = new RegExp(regExString); // TODO: skal den bruges?
     (month.value as HTMLInputElement).focus();
   }
 
-  if (source === "month") {
+  if (source === 'month') {
     (year.value as HTMLInputElement).focus();
   }
   onInput();

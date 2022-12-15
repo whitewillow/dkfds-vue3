@@ -26,9 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  computed, defineProps, inject, ref,
-} from 'vue';
+import { computed, defineProps, inject, ref } from 'vue';
 
 const props = defineProps({
   label: {

@@ -1,12 +1,12 @@
 <template>
   <button
-    :aria-controls="`tabpanel_${formId}`"
     :id="`tab_${formId}`"
-    @click="onFanButtonClick"
+    :aria-controls="`tabpanel_${formId}`"
     class="tabnav-item"
     :class="[{ active: selected }]"
     role="tab"
     :aria-selected="selected"
+    @click="onFanButtonClick"
   >
     <slot name="header">
       <span>
@@ -15,11 +15,11 @@
     </slot>
   </button>
   <section
+    :id="`tabpanel_${formId}`"
     tabindex="0"
     class="tabnav-panel"
     role="tabpanel"
     :aria-hidden="!selected"
-    :id="`tabpanel_${formId}`"
     :aria-labelledby="`tab_${formId}`"
   >
     <slot />
@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, defineEmits } from "vue";
-import { uuid } from "dkfds-vue3-utils";
+import { defineProps, ref, defineEmits } from 'vue';
+import { uuid } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   /**
@@ -47,15 +47,15 @@ const props = defineProps({
    * */
   header: {
     type: String,
-    default: "Fane",
+    default: 'Fane',
   },
 });
 
-const emit = defineEmits(["click", "navigate"]);
+const emit = defineEmits(['click', 'navigate']);
 
 const onFanButtonClick = () => {
-  emit("click", props.id);
-  emit("navigate", props.id);
+  emit('click', props.id);
+  emit('navigate', props.id);
 };
 
 const formId = ref(props.id ?? uuid());

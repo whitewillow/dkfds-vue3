@@ -1,5 +1,4 @@
-@import "_code-color";
-
+@import '_code-color';
 
 fieldset.code {
   margin-top: 24px;
@@ -13,7 +12,7 @@ fieldset.code {
   border: 1px solid #ddd;
   border-left: 3px solid $preview-border-color;
 
-  >legend {
+  > legend {
     background-color: $preview-legend-background-color;
     color: $preview-legend-color;
     padding: 4px 6px 2px 6px;
@@ -23,7 +22,7 @@ fieldset.code {
     text-transform: uppercase;
   }
 
-  >pre {
+  > pre {
     color: $preview-color;
     font-size: 0.8em;
     font-weight: 200;
