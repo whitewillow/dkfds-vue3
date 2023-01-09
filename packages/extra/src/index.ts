@@ -1,5 +1,6 @@
 import { App, Plugin } from 'vue';
-
+import navigationService from './service/navigation.service';
+import validatorService from './service/validator.service';
 import XfdsButtonSpinner from './components/xfds-button-spinner.vue';
 import XfdsCheckboxList from './components/xfds-checkbox-list.vue';
 import XfdsDropdown from './components/xfds-dropdown.vue';
@@ -40,6 +41,8 @@ export {
   XfdsRange,
   XfdsTrinindikator,
   XfdsValidate,
+  navigationService,
+  validatorService,
 };
 
 function install(app: App): void {

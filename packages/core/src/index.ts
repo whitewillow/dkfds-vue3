@@ -1,5 +1,4 @@
 import { App, Plugin } from 'vue';
-
 import FdsAccordionGroup from './components/fds-accordion-group.vue';
 import FdsAccordion from './components/fds-accordion.vue';
 import FdsAlert from './components/fds-alert.vue';

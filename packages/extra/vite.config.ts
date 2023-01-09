@@ -9,14 +9,13 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, './src/index.ts'),
-      name: 'FloatingVue',
+      name: 'dkfds-vue3-extra',
     },
     rollupOptions: {
-      external: ['vue', '@floating-ui/dom'],
+      external: ['vue'],
       output: {
         globals: {
           vue: 'Vue',
-          '@floating-ui/dom': 'FloatingUIDOM',
         },
       },
     },

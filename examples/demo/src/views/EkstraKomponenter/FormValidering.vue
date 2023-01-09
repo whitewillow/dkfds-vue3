@@ -195,8 +195,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { charactersMinLength, hasContent } from 'dkfds-vue3-utils';
-import ValidatorService from 'dkfds-vue3-extra/src/service/validator.service';
+import { charactersMinLength, hasContent } from 'dkfds-vue3/utils';
+import ValidatorService from 'dkfds-vue3/extra/service/validator.service';
 
 const validator = ref(new ValidatorService());
 

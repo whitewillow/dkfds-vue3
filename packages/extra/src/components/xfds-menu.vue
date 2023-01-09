@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import { FdsMenuItem } from 'dkfds-vue3-core';
 import { FdsNavigationItem } from 'dkfds-vue3-utils';
 import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
 import navigationService from './../service/navigation.service';

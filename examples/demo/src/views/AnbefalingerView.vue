@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from 'dkfds-vue3-utils';
-import navigationService from 'dkfds-vue3-extra/src/service/navigation.service';
+import { FdsNavigationItem } from 'dkfds-vue3/utils';
+import {navigationService} from 'dkfds-vue3/extra';
 import { ref, watch } from 'vue';
 
 import { useRouter, useRoute } from 'vue-router';

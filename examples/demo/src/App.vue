@@ -362,7 +362,7 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
 // import DKFDS from 'dkfds';
-import { navigation } from 'dkfds-vue3-utils';
+import { navigation } from 'dkfds-vue3/utils';
 
 const route = useRoute();
 const router = useRouter();
@@ -389,8 +389,9 @@ $font-path: 'dkfds/src/fonts/IBMPlexSans/';
 $image-path: 'dkfds/src/img';
 $site-image-path: 'dkfds/src/img';
 $icons-folder-path: 'dkfds/src/img/svg-icons';
+
 @import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
-@import '../node_modules/dkfds-vue3/src/assets/bgs.scss';
-@import '../node_modules/dkfds-vue3/src/assets/main.scss';
+@import '../node_modules/dkfds-vue3/core/assets/bgs.scss';
+@import '../node_modules/dkfds-vue3/core/assets/main.scss';
 @import 'assets/main.scss';
 </style>

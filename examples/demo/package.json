@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "dkfds": "^8.2.0",
-    "dkfds-vue3": "workspace:0.3.12",
-    "dkfds-vue3-extra": "workspace:0.0.1",
-    "dkfds-vue3-utils": "workspace:0.0.1",
+    "dkfds-vue3": "workspace:*",
     "fast-sort": "^3.2.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

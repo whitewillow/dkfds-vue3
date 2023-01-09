@@ -54,7 +54,7 @@
 import { FdsNavigationItem } from 'dkfds-vue3-utils';
 import { defineProps, ref, defineEmits, onMounted, computed } from 'vue';
 import navigationService from './../service/navigation.service';
-
+import { FdsMenu, FdsMenuItem } from 'dkfds-vue3-core'
 import { formId, dropdown } from 'dkfds-vue3-utils';
 
 const props = defineProps({

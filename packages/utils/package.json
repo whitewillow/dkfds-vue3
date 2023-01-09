@@ -1,7 +1,6 @@
 {
   "name": "dkfds-vue3-utils",
   "version": "0.0.1",
-  "main": "dist/dkfds-vue3-utils.mjs",
   "module": "dist/dkfds-vue3-utils.mjs",
   "files": [
     "dist/*"
@@ -10,9 +9,6 @@
   "scripts": {
     "build": "vite build && pnpm run typings",
     "typings": "vue-tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist"
-  },
-  "peerDependencies": {
-    "vue": "3.x"
   },
   "devDependencies": {
     "@types/node": "^18.11.12",

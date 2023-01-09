@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import dkfdsvue3 from 'dkfds-vue3';
-import dkfdsvue3Extra from 'dkfds-vue3-extra';
+import dkfdsvue3Extra from 'dkfds-vue3/extra';
 import App from './App.vue';
 import router from './router';
 import store from './store';

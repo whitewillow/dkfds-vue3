@@ -35,8 +35,8 @@
         <svg
           class="icon-svg"
           aria-hidden="true">
-          <use xlink:href="#trash-can"></use></svg
-        >Slet
+          <use xlink:href="#trash-can"></use></svg>
+        Slet
       </button>
     </li>
   </ul>
@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmits, PropType } from 'vue';
-
+import { FdsFunktionslink } from 'dkfds-vue3-core';
 import { FdsFileModel } from 'dkfds-vue3-utils';
 
 const props = defineProps({
