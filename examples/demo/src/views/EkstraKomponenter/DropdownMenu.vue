@@ -80,7 +80,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { hasContent, FdsOptionItem } from 'dkfds-vue3-utils';
+import { hasContent, FdsOptionItem } from 'dkfds-vue3/utils';
 
 const dropdownVal = ref('');
 const dropdownValForm = ref('');

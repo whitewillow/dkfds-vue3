@@ -96,7 +96,7 @@
 
 <script setup lang="ts">
 import { ref, defineProps } from 'vue';
-import { numberMin } from 'dkfds-vue3-utils';
+import { numberMin } from 'dkfds-vue3/utils';
 
 defineProps({
   test: {

@@ -50,8 +50,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { arrayHasItems } from 'dkfds-vue3-utils';
-import { FdsCheckboxItem } from 'dkfds-vue3-utils';
+import { arrayHasItems } from 'dkfds-vue3/utils';
+import { FdsCheckboxItem } from 'dkfds-vue3/utils';
 
 const checkboxListForm = ref<FdsCheckboxItem[]>([
   {

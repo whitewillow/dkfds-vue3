@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { FdsLanguageItem } from 'dkfds-vue3-utils';
+import { FdsLanguageItem } from 'dkfds-vue3/utils';
 
 const selectedLangauge = ref('da');
 const languages = ref<FdsLanguageItem[]>([

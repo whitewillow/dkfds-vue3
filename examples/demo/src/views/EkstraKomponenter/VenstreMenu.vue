@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsNavigationItem } from 'dkfds-vue3-utils';
+import { FdsNavigationItem } from 'dkfds-vue3/utils';
 import { ref } from 'vue';
 
 const code = `

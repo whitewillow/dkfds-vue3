@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { hasContent, charactersMinLength } from 'dkfds-vue3-utils';
+import { hasContent, charactersMinLength } from 'dkfds-vue3/utils';
 
 const product = ref({
   beskrivelse: '',

@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsOptionItem, hasContent } from 'dkfds-vue3-utils';
+import { FdsOptionItem, hasContent } from 'dkfds-vue3/utils';
 import { ref } from 'vue';
 
 const radioOptions = ref<FdsOptionItem[]>([

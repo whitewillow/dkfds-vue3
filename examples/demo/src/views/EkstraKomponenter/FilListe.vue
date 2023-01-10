@@ -106,7 +106,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsFileModel } from 'dkfds-vue3-utils';
+import { FdsFileModel } from 'dkfds-vue3/utils';
 import { ref } from 'vue';
 
 const filToDownload = ref<FdsFileModel | null>(null);

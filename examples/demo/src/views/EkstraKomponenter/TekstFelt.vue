@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { charactersMinLength, hasContent } from 'dkfds-vue3-utils';
+import { charactersMinLength, hasContent } from 'dkfds-vue3/utils';
 
 const user = ref({
   name: '',

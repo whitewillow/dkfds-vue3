@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsOptionItem } from 'dkfds-vue3-utils';
+import { FdsOptionItem } from 'dkfds-vue3/utils';
 import { ref } from 'vue';
 
 const radioVal = ref('');

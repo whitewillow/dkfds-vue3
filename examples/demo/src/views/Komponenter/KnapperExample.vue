@@ -62,7 +62,7 @@
 </template>
 
 <script setup lang="ts">
-import { FdsVariantEnum } from 'dkfds-vue3-utils';
+import { FdsVariantEnum } from 'dkfds-vue3/utils';
 
 // eslint-disable-next-line no-alert
 const klikEvent = () => window.confirm('KLIK');
