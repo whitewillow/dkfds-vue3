@@ -6,7 +6,6 @@ Med DKFDS-Vue3 kan du let benytte [DKFDS](https://designsystem.dk/) i vue 3 og b
 
 Med over 40 Standard komponenter og flere ekstra komponenter til at hjælpe dig med at udvikle selvbetjeningsløsninger hurtigt og effektivt.
 
-
 <p align="center">
    <a href="https://www.npmjs.com/package/dkfds-vue3">
     <img src="https://flat.badgen.net/npm/v/dkfds-vue3" alt="Current version">
@@ -21,21 +20,18 @@ Med over 40 Standard komponenter og flere ekstra komponenter til at hjælpe dig 
     <img src="https://flat.badgen.net/badge/vue.js/3.2.x/4fc08d" alt="Vue.js version">
   </a>
 
-
 </p>
 
 # Demo side
 
+**Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example)** (Stadig under udarbejdelse) - herunder også hvordan komponenter bruges.
 
-
-Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig under udarbejdelse)
-
+Benyt også gerne demo project som reference: [DKFDS-Vue3 Demo Github](https://github.com/whitewillow/dkfds-vue3/tree/main/examples/demo)
 
 <br />
 <br />
 
 # Installation:
-
 
 ```
 npm install -S dkfds-vue3
@@ -45,6 +41,7 @@ npm install -S dkfds-vue3
 // main.ts
 import { createApp } from 'vue';
 import dkfdsvue3 from 'dkfds-vue3';
+import dkfdsvue3Extra from 'dkfds-vue3/extra';
 import App from './App.vue';
 import router from './router';
 
@@ -53,6 +50,7 @@ import router from './router';
 createApp(App)
   .use(router)
   .use(dkfdsvue3 as any)
+  .use(dkfdsvue3Extra as any)
   .mount('#app');
 ```
 
@@ -65,24 +63,22 @@ createApp(App)
 </template>
 
 <style lang="scss">
-  $font-path: "~dkfds/src/fonts/IBMPlexSans/";
-  $image-path: "~dkfds/src/img";
-  $site-image-path: "~dkfds/src/img";
-  $icons-folder-path: "~dkfds/src/img/svg-icons";
-  @import "../node_modules/dkfds/src/stylesheets/dkfds-virkdk";
-  @import "../node_modules/dkfds-vue3/src/assets/main.scss";
+  $font-path: '~dkfds/src/fonts/IBMPlexSans/';
+  $image-path: '~dkfds/src/img';
+  $site-image-path: '~dkfds/src/img';
+  $icons-folder-path: '~dkfds/src/img/svg-icons';
+  @import '../node_modules/dkfds/src/stylesheets/dkfds-virkdk';
+  @import '../node_modules/dkfds-vue3/core/assets/main.scss';
 </style>
 ```
 
-
 eller se [app.vue eksempel](./dokumentation/app-vue-example.md)
 
-
 For Borger DK tema brug følgende istedet for `dkfds-virkdk`
+
 ```html
 @import '../node_modules/dkfds/src/stylesheets/dkfds-borgerdk.scss';
 ```
-
 
 ## Faser og Mangler:
 
@@ -91,7 +87,6 @@ Se [Roadmap](./dokumentation/WIP.md)
 ## FAQ
 
 Se [FAQ](./dokumentation/faq.md)
-
 
 ## Udvikling
 

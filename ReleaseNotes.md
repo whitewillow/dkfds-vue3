@@ -1,14 +1,17 @@
-
-
 # TODO:
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
-# 0.3.13
+# 0.4.5+
+
+- Breaking changes - se forsiden for "Installation"
 - Refak setup - pnpm, opdeling af core, extra, utils for bedre treeshaking
 - Accordion header-level renamed header-tag
+- Fix dropdown reaktiv
+- Test af Input range
 
 # 0.3.12
+
 - https://github.com/whitewillow/dkfds-vue3/issues/54
 - Alert og Fejlopsummering aria roles https://github.com/whitewillow/dkfds-vue3/issues/52
 - Fjernet default smooth scroll på html - ikke en del af FDS - og scroll kan virke sløv i chrome https://github.com/whitewillow/dkfds-vue3/issues/12
@@ -16,8 +19,8 @@ https://github.com/whitewillow/dkfds-vue3/issues
 - Diverse Aria justeringer og kontrast farver
 - fds-paging
 
-
 # 0.3.11
+
 - fds-file-upload - removeContentHeaders
 - xfds-file-list - Fil listen er flyttet til Ekstra
 - xfds-menu - watch, så menu opdateres, ved ændring
@@ -25,10 +28,10 @@ https://github.com/whitewillow/dkfds-vue3/issues
 - Autoset aria lang på fds-sprogvaelger
 - fjernet prop disabled på fds-radio-item
 - radio lister fds-radio-group/xfds-radio skal benytte fieldset og legends istedet for label
+
 # 0.3.10
 
 Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponenter, for at give konsistens og ensartethed
-
 
 - fds-alert - prop navne
 - fds-badge - prop navne
@@ -36,13 +39,14 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
 - fds-card-group - grupper cards
 - fds-datoangivelse omdøbt til fds-dato-felter
 - fds-modal omskrevet til at bruge native HTML Dialog element
-- div boolean prop navne rettet til at ligne html attr: eg. disabled/active/expanded/selected 
+- div boolean prop navne rettet til at ligne html attr: eg. disabled/active/expanded/selected
 - fds-fejlopsummering, fjernet list - ikke gennemtænkt og ikke kerne funktion
 - fjernet fds-trinindikator
 - Tilføjet fds-trinindikator-group med tilhørende fds-trinindikator-item
 - Tilføjet xfds-trinindikator, der tager imod liste af trin
 - Opdatering af example siden
-- Opdateret xfds-validate til også at emitte @validated med et ValidatorItem - der giver 
+- Opdateret xfds-validate til også at emitte @validated med et ValidatorItem - der giver
+
 ```javascript
   {
     key: string; // auto generet nøgle eller tager prop.id
@@ -53,7 +57,7 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
   }
 ```
 
-- Tilføjet fds-radio-group og fds-radio-item 
+- Tilføjet fds-radio-group og fds-radio-item
 - Tilføjet xfds-radio og xfds-radio-toggle
 
 ```HTML
@@ -71,9 +75,9 @@ Efter fælles gennemgang med teamet, er der enighed om refak af kerne komponente
 </fds-radio-group>
 
 
-Fjernet 
+Fjernet
 - xfds-faneblade - ikke gennemtænkt nok - fds-faneblade er dækkende
-- 
+-
 
 
 # 0.3.9
@@ -92,9 +96,11 @@ Du skal selv tilpasse indholdet i meddelelsen, så den overholder gældende lovg
 
 
 ```
-<fds-cookiemeddelelse 
-  @accepter="cookieAccept = $event"
-  header="Fortæl os om du accepterer cookies">
+
+<fds-cookiemeddelelse
+@accepter="cookieAccept = $event"
+header="Fortæl os om du accepterer cookies">
+
   <p class="mt-0" id="cookie-message-text">
     Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres.
     <a href="#"> Læs mere om vores brug af cookies. </a>
@@ -131,9 +137,6 @@ Validering er udskilt fra xfds form komponenter, dvs den skal kaldes seperat:
 
 Som udgangspunkt vil xfds-validate selv prøve at lytte på `input|select` `blur` og begynde at validere herefter, man kan også slå dette fra `useAutoDirty=false` og selv angive `dirty`.
 
-
-
-
 # 0.3.6
 
 - Refak af tooltip
@@ -147,14 +150,17 @@ Dvs. det er nu muligt at oprette et nyt projekt:
 ```
 npm create vue@3
 ```
+
 Og gennemføre alm. installation process for DKFDS-Vue3
 
-
 # 0.3.5
+
 Extra komponenter tilføjet
+
 - xfds-form-group
 
 Refak Extra komponenter, gør nu brug af xfds-form-group
+
 - xfds-form-checkbox-list
 - xfds-form-dropdown
 - xfds-form-input-number
@@ -163,37 +169,39 @@ Refak Extra komponenter, gør nu brug af xfds-form-group
 - xfds-form-textera
 
 ```html
- <xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
+<xfds-form-group label="Bil mærke" hint="Angiv et mærke" tooltip="Hjælp i tooltip">
   <fds-input v-model="maerke" /> // hvilkårlig input
 </xfds-form-group>
 ```
 
-
 # 0.3.4
+
 Core komponenter rettet
+
 - fds-menu
 - fds-trin - benytter nu også fds-menu
 
 Extra komponenter tilføjet
+
 - xfds-menu
 
 Simplificering af brugen af menu (se eksempel project for mere):
 
 ```html
- <fds-menu>
+<fds-menu>
   <fds-menu-item icon="done" id="alpha" @navigate="idClickedExample = $event">
     Alpha
   </fds-menu-item>
-  <fds-menu-item id="beta" @navigate="idClickedExample = $event" active>
-    Beta
-  </fds-menu-item>
+  <fds-menu-item id="beta" @navigate="idClickedExample = $event" active> Beta </fds-menu-item>
 </fds-menu>
 ```
 
 # 0.3.3
+
 Refak - https://github.com/whitewillow/dkfds-vue3/issues/13
 
 Core komponenter rettet
+
 - checkbox
 - dropdown
 - formgroup auto id på underliggende elementer
@@ -202,11 +210,13 @@ Core komponenter rettet
 - fejlopsummering
 
 Extra komponenter tilføjet
+
 - xfds-checkbox
 - xfds-dropdown
 - xfds-faneblade
 
 Eksempel project
+
 - Diverse justeringer for at matche ovenstående ændringer
 - Udvidet fds-formgroup beskrivelse
 
@@ -214,16 +224,12 @@ Kraftig simplificering af form brugen.
 Eksempel:
 
 ```html
-<fds-formgroup> // udstiller ID
-  <fds-label> Fornavn </fds-label> // fanger udstillet og sætter selv "for" attr
-  <fds-tooltip class="ml-2">
-    Hjælpende <b>tekst</b>
-  </fds-tooltip>
+<fds-formgroup>
+  // udstiller ID <fds-label> Fornavn </fds-label> // fanger udstillet og sætter selv "for" attr
+  <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
   <fds-input v-model="txtFornavn" /> // fanger udstillet ID
-  <fds-input-limit
-    :modelValue="txtFornavn"
-    :limit="10" />
+  <fds-input-limit :modelValue="txtFornavn" :limit="10" />
 </fds-formgroup>
 ```
 
@@ -239,7 +245,6 @@ Eksempel:
 - Eksempelside paginering
 - Opdateret Datovælger
 - Opdateret Datoangivelse
-
 
 # 0.2.3
 
@@ -265,15 +270,12 @@ Eksempel:
 - Eksempelside opdateret med Tjekboks
 - Diverse oprydning
 
-
 # 0.2.0
 
 - Brug fds-overflow-menu i primary nav (top menu)
 - Demo side oprettet i github
 - Datoangivelse WIP
 - Datovælger WIP
-
-
 
 # 0.1.7
 

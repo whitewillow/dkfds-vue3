@@ -24,7 +24,9 @@ Med over 40 Standard komponenter og flere ekstra komponenter til at hjælpe dig 
 
 # Demo side
 
-Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example) (Stadig under udarbejdelse)
+**Se [DKFDS-Vue3 Demo](https://whitewillow.github.io/dkfds-vue3-example)** (Stadig under udarbejdelse) - herunder også hvordan komponenter bruges.
+
+Benyt også gerne demo project som reference: [DKFDS-Vue3 Demo Github](https://github.com/whitewillow/dkfds-vue3/tree/main/examples/demo)
 
 <br />
 <br />
