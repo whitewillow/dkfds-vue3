@@ -5,7 +5,6 @@
     class="form-select"
     :class="{ dirty: dirty }"
     :name="formid"
-    v-bind="refValue"
     @change="onInput"
     @blur="onDirty"
   >
@@ -34,7 +33,6 @@ const emit = defineEmits(['update:modelValue', 'dirty', 'change']);
 
 const { formid } = formId(props.id, true);
 const refElement = ref(null);
-const refValue = ref(props.modelValue);
 const dirty = ref(false);
 
 const onInput = (event: Event) =>

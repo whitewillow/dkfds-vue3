@@ -3,10 +3,8 @@
     :id="formid"
     class="form-select"
     :name="formid"
-    v-bind="refValue"
     @change="onInput"
-    @blur="onDirty"
-  >
+    @blur="onDirty">
     <option
       v-if="optionHeader"
       :value="refValue">
@@ -25,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from 'vue';
+import { defineProps, defineEmits, ref, watch } from 'vue';
 import { FdsOptionItem } from 'dkfds-vue3-utils';
 import { formId } from 'dkfds-vue3-utils';
 
@@ -67,6 +65,16 @@ const onDirty = () => {
 
 const onInput = (event: Event) =>
   emit('update:modelValue', (event?.target as HTMLInputElement).value);
+
+watch(
+  () => [props.modelValue],
+  () => {
+    refValue.value = props.modelValue;
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>

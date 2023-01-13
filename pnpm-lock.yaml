@@ -109,9 +109,9 @@ importers:
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
       dkfds: ^8.2.0
-      dkfds-vue3-core: 0.4.0
-      dkfds-vue3-extra: 0.4.0
-      dkfds-vue3-utils: 0.4.0
+      dkfds-vue3-core: workspace:0.4.0
+      dkfds-vue3-extra: workspace:0.4.0
+      dkfds-vue3-utils: workspace:0.4.0
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-vue: ^9.7.0
@@ -156,8 +156,8 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.42.1
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
-      dkfds-vue3-core: 0.4.0
-      dkfds-vue3-utils: 0.4.0
+      dkfds-vue3-core: workspace:0.4.0
+      dkfds-vue3-utils: workspace:0.4.0
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-vue: ^9.7.0
