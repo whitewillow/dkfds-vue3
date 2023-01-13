@@ -1,8 +1,12 @@
 {
   "name": "dkfds-vue3",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "module": "./core/index.mjs",
   "types": "core/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitewillow/dkfds-vue3"
+  },
   "exports": {
     ".": {
       "import": "./core/index.mjs",
