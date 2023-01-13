@@ -20,7 +20,7 @@
       "import": "./utils/index.mjs",
       "types": "./utils/index.d.ts"
     },
-    "./core/src/assets/*": "./core/assets/*",
+    "./core/assets/*": "./core/src/assets/*",
     "./package.json": "./package.json"
   },
   "scripts": {
