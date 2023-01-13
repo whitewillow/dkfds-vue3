@@ -1,0 +1,9 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
+}

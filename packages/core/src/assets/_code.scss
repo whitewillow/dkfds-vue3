@@ -1,0 +1,44 @@
+@import '_code-color';
+
+fieldset.code {
+  margin-top: 24px;
+  margin-bottom: 1.6em;
+  overflow: auto;
+  page-break-inside: avoid;
+  display: block;
+  word-wrap: break-word;
+
+  background: $preview-background-color;
+  border: 1px solid #ddd;
+  border-left: 3px solid $preview-border-color;
+
+  > legend {
+    background-color: $preview-legend-background-color;
+    color: $preview-legend-color;
+    padding: 4px 6px 2px 6px;
+    margin-left: 24px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  > pre {
+    color: $preview-color;
+    font-size: 0.8em;
+    font-weight: 200;
+    padding: 1em 1.5em;
+  }
+}
+
+code {
+  color: $preview-color;
+  background-color: $preview-background-color;
+  font-size: 0.8em;
+  padding: 2px 4px;
+}
+
+/*
+
+ background-color: #101322;
+ background: linear-gradient(9deg, rgba(16, 19, 34, 1) 27%, rgba(25, 31, 57, 1) 88%);
+*/

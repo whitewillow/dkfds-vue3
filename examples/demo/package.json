@@ -1,0 +1,32 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "dkfds": "^8.2.0",
+    "dkfds-vue3": "0.4.2",
+    "fast-sort": "^3.2.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.12",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitest/coverage-c8": "^0.25.6",
+    "@vue/test-utils": "^2.2.6",
+    "jsdom": "^20.0.3",
+    "sass": "^1.56.1",
+    "typescript": "^4.9.4",
+    "vite": "^3.2.5",
+    "vitest": "^0.25.6",
+    "vue-tsc": "^1.0.11"
+  }
+}
