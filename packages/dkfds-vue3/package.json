@@ -1,6 +1,6 @@
 {
   "name": "dkfds-vue3",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "module": "./core/index.mjs",
   "types": "core/index.d.ts",
   "repository": {
