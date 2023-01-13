@@ -1,0 +1,16 @@
+.accordion-group {
+  > div {
+    margin-bottom: 0.8rem;
+  }
+}
+
+.accordion-single {
+  @for $i from 2 through 6 {
+    h#{7 - $i} {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      letter-spacing: normal;
+      max-width: none;
+    }
+  }
+}
