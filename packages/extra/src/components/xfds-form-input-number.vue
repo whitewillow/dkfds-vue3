@@ -15,6 +15,7 @@
         attrs,
         suffix,
         prefix,
+        readonly,
       }"
       @update:model-value="handleInput"
       @dirty="touchedEvent"
@@ -24,7 +25,7 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps, ref, useAttrs } from 'vue';
-import { FdsInputNumber } from 'dkfds-vue3-core'
+import { FdsInputNumber } from 'dkfds-vue3-core';
 const attrs = useAttrs();
 
 const props = defineProps({
@@ -51,6 +52,10 @@ const props = defineProps({
   errorMessage: {
     type: String,
     default: null,
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
   },
   modelValue: {
     type: [Number, String],
