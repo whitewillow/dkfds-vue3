@@ -2,7 +2,7 @@
   <button
     class="button mr-4"
     :class="[`button-${variant}`]"
-    :disabled="showSpinner"
+    :disabled="showSpinner || disabled"
     @click="emit('click', $event)"
   >
     <div
@@ -56,6 +56,12 @@ defineProps({
     type: Boolean,
     default: false,
   },
+
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+
   /**
    * Spinner tekst - erstatter alm tekst
    * */

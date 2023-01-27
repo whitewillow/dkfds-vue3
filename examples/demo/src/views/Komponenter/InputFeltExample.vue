@@ -14,8 +14,7 @@
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-input
             id="formid"
-            v-model="txtFornavn"
-            readonly></fds-input>
+            v-model="txtFornavn" />
         </fds-formgroup>
 
         <fds-pre
