@@ -2,6 +2,12 @@
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
+# 0.4.7
+
+- input kunne ikke lave readonly
+- spinner knap manglede disabled
+-
+
 # 0.4.5+
 
 - Breaking changes - se forsiden for "Installation"

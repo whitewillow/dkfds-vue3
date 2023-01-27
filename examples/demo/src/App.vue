@@ -98,8 +98,8 @@
         <svg
           class="icon-svg"
           aria-hidden="true">
-          <use xlink:href="#close"></use>
-        </svg>Luk
+          <use xlink:href="#close"></use></svg
+        >Luk
       </button>
 
       <!-- Start: Hovedmenu -->
@@ -361,7 +361,6 @@
 
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
-// import DKFDS from 'dkfds';
 import { navigation } from 'dkfds-vue3/utils';
 
 const route = useRoute();
