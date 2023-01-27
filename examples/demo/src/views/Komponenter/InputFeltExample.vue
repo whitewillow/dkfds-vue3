@@ -14,7 +14,8 @@
           <fds-hint>Indtast fornavn</fds-hint>
           <fds-input
             id="formid"
-            v-model="txtFornavn"></fds-input>
+            v-model="txtFornavn"
+            readonly></fds-input>
         </fds-formgroup>
 
         <fds-pre
@@ -218,7 +219,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const txtFornavn = ref('');
+const txtFornavn = ref('Anders');
 const txtEfternavn = ref('');
 const txtPre = ref('');
 const txtSuffix = ref('');

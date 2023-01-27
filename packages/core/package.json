@@ -1,6 +1,6 @@
 {
   "name": "dkfds-vue3-core",
-  "version": "0.4.1",
+  "version": "0.4.7",
   "module": "./dist/dkfds-vue3-core.mjs",
   "types": "dist/index.d.ts",
   "exports": {
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "dkfds": "^8.2.0",
-    "dkfds-vue3-utils": "0.4.1"
+    "dkfds-vue3-utils": "workspace:0.4.7"
   },
   "devDependencies": {
     "@types/node": "^18.11.12",
