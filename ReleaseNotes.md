@@ -6,7 +6,7 @@ https://github.com/whitewillow/dkfds-vue3/issues
 
 - fds-paginering - fejl rettet - udskrev ikke paging
 - opdateret dkfds-vue3 til at benytte dkfds v8.2.1
--
+- opdateret demo for navigation - mere dok
 
 # 0.4.7
 
