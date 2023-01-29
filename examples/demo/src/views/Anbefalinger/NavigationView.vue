@@ -13,14 +13,14 @@
               role="menu">
               <fds-xtnd-nav-item-route
                 to-name="forside"
-                :current-route-name="$route.name?.toString()"
+                :current-route-name="route.name?.toString()"
                 link-title="Link title"
               >
                 Forside
               </fds-xtnd-nav-item-route>
               <fds-xtnd-nav-item-route
                 to-name="anbefalingernavigation"
-                :current-route-name="$route.name?.toString()"
+                :current-route-name="route.name?.toString()"
                 link-title="Link title"
               >
                 Denne side
@@ -51,20 +51,28 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
 const code = `
+import { useRoute } from 'vue-router';
+const route = useRoute();
+
+
 <div class="navbar navbar-primary">
     <div class="navbar-inner container">
         <ul class="nav-primary" role="menu">
             <fds-nav-item-route
                 toName="forside"
-                :current-route-name="$route.name?.toString()"
+                :current-route-name="route.name?.toString()"
                 linkTitle="Link title"
             >
                 Forside
             </fds-nav-item-route>
             <fds-nav-item-route
                 toName="anbefalingernavigation"
-                :current-route-name="$route.name?.toString()"
+                :current-route-name="route.name?.toString()"
                 linkTitle="Link title"
             >
                 Denne side
