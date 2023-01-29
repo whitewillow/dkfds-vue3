@@ -138,19 +138,12 @@ const show = ref(true);
 
 const getTotalPages = computed((): Array<number> => {
   const totalPages = Math.abs(Math.ceil(props.list.length / props.pageSize));
-  return [...Array(totalPages)].map((i) => i + 1);
+  return Array.from({ length: totalPages }, (value, key) => key + 1);
 });
 
 const lastPage = computed((): number => {
   return getTotalPages.value.length;
 });
-
-// const focusButton = (id: number) => {
-//   nextTick(() => {
-//     const e = document.querySelector(`ul.pagination>li[id="${id}"]>button`) as HTMLElement;
-//     e.focus();
-//   });
-// };
 
 const emitList = (skip = 0) => {
   emit('filteredPage', props.list.length > 0 ? props.list.slice(skip, skip + props.pageSize) : []);
