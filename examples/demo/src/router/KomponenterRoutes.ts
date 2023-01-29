@@ -83,6 +83,11 @@ const komponenterRoutes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Komponenter/FejlopsummeringExample.vue'),
       },
       {
+        path: 'ikon',
+        name: 'komponentikon',
+        component: () => import('@/views/Komponenter/IkonExample.vue'),
+      },
+      {
         path: 'inputfelter',
         name: 'komponentfelter',
         component: () => import('@/views/Komponenter/InputFeltExample.vue'),
