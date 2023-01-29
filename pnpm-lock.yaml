@@ -36,7 +36,7 @@ importers:
       '@vitejs/plugin-vue': ^3.2.0
       '@vitest/coverage-c8': ^0.25.6
       '@vue/test-utils': ^2.2.6
-      dkfds: ^8.2.0
+      dkfds: ^8.2.1
       dkfds-vue3: 0.4.7
       fast-sort: ^3.2.0
       jsdom: ^20.0.3
@@ -49,7 +49,7 @@ importers:
       vue-tsc: ^1.0.11
       vuex: ^4.1.0
     dependencies:
-      dkfds: 8.2.0
+      dkfds: 8.2.1
       dkfds-vue3: link:../../packages/dkfds-vue3
       fast-sort: 3.2.0
       vue: 3.2.45
@@ -73,7 +73,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.42.1
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
-      dkfds: ^8.2.0
+      dkfds: ^8.2.1
       dkfds-vue3-utils: 0.4.7
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
@@ -85,7 +85,7 @@ importers:
       vue: ^3.2.44
       vue-tsc: ^1.0.11
     dependencies:
-      dkfds: 8.2.0
+      dkfds: 8.2.1
       dkfds-vue3-utils: link:../utils
     devDependencies:
       '@types/node': 18.11.12
@@ -1179,6 +1179,11 @@ packages:
 
   /dkfds/8.2.0:
     resolution: {integrity: sha512-vAi+c3rKuygXBQ6TYKkU0aedpF4SufqJTD/3SVtKVQJ+IQE7vUt5IfojsFIjEchtwsFNlJkT5AYLQI2gC/uIGA==}
+    engines: {node: '>= 4'}
+    dev: false
+
+  /dkfds/8.2.1:
+    resolution: {integrity: sha512-g7y4i5cvyvHxxj4Fdpb5EdO+Q9Z3LAPmWZCaUIbZt3KppdsThMfxGNL9UamRQsLz5x+2ZapvIKdXOefPi+50xA==}
     engines: {node: '>= 4'}
     dev: false
 

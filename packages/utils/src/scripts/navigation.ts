@@ -32,8 +32,6 @@ class Navigation {
    * @param {HTMLElement} trapContainer
    */
   static focusTrapInit(trapContainer: HTMLElement) {
-    console.warn('focusTrapInit', trapContainer);
-
     // Find all focusable children
     const focusableElementsString =
       'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
@@ -91,12 +89,10 @@ class Navigation {
 
   static toggleNav(incActive: boolean | Event) {
     const { body } = document;
-    console.warn('incActive', incActive);
 
     const active: boolean = typeof incActive === 'boolean' ? incActive : !Navigation.isActive();
 
     body.classList.toggle(ACTIVE_CLASS, active);
-    console.warn('toggleNav', ACTIVE_CLASS, active);
 
     Navigation.selectStuff(TOGGLES).forEach((el) => el.classList.toggle(VISIBLE_CLASS, active));
 
