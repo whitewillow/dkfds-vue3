@@ -23,15 +23,23 @@ to
 
 `"0.4.7"`
 
-og push branch
+and push branch (otherwise publish wont see versions).
 
-For hver folder :
+## Publish
+
+For each folder :
 
 - Utils
 - Core
 - Extra
-- DKFDS-Vue3 (har ikke build)
+- DKFDS-Vue3 (dont have build)
 
 `pnpm run build`
 
 `pnpm publish`
+
+## Demo project
+
+Deploye with:
+
+`pnpm run buildpages`

@@ -75,7 +75,7 @@
         <fds-funktionslink
           icon="contact-support"
           title="Klik for at gå til om os"
-          @click="$router.push({ name: 'about' })"
+          @click="router.push({ name: 'about' })"
         >
           Funktionslink med ikon - Om os
         </fds-funktionslink>
@@ -90,6 +90,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const funktionsLinkClick = ref(0);
 const handleFunkClick = () => {
