@@ -57,8 +57,12 @@ const route = useRoute();
 
 const code = `
 import { useRoute } from 'vue-router';
+import { navigation } from 'dkfds-vue3/utils';
+
 const route = useRoute();
 
+// Sørger for at "burger menu" virker
+new navigation().init();
 
 <div class="navbar navbar-primary">
     <div class="navbar-inner container">

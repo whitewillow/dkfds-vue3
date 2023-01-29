@@ -64,6 +64,12 @@
 
 <script setup lang="ts">
 const code = `
+import { navigation } from 'dkfds-vue3/utils';
+
+// Sørger for at "burger menu" virker
+new navigation().init();
+
+
 <div class="navbar navbar-primary">
 <div class="navbar-inner container">
   <ul class="nav-primary" role="menu">

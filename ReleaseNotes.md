@@ -2,6 +2,12 @@
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
+# 0.4.8
+
+- fds-paginering - fejl rettet - udskrev ikke paging
+- opdateret dkfds-vue3 til at benytte dkfds v8.2.1
+-
+
 # 0.4.7
 
 - input kunne ikke lave readonly
