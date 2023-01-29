@@ -5,16 +5,12 @@
       href="https://designsystem.dk/komponenter/inputfelter/">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid">
-            Fornavn
-          </fds-label>
+          <fds-label> Fornavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input
-            id="formid"
-            v-model="txtFornavn"></fds-input>
+          <fds-input v-model="txtFornavn" />
         </fds-formgroup>
 
         <fds-pre
@@ -67,6 +63,12 @@
               <td><code>null</code></td>
               <td>Indikator/tydeliggørelse af data i enden - eg. stk, kr, m.m.</td>
             </tr>
+            <tr>
+              <td><code>readonly</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
 
@@ -90,16 +92,12 @@
     <fds-preview header="Karakterbegrænsning">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid">
-            Efternavn
-          </fds-label>
+          <fds-label> Efternavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input
-            id="formid"
-            v-model="txtEfternavn"></fds-input>
+          <fds-input v-model="txtEfternavn"></fds-input>
           <fds-input-limit
             :model-value="txtEfternavn"
             :limit="20" />
@@ -167,6 +165,28 @@
       </fds-preview-code>
     </fds-preview>
 
+    <fds-preview header="Readonly">
+      <fds-preview-item>
+        <fds-formgroup>
+          <fds-label> Fornavn </fds-label>
+          <fds-tooltip class="ml-2">
+            Hjælpende <b>tekst</b>
+          </fds-tooltip>
+          <fds-input
+            v-model="txtFornavn"
+            readonly></fds-input>
+        </fds-formgroup>
+
+        <fds-pre
+          header="v-model"
+          :json="{ txtFornavn }" />
+      </fds-preview-item>
+
+      <fds-preview-code>
+        <pre v-text="readonly"></pre>
+      </fds-preview-code>
+    </fds-preview>
+
     <fds-preview header="Søg knap">
       <fds-preview-item>
         <fds-formgroup>
@@ -218,7 +238,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const txtFornavn = ref('');
+const txtFornavn = ref('Anders');
 const txtEfternavn = ref('');
 const txtPre = ref('');
 const txtSuffix = ref('');
@@ -231,10 +251,10 @@ const code = `
 
 const codeLimit = `
 <fds-formgroup>
-  <fds-label id="formid"> Efternavn </fds-label>
+  <fds-label> Efternavn </fds-label>
   <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
-  <fds-input v-model="txtEfternavn" id="formid"></fds-input>
+  <fds-input v-model="txtEfternavn"></fds-input>
   <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
 </fds-formgroup>
 `;
@@ -263,4 +283,12 @@ const codeInputKnap = `
   </template>
 </fds-input>
 `;
+
+const readonly = `
+<fds-formgroup>
+ ...
+ <fds-input
+  v-model="txtFornavn"
+  readonly />
+</fds-formgroup>`;
 </script>

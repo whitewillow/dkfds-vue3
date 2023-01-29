@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/utils';
 import { ref, watch } from 'vue';
-import {navigationService} from 'dkfds-vue3/extra';
+import { navigationService } from 'dkfds-vue3/extra';
 import { useRoute, useRouter } from 'vue-router';
 import { sort } from 'fast-sort';
 
@@ -115,6 +115,10 @@ const navigationList = ref<Array<FdsNavigationItem>>(
       key: 'komponentheaders',
       title: 'Headers',
       icon: 'engineering',
+    },
+    {
+      key: 'komponentikon',
+      title: 'Ikoner',
     },
     {
       key: 'komponentfelter',

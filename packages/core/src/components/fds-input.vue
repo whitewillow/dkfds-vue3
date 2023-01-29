@@ -10,6 +10,7 @@
       v-bind="attrs"
       :id="formid"
       v-model="value"
+      type="text"
       class="form-input d-flex"
       :name="formid"
       @input="handleInput"

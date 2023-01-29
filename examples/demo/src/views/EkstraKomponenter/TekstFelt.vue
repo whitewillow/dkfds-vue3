@@ -63,7 +63,7 @@ import { ref } from 'vue';
 import { charactersMinLength, hasContent } from 'dkfds-vue3/utils';
 
 const user = ref({
-  name: '',
+  name: 'Anders',
   adress: '',
   city: '',
   search: '',

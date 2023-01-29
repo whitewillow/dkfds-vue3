@@ -15,6 +15,7 @@
         attrs,
         suffix,
         prefix,
+        readonly,
       }"
       @update:model-value="handleInput"
       @dirty="touchedEvent"
@@ -30,7 +31,7 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps, ref, useAttrs, watch } from 'vue';
-import { FdsInput } from 'dkfds-vue3-core'
+import { FdsInput } from 'dkfds-vue3-core';
 const attrs = useAttrs();
 
 const props = defineProps({
@@ -53,6 +54,10 @@ const props = defineProps({
   isValid: {
     type: Boolean,
     default: true,
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
   },
   errorMessage: {
     type: String,
