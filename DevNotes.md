@@ -23,5 +23,15 @@ to
 
 `"0.4.7"`
 
-pnpm run build
-pnpm publish
+og push branch
+
+For hver folder :
+
+- Utils
+- Core
+- Extra
+- DKFDS-Vue3 (har ikke build)
+
+`pnpm run build`
+
+`pnpm publish`

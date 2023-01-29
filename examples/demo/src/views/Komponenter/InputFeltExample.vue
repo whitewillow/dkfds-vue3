@@ -5,16 +5,12 @@
       href="https://designsystem.dk/komponenter/inputfelter/">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid">
-            Fornavn
-          </fds-label>
+          <fds-label> Fornavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input
-            id="formid"
-            v-model="txtFornavn" />
+          <fds-input v-model="txtFornavn" />
         </fds-formgroup>
 
         <fds-pre
@@ -96,16 +92,12 @@
     <fds-preview header="Karakterbegrænsning">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid">
-            Efternavn
-          </fds-label>
+          <fds-label> Efternavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-hint>Indtast fornavn</fds-hint>
-          <fds-input
-            id="formid"
-            v-model="txtEfternavn"></fds-input>
+          <fds-input v-model="txtEfternavn"></fds-input>
           <fds-input-limit
             :model-value="txtEfternavn"
             :limit="20" />
@@ -176,14 +168,11 @@
     <fds-preview header="Readonly">
       <fds-preview-item>
         <fds-formgroup>
-          <fds-label id="formid">
-            Fornavn
-          </fds-label>
+          <fds-label> Fornavn </fds-label>
           <fds-tooltip class="ml-2">
             Hjælpende <b>tekst</b>
           </fds-tooltip>
           <fds-input
-            id="formid"
             v-model="txtFornavn"
             readonly></fds-input>
         </fds-formgroup>
@@ -262,10 +251,10 @@ const code = `
 
 const codeLimit = `
 <fds-formgroup>
-  <fds-label id="formid"> Efternavn </fds-label>
+  <fds-label> Efternavn </fds-label>
   <fds-tooltip class="ml-2"> Hjælpende <b>tekst</b> </fds-tooltip>
   <fds-hint>Indtast fornavn</fds-hint>
-  <fds-input v-model="txtEfternavn" id="formid"></fds-input>
+  <fds-input v-model="txtEfternavn"></fds-input>
   <fds-input-limit :modelValue="txtEfternavn" :limit="20" />
 </fds-formgroup>
 `;
@@ -297,15 +286,9 @@ const codeInputKnap = `
 
 const readonly = `
 <fds-formgroup>
-  <fds-label id="formid">
-    Efternavn
-  </fds-label>
-  <fds-tooltip class="ml-2">
-    Hjælpende <b>tekst</b>
-  </fds-tooltip>
-  <fds-input
-    id="formid"
-    v-model="txtFornavn"
-    readonly></fds-input>
+ ...
+ <fds-input
+  v-model="txtFornavn"
+  readonly />
 </fds-formgroup>`;
 </script>

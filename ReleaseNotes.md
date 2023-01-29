@@ -6,7 +6,8 @@ https://github.com/whitewillow/dkfds-vue3/issues
 
 - input kunne ikke lave readonly
 - spinner knap manglede disabled
--
+- fds-ikon - simpel ikon visning
+- oprydning
 
 # 0.4.5+
 
