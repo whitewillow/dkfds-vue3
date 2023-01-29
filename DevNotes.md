@@ -22,3 +22,6 @@ Remember to change workspace version to correct version for each package
 to
 
 `"0.4.7"`
+
+pnpm run build
+pnpm publish
