@@ -2,9 +2,6 @@
   <section>
     <fds-preview header="Ekstra Eksempel">
       <fds-preview-item>
-        <fds-button @click="changeActive">
-          ChangeActive
-        </fds-button>
         <xfds-trinindikator
           v-model="trin"
           @navigate="trinNavKey = $event" />

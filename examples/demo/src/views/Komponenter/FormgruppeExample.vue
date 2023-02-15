@@ -2,9 +2,6 @@
   <section>
     <fds-preview header="Eksempel">
       <fds-preview-item href="https://designsystem.dk/komponenter/inputfelter/">
-        <fds-button @click="user.name = 'asdsd'">
-          Sæt fornavn
-        </fds-button>
         <fds-formgroup>
           <fds-label> Navn </fds-label>
           <fds-tooltip class="ml-2">
