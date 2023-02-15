@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "dkfds": "^8.2.1",
-    "dkfds-vue3": "0.4.8",
+    "dkfds-vue3": "workspace:*",
     "fast-sort": "^3.2.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

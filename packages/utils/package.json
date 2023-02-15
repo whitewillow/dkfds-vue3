@@ -1,6 +1,6 @@
 {
   "name": "dkfds-vue3-utils",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "module": "dist/dkfds-vue3-utils.mjs",
   "files": [
     "dist/*"
