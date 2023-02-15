@@ -79,6 +79,11 @@ const ekstraKomponenterRoutes: Array<RouteRecordRaw> = [
         name: 'ekstraprogressbar',
         component: () => import('@/views/EkstraKomponenter/ProgressBar.vue'),
       },
+      {
+        path: 'trinindikator',
+        name: 'ekstratrinindikator',
+        component: () => import('@/views/EkstraKomponenter/Trinindikatorer.vue'),
+      },
     ],
   },
 ];

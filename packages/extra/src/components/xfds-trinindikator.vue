@@ -1,45 +1,27 @@
 <template>
-  <div class="overflow-menu overflow-menu--open-right">
-    <button
-      :id="`button_${formid}`"
-      class="button-overflow-menu js-dropdown"
-      :data-js-target="`#${formid}`"
-      aria-haspopup="true"
-      aria-expanded="false"
+  <fds-trinindikator-group
+    :id="id"
+    :size="size"
+    :icon="icon">
+    <template #header>
+      {{ header }} {{ currentStep + 1 }} af {{ mVal.length }}
+    </template>
+    <fds-trinindikator-item
+      v-for="(item, index) of tabsList"
+      :id="item.key"
+      :key="item.key"
+      role="none"
+      :class="[{ disabled: item.disabled }]"
+      :active="item.active"
+      :icon="item.icon"
+      :hint="item.hint"
+      :href="item.href"
+      :index="index + 1"
+      @navigate="navigate(item)"
     >
-      {{ header }} {{ currentStepIndex + 1 }} af {{ mVal.length }}
-      <svg
-        class="icon-svg"
-        aria-hidden="true"
-        focusable="false">
-        <use :xlink:href="`#${icon}`"></use>
-      </svg>
-    </button>
-    <div
-      :id="formid"
-      class="overflow-menu-inner"
-      aria-hidden="true">
-      <nav>
-        <fds-menu>
-          <fds-menu-item
-            v-for="(item, index) of tabsList"
-            :id="item.key"
-            :key="item.key"
-            role="none"
-            :class="[{ disabled: item.disabled }]"
-            :active="item.active"
-            :icon="item.icon"
-            :hint="item.hint"
-            :href="item.href"
-            :index="index + 1"
-            @navigate="navigate(item)"
-          >
-            {{ item.title }}
-          </fds-menu-item>
-        </fds-menu>
-      </nav>
-    </div>
-  </div>
+      {{ item.title }}
+    </fds-trinindikator-item>
+  </fds-trinindikator-group>
 </template>
 
 <script setup lang="ts">
@@ -52,10 +34,8 @@
  * */
 
 import { FdsNavigationItem } from 'dkfds-vue3-utils';
-import { defineProps, ref, defineEmits, onMounted, computed } from 'vue';
+import { defineProps, ref, defineEmits, computed, watch } from 'vue';
 import navigationService from './../service/navigation.service';
-import { FdsMenu, FdsMenuItem } from 'dkfds-vue3-core'
-import { formId, dropdown } from 'dkfds-vue3-utils';
 
 const props = defineProps({
   modelValue: {
@@ -83,16 +63,17 @@ const props = defineProps({
     type: String,
     default: 'arrow-drop-down',
   },
+  size: {
+    type: String,
+    default: 'small',
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'navigate']);
 
-const { formid } = formId(props.id, true);
-
 const mVal = computed(() => props.modelValue ?? []);
 const currentKey = ref('');
 const tabsList = ref<Array<FdsNavigationItem>>(mVal.value.filter((f) => !f.ignore));
-const currentStepIndex = ref(0);
 
 const navigate = (item: FdsNavigationItem) => {
   if (item.disabled) {
@@ -101,17 +82,21 @@ const navigate = (item: FdsNavigationItem) => {
 
   tabsList.value = navigationService.setActive(tabsList.value, item.key);
   currentKey.value = item.key;
-  currentStepIndex.value = tabsList.value.findIndex((i) => i.key === item.key);
 
   emit('update:modelValue', tabsList.value);
   emit('navigate', currentKey.value);
 };
 
-onMounted(async () => {
-  const item = navigationService.findFirstActiveItem(tabsList.value, props.navigateFirst);
-  if (item) {
-    navigate(item);
-  }
-  new dropdown(document.getElementById(`button_${formid.value}`)).init();
-});
+const currentStep = computed(() => tabsList.value.findIndex((f) => f.active));
+const currentActiveKey = computed(() => props.modelValue.find((f) => f.active).key);
+
+watch(
+  () => [props.modelValue],
+  () => {
+    emit('navigate', currentActiveKey.value);
+  },
+  {
+    immediate: true,
+  },
+);
 </script>

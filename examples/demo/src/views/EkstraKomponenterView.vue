@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { FdsNavigationItem } from 'dkfds-vue3/utils';
-import {navigationService} from 'dkfds-vue3/extra';
+import { navigationService } from 'dkfds-vue3/extra';
 import { ref, watch } from 'vue';
 import { sort } from 'fast-sort';
 import { useRouter, useRoute } from 'vue-router';
@@ -90,6 +90,10 @@ const navigationList = ref<Array<FdsNavigationItem>>(
     {
       key: 'ekstravenstremenu',
       title: 'Venstremenu',
+    },
+    {
+      key: 'ekstratrinindikator',
+      title: 'Trindindikator',
     },
   ] as FdsNavigationItem[]).asc((a) => a.title),
 );
