@@ -44,131 +44,140 @@
       </fds-preview-code>
 
       <fds-preview-item>
-        <table class="table table--compact">
-          <thead>
-            <tr>
-              <th>Props</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Beskrivelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>modelValue</code></td>
-              <td><code>string, number, array</code></td>
-              <td><code>null</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>validations</code></td>
-              <td><code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code></td>
-              <td>
-                <code>
-                  [(input: unknown) => { if (!input) { return 'Indtast data'; } return null;
-                  }]</code
-                >
-              </td>
-              <td>Et array af valideringsmetoder</td>
-            </tr>
-            <tr>
-              <td><code>id</code></td>
-              <td><code>string</code></td>
-              <td><code>null (auto id)</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>dirty</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td>Om feltet er blevet berørt</td>
-            </tr>
-            <tr>
-              <td><code>useAutoDirty</code></td>
-              <td><code>boolean</code></td>
-              <td><code>true</code></td>
-              <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table--responsive-scroll">
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th>Props</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>modelValue</code></td>
+                <td><code>string, number, array</code></td>
+                <td><code>null</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>validations</code></td>
+                <td><code>Array'&lt;'(x?: unknown) => string | null'&gt;'</code></td>
+                <td>
+                  <code>
+                    [(input: unknown) => { if (!input) { return 'Indtast data'; } return null;
+                    }]</code
+                  >
+                </td>
+                <td>Et array af valideringsmetoder</td>
+              </tr>
+              <tr>
+                <td><code>id</code></td>
+                <td><code>string</code></td>
+                <td><code>null (auto id)</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>dirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Om feltet er blevet berørt</td>
+              </tr>
+              <tr>
+                <td><code>useAutoDirty</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Om underliggende input eller select felt er blevet berørt (blur event)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <table class="table table--compact">
-          <thead>
-            <tr>
-              <th>Events</th>
-              <th>Returns</th>
-              <th>Beskrivelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>@validated</code></td>
-              <td>
-                ValidatorItem:
-                <code>
-                  { key: string; type: string; reasons?: string[]; valid: boolean; dirty: boolean; }
-                </code>
-              </td>
-              <td>
-                Hver gang input valideres returneres et ValidatorItem object. Der indeholder den
-                fulde sandhed
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table--responsive-scroll">
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th>Events</th>
+                <th>Returns</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>@validated</code></td>
+                <td>
+                  ValidatorItem:
+                  <code>
+                    { key: string; type: string; reasons?: string[]; valid: boolean; dirty: boolean;
+                    }
+                  </code>
+                </td>
+                <td>
+                  Hver gang input valideres returneres et ValidatorItem object. Der indeholder den
+                  fulde sandhed
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <table class="table table--compact">
-          <thead>
-            <tr>
-              <th>Slot #default binds</th>
-              <th>Beskrivelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>isValidWaitForDirty</code></td>
-              <td>Er form valid - Bliver kun aktiveret efter underligge input/select er blur</td>
-            </tr>
-            <tr>
-              <td><code>isValid</code></td>
-              <td>Er form valid</td>
-            </tr>
-            <tr>
-              <td><code>errorMessage</code></td>
-              <td>Først fundne fejlbesked</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table--responsive-scroll">
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th>Slot #default binds</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isValidWaitForDirty</code></td>
+                <td>Er form valid - Bliver kun aktiveret efter underligge input/select er blur</td>
+              </tr>
+              <tr>
+                <td><code>isValid</code></td>
+                <td>Er form valid</td>
+              </tr>
+              <tr>
+                <td><code>errorMessage</code></td>
+                <td>Først fundne fejlbesked</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p class="h4">
           Provide
         </p>
-        <table class="table table--compact">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Beskrivelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>provideIsValid</code></td>
-              <td><code>boolean</code></td>
-              <td><code>true</code></td>
-              <td>Er alle validations valide</td>
-            </tr>
-            <tr>
-              <td><code>provideErrorMessage</code></td>
-              <td><code>string</code></td>
-              <td>
-                <code> ''</code>
-              </td>
-              <td>Først fundne fejl</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table--responsive-scroll">
+          <table class="table table--compact">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Beskrivelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>provideIsValid</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>Er alle validations valide</td>
+              </tr>
+              <tr>
+                <td><code>provideErrorMessage</code></td>
+                <td><code>string</code></td>
+                <td>
+                  <code> ''</code>
+                </td>
+                <td>Først fundne fejl</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </fds-preview-item>
 
       <hr />

@@ -95,11 +95,8 @@
       <button
         class="function-link button-menu-close js-menu-close"
         title="Luk mobil menu">
-        <svg
-          class="icon-svg"
-          aria-hidden="true">
-          <use xlink:href="#close"></use></svg
-        >Luk
+        <fds-ikon icon="close" />
+        Luk
       </button>
 
       <!-- Start: Hovedmenu -->
