@@ -154,7 +154,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const trinSize = ref(false);
+const trinSize = ref(true);
 const trinNavigationsId = ref('1');
 const code = `
 <fds-trinindikator-group :size="trinSize ? 'large' : 'small'">
