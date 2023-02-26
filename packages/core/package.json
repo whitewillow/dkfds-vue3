@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "dkfds": "^8.2.1",
-    "dkfds-vue3-utils": "workspace:0.4.9"
+    "dkfds-vue3-utils": "0.4.9"
   },
   "devDependencies": {
     "@types/node": "^18.11.12",
