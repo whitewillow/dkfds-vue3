@@ -2,6 +2,11 @@
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
+# 0.4.9
+
+- Trinindikator default large size (fuld bredde når der er plads (breakpoint lg))
+- Alle inputs lytter på model changes
+
 # 0.4.8
 
 - fds-paginering - fejl rettet - udskrev ikke paging
