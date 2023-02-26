@@ -4,22 +4,7 @@ Nedestående er Roadmap op til endelig release af DKDFS Vue 3.
 
 Se [Releas notes](./../RELEASENOTES.md) for tidligere versioner
 
-## v0.4 - Produktionsklar - igang
-
-- Alle komponenter er lavet, undtagen:
-  - Skip link
-  - Toastbesked
-  - Headers
-  - Footers
-  - Brødkrumme
-  - Tabeller - LAVES IKKE
-- Gennemgang af komponent navngivning
-- Gennemgang af komponent properties
-
-Denne release gør at komponenter kan bruges i produktion.
-Der vil umiddelbart ikke komme flere ændringer for KERNE (og eksisterende EKSTRA) komponenternes brug.
-
-## v0.5
+## v0.5 - IGANG
 
 Dokumentation via:
 

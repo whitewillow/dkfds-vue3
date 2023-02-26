@@ -2,9 +2,6 @@
   <section>
     <fds-preview header="Eksempel">
       <fds-preview-item>
-        <fds-button @click="dropdownVal = 'æble'">
-          SetVal
-        </fds-button>
         <xfds-dropdown
           v-model="dropdownVal"
           :options="dropdownOptions" />

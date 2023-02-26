@@ -2,6 +2,11 @@
 
 https://github.com/whitewillow/dkfds-vue3/issues
 
+# 0.4.9
+
+- Trinindikator default large size (fuld bredde når der er plads (breakpoint lg))
+- Alle inputs lytter på model changes
+
 # 0.4.8
 
 - fds-paginering - fejl rettet - udskrev ikke paging
@@ -22,6 +27,21 @@ https://github.com/whitewillow/dkfds-vue3/issues
 - Accordion header-level renamed header-tag
 - Fix dropdown reaktiv
 - Test af Input range
+
+# 0.4.0 - Produktionsklar
+
+- Alle komponenter er lavet, undtagen:
+  - Skip link
+  - Toastbesked
+  - Headers
+  - Footers
+  - Brødkrumme
+  - Tabeller - LAVES IKKE
+- Gennemgang af komponent navngivning
+- Gennemgang af komponent properties
+
+Denne release gør at komponenter kan bruges i produktion.
+Der vil umiddelbart ikke komme flere ændringer for KERNE (og eksisterende EKSTRA) komponenternes brug.
 
 # 0.3.12
 

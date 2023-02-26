@@ -1,6 +1,6 @@
 {
   "name": "dkfds-vue3-extra",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "module": "dist/dkfds-vue3-extra.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -8,8 +8,8 @@
     "typings": "vue-tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist"
   },
   "dependencies": {
-    "dkfds-vue3-core": "0.4.8",
-    "dkfds-vue3-utils": "0.4.8"
+    "dkfds-vue3-core": "0.4.9",
+    "dkfds-vue3-utils": "0.4.9"
   },
   "devDependencies": {
     "@types/node": "^18.11.12",

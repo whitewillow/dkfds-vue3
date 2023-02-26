@@ -8,6 +8,18 @@ change package versions to workspace:[version] eg:
 
 For now - use demo site as development testing/showing
 
+For install
+
+`pnpm i`
+
+Remember to build, before demo project can run, and everytime new changes are made.
+
+`pnpm -r build`
+
+For demo project
+
+`pnpm run dev`
+
 # Build and deploy order
 
 - Utils

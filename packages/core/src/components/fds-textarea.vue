@@ -1,18 +1,17 @@
 <template>
   <textarea
     :id="formid"
-    v-model="val"
+    v-model="inputValue"
     class="form-input"
     :maxlength="maxlength"
     :rows="getRows"
     :name="formid"
-    @input="handleInput"
     @blur="$emit('dirty', true)"
   ></textarea>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch } from 'vue';
+import { defineProps, defineEmits, computed } from 'vue';
 import { formId } from 'dkfds-vue3-utils';
 
 const props = defineProps({
@@ -46,17 +45,14 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
 const { formid } = formId(props.id, true);
-const val = ref(props.modelValue);
-
-const handleInput = () => emit('update:modelValue', val.value);
 
 const getRows = computed(() => {
-  if (!val.value) {
+  if (!props.modelValue) {
     return props.rows;
   }
-  const newlineRows = val.value.split(/\r?\n/).length;
+  const newlineRows = props.modelValue.split(/\r?\n/).length;
 
-  const textLengthRow = Math.floor(val.value.length / props.rowlength) + 1;
+  const textLengthRow = Math.floor(props.modelValue.length / props.rowlength) + 1;
   const result = newlineRows > textLengthRow ? newlineRows : textLengthRow;
 
   if (result < props.maxRows) {
@@ -65,15 +61,14 @@ const getRows = computed(() => {
   return props.maxRows;
 });
 
-watch(
-  () => [props.modelValue],
-  () => {
-    val.value = props.modelValue;
+const inputValue = computed({
+  get() {
+    return props.modelValue;
   },
-  {
-    immediate: true,
+  set(newValue) {
+    emit('update:modelValue', newValue);
   },
-);
+});
 </script>
 
 <style scoped lang="scss"></style>

@@ -9,11 +9,10 @@
     <input
       v-bind="attrs"
       :id="formid"
-      v-model="value"
+      v-model="inputValue"
       class="form-input d-flex"
       :name="formid"
       type="number"
-      @input="handleInput"
       @blur="$emit('dirty', true)"
       @focus="($event.target as any).select()"
     />
@@ -27,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, useAttrs } from 'vue';
+import { defineProps, defineEmits, computed, useAttrs } from 'vue';
 import { formId } from 'dkfds-vue3-utils';
 
 const attrs = useAttrs();
@@ -53,7 +52,6 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'dirty', 'input']);
 
 const { formid } = formId(props.id, true);
-const value = ref(Number.isNaN(props.modelValue) ? 0 : props.modelValue);
 
 const cssClass = computed((): string => {
   if (props.suffix) {
@@ -65,7 +63,14 @@ const cssClass = computed((): string => {
   return 'flex-items-center';
 });
 
-const handleInput = () => emit('update:modelValue', value.value);
+const inputValue = computed({
+  get() {
+    return Number.isNaN(props.modelValue) ? 0 : props.modelValue;
+  },
+  set(newValue) {
+    emit('update:modelValue', newValue);
+  },
+});
 </script>
 
 <style scoped lang="scss"></style>

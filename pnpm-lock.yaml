@@ -37,7 +37,7 @@ importers:
       '@vitest/coverage-c8': ^0.25.6
       '@vue/test-utils': ^2.2.6
       dkfds: ^8.2.1
-      dkfds-vue3: 0.4.7
+      dkfds-vue3: workspace:*
       fast-sort: ^3.2.0
       jsdom: ^20.0.3
       sass: ^1.56.1
@@ -74,7 +74,7 @@ importers:
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
       dkfds: ^8.2.1
-      dkfds-vue3-utils: 0.4.7
+      dkfds-vue3-utils: workspace:0.4.9
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-vue: ^9.7.0
@@ -109,9 +109,9 @@ importers:
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
       dkfds: ^8.2.0
-      dkfds-vue3-core: 0.4.7
-      dkfds-vue3-extra: 0.4.7
-      dkfds-vue3-utils: 0.4.7
+      dkfds-vue3-core: workspace:0.4.9
+      dkfds-vue3-extra: workspace:0.4.9
+      dkfds-vue3-utils: workspace:0.4.9
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-vue: ^9.7.0
@@ -156,8 +156,8 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.42.1
       '@typescript-eslint/parser': ^5.42.1
       '@vitejs/plugin-vue': ^3.2.0
-      dkfds-vue3-core: 0.4.7
-      dkfds-vue3-utils: 0.4.7
+      dkfds-vue3-core: workspace:0.4.9
+      dkfds-vue3-utils: workspace:0.4.9
       eslint: ^8.27.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-vue: ^9.7.0
