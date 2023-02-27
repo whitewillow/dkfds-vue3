@@ -16,7 +16,7 @@
       :icon="item.icon"
       :hint="item.hint"
       :href="item.href"
-      :index="index + 1"
+      :index="showIndex ? index + 1 : null"
       @navigate="navigate(item)"
     >
       {{ item.title }}
@@ -65,7 +65,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: 'small',
+    default: 'large',
   },
 });
 
@@ -97,6 +97,7 @@ watch(
   },
   {
     immediate: true,
+    deep: true,
   },
 );
 </script>

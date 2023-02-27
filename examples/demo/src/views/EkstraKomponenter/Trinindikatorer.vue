@@ -4,10 +4,14 @@
       <fds-preview-item>
         <xfds-trinindikator
           v-model="trin"
+          show-index
           @navigate="trinNavKey = $event" />
         <fds-pre
           header="v-model"
           :json="{ trinNavKey }"></fds-pre>
+        <fds-button @click="changeActive">
+          Spring til kød
+        </fds-button>
       </fds-preview-item>
 
       <fds-preview-code>
