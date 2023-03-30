@@ -70,9 +70,11 @@ onMounted(() => {
   if (!refElement.value || !props.useAutoDirty) {
     return;
   }
-  (refElement.value as HTMLElement).querySelector('input, select')?.addEventListener('blur', () => {
-    localDirty.value = true;
-  });
+  (refElement.value as HTMLElement)
+    .querySelector('input, textarea, select')
+    ?.addEventListener('blur', () => {
+      localDirty.value = true;
+    });
 });
 
 // const hasValue = (): boolean => {
