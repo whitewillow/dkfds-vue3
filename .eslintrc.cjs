@@ -8,13 +8,15 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     '@vue/typescript/recommended',
     'prettier',
+    'plugin:testing-library/vue',
+    'plugin:jest-dom/recommended'
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint', 'import', 'prettier'],
+  plugins: ['vue', '@typescript-eslint', 'import', 'prettier','testing-library','jest-dom'],
   ignorePatterns: ['*d.ts', '*.js'],
   rules: {
     // These are weird inconsistencies between eslint and typescript eslint integration.
