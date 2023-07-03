@@ -7,12 +7,13 @@
       {{ prefix }}
     </div>
     <input
-      v-bind="attrs"
       :id="formid"
       v-model="inputValue"
       type="text"
       class="form-input d-flex"
+      :class="inputClass"
       :name="formid"
+      :placeholder="placeholder"
       @blur="$emit('dirty', true)"
     />
     <div
@@ -26,10 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed, useSlots, useAttrs } from 'vue';
+import { computed, defineEmits, defineProps, useSlots } from 'vue';
 import { formId } from 'dkfds-vue3-utils';
-
-const attrs = useAttrs();
 
 const props = defineProps({
   id: {
@@ -47,6 +46,14 @@ const props = defineProps({
   prefix: {
     type: String,
     default: null,
+  },
+  placeholder: {
+    type: String,
+    default: undefined,
+  },
+  inputClass: {
+    type: String,
+    default: undefined,
   },
 });
 

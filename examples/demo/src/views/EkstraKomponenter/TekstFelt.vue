@@ -16,7 +16,6 @@
             label="Adresse"
             hint="Angiv gyldig adresse"
             tooltip="Input tooltip"
-            input-type="street-address"
             autocomplete="street-address"
             placeholder="e.g: Jarlsvej 23"
           />
@@ -76,7 +75,6 @@ const code = `
     label="Adresse"
     hint="Angiv gyldig adresse"
     tooltip="Input tooltip"
-    input-type="street-address"
     autocomplete="street-address"
     placeholder="e.g: Jarlsvej 23"
     v-model="user.adress"
@@ -84,7 +82,7 @@ const code = `
 </xfds-validate>
 
 <xfds-form-input
-  inputClass="input-width-xs"
+  input-class="input-width-xs"
   hint="Prefix og Suffix er muligt"
   label="By"
   v-model="user.city"

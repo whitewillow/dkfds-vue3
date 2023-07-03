@@ -69,6 +69,12 @@
               <td><code>false</code></td>
               <td></td>
             </tr>
+            <tr>
+              <td><code>input-class</code></td>
+              <td><code>string</code></td>
+              <td><code></code></td>
+              <td>Class der skal tilføjes input element</td>
+            </tr>
           </tbody>
         </table>
 
