@@ -10,13 +10,10 @@
   >
     <fds-input-number
       v-model="value"
-      type="number"
-      v-bind="{
-        attrs,
-        suffix,
-        prefix,
-        readonly,
-      }"
+      :suffix="suffix"
+      :prefix="prefix"
+      :readonly="readonly"
+      :input-class="inputClass"
       @update:model-value="handleInput"
       @dirty="touchedEvent"
     />
@@ -24,9 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref, useAttrs } from 'vue';
+import { defineEmits, defineProps, ref } from 'vue';
 import { FdsInputNumber } from 'dkfds-vue3-core';
-const attrs = useAttrs();
 
 const props = defineProps({
   id: {
@@ -68,6 +64,10 @@ const props = defineProps({
   prefix: {
     type: String,
     default: null,
+  },
+  inputClass: {
+    type: String,
+    default: undefined,
   },
 });
 const emit = defineEmits(['update:modelValue', 'dirty', 'valid', 'input']);

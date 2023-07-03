@@ -69,6 +69,12 @@
               <td><code>false</code></td>
               <td></td>
             </tr>
+            <tr>
+              <td><code>input-class</code></td>
+              <td><code>string</code></td>
+              <td><code></code></td>
+              <td>Class der skal tilføjes input element</td>
+            </tr>
           </tbody>
         </table>
 
@@ -161,7 +167,7 @@
       </fds-preview-item>
 
       <fds-preview-code>
-        <pre v-text="codePrefixSuffix"></pre>
+        <pre v-text="codeNumber"></pre>
       </fds-preview-code>
     </fds-preview>
 
@@ -217,7 +223,7 @@
           </fds-label>
           <fds-input
             id="searchbtn"
-            v-model="txtSearch"
+            v-model="txtSearch2"
             placeholder="Søg efter...">
             <template #button>
               <button class="button button-search">
@@ -243,6 +249,7 @@ const txtEfternavn = ref('');
 const txtPre = ref('');
 const txtSuffix = ref('');
 const txtSearch = ref('');
+const txtSearch2 = ref('');
 const noBeloeb = ref(0);
 
 const code = `
@@ -263,7 +270,10 @@ const codePrefixSuffix = `
 <fds-input v-model="txtPre" prefix="prefix" id="prefix"></fds-input>
 
 <fds-input v-model="txtSuffix" suffix="suffix" id="txtSuffix"></fds-input>
+`;
 
+const codeNumber = `
+<fds-input-number id="noBeloeb" v-model="noBeloeb" input-class="input-width-xs" suffix="kr."></fds-input-number>
 `;
 
 const codeInputKnap = `
@@ -277,7 +287,7 @@ const codeInputKnap = `
   </template>
 </fds-input>
 
-<fds-input v-model="txtSearch" placeholder="Søg efter..." id="searchbtn">
+<fds-input v-model="txtSearch2" placeholder="Søg efter..." id="searchbtn">
   <template #button>
     <button class="button button-search">Søg</button>
   </template>

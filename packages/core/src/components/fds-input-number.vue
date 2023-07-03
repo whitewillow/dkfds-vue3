@@ -7,12 +7,13 @@
       {{ prefix }}
     </div>
     <input
-      v-bind="attrs"
       :id="formid"
       v-model="inputValue"
       class="form-input d-flex"
+      :class="inputClass"
       :name="formid"
       type="number"
+      :readonly="props.readonly"
       @blur="$emit('dirty', true)"
       @focus="($event.target as any).select()"
     />
@@ -26,10 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed, useAttrs } from 'vue';
+import { computed, defineEmits, defineProps } from 'vue';
 import { formId } from 'dkfds-vue3-utils';
 
-const attrs = useAttrs();
 const props = defineProps({
   id: {
     type: String,
@@ -46,6 +46,14 @@ const props = defineProps({
   prefix: {
     type: String,
     default: null,
+  },
+  inputClass: {
+    type: String,
+    default: undefined,
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
   },
 });
 

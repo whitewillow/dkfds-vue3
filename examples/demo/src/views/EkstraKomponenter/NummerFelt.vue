@@ -36,66 +36,12 @@
       <fds-preview-code>
         <pre v-text="code"></pre>
       </fds-preview-code>
-
-      <fds-preview-item>
-        <table class="table table--compact">
-          <thead>
-            <tr>
-              <th>Props</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Beskrivelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>variant</code></td>
-              <td>
-                <code>'primary' | 'secondary' | 'tertiary' | 'quaternary'</code>
-              </td>
-              <td><code>secondary</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>showSpinner</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>spinnerText</code></td>
-              <td><code>string</code></td>
-              <td><code>null</code></td>
-              <td>Spinner tekst - erstatter alm tekst</td>
-            </tr>
-            <tr>
-              <td><code>icon</code></td>
-              <td><code>string</code></td>
-              <td><code>null</code></td>
-              <td>
-                Se standard ikone hos
-                <a
-                  href="https://designsystem.dk/design/ikoner/"
-                  target="dkfds">
-                  DKFDS
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td><code>useoverlay</code></td>
-              <td><code>boolean</code></td>
-              <td><code>false</code></td>
-              <td>Tilføjer overlay når showSpinner, ikke muligt at klikke andre steder imens</td>
-            </tr>
-          </tbody>
-        </table>
-      </fds-preview-item>
     </fds-preview>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 import { numberMin } from 'dkfds-vue3/utils';
 
 defineProps({
@@ -114,7 +60,7 @@ const lager = ref({
 
 const code = `
 <xfds-form-input-number
-  inputClass="input-width-xxs"
+  input-class="input-width-xxs"
   label="Lager antal"
   v-model="lager.lager"
 />
@@ -130,7 +76,7 @@ const code = `
 </xfds-validate>
 
 <xfds-form-input-number
-  inputClass="input-width-xs"
+  input-class="input-width-xs"
   suffix="kr."
   label="Pris"
   v-model="lager.pris"
