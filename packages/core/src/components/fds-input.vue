@@ -14,6 +14,7 @@
       :class="inputClass"
       :name="formid"
       :placeholder="placeholder"
+      :readonly="props.readonly"
       @blur="$emit('dirty', true)"
     />
     <div
@@ -53,6 +54,10 @@ const props = defineProps({
   },
   inputClass: {
     type: String,
+    default: undefined,
+  },
+  readonly: {
+    type: Boolean,
     default: undefined,
   },
 });
