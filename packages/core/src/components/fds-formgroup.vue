@@ -1,15 +1,20 @@
 <template>
   <div
+    ref="formGroupElement"
     :key="formid"
     class="form-group"
-    :class="{ 'form-error': compValid === false }">
+    :class="{ 'form-error': compValid === false }"
+  >
     <slot :formid="formid" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, inject, provide, ref } from 'vue';
+import { computed, defineProps, inject, onMounted, onUpdated, provide, ref } from 'vue';
 import { formId } from 'dkfds-vue3-utils';
+import { enhanceFormGroupDOM } from '../enhance-form-group-dom';
+
+const formGroupElement = ref<HTMLElement>();
 
 const props = defineProps({
   id: {
@@ -20,6 +25,16 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+});
+
+onMounted(() => {
+  console.log('Mounted formgroup');
+  enhanceFormGroupDOM(formGroupElement.value, compValid.value);
+});
+
+onUpdated(() => {
+  console.log('Updated formgroup');
+  enhanceFormGroupDOM(formGroupElement.value, compValid.value);
 });
 
 /**
